@@ -1,0 +1,42 @@
+{{ block "customphp" . }}{{ end }}
+<!DOCTYPE html>
+<html lang="{{ .Site.Language }}">
+<head>
+
+  {{ partial "head.html" . }}
+  {{ block "customseo" . }}{{ end }}
+  {{ with .Params.customheader }}
+{{ . | safeHTML }}
+{{ end }}
+<script defer data-domain="codexdelamarca.com" src="https://plausible.io/js/plausible.js"></script>
+</head>
+<body class="post-template">
+<div class="site-wrapper">
+
+
+    <header class="site-head">
+      {{ block "customheader" . }}
+        {{ partial "header.html" . }}
+      {{ end }}
+    </header>
+
+
+    <main id="site-main" class="site-main">
+        <div id="swup" class="transition-fade">
+            {{ block "main" . }}{{ end }}
+        </div>
+        {{ block "commentornotes" . }}
+          {{ partial "comments.html" . }}
+        {{ end }}
+    </main>
+
+    <footer class="site-foot">
+        &copy; 2021 <a href="https://codexdelamarca.com">Codex de la Marca</a> &mdash; Publicado con <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>
+    </footer>
+
+  </div>
+
+
+
+</body>
+</html>
