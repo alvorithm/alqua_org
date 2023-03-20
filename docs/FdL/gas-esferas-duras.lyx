@@ -1,0 +1,198 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass book
+\begin_preamble
+\input{FdL-packages.sty}
+\input{FdL-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding auto
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Chapter
+
+El modelo del gas de esferas duras
+\begin_inset LatexCommand \label{cha:gas-esferas-duras}
+
+\end_inset 
+
+
+\layout Standard
+
+Consideremos el plasma como un gas formado por dos tipos de partículas,
+ que distinguiremos con los subíndices 
+\begin_inset Formula $1$
+\end_inset 
+
+ y 
+\begin_inset Formula $2$
+\end_inset 
+
+.
+ Modelizaremos estas partículas mediante un potencial de interacción de
+ 
+\emph on 
+esfera dura
+\emph default 
+.
+ Por lo tanto, las partículas son de radios bien definidos, 
+\begin_inset Formula $r_{1}$
+\end_inset 
+
+ y 
+\begin_inset Formula $r_{2}$
+\end_inset 
+
+ y la sección eficaz de colisión vale (figura 
+\begin_inset LatexCommand \ref{fig:seceff-esf-duras}
+
+\end_inset 
+
+).
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/seceff-esf-duras.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:seceff-esf-duras}
+
+\end_inset 
+
+Sección eficaz de colisión en el modelo de esferas duras.
+\end_inset 
+
+
+\begin_inset Formula \[
+\sigma_{0}=\pi\left(r_{1}+r_{2}\right)^{2}.\]
+
+\end_inset 
+
+ Si 
+\begin_inset Formula $\vec{v}_{1}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\vec{v}_{2}$
+\end_inset 
+
+ son las velocidades de dos de estas partículas esféricas, su velocidad
+ relativa será 
+\begin_inset Formula $\vec{v}_{r}=\vec{v}_{1}-\vec{v}_{2}$
+\end_inset 
+
+.
+ Es decir, 
+\begin_inset Formula \[
+\vec{v}_{r}^{2}=v_{r}^{2}=v_{1}^{2}+v_{2}^{2}-2\vec{v}_{1}\cdot\vec{v}_{2}.\]
+
+\end_inset 
+
+Si imponemos el carácter esencialmente aleatorio del movimiento de las partícula
+s, al promedioar sobre el conjunto resultará
+\begin_inset Formula \[
+\overline{v_{r}^{2}}\simeq\overline{v_{1}^{2}}+\overline{v_{2}^{2}},\qquad(\overline{\vec{v}_{1}\cdot\vec{v}_{2}}\ll\overline{v_{r}^{2}})\]
+
+\end_inset 
+
+ y la velocidad cuadrática media relativa será
+\begin_inset Formula \[
+\sqrt{\overline{v_{r}^{2}}}=\sqrt{\overline{v_{1}^{2}}}\sqrt{1+\frac{\overline{v_{2}^{2}}}{\overline{v_{1}^{2}}}}\]
+
+\end_inset 
+
+una expresión que, despreciando la diferencia entre valores cuadráticos
+ medios y valores medios de los módulos, se puede escribir como
+\begin_inset Formula \[
+\overline{v_{r}}=\overline{v_{1}}\sqrt{1+\frac{\overline{v}_{2}^{2}}{\overline{v_{1}}^{2}}}=\sqrt{\overline{v_{1}}^{2}+\overline{v_{2}}^{2}}\]
+
+\end_inset 
+
+Entonces la probabilidad por unidad de tiempo de que una esfera de tipo
+ 
+\begin_inset Formula $1$
+\end_inset 
+
+ colisione con una de tipo 
+\begin_inset Formula $2$
+\end_inset 
+
+ será
+\begin_inset Formula \begin{equation}
+\tau_{12}^{-1}=\overline{v_{r}}\sigma_{0}N_{2}\label{eq:tiempo-vuelolibre-12}\end{equation}
+
+\end_inset 
+
+Donde 
+\begin_inset Formula $\tau_{12}$
+\end_inset 
+
+ sería el tiempo de vuelo libre de las esferas 
+\begin_inset Formula $1$
+\end_inset 
+
+ entre colisiones con las esferas 
+\begin_inset Formula $2$
+\end_inset 
+
+.
+ De aquí podemos obtener el recorrido libre medio
+\begin_inset LatexCommand \index{recorrido libre medio}
+
+\end_inset 
+
+ correspondiente a estas colisiones
+\begin_inset Formula \[
+\lambda_{12}=\tau_{12}\overline{v_{1}}=\frac{\overline{v_{1}}}{\overline{v_{r}}\sigma_{0}N_{2}}=\frac{1}{\pi\left(r_{1}+r_{2}\right)^{2}\left(1+\overline{v_{2}}^{2}/\overline{v_{1}}^{2}\right)^{1/2}N_{2}}.\]
+
+\end_inset 
+
+ Si las partículas son todas idénticas 
+\begin_inset Formula $\overline{v_{r}}=\sqrt{2}\,\overline{v}$
+\end_inset 
+
+, pues 
+\begin_inset Formula $\overline{v_{1}}^{2}=\overline{v_{2}}^{2}=\overline{v}^{2}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\lambda_{21}=\lambda,N_{2}=N$
+\end_inset 
+
+, quedando
+\begin_inset Formula \begin{equation}
+\lambda=\frac{1}{\sqrt{2}\sigma_{0}N},\label{eq:rec-libremedio-gas-monomolec}\end{equation}
+
+\end_inset 
+
+ que es la expresión del recorrido libre medio en un gas monomolecular.
+\the_end

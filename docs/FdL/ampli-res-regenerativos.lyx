@@ -1,0 +1,786 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass scrbook
+\begin_preamble
+\input{FdL-packages.sty}
+\input{FdL-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding auto
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Chapter
+
+Amplificadores resonantes regenerativos
+\layout Standard
+
+Frecuentemente la amplificación por unidad de longitud que se puede conseguir
+ en un medio es tan pequeña que para alcanzar amplificaciones sustanciales
+ sería preciso que la radiación recorriera grandes longitudes de medio en
+ inversión.
+ En la práctica esto puede ser difícil o poco manejable.
+\layout Standard
+
+La forma habitual de solventar este problema es introducir el amplificador
+ en un resonador Fabry-Perot.
+ De esta forma la radiación resonante pasará una y otra vez a través del
+ amplificador en las sucesivas reflexiones en los espejos y en cada paso
+ resultará amplificada.
+ Es como si el medio amplificador se hubiese alargado tantas veces como
+ la radiación pasa a través de él en las sucesivas reflexiones.
+ Dado que en cada reflexión la radiación entra y sale del medio invertido
+ hay que evitar las pérdidas por reflexión que se producirían en estos tránsitos.
+ Para ello existen dos alternativas:
+\layout Itemize
+
+Una consiste en hacer que la entrada y la salida se efectúen a través de
+ un plano en ángulo de Brewster (figura 
+\begin_inset LatexCommand \ref{fig:ampli-Brewster}
+
+\end_inset 
+
+).
+ En el ángulo de Brewster la onda 
+\begin_inset Formula $P$
+\end_inset 
+
+ (la que lleva la polarización en el plano de incidencia) pasa casi sin
+ pérdidas y la onda 
+\begin_inset Formula $S$
+\end_inset 
+
+ (la que lleva la polarización ortogonal) se refleja muy eficientemente.
+ No hay pérdidas de inserción por haber insertado el medio ahí dentro, y
+ además el sistema selecciona una polarización, la 
+\begin_inset Formula $P.$
+\end_inset 
+
+ En este sistema la radiación que se va a obtener a través del espejo semitransp
+arente será polarizada.
+\newline 
+El medio amplificador puede ser sólido, líquido o gaseoso.
+ En los dos últimos (fluidos), debemos recordar que el ángulo de Brewster
+ es el correspondiente al índice de refracción de las ventanas del contenedor,
+ 
+\begin_inset Formula $\tan\alpha_{B}=n$
+\end_inset 
+
+.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/ampli-brewster-src.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:ampli-Brewster}
+
+\end_inset 
+
+Montaje del medio amplificador en un resonador con ángulo de Brewster.
+ 
+\end_inset 
+
+
+\layout Itemize
+
+Una segunda posibilidad consiste en depositar un recubrimiento antirreflectante
+ sobre las ventanas de entrada y salida del medio amplificador (figura 
+\begin_inset LatexCommand \ref{fig:resonador-antirrefl}
+
+\end_inset 
+
+).
+ Un recubrimiento de este tipo elimina por interferencia la componente reflejada
+ (gafas de 
+\emph on 
+óptica azul
+\emph default 
+).
+ 
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/resonador-antirrefl-src.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:resonador-antirrefl}
+
+\end_inset 
+
+Recubrimiento antirreflectante en las ventanas del resonador.
+\end_inset 
+
+
+\layout Standard
+
+Usualmente, el medio amplificador no llena completamente la distancia 
+\begin_inset Formula $d$
+\end_inset 
+
+ entre los espejos del resonador.
+ Entonces, si 
+\begin_inset Formula $L$
+\end_inset 
+
+ es la longitud del medio amplificador y éste tiene un índice de refracción
+ a la frecuencia de la radiación amplificada 
+\begin_inset Formula $\mu\equiv\mu\left(\nu_{0}\right)$
+\end_inset 
+
+, el camino óptico 
+\begin_inset Formula $l$
+\end_inset 
+
+ entre los espejos del resonador será:
+\begin_inset Formula \[
+\frac{l}{c_{0}}=\frac{d-L}{c_{0}}+\frac{L}{c_{0}/\mu}\]
+
+\end_inset 
+
+(el primer término representa la propagación a la velocidad de la luz en
+ el vacío; el segundo a la velocidad en el medio).
+ La longitud óptica del resonador es pues
+\begin_inset Formula \[
+l=d+\left(\mu-1\right)L\]
+
+\end_inset 
+
+ y así no necesitamos preocuparnos de qué medio hay en el interior.
+\layout Standard
+
+Para un resonador pasivo la función de transferencia la escribíamos 
+\begin_inset Formula $f=t_{i}e^{i\phi}$
+\end_inset 
+
+.
+ En un resonador activo debemos tener en cuenta la ganancia del medio, que
+ denotaremos 
+\begin_inset Formula $g$
+\end_inset 
+
+ (en amplitud) y 
+\begin_inset Formula $G\equiv g^{2}$
+\end_inset 
+
+ (en intensidad).
+ El campo y la intensidad en este recorrido cambian con las siguientes funciones
+ de transferencia respectivamente: 
+\begin_inset Formula \[
+f=t_{i}ge^{i\phi},\qquad F=\left|f\right|^{2}=T_{i}g^{2}=T_{i}G\]
+
+\end_inset 
+
+y el análisis es paralelo al de los medios pasivos, solo que incorporando
+ el nuevo factor.
+ Por ejemplo, la función de transferencia del resonador para la intensidad
+ (
+\begin_inset LatexCommand \ref{eq:funcion-transferencia-intensidad}
+
+\end_inset 
+
+ para el resonador pasivo) pasa a ser
+\begin_inset Formula \begin{equation}
+G_{T}=\frac{T_{1}T_{2}T_{i}G}{\left(1-RT_{i}G\right)^{2}+4RT_{i}G\sin^{2}\phi}\label{eq:GT-transf-intensidad}\end{equation}
+
+\end_inset 
+
+Para distinguir una de otra, denotamos con 
+\begin_inset Formula $G_{T}$
+\end_inset 
+
+ la función de transferencia en presencia de un medio activo.
+ Las condiciones en las que 
+\begin_inset Formula $G_{T}$
+\end_inset 
+
+ es máxima son las mismas que las que estudiamos para 
+\begin_inset Formula $F_{T}$
+\end_inset 
+
+: 
+\begin_inset Formula $\phi_{q}=q\pi$
+\end_inset 
+
+.
+ En dichas condiciones de máximo 
+\begin_inset Formula \[
+\left(G_{T}\right)_{\mathrm{max}}=\frac{T_{1}T_{2}T_{i}G}{\left(1-RT_{i}G\right)^{2}}\]
+
+\end_inset 
+
+ Observamos que si se parte de la situación de resonador pasivo (ganancia
+ en un paso 
+\begin_inset Formula $G=1$
+\end_inset 
+
+) y a través de un bombeo progresivo se hace crecer 
+\begin_inset Formula $G$
+\end_inset 
+
+ hasta aquel valor 
+\begin_inset Formula $G_{u}$
+\end_inset 
+
+ para el que 
+\begin_inset Formula \[
+RT_{i}G_{u}=1\]
+
+\end_inset 
+
+ se obtiene 
+\begin_inset Formula $\left(G_{T}\right)_{\mathrm{max}}=\infty$
+\end_inset 
+
+.
+ Esto representa un régimen estacionario físicamente imposible (
+\emph on 
+resonador desestabilizado
+\emph default 
+), pues supone que el campo se hace infinito a la salida del resonador.
+\layout Standard
+
+Lo que ocurre en un dispositivo experimental es que mientras 
+\begin_inset Formula $RT_{i}G<1$
+\end_inset 
+
+ las pérdidas son mayores que la ganancia en cada paso entre los espejos.
+ Pero si la ganancia 
+\begin_inset Formula $G$
+\end_inset 
+
+ es mayor que las pérdidas en un paso entonces el campo crece en cada paso.
+ Ahora bien, el crecimiento del campo erosiona la inversión de población
+ por el efecto de las emisiones estimuladas, y por lo tanto el valor de
+ 
+\begin_inset Formula $G$
+\end_inset 
+
+.
+ Esta autorregulación hace que 
+\begin_inset Formula $G$
+\end_inset 
+
+ tienda a tener valores ligeramente por debajo o por encima del valor llamado
+ 
+\emph on 
+umbral
+\emph default 
+, 
+\begin_inset Formula \[
+G_{u}\equiv\frac{1}{RT_{i}}\]
+
+\end_inset 
+
+en el que la ganancia iguala a las pérdidas.
+ 
+\layout Standard
+
+Así pues, para que se inicie la emisión láser en el resonador el mecanismo
+ de bombeo que produce la inversión de población debe ser suficiente para
+ que se alcance la condición umbral, y sólo se emite la energía introducida
+ por encima de dicho umbral.
+\layout Standard
+
+Los láseres de resonador normalmente también amplifican su propio ruido
+ cuántico.
+ Como en el resonador activo 
+\begin_inset Formula $F=T_{i}G$
+\end_inset 
+
+ la anchura de un modo (ec.
+ 
+\begin_inset LatexCommand \ref{eq:anchura-reso-pasiva}
+
+\end_inset 
+
+) pasa a ser:
+\begin_inset Formula \begin{equation}
+\delta\omega_{q,nm}=\frac{1-T_{i}RG}{\sqrt{T_{i}RG}}\frac{c}{l}.\label{eq:anchura-reso-activa}\end{equation}
+
+\end_inset 
+
+ La anchura de los modos está ligada a la ganancia.
+ Cuanto más cerca esté de la situación umbral tanto menor es la anchura
+ de las resonancias.
+ De hecho, cada modo láser es tan monocromático que su anchura no se puede
+ medir por ningún método directo, puesto que el aparato convencional de
+ medida, un Fabry-Perot sin medio activo, tiene una anchura de modo mayor.
+\layout Standard
+
+Por la misma dinámica, la inversión de población se sitúa en todo el medio
+ amplificador en el valor correspondiente al umbral, 
+\begin_inset Formula \[
+G_{u}=\exp\left[n_{iu}\sigma_{21}\left(\nu\right)L\right]=\frac{1}{RT_{i}}\]
+
+\end_inset 
+
+despejando,
+\begin_inset Formula \[
+n_{iu}\left(\nu\right)=-\frac{\ln RT_{i}}{\sigma_{21}\left(\nu\right)L}=\frac{l}{L}\frac{1}{\sigma_{21}\left(\nu\right)ct_{c}}\]
+
+\end_inset 
+
+con 
+\begin_inset Formula $t_{c}$
+\end_inset 
+
+ el tiempo de permanencia de la ec.
+ 
+\begin_inset LatexCommand \ref{eq:tiempo-permanencia}
+
+\end_inset 
+
+.
+ Una vez se alcanza la ganancia umbral se instala en todo el medio activo
+ una inversión umbral homogénea (y estacionaria salvo pequeñas oscilaciones),
+ lo cual nos permite utilizar las fórmulas de la amplificación exponencial.
+ 
+\layout Standard
+
+Pero si la inversión de población umbral es muy alta, el bombeo también
+ debe serlo: hay que invertir mucha energía para superar las pérdidas.
+ Para que un láser sea bueno, conviene pues que la inversión umbral sea
+ todo lo baja posible.
+ Como se puede ver en la fórmula, conviene una gran sección eficaz (buen
+ medio), y un tiempo de vida del fotón en la cavidad alto (buen resonador,
+ es decir, pérdidas pequeñas).
+ 
+\layout Standard
+
+Se puede caracterizar la calidad del medio la ec.
+ 
+\begin_inset LatexCommand \ref{eq:alfa-detallada}
+
+\end_inset 
+
+, de la que se deriva
+\begin_inset Formula \[
+\sigma_{21}\simeq\frac{\lambda^{2}}{\Delta\nu_{21}\tau_{21}}\frac{1}{8\pi}\]
+
+\end_inset 
+
+Lo que buscamos es un medio en el producto 
+\begin_inset Formula $\Delta\nu_{21}\tau_{21}$
+\end_inset 
+
+ del denominador se parezca al límite de transformada, 
+\begin_inset Formula $\left(2\pi\right)^{-1}$
+\end_inset 
+
+; esto es más fácil en medios atómicos donde 
+\begin_inset Formula $\Delta\nu_{21}$
+\end_inset 
+
+ no es tan grande.
+\layout Section
+
+Medios con ensanchamiento inhomogéneo
+\layout Standard
+
+En un medio con ensanchamiento inhomogéneo los centros amplificadores tienen
+ las frecuencias centrales de emisión repartidas en todo el perfil en proporción
+ a la probabilidad que tiene cada centro de situar en un determinado valor
+ su frecuencia central de emisión.
+ Por lo tanto, cada modo del resonador permite participar en la amplificación
+ a los centros (átomos, moléculas) cuya anchura homogénea solape con la
+ frecuencia del modo.
+ Los centros que no están en resonancia con los modos del resonador no participa
+n, por lo tanto, de una forma directa en el proceso de amplificación.
+ En consecuencia, en la radiación emitida aparecerán los modos en los que
+ la ganancia 
+\begin_inset Formula $G\left(\nu\right)$
+\end_inset 
+
+ esté por encima del valor umbral:
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/umbral-ensch-inhom-src.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:ganancia-filtra-modos}
+
+\end_inset 
+
+En el caso de ensanchamiento inhomogéneo, sólo los modos con ganancia superior
+ al umbral participan en el proceso de amplificación.
+\end_inset 
+
+
+\begin_inset Formula \[
+G_{u}\gtrsim\frac{1}{RT_{i}}\]
+
+\end_inset 
+
+La condición se ha ilustrado en la figura 
+\begin_inset LatexCommand \ref{fig:ganancia-filtra-modos}
+
+\end_inset 
+
+.
+\layout Standard
+
+La inversión de población umbral es la misma en todas las frecuencias 
+\begin_inset Formula $\nu_{0}'$
+\end_inset 
+
+.
+ La ganancia umbral por tanto es la misma para todos los modos.
+ Si el perfil inhomogéneo 
+\begin_inset Formula $\sigma_{21}$
+\end_inset 
+
+ es muy grande para ciertas frecuencias 
+\begin_inset Formula $\nu_{0}'$
+\end_inset 
+
+, entonces la ganancia correspondiente 
+\begin_inset Formula $G\left(\nu_{0}'\right)$
+\end_inset 
+
+ es grande y esos modos son los que entran a producir emisión láser antes:
+ 
+\begin_inset Formula $G\left(\nu_{0}'\right)>G_{u}$
+\end_inset 
+
+.
+\layout Standard
+
+La salida del láser es nula en los modos fuera de la intersección curva
+ de ganancia - ganancia umbral.
+ En el láser inhomogéneo cada modo dispone de un grupo de átomos suministrándole
+ energía en distintas frecuencias y que dan lugar a la salida láser en ese
+ modo.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/quemado-espectral-src.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:quemado-espectral-inv-pobl}
+
+\end_inset 
+
+La inversión se queda en el umbral en las frecuencias de los modos del resonador
+ (
+\emph on 
+quemado espectral
+\emph default 
+
+\begin_inset LatexCommand \index{quemado!espectral}
+
+\end_inset 
+
+).
+\end_inset 
+
+
+\layout Standard
+
+Dependiendo de la geometría de la cavidad o resonador y de la anchura inhomogéne
+a, así como de la ganancia, el número de modos amplificados puede ser de
+ unos pocos, de muchos cientos o de miles.
+ Por ejemplo, supongamos un láser de gas.
+ Como la separación entre modos es 
+\begin_inset Formula $\Delta\nu=c/2l$
+\end_inset 
+
+, si 
+\begin_inset Formula $l$
+\end_inset 
+
+ es grande los modos están muy juntos.
+ En la figura eso implica que entran muchos modos en la anchura Doppler.
+ En cambio en las cavidades cortas es posible que entre solamente un modo.
+\layout Section
+
+Medios con ensanchamiento homogéneo
+\layout Standard
+
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Una de las partes de la teoría donde los ejercicios/ejemplos son más clarificadores.}
+\end_inset 
+
+En aquellos medios láser cuyo ensanchamiento espectral es homogéneo (caso
+ de los láseres en los que los centros amplificadores se alojan en la red
+ de un cristal), el primer modo que supera el umbral comienza a ser amplificado
+ por todos los centros al mismo tiempo y la inversión de población que supera
+ a la umbral para generar la ganancia se gasta en amplificar la radiación
+ en la frecuencia de este modo.
+ Como en las frecuencias de los demás modos el umbral
+\begin_inset Formula \[
+n_{iu}\left(\nu_{k}\right)=\frac{l}{L}\frac{1}{t_{c}}\frac{1}{\sigma_{21}\left(\nu_{k}\right)}\]
+
+\end_inset 
+
+es más alto que en el modo más resonante, nunca llegarán a amplificarse
+ (ver figura 
+\begin_inset LatexCommand \ref{fig:seceff-nu}
+
+\end_inset 
+
+).
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/seceff-nu-src.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:seceff-nu}
+
+\end_inset 
+
+La sección eficaz es diferente para los distintos modos.
+ El modo con mayor 
+\begin_inset Formula $\sigma_{21}$
+\end_inset 
+
+ (menor 
+\begin_inset Formula $n_{iu}$
+\end_inset 
+
+) es el primero que emite.
+ En el caso homogéneo, hay un perfil común para todos los átomos y todos
+ están acoplados de la misma manera a los modos.
+ Cuando un modo empieza a oscilar quita energía a todos los otros, y la
+ tendencia en ensanchamiento homogéneo es producir un sólo modo axial.
+\end_inset 
+
+
+\layout Standard
+
+En estos láseres la tendencia pues es a que oscile el modo axial más próximo
+ a la resonancia.
+ Sin embargo en los experimentos se observa un pequeño número de modos,
+ no solamente uno.
+ Veamos por qué.
+\layout Standard
+
+Las intensidades que la radiación adquiere en el interior del resonador
+ son tan altas que el medio está muy saturado, sobre todo en los puntos
+ en los que la intensidad es mayor.
+ En la onda estacionaria que sustenta el resonador en el modo más resonante
+ la inversión se desgasta más en los vientres que en los nodos, quedando
+ en estos un poco más por encima del umbral.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/modo-contiguo-aprovecha-src.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:modo-contiguo-aprovecha}
+
+\end_inset 
+
+La aparición de modos adicionales cerca del modo central se explica en virtud
+ de la coincidencia de sus vientres con la zona de inversión no desgastada
+ por el modo principal.
+ El primer gráfico representa el modo principal y el tercero uno de estos
+ modos adicionales.
+\end_inset 
+
+ 
+\layout Standard
+
+En efecto, si representamos la inversión de población en función de la coordenad
+a axial (figura 
+\begin_inset LatexCommand \ref{fig:modo-contiguo-aprovecha}
+
+\end_inset 
+
+), encontramos que en cada uno de los nodos la inversión de población no
+ se ha desgastado, está intocada.
+ Nuestro medio está entonces convertido en una especie de rejilla de inversión
+ de población.
+ La intensidad de luz en unas zonas es alta ---inversión pequeña--- y en
+ otras es nula ---inversión incólume---.
+ Si eso ocurre con el modo que inicialmente se excita, los dos más próximos
+ aprovechan la inversión de población residual que allí queda.
+ Donde en el modo privilegiado tenemos un nodo, en los contiguos tenemos
+ un máximo.
+ Los vientres de los contiguos coinciden en la zona central del resonador
+ con la zona de la inversión de población no desgastada por el principal,
+ y la aprovechan para amplificarse y superar el umbral.
+ Y por eso aparecen dos o tres modos cerca del modo central (ver 
+\begin_inset Formula $\sigma_{21}\left(\nu\right)$
+\end_inset 
+
+, figura 
+\begin_inset LatexCommand \ref{fig:seceff-nu}
+
+\end_inset 
+
+).
+ Por lo tanto en el momento en el que el resonador Fabry-Perot produce la
+ onda estacionaria está dando la posibilidad de aparición de los modos laterales.
+ Estos fenómenos de desgaste de la inversión de población se denominan 
+\emph on 
+quemado
+\emph default 
+, y se adjetivan como 
+\emph on 
+espaciales
+\begin_inset LatexCommand \index{quemado!espacial}
+
+\end_inset 
+
+
+\emph default 
+ (el que acabamos de ver) o 
+\emph on 
+espectrales
+\emph default 
+, como el que se produce en el caso inhomogéneo con la inversión de población
+ (figura 
+\begin_inset LatexCommand \ref{fig:quemado-espectral-inv-pobl}
+
+\end_inset 
+
+) que solapa las frecuencias de los modos y que hemos discutido en el apartado
+ precedente.
+\layout Standard
+
+Se puede evitar la formación de la onda estacionaria construyendo el resonador
+ en anillo
+\begin_inset LatexCommand \index{resonador!en anillo}
+
+\end_inset 
+
+ (
+\emph on 
+ring resonator
+\emph default 
+).
+ Los resonadores en anillo pueden ser bidireccionales, en cuyo caso se forma
+ la onda estacionaria como en el Fabry-Perot o unidireccionales, interponiendo
+ en el trayecto de la luz un rotador de Faraday (ver figura 
+\begin_inset LatexCommand \ref{fig:resonador-anillo}
+
+\end_inset 
+
+).
+ 
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/resonador-anillo-src.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:resonador-anillo}
+
+\end_inset 
+
+Resonador en anillo.
+ El elemento señalado como Rot impide a la luz viajar en ambas direcciones:
+ el efecto Faraday, que da lugar a la rotación de la polarización según
+ la luz avanza, sumado a un polarizador, permite obturar la luz en un sentido.
+\end_inset 
+
+
+\layout Standard
+
+En ese caso no puede haber onda estacionaria y se puede obtener el único
+ modo axial que estaba previsto, ya que la luz sólo puede recorrer el resonador
+ en un sentido.
+\layout Standard
+
+Como conclusión del apartado, podemos señalar que el uso de un resonador
+ permite seleccionar una frecuencia concreta y permitir que la ganancia
+ por paso sea pequeña, pues la ganancia total se puede hacer enorme multiplicand
+o el número de pasos.
+\the_end

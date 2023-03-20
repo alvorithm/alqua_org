@@ -1,0 +1,1707 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass scrbook
+\language spanish
+\inputencoding auto
+\fontscheme pslatex
+\graphics default
+\float_placement !hbtp
+\paperfontsize 10
+\spacing single 
+\papersize a4paper
+\paperpackage a4wide
+\use_geometry 0
+\use_amsmath 1
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+
+\layout Chapter
+
+Programación Concurrente
+\layout Section
+
+Multitarea, multiprogramación y multiproceso
+\layout Standard
+
+Un sistema multitarea es aquel que permite la ejecución de varios procesos
+ sobre un procesador mediante la multiplexación de este entre los procesos.
+\layout Standard
+
+La multitarea se implementa generalmente manteniendo el código y los datos
+ de varios procesos simultáneamente en memoria y multiplexando el procesador
+ y los dipositivos E/S entre ellos.
+\layout Standard
+
+La multitarea suele asociarse con soporte software y hardware para la protección
+ de memoria con el fin de evitar que los procesos corrompan el espacio de
+ direcciones y el comportamiento de otros procesos residentes en memoria,
+ un sistema multitarea, sin embargo, no tiene necesariamente que soportar
+ formas elaboradas de gestión de memoria y archivos.
+ En este sentido multitatarea es sencillamente sinónimo de concurrencia.
+ 
+\layout Standard
+
+El término multiprogramación designa a un SO que además de soportar multitarea
+ proporciona formas sofisticadas de protección de memoria y fuerza el control
+ de la concurrencia cuando los procesos acceden a dispositivos E/S y a archivos
+ compartidos, en general la multiprogramación implica multitarea pero no
+ viceversa.
+\layout Standard
+
+Los SSOO operativos de multiprogramación soportan generalmente varios usuarios
+ en cuyo caso también se les denomina sistemas multiusuario o multiacceso.
+ Los SSOO para multiproceso gestionan la operación de sistemas informáticos
+ que incorporan varios procesadores conocidos habitualmente como 
+\emph on 
+sistemas multiprocesadores
+\begin_inset LatexCommand \index{sistemas multiprocesadores}
+
+\end_inset 
+
+
+\emph default 
+.
+ Los SSOO para multiprocesadores son multitarea por definición ya que soportan
+ laejecución simultánea de varias tareas o procesossobre diferentes procesadores
+ y serán multiprogramados si disponen de los mecanismos de control de concurrenc
+ia y protección de memoria adecuados.
+ En general todos los SSOO de multiprogramación se caracterizan por mantener
+ un conjunto de procesos activos simultáneamente que compiten por los recursos
+ del sistema, incluidos el procesador, la memoria y los dipositivos E/S.
+\layout Standard
+
+Un SO de multiprogramación vigila el estado de todos los procesos activos
+ y de todos los recursos del sistema, cuando se producen cambios importantes
+ de estado, ocuando es invocado explícitamente el SO se activa para asignar
+ recursos y proporcionar ciertos servicios de su repertorio.
+\layout Section
+
+Principios de concurrencia
+\layout Standard
+
+La concurrencia es el punto clave en los conceptos de multitarea, multiprogramac
+ión y multiproceso y es fundamental para el diseño de SSOO, la concurrencia
+ comprende un gran número de cuestiones de diseño incluyendo la comunicación
+ entre procesos, la compartición y competencia por los recursos, la sincronizaci
+ón de la ejecución de varios procesos y la asignación del procesador a los
+ procesos, la cocncurrencia puede presentarse en tres contextos diferentes:
+\layout Itemize
+
+Varias aplicaciones: en este caso el tiempo de procesador de una máquina
+ es compartido dinámicamente entre varios trabajos o aplicaciones activas.
+\layout Itemize
+
+Aplicaciones estructuradas: como consecuencia del diseño modular de una
+ aplicación y la división de la misma en tareas explícitas estas pueden
+ ser ejecutadas de forma concurrente.
+\layout Itemize
+
+Estrucutra del sistema operativo: como resultado de la aplicación de la
+ estructuración en el diseño del propio SO, de forma que este se implemente
+ como un conjunto de procesos.
+\layout Standard
+
+Como soporte a la actividad concurrente el SO debe ser capaz de realizar
+ un estrecho seguimiento de los procesos activos, asignando y desasignando
+ recursos entre ellos, el SO debe proteger los datos y recursos de cada
+ proceso contra ingerencias o intrusiones intencionadas o no, de otros procesos.
+\layout Standard
+
+El resultado de un proceso debe ser absolutamente independiente de la velocidad
+ relativa a la que se realice su ejecución con respecto al resto de procesos,
+ y por supuesto dicho resultado debe ser similar al obtenido si la ejecución
+ del proceso se realizara de forma individual.
+\layout Section
+
+Comunicación y sincronización de procesos
+\layout Subsection
+
+Posibilidades de interacción de procesos
+\layout Standard
+
+Las posibilidadades de interacción de los procesos pueden clasificarse en
+ función del nivel de conocimiento que cada proceso tiene de la existencia
+ de los demás.
+\layout Enumerate
+
+Un proceso no tiene en absoluto conocimiento de la existencia de los demás.
+ Se trata de procesos independientes que no están preparados para trabajar
+ conjuntamente y mantienen entre sí una relación exclusivamente de competencia
+\layout Enumerate
+
+Que los procesos tengan un conocimiento indirecto de los otros procesos.
+ Esta situación tiene lugar cuando los procesos no tienen un conocimiento
+ explícito entre ellos, pero comparten el acceso a algunos dipositivos o
+ zonas de memoria del sistema.
+ Entre estos procesos se establece una relación de cooperación por compartir
+ objetos comunes.
+\layout Enumerate
+
+Tiene lugar cuando los procesos tienen conocimiento directo unos de otros
+ por haber sido diseñados para trabajar conjuntamente el alguna actividad.
+ Esta situación muestra una relación claramente de cooperación.
+\layout Standard
+
+En cualquiera de estas tres situaciones hay que dar solución a tres problemas
+ de control:
+\layout Enumerate
+
+
+\series bold 
+Necesidad de exclusión mutua
+\series default 
+.
+ Es decir, los procesos deberán acceder de forma exclusiva a ciertos recursos
+ o zonas de memoria considerados como críticos.
+\layout Enumerate
+
+
+\series bold 
+Interbloqueos
+\series default 
+: tienen lugar cuando ninguno de los procesos en competencia puede continuar
+ su ejecución normal por carecer de alguno de los recursos que necesita.
+\layout Enumerate
+
+
+\series bold 
+Inhanición
+\series default 
+: este problema tiene lugarcuando la ejecución de un proceso queda siempre
+ pospuesta a favor de algún otro de los procesos en competencia.
+\layout Standard
+
+Por supuesto, el control de la concurrencia involucra inevitablemente al
+ SO ya que es el encargado de asignar y arrebatar los recursos del sistema
+ a los procesos.
+\layout Subsection
+
+Necesidad de sincronización de los procesos: región crítica y exclusión
+ mutua
+\layout Standard
+
+Independientemente del tipo de interacción existente entre los distintos
+ procesos activos, en un sistema con multiprogramación éstos comparten un
+ conjunto de elementos que deben ser accedidos de forma controlada para
+ evitar situaciones de inconsistencia.
+ Estos elementos compartidos ya sean dispositivos de E/S o zonas de memoria
+ comunes son considerados como críticos y la parte del programa que los
+ utiliza se conoce como 
+\emph on 
+región o sección crítica
+\begin_inset LatexCommand \index{seccion crítica}
+
+\end_inset 
+
+
+\emph default 
+.
+ Es muy importante que sólo un programa pueda acceder a su sección crítica
+ en un momento determinado.
+ Por esta razón, el SO debe ofrecer mecanismos que hagan posible una correcta
+ sincronización de los distintos procesos activos en los accesos a los recursos
+ que comparten.
+\layout Standard
+
+El uso de variables compartidas es una forma sencilla y habitual de comunicación
+ entre procesos interactivos.
+ Cuando un conjunto de procesos tiene acceso a un espacio común de direcciones,
+ se pueden utilizar variables compartidas para una serie de cometidos como,
+ por ejemplo, indicadores de señalización o contadores.
+ Sin embargo, la actualización de variables compartidas puede conducir a
+ inconsistencias; por esta razón, cuando se utilicen hay que asegurarse
+ de que los procesos acceden a ellas debidamente ordenados.
+\layout Standard
+
+
+\begin_inset Float figure
+placement htbp
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/SSOO_fig_1_17.eps
+	display color
+	scale 60
+	rotateOrigin center
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{Gestion de procesos}
+
+\end_inset 
+
+Gestión de procesos
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Float algorithm
+wide false
+collapsed false
+
+\layout Caption
+
+Productor y Servidor
+\layout Standard
+
+
+\family typewriter 
+Productor(TipoElemento e){
+\layout Standard
+
+
+\family typewriter 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+actual=cont;
+\layout Standard
+
+
+\family typewriter 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+ponerElementoEnCola(e);
+\layout Standard
+
+
+\family typewriter 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+cont=actual+1;
+\layout Standard
+
+
+\family typewriter 
+}
+\layout Standard
+
+
+\family typewriter 
+TipoElemento Servidor(){
+\layout Standard
+
+
+\family typewriter 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+actual=cont;
+\layout Standard
+
+
+\family typewriter 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+cont=actual-1;
+\layout Standard
+
+
+\family typewriter 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+TipoElemento e = obtenerElementoCola();
+\layout Standard
+
+
+\family typewriter 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+devolver(e);
+\layout Standard
+
+
+\family typewriter 
+}
+\end_inset 
+
+
+\layout Standard
+
+Una posible ejecución sería:
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+CORREGIR
+\end_inset 
+
+
+\layout Enumerate
+
+Llega el proceso 1 y se ejecuta hasta actual (actual=3)
+\layout Enumerate
+
+El flujo de ejecución se pone en proceso 2 por la razón que sea.
+ Y toma actual y lo pone a 4, lo que hará también proceso 1 cuando le vuelva.
+\layout Description
+
+Pregunta ¿Se permite cambio de contexto en esta situación? 
+\layout Description
+
+Respuesta Sí, mientras que las variable de la región crítica no se vean
+ amenzadas.
+\layout Standard
+
+La actualización de una variable compartida puede ser considerada como una
+ sección crítica.
+ Cuando se permita la entrada de un proceso en una de estas secciones críticas,
+ dicho proceso deberá completar todas las instrucciones que consituyen su
+ región crítica antes de que se permita la entrada a otro proceso a la suya.
+ De este manera, sólo el proceso que ejecuta la sección crítica tiene permitido
+ el acceso a la variable compartida.
+ Los restantes proceso tendrán prohibido el acceso a dicha variable quedando
+ en situación de bloqueado si intentan acceder a su región crítica.
+ Aesta forma de acceso se la denomina 
+\emph on 
+acceso en exclusión
+\begin_inset LatexCommand \index{acceso en exclusión mutua}
+
+\end_inset 
+
+ mutua
+\emph default 
+.
+ El acceso en exclusión mutua es una forma de acceso en la que un proceso
+ excluye temporalmente a todos los demás de utilizar un recurso compartido
+ con el fin de asegurar la integridad del sistema.
+ Si el recurso compartido es una variable, la exclusión mutua asegura que,
+ como máximo, un proceso tendrá acceso a ella durante las actualizaciones
+ críticas
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+Grabar a fuego
+\end_inset 
+
+.
+ En el caso de compartir dispositivos, la exclusión mutua es mucho más obvia
+ si se consideran los problemas que pueden derivarse de su uso incontrolado.
+ Una solución para la exclusión mutua deberá garantizar que se cumplen los
+ siguientes requisitos
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+Estos 4 principios son muy importantes!
+\end_inset 
+
+:
+\layout Enumerate
+
+Asegurar la exclusión mutua entre los procesos al acceder al recurso compartido.
+\layout Enumerate
+
+No establecer suposiciones con respecto a las velocidades y prioridades
+ relativas de los procesos en conflicto.
+\layout Enumerate
+
+Garantizar que la terminación de cualquier proceso fuera de su región crítica
+ no afecta a la capacidad del resto de procesos contendientes para acceder
+ a los recursos compartidos.
+\layout Enumerate
+
+Cuando más de un proceso desee entrar en su región crítica, se deberá conceder
+ la entrada a uno de ellos en tiempo finito.
+ Evitar interbloqueos.
+\layout Section
+
+Soluciones software para la exclusión mutua
+\layout Subsection
+
+Algoritmo de Dekker
+\layout Subsubsection
+
+Primer intento
+\layout Standard
+
+
+\begin_inset Float algorithm
+wide false
+collapsed false
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{dekker1}
+
+\end_inset 
+
+Algoritmo de Dekker
+\layout Standard
+
+
+\size footnotesize 
+
+\begin_inset Include \verbatiminput{codigo/Dekker1.pas}
+preview false
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+Este algoritmo garantiza la exclusión mutua.
+ Si dos procesos con distinto ritmo de ejecución, compiten por la región
+ crítica se adoptará el ritmo del proceso más lento.
+ El otro problema viene dado por que si un proceso falla tanto dentro como
+ fuera de su sección crítica, el otro proceso queda bloqueado indefinidamente.
+\layout Standard
+
+Preguntas asociadas al algoritmo 
+\begin_inset LatexCommand \ref{dekker1}
+
+\end_inset 
+
+:
+\layout Itemize
+
+¿un proceso puede ejecutar dos veces seguidas su sección crítica?.
+ No, puesto que en cuanto acaba una ejecución, le pasa el turno al otro
+ proceso.
+\layout Itemize
+
+¿si un proceso se cae fuera de su región crítica, afecta al funcionamiento
+ del otro proceso?.
+ Sí, ya que la variable turno se queda a 1 y el otro proceso nunca tendría
+ la condición para ejecutar su sección crítica.
+ Esto ocurre aunque el proceso1 haya logrado cambiar turno a 0, porque una
+ vez que el proceso0 ejecuta y cambia turno a 1, no encuentra respuesta
+ en el otro proceso.
+\layout Itemize
+
+¿Que ritmo se sigue cuando los dos procesos tardan tiempos diferentes? Se
+ utiliza el ritmo del más lento, ya que es el que va marcando los tiempos
+ de finalizado de procesos.
+\layout Subsubsection
+
+Segundo intento
+\layout Standard
+
+
+\begin_inset Float algorithm
+wide false
+collapsed false
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{dekker2}
+
+\end_inset 
+
+Algoritmo de Dekker, segundo intento
+\layout Standard
+
+
+\size footnotesize 
+
+\begin_inset Include \verbatiminput{codigo/Dekker2.pas}
+preview false
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+En el algoritmo 
+\begin_inset LatexCommand \ref{dekker2}
+
+\end_inset 
+
+ sí se pueden regiones críticas de un proceso consecutivamente.
+ Si un proceso se cae en la región crítica, afectará a la ejecución del
+ otro, pero si ocurre en <resto de código>
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+mejorar redacción
+\end_inset 
+
+, no afecta al otro.
+ Sin embargo, no garantiza la exclusión mutua ya que dependemos de la rapidez
+ relativa de ejecución de turno[0]:=true y turno[1]:=true.
+\layout Subsubsection
+
+Tercer intento
+\layout Standard
+
+
+\begin_inset Float algorithm
+wide false
+collapsed false
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{dekker3}
+
+\end_inset 
+
+Algoritmo de Dekker, tercer intento
+\layout Standard
+
+
+\size footnotesize 
+
+\begin_inset Include \verbatiminput{codigo/Dekker3.pas}
+preview false
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+En el algoritmo 
+\begin_inset LatexCommand \ref{dekker3}
+
+\end_inset 
+
+ se cumplen todas las condiciones saludables.
+ Pero una caída en la región crítica bloquea al otro proceso
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+¿esto es bueno o no?
+\end_inset 
+
+.
+ En una ejecución estrictamente paralela, los dos procesos se ponen a true,
+ de forma que ninguno de ellos puede continuar (se quedan en el bloqueo
+ del do {nada} esperando indefinidamente).
+ Esto se denomina interbloqueo
+\begin_inset LatexCommand \index{interbloqueo}
+
+\end_inset 
+
+.
+\layout Subsubsection
+
+Cuarto intento
+\layout Standard
+
+
+\begin_inset Float algorithm
+wide false
+collapsed false
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{dekker3}
+
+\end_inset 
+
+Algoritmo de Dekker, cuarto intento
+\layout Standard
+
+
+\size footnotesize 
+
+\begin_inset Include \verbatiminput{codigo/Dekker4.pas}
+preview false
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+En este algoritmo no se produce interbloqueo ya que ambos blabñabña analizar
+ código en casa calentito.
+ Se sigue dando ese proble
+\layout Subsubsection
+
+Intento final
+\layout Standard
+
+
+\begin_inset Float algorithm
+wide false
+collapsed false
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{dekkerfinal}
+
+\end_inset 
+
+Algoritmo de Dekker, intento final
+\layout Standard
+
+
+\size footnotesize 
+
+\begin_inset Include \verbatiminput{codigo/Dekkerf.pas}
+preview false
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+En este caso un proceso puede ejecutar consecutivamente regiones críticas.
+ Además, se previene el interbloqueo y aunque un proceso se caiga fuera
+ de la región crítica no afecta al otro.
+ Si se cae en región crítica, el otro queda bloqueado.
+ Se cumple exclusión mutua.
+\layout Subsection
+
+Algoritmo de Peterson
+\layout Standard
+
+
+\begin_inset Float algorithm
+wide false
+collapsed false
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{Peterson1}
+
+\end_inset 
+
+Algoritmo de Peterson
+\layout Standard
+
+
+\size footnotesize 
+
+\begin_inset Include \verbatiminput{codigo/Dekkerf.pas}
+preview false
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+Este algoritmo garantiza la exclusión mutua debido al uso de una variable
+ compartida, turno, que se chequea cada vez.
+\layout Subsection
+
+Semáforos
+\layout Standard
+
+Los semáforos pueden contemplarse como variables que tienen un valor entero
+ sobre las que se definen las tres operaciones siguientes:
+\layout Itemize
+
+Un semáforo puede inicializarse con un valor no negativo.
+\layout Itemize
+
+La operación WAIT decrementa el valor del semáforo.
+ Si el valor se hace negativo, el proceso que ejecuta WAIT queda bloqueado.
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+Importantísimo
+\end_inset 
+
+
+\layout Itemize
+
+La operación SIGNAL incrementa el valor del semáforo.
+ Si el valor no es positivo, se desbloquea a un proceso bloqueado previamente
+ por una operación WAIT.
+\layout Standard
+
+Veamos cuál sería la implementación de un semáforo.
+\layout Standard
+
+
+\begin_inset Float algorithm
+wide false
+collapsed false
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{Semaforos1}
+
+\end_inset 
+
+Semáforos
+\layout Standard
+
+
+\size footnotesize 
+
+\begin_inset Include \verbatiminput{codigo/semaforo.pas}
+preview false
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+En cualquier instante, el valor de s.contador puede interpretarse como sigue.
+ Si s.contador es mayor o igual que 0, indica el número de procesos que pueden
+ ejecutar WAIT sobre el semáforo sin quedar bloqueados.
+ Si s.contador es menor estricto que 0, su valor absoluto es el número de
+ procesos bloqueados en la cola del semáforo.
+\layout Description
+
+ejemplo Inicializamos un semáforo a 3.
+ Llega tres procesos y ejecutan WAIT, que hace que baje el contador a 0.
+ El cuarto, coloca el contador a -1 y se queda bloqueado.
+ Llega un quinto, coloca el contador a -2 y se bloquea.
+ Si un proceso hace SIGNAL, el contador se ve incrementado en uno.
+\layout Standard
+
+Las primitivas WAIT y SIGNAL son atómicas, es decir, no pueden ser interrumpidas
+ y cada rutina puede considerarse indivisible.
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+Importantísimo
+\end_inset 
+
+
+\layout Standard
+
+Un semáforo binario es aquél que sólo puede tomar los valores 0 y 1.
+ Su implementación es muy sencilla y podemos realizarla a partir del algoritmo
+ 
+\begin_inset LatexCommand \ref{Semaforos1}
+
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Float algorithm
+wide false
+collapsed false
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{SemaforoBinario}
+
+\end_inset 
+
+Semáforos binarios
+\layout Standard
+
+
+\size footnotesize 
+
+\begin_inset Include \verbatiminput{codigo/semaforobinario.pas}
+preview false
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+Si ni hay ningún proceso en la cola de bloqueados, SIGNAL 'activa' el interrputo
+r, es decir, coloca s.valor a 1.
+\layout Standard
+
+Lo siguiente que veremos es cómo implementar una región crítica con un semáforo.
+\layout Standard
+
+
+\begin_inset Float algorithm
+wide false
+collapsed false
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{SeccionCriticaConSemaforo}
+
+\end_inset 
+
+Implementación de una sección crítica con semáforo
+\layout Standard
+
+
+\size footnotesize 
+
+\begin_inset Include \verbatiminput{codigo/regioncriticaconsemaforo.pas}
+preview false
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+A continuación veremos una solución al problema de productores-consumidores
+ con la restricción de disponer de un 
+\emph on 
+buffer
+\emph default 
+ finito o limitado.
+ Podemos considerar que este problema tiene las siguientes especificaciones:
+\layout Itemize
+
+El número de elementos contenidos en un momento dado en el 
+\emph on 
+buffer
+\emph default 
+ vendrá dado por la siguiente expresión.
+ 
+\begin_inset Formula \[
+nDatos=Producidos-Consumidos\]
+
+\end_inset 
+
+
+\begin_deeper 
+\layout Standard
+
+Teniendo en cuenta que el 
+\emph on 
+buffer
+\emph default 
+ tendrá una capacidad finita, siempre se verificará que 
+\begin_inset Formula $0\leq nDatos\leq capacidad$
+\end_inset 
+
+.
+ 
+\end_deeper 
+\layout Itemize
+
+Un proceso productor sólo podrá ejecutarse cuando 
+\begin_inset Formula $nDatos<capacidad$
+\end_inset 
+
+ y un proceso consumidor cuando 
+\begin_inset Formula $nDatos>0$
+\end_inset 
+
+.
+ Una cuestión adicional es que se va a implementar el 
+\emph on 
+buffer
+\emph default 
+ de una forma circular.
+ Contaremos con dos punteros denotados por ENT y SAL que apuntarán respectivamen
+te al siguiente hueco donde producir y al siguiente elemento que consumir.
+\layout Standard
+
+
+\begin_inset Float algorithm
+wide false
+collapsed false
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{prod_consum}
+
+\end_inset 
+
+Productores/consumidores
+\layout Standard
+
+
+\size footnotesize 
+
+\begin_inset Include \verbatiminput{codigo/productores_consumidores.pas}
+preview false
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+La idea es tener 
+\begin_inset Formula $n$
+\end_inset 
+
+ productores y 
+\begin_inset Formula $n$
+\end_inset 
+
+ consumidores a la vez para que produzcan y consuman en concurrencia.
+\layout Subsection
+
+Monitores
+\layout Standard
+
+Un monitor es, esencialmente, una colección de datos y de procedimientos
+ para su manipulación junto con una secuencia de inicialización.
+ Las variables de datos globales son generalmente privadas al monitor por
+ lo que sólo son accesibles a los procedimientos de éste.
+ Los procedimientos del monitor podrán ser públicos o privados.
+ Un monitor puede considerarse como una estructura estática que se activa
+ únicamente cuando alguno de sus procedimientos públicos es llamado por
+ un proceso en ejecución y se dice, entonces, que el proceso en cuestión
+ entra o tiene acceso al monitor.
+\layout Standard
+
+Solamente un proceso puede estar ejecutándose en el monitor en un instante
+ determinado
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+importante
+\end_inset 
+
+.
+ Una estructura de datos compartida puede así protegerse situándola dentro
+ de un monitor que ofrecerá un servicio de exclusión mutua para dicha estructura.
+ Para que resulten útiles en el procesamiento concurrente, los monitores
+ deben incluir alguna herramienta de sincronización de forma que se impida
+ el acceso al monitor a un proceso cuando otro está ejecutando dentro de
+ él.
+ Esta sincronización se consigue por medio de unas variables de condición
+ que se incluyen en el monitor y que sólo son accesibles dentro de él.
+ A diferencia de los semáforos, estas variables de condición no toman valor
+ true o false ni ninguno otro sino que constituyen una cola con procesos
+ en espera
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+repasar esto
+\end_inset 
+
+.
+ Para trabajar con estas variables de condición se establecen las mismas
+ primitivas que para los semáforos.
+ Así, la primitiva 
+\series bold 
+wait 
+\series default 
+suspende la ejecución de un proceso bajo una determinada condición con lo
+ que el monitor quedaría disponible para ser utilizado por otro proceso.
+ La primitiva 
+\series bold 
+signal
+\series default 
+ reanudaría la ejecución de un proceso bloqueado en una determinada variable
+ de condición.
+\layout Standard
+
+Una característica básica de los monitores es proporcionar control sobre
+ las operaciones realizadas sobre los elementos compartidos con el fin de
+ prevenir actuaciones dañinas o sin significado.
+ De esta forma, se limitan los tipos de actuaciones proporcionando un conjunto
+ de procedimientos de manipulación fiables y bien probados.
+ Los monitores avanzan un paso en este sentido haciendo los datos críticos
+ accesibles indirecta y exclusivamente mediante un conjunto de procedimientos
+ públicos disponibles.
+\layout Standard
+
+Los monitores encapsulan los datos utilizados por los procesos concurrentes
+ y permiten su manipulación sólo por medio de operaciones adecuadas y sincroniza
+das.
+ Nunca existirá peligro de actualización inconsistente por entrelazamiento
+ de llamadas concurrentes ya que los procesos del monitor siempre se ejecutarán
+ en exclusión mutua.
+\layout Standard
+
+
+\begin_inset Float algorithm
+wide false
+collapsed false
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{implementacionMonitor}
+
+\end_inset 
+
+Implementación de un monitor
+\layout Standard
+
+
+\size footnotesize 
+
+\begin_inset Include \verbatiminput{codigo/monitor1.pas}
+preview false
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+Veremos a continuación el problema de productores/consumidores utilizando
+ un monitor.
+\layout Standard
+
+
+\begin_inset Float algorithm
+wide false
+collapsed false
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{ProdConsMonitor}
+
+\end_inset 
+
+Implementación del problema de Productores/Consumidores utilizando un monitor
+\layout Standard
+
+
+\size footnotesize 
+
+\begin_inset Include \verbatiminput{codigo/productores_consumidores_monitor.pas}
+preview false
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Subsection
+
+Paso de mensajes
+\layout Standard
+
+Los mensajes constituyen un mecanismo relativamente sencillo y adecuado
+ tanto para la comunicación como para la sincronización entre procesos que
+ trabajan en entornos centralizados o entornos distribuidos.
+ En esencia, un mensaje es una colección de información que puede ser intercambi
+ada entre un proceso emisor y un proceso receptor.
+\layout Standard
+
+Un mensaje puede contener datos, órdenes de ejecución e, incluso, código
+ a transmitir entre dos o más procesos.
+ Aunque, en general, el contenido de un mensaje quedará dividido en dos
+ campos bien separados; Por un lado, la cabecera -que habitualmente tiene
+ un formato fijo para cada sistema operativo- y, por otro lado, el cuerpo
+ del mensaje -que contiene el mensaje en sí y cuya longitud puede variar
+ incluso dentro de un mismo SO.
+ Las operaciones de mensaje típicas proporcionadas por el SO son: 
+\series bold 
+enviar (send)
+\series default 
+ y 
+\series bold 
+recibir (receive)
+\series default 
+.
+ Las implementaciones del envío y recepción de mensajes pueden diferir en
+ una serie de detalles pero todas ellas mantienen la importancia de un conjunto
+ de cuestiones que son:
+\layout Enumerate
+
+Denominación o direccionamiento: Utilizar una denominación directa significa
+ que cuando se invoca una operación de mensaje cada emisor debe designar
+ el receptor específico y a la inversa, cada receptor debe designar a la
+ fuente desde la cual desea recibir el mensaje.
+ send(B, mensaje) y receive(A,mensaje).
+\begin_deeper 
+\layout Standard
+
+Un método alternativo es la comunicación indirecta de mensajes donde éstos
+ son enviados y recibidos a través de dispositivos especializados dedicados
+ a este fin.
+ Estos dispositivos se suelen denominar 
+\emph on 
+buzones
+\begin_inset LatexCommand \index{buzones}
+
+\end_inset 
+
+
+\emph default 
+ debido a su modo de funcionamiento.
+ send(buzon,mensaje) receive(buzon,mensaje).
+\end_deeper 
+\layout Enumerate
+
+Copia: El intercambio de mensajes entre dos procesos, por definición, transfiere
+ el contenido del mensaje desde el espacio de direcciones del emisor al
+ espacio de direcciones del receptor.
+ Esto puede lograrse copiando todo el mensaje de un espacio de direcciones
+ a otro, o bien, simplemente, pasando un puntero al mensaje entre los dos
+ procesos, en otras palabras, la transferencia del mensaje puede ser por
+ valor o por referencia.
+ En sistemas distribuidos que no disponen de memoria compartida la copia
+ es inevitable mientras que en sistemas centralizados el compromiso está
+ entre seguridad y eficiencia.
+\layout Enumerate
+
+Intercambio síncrono 
+\emph on 
+vs
+\emph default 
+ intercambio asíncrono: Cuando un intercambio de mensajes es síncrono, tanto
+ el emisor como el receptor deben proceder juntos para completar la transferenci
+a.
+ En sistemas síncronos la operación de envío es bloqueante, es decir, cuando
+ un proceso emisor desea enviar un mensaje para el que no se ha emitido
+ el correspondiente 
+\series bold 
+receive()
+\series default 
+ por parte del proceso receptor.
+ El emisor quedará bloqueado hasta que el receptor acepte el mensaje.
+ Como consecuencia sólo puede haber un mensaje pendiente como máximo por
+ cada emisor/receptor 
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+pregunta de examen
+\end_inset 
+
+.
+ En el intercambio asíncrono de mensajes, el emisor no queda bloqueado cuando
+ no hay un 
+\series bold 
+receive()
+\series default 
+ pendiente.
+ El envío en un sistema asíncrono se implementa haciendo que el SO almacene
+ temporalmente los mensajes pendientes hasta que se emita el correspondiente
+ 
+\series bold 
+receive()
+\series default 
+.
+ Como resultado, el proceso emisor puede continuar su ejecución después
+ de enviar un mensaje y no necesita quedar bloqueado.
+\begin_deeper 
+\layout Standard
+
+Un problema común a ambas implementaciones es el 
+\emph on 
+aplazamiento indefinido
+\emph default 
+ que tiene lugar cuando un mensaje se envía pero nunca se recibe.
+ Una aproximación para resolver este problema consiste en especificar un
+ límite de tiempo dentro del cual debe completarse un intercambio de mensajes
+ particulares.
+\end_deeper 
+\layout Enumerate
+
+Longitud: La última cuestión en cuanto al diseño de los mensajes es si éstos
+ deberían tener una longitud fija o variable.
+ Los mensajes de tamaño fijo producen generalmente una baja carga de proceso
+ en virtud de que permiten que los 
+\emph on 
+buffers
+\emph default 
+ del sistema sean también de tamaño fijo, lo que hace su asignación bastante
+ sencilla y eficaz.
+ El problema es que los mensajes utilizados para comunicación tienen tamaños
+ variados, con lo que los diferentes tamaños deberán ser adaptados a un
+ único tamaño fijo con el consiguiente desaprovechamiento de parte del espacio
+ para los mensajes más cortos.
+\layout Standard
+
+
+\begin_inset Float algorithm
+wide false
+collapsed false
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{ProdConsMensajes}
+
+\end_inset 
+
+Implementación del problema de Productores/Consumidores utilizando mensajes
+\layout Standard
+
+
+\size footnotesize 
+
+\begin_inset Include \verbatiminput{codigo/productores_consumidores_mensajes.pas}
+preview false
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Subsection
+
+Soluciones hardware para la exclusión mutua
+\layout Standard
+
+Antes de discutir estrategias hardware específicas debemos indicar que todas
+ ellas pueden caracterizarse de forma genérica como, esencialmente, 
+\emph on 
+pesimistas
+\emph default 
+ u 
+\emph on 
+optimistas
+\emph default 
+.
+\layout Standard
+
+Las 
+\series bold 
+estrategias pesimistas
+\series default 
+ tienden a suponer el peor caso y a defenderse contra él tomando mediadas
+ relativamente drásticas que terminan por limitar la concurrencia del sistema.
+\layout Standard
+
+Suponiendo la actualización de una variable global compartida o de una variable
+ semáforo, una solución pesimista típica puede actuar del siguiente modo:
+\layout Enumerate
+
+Bloquear todo aquello que presumiblemente puede interrumpir, de modo que
+ nada pueda interferir.
+\layout Enumerate
+
+Actualización de la variable global.
+\layout Enumerate
+
+Desbloqueo de la parte del sistema bloqueada en el primer paso.
+\layout Standard
+
+Las 
+\series bold 
+estrategias optimistas
+\series default 
+ se basan en la suposición de que lo probable es que no haya conflicto o
+ que se experimenten muy pocos por parte de los usuarios del recurso compartido.
+ Consiguientemente se suelen consentir referencias bastante permisivas a
+ los datos compartidos.
+\layout Standard
+
+Cuando se presumen conflictos las estrategias optimistas mantienen la integridad
+ del sistema descartando las actualizaciones invalidadas por los procesos
+ concurrentes contendientes, esto generalmente implica una parcial vuelta
+ atrás en el estado del sistema y rehacer parte de las actualizaciones afectadas.
+\layout Standard
+
+Una solución optimista típica puede estructurarse del siguiente modo:
+\layout Enumerate
+
+Lectura de la variable global y preparación de la actualización local tentativa
+ basada en ese valor de forma que la variable global permanece durante ese
+ tiempo accesible a los restantes usuarios.
+\layout Enumerate
+
+Comparar el valor actual de la variable global con el valor utilizado para
+ preparar la actualización tentativa.
+ Si el valor de la variable global no ha sido modificado se estará en condicione
+s de aplicar la actualización local tentativa a la variable global, en caso
+ contrario, es decir si la variable global ha sido modificada mientras tanto
+ haciendo que quede obsoleta la actualización preparada se descartará dicha
+ actualización tentativa y deberá repetirse el paso 1.
+\layout Subsubsection
+
+Primera solución: habilitación/deshabilitación de interrupciones
+\layout Standard
+
+La idea básica de este mecanismo sigue el principio de que el recurso debe
+ ser obtenido en exclusividad por el proceso que desea entrar a su sección
+ crítica y posteriormente liberado para su uso por el resto de procesos.
+ Esto puede conseguirse mediante la siguiente secuencia:
+\layout LyX-Code
+
+DI; deshabilitar interrupciones
+\layout LyX-Code
+
+sección crítica
+\layout LyX-Code
+
+EI; habilitar interrupciones
+\layout Standard
+
+El propósito de deshabilitar interrupciones es evitar cualquier interferencia
+ de interrupción durante la sección crítica.
+ Este mecanismo resulta sencillo pero implementa una filosofía pesimista
+ en cuanto que impide toda concurrencia cada vez que un proceso va a utilizar
+ un recurso compartido.
+ De esta forma se deshabilita no sólo a los procesos que compiten para acceder
+ al recurso, sino también a todos los procesos restantes que nada tienen
+ que ver con ellos.
+ Además este mecanismo no es en absoluto adecuado para sistemas multiprocesadore
+s donde no garantiza la exclusión mútua.
+\layout Subsubsection
+
+Instrucción Comprobar y Fijar (Test and Set)
+\begin_inset LatexCommand \index{Test and Set}
+
+\end_inset 
+
+
+\layout Standard
+
+Esta instrucción está pensada para dar soporte hardware directo a la exclusión
+ mutua.
+ Está diseñada para resolver conflictos entre procesos contendientes haciendo
+ posible que solo uno de ellos reciba permiso para entrar en su sección
+ crítica.
+ La idea básica es fijar una variable de control global al valor libre cuando
+ esté disponible el recurso compartido asociado a ella.
+ Cada proceso que desee acceder a este recurso debe obtener el correspondiente
+ permiso ejecutando la instrucción 
+\emph on 
+Test and Set
+\emph default 
+ con la variable de control asociada como operando.
+ el funcionamiento de la instruccion 
+\emph on 
+Test and Set
+\emph default 
+ es como sigue:
+\layout LyX-Code
+
+TS operando;
+\layout Enumerate
+
+Se compara el valor del operando con 
+\family typewriter 
+ocupado
+\family default 
+ y se modifican los códigos de condición correspondientes para que reflejen
+ el resultado de esta comparación.
+\layout Enumerate
+
+Si el estado del operando es libre entonces TS lo pone a 
+\family typewriter 
+ocupado
+\family default 
+.
+ 
+\layout Standard
+
+Una característica fundamental es que los dos pasos descritos se realizan
+ en una única operación indivisible.
+\layout Standard
+
+Vemos la implementación de la operación 
+\family typewriter 
+wait
+\family default 
+ de los semáforos con una sentencia TS.
+\layout LyX-Code
+
+wait: TS S
+\layout LyX-Code
+
+      BNF
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+
+\family typewriter 
+BNF
+\family default 
+ es Branch if Not Free (saltar si no está ocupado)
+\end_inset 
+
+ wait
+\layout LyX-Code
+
+      RETURN
+\layout Subsubsection
+
+Instrucción Comparar e Intercambiar (compare and swap)
+\layout Standard
+
+La instrucción compare and swap (CS) sigue una estrategia optimista para
+ resolver el problema de la exclusión mutua.
+ Esta instrucción no está pensada para implementar directamente operaciones
+ de semáforos, sino para la actualización consistente de variables globales
+ en presencia de actividad concurrente.
+ CS tiene tres operandos.
+ 
+\layout Itemize
+
+Un registro que contiene el valor de la variable global en el cual se basa
+ la actualización tentativa (VIEJOREG).
+ 
+\layout Itemize
+
+Un registro que contiene la actualización tentativa (NUEVOREG).
+\layout Itemize
+
+La dirección de la variable global en cuestión (VARGLOB).
+\layout Standard
+
+CS consta de las siguiente secuencia de pasos que se ejecuta como una operación
+ única e indivisible:
+\layout Standard
+
+
+\begin_inset Float algorithm
+wide false
+collapsed false
+
+\layout Caption
+
+Actualización consistente de variables globales en actividad concurrente
+\layout Standard
+
+
+\begin_inset Include \verbatiminput{codigo/CS.codigo}
+preview false
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+Veamos un ejemplo de uso con TS, otro con CS
+\layout Standard
+
+
+\begin_inset Float algorithm
+wide false
+collapsed false
+
+\layout Caption
+
+Ejemplo de uso con TS
+\layout Standard
+
+
+\begin_inset Include \verbatiminput{codigo/TS_ejemplo.codigo}
+preview false
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Float algorithm
+wide false
+collapsed false
+
+\layout Caption
+
+Ejemplo de uso con CS
+\layout Standard
+
+
+\begin_inset Include \verbatiminput{codigo/TS_ejemplo.codigo}
+preview false
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Subsubsection
+
+El problema de la cena de los filósofos
+\layout Standard
+
+Tenemos una cena muy especial a la que hemos invitado a la cena de los filósofos
+, que o comen o piensan, pero nunca a la vez.
+ El problema es que les hemos preparado espaguetis y necesitan dos tenedores
+ para comer, pero sólo le han colocado uno.
+ El filósofo que consiga un tenedor de un compañero, podrá comer.
+\layout Standard
+
+La implementación es como sigue:
+\layout Standard
+
+
+\begin_inset Float algorithm
+wide false
+collapsed false
+
+\layout Caption
+
+Cena de Filósofos
+\layout Standard
+
+
+\begin_inset Include \verbatiminput{codigo/cena_de_filosofos.pas}
+preview false
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+Si los cuatro filósofos cogen sus tenedores a la vez, se quedarán interbloqueado
+s.
+ Para resolver este problema, dejaremos sólo 
+\begin_inset Formula $n-1$
+\end_inset 
+
+ filósofos a la mesa.
+ De esta forma, siempre habrá al menos uno que pueda comer.
+ ¿Cómo afecta esto a la implementación? Añadimos un semáforo general para
+ controlar los filósofos que entran en la habitación.
+\layout Standard
+
+
+\begin_inset Float algorithm
+wide false
+collapsed false
+
+\layout Caption
+
+Cena de Filósofos con habitación
+\layout Standard
+
+
+\begin_inset Include \verbatiminput{codigo/cena_de_filosofos_con_semaforogeneral.pas}
+preview false
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Description
+
+ejercicio\SpecialChar ~
+propuesto en un sistema tenemos tres procesos A,B y C.
+ La región crítica de cada proceso consiste simplemente en escribir 
+\begin_inset Quotes eld
+\end_inset 
+
+soy el proceso X
+\begin_inset Quotes erd
+\end_inset 
+
+.
+ Queremos conseguir que el orden de ejecución sea el siguiente: ABC, ABC,
+ ABC, ABC, ABC.
+ (eso es lo que ha de salir por pantalla).
+\layout Standard
+
+
+\begin_inset Float algorithm
+wide false
+collapsed false
+
+\layout Caption
+
+Solución al ejercicio propuesto 
+\begin_inset Quotes eld
+\end_inset 
+
+ABC
+\begin_inset Quotes erd
+\end_inset 
+
+ para los procesos a, b y c
+\layout Standard
+
+
+\begin_inset Include \verbatiminput{codigo/abc.pas}
+preview false
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Description
+
+
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+FALTA UNA PARTE DEL PRINCIPIO DE LA CLASE
+\end_inset 
+
+
+\the_end

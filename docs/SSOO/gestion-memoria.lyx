@@ -1,0 +1,1313 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass scrbook
+\language english
+\inputencoding auto
+\fontscheme pslatex
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Chapter
+
+Gestión de memoria
+\layout Section
+
+Reubicación
+\layout Standard
+
+El término reubicabilidad de programa se refiere a la capacidad de cargar
+ y ejecutar un programa determinado en una posición arbitraria de memoria
+ en contraposición a un conjunto fijo de posiciones especificadas durante
+ la compilación de dicho programa.
+ Las instrucciones de un proceso cargado en memoria contendrán referencias
+ a posiciones de memoria de dos tipos:
+\layout Enumerate
+
+Referencias a datos empleados en instrucciones de carga, almacenamiento
+ y algunas instrucciones aritmético-lógicas.
+\layout Enumerate
+
+Referencias a otras instrucciones empleadas fundamentalmente en bifurcaciones
+ de control de flujo o en instrucciones de llamadas.
+\layout Standard
+
+Ambos tipos de direcciones no serán fijas durante todo el periodo de permanencia
+ del proceso en el sistema, sino que pueden variar si el proceso es suspendido
+ y cargado posteriormente en memoria o, simplemente, si es desplazado dentro
+ de ésta.
+\layout Standard
+
+Distinguiremos, pues, entre dos tipos de direcciones:
+\layout Enumerate
+
+Una dirección lógica o virtual es un identificador utilizado para referenciar
+ información dentro del espacio de direcciones de un programa y, por tanto,
+ es independiente de la asignación actual de datos a memoria debiéndose
+ realizar una traducción a dirección física antes de poder realizar un acceso
+ a memoria.
+\layout Enumerate
+
+Una dirección física o absoluta designa una posición real de memoria física
+ donde se almacena información en tiempo de ejecución
+\layout Standard
+
+Dependiendo de cómo y cuándo tenga lugar la traducción del espacio de direccione
+s virtuales al espacio de direcciones físicas en un esquema de reubicación
+ determinado, pueden considerarse dos tipos básicos de estrategias: Reubicación
+ estática y reubicación dinámica.
+\layout Description
+
+Reubicación\SpecialChar ~
+estática
+\begin_inset LatexCommand \index{reubicación estática}
+
+\end_inset 
+
+ Implica generalmente que la reubicación es realizada antes o durante la
+ carga del proceso en memoria.
+ Las constantes (valores literales), los desplazamientos relativos al PC,
+ no dependen de esta condición y no necesitan ser ajustados durante la reubicaci
+ón.
+\layout Description
+
+Reubicación\SpecialChar ~
+dinámica
+\begin_inset LatexCommand \index{reubicación dinámica}
+
+\end_inset 
+
+ Implica que la correspondencia entre el espacio de direcciones virtuales
+ y el espacio de direcciones físicas se efectúa en tiempo de ejecución.
+ Usualmente con asistencia del hardware.
+ Cuando el proceso en cuestión está siendo ejecutado, todas sus referencias
+ a memoria son reubicadas durante la ejecución antes de acceder realmente
+ a la memoria física.
+ Este proceso se suele implementar por medio de registros base especializados.
+\layout Standard
+
+A continuación veremos el mecanismo hardware que posibilita tanto la reubicación
+ dinámica como la protección.
+ Esta última consiste en impedir el acceso de un proceso a un espacio de
+ direcciones que no le corresponde.
+\layout Standard
+
+El 
+\series bold 
+registro base
+\series default 
+
+\begin_inset LatexCommand \index{registro base}
+
+\end_inset 
+
+ contiene la dirección de carga del proceso y el 
+\series bold 
+registro límite
+\series default 
+
+\begin_inset LatexCommand \index{registro límite}
+
+\end_inset 
+
+ contiene la última dirección correspondiente al espacio de memoria asignado
+ al proceso.
+\layout Standard
+
+
+\begin_inset Float figure
+placement htbp
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/SSOO_fig_6_1.eps
+	display color
+	rotateOrigin center
+
+\end_inset 
+
+
+\layout Caption
+
+Esquema Hardware que da soporte a...
+ de direcciones
+\end_inset 
+
+
+\layout Section
+
+Asignación de memoria con particiones fijas
+\layout Standard
+
+En la mayoría de los esquemas de gestión de memoria se puede suponer que
+ el SO ocupa una parte de la memoria principal y que el resto de la memoria
+ está disponible para ser utilizada por los procesos de usuario.
+ El esquema más sencillo de gestión de la memoria es dividirla en regiones
+ con límites fijos.
+ Una posibilidad es emplear particiones fijas de igual tamaño, en este caso
+ cualquier proceso con tamaño menor o igual al tamaño de la partición puede
+ cargarse en cualquier partición libre, si todas las particiones están ocupadas
+ el SO puede sacar un proceso de alguna de ellas y cargar otro.
+ La utilización de particiones fijas plantea dos dificultades:
+\layout Enumerate
+
+Un programa puede ser demasiado grande para caber en una partición, en ese
+ caso el programador debe diseñar el programa mediante superposiciones para
+ que solo una parte del programa estñe en memoria principal en cada instante.
+ Cuando se necesita un módulo que no esa presente el programa de usuario
+ debe cargar dicho módulo en la partición del programa superponiéndolo a
+ los programas y datos que se encuentren en él.
+\layout Enumerate
+
+El uso de la memoria principal es extremadamente ineficiente, ya que cualquier
+ programa sin importar lo pequeño que sea ocupará una partición completa.
+ Este fenómeno donde se desperdician espacio interno de una partición porque
+ el bloque de proceso que es más pequeño que ella se denomina 
+\series bold 
+fragmentación interna
+\series default 
+
+\begin_inset LatexCommand \index{fragmentación interna}
+
+\end_inset 
+
+.
+\layout Standard
+
+Con particiones del mismo tamaño la ubicación de un proceso en memoria resulta
+ trivial.
+ Puesto que todas las particiones son de igual tamaño no importa que partición
+ se utilice y se eligirá siempre la primera libre que se encuentre.
+ Los problemas que presenta el uso de particiones fijas de igual tamaño
+ pueden reducirse aunque no solventarse por medio del uso de particiones
+ de distintos tamaños.
+ El uso de estas particiones proporciona un cierto grado de flexibilidad
+ a las particiones fijas, además ambos tipos de esquema de partición fija
+ son relativamente simples y exigen un software de SO y una sobrecarga de
+ proceso mínimos.
+\layout Standard
+
+Con particiones de distinto tamaño hay dos maneras posibles de asignar los
+ procesos a las particiones:
+\layout Enumerate
+
+La forma más simple es asignar cada proceso a la partición más pequeña en
+ la que quepa, en este caso hace falta una cola de planificación para cada
+ partición.
+ Esta cola albergará a los procesos cuyo destino es dicha partición.
+ La ventaja de este enfoque es que los procesos se asignan de una forma
+ en la que se desperdicia el menor espacio de memoria posible, sin embargo
+ aunque esta técnica parec óptima desde el punto de vista de una partción
+ individual no lo es desde el punto de vista del sistema global ya que puede
+ darse la situación de que existan particiones sin utilizar que podrían
+ ser aprovechadas por procesos que esperan en las colas de planificación
+ de las particiones a las que han sido asignados.
+\layout Enumerate
+
+Consiste en seleccionar la partición más pequeña disponible que pueda albergar
+ al proceso.
+ 
+\layout Standard
+
+La utilización de particiones fijas ya sean de igual o distintos tamaños
+ plantea los siguientes problemas:
+\layout Itemize
+
+El número de particiones especificadas en el momento de la generación del
+ sistema limita el número de procesos activos en dicho sistema.
+\layout Itemize
+
+Puesto que los tamaños de partición se programan en el momento de la generación
+ del sistema los trabajos pequeños no hacen un uso eficiente del espacio
+ de las particiones en un entorno en el que los requisitos básicos de almacenami
+ento de todos los procesos se conocen de antemano puede ser una técnica
+ razonable, pero en la mayoría de los casos es ineficiente.
+\layout Section
+
+Asignación de memoria con particiones dinámicas
+\layout Standard
+
+En este esquema las particiones van a ser variables en número y longitud.
+ Cuando se trae un proceso a memoria se le asigna exactamente tanta memoria
+ como necesita y no más.
+ 
+\layout Standard
+
+
+\begin_inset Float figure
+placement htbp
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/SSOO_fig_6_2.eps
+	display color
+	scale 50
+	rotateOrigin center
+
+\end_inset 
+
+
+\layout Caption
+
+Fragmentación de memoria
+\end_inset 
+
+
+\layout Standard
+
+Como muestra este ejemplo, a medida que pasa el tiempo, la memoria empieza
+ a estar fragmentada y el rendimiento decae.
+ A este fenónemo se le denomina 
+\emph on 
+fragmentación externa
+\begin_inset LatexCommand \index{fragmentación externa}
+
+\end_inset 
+
+ 
+\emph default 
+y se refiere al hecho de que la memoria externa a todas las particiones
+ se fragmenta cada vez más.
+ Una técnica para superar esta fragmentación es la compactación o defragmentació
+n que consiste en desplazar los procesos para que estén contiguos de forma
+ que toda la memoria libre esté junta en un bloque.
+ La compactación requiere además la capacidad de reubicación dinámica, es
+ decir, se debe poder mover un proceso de una región a otra de memoria principal
+ sin invalidar sus referencias a memoria.
+\layout Standard
+
+A la hora de ubicar procesos en memoria atañe al diseñador del SO decidir
+ cómo se va a llevar a cabo esta ubicación.
+ Los tres algoritmos que se pueden considerar son:
+\layout Enumerate
+
+El Mejor Ajuste
+\begin_inset LatexCommand \index{El Mejor Ajuste}
+
+\end_inset 
+
+ (
+\emph on 
+Best
+\emph default 
+ 
+\emph on 
+Fit
+\emph default 
+): Lo que se hace es elegir el bloque con tamaño más parecido al solicitado.
+\layout Enumerate
+
+El Primer Ajuste
+\begin_inset LatexCommand \index{El Primer Ajuste}
+
+\end_inset 
+
+ (
+\emph on 
+First
+\emph default 
+ 
+\emph on 
+Fit
+\emph default 
+): Se recorre la memoria desde el principio y se escoge el primer bloque
+ disponible que sea suficientemente grande.
+\layout Enumerate
+
+El Siguiente Ajuste
+\begin_inset LatexCommand \index{El Siguiente Ajuste}
+
+\end_inset 
+
+ (
+\emph on 
+Next
+\emph default 
+ 
+\emph on 
+Fit
+\emph default 
+): Es similar a El Primer Ajuste pero se recorre la memoria desde el lugar
+ de la última ubicación.
+\layout Section
+
+Asignación de memoria con paginación simple
+\layout Standard
+
+Tanto las particiones estáticas como las dinámicas hacen un uso ineficiente
+ de la memoria.
+ Las primeras generan fragmentación interna mientras que las segundas generan
+ fragmentación externa.
+\layout Standard
+
+Supongamos la memoria principal particionada en trozos iguales de tamaño
+ fijo relativamente pequeños y que cada proceso está dividido también en
+ pequeños trozos de tamaño fijo e igual a los de memoria.
+ En tal caso, los trozos del proceso conocidos como páginas pueden asignarse
+ a los trozos libres de memoria conocidos como marcos o marcos de página.
+\layout Standard
+
+
+\begin_inset Float figure
+placement htbp
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/SSOO_fig_6_3.eps
+	display color
+	scale 50
+	rotateOrigin center
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{marcospalabras}
+
+\end_inset 
+
+Asignación de memoria con paginación simple; marcos y palabras
+\end_inset 
+
+
+\layout Standard
+
+Supongamos que el proceso B termina su ejecución y libera sus recursos de
+ memoria.
+ Entonces llega el proceso D que requiere 5 páginas de memoria.
+ No hay ningún problema en asignarle los tres de B y dos del espacio libre.
+ En este esquema la fragmentación interna constaría sólo de una fracción
+ del último marco de página ocupado por el proceso y además no existe fragmentac
+ión externa puesto que siempre seremos capaces de aprovechar los huecos.
+\layout Standard
+
+En los esquemas de partición de memoria basados en particiones fijas, las
+ direcciones físicas se obtenían sumando las virtuales a la dirección de
+ carga del proceso.
+ En el esquema de gestión de memoria con paginación, sin embargo, ya no
+ será suficiente con un simple registro para la traducción de direcciones.
+ En su lugar, el SO mantiene una tabla de páginas para cada proceso.
+ Cada una de estas tablas contiene una entrada por cada página del proceso
+ por lo que se indexarán de forma fácil mediante el número de páginas comenzando
+ siempre por la página 0.
+ En cada entrada de la tabla de páginas se encuentra el número del marco
+ de memoria que alberga la página correspondiente.
+ Además, el SO mantiene una lista de marcos libres con todos los marcos
+ de memoria que actualmente están vacíos y disponibles para las páginas.
+\layout Standard
+
+Dentro del programa cada dirección lógica constará de un número de página
+ y un desplazamiento dentro de la página y será también el hardware del
+ procesador el que se encargue de realizar la traducción de direcciones
+ lógicas a direcciones físicas.
+\layout Standard
+
+Para aplicar convenientemente este esquema de paginación, el tamaño de página
+ y, por tanto, el temaño de marco, deben ser una potencia de 2.
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+importante
+\end_inset 
+
+En este caso, la dirección relativa definida en relación a la dirección
+ de carga del proceso y la dirección lógica expresada como un número de
+ página y un desplazamiento son las mismas.
+\layout Standard
+
+
+\begin_inset Float figure
+placement htbp
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/SSOO_fig_6_4.eps
+	display color
+	scale 60
+	rotateOrigin center
+
+\end_inset 
+
+
+\layout Caption
+
+Esquema hardware para la paginación
+\end_inset 
+
+
+\layout Standard
+
+Supongamos un sistema donde se emplean direcciones de 16 bits siendo el
+ tamaño de página de 1
+\begin_inset Formula $k$
+\end_inset 
+
+ palabras.
+ Con este tamaño de página se necesitan 10 bits para el campo de desplazamiento
+ y los 6 restantes determinan el número de página.
+ De esta forma, la capacidad total de la memoria es de 64 
+\begin_inset Formula $k$
+\end_inset 
+
+palabras.
+\layout Standard
+
+Las consecuencias de utilizar un tamaño de página 
+\emph on 
+potencia
+\emph default 
+ 
+\emph on 
+de
+\emph default 
+ 
+\emph on 
+2 
+\emph default 
+son las siguientes:
+\layout Enumerate
+
+El esquema de direccionamiento lógico es transparente al programador, al
+ montador y al ensamblador.
+ Cada dirección lógica de un proceso será, así, idéntica a su dirección
+ relativa.
+\layout Enumerate
+
+Resulta relativamente sencillo realizar una función hardware para llevar
+ a cabo la traducción de direcciones dinámicas en tiempo de ejecución.
+ Consideramos una dirección de 
+\begin_inset Formula $d=n+m$
+\end_inset 
+
+ bits en la que los 
+\begin_inset Formula $n$
+\end_inset 
+
+ bits más significativos corresponden al número de página y los 
+\begin_inset Formula $m$
+\end_inset 
+
+ bits menos significativos corresponden al desplazamiento dentro de la página.
+ Para la traducción de direcciones hay que dar los siguientes pasos:
+\begin_deeper 
+\layout Enumerate
+
+Obtener el número de página a partir de los bits de la dirección lógica.
+\layout Enumerate
+
+Emplear ese número de página como índice en la tabla de páginas del proceso
+ para determinar el marco 
+\begin_inset Formula $k$
+\end_inset 
+
+ en que se alberga la página.
+\layout Enumerate
+
+El comienzo de la dirección física del marco 
+\begin_inset Formula $k$
+\end_inset 
+
+ será 
+\begin_inset Formula $k\cdot2^{m}$
+\end_inset 
+
+
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+En nuestro ejemplo, tendríamos una secuencia de 0,1024,2048,...
+\end_inset 
+
+ y la dirección física de la palabra referenciada será este número más el
+ desplazamiento determinado por los 
+\begin_inset Formula $m$
+\end_inset 
+
+ bits menos significativos de la dirección lógica.
+\end_deeper 
+\layout Standard
+
+Así pues, la paginación simple tal como se ha descrito es similar a la utilizaci
+ón de particiones fijas de idéntico tamaño con la diferencia de que las
+ particiones son más pequeñas, un proceso puede ocupar más de una partición
+ y las particiones correspondientes a un proceso no tienen porqué estar
+ contiguas.
+ A modo de resumen, mediante la paginación simple, la memoria principal
+ se divide en pequeños marcos del mismo tamaño.
+ Cada proceso se divide en páginas del tamaño del marco.
+ Cuando un proceso se carga en memoria, se cargan todas sus páginas en marcos
+ libres y se rellena su tabla de páginas.
+\layout Standard
+
+A continuación veremos el esquema hardware que permite realizar la traducción
+ de direcciones virtuales a físicas.
+ figura 04
+\layout Section
+
+Asignación de memoria con segmentación simple
+\layout Standard
+
+En segmentación, un programa y sus datos asociados se dividen en un conjunto
+ de segmentos.
+ No se impone que todos los segmentos de todos los programas tengan la misma
+ longitud aunque sí existe una longitud máxima de segmento.
+ Como en paginación, una dirección lógica segmentada consta de dos partes:
+ número de segmento y desplazamiento dentro del segmento.
+ Como consecuencia del empleo de segmentos de distinto tamaño, la segmentación
+ resulta similar al esquema de asignación de memoria con particiones dinámicas.
+ La diferencia con éste radica en que con segmentación un programa puede
+ ocupar más de una partición y éstas no tiene por qué estar contiguas.
+\layout Standard
+
+La segmentación elimina la fragmentación interna pero sufre de fragmentación
+ externa, sin embargo, debido a que los procesos se dividen en un conjunto
+ de partes más pequeñas la fragmentación externa será menor.
+ Mientras que la paginación es transparente al programador, la segmentación
+ es generalmente visible y se proporciona como una comodidad para la organizació
+n de programas y datos.
+ Normalmente, el programador asigna los programas y datos a distintos segmentos.
+\layout Standard
+
+Otra consecuencia del tamaño desigual de los segmentos es que no hay una
+ correspondencia simple entre direcciones lógicas y direcciones físicas.
+ Un esquema de segmentación hará uso de una tabla de segmentos para cada
+ proceso y una lista de bloques libres en memoria principal.
+ Cada entrada de la tabla de segmento deberá contener la dirección de comienzo
+ del segmento correspondiente en memoria principal y también la longitud
+ del mismo para asegurar el uso de direcciones válidas.
+ Cuando un proceso pasa al estado de ejecución se carga la dirección de
+ su tabla de segmentos en un registro especial del hardware de gestión de
+ memoria.
+\layout Standard
+
+Considerando una dirección lógica formada por 
+\begin_inset Formula $n+m$
+\end_inset 
+
+ bits, los 
+\begin_inset Formula $n$
+\end_inset 
+
+ bits más significativos indican el número de segmento mientras que los
+ 
+\begin_inset Formula $m$
+\end_inset 
+
+ bits restantes indicarían el desplazamiento.
+ Para la traducción de direcciones hay que dar los siguientes pasos:
+\layout Enumerate
+
+Extraer el número de segmento de los 
+\begin_inset Formula $n$
+\end_inset 
+
+ bits más significativos de la dirección lógica.
+\layout Enumerate
+
+Emplear ese número de segmento como índice en la tabla de segmentos del
+ proceso para determinar la dirección física de comienzo del segmento.
+\layout Enumerate
+
+Comparar el desplazamiento expresado por los 
+\begin_inset Formula $m$
+\end_inset 
+
+ bits menos significativos con la longitud del segmento.
+ Si el desplazamiento es mayor que la longitud la dirección no es válida.
+\layout Enumerate
+
+La dirección física final será la suma de la dirección física de comienzo
+ de segmento más el desplazamiento.
+\layout Standard
+
+
+\begin_inset Float figure
+placement htbp
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/SSOO_fig_6_5.eps
+	display color
+	scale 50
+	rotateOrigin center
+
+\end_inset 
+
+
+\layout Caption
+
+Asignación de memoria con segmentación simple
+\end_inset 
+
+
+\layout Standard
+
+En este caso habrá que sumar ya que cada segmento tendrá tamaño variable
+ no será obligatorio que comience en una potencia de 2.
+\layout Section
+
+Memoria virtual
+\layout Subsection
+
+Estructuras Hardware y de control
+\layout Standard
+
+Las características fundamentales del avance introducido por el empleo de
+ técnicas de paginación o segmentación son, fundamentalmente, dos.
+\layout Enumerate
+
+Todas las referencias a memoria dentro de un proceso son direcciones lógicas
+ que se traducen dinámicamente a direcciones físicas en tiempo de ejecución.
+\layout Enumerate
+
+Un proceso puede dividirse en varias partes y no es necesario que estas
+ partes se encuentren contiguas en memoria principal durante la ejecución.
+\layout Standard
+
+Si estas dos características están presentes, no será necesario que todas
+ las páginas o segmentos del proceso estén en memoria principal durante
+ la ejecución.
+ Éste es el concepto que da pie a lo que se conoce como Memoria Virtual.
+\layout Standard
+
+Denominaremos 
+\emph on 
+conjunto residente del proceso
+\begin_inset LatexCommand \index{conjunto residente del proceso}
+
+\end_inset 
+
+ 
+\emph default 
+a la parte de dicho proceso que está realmente en memoria principal.
+ Cuando el proceso se ejecute todo irá bien mientras las referencias a memoria
+ estén en posiciones pertenecientes al conjunto residente.
+ Si el procesador encuentra una dirección lógica que no se ubica en memoria
+ principal se produce lo que se denomina un 
+\emph on 
+fallo
+\emph default 
+ 
+\emph on 
+de
+\emph default 
+ 
+\emph on 
+página
+\emph default 
+
+\begin_inset LatexCommand \index{fallo de página}
+
+\end_inset 
+
+ y se genera la correspondiente interrupción para que el SO bloquee al proceso
+ y tome el control.
+ El SO se encargará de traer a memoria principal el fragmento de proceso
+ que contiene la dirección lógica que provocó el fallo de página.
+ Una vez que este fragmento del proceso se ha cargado en memoria principal,
+ el proceso bloqueado está en condiciones de continuar su ejecución y se
+ pasa al estado de Listo o Preparado.
+\layout Standard
+
+Las dos implicaciones principales de la utilización de memoria virtual son
+ las siguientes:
+\layout Enumerate
+
+Se puede mantener un mayor número de procesos en memoria principal.
+\layout Enumerate
+
+Resulta posible
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+importante
+\end_inset 
+
+ que un proceso sea más grande que toda la memoria principal.
+ De esta forma se elimina una de las limitaciones más notoria de la programación.
+\layout Standard
+
+Como los procesos para ejecutar necesitan estar cargados en memoria principal,
+ a esta memoria también se la denomina 
+\emph on 
+memoria
+\emph default 
+ 
+\emph on 
+real
+\emph default 
+.
+ Sin embargo, el programador o usuario percibe en potencia una memoria mucho
+ mayor que es la memoria secundaria.
+ A esta memoria también se la denomina Memoria Virtual.
+\layout Subsection
+
+Hiperpaginación y cercanía de referencias
+\layout Standard
+
+En un estado estable, prácticamente toda la memoria principal estará ocupada
+ con fragmentos de procesos, por lo que el procesador y el SO tendrán acceso
+ directo a la mayor cantidad de proceso posible.
+\layout Standard
+
+Así pues, cuando el SO traiga a memoria un fragmento, es posible que no
+ exista en memoria principal espacio para alojarlo.
+ En esta situación el SO deberá elegir un fragmento de igual o superior
+ tamaño para ser expulsado a memoria secundaria y crear así el espacio necesario
+ para alojar al nuevo fragmento.
+ Si el fragmento expulsado va a ser referenciado justo después de su expulsión,
+ deberá ser traido a memoria de forma inmediata.
+ Demasiados intercambios de fragmentos entre memoria principal y secundaria
+ conducen a lo que se denomina hiperpaginación o thrashing.
+ 
+\layout Standard
+
+Estos argumentos se basan en el principio de cercanía de referencias que
+ afirma que las referencias a los datos y al código del proceso tienden
+ a agruparse y, por tanto, resulta válida la suposición de que durante periodos
+ cortos se necesitarán sólo unos pocos fragmentos del proceso.
+ Además será posible hacer predicciones inteligentes sobre qué fragmentos
+ de un proceso se necesitarán en un futuro cercano y evitar así la hiperpaginaci
+ón.
+\layout Subsection
+
+Memoria virtual con paginación y 
+\emph on 
+buffer 
+\emph default 
+de traducción adelantada (TLB)
+\layout Standard
+
+El término Memoria virtual se asocia normalmente con sistemas que emplean
+ paginación.
+ Cuando se considera un esquema de memoria virtual basado en paginación
+ se necesita la misma estructura que en paginación simple, es decir, la
+ tabla de páginas.
+ En este caso, sin embargo, las entradas de la tabla de páginas pasan a
+ ser más complejas puesto que sólo algunas de las páginas de un proceso
+ pueden estar en memoria principal.
+\layout Standard
+
+Se empleará un bit en cada entrada de la tabla para indicar si la página
+ correspondiente está en memoria principal o no.
+ Si el bit indica que la página se encuentra en memoria, la entrada incluirá
+ también el número de marco en el que se encuentra ubicada dicha página.
+ A este bit se le conoce como 
+\emph on 
+bit de presencia
+\emph default 
+I
+\begin_inset LatexCommand \index{bit de presencia}
+
+\end_inset 
+
+ (P).
+\layout Standard
+
+Otro bit de control necesario es el 
+\emph on 
+bit
+\emph default 
+ 
+\emph on 
+de
+\emph default 
+ 
+\emph on 
+modificación
+\begin_inset LatexCommand \index{bit de modificación}
+
+\end_inset 
+
+
+\emph default 
+ (M) que indicará si el contenido de la página correspondiente se ha alterado
+ desde que la página se cargó en memoria principal.
+ Si no ha habido cambios, no será necesario escribir la página cuando sea
+ sustituida en el marco que ocupa actualmente.
+\layout Standard
+
+Cada referencia a una dirección virtual puede generar dos accesos a memoria.
+\layout Enumerate
+
+Para obtener la entrada de la tabla de páginas correspondiente.
+\layout Enumerate
+
+Para obtener el dato deseado.
+\layout Standard
+
+Así pues, se podría tener el efecto de doblar el tiempo de acceso a memoria.
+ Para solucionar este problema, la mayoria de los esquema de memoria virtual
+ hacen uso de una caché especial para las entradas de las tablas de páginas
+ llamada 
+\emph on 
+buffer de traducción adelantada
+\begin_inset LatexCommand \index{buffer de traducción adelantada}
+
+\end_inset 
+
+
+\emph default 
+ (Translation Lookaside Buffer).
+ Esta caché contiene aquellas entradas de las tablas de páginas utilizadas
+ hace menos tiempo.
+ Dada una dirección virtual, el procesador examinará primero el TLB.
+ Si la entrada de la tabla de página está presente, se obtiene el número
+ de marco y se forma la dirección real.
+ Por el contrario, si no se encuentra la entrada de la tabla de página buscada,
+ el procesador emplea el número de página para buscar en la tabla de páginas
+ del proceso.
+ Si se encuentra activo el bit de presencia es que la página está en memoria
+ principal y el procesador puede obtener el número de marco para formar
+ la dirección real.
+ El procesador, además, actualiza el TLB para incluir esta nueva entrada
+ de la tabla de páginas.
+\layout Standard
+
+Por último, si el bit de presencia no está activo, se produce un fallo de
+ página.
+ En este punto se abandona el ámbito hardware y se invoca al SO para cargar
+ la página necesaria y actualizar la tabla de páginas.
+\layout Subsection
+
+Software del SO para la gestión de memoria virtual
+\layout Subsubsection
+
+Políticas de lectura
+\layout Standard
+
+La política de lectura (FETCH) está relacionada con la decisión de cuándo
+ se debe cargar una página en memoria principal.
+ Sus dos opciones más comunes son la paginación por demanda y la paginación
+ previa:
+\layout Standard
+
+La paginación por demanda
+\begin_inset LatexCommand \index{paginación por demanda}
+
+\end_inset 
+
+ consiste en traer una página a memoria principal sólo cuando se hace referencia
+ a una posición de esta página.
+\layout Standard
+
+En paginación previa
+\begin_inset LatexCommand \index{paginación previa}
+
+\end_inset 
+
+ se cargan además de la página demandada, páginas secuencialmente consecutivas
+ a ella.
+ El principal atractivo de esta estrategia está en aprovechar el tiempo
+ de búsqueda de la página demandada en memoria secundaria.
+ Una vez encontrada, sólo tendremos que esperar un tiempo correspondiente
+ a la latencia de giro del dispositivo de almacenamiento para acceder a
+ las páginas secuencialmente contiguas.
+\layout Subsubsection
+
+Políticas de ubicación
+\layout Standard
+
+La política de ubicación tiene que ver con determinar dónde va a residir
+ una parte del proceso en memoria principal.
+ En un sistema de segmentación puro, la política de ubicación es un aspecto
+ muy importante de diseño, teniendo como posibles alterantivas las políticas
+ de mejor ajuste, primer ajuste y siguiente ajuste.
+\layout Subsubsection
+
+Políticas de reemplazo
+\layout Standard
+
+Cuando todos los marcos de memoria principal están ocupados y es necesario
+ traer a memoria una nueva página para atender un fallo de página, al política
+ de reemplazo se encarga de seleccionar la página a reemplazar de entre
+ las que se encuentren actualmente en memoria.
+ Todas las políticas tienen como objetivo que la página a reemplazar sea
+ la que tenga una menor probabilidad de ser referenciada en un futuro cercano.
+\layout Standard
+
+En la política de reemplazo se encuentran involucrados conceptos interrelacionad
+os como los siguientes:
+\layout Enumerate
+
+Número de marcos de página a asignar a cada proceso activo.
+\layout Enumerate
+
+Si el conjunto de páginas candidatas para el reemplazo debe limitarse a
+ las del proceso que provocó el fallo de página o abarcará a todos los marcos
+ de páginas situadas en memoria principal.
+\layout Enumerate
+
+De entre el conjunto de páginas candidatas, la página que debe elegirse
+ en particular para el reemplazo.
+\layout Standard
+
+Algunos de los marcos de memoria principal pueden estar bloqueados.
+ Cuando un marco se encuentra bloqueado, la página cargada actualmente en
+ él no puede ser reemplazada.
+ La mayoría del núcleo del SO así como las estructuras de control son albergados
+ en marcos bloqueados.
+ 
+\layout Standard
+
+Para estudiar algunas de las políticas de algoritmos de reemplazo vamos
+ a considerar un caso donde un proceso hace referencia hasta a cinco páginas
+ distintas y el SO permite una asignación constante de tres marcos por proceso.
+ La cadena de referencia a las páginas durante la ejecución del programa
+ es la siguiente:
+\layout Standard
+
+
+\begin_inset  Tabular
+<lyxtabular version="3" rows="1" columns="12">
+<features islongtable="true">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" width="0">
+<column alignment="center" valignment="top" leftline="true" rightline="true" width="0">
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+2
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+3
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+2
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+5
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+2
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+4
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+5
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+3
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+2
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+5
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+2
+\end_inset 
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset 
+
+
+\layout Standard
+
+La primera política que vamos a ver es la Política Óptima
+\begin_inset LatexCommand \index{Política Óptima}
+
+\end_inset 
+
+.
+ Esta Política selecciona para reemplazar la página que tiene que esperar
+ más tiempo hasta que se produzca la referencia siguiente.
+ Se puede demostrar que esta política genera el menor número de fallos de
+ página, sin embargo, este algoritmo resulta imposible de implementar porque
+ requiere que el SO tenga un conocimiento exacto de los sucesos futuros.
+ De todas formas, sirve como estándar para comparar los otros algoritmos.
+\layout Standard
+
+
+\begin_inset Float figure
+placement htbp
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/SSOO_fig_6_6.eps
+	lyxscale 60
+	display color
+	scale 60
+	rotateOrigin center
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{Política óptima}
+
+\end_inset 
+
+Esquema de Política Óptima para el caso propuesto
+\end_inset 
+
+
+\layout Standard
+
+LRU (Last Recently Used): este algoritmo reemplaza la página de memoria
+ que no ha sido referenciada desde hace más tiempo.
+ Debido al principio de cercanía de referencias, ésta debería ser la página
+ con menor probabilidad de ser referenciada en el futuro.
+ La política LRU afina casi tanto como la política óptima pero plantea una
+ gran dificultad de implementación.
+\layout Standard
+
+
+\begin_inset Float figure
+placement htbp
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/SSOO_fig_6_7.eps
+	lyxscale 60
+	display color
+	scale 60
+	rotateOrigin center
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{Política LRU}
+
+\end_inset 
+
+Esquema de Política LRU para el caso propuesto
+\end_inset 
+
+
+\layout Standard
+
+FIFO: La Política FIFO trata los marcos asignados a un proceso como un 
+\emph on 
+buffer
+\emph default 
+ circular y las páginas se suprimen de memoria según la técnica de espera
+ circular Round-Robin.
+ Todo lo que se necesita un puntero que circula a través de los marcos del
+ proceso.
+ Resulta, por tanto, una de las políticas de reemplazo más fáciles de implementa
+r.
+ La lógica que hay detrás de esta elección, además de su sencillez, es reemplaza
+r la página que ha estado más tiempo en memoria.
+\layout Standard
+
+
+\begin_inset Float figure
+placement htbp
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/SSOO_fig_6_8.eps
+	lyxscale 60
+	display color
+	scale 60
+	rotateOrigin center
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{Política FIFO}
+
+\end_inset 
+
+Esquema de Política FIFO para el caso propuesto
+\end_inset 
+
+
+\layout Standard
+
+Política del Reloj: La forma más simple de esta política requiere asociar
+ un bit adicional a cada marco, denominado bit de uso
+\begin_inset LatexCommand \index{bit de uso}
+
+\end_inset 
+
+.
+ Cuando se cargue una página por primera vez, este bit se pone a 0 y cuando
+ se hace referencia posteriormente a la página el bit de uso se pone a 1.
+ Para el algoritmo de reemplazo de páginas, el conjunto de marcos candidatos
+ a ser reemplazado se considera como un 
+\emph on 
+buffer
+\emph default 
+ circular con un puntero asociado.
+ El alcance es local si los candidatos son de un solo proceso y global si
+ procede de toda la memoria.
+ Cuando llega el momento de reemplazar una página, el SO recorre el 
+\emph on 
+buffer
+\emph default 
+ buscando un marco con el bit de uso a 0, eligiendo para reemplazar el primero
+ que encuentre.
+ Cada vez que se encuentra un marco con el bit de uso a 1, se pone a 0.
+\layout Standard
+
+
+\begin_inset Float figure
+placement htbp
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/SSOO_fig_6_9.eps
+	lyxscale 60
+	display color
+	scale 60
+	rotateOrigin center
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{Política Reloj}
+
+\end_inset 
+
+Esquema de Política del Reloj para el caso propuesto
+\end_inset 
+
+
+\the_end

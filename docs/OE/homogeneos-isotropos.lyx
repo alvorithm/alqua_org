@@ -1,0 +1,1581 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass book
+\begin_preamble
+\input{OE-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding latin1
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize a4paper
+\paperpackage a4
+\use_geometry 1
+\use_amsmath 1
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 2
+\papersides 2
+\paperpagestyle default
+
+\layout Chapter
+
+Medios homogéneos e isótropos  
+\layout Section
+
+ Planteamiento del problema
+\layout Standard
+
+En este capítulo nos preocuparemos por caracterizar adecuadamente los medios
+ homogéneos e isótropos cuando son iluminados por ondas armónicas planas
+ inhomogéneas
+\begin_inset Marginal
+collapsed true
+
+\layout Standard
+
+
+\size footnotesize 
+pág.
+ 
+\begin_inset LatexCommand \pageref{tx explic oap inhomogeneas}
+
+\end_inset 
+
+.
+\end_inset 
+
+.
+\layout Standard
+
+Vamos a ver qué soluciones ecMm existen cuando 
+\begin_inset Formula $\epsilon_{gen}$
+\end_inset 
+
+ es un escalar (homogeneidad) y no depende de la posición (isotropía) tales
+ que la forma de los campos sea
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{E}\left(\mathbf{r},t\right) & = & \mathbf{E}_{0}e^{i\left(\mathbf{k}_{c}\cdot\mathbf{r}-\omega t\right)}\\
+\mathbf{H}\left(\mathbf{r},t\right) & = & \mathbf{H}_{0}e^{i\left(\mathbf{k}_{c}\cdot\mathbf{r}-\omega t\right)}\end{eqnarray*}
+
+\end_inset 
+
+con 
+\begin_inset Formula $\mathbf{E}_{0},\mathbf{H}_{0},\mathbf{k}_{c},\omega$
+\end_inset 
+
+ constantes.
+ Lo que queremos saber es qué relaciones vamos a obtener entre los parámetros
+ de la onda y con los del material (
+\begin_inset Formula $\epsilon_{gen},\,\mu$
+\end_inset 
+
+) si imponemos el cumplimiento de las ecuaciones de 
+\noun on 
+Maxwell
+\noun default 
+ sobre el tipo de soluciones que acabamos de escribir.
+\layout Section
+
+Solución
+\layout Standard
+
+Vamos a aplicar las ecMm en secuencia.
+ 
+\layout Enumerate
+
+
+\begin_inset Formula $\epsilon_{gen}\nabla\cdot\mathbf{E}=0$
+\end_inset 
+
+, pero si 
+\begin_inset Formula $\epsilon_{gen}\neq0$
+\end_inset 
+
+ (que es el caso que vamos a considerar en todo lo sucesivo) entonces se
+ tiene 
+\begin_inset Formula $\nabla\cdot\mathbf{E}=0$
+\end_inset 
+
+.
+ Lo aplicamos al campo de onda plana de la sección anterior y obtenemos
+ 
+\begin_inset Formula \[
+\mathbf{k}_{c}\cdot\mathbf{E}_{0}=0\]
+
+\end_inset 
+
+
+\layout Enumerate
+
+La siguiente ecuación es lo mismo que decir 
+\begin_inset Formula $\nabla\cdot\mathbf{H}=0$
+\end_inset 
+
+, y por lo tanto, 
+\begin_inset Formula \[
+\mathbf{k}_{c}\cdot\mathbf{H}_{0}=0\]
+
+\end_inset 
+
+
+\layout Enumerate
+
+Un rotacional da 
+\begin_inset Formula \[
+\mathbf{H}_{0}=\frac{1}{\mu\omega}\mathbf{k}_{c}\wedge\mathbf{E}_{0}\]
+
+\end_inset 
+
+ 
+\layout Enumerate
+
+Y el otro: 
+\begin_inset Formula \[
+\mathbf{E}_{0}=-\frac{1}{\epsilon_{gen}\omega}\mathbf{k}_{c}\wedge\mathbf{H}_{0}\]
+
+\end_inset 
+
+
+\layout Standard
+
+Ahora sólo tenemos que 
+\emph on 
+leer 
+\emph default 
+las ecuaciones.
+ Ésta va a ser la estrategia para afrontar todos los problemas de propagación
+ del curso.
+ Combinando las (3) y (4):
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{E}_{0} & = & -\frac{1}{\epsilon_{gen}\omega}\mathbf{k}_{c}\wedge\frac{1}{\mu\omega}\mathbf{k}_{c}\wedge\mathbf{E}_{0}\\
+ & = & -\frac{1}{\mu\epsilon_{gen}\omega^{2}}\left(\mathbf{k}_{c}\wedge\mathbf{k}_{c}\wedge\mathbf{E}_{0}\right)\\
+ & = & -\frac{1}{\mu\epsilon_{gen}\omega^{2}}\left[\mathbf{k}_{c}\left(\mathbf{k}_{c}\cdot\mathbf{E}_{0}\right)-\mathbf{E}_{0}\left(\mathbf{k}_{c}\cdot\mathbf{k}_{c}\right)\right]\\
+ & = & \frac{1}{\mu\epsilon_{gen}\omega^{2}}\mathbf{E}_{0}\mathbf{k}_{c}^{2}\end{eqnarray*}
+
+\end_inset 
+
+ de donde 
+\begin_inset Formula \[
+\mathbf{k}_{c}^{2}=\omega^{2}\mu\epsilon_{gen}=\frac{\omega^{2}}{c^{2}}n_{c}^{2}\]
+
+\end_inset 
+
+ esto se utiliza más habitualmente en la forma
+\begin_inset Formula \[
+n_{c}^{2}=c^{2}\mu\epsilon_{gen}=\frac{\mu\epsilon_{gen}}{\mu_{0}\epsilon_{0}}\]
+
+\end_inset 
+
+ este parámetro es el 
+\emph on 
+índice de refracción complejo.
+ 
+\emph default 
+Cuando la constante dieléctrica sea compleja (medios absorbentes) el índice
+ de refracción será complejo.
+ Lo mismo ocurrirá al vector de onda, y ésta es la razón por la que hemos
+ venido usando el subíndice 
+\begin_inset Formula $_{c}$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+Descomponemos el vector de onda y el índice de refracción en
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{k}_{c} & = & \mathbf{k}+i\mathbf{a}\\
+n_{c} & = & n+i\kappa\end{eqnarray*}
+
+\end_inset 
+
+ con 
+\begin_inset Formula $\mathbf{k},\mathbf{a},n,\kappa$
+\end_inset 
+
+ cantidades reales, que reciben los nombres respectivos de 
+\emph on 
+vector de ondas, vector de atenuación, índice de refracción e índice de
+ absorción
+\emph default 
+.
+ Entonces la expresión de la oap es
+\begin_inset Formula \[
+\mathbf{E}\left(\mathbf{r},t\right)=\mathbf{E}_{0}e^{-\mathbf{a}\cdot\mathbf{r}}e^{i\fase}\]
+
+\end_inset 
+
+ La constante 
+\begin_inset Formula $\mathbf{E}_{0}e^{-\mathbf{a}\cdot\mathbf{r}}$
+\end_inset 
+
+ disminuye con la propagación, y tanto más cuanto mayor es el vector de
+ atenuación 
+\begin_inset Formula $\mathbf{a}$
+\end_inset 
+
+.
+ Las partes imaginarias del vector de onda y del índice de refracción vienen
+ de las pérdidas por fricción en el proceso de absorción-reemisión.
+ 
+\layout Standard
+
+De la relación
+\begin_inset Formula \[
+\mathbf{k}_{c}^{2}=\frac{\omega^{2}}{c^{2}}n_{c}^{2}\]
+
+\end_inset 
+
+ se pasa fácilmente (raíz cuadrada compleja) a
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{k}^{2}-\mathbf{a}^{2} & = & \frac{\omega^{2}}{c^{2}}\left(n^{2}-\kappa^{2}\right)\\
+\mathbf{k}\cdot\mathbf{a} & = & \frac{\omega^{2}}{c^{2}}n\kappa\end{eqnarray*}
+
+\end_inset 
+
+ que forman las condiciones que buscábamos.
+ 
+\layout Subsubsection
+
+Dos comentarios importantes (mucho cuidado)
+\layout Itemize
+
+No deberíamos llamar ondas 
+\emph on 
+planas
+\emph default 
+ a 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{E}\left(\mathbf{r},t\right) & = & \mathbf{E}_{0}e^{i\left(\mathbf{k}_{c}\cdot\mathbf{r}-\omega t\right)}\\
+\mathbf{H}\left(\mathbf{r},t\right) & = & \mathbf{H}_{0}e^{i\left(\mathbf{k}_{c}\cdot\mathbf{r}-\omega t\right)}\end{eqnarray*}
+
+\end_inset 
+
+porque no lo son (en general 
+\begin_inset Formula $\mathbf{k}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathbf{a}$
+\end_inset 
+
+ no son paralelos y por lo tanto, 
+\begin_inset Formula $\mathbf{E}\neq\mathbf{E}\left(\mathbf{k}\cdot\mathbf{r},t\right)$
+\end_inset 
+
+).
+ Deberíamos llamarlas 
+\emph on 
+ondas planas inhomogénea
+\emph default 
+s
+\begin_inset LatexCommand \label{tx explic oap inhomogeneas}
+
+\end_inset 
+
+: los planos de amplitud constante no coinciden con los planos de fase constante.
+ Por lo tanto, cuando las llamemos oap, estamos abusando del lenguaje (y
+ lo haremos).
+\layout Itemize
+
+A partir de las estructura de la onda que hemos encontrado al principio
+ del capítulo, es tentador pensar que 
+\begin_inset Formula $\left(\mathbf{E}_{0},\mathbf{H}_{0},\mathbf{k}_{c}\right)$
+\end_inset 
+
+ forman un triedro ortogonal.
+ No es así, ya que intervienen vectores complejos (v.
+ ejercicio 18).
+\layout Section
+
+Medios transparentes
+\layout Standard
+
+Como 
+\begin_inset Formula $\kappa=0$
+\end_inset 
+
+ se verifican las relaciones
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{k}^{2}-\mathbf{a}^{2} & = & \frac{\omega^{2}}{c^{2}}n^{2}\\
+\mathbf{k}\cdot\mathbf{a} & = & 0\end{eqnarray*}
+
+\end_inset 
+
+ 
+\begin_inset Formula $\mathbf{k}$
+\end_inset 
+
+ no se puede anular, luego surgen dos casos: o bien 
+\begin_inset Formula $\mathbf{a}=0$
+\end_inset 
+
+, o bien 
+\begin_inset Formula $\mathbf{a}\perp\mathbf{k}$
+\end_inset 
+
+.
+ 
+\layout Itemize
+
+
+\begin_inset Formula $\mathbf{a}=0$
+\end_inset 
+
+.
+ La onda es plana y los vectores 
+\begin_inset Formula $\mathbf{k},\mathbf{E},\mathbf{H}$
+\end_inset 
+
+ son perpendiculares entre sí, como en el vacío.
+ Pero hay diferencias importantes respecto al vacío.
+ La longitud de onda cambia
+\begin_inset Formula \[
+\left|\mathbf{k}\right|=\frac{\omega}{c}n=\frac{2\pi}{\lambda_{medio}}=\frac{2\pi}{\lambda_{vacio}}n\]
+
+\end_inset 
+
+ con lo que 
+\begin_inset Formula $\lambda_{medio}=\frac{\lambda_{vacio}}{n}$
+\end_inset 
+
+.
+ También cambia la velocidad de fase
+\begin_inset Formula \begin{eqnarray*}
+\left|\mathbf{k}\right|z-\omega t & = & cte\\
+v_{f} & = & \frac{\omega}{\left|\mathbf{k}\right|}=\frac{c}{n}\end{eqnarray*}
+
+\end_inset 
+
+ en algunos textos el índice de refracción que servirá para la óptica geométrica
+ se define a partir de la última relación como:
+\begin_inset Formula \[
+n=\frac{c}{v_{f}}\]
+
+\end_inset 
+
+ En este tipo de onda todo se propaga con la velocidad de fase, 
+\begin_inset Formula $\frac{c}{n}$
+\end_inset 
+
+.
+ 
+\begin_deeper 
+\layout Standard
+
+
+\emph on 
+Advertencia
+\emph default 
+: la velocidad de fase, etc.
+ dependerán de la frecuencia (en general los medios son dispersivos, 
+\begin_inset Formula $n=n\left(\omega\right)$
+\end_inset 
+
+
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Como se ve, toda la clasificación que hicimos de los medios podríamos haberla
+ escrito en términos del índice de refracción, en lugar de la constante
+ dieléctrica generalizada 
+\begin_inset Formula $\epsilon_{gen}$
+\end_inset 
+
+, pero sólo porque tratamos medios no magnéticos.
+\end_inset 
+
+).
+\end_deeper 
+\layout Itemize
+
+
+\begin_inset Formula $\mathbf{a}\neq0$
+\end_inset 
+
+.
+ Podemos decir menos cosas.
+ Poniendo 
+\begin_inset Formula $\mathbf{k}=k\mathbf{u}_{x}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathbf{a}=a\mathbf{u}_{z}$
+\end_inset 
+
+ (figura 
+\begin_inset LatexCommand \ref{fig planosfase si kappa=0, a=0}
+
+\end_inset 
+
+), la onda se escribe
+\begin_inset Formula \[
+\mathbf{E}=\mathbf{E}_{0}e^{-az}e^{i\left(kx-\omega t\right)}\]
+
+\end_inset 
+
+ la onda es armónica pero no plana.
+ Los puntos con igual amplitud se sitúan sobre planos perpendiculares al
+ eje 
+\begin_inset Formula $z$
+\end_inset 
+
+.
+ Los frentes de onda (superficies equifase) son planos perpendiculares al
+ eje 
+\begin_inset Formula $x$
+\end_inset 
+
+.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/mas-planos-de-fase.eps
+	display monochrome
+	width 5.5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig planosfase si kappa=0, a=0}
+
+\end_inset 
+
+Planos de misma amplitud y de misma fase y su velocidad de propagación en
+ 
+\begin_inset Formula $xz$
+\end_inset 
+
+.
+\end_inset 
+
+Se puede obtener la siguiente expresión para la velocidad de fase
+\begin_inset Formula \[
+v_{f}=\frac{\omega}{\left|\mathbf{k}\right|}=\frac{\omega}{\sqrt{a^{2}+\frac{\omega^{2}}{c^{2}}n^{2}}}\]
+
+\end_inset 
+
+ y no podemos precisar más.
+ No podemos decir qué ángulo forma 
+\begin_inset Formula $\mathbf{E}$
+\end_inset 
+
+ con 
+\begin_inset Formula $\mathbf{k}$
+\end_inset 
+
+ o 
+\begin_inset Formula $\mathbf{a}$
+\end_inset 
+
+.
+ Sólo podemos decir que 
+\begin_inset Formula $\mathbf{k}_{c}\cdot\mathbf{E}_{0}=0$
+\end_inset 
+
+.
+ La importancia de esta solución se debe a 
+\begin_deeper 
+\layout Itemize
+
+que la veremos en el marco de reflexión--refracción como onda reflejada.
+\layout Itemize
+
+que la propagación en el vacío es un caso particular de esa situación.
+\end_deeper 
+\layout Section
+
+Medios absorbentes 
+\layout Standard
+
+Ahora que 
+\begin_inset Formula $\kappa\neq0$
+\end_inset 
+
+, la atenuación 
+\begin_inset Formula $\mathbf{a}$
+\end_inset 
+
+ no será nula
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{k}^{2}-\mathbf{a}^{2} & = & \frac{\omega^{2}}{c^{2}}\left(n^{2}-\kappa^{2}\right)\\
+\mathbf{k}\cdot\mathbf{a} & = & \frac{\omega^{2}}{c^{2}}n\kappa\end{eqnarray*}
+
+\end_inset 
+
+tendremos que manejar inevitablemente ondas con vector de ondas complejo.
+\begin_inset Formula \[
+\mathbf{E}=\mathbf{E}_{0}e^{-\mathbf{a}\cdot\mathbf{r}}e^{i\fase}\]
+
+\end_inset 
+
+ Se puede decir que
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/plano-complejo.eps
+	display monochrome
+	width 4cm
+	subcaption
+
+\end_inset 
+
+
+\begin_inset Graphics
+	filename fig/angulo-k-a.eps
+	display monochrome
+	width 3cm
+	subcaption
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig cond geometricas}
+
+\end_inset 
+
+(a) Plano complejo (b) Dirección relativa de 
+\begin_inset Formula $\mathbf{k}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathbf{a}$
+\end_inset 
+
+: un ángulo agudo (atenuación).
+ Un ángulo obtuso correspondería a amplitud creciente con el tiempo, que
+ es el caso de un láser.
+\end_inset 
+
+
+\begin_inset Formula \[
+\Im\left\{ \epsilon_{gen}\right\} \propto\gamma>0\]
+
+\end_inset 
+
+ lo que quiere decir (ver figura 
+\begin_inset LatexCommand \ref{fig cond geometricas}
+
+\end_inset 
+
+) que la región accesible es sólo el semiplano superior del plano complejo.
+ Pero si añadimos que 
+\begin_inset Formula $\mu\simeq\mu_{0}$
+\end_inset 
+
+ y que 
+\begin_inset Formula \[
+n_{c}^{2}=\frac{\epsilon_{gen}}{\epsilon_{0}}\]
+
+\end_inset 
+
+ se puede decir que 
+\begin_inset Formula $\epsilon_{gen}$
+\end_inset 
+
+ está en el primer o segundo cuadrantes, mientras que 
+\begin_inset Formula $n_{c}$
+\end_inset 
+
+ está en el primero o en el tercero.
+ O sea, que 
+\begin_inset Formula $n$
+\end_inset 
+
+ y 
+\begin_inset Formula $\kappa$
+\end_inset 
+
+ tienen siempre el mismo signo (la demostración deberá esperar).
+ Eso hace que se pueda decir que
+\begin_inset Formula \[
+\mathbf{k}\cdot\mathbf{a}=\frac{\omega^{2}}{c^{2}}\kappa n>0\]
+
+\end_inset 
+
+La condición que acabamos de escribir quiere decir que la onda se atenúa,
+ pierde energía según se propaga (figura 
+\size small 
+
+\begin_inset LatexCommand \ref{fig cond geometricas}
+
+\end_inset 
+
+
+\size default 
+).
+\layout Standard
+
+Como hemos visto 
+\begin_inset Quotes eld
+\end_inset 
+
+absorbente
+\begin_inset Quotes erd
+\end_inset 
+
+ no es una definición sino la enunciación de una propiedad.
+ Un ejemplo de medio absorbente es el de los metales.
+ Con los valores de 
+\begin_inset Formula $\kappa$
+\end_inset 
+
+ en metales comunes (
+\begin_inset Formula $\kappa\sim3$
+\end_inset 
+
+) la onda se extingue al cabo de pocas longitudes de onda (ver los problemas).
+\layout Subsubsection
+
+Comentarios 
+\layout Standard
+
+(Sobre la noción intuitiva de absorción y su relación con el aspecto microscópic
+o de la propagación de la luz en la materia).
+\layout Enumerate
+
+En un dieléctrico las cargas que se pueden poner en movimiento son los electrone
+s que están ligados a los átomos.
+ Pero solo se ponen en movimiento cuando la frecuencia de la onda incidente
+ es próxima a la frecuencia de resonancia.
+ En esa circunstancia son muy opacos (por ejemplo, el vidrio normal al ultraviol
+eta).
+ Para el resto del espectro, ni se enteran de la presencia de la radiación:
+ son muy transparentes.
+ 
+\layout Enumerate
+
+En los metales el comportamiento de los electrones se aproxima más al de
+ cargas libres.
+ Eso hace que sean sensibles a un rango de frecuencias más amplio: los metales
+ son muy absorbentes en una gran parte del espectro.
+\layout Section
+
+Índice de refracción y propiedades microscópicas
+\layout Subsection
+
+Planteamiento
+\layout Standard
+
+Hemos visto que medios con distinto índice de refracción dan lugar a ondas
+ de distinta naturaleza.
+ 
+\begin_inset Formula \[
+n_{c}^{2}=\frac{\epsilon_{gen}\mu}{\epsilon_{0}\mu_{0}}\]
+
+\end_inset 
+
+ Estudiaremos ahora la relación entre índice de refracción y propiedades
+ microscópicas del material para a partir de unas conocer el otro o viceversa
+ (midiendo la absorción de energía, etc).
+ El índice de refracción es una función observable y depende de parámetros
+ que nos informan sobre la naturaleza microscópica del material: 
+\begin_inset Formula $n_{c}\left(\omega,\omega_{0},densidad,\gamma,\ldots\right)$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+Vamos a abordar una situación bastante simple: medios isótropos, no magnéticos
+ (
+\begin_inset Formula $\mu\simeq\mu_{0}$
+\end_inset 
+
+ y por tanto 
+\begin_inset Formula $n_{c}^{2}=\epsilon_{gen}/\epsilon_{0}$
+\end_inset 
+
+) y no polares (no consideraremos momentos dipolares permanentes; ya los
+ descartamos con ocasión del estudio microscópico de la interacción radiación
+ materia en el cap.
+ 
+\begin_inset LatexCommand \ref{cap Materia}
+
+\end_inset 
+
+).
+\layout Subsection
+
+Cálculo de 
+\begin_inset Formula $\epsilon_{gen}$
+\end_inset 
+
+
+\layout Standard
+
+Vamos a tener en cuenta por separado las cargas ligadas y libres.
+ Si 
+\begin_inset Formula $\epsilon=\epsilon_{0}\left(1+\chi_{e}\right)$
+\end_inset 
+
+:
+\begin_inset Formula \[
+\epsilon_{gen}=\epsilon+\frac{i}{\omega}\sigma\]
+
+\end_inset 
+
+
+\layout Subsubsection
+
+Contribución de las cargas ligadas: 
+\begin_inset Formula $\epsilon$
+\end_inset 
+
+
+\layout Standard
+
+Nos vemos obligados a recuperar el subíndice 
+\begin_inset Formula $_{mac}$
+\end_inset 
+
+:
+\begin_inset Formula \[
+\mathbf{P}=\epsilon_{0}\chi_{e}\mathbf{E}_{mac}\]
+
+\end_inset 
+
+ es por definición el momento dipolar por unidad de volumen
+\begin_inset Formula \[
+\mathbf{P}=\frac{1}{\Delta V}\sum_{j\in\Delta V}q_{j}\mathbf{r}_{j}\]
+
+\end_inset 
+
+ Ahora vamos a 
+\emph on 
+calcular
+\emph default 
+ la constante de proporcionalidad 
+\begin_inset Formula $\epsilon_{0}\chi_{e}$
+\end_inset 
+
+, en lugar de limitarnos a decir que como 
+\begin_inset Formula $\mathbf{r}_{j}\propto\mathbf{E}_{mic}$
+\end_inset 
+
+ entonces 
+\begin_inset Formula $\mathbf{P}\propto\mathbf{E}_{mic}$
+\end_inset 
+
+ , es decir 
+\begin_inset Formula $\mathbf{P}=\epsilon_{0}\chi_{e}\mathbf{E}_{mac}$
+\end_inset 
+
+.
+ La ecuación de la trayectoria de la carga ligada era
+\begin_inset Formula \begin{equation}
+\mathbf{r}\left(t\right)=\frac{\frac{q}{m}}{\omega_{0}^{2}-\omega^{2}-i\gamma\omega}\mathbf{E}_{mic}\label{ec tray carga ligada}\end{equation}
+
+\end_inset 
+
+y se puede escribir como
+\begin_inset Formula \[
+\mathbf{r}=\frac{1}{q}\alpha\mathbf{E}_{mic}\]
+
+\end_inset 
+
+donde 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+ se llama 
+\emph on 
+polarizabilidad
+\emph default 
+,
+\begin_inset Formula \[
+\alpha=\frac{\frac{q^{2}}{m}}{\omega_{0}^{2}-\omega^{2}-i\gamma\omega}\]
+
+\end_inset 
+
+
+\emph on 
+ 
+\emph default 
+Ahora estamos preparados para escribir la polarización como suma sobre todos
+ los átomos
+\begin_inset Formula \[
+\mathbf{P}=\frac{1}{\Delta V}\sum_{j\in\Delta V}\alpha_{j}\mathbf{E}_{mic,j}\]
+
+\end_inset 
+
+ De momento vamos a suponer que todos los átomos son iguales, lo que implica
+ que tienen la misma polarizabilidad
+\begin_inset Formula \[
+\mathbf{P}=\frac{1}{\Delta V}\alpha\sum_{j\in\Delta V}\mathbf{E}_{mic,j}\]
+
+\end_inset 
+
+ Aquí llegamos a la dificultad de este cálculo: ¿cuánto vale 
+\begin_inset Formula $\mathbf{E}_{mic,j}$
+\end_inset 
+
+?.
+ Para calcularlo introducimos 
+\begin_inset Formula $N$
+\end_inset 
+
+, el número de átomos en 
+\begin_inset Formula $\Delta V$
+\end_inset 
+
+.
+\begin_inset Formula \[
+\mathbf{P}=\alpha\frac{N}{\Delta V}\underbrace{\frac{1}{N}\sum_{j=1}^{N}\mathbf{E}_{mic,j}}\]
+
+\end_inset 
+
+ la cantidad señalada por una llave se parece mucho al campo macroscópico,
+ pero en general no coincide con él.
+ Eso es porque el campo macroscópico lo definíamos como integral a un volumen,
+ y el promedio que hacemos aquí es sólo sobre 
+\emph on 
+los
+\emph default 
+ 
+\emph on 
+átomos
+\emph default 
+ contenidos en el volumen
+\emph on 
+.
+
+\emph default 
+ El campo macroscópico se calcula también
+\emph on 
+ 
+\emph default 
+sobre
+\emph on 
+ los espacios 
+\emph default 
+entre átomos.
+ Hay dos expresiones que relacionan 
+\begin_inset Formula $\mathbf{E}_{mic}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathbf{E}_{mac}$
+\end_inset 
+
+.
+\layout Itemize
+
+La que vamos a utilizar efectivamente da
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+
+\begin_inset Formula $N_{V}=\frac{N}{\Delta V}$
+\end_inset 
+
+ es el número de átomos por unidad de volumen.
+ Parecido a la densidad.
+\end_inset 
+
+
+\begin_inset Formula \[
+\mathbf{P}=\alpha N_{V}\mathbf{E}_{mac}\]
+
+\end_inset 
+
+ (es decir, no hacer caso de la distinción entre integrar al volumen y sumar
+ sobre los átomos del volumen).
+ Esta expresión será buena en gases a baja presión y en general en medios
+ que no tienen ninguna estructura ordenada.
+ Es válida cuando
+\begin_inset Formula \[
+N_{V}\frac{\alpha}{\epsilon_{0}}\ll1\]
+
+\end_inset 
+
+
+\layout Itemize
+
+Si se hicieran los cálculos, se encontraría esta expresión
+\begin_inset Formula \[
+\mathbf{P}=\alpha N_{V}\left(\mathbf{E}_{mac}-\frac{1}{3\epsilon_{0}}\mathbf{P}\right)\]
+
+\end_inset 
+
+ que es de validez más general.
+\layout Standard
+
+Salvo en los problemas usaremos la primera expresión, que es una aproximación
+ de la segunda, pero que nos dará los mismos resultados cualitativos.
+ Los aspectos fenomenológicos están recogidos en ambas ecuaciones.
+ 
+\layout Standard
+
+Proseguimos el trabajo.
+ Como 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{P} & = & \epsilon_{0}\chi_{e}\mathbf{E}_{mac}\\
+\epsilon & = & \epsilon_{0}\left(1+\chi_{e}\right)\end{eqnarray*}
+
+\end_inset 
+
+ se puede escribir, al ser 
+\begin_inset Formula $\epsilon_{0}\chi_{e}=N_{V}\alpha$
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray*}
+\epsilon & = & \epsilon_{0}\left(1+N_{V}\frac{\alpha}{\epsilon_{0}}\right)\\
+ & = & \epsilon_{0}\left(1+N_{V}\frac{\frac{q^{2}}{m\epsilon_{0}}}{\omega_{0}^{2}-\omega^{2}-i\gamma\omega}\right)\end{eqnarray*}
+
+\end_inset 
+
+ esta expresión relaciona la constante dieléctrica con los parámetros microscópi
+cos del medio, y admite una generalización si consideramos que los átomos
+ son de diferente tipo (
+\begin_inset Formula $\omega_{0j},\gamma_{j}$
+\end_inset 
+
+ varían de átomo a átomo).
+ Volviendo al sumatorio que es la definición de 
+\begin_inset Formula $\mathbf{P}$
+\end_inset 
+
+ y reconstruyendo los cálculos se obtiene
+\begin_inset Formula \[
+\epsilon=\epsilon_{0}\left(1+\sum_{j}N_{Vj}\frac{\frac{q^{2}}{m\epsilon_{0}}}{\omega_{0j}^{2}-\omega^{2}-i\gamma_{j}\omega}\right)\]
+
+\end_inset 
+
+ En la bibliografía encontraremos otra escritura, que se apoya en definir
+ la magnitud 
+\emph on 
+fuerza del oscilador
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+En un tratamiento cuántico en el que se consideren varias frecuencias de
+ transición, la fuerza del oscilador se interpreta como una magnitud que
+ cuantifica lo predominante que es una transición (una frecuencia de resonancia).
+\end_inset 
+
+
+\emph default 
+
+\begin_inset Formula \[
+f_{j}=\frac{N_{Vj}}{N_{V}}\]
+
+\end_inset 
+
+que representa la proporción de átomos de la especie 
+\begin_inset Formula $j$
+\end_inset 
+
+ (
+\begin_inset Formula $\sum f_{j}=1$
+\end_inset 
+
+).
+ La expresión final adopta la forma
+\begin_inset Formula \[
+\epsilon=\epsilon_{0}\left(1+N_{V}\frac{q^{2}}{m\epsilon_{0}}\sum_{j}\frac{f_{j}}{\omega_{0^{2}}-\omega^{2}-i\gamma_{j}\omega}\right)\]
+
+\end_inset 
+
+
+\emph on 
+ 
+\begin_inset Formula $q$
+\end_inset 
+
+ 
+\emph default 
+y
+\emph on 
+ 
+\begin_inset Formula $m$
+\end_inset 
+
+ 
+\emph default 
+son comunes a todos los átomos, y para nosotros serán en general la carga
+ y masa del electrón.
+\layout Subsubsection
+
+Contribución de las cargas libres: 
+\begin_inset Formula $\sigma$
+\end_inset 
+
+
+\layout Standard
+
+Para obtener el término con que contribuyen las cargas libres a la constante
+ dieléctrica generalizada necesitamos calcular la conductividad.
+\begin_inset Formula \[
+\left\langle \mathbf{j}_{lib}\right\rangle =\sigma\mathbf{E}_{mac}\]
+
+\end_inset 
+
+ nuestro objetivo es escribir la conductividad en función de la dinámica
+ microscópica de las cargas.
+ Promediamos a un volumen pequeño frente a la longitud de onda pero lo suficient
+emente grande como para contener un alto número de cargas
+\layout Standard
+
+
+\begin_inset Formula \[
+\left\langle \mathbf{j}_{lib}\right\rangle =\frac{1}{\Delta V}\sum_{j\in\Delta V}q_{j}\dot{\mathbf{r}}_{j}\]
+
+\end_inset 
+
+ Derivando la posición 
+\begin_inset Formula $\mathbf{r}_{j}$
+\end_inset 
+
+ (ecuación 
+\begin_inset LatexCommand \ref{ec tray carga ligada}
+
+\end_inset 
+
+),
+\begin_inset Formula \[
+\left\langle \mathbf{j}_{lib}\right\rangle =\sigma\mathbf{E}_{mac}=\frac{1}{\Delta V}\sum_{j\in\Delta V}\frac{q^{2}}{m}\frac{i}{\omega+i\gamma}E_{mic,j}\]
+
+\end_inset 
+
+ 
+\begin_inset Formula $q$
+\end_inset 
+
+ aparece sin índice alguno porque se trata siempre de la misma carga libre:
+ los electrones.
+ Al igual que para las cargas ligadas, introducimos un número de cargas
+ libres en 
+\begin_inset Formula $\Delta V$
+\end_inset 
+
+, 
+\begin_inset Formula $N_{V}'$
+\end_inset 
+
+ 
+\begin_inset Formula \[
+\left\langle \mathbf{j}_{lib}\right\rangle =\frac{q^{2}}{m}\frac{i}{\omega+i\gamma}\frac{N'}{\Delta V}\underbrace{\frac{1}{N'}\sum_{j=1}^{N'}\mathbf{E}_{mic,j}}\]
+
+\end_inset 
+
+ La cantidad señalada, por razones ya discutidas, no es el campo macroscópico
+ estrictamente, pero nosotros lo utilizaremos para los problemas que nos
+ interesan, pues constituye una aproximación razonable (las cargas libres
+ están tan dispersas que el sumatorio es buena aproximación numérica de
+ la integral que se debería hacer en su lugar.
+ No hay otras fórmulas de aproximación para las cargas libres, a diferencia
+ de lo que ocurre para las cargas ligadas, donde hemos presentado una que
+ será utilizada en los problemas).
+ Por ello
+\begin_inset Formula \[
+\left\langle \mathbf{j}_{libre}\right\rangle =iN'\frac{q^{2}}{m}\frac{1}{\omega+i\gamma}\mathbf{E}_{mac}\]
+
+\end_inset 
+
+ con lo que 
+\begin_inset Formula \[
+\sigma=iN_{V}'\frac{q^{2}}{m}\frac{1}{\omega+i\gamma}\]
+
+\end_inset 
+
+
+\layout Subsection
+
+Índice de refracción
+\layout Standard
+
+Estamos llegando a nuestro objetivo declarado de expresar el índice de refracció
+n en función de los parámetros microscópicos del material.
+ Como 
+\begin_inset Formula $n_{c}^{2}=\left(n+i\kappa\right)^{2}=\epsilon_{gen}/\epsilon_{0}$
+\end_inset 
+
+
+\begin_inset Formula \[
+n_{c}^{2}=1+N_{V}\frac{q^{2}}{m\epsilon_{0}}\sum_{j}\frac{f_{j}}{\omega_{0j}^{2}-\omega^{2}-i\gamma_{j}\omega}-N_{V}'\frac{q^{2}}{m\epsilon_{0}}\frac{1}{\omega\left(\omega+i\gamma\right)}\]
+
+\end_inset 
+
+ nuestro siguiente objetivo es despejar de ahí 
+\begin_inset Formula $n$
+\end_inset 
+
+ y 
+\begin_inset Formula $\kappa$
+\end_inset 
+
+.
+ Pero ya podemos decir dos cosas
+\layout Itemize
+
+en general, los medios van a ser dispersivos: en este índice de refracción
+ hay una marcada dependencia de la fercuencia en casi todos los términos.
+ 
+\layout Itemize
+
+podemos decir lo mismo respecto al carácter complejo: en general habrá una
+ parte compleja del índice de refracción.
+ Lo absorbente que sea el medio dependerá de la frecuencia, pero en general
+ en alguna parte del espectro el medio será absorbente.
+ 
+\layout Itemize
+
+esta fórmula también contempla la posibilidad de medios inhomogéneos, a
+ través de una dependencia espacial de las densidades de cargas libres y
+ ligadas, 
+\begin_inset Formula $N_{V}'$
+\end_inset 
+
+ y 
+\begin_inset Formula $N_{V}$
+\end_inset 
+
+.
+\layout Standard
+
+Ya estamos listos para demostrar la afirmación que hicimos de que 
+\begin_inset Formula \[
+\Im\left\{ \epsilon_{gen}\right\} \propto\gamma_{j},\gamma>0\]
+
+\end_inset 
+
+esto se deduce multiplicando y dividiendo por los complejos conjugados de
+ los denominadores en los dos últimos términos.
+ Como ambos parámetros 
+\begin_inset Formula $\gamma_{j},\gamma$
+\end_inset 
+
+ des\SpecialChar \-
+cri\SpecialChar \-
+ben pérdidas, son constantes positivas por definición, por lo que
+ se encuentra la relación expuesta y, consecuentemente 
+\begin_inset Formula $\mathbf{k}\cdot\mathbf{a}\geq0$
+\end_inset 
+
+.
+ Proseguiremos tratando de separar parte imaginaria y real del índice de
+ refracción, y para ello abordaremos dos casos simples
+\layout Subsubsection
+
+Dieléctrico: no hay cargas libres
+\layout Standard
+
+Para un dieléctrico sólo tenemos la primera contribución:
+\begin_inset Formula \[
+n_{c}^{2}=1+N_{V}\frac{q^{2}}{m\epsilon_{0}}\sum_{j}\frac{f_{j}}{\omega_{0j}^{2}-\omega^{2}-i\gamma_{j}\omega}\]
+
+\end_inset 
+
+ Esta expresión proviene de aproximar el campo eléctrico macroscópico por
+ un sumatorio, lo que sólo se podía hacer si 
+\begin_inset Formula $\frac{N_{V}\alpha}{\epsilon_{0}}\ll1$
+\end_inset 
+
+ (normalmente gases diluídos).
+ Podemos aprovechar este dato y utilizar la aproximación lineal de la raíz
+ cuadrada 
+\begin_inset Formula \[
+\sqrt{1+x}\approx1+\frac{x}{2}\]
+
+\end_inset 
+
+ Después extraemos parte real e imaginaria
+\begin_inset Formula \begin{eqnarray*}
+n+i\kappa & = & 1+N_{V}\frac{q^{2}}{2m\epsilon_{0}}\sum_{j}\frac{f_{j}}{\omega_{0j}^{2}-\omega^{2}-i\gamma_{j}\omega}\\
+n & = & 1+N_{V}\frac{q^{2}}{2m\epsilon_{0}}\sum_{j}\frac{\left(\omega_{0,j}^{2}-\omega^{2}\right)f_{j}}{\left(\omega_{0j}^{2}-\omega^{2}\right)^{2}+\gamma_{j}^{2}\omega}\\
+\kappa & = & N_{V}\frac{q^{2}}{2m\epsilon_{0}}\sum_{j}\frac{\omega\gamma_{j}f_{j}}{\left(\omega_{0,j}^{2}-\omega^{2}\right)^{2}+\gamma_{j}^{2}\omega^{2}}\end{eqnarray*}
+
+\end_inset 
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/m-coeficiente-absorcion.eps
+	display monochrome
+	width 5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Coeficiente de absorción de un material imaginario.
+ Se han usado unidades arbitrarias y los datos siguientes 
+\begin_inset Formula $f_{j}=\left\{ 0.1,0.3,0.6\right\} $
+\end_inset 
+
+, 
+\begin_inset Formula $\omega_{j}=\left\{ 8,10,15\right\} $
+\end_inset 
+
+ y 
+\begin_inset Formula $\gamma_{j}=\left\{ 1,1,0.5\right\} $
+\end_inset 
+
+, respectivamente.
+\end_inset 
+
+La parte imaginaria vale 0 a no ser que estemos en las proximidades de las
+ resonancias, zonas denominadas 
+\emph on 
+bandas de absorción
+\emph default 
+.
+ La anchura de estos picos de 
+\begin_inset Formula $\kappa$
+\end_inset 
+
+ es proporcional a 
+\begin_inset Formula $\gamma_{j}$
+\end_inset 
+
+.
+ Una primera conclusión importante es que no existen medios transparentes
+ o absorbentes en todo el espectro electromagnético.
+ Los vidrios de ventana por ejemplo son muy opacos al ultravioleta.
+\layout Standard
+
+Para átomos aislados (sin interacciones con el entorno) los picos se parecen
+ a deltas de 
+\noun on 
+Dirac
+\noun default 
+.
+ Si empezamos a considerar medios más densos (gases a presión creciente)
+ la anchura de las bandas crece.
+ Las bandas pueden estar próximas, y si es así, se superponen muchos picos
+ para dar lugar a una verdadera banda ancha que puede cubrir todo el visible,
+ como ocurre con los metales.
+ En general, las bandas de absorción de una mezcla de gases son la superposición
+ de las bandas de absorción individuales (figura 
+\begin_inset LatexCommand \ref{fig superposicion bandas absorcion}
+
+\end_inset 
+
+).
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/m-coeficiente-absorcion-solido.eps
+	display monochrome
+	width 5cm
+
+\end_inset 
+
+ 
+\begin_inset Graphics
+	filename fig/m-coeficiente-absorcion-solido2.eps
+	display monochrome
+	width 5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig superposicion bandas absorcion}
+
+\end_inset 
+
+Banda ancha de absorción debida a la superposición de muchas bandas individuales
+ (para la primera figura se utilizaron 20 de estas bandas; para la segunda,
+ 8).
+\end_inset 
+
+
+\layout Standard
+
+Como vemos, se puede obtener información sobre la materia estudiando cómo
+ se propaga la luz en ella.
+ El análisis espectral de una substancia nos indica sus frecuencias de resonanci
+a, y la anchura de las líneas de absorción nos da información sobre los
+ parámetros 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+.
+ Las zonas donde 
+\begin_inset Formula $\kappa$
+\end_inset 
+
+ vale cero son de transmisión perfecta, sin absorción.
+\layout Standard
+
+De estos gráficos sólo se pide un conocimiento cualitativo.
+\layout Standard
+
+Podemos representar también la parte real, 
+\begin_inset Formula $n\left(\omega\right)$
+\end_inset 
+
+ (figura 
+\begin_inset LatexCommand \ref{fig n(omega) y kappa(omega)}
+
+\end_inset 
+
+).
+ Se trata de una cantidad creciente 
+\begin_inset Formula $\left(\da{n}{\omega}>0\right)$
+\end_inset 
+
+ para las zonas de transparencia, y cómo una buena condición para identificar
+ las zonas de absorción es justo la contraria, 
+\begin_inset Formula $\left(\da{n}{\omega}<0\right)$
+\end_inset 
+
+.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/m-indice-refraccion-coef-absorcion.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig n(omega) y kappa(omega)}
+
+\end_inset 
+
+Índice de refracción 
+\begin_inset Formula $n\left(\omega\right)$
+\end_inset 
+
+ (arriba) y coeficiente de absorción 
+\begin_inset Formula $\kappa\left(\omega\right)$
+\end_inset 
+
+ (abajo).
+ Las escalas se han manipulado con objeto de mejorar la claridad de la presentac
+ión.
+ La información cualitativa a retener concierne las zonas de dispersión
+ normal y las zonas de dispersión anómala.
+\end_inset 
+
+Las zonas así caracterizadas reciben la denominación, respectivamente, de
+ zona de 
+\emph on 
+dispersión
+\emph default 
+ 
+\emph on 
+normal
+\emph default 
+ y zona de 
+\emph on 
+dispersión
+\emph default 
+ 
+\emph on 
+anómala
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+en dispersión anómala la velocidad de fase es mayor que 
+\begin_inset Formula $c$
+\end_inset 
+
+, el índice de refracción es 
+\begin_inset Formula $<1$
+\end_inset 
+
+ y las longitudes de onda cortas se refractan menos que las largas.
+ Ver 
+\begin_inset LatexCommand \cite{Born}
+
+\end_inset 
+
+.
+\end_inset 
+
+
+\emph default 
+.
+\layout Standard
+
+La dispersión normal se da en transparencia y es fácilmente observable,
+ mientras que la dispersión anómala recibe ese nombre porque es raramente
+ observable, ya que se encuentra en la zona de absorción.
+\layout Subsubsection
+
+Conductor: hay cargas libres
+\layout Standard
+
+Las cargas libres contribuyen al índice de refracción complejo del siguiente
+ modo:
+\layout Standard
+
+
+\begin_inset Formula \[
+n_{c}^{2}=1-N_{V}'\frac{q^{2}}{m\epsilon_{0}}\frac{1}{\omega\left(\omega+\gamma\right)}\]
+
+\end_inset 
+
+ Suponemos que sólo hay cargas libres aunque generalmente también hay cargas
+ ligadas.
+ Algunos valores para el caso particular del cobre son
+\begin_inset Formula \begin{eqnarray*}
+N_{V}' & = & 8\times10^{28}\frac{e^{-}}{m^{3}}\\
+\gamma & = & 4\times10^{13}s^{-1}\end{eqnarray*}
+
+\end_inset 
+
+ Aunque 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+ es mayor que antes, todavía se cumple que 
+\begin_inset Formula $\gamma\ll\omega$
+\end_inset 
+
+ y por eso podemos hacer la siguiente aproximación
+\begin_inset Formula \begin{eqnarray*}
+n_{c}^{2} & \approx & 1-N_{V}'\frac{q^{2}}{m\epsilon_{0}}\frac{1}{\omega^{2}}\\
+ & \approx1-\frac{\omega_{p}^{2}}{\omega^{2}}\end{eqnarray*}
+
+\end_inset 
+
+ donde se define la 
+\emph on 
+frecuencia de plasma 
+\emph default 
+
+\begin_inset Formula \[
+\omega_{p}\equiv\sqrt{N_{V}'\frac{q^{2}}{m\epsilon_{0}}}\]
+
+\end_inset 
+
+ para el cobre la frecuencia de plasma es 
+\begin_inset Formula $\omega_{p}=1.6\times10^{16}\frac{rad}{s}$
+\end_inset 
+
+ y corresponde al ultravioleta.
+\layout Standard
+
+Vamos a estudiar dos casos
+\layout Enumerate
+
+Visible 
+\begin_inset Formula $\omega<\omega_{p}$
+\end_inset 
+
+ implica que 
+\begin_inset Formula $n_{c}^{2}<0$
+\end_inset 
+
+ con lo cual 
+\begin_inset Formula $n_{c}=i\kappa$
+\end_inset 
+
+ (hay una parte real, pero ha desaparecido por la doble aproximación que
+ hemos hecho).
+ 
+\begin_inset Formula \[
+\kappa=\sqrt{\frac{\omega_{p}}{\omega^{2}}-1}\]
+
+\end_inset 
+
+Para el cobre en el visible 
+\begin_inset Formula $\omega\approx3\times10^{15}rad/s$
+\end_inset 
+
+, de modo que 
+\begin_inset Formula $\kappa\approx5$
+\end_inset 
+
+.
+ El cálculo no es muy exacto, pero da bien el orden del índice de refracción.
+ El valor de 
+\begin_inset Formula $\kappa$
+\end_inset 
+
+ es bastante grande, en consonancia con el hecho de que los metales son
+ opacos a la radiación visible.
+\layout Enumerate
+
+
+\begin_inset Formula $\omega>\omega_{p}$
+\end_inset 
+
+ de modo que 
+\begin_inset Formula $n_{c}^{2}>0$
+\end_inset 
+
+; es decir 
+\begin_inset Formula $n_{c}=n$
+\end_inset 
+
+.
+ El coeficiente de absorción es nulo.
+ Lo que en el visible era fuertemente absorbente en el UV 
+\begin_inset Formula $\left(\omega_{p}<\omega\right)$
+\end_inset 
+
+ pasa a ser transparente y viceversa.
+\the_end

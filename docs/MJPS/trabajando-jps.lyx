@@ -1,0 +1,644 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass scrbook
+\begin_preamble
+\usepackage{framed} 
+\typearea{10}
+\usepackage{multicol}
+\end_preamble
+\language spanish
+\inputencoding auto
+\fontscheme times
+\graphics default
+\paperfontsize 11
+\spacing single 
+\papersize Default
+\paperpackage widemarginsa4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+
+\layout Chapter
+
+Trabajando con la JPS
+\begin_inset LatexCommand \label{ap_trabajando_jps}
+
+\end_inset 
+
+
+\layout Section
+
+Esquema de trabajo
+\layout Standard
+
+La forma de trabajo es la habitual con las FPGA's.
+ El software con el que se ha probado la placa y con el que se ha hecho
+ el ejemplo del inversor es el 
+\series bold 
+Xilinx Foundation Series F3.1i, 
+\series default 
+para Windows.
+\layout Standard
+
+El proceso de trabajo se resume en la figura 
+\begin_inset LatexCommand \ref{fig_esquema_trabajo}
+
+\end_inset 
+
+.
+ El diseño se puede realizar directamente dibujando el esquema o bien describién
+dolo en VHDL.
+ Esta segunda opción es la recomendada puesto que así nuestros diseños serán
+ más portables y se podrán sintetizar con otro programa diferentes al Xilinx
+ Foundation.
+\layout Standard
+
+El primer paso es la 
+\series bold 
+simulación
+\series default 
+, para comprobar si el circuito funciona correctamente y en caso contrario
+ poder detectar dónde están los problemas.
+\layout Standard
+
+Lo siguiente es 
+\series bold 
+sintetizar el diseño
+\series default 
+, que consiste en obtener el fichero 
+\series bold 
+bitstream
+\series default 
+ necesario para que la FPGA se reconfigure.
+ En este proceso tenemos que utilizar opcionalmente el fichero de restricciones,
+ que tiene extensión .ucf, en el que indicamos por qué pin de la FPGA queremos
+ que entre o salga cada uno de las señales de nuestro diseño.
+ Para la creación de este fichero necesitamos conocer cuáles son los pines
+ que están disponibles para ser usados con la tarjeta JPS.
+ Ver apartado 
+\begin_inset LatexCommand \ref{ap_distribucion_global}
+
+\end_inset 
+
+.
+ Por ejemplo el Pin P68 de la FPGA está conectado en la tarjeta JPS al led
+ de pruebas (test).
+\layout Standard
+
+Una vez generado el bitstream, lo podemos 
+\series bold 
+descargar
+\series default 
+ directamente a la JPS utilizando el 
+\emph on 
+download cable
+\emph default 
+ de Xilinx (Ver apartado 
+\begin_inset LatexCommand \ref{ap_prog_pc}
+
+\end_inset 
+
+).
+ Para ello es necesario quitar el jumper JP1 y sacar la eeprom de su zócalo.
+\layout Standard
+
+Para grabar el bitstream en la memoria eeprom obtener un diseño autónomo
+ del PC es necesario primero generar un fichero en formato HEX de intel,
+ que tiene extensión .MCS.
+ Este fichero lo podemos leer con un grabador que soporte las memorias ATMEL
+ AT17C128 y grabar la eeprom.
+ Finalmente la introducimos en la placa JPS, ponermos el jumper JP1 y colocamos
+ correctamente el switch 1.
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename ps/diseno_con_fpga.eps
+	display monochrome
+	width 90col%
+
+\end_inset 
+
+
+\layout Caption
+
+Esquema de trabajo con la JPS
+\begin_inset LatexCommand \label{fig_esquema_trabajo}
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Section
+
+Un ejemplo muy sencillo: un inversor
+\layout Subsection
+
+El esquema
+\layout Standard
+
+Vamos a realizar el diseño más sencillo posible, un inversor (puerta NOT)
+ que se coloque entre los pines 
+\series bold 
+P69
+\series default 
+ y 
+\series bold 
+P68
+\series default 
+ de la FPGA, que se corresponden con el 
+\series bold 
+pulsado
+\series default 
+r y 
+\series bold 
+led de pruebas
+\series default 
+ de la tarjeta JPS.
+ Cuando lo tengamos funcionando, cada vez que se apriete el pulsador se
+ encenderá el led de test.
+\layout Standard
+
+El diseño se muestra en la figura 
+\begin_inset LatexCommand \ref{fig_inversor_pruebas}
+
+\end_inset 
+
+.
+ Cuando lo tengamos dentro de la FPGA, se comportará como el diseño mostrado
+ en la figura 
+\begin_inset LatexCommand \ref{fig_inversor_pruebas_jpg}
+
+\end_inset 
+
+.
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename ps/fig_ej_inversor_1.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+El esquema del inversor de pruebas
+\begin_inset LatexCommand \label{fig_inversor_pruebas}
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename ps/fig_ej_inversor_2.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+Diseño integrado en la tarjeta JPS
+\begin_inset LatexCommand \label{fig_inversor_pruebas_jpg}
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Subsection
+
+El diseño en VHDL
+\layout Standard
+
+El diseño en vhdl se encuentra en el fichero 
+\series bold 
+inversor.vhd
+\series default 
+, que se muestra a continuación:
+\layout Standard
+\added_space_top bigskip 
+
+\family typewriter 
+----------------------------------------------------
+\layout Standard
+
+
+\family typewriter 
+-- inversor.vhdl\SpecialChar ~
+ (c) Juan Gonzalez.
+ Dic\SpecialChar ~
+\SpecialChar ~
+ 2002\SpecialChar ~
+\SpecialChar ~
+ --
+\layout Standard
+
+
+\family typewriter 
+----------------------------------------------------
+\layout Standard
+
+
+\family typewriter 
+-- Ejemplos para aprender VHDL\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+ -
+\layout Standard
+
+
+\family typewriter 
+--\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+ -
+\layout Standard
+
+
+\family typewriter 
+-- Creacion de una entidad que es un inversor\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+ -
+\layout Standard
+
+
+\family typewriter 
+-- Licencia GPL\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+ -
+\layout Standard
+
+
+\family typewriter 
+----------------------------------------------------
+\layout Standard
+
+
+\family typewriter 
+\SpecialChar ~
+
+\layout Standard
+
+
+\family typewriter 
+library ieee;
+\layout Standard
+
+
+\family typewriter 
+use ieee.std_logic_1164.all;
+\layout Standard
+
+
+\family typewriter 
+\SpecialChar ~
+
+\layout Standard
+
+
+\family typewriter 
+--------------------------------------------
+\layout Standard
+
+
+\family typewriter 
+-- Se define una entidad que es un inversor
+\layout Standard
+
+
+\family typewriter 
+-- i: Entrada
+\layout Standard
+
+
+\family typewriter 
+-- o: Salida
+\layout Standard
+
+
+\family typewriter 
+--------------------------------------------
+\layout Standard
+
+
+\family typewriter 
+entity inversor is
+\layout Standard
+
+
+\family typewriter 
+\SpecialChar ~
+ port (i : in std_logic; o: out std_logic);
+\layout Standard
+
+
+\family typewriter 
+end inversor;
+\layout Standard
+
+
+\family typewriter 
+\SpecialChar ~
+
+\layout Standard
+
+
+\family typewriter 
+architecture ttl of inversor is
+\layout Standard
+
+
+\family typewriter 
+begin
+\layout Standard
+
+
+\family typewriter 
+\SpecialChar ~
+ o <= not i;
+\layout Standard
+
+
+\family typewriter 
+end ttl;
+\layout Standard
+
+
+\family typewriter 
+\SpecialChar ~
+
+\layout Standard
+\added_space_top bigskip 
+La entrada del inversor se ha llamado
+\series bold 
+\emph on 
+ i
+\series default 
+\emph default 
+ y la salida 
+\series bold 
+\emph on 
+o
+\series default 
+\emph default 
+.
+ Esto será necesario conocerlo para definir el fichero restricciones.
+\layout Subsection
+
+El fichero restricciones: inversor.ucf
+\layout Standard
+\added_space_bottom bigskip 
+Este fichero contiene la información que relaciona las señales de mi diseño
+ con los pines de la FPGA.
+ Para el diseño del inversor tiene el siguiente aspecto:
+\layout Standard
+
+
+\family typewriter 
+\SpecialChar ~
+
+\layout Standard
+
+
+\family typewriter 
+NET "i"\SpecialChar ~
+ LOC="P69";
+\layout Standard
+
+
+\family typewriter 
+NET "o" LOC="P68";
+\layout Standard
+
+
+\family typewriter 
+\SpecialChar ~
+
+\layout Standard
+\added_space_top bigskip 
+La señal 
+\begin_inset Quotes eld
+\end_inset 
+
+i
+\begin_inset Quotes erd
+\end_inset 
+
+,que es la entrada de nuestro inversor se asocia al pin 69 de la FPGA, que
+ en la tarjeta JPS está conectado al pulsador de test.
+ La señal 
+\begin_inset Quotes eld
+\end_inset 
+
+o
+\begin_inset Quotes erd
+\end_inset 
+
+ se asocia al pin 68, que se corresponde con el led de pruebas.
+\layout Standard
+
+Sólo con cambiar este fichero y volver a sintetizar conseguiremos tener
+ un inversor entre dos pines cualquiera de la FPGA.
+\layout Subsection
+
+Otros ficheros: inversor.hex, inversor.mcs
+\layout Standard
+
+El bitstream generado al sintetizar es el 
+\series bold 
+inversor.hex
+\series default 
+, que contiene la información en una única línea, codificada mediante caracteres
+ en ascii en hexadecimal.
+\layout Standard
+\added_space_bottom bigskip 
+Para grabar la eeprom generamos el fichero 
+\series bold 
+inversor.mcs
+\series default 
+, en formato HEX de intel.
+ Las primeras líneas del fichero se muestran a continuación:
+\layout Standard
+
+:020000020000FC
+\layout Standard
+
+:10000000FF04E88CF9EA7F7FFDF5D75F7FFDF5B748
+\layout Standard
+
+:10001000BFFEFAEEEFBEFEFAFB93FFEFBFFFFEFB63
+\layout Standard
+
+:10002000EFBFFFFEF7DF7F7FFDB7DF7FFFFFEAFF58
+\layout Standard
+
+.....
+\layout Section
+
+Configuración de jumpers y switches
+\layout Subsection*
+
+Para trabajar en modo autónomo (Carga desde la eeprom)
+\layout Itemize
+
+Asegurarse que el switch 1 esté a ON
+\layout Itemize
+
+Que el jumper JP1 esté conectado
+\layout Itemize
+
+Pulsar el botón de programación
+\layout Subsection*
+
+Para trabajar en modo entrenador (Carga desde el PC)
+\layout Itemize
+
+Quitar la eeprom del zócalo
+\layout Itemize
+
+Conectar el download cable
+\layout Itemize
+
+Quitar el jumper JP1
+\the_end

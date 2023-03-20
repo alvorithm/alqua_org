@@ -1,0 +1,6260 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass book
+\begin_preamble
+\input{OE-packages.sty}
+\input{OE-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding latin1
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize a4paper
+\paperpackage a4
+\use_geometry 1
+\use_amsmath 1
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 2
+\papersides 2
+\paperpagestyle default
+
+\layout Chapter
+
+Ejercicios y problemas
+\layout Section
+
+Resueltos
+\layout Paragraph
+\line_top 
+Problema
+\layout Standard
+
+
+\emph on 
+Consideremos el campo eléctrico 
+\begin_inset Formula \[
+\mathbf{E}\left(z,t\right)=E_{0}\cos\left(\omega t-kz\right)\mathbf{u}_{x}+E_{0}\sin\left(\omega t-kz\right)\mathbf{u}_{y}\]
+
+\end_inset 
+
+ siendo 
+\begin_inset Formula $\mathbf{u}_{x},\mathbf{u}_{y}$
+\end_inset 
+
+ los correspondientes vectores unitarios.
+ ¿Es una onda armónica?.
+ Escribir 
+\begin_inset Formula $\mathbf{E}$
+\end_inset 
+
+ en representación compleja.
+ ¿Es una onda plana? ¿Cuál es su estado de polarización?.
+\layout Paragraph
+
+Respuesta
+\layout Standard
+
+Sí es una onda armónica, pues se puede escribir del siguiente modo
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{E}\left(z,t\right) & = & E_{0}\left(\mathbf{u}_{x},\mathbf{u}_{y}\right)\binom{\cos\left(\omega t-kz\right)}{\sin\left(\omega t-kz\right)}\\
+ & = & E_{0}\left(\mathbf{u}_{x},\mathbf{u}_{y}\right)\binom{\cos\left(\omega t-kz\right)}{\cos\left(\omega t-kz-\frac{\pi}{2}\right)}\\
+ & = & E_{0}\left(\mathbf{u}_{x},i\mathbf{u}_{y}\right)\binom{e^{i\left(\omega t-kz\right)}}{e^{i\left(\omega t-kz\right)}}\\
+ & = & \left(E_{0}\mathbf{u}_{x}+E_{0}i\mathbf{u}_{y}\right)e^{i\left(\omega t-kz\right)}\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Paragraph
+\line_top 
+Problema
+\layout Standard
+
+
+\emph on 
+Dar respuesta a las siguientes cuestiones
+\layout Enumerate
+
+
+\emph on 
+La suma de dos ondas planas ¿es siempre una onda plana?.
+ 
+\layout Enumerate
+
+
+\emph on 
+¿La superposición de dos ondas linealmente polarizadas ¿está siempre linealmente
+ polarizada?.
+ 
+\layout Enumerate
+
+
+\emph on 
+La superposición de dos ondas circularmente polarizadas ¿está siempre circularme
+nte polarizada?.
+\layout Paragraph
+
+Respuesta
+\layout Enumerate
+
+Una onda armónica es aquella para la cual
+\begin_inset Formula \[
+\ddpt{\mathbf{E}}=-\omega^{2}\mathbf{E}\]
+
+\end_inset 
+
+ lo que es equivalente a la definición que hemos dado 
+\begin_inset Formula \[
+E_{j}=A_{j}\left(\mathbf{r}\right)\cos\left(\omega t-g_{j}\left(\mathbf{r}\right)\right)\]
+
+\end_inset 
+
+ Se verifica que la dependencia temporal es armónica, lo cual no quiere
+ decir que forzosamente la función dada sea una onda, es decir, cumpla la
+ ecuación de ondas.
+\layout Enumerate
+
+Representación compleja
+\begin_inset Formula \[
+\mathbf{E}=\mathbf{E}_{0}\cos\left[\frac{k}{2}\mathbf{r}\cdot\left(\mathbf{u}_{1}+\mathbf{u}_{2}\right)\right]e^{i\left[\frac{k}{2}\mathbf{r}\cdot\left(\mathbf{u}_{1}+\mathbf{u}_{2}\right)-\omega t\right]}\]
+
+\end_inset 
+
+ Nótese que cambiar el signo del argumento de la exponencial no cambia nada
+ en la representación real, pues el coseno es una función par.
+ Sólo hay que pasar a representación compleja 
+\emph on 
+el coseno que lleva la dependencia temporal.
+ 
+\emph default 
+Lo que puede ser muy útil, y además es legítimo es reescribir el coseno
+ que no depende del tiempo usando la fórmula
+\begin_inset Formula \[
+\cos a=\frac{e^{ia}+e^{-ia}}{2}\]
+
+\end_inset 
+
+
+\emph on 
+Observación
+\emph default 
+: si utilizamos una fórmula trigonométrica para descomponer el producto
+ de cosenos obtenemos una suma de dos ondas armónicas.
+ Se deja como ejercicio para el lector.
+\layout Enumerate
+
+Velocidad de fase.
+ Los frentes de onda corresponden a los puntos que verifican
+\begin_inset Formula \[
+\omega t-\frac{k}{2}\cdot\mathbf{r}\left(\mathbf{u}_{1}+\mathbf{u}_{2}\right)=cte\]
+
+\end_inset 
+
+ para simplificar supongamos que la suma 
+\begin_inset Formula $\mathbf{u}_{1}+\mathbf{u}_{2}$
+\end_inset 
+
+ sigue el eje 
+\begin_inset Formula $z$
+\end_inset 
+
+ 
+\begin_inset Formula $\left(\mathbf{u}_{1}+\mathbf{u}_{2}=\left|\mathbf{u}_{1}+\mathbf{u}_{2}\right|\mathbf{u}_{z}\right)$
+\end_inset 
+
+.
+ Entonces
+\begin_inset Formula \[
+\omega t-\frac{k}{2}z\left|\mathbf{u}_{1}+\mathbf{u}_{2}\right|=cte\]
+
+\end_inset 
+
+ es decir, planos perpendiculares al eje 
+\begin_inset Formula $z$
+\end_inset 
+
+.
+ La velocidad de fase es el coeficiente que multiplica al tiempo en
+\begin_inset Formula \begin{eqnarray*}
+z & = & \frac{2\omega}{k\left|\mathbf{u}_{1}+\mathbf{u}_{2}\right|}t-2\frac{cte}{k\left|\mathbf{u}_{1}+\mathbf{u}_{2}\right|}\\
+ & = & v_{f}t-2\frac{cte}{k\left|\mathbf{u}_{1}+\mathbf{u}_{2}\right|}\end{eqnarray*}
+
+\end_inset 
+
+ Lo único que podemos decir es que será menor que la velocidad de la luz
+ en el vacío.
+ Para dar más precisiones necesitaríamos conocer 
+\begin_inset Formula $\mathbf{u}_{1}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathbf{u}_{2}$
+\end_inset 
+
+.
+\layout Enumerate
+
+Expresarlo como superposición de oap
+\begin_inset Formula \[
+\mathbf{E}=\sum\mathbf{E}_{0j}e^{i\left(\mathbf{k}_{j}\cdot\mathbf{r}-\omega_{j}t\right)}\]
+
+\end_inset 
+
+ para hacerlo no hay más que recordar la expresión del coseno que no depende
+ del tiempo en función de exponenciales complejas.
+ Manipulando un poco la representación compleja se obtiene, pues,
+\begin_inset Formula \[
+\mathbf{E}=\frac{\mathbf{E}_{0}}{2}e^{i\left(k\mathbf{u}_{1}\cdot\mathbf{r}-\omega t\right)}+\frac{\mathbf{E}_{0}}{2}e^{i\left(k\mathbf{u}_{2}\cdot\mathbf{r}-\omega t\right)}\]
+
+\end_inset 
+
+ donde 
+\begin_inset Formula $\mathbf{k}_{1}=k\mathbf{u}_{1}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathbf{k}_{2}=k\mathbf{u}_{2}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\omega_{1}=\omega_{2}=\omega$
+\end_inset 
+
+.
+ Ahora podemos responder a la pregunta de si el campo dado es una oem: lo
+ es en la medida en que se descompone en suma de oap, que son soluciones
+ cada una de ellas por separado (siempre que 
+\begin_inset Formula $\left|\mathbf{k}\right|=\frac{\omega}{c}$
+\end_inset 
+
+) y la ecO es lineal (la suma de soluciones es solución).
+\layout Paragraph
+\line_top 
+Problema
+\layout Standard
+
+
+\emph on 
+Para cierta onda armónica plana
+\begin_inset Formula \[
+\mathbf{E}\left(z,t\right)=\mathbf{E}_{0}e^{i\left(kz-\omega t\right)}\]
+
+\end_inset 
+
+ se tiene
+\begin_inset Formula \[
+\mathbf{E}_{0}=\binom{p+iq}{f+ig}\]
+
+\end_inset 
+
+ con 
+\begin_inset Formula $p,q,f,g\in\Bbb R$
+\end_inset 
+
+.
+ ¿Cuál es el estado de polarización en los siguientes casos?
+\layout Enumerate
+
+
+\emph on 
+
+\begin_inset Formula $f=2p,g=2q$
+\end_inset 
+
+.
+ 
+\layout Enumerate
+
+
+\emph on 
+
+\begin_inset Formula $f=q=0$
+\end_inset 
+
+, 
+\begin_inset Formula $p=g$
+\end_inset 
+
+
+\layout Enumerate
+
+
+\emph on 
+
+\begin_inset Formula $p=0,q=0$
+\end_inset 
+
+ 
+\layout Paragraph
+
+Respuesta
+\layout Enumerate
+
+
+\begin_inset Formula $f=2p,g=2q$
+\end_inset 
+
+.
+ Esto implica
+\begin_inset Formula \[
+\mathbf{E}_{0}=\left(p+iq\right)\binom{1}{2}\]
+
+\end_inset 
+
+ luz linealmente polarizada: 
+\begin_inset Formula $\delta y-\delta x=0$
+\end_inset 
+
+.
+ En representación real 
+\begin_inset Formula $p+iq=e^{i\varphi}$
+\end_inset 
+
+ y se tiene
+\begin_inset Formula \begin{eqnarray*}
+E_{x} & = & a\cos\left(\omega t-kz-\varphi\right)\\
+E_{y} & = & 2a\cos\left(\omega t-kz-\varphi\right)\end{eqnarray*}
+
+\end_inset 
+
+ de donde se obtiene la polarización exactamente: es la recta
+\begin_inset Formula \[
+E_{y}=2E_{x}\]
+
+\end_inset 
+
+
+\layout Enumerate
+
+
+\begin_inset Formula $f=2p$
+\end_inset 
+
+, 
+\begin_inset Formula $g=2q$
+\end_inset 
+
+ (hacer).
+ Este segundo caso da circular levógira y en representación real, las ecuaciones
+ paramétricas de una circunferencia
+\begin_inset Formula \begin{eqnarray*}
+E_{x} & = & p\cos\left(\omega t-kz\right)\\
+E_{y} & = & p\sin\left(\omega t-kz\right)\end{eqnarray*}
+
+\end_inset 
+
+ 
+\layout Enumerate
+
+con 
+\begin_inset Formula $p=0,q=0$
+\end_inset 
+
+ 
+\begin_inset Formula \[
+\mathbf{E}_{0}=\left(f+ig\right)\binom{0}{1}\]
+
+\end_inset 
+
+ de nuevo luz linealmente polarizada, vibrando en el eje 
+\begin_inset Formula $y$
+\end_inset 
+
+.
+\layout Paragraph
+\line_top 
+Problema
+\layout Standard
+
+
+\emph on 
+Estimar la amplitud del campo eléctrico de una oap cuyo promedio temporal
+ del vector de 
+\noun on 
+Poynting
+\noun default 
+ es 
+\layout Enumerate
+
+
+\emph on 
+
+\begin_inset Formula $\unit{125}\watt\per\squaren\metre$
+\end_inset 
+
+ (bombilla)
+\begin_deeper 
+\layout Enumerate
+
+
+\emph on 
+
+\begin_inset Formula $\unit{1}\kilo\watt\per\squaren\metre$
+\end_inset 
+
+ (luz solar).
+\layout Enumerate
+
+
+\emph on 
+
+\begin_inset Formula $\unit{1}\watt\per\centi\metre\squared$
+\end_inset 
+
+ (láser continuo He-Ne).
+ 
+\layout Enumerate
+
+
+\emph on 
+
+\begin_inset Formula $\unit{1}\mega\watt\per\centi\metre\squared$
+\end_inset 
+
+ (láser pulsado).
+ 
+\end_deeper 
+\layout Paragraph
+
+Respuesta
+\layout Standard
+
+No hay más remedio que hacer una hipótesis: que las ondas son expresables
+ como oaps.
+ Y esto es totalmente falso en la mayoría de los casos.
+\begin_inset Formula \[
+\mathbf{E}=\mathbf{E}_{0}e^{i\left(\mathbf{k}\cdot\mathbf{r}-\omega t\right)}\]
+
+\end_inset 
+
+ Sabemos que
+\begin_inset Formula \[
+\left|\left\langle \mathbf{S}\right\rangle \right|=\frac{1}{2}\sqrt{\frac{\epsilon_{0}}{\mu_{0}}}\left|\mathbf{E}_{0}\right|^{2}\]
+
+\end_inset 
+
+ de donde
+\begin_inset Formula \[
+\left|\mathbf{E}_{0}\right|=\sqrt{2\sqrt{\frac{\epsilon_{0}}{\mu_{0}}}\left|\left\langle \mathbf{S}\right\rangle \right|}\]
+
+\end_inset 
+
+ los valores numéricos que se obtienen son 
+\begin_inset Formula $307\frac{V}{m},\,868\frac{V}{m},\,2.7\times10^{3}\frac{V}{m},\,2.7\times10^{6}\frac{V}{m}$
+\end_inset 
+
+, respectivamente.
+ Para comparar, el campo eléctrico que siente un electrón de un átomo de
+ H es, muy aproximadamente
+\begin_inset Formula \[
+\left|\mathbf{E}\right|=\cpe\frac{1}{r^{2}}\approx10^{11}\frac{V}{m}\]
+
+\end_inset 
+
+ podemos apreciar que los cem de las ondas son siempre muy pequeños comparados
+ con los campos atómicos internos.
+ Esto puede servir para justificar la aproximación lineal para la fuerza
+ recuperadora que hemos adoptado en el desarrollo teórico.
+\layout Paragraph
+\line_top 
+Problema
+\layout Standard
+
+
+\emph on 
+Consideremos dos ondas planas monocromáticas linealmente polarizadas que
+ se propagan en la misma dirección.
+ Determinar el promedio temporal del vector de 
+\noun on 
+Poynting
+\noun default 
+ de la superposición de ambas ondas si las dos ondas tienen la misma frecuencia
+ y los vectores 
+\begin_inset Formula $\mathbf{E}$
+\end_inset 
+
+ perpendiculares.
+ 
+\layout Paragraph
+
+Respuesta
+\layout Standard
+
+Suponemos propagación en el eje 
+\begin_inset Formula $z$
+\end_inset 
+
+, por lo que escribimos la proporcionalidad a un vector real como
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{E}_{01} & \propto & \mathbf{u}_{x}\\
+\mathbf{E}_{02} & \propto & \mathbf{u}_{y}\end{eqnarray*}
+
+\end_inset 
+
+ La superposición de ambos campos es una oap de amplitud 
+\begin_inset Formula $\left(\mathbf{E}_{01}+\mathbf{E}_{02}\right)e^{i\left(kz-\omega t\right)}$
+\end_inset 
+
+ de modo que, según la fórmula
+\begin_inset Formula \[
+\left\langle \mathbf{S}\right\rangle =\frac{1}{2}\sqrt{\frac{\epsilon_{0}}{\mu_{0}}}\left|\mathbf{E}_{01}+\mathbf{E}_{02}\right|^{2}\mathbf{u}_{k}=\left(\left\langle \mathbf{S}_{1}\right\rangle +\left\langle \mathbf{S}_{2}\right\rangle \right)\]
+
+\end_inset 
+
+ 
+\emph on 
+Observaciones
+\emph default 
+: para que esto ocurra basta con que los productos escalares 
+\begin_inset Formula $\mathbf{E}_{01}^{*}\cdot\mathbf{E}_{02}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathbf{E}_{01}\cdot\mathbf{E}_{02}^{*}$
+\end_inset 
+
+ sean nulos.
+ Los estados de polarización en que esto ocurre se llaman 
+\emph on 
+estados
+\emph default 
+ 
+\emph on 
+de
+\emph default 
+ 
+\emph on 
+polarización
+\emph default 
+ 
+\emph on 
+ortogonales
+\emph default 
+.
+ Pero esta condición además de las polarizaciones lineales ortogonales,
+ la cumplen dos ondas polarizadas circularmente, una dextro y otra levo.
+\layout Standard
+
+Para llegar a esto bastaría con haber considerado detenidamente la estructura
+ de la onda y la definición del vector de 
+\noun on 
+Poynting
+\noun default 
+.
+ 
+\begin_inset Formula \[
+\mathbf{S}=\frac{1}{\mu_{0}}\left(\mathbf{E}_{1}+\mathbf{E}_{2}\right)\wedge\left(\mathbf{B}_{1}+\mathbf{B}_{2}\right)=\mathbf{S}_{1}+\mathbf{S}_{2}\]
+
+\end_inset 
+
+ como la operación de promediado es lineal se llega a 
+\begin_inset Formula $\left\langle \mathbf{S}\right\rangle =\left\langle \mathbf{S}_{1}\right\rangle +\left\langle \mathbf{S}_{2}\right\rangle $
+\end_inset 
+
+.
+\layout Paragraph
+\line_top 
+Problema
+\layout Standard
+
+
+\emph on 
+Una carga ligada es iluminada por una onda armónica, plana y circularmente
+ polarizada que se se propaga en la dirección 
+\begin_inset Formula $Z$
+\end_inset 
+
+.
+ Demostrar que 
+\begin_inset Formula $\mathbf{r}\left(t\right)$
+\end_inset 
+
+ describe una circunferencia en el plano 
+\begin_inset Formula $XY$
+\end_inset 
+
+.
+\layout Paragraph
+
+Respuesta
+\layout Standard
+
+La ecuación de la trayectoria de una carga ligada es 
+\begin_inset Formula \[
+\mathbf{r}\left(t\right)=\frac{\frac{q}{m}}{\omega_{0}^{2}-\omega^{2}-i\gamma\omega}\mathbf{E}_{0}e^{-i\omega t}\]
+
+\end_inset 
+
+ Una oap que se propague en la dirección del eje 
+\begin_inset Formula $z$
+\end_inset 
+
+ cumple 
+\begin_inset Formula \begin{eqnarray*}
+\nabla\cdot\mathbf{E} & = & 0\\
+\mathbf{k}\cdot\mathbf{E} & = & 0\end{eqnarray*}
+
+\end_inset 
+
+ de modo que la componente 
+\begin_inset Formula $z$
+\end_inset 
+
+ del campo según el eje 
+\begin_inset Formula $z$
+\end_inset 
+
+ es nula.
+ Así sucederá con el vector 
+\begin_inset Formula $\mathbf{r}\left(t\right)$
+\end_inset 
+
+, que es proporcional a él.
+ De suerte que el movimiento de las cargas se produce en el plano 
+\begin_inset Formula $xy$
+\end_inset 
+
+.
+ Es evidente que la trayectoria es circular, puesto que los dos vectores
+ son proporcionales.
+ 
+\layout Standard
+
+De otro modo, 
+\begin_inset Formula \[
+\mathbf{r}=\beta\mathbf{E}_{0}e^{-i\omega t}=\left|\beta\right|e^{i\delta}\mathbf{E}^{-i\omega t}=\left|\beta\right|\mathbf{E}_{0}e^{-i\omega\left(t-\frac{\delta}{\omega}\right)}\]
+
+\end_inset 
+
+ es decir, 
+\begin_inset Formula $\mathbf{r}\left(t\right)=\left|\beta\right|\mathbf{E}\left(t-\frac{\delta}{\omega}\right)$
+\end_inset 
+
+.
+ La trayectoria que sigue la separación entre cargas es la misma que la
+ del campo eléctrico, solo que con un desfase temporal.
+ Y esto se puede aplicar a cualquier estado de polarización.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+nofig
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+El vector 
+\begin_inset Formula $\mathbf{r}$
+\end_inset 
+
+ 
+\emph on 
+persigue
+\emph default 
+ al vector 
+\begin_inset Formula $\mathbf{E}$
+\end_inset 
+
+ 
+\end_inset 
+
+
+\layout Paragraph
+\line_top 
+Problema
+\layout Standard
+
+
+\emph on 
+Demostrar que el promedio temporal de la potencia transferida a un electrón
+ ligado 
+\begin_inset Formula $P=\left\langle q\dot{\mathbf{r}}\cdot\mathbf{E}\right\rangle $
+\end_inset 
+
+ cuando es iluminado por una oap es
+\begin_inset Formula \[
+P=\frac{q^{2}}{2m}\frac{\gamma\omega^{2}}{\left(\omega^{2}-\omega_{0}^{2}\right)^{2}+\gamma^{2}\omega^{2}}\left|\mathbf{E}_{0}\right|^{2}\]
+
+\end_inset 
+
+ Evaluar esta expresión con los datos del problema anterior.
+ Calcular el tamaño de una superficie sobre la que incide la misma potencia
+ debido a la misma onda armónica plana.
+\layout Paragraph
+
+Respuesta
+\layout Enumerate
+
+No hay más que escribir explícitamente la expresión 
+\begin_inset Formula $q\dot{\mathbf{r}}\cdot\mathbf{E}$
+\end_inset 
+
+ y hacer su promedio temporal
+\begin_inset Formula \[
+q\mathbf{r}=\alpha\mathbf{E}=\alpha\mathbf{E}_{0}e^{-i\omega t}\]
+
+\end_inset 
+
+ donde 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+ es la polarizabilidad.
+ Como hemos separado la dependencia temporal
+\begin_inset Formula \[
+q\dot{\mathbf{r}}=\left(-i\omega\right)\alpha\mathbf{E}_{0}e^{-i\omega t}\]
+
+\end_inset 
+
+ Como tenemos un producto de cosas, que no es una operación lineal, no podemos
+ utilizar la representación compleja.
+ De modo que vamos a pasar 
+\begin_inset Formula $\dot{\mathbf{r}}$
+\end_inset 
+
+ y 
+\series bold 
+
+\begin_inset Formula $\mathbf{E}$
+\end_inset 
+
+ 
+\series default 
+a representación real.
+ Pero eso ya lo hicimos para el vector de 
+\noun on 
+Poynting
+\noun default 
+, sólo que con un producto vectorial y no escalar.
+ Revisando esos cálculos uno se convence de que 
+\begin_inset Formula \[
+\left\langle q\dot{\mathbf{r}}\cdot\mathbf{E}\right\rangle =\frac{1}{2}\Re\left\{ q\dot{\mathbf{r}}\cdot\mathbf{E}^{*}\right\} \]
+
+\end_inset 
+
+ Aquí sí que vale la representación compleja
+\begin_inset Formula \[
+q\dot{\mathbf{r}}\cdot\mathbf{E}^{*}=-i\omega\alpha\left|\mathbf{E}_{0}\right|^{2}\]
+
+\end_inset 
+
+ de donde 
+\begin_inset Formula \[
+P=-\frac{i\omega}{4}\left(\alpha-\alpha^{*}\right)\left|\mathbf{E}_{0}\right|^{2}\]
+
+\end_inset 
+
+ expresión de la que se sigue inmediatamente la conclusión.
+ Ésta es la energía que la carga extrae de la onda incidente.
+ Obsérvese que es proporcional a 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+.
+\layout Enumerate
+
+Para 
+\begin_inset Formula $\omega=\unit{5\times10^{15}}\radian\per\second$
+\end_inset 
+
+ la potencia extraída por la carga es 
+\begin_inset Formula $4.34\times10^{-25}W$
+\end_inset 
+
+ mientras que para 
+\begin_inset Formula $\omega_{0}$
+\end_inset 
+
+ es 
+\begin_inset Formula $1.4\times10^{-10}W$
+\end_inset 
+
+ ¡una diferencia de quince órdenes de magnitud!.
+ Cambios pequeños en frecuencia significan cambios enormes en la interacción
+ radiación-materia.
+ Toda la energía que extrae la carga es luego reemitida en forma de ondas
+ electromagnéticas.
+\layout Enumerate
+
+Es una forma de evaluar el tamaño efectivo del átomo, la sección transversal
+ que absorbería la misma energía que la carga ligada.
+ Esa superficie se llama 
+\emph on 
+sección
+\emph default 
+ 
+\emph on 
+eficaz
+\emph default 
+.
+ El 
+\begin_inset Formula $\left\langle \mathbf{S}\right\rangle $
+\end_inset 
+
+ es potencia por unidad de superficie, de modo que (si la normal a la superficie
+ coincide con el vector de 
+\noun on 
+Poynting
+\noun default 
+)
+\begin_inset Formula \[
+\left|\left\langle \mathbf{S}\right\rangle \right|A=P\]
+
+\end_inset 
+
+ Como se trata de una oap, se cumple
+\begin_inset Formula \[
+\left|\left\langle \mathbf{S}\right\rangle \right|=\frac{1}{2}\sqrt{\frac{\epsilon_{0}}{\mu_{0}}}\left|\mathbf{E}_{0}\right|^{2}\]
+
+\end_inset 
+
+ y no hay más que sustituir los datos en la expresión 
+\begin_inset Formula $A=\frac{P}{\left|\left\langle \mathbf{S}\right\rangle \right|}$
+\end_inset 
+
+.
+ Se encuentra, respectivamente, para 
+\begin_inset Formula $\omega=5\times10^{15}rad/s$
+\end_inset 
+
+ la sección eficaz es de 
+\begin_inset Formula $3.34\times10^{-28}m^{2}$
+\end_inset 
+
+ mientras que para 
+\begin_inset Formula $\omega_{0}$
+\end_inset 
+
+ es 
+\begin_inset Formula $1.08\times10^{-13}m^{2}$
+\end_inset 
+
+ ¡una diferencia de quince órdenes de magnitud!.
+ Si suponemos la superficie circular, los radios respectivos son 
+\begin_inset Formula $10^{-5}nm$
+\end_inset 
+
+ y 
+\begin_inset Formula $185nm$
+\end_inset 
+
+.
+ Este segundo número es enorme.
+ Esto es una signatura de que nuestros cálculos en la resonancia no son
+ tan precisos como pensamos.
+ El primer dato viene a ser una milésima del tamaño del átomo.
+\layout Paragraph
+\line_top 
+Problema 
+\size small 
+(el cielo azul\SpecialChar \ldots{}
+)
+\layout Standard
+
+
+\emph on 
+Si en el problema anterior 
+\begin_inset Formula $\omega_{0}$
+\end_inset 
+
+ está en el ultravioleta, dígase si la potencia transferida es mayor para
+ una 
+\begin_inset Formula $\omega$
+\end_inset 
+
+ en el rojo o en el azul (considérese 
+\begin_inset Formula $\gamma\ll\omega\ll\omega_{0}$
+\end_inset 
+
+)
+\emph default 
+.
+\layout Paragraph
+
+Respuesta
+\layout Standard
+
+Las aproximaciones que hacemos son 
+\begin_inset Formula $\left(\omega^{2}-\omega_{0}^{2}\right)^{2}-\gamma^{2}\omega^{2}\approx\omega_{0}^{4}+\gamma^{2}\omega^{2}\approx\omega_{0}^{4}$
+\end_inset 
+
+ 
+\begin_inset Formula \[
+P\approx\frac{q^{2}}{2m}\frac{\gamma\omega^{2}}{\omega_{0}^{4}}\left|\mathbf{E}_{0}\right|^{2}\]
+
+\end_inset 
+
+ como 
+\begin_inset Formula $\omega_{A}>\omega_{R}$
+\end_inset 
+
+, se concluye que la carga es mucho más sensible a las ondas en el azul.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/m-potencia-absorbida.eps
+	display monochrome
+	width 70col%
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Aspecto cualitativo de la función 
+\begin_inset Formula $P\left(\omega\right)$
+\end_inset 
+
+ con 
+\begin_inset Formula $\omega_{0}=10$
+\end_inset 
+
+ 
+\end_inset 
+
+ Observaciones:
+\layout Enumerate
+
+En la bibliografía encontraremos una dependencia no en 
+\begin_inset Formula $\omega^{2}$
+\end_inset 
+
+ sino en 
+\begin_inset Formula $\omega^{4}$
+\end_inset 
+
+, ya que se suelen tomar mejores aproximaciones de la dependencia con 
+\begin_inset Formula $\dot{\mathbf{r}}$
+\end_inset 
+
+ de 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+.
+\layout Enumerate
+
+Esta fórmula puede dar cuenta del color azul del cielo, así como de los
+ tonos rojizos del atardecer.
+ Las moléculas del aire extraen más azul que rojo de la luz blanca incidente.
+ Y reemiten en azul, pero no en la dirección incidente, sino en todas direccione
+s.
+ En el haz que progresa, por esto mismo, queda más rojo que azul.
+\begin_deeper 
+\layout Standard
+
+Cuando por el día miramos a una dirección arbitraria del espacio (que no
+ sea la del sol) la luz no puede venir más que de la dispersión de la luz
+ solar por la atmósfera.
+ En el crepúsculo ocurre el fenómeno complementario: cuando miramos al sol,
+ que además atraviesa una gruesa capa atmosférica por ser casi tangencial,
+ vemos las componentes cromáticas que quedan en el haz que progresa, es
+ decir, mayoritariamente el rojo.
+\end_deeper 
+\layout Enumerate
+
+Este cálculo lo hemos hecho suponiendo que la atmósfera es un medio ópticamente
+ no denso, lo que es falso.
+ Pero nuestra suposición funciona porque en realidad existen fluctuaciones
+ de densidad, bolsas de aire de mayor densidad que el entorno que se comportan
+ como una especie de agregados que, ellos sí, constituyen un medio ópticamente
+ poco denso para el que vale el tratamiento que se ha utilizado suponiendo
+ unidades más pequeñas.
+\layout Paragraph
+\line_top 
+Problema
+\layout Standard
+
+
+\emph on 
+Se tiene un dieléctrico que tiene una sola frecuencia de resonancia 
+\begin_inset Formula $\omega_{0}=\unit{3.01\times10^{15}}\radianpersecond$
+\end_inset 
+
+.
+ En dicho medio se propagan tres ondas de frecuencias 
+\begin_inset Formula \begin{eqnarray*}
+\omega_{1} & = & \unit{3.04\times10^{15}}\radianpersecond\\
+\omega_{2} & = & \unit{3.14\times10^{15}}\radianpersecond\\
+\omega_{3} & = & \unit{3.02\times10^{15}}\radianpersecond\end{eqnarray*}
+
+\end_inset 
+
+ ¿Cuál de ellas se atenuará más a medida que se propague?.
+ ¿Por qué?.Por sencillez considérese que para dichas ondas 
+\series bold 
+
+\begin_inset Formula $\mathbf{k}$
+\end_inset 
+
+
+\series default 
+ y
+\series bold 
+ 
+\begin_inset Formula $\mathbf{a}$
+\end_inset 
+
+ 
+\series default 
+son paralelos.
+\layout Paragraph
+
+Respuesta
+\layout Standard
+
+Hay atenuación en tanto en cuanto hay absorción (si 
+\begin_inset Formula $\kappa=0$
+\end_inset 
+
+ entonces 
+\begin_inset Formula $\mathbf{a}\perp\mathbf{k}$
+\end_inset 
+
+ o bien 
+\begin_inset Formula $\mathbf{a}=0$
+\end_inset 
+
+, y en el primer caso la onda no se atenúa a medida que se propaga tampoco:
+ el promedio temporal del vector de 
+\noun on 
+Poynting
+\noun default 
+ no decrece).
+ Si imaginamos la situación 
+\begin_inset Formula $\mathbf{k}\parallel\mathbf{a}$
+\end_inset 
+
+ para las tres ondas 
+\begin_inset Formula $\mathbf{a}=\frac{\omega}{c}\kappa\mathbf{u}_{a}$
+\end_inset 
+
+.
+ Pero una vez que 
+\begin_inset Formula $\kappa\neq0$
+\end_inset 
+
+ (y eso ocurre para las tres frecuencias) estrictamente no se puede decir
+ para qué 
+\begin_inset Formula $\omega$
+\end_inset 
+
+ la atenuación es mayor.
+ No obstante, si nos restringimos al caso particular expuesto, y teniendo
+ en cuenta la representación 
+\begin_inset Formula $\kappa\left(\omega\right)$
+\end_inset 
+
+, la solución es 
+\begin_inset Formula $\omega_{3}$
+\end_inset 
+
+ (
+\begin_inset Formula $\mathbf{a}$
+\end_inset 
+
+ depende no de 
+\begin_inset Formula $\kappa$
+\end_inset 
+
+ sino de 
+\begin_inset Formula $\kappa\omega$
+\end_inset 
+
+, pero eso no cambia la conclusión ---monotonía de la función, todas las
+ frecuencias al mismo lado del pico---).
+ 
+\layout Paragraph
+\line_top 
+Problema 
+\size small 
+(ionosfera: transparente al visible, espejo en radiofrecuencia)
+\layout Standard
+
+
+\emph on 
+En la ionosfera el número de electrones libres por metro cúbico es 
+\begin_inset Formula $N\simeq\unit{10^{11}}\metre\rpcubed$
+\end_inset 
+
+.
+ Calcular su contribución a 
+\begin_inset Formula $n$
+\end_inset 
+
+ y 
+\begin_inset Formula $\kappa$
+\end_inset 
+
+ para frecuencias del visible suponiendo que 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+ es despreciable.
+\layout Paragraph
+
+Respuesta
+\layout Standard
+
+Con 
+\begin_inset Formula $\gamma\simeq0$
+\end_inset 
+
+ se tiene el índice
+\begin_inset Formula \[
+n_{c}^{2}=1-N\frac{e^{2}}{m_{e}\epsilon_{0}}\frac{1}{\omega^{2}}=1-\frac{\omega_{p}^{2}}{\omega^{2}}\]
+
+\end_inset 
+
+ utilizando, como para el caso de los metales, la noción de 
+\emph on 
+frecuencia de plasma, 
+\begin_inset Formula $\omega_{p}=e\sqrt{\frac{N}{m_{e}\epsilon_{0}}}$
+\end_inset 
+
+
+\emph default 
+, que es un parámetro que agrupa todas las características intrínsecas del
+ material.
+ Una evaluación numérica para los electrones de la ionosfera arroja
+\size footnotesize 
+
+\begin_inset Formula \begin{eqnarray*}
+\omega_{p} & = & 1.602\times10^{-19}C\sqrt{\frac{10^{11}m^{-3}}{9.1\times10^{-31}kg\times8.85\times10^{-12}\frac{C^{2}}{Nm^{2}}}}\\
+ & \simeq & 1.76\times10^{7}Hz\end{eqnarray*}
+
+\end_inset 
+
+
+\size default 
+que está muy por debajo de las frecuencias del visible (orden 
+\begin_inset Formula $10^{15}Hz$
+\end_inset 
+
+), lo que significa
+\begin_inset Formula \[
+n_{c}^{2}\simeq1\]
+
+\end_inset 
+
+ entonces 
+\begin_inset Formula $n_{c}\simeq n$
+\end_inset 
+
+ y por lo tanto 
+\begin_inset Formula $\kappa\simeq0$
+\end_inset 
+
+.
+ La ionosfera es transparente al visible, hecho concordante con la experiencia
+ diaria.
+ Por otra parte, el valor del índice 
+\begin_inset Formula $n\simeq1$
+\end_inset 
+
+ es también lo que cabía esperar.
+ La ionosfera será completamente transparente para el visible, pero reflectora
+ para las radiofrecuencias, lo que es utilizado para propagar las ondas
+ de radio
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+interesante que alguien escriba un modulo sobre esto.
+ --ATC.
+\end_inset 
+
+.
+\layout Paragraph
+\line_top 
+Problema
+\layout Standard
+
+
+\emph on 
+El promedio del campo eléctrico sobre los átomos viene dado por 
+\begin_inset Formula $\mathbf{E}+\frac{1}{3\epsilon_{0}}\mathbf{P}$
+\end_inset 
+
+.
+ Demuéstrese la siguente relación entre la constante dieléctrica relativa
+ 
+\begin_inset Formula $\epsilon_{r}=\frac{\epsilon}{\epsilon_{0}}$
+\end_inset 
+
+ y la polarizabilidad atómica 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+.
+\begin_inset Formula \[
+\epsilon_{r}=\frac{1+\frac{2N_{v}\alpha}{3\epsilon_{0}}}{1-\frac{N_{v}\alpha}{3\epsilon_{0}}}\]
+
+\end_inset 
+
+
+\layout Paragraph
+
+Respuesta
+\layout Standard
+
+Ligábamos la constante dieléctrica con la polarización a través del momento
+ dipolar por unidad de volumen.
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{P} & = & \chi_{e}\epsilon_{0}\mathbf{E}_{mac}\\
+\epsilon & = & \epsilon_{0}\left(1+\chi_{e}\right)\\
+\mathbf{P} & = & \alpha\frac{N}{\Delta V}\frac{1}{N}\sum_{j\in\Delta V}\mathbf{E}_{j,mic}\end{eqnarray*}
+
+\end_inset 
+
+ Vamos a considerar que el promedio del campo microscópico actuante sobre
+ los átomos no es 
+\begin_inset Formula $\mathbf{E}$
+\end_inset 
+
+ (como en el desarrollo de la teoría) sino 
+\begin_inset Formula $\mathbf{E}+\frac{1}{3\epsilon_{0}}\mathbf{P}$
+\end_inset 
+
+.
+ Entonces
+\begin_inset Formula \[
+\mathbf{P}=N_{V}\alpha\left(\mathbf{E}_{mac}+\frac{1}{3\epsilon_{0}}\mathbf{P}\right)\]
+
+\end_inset 
+
+ con 
+\begin_inset Formula $N_{V}=\frac{N}{\Delta V}$
+\end_inset 
+
+.
+ Si despejamos 
+\begin_inset Formula \[
+\mathbf{P}=\frac{N_{V}\alpha}{1-\frac{N_{V}\alpha}{3\epsilon_{0}}}\mathbf{E}_{mac}\]
+
+\end_inset 
+
+ y la susceptibilidad es 
+\begin_inset Formula \[
+\chi_{e}=\frac{\frac{N_{V}\alpha}{\epsilon_{0}}}{1-\frac{N_{V}\alpha}{3\epsilon_{0}}}\]
+
+\end_inset 
+
+ de donde se llega sin dificultad a la igualdad propuesta en el enunciado.
+\layout Paragraph
+\line_top 
+Problema
+\layout Standard
+
+
+\emph on 
+Aproxímese 
+\begin_inset Formula $\epsilon_{r}$
+\end_inset 
+
+ en el problema anterior si 
+\begin_inset Formula $\frac{N\alpha}{\epsilon_{0}}\ll1$
+\end_inset 
+
+.
+\layout Paragraph
+
+Respuesta
+\layout Standard
+
+Lo que podemos hacer es desarrollar el denominador en sdp del término pequeño
+ y quedarnos en la aproximación lineal.
+ 
+\begin_inset Formula \begin{eqnarray*}
+\epsilon_{r} & = & \frac{1+\frac{2N_{V}\alpha}{3\epsilon_{0}}}{1-\frac{N_{V}\alpha}{3\epsilon_{0}}}\\
+ & = & \left(1+\frac{2N_{V}\alpha}{3\epsilon_{0}}\right)\left(1+\frac{N_{V}\alpha}{3\epsilon_{0}}+\ldots\right)\end{eqnarray*}
+
+\end_inset 
+
+ despreciando términos cuadráticos en 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+
+\begin_inset Formula \[
+\epsilon_{r}\simeq1+\frac{2N_{V}\alpha}{3\epsilon_{0}}+\frac{N_{V}\alpha}{3\epsilon_{0}}=1+\frac{N_{V}\alpha}{\epsilon_{0}}\]
+
+\end_inset 
+
+ Esta expresión que hemos obtenido es la que hemos manejado en la teoría.
+ Esta aproximación consiste en despreciar el término 
+\begin_inset Formula $\frac{1}{3\epsilon_{0}}$
+\end_inset 
+
+ en el promedio del campo actuante sobre los átomos.
+ La condición de validez de la aproximación utilizada en teoría es, pues
+ 
+\begin_inset Formula $\frac{N\alpha}{\epsilon_{0}}\ll1$
+\end_inset 
+
+.
+\layout Paragraph
+\line_top 
+Problema 
+\size small 
+(prismas para desviar sin pérdidas)
+\layout Standard
+
+
+\emph on 
+Considérese un haz plano linealmente polarizado que incide desde el aire
+ sobre un prisma transparente de vidrio de ángulo 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+ (ver figura 
+\begin_inset LatexCommand \ref{fig: prisma de vidrio de angulo alfa}
+
+\end_inset 
+
+).
+ Se desea que dicho haz atraviese el prisma sin sufrir pérdidas por reflexión
+ en ninguna de las dos caras.
+ ¿Cuánto deben valer
+\layout Enumerate
+
+
+\emph on 
+el acimut del haz incidente
+\layout Enumerate
+
+
+\emph on 
+el ángulo de incidencia 
+\layout Enumerate
+
+
+\emph on 
+y el índice de refracción del prisma
+\layout Standard
+
+
+\emph on 
+para que tal cosa ocurra?
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/f-prisma-reflexion-perfecta.eps
+	display monochrome
+	width 6cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig: prisma de vidrio de angulo alfa}
+
+\end_inset 
+
+Un prisma de vidrio de ángulo 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+.
+\end_inset 
+
+
+\layout Paragraph
+
+Respuesta
+\layout Standard
+
+No queremos que haya luz reflejada en ninguna de las interfases, para que
+ la atenuación sea mínima.
+ En principio tenemos que calcular los coeficientes de reflexión y ver en
+ qué circunstancias se anulan 
+\begin_inset Formula \begin{eqnarray*}
+R_{1\parallel} & = & r_{\parallel}A_{\parallel}\\
+R_{1\perp} & = & r_{\perp}A_{\perp}\end{eqnarray*}
+
+\end_inset 
+
+ 
+\begin_inset Formula $\mathbf{R}_{1}=0$
+\end_inset 
+
+ implica forzosamente 
+\begin_inset Formula $A_{\perp}=0$
+\end_inset 
+
+ ya que 
+\begin_inset Formula $r_{\perp}$
+\end_inset 
+
+ nunca se anula: el haz incidente debe tener sólo componente paralela (acimut
+ cero).
+ Por otra parte 
+\begin_inset Formula $r_{\parallel}=0$
+\end_inset 
+
+ implica que la incidencia en la primera cara del prisma debe ser en ángulo
+ de 
+\noun on 
+Brewster
+\noun default 
+ 
+\begin_inset Formula $\theta_{1}=\theta_{B}$
+\end_inset 
+
+ .
+ Los resultados se pueden trasponer a la segunda cara: la incidencia debe
+ ser allí también en ángulo de 
+\noun on 
+Brewster
+\noun default 
+.
+ Hace falta ver qué valen 
+\begin_inset Formula $\theta_{1}\left(\alpha\right)$
+\end_inset 
+
+ y 
+\begin_inset Formula $n_{v}\left(\alpha\right)$
+\end_inset 
+
+.
+\layout Standard
+
+Con la condición de 
+\noun on 
+Brewster
+\noun default 
+, la ley de 
+\noun on 
+Snell
+\noun default 
+, etc, escribimos:
+\begin_inset Formula \begin{eqnarray*}
+\tan\theta_{1} & = & n_{v}\\
+\sin\theta_{1} & = & n_{v}\sin\theta_{1}'\\
+n_{v}\cos\theta_{1} & = & \cos\theta_{1}'\\
+\sin\theta_{1}' & = & \cos\theta_{1}\\
+\theta_{1}'+\theta_{1} & = & \frac{\pi}{2}\\
+\tan\theta' & = & n_{v}\\
+\tan\theta_{2} & = & \frac{1}{n_{v}}\\
+\sin\theta_{2} & = & n_{v}\sin\theta_{2}'\\
+n_{v}\cos\theta_{2} & = & \cos\theta_{2}'\\
+\sin\theta_{2}' & = & \cos\theta_{2}\\
+\theta_{2}'+\theta_{2} & = & \frac{\pi}{2}\end{eqnarray*}
+
+\end_inset 
+
+ de aquí se tiene 
+\begin_inset Formula $\theta_{1}+\theta_{2}=\frac{\pi}{2}$
+\end_inset 
+
+; utilizando las tres relaciones entre ángulos se llega a la expresión,
+ en la que aparece 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray*}
+\pi-\theta_{1}'-\theta_{2}+\alpha & = & \pi\\
+\alpha & = & \theta_{1}'+\theta_{2}\end{eqnarray*}
+
+\end_inset 
+
+ si usamos el valor hallado para 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+ con 
+\begin_inset Formula $\theta_{2}=\theta_{1}'$
+\end_inset 
+
+ llegamos a 
+\begin_inset Formula $\theta_{2}=\frac{\alpha}{2}$
+\end_inset 
+
+ o bien 
+\begin_inset Formula $\theta_{1}=\frac{\pi}{2}-\frac{\alpha}{2}$
+\end_inset 
+
+.
+ También
+\begin_inset Formula \[
+n_{v}=\frac{1}{\tan\left(\frac{\alpha}{2}\right)}\]
+
+\end_inset 
+
+ 
+\emph on 
+Comentario
+\emph default 
+: la trayectoria del rayo dentro del prisma es perpendicular a la bisectriz
+ del ángulo, lo que coincide con la condición de desviación mínima.
+ Por otra parte, la utilidad de un prisma como el que acabamos de describir
+ es desviar un rayo sin pérdidas.
+ Este método presenta ventajas frente a la utilización de espejos, siempre
+ que seamos capaces de obtener medios perfectamente transparentes.
+\layout Paragraph
+\line_top 
+Problema
+\layout Standard
+
+
+\emph on 
+Un haz de luz linealmente polarizado incide sobre un prisma isósceles de
+ índice de refracción 1.5 tal y como se muestra en la figura 
+\begin_inset LatexCommand \ref{fig: prisma isosceles}
+
+\end_inset 
+
+.
+ El campo eléctrico oscila en un plano que forma un ángulo con el plano
+ de incidencia de 45
+\begin_inset Formula $^{\circ}$
+\end_inset 
+
+.
+ Se desea saber el 
+\series bold 
+tipo
+\series default 
+ de polarización del haz saliente 
+\begin_inset Formula $s$
+\end_inset 
+
+ y su intensidad respecto a la del haz incidente 
+\begin_inset Formula $i$
+\end_inset 
+
+ en los casos en que el medio que rodea al prisma sea: a) aire (
+\begin_inset Formula $n=1$
+\end_inset 
+
+) b) agua (
+\begin_inset Formula $n=1.33$
+\end_inset 
+
+).
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/prisma-isosceles.eps
+	display monochrome
+	width 4cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig: prisma isosceles}
+
+\end_inset 
+
+Prisma isósceles de 
+\begin_inset Formula $n=1.5$
+\end_inset 
+
+.
+\end_inset 
+
+
+\layout Paragraph
+
+Respuesta
+\layout Enumerate
+
+Planteamiento.
+ Se tiene 
+\begin_inset Formula $\left|A_{\parallel}\right|=\left|A_{\perp}\right|=\frac{1}{\sqrt{2}}\left|\mathbf{A}\right|$
+\end_inset 
+
+ (el acimut es 
+\begin_inset Formula $\alpha=45^{\circ}$
+\end_inset 
+
+).
+ Para responder a las preguntas sobre el haz 
+\begin_inset Formula $s$
+\end_inset 
+
+ (haz emergente) tenemos que poner en relación las amplitudes, lo cual se
+ hace con las fórmulas de 
+\noun on 
+Fresnel
+\noun default 
+.
+ A los sucesivos procesos de transmisión-reflexión-reflexión-transmisión
+ los denotaremos por 
+\begin_inset Formula $1,2,3,4$
+\end_inset 
+
+ respectivamente.
+\begin_inset Formula \begin{eqnarray*}
+A_{\parallel}' & = & t_{\parallel}^{\left(4\right)}r_{\parallel}^{\left(3\right)}r_{\parallel}^{\left(2\right)}t_{\parallel}^{\left(1\right)}A_{\parallel}\\
+A_{\perp}' & = & t_{\perp}^{\left(4\right)}r_{\perp}^{\left(3\right)}r_{\perp}^{\left(2\right)}t_{\perp}^{\left(1\right)}A_{\perp}\end{eqnarray*}
+
+\end_inset 
+
+Vamos a despreciar reflexiones múltiples: la onda se podría reflejar en
+ 
+\begin_inset Formula $4$
+\end_inset 
+
+, recorrer el camino inverso, reflejarse de nuevo en 
+\begin_inset Formula $1$
+\end_inset 
+
+ y volver para contribuir a la onda emergente.
+ Habida cuenta de que 
+\begin_inset Formula $n=1.5$
+\end_inset 
+
+ la contribución sería, en todo caso muy pequeña.
+ 
+\layout Enumerate
+
+Cálculo.
+ Una vez escritas las fórmulas anteriores sólo queda calcular.
+ Las transmisiones 
+\begin_inset Formula $1,4$
+\end_inset 
+
+ son en condiciones de incidencia normal (
+\begin_inset Formula $\theta=0$
+\end_inset 
+
+)
+\begin_inset Formula \begin{eqnarray*}
+t_{\parallel}^{\left(1\right)}=t_{\perp}^{\left(1\right)} & = & \frac{2n_{a}}{n_{a}+n}\\
+t_{\parallel}^{\left(4\right)}=t_{\perp}^{\left(4\right)} & = & \frac{2n}{n_{a}+n}\end{eqnarray*}
+
+\end_inset 
+
+ por simetría sabemos que 
+\begin_inset Formula $r_{\parallel}^{\left(2\right)}=r_{\parallel}^{\left(3\right)}$
+\end_inset 
+
+ y 
+\begin_inset Formula $r_{\perp}^{\left(3\right)}=r_{\perp}^{\left(3\right)}$
+\end_inset 
+
+.
+ 
+\emph on 
+Consejo
+\emph default 
+: cuando vayamos de mayor a menor índice es conveniente examinar si estamos
+ en condiciones de reflexión total o no para escoger las expresiones adecuadas.
+ Para saberlo calculamos 
+\begin_inset Formula $n\sin45^{\circ}=1.06$
+\end_inset 
+
+ y lo comparamos con 
+\begin_inset Formula $n_{a}$
+\end_inset 
+
+.
+ 
+\begin_deeper 
+\layout Itemize
+
+Si 
+\begin_inset Formula $n_{a}=1$
+\end_inset 
+
+ estamos en reflexión total (vidrio--aire)
+\layout Itemize
+
+Si 
+\begin_inset Formula $n_{a}=1.33$
+\end_inset 
+
+ no hay reflexión total (existe 
+\begin_inset Formula $\theta'$
+\end_inset 
+
+ para el caso vidrio--agua).
+ 
+\layout Standard
+
+Tenemos que separar el estudio de ambos casos.
+ Comenzaremos por el caso más sencillo (
+\begin_inset Formula $n_{a}=1.33$
+\end_inset 
+
+).
+ 
+\layout Enumerate
+
+Podemos usar las fórmulas para los coeficientes de reflexión en las que
+ aparecen los índices de ambos medios, el ángulo de incidencia y el ángulo
+ de refracción (que hallamos por la ley de 
+\noun on 
+Snell
+\noun default 
+ y vale 
+\begin_inset Formula $\theta'=0.92$
+\end_inset 
+
+).
+\begin_inset Formula \begin{eqnarray*}
+r_{\parallel} & = & 0.01921\\
+r_{\perp} & = & 0.1386\\
+t_{\perp}^{\left(1\right)}=t_{\parallel}^{\left(1\right)} & = & 0.94\\
+t_{\perp}^{\left(4\right)}=t_{\parallel}^{\left(4\right)} & = & 1.06\end{eqnarray*}
+
+\end_inset 
+
+ el resultado es 
+\begin_inset Formula \begin{eqnarray*}
+A_{\parallel}' & = & 3.7\times10^{-4}A_{\parallel}=2.6\times10^{-4}\left|\mathbf{A}\right|\\
+A_{\parallel}' & = & 1.9\times10^{-2}A_{\perp}=1.35\times10^{-2}\left|\mathbf{A}\right|\end{eqnarray*}
+
+\end_inset 
+
+ como 
+\begin_inset Formula $\mathbf{A}'\propto\textrm{vector real}$
+\end_inset 
+
+ la polarización es lineal.
+ Podemos calcular su acimut, que vale
+\begin_inset Formula \begin{eqnarray*}
+\tan\alpha' & = & \frac{A_{\perp}'}{A_{\parallel'}}=52\\
+\alpha' & = & 89^{\circ}\end{eqnarray*}
+
+\end_inset 
+
+ El que los coeficientes de transmisión sean mayores que 1 no significa
+ que la energía aumente en la transmisión.
+ Como en la media del vector de 
+\noun on 
+Poynting
+\noun default 
+ aparecen los índices hay casos en que un coeficiente es mayor que 
+\begin_inset Formula $1$
+\end_inset 
+
+ y la energía, por supuesto se conserva.
+ De hecho, cuando el cambio de medio se produce en el sentido de disminución
+ de índice, como es el caso de este problema, se demuestra que los coeficientes
+ de transmisión tienen que ser mayores que 1.
+ Las que tienen que ser menores que la unidad son las 
+\emph on 
+transmitancias
+\emph default 
+, ya que en su expresión intervienen los índices para compensar:
+\begin_inset Formula \[
+\mathcal{T}_{\perp}=\frac{n'}{n}\left|t_{\perp}\right|^{2}\]
+
+\end_inset 
+
+ Para responder a la segunda cuestión hace falta percatarse de que
+\begin_inset Formula \[
+\frac{I'}{I}=\frac{\left|\mathbf{A}'\right|^{2}}{\left|\mathbf{A}\right|^{2}}=\frac{\left|\mathbf{A}_{\parallel}'\right|^{2}+\left|\mathbf{A}_{\perp}'\right|^{2}}{\left|\mathbf{A}\right|^{2}}=1.83\times10^{-4}\]
+
+\end_inset 
+
+ Apenas se refleja luz (menos de un 
+\begin_inset Formula $0.02\%$
+\end_inset 
+
+).
+\layout Enumerate
+
+Ahora tenemos que resolver el caso en que hay reflexión total (
+\begin_inset Formula $n_{a}=1$
+\end_inset 
+
+).
+ 
+\begin_inset Formula \begin{eqnarray*}
+r_{\parallel} & = & e^{i\delta_{\parallel}}\\
+r_{\perp} & = & e^{i\delta_{\perp}}\end{eqnarray*}
+
+\end_inset 
+
+ si queremos saber el estado de polarización sólo nos interesa la diferencia
+ de fase, por lo que usamos la expresión
+\begin_inset Formula \[
+\tan\left(\frac{\delta_{\perp}-\delta_{\parallel}}{2}\right)=\frac{\cos\theta\sqrt{\sin^{2}\theta-\left(\frac{n_{a}}{n}\right)^{2}}}{\sin^{2}\theta}=\frac{1}{3}\]
+
+\end_inset 
+
+ de donde 
+\begin_inset Formula $\delta_{\perp}-\delta_{\parallel}=0.32rad=18.4^{\circ}$
+\end_inset 
+
+ y 
+\begin_inset Formula \begin{eqnarray*}
+t_{\perp}^{\left(1\right)}=t_{\parallel}^{\left(1\right)} & = & 0.8\\
+t_{\perp}^{\left(4\right)}=t_{\parallel}^{\left(4\right)} & = & 1.2\end{eqnarray*}
+
+\end_inset 
+
+ que conducen a las siguientes relaciones entre las amplitudes de entrada
+ y la de salida
+\begin_inset Formula \begin{eqnarray*}
+A_{\parallel}' & = & 0.96e^{i2\delta_{\parallel}}A_{\parallel}=0.679e^{i2\delta\parallel}\left|\mathbf{A}\right|\\
+A_{\perp}' & = & 0.96e^{i2\delta_{\perp}}A_{\perp}=0.679e^{i2\delta_{\perp}}\left|\mathbf{A}\right|\end{eqnarray*}
+
+\end_inset 
+
+ 
+\begin_inset Formula \[
+2\left(\delta_{\perp}-\delta_{\parallel}\right)=1.287=73.7^{\circ}\]
+
+\end_inset 
+
+No es lineal, y como la diferencia de fases no es 
+\begin_inset Formula $\pm\frac{\pi}{2}$
+\end_inset 
+
+ tampoco tiene polarización circular, luego la polarización es elíptica.
+\layout Standard
+
+Falta por relacionar las intensidades
+\begin_inset Formula \[
+\frac{I'}{I}=\frac{\left|A_{\parallel}'\right|^{2}+\left|A_{\perp}'\right|^{2}}{\left|\mathbf{A}\right|^{2}}=0.92\]
+
+\end_inset 
+
+ El 8% que se pierde es muy poco: los dieléctricos apenas reflejan en incidencia
+s próximas a la normal.
+\end_deeper 
+\layout Paragraph
+\line_top 
+Problema
+\layout Standard
+
+
+\emph on 
+Un haz plano monocromático de longitud de onda 
+\begin_inset Formula $\lambda$
+\end_inset 
+
+ incide desde un medio transparente de índice de refracción 
+\begin_inset Formula $n$
+\end_inset 
+
+ al vacío, con ángulo de incidencia 
+\begin_inset Formula $\theta=60^{\circ}$
+\end_inset 
+
+ (
+\begin_inset LatexCommand \ref{fig: interfaz medio transparente - vacio}
+
+\end_inset 
+
+).
+ La onda está linealmente polarizada de modo perpendicular al plano de incidenci
+a.
+ Calcúlese el índice de refracción 
+\begin_inset Formula $n$
+\end_inset 
+
+ para que la superposición del haz incidente con el reflejado produzca un
+ campo eléctrico nulo (
+\begin_inset Formula $|\mathbf{E}|^{2}=0$
+\end_inset 
+
+), en cualquier instante de tiempo en el plano 
+\begin_inset Formula $z=-\frac{2\lambda}{3}$
+\end_inset 
+
+.
+ (
+\begin_inset Formula $\lambda$
+\end_inset 
+
+ es la longitud de onda en el medio).
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/f-problema33.eps
+	display monochrome
+	width 4cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig: interfaz medio transparente - vacio}
+
+\end_inset 
+
+Interfaz medio transparente -- vacío.
+\end_inset 
+
+
+\emph default 
+ 
+\layout Paragraph
+
+Respuesta
+\layout Standard
+
+Tenemos que escribir una expresión para ambas ondas, sumarlas e imponer
+ su anulación para todo instante en el plano 
+\begin_inset Formula $z=-\frac{2\lambda}{3}$
+\end_inset 
+
+.
+ La onda incidente es 
+\begin_inset Formula \[
+\mathbf{A}e^{i\fase}\mathbf{u}_{y}\]
+
+\end_inset 
+
+ donde 
+\begin_inset Formula $\mathbf{k}=k\sin\theta\mathbf{u}_{x}+k\cos\theta\mathbf{u}_{z}$
+\end_inset 
+
+ con 
+\begin_inset Formula $k=\left|\mathbf{k}\right|=n\frac{\omega}{c}=\frac{2\pi}{\lambda}$
+\end_inset 
+
+ (
+\begin_inset Formula $\lambda$
+\end_inset 
+
+ es la longitud de onda en el medio).
+ La onda reflejada tiene un vector de ondas con signo cambiado en la componente
+ 
+\begin_inset Formula $z$
+\end_inset 
+
+: 
+\begin_inset Formula $\mathbf{k}''=k\sin\theta\mathbf{u}_{x}-k\cos\theta\mathbf{u}_{z}$
+\end_inset 
+
+
+\begin_inset Formula \[
+r_{\perp}Ae^{i\left(\mathbf{k}''\cdot\mathbf{r}-\omega t\right)}\mathbf{u}_{y}\]
+
+\end_inset 
+
+ Sumamos para obtener
+\begin_inset Formula \[
+\mathbf{E}=A\left(e^{ik\cos\theta z}+r_{\perp}e^{-ik\cos\theta z}\right)e^{i\left(k\sin\theta x-\omega t\right)}\mathbf{u}_{y}\]
+
+\end_inset 
+
+ El primer paréntesis debe ser cero si queremos que el campo se anule para
+ todo 
+\begin_inset Formula $t$
+\end_inset 
+
+.
+ Eso es porque la parte dependiente del tiempo es suma de dos funciones
+ (seno y coseno) que no se anulan a la vez nunca.
+ En definitiva
+\begin_inset Formula \[
+r_{\perp}=-e^{i2k\cos\theta z}\]
+
+\end_inset 
+
+ utilizando que 
+\begin_inset Formula $z_{0}=-\frac{2\lambda}{3}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\theta=60^{\circ}$
+\end_inset 
+
+ obtenemos
+\begin_inset Formula \[
+r_{\perp}=-e^{-i\frac{4\pi}{3}}\]
+
+\end_inset 
+
+ para ligarlo con el índice de refracción del medio inicial necesitamos
+ una expresión para 
+\begin_inset Formula $r_{\perp}$
+\end_inset 
+
+.
+ Advertimos que es un caso de reflexión total (el coeficiente es un número
+ complejo de módulo unidad), y las expresiones son entonces
+\begin_inset Formula \begin{eqnarray*}
+r_{\perp} & = & e^{i\delta_{\perp}}\\
+\tan\left(\frac{\delta_{\perp}}{2}\right) & = & -\frac{\sqrt{\sin^{2}\theta-\left(\frac{1}{n}\right)^{2}}}{\cos\theta}\end{eqnarray*}
+
+\end_inset 
+
+ y como 
+\begin_inset Formula $\delta_{\perp}=-\frac{4\pi}{3}+\pi$
+\end_inset 
+
+ se despeja 
+\begin_inset Formula $n=\sqrt{3/2}$
+\end_inset 
+
+.
+\layout Paragraph
+\line_top 
+Problema 
+\size small 
+(fórmulas de 
+\noun on 
+Fresnel
+\noun default 
+)
+\layout Standard
+
+
+\emph on 
+Se tienen dos medios isótropos y homogéneos.
+ El primero es un dieléctrico transparente de índice 
+\begin_inset Formula $n_{1}$
+\end_inset 
+
+.
+ Sobre la superficie que los separa incide con ángulo 
+\begin_inset Formula $\theta_{i}$
+\end_inset 
+
+ una onda plana monocromática linealmente polarizada a 
+\begin_inset Formula $45^{\circ}$
+\end_inset 
+
+ con el plano de incidencia.
+ Si 
+\begin_inset Formula $\theta_{i}=0$
+\end_inset 
+
+ ¿puede la luz reflejada estar circularmente polarizada? Sabiendo que para
+ 
+\begin_inset Formula $\theta_{i}\neq0$
+\end_inset 
+
+ la luz reflejada está elípticamente polarizada y la reflectividad es menor
+ que la unidad, indique la naturaleza del segundo medio.
+ 
+\layout Paragraph
+
+Respuesta
+\layout Standard
+
+Para responder a la pregunta por la polarización de la luz reflejada aplicamos
+ las fórmulas de 
+\noun on 
+Fresnel
+\noun default 
+: 
+\begin_inset Formula $\theta_{i}=0$
+\end_inset 
+
+ implica 
+\begin_inset Formula $r_{\parallel}=-r_{\perp}$
+\end_inset 
+
+.
+ Nunca podremos tener un haz reflejado polarizado circularmente, ya que
+ al cumplirse
+\begin_inset Formula $\binom{R_{\parallel}}{R_{\perp}}=r_{\perp}\binom{-A_{\perp}}{A_{\perp}}$
+\end_inset 
+
+ la amplitud reflejada es proporcional a un vector real, y por lo tanto
+ el haz es linealmente polarizado.
+\layout Standard
+
+Para caracterizar la naturaleza óptica de un medio tenemos que especificar
+ la parte real e imaginaria del índice de refracción.
+ Por ser la luz reflejada elíptica, puede ocurrir que: 
+\layout Itemize
+
+segundo medio transparente, pero en reflexión total (
+\begin_inset Formula $n_{1}>n_{2}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\theta_{i}>\theta_{c}$
+\end_inset 
+
+) o bien
+\layout Itemize
+
+segundo medio absorbente (
+\begin_inset Formula $\kappa_{2}\neq0$
+\end_inset 
+
+).
+\layout Standard
+
+El hecho de que en el primer caso 
+\begin_inset Formula $\mathcal{R}=1$
+\end_inset 
+
+ indica que la respuesta es la segunda opción.
+\layout Paragraph
+\line_top 
+Problema 
+\layout Standard
+
+
+\emph on 
+El tensor dieléctrico para cierto material es 
+\begin_inset Formula \[
+\hat{\epsilon}=\epsilon_{0}\left(\begin{array}{ccc}
+a & ib & 0\\
+-ib & a & 0\\
+0 & 0 & d\end{array}\right)\]
+
+\end_inset 
+
+ siendo 
+\begin_inset Formula $a,b,d$
+\end_inset 
+
+ números reales con 
+\begin_inset Formula $a>b>0$
+\end_inset 
+
+ y 
+\begin_inset Formula $d\neq0$
+\end_inset 
+
+.
+ Calcular los posibles vectores de onda y las polarizaciones correspondientes
+ para una onda armónica plana con vector de ondas en el eje 
+\begin_inset Formula $z$
+\end_inset 
+
+.
+ 
+\layout Paragraph
+
+Respuesta
+\layout Standard
+
+El medio cumple 
+\begin_inset Formula $\hat{\epsilon}^{+}=\hat{\epsilon}$
+\end_inset 
+
+ (matriz hermítica).
+ Es transparente y ópticamente activo.
+ Vamos a atacar el problema como el de los medios no activos, utilizando
+ las ecMm.
+ En particular se llegaba a la relación
+\begin_inset Formula \[
+\left(\mathbf{k}\cdot\mathbf{E}_{0}\right)\mathbf{k}-\mathbf{k}^{2}\mathbf{E}_{0}^{2}+\mu_{0}\omega\hat{\epsilon}\mathbf{E}_{0}=0\]
+
+\end_inset 
+
+ como 
+\begin_inset Formula $k_{x}=k_{y}=0$
+\end_inset 
+
+ y 
+\begin_inset Formula $k_{z}=k$
+\end_inset 
+
+ y utilizando 
+\begin_inset Formula $\mu_{0}\epsilon_{0}=c^{-2}$
+\end_inset 
+
+ la matriz queda
+\begin_inset Formula \[
+\left(\begin{array}{ccc}
+\left(\frac{\omega}{c}\right)^{2}a-k^{2} & i\left(\frac{\omega}{c}\right)^{2}b & 0\\
+-i\left(\frac{\omega}{c}\right)^{2}b & \left(\frac{\omega}{c}\right)^{2}a-k^{2} & 0\\
+0 & 0 & \left(\frac{\omega}{c}\right)^{2}d\end{array}\right)\left(\begin{array}{c}
+E_{0x}\\
+E_{0y}\\
+E_{0z}\end{array}\right)=0\]
+
+\end_inset 
+
+ para que 
+\begin_inset Formula $\left|\mathsf{M}\right|=0$
+\end_inset 
+
+ los valores que puede tomar 
+\begin_inset Formula $k$
+\end_inset 
+
+ son dos:
+\begin_inset Formula \[
+k_{\pm}=\frac{\omega}{c}\sqrt{a\pm b}\]
+
+\end_inset 
+
+ entonces
+\begin_inset Formula \[
+\mathsf{M}\left(k_{+}\right)=\left(\frac{\omega}{c}\right)^{2}\left(\begin{array}{ccc}
+-b & ib & 0\\
+-ib & -b & 0\\
+0 & 0 & d\end{array}\right)\]
+
+\end_inset 
+
+ el vector 
+\begin_inset Formula $\mathbf{E}_{0}$
+\end_inset 
+
+ que satisface la ecuación de autovalores 
+\begin_inset Formula $\mathsf{M}\left(k_{+}\right)\mathbf{E}_{0}=0$
+\end_inset 
+
+ es 
+\begin_inset Formula \[
+\mathbf{E}_{0}=\mathbf{A}_{+}\left(\begin{array}{c}
+1\\
+-i\\
+0\end{array}\right)\]
+
+\end_inset 
+
+ con 
+\begin_inset Formula $\mathbf{A}\in\mathcal{C}$
+\end_inset 
+
+.
+ Es luz circular dextrógira.
+ Siguiendo los mismos pasos se halla
+\begin_inset Formula \[
+\mathbf{E}_{0}=\mathbf{A}_{-}\left(\begin{array}{c}
+1\\
++i\\
+0\end{array}\right)\]
+
+\end_inset 
+
+ para la ecuación de autovalores 
+\begin_inset Formula $\mathsf{M}\left(k_{-}\right)\mathbf{E}_{0}=0$
+\end_inset 
+
+ (luz circularmente polarizada levógira).
+\layout Standard
+
+Cuando estudiábamos los medios no activos teníamos luz linealmente polarizada.
+ En medios activos la polarización será en general elíptica.
+\layout Subsubsection
+\line_top 
+Problema 
+\size small 
+(actividad óptica)
+\layout Standard
+
+
+\emph on 
+Si en el problema anterior 
+\begin_inset Formula $\mathbf{E}(z=0,t)$
+\end_inset 
+
+ está  linealmente polarizado según el eje 
+\begin_inset Formula $x$
+\end_inset 
+
+ calcular el estado de polarización en 
+\begin_inset Formula $z=d$
+\end_inset 
+
+.
+ 
+\layout Paragraph
+
+Respuesta
+\layout Standard
+
+
+\begin_inset Formula \[
+\mathbf{E}\left(0,t\right)\propto\mathbf{u}_{x}\]
+
+\end_inset 
+
+ dicho de otro modo
+\begin_inset Formula \[
+\mathbf{E}\left(0,t\right)=\left(\begin{array}{c}
+E_{0}\\
+0\\
+0\end{array}\right)e^{-i\omega t}\]
+
+\end_inset 
+
+ hemos encontrado que las ondas que se propagan según el eje 
+\begin_inset Formula $z$
+\end_inset 
+
+ deben ser combinaciones lineales de las ondas que escribimos en el problema
+ anterior.
+ Es decir
+\begin_inset Formula \[
+\mathbf{E}\left(z,t\right)=\mathbf{A}_{+}\left(\begin{array}{c}
+1\\
+-i\\
+0\end{array}\right)e^{i\left(k_{+}z-\omega t\right)}+\mathbf{A}_{-}\left(\begin{array}{c}
+1\\
+i\\
+0\end{array}\right)e^{i\left(k_{-}z-\omega t\right)}\]
+
+\end_inset 
+
+ vamos a determinar los coeficientes de la combinación lineal con ayuda
+ de las condiciones del problema
+\begin_inset Formula \[
+\mathbf{E}\left(0,t\right)=\left(\begin{array}{c}
+\mathbf{A}_{+}+\mathbf{A}_{-}\\
+i\left(\mathbf{A}_{-}-\mathbf{A}_{+}\right)\\
+0\end{array}\right)e^{-i\omega t}\]
+
+\end_inset 
+
+ en consecuencia 
+\begin_inset Formula $\mathbf{A}_{+}=\mathbf{A}_{-}=\frac{E_{0}}{2}$
+\end_inset 
+
+.
+ El campo es
+\begin_inset Formula \[
+\mathbf{E}\left(d,t\right)=\frac{E_{0}}{2}\left(\left(\begin{array}{c}
+1\\
+-i\\
+0\end{array}\right)e^{i\left(k_{+}d\right)}+\left(\begin{array}{c}
+1\\
+i\\
+0\end{array}\right)e^{i\left(kd\right)}\right)e^{-i\omega t}\]
+
+\end_inset 
+
+ una posible forma de saber el estado de polarización es sacar la fase así
+\begin_inset Formula \[
+\mathbf{E}\left(d,t\right)=E_{0}\left(\begin{array}{c}
+\cos\theta\\
+\sin\theta\\
+0\end{array}\right)e^{i\frac{\left(k_{+}+k_{-}\right)}{2}d}e^{-i\omega t}\]
+
+\end_inset 
+
+ con 
+\begin_inset Formula $\theta=\left(k_{+}-k_{-}\right)\frac{d}{2}$
+\end_inset 
+
+.
+ En esta expresión resulta muy claro que la luz es linealmente polarizada,
+ formando un ángulo 
+\begin_inset Formula $\theta$
+\end_inset 
+
+ con el eje 
+\begin_inset Formula $x$
+\end_inset 
+
+.
+\layout Standard
+
+La dirección de polarización va rotando a medida que el haz se va propagando.
+ Esto es lo que recibe el nombre de 
+\emph on 
+actividad óptica.
+\layout Paragraph
+\line_top 
+Problema
+\layout Standard
+
+
+\emph on 
+Una onda armónica plana incide desde el vacío sobre un medio anisótropo
+ uniáxico siendo el ángulo de incidencia distinto de cero.
+ El eje óptico es perpendicular al plano de separación entre el vacío y
+ el medio, y 
+\begin_inset Formula $n_{e}>n_{o}$
+\end_inset 
+
+.
+ Se desea saber el estado de polarización de la onda refractada cuyo vector
+ de ondas forme el mayor  ángulo con la normal a la superficie.
+ 
+\layout Paragraph
+
+Respuesta
+\layout Standard
+
+En general se propagarán dos ondas con polarizaciones distintas.
+ Para determinar los vectores de onda tenemos que cortar la superficie de
+ vectores de onda con el plano de incidencia.
+ Se trata de una superficie bifoliada, una de cuyas secciones es una semicircunf
+erencia y una semielipse.
+ Como el radio del elipsoide de vectores de onda en el plano perpendicular
+ al eje óptico (que es su eje de revolución) es 
+\begin_inset Formula $n_{e}\frac{\omega}{c}$
+\end_inset 
+
+ sabemos que la elipse será más grande que la circunferencia.
+ La proyección sobre el eje 
+\begin_inset Formula $x$
+\end_inset 
+
+ de ambas ondas es la misma.
+ La ordinaria se traza unívocamente dibujando el extremo del vector en la
+ circunferencia y la extraordinaria poniéndolo en la elipse.
+ 
+\layout Standard
+
+De las dos, la que mayor ángulo forma con la normal es la ordinaria.
+ Su polarización es lineal perpendicular al plano formado por 
+\begin_inset Formula $\mathbf{k}_{o}$
+\end_inset 
+
+ y el eje óptico, es decir, en nuestra elección de ejes, sobre el eje 
+\begin_inset Formula $y.$
+\end_inset 
+
+
+\layout Paragraph
+\line_top 
+Problema
+\layout Standard
+
+
+\emph on 
+Si se observa un objeto muy lejano a través de una lámina planoparalela
+ de un medio anisótropo se ve una imagen en lugar de las dos imágenes que
+ se verían si el objeto estuviera muy cercano.
+ ¿Por qué? Considérese que sobre la lámina incide un haz de rayos paralelos
+ procedentes de un objeto puntual en el infinito y que se observa en el
+ plano focal imagen de una lente delgada convergente.
+ 
+\layout Paragraph
+
+Respuesta
+\layout Standard
+
+La luz llega en forma de oap, según la hipótesis sugerida en el enunciado.
+ Esa onda, en general, dará lugar a dos ondas distintas dentro del medio
+ anisótropo, que a su vez se propagarán separadamente a la salida.
+ Si nos dicen que sólo se ve una a la salida, quiere decir que las dos tienen
+ la misma dirección (es decir, que sólo hay un vector de ondas a la salida:
+ 
+\begin_inset Formula $\mathbf{k}''$
+\end_inset 
+
+).
+\layout Standard
+
+Sabemos que 
+\begin_inset Formula $\mathbf{k}_{t}$
+\end_inset 
+
+ se conserva (condiciones de contorno).
+ En la primera cara de la lámina
+\begin_inset Formula \[
+\mathbf{k}_{t}=\mathbf{k}_{t}'\]
+
+\end_inset 
+
+ Por ser la lámina planoparalela podemos escribir la igualdad
+\begin_inset Formula \[
+\mathbf{k}_{t}=\mathbf{k}_{t}'=\mathbf{k}_{t}''\]
+
+\end_inset 
+
+ tanto 
+\begin_inset Formula $\mathbf{k}$
+\end_inset 
+
+ como 
+\begin_inset Formula $\mathbf{k}''$
+\end_inset 
+
+ están en un medio isótropo.
+ Las tres componentes de 
+\begin_inset Formula $\mathbf{k}''$
+\end_inset 
+
+ están especificadas, al tener una condición sobre 
+\begin_inset Formula $\mathbf{k}_{t}''$
+\end_inset 
+
+ y la condición (que no se verifica para 
+\begin_inset Formula $\mathbf{k}'$
+\end_inset 
+
+)
+\begin_inset Formula \[
+\left|\mathbf{k}''\right|=n\frac{\omega}{c}\]
+
+\end_inset 
+
+ 
+\layout Standard
+
+El reparto energético entre los rayos emergentes depende del eje óptico,
+ el estado de polarización de la onda incidente y los ángulos de incidencia,
+ por lo que no podemos precisar nada sobre él.
+\layout Paragraph
+\line_top 
+Problema
+\layout Standard
+
+
+\emph on 
+Una onda armónica plana incide normalmente sobre una de las caras de un
+ prisma tal como indica la figura.
+ El prisma está hecho de un medio anisótropo uniáxico con el eje óptico
+ perpendicular al plano de la figura.
+ Calcular el índice de refracción 
+\begin_inset Formula $n$
+\end_inset 
+
+ del medio que rodea al prisma para que la onda ordinaria sufra reflexión
+ total en la cara 
+\begin_inset Formula $AB$
+\end_inset 
+
+ mientras que la extraordinaria no la sufre.
+ Considérense 
+\begin_inset Formula $\theta=60^{\circ}$
+\end_inset 
+
+, 
+\begin_inset Formula $n_{o}=1.66$
+\end_inset 
+
+ y 
+\begin_inset Formula $n_{e}=1.49$
+\end_inset 
+
+.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/prisma-anisotropo-uniaxico.eps
+	display monochrome
+	width 4cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig: prisma anisotropo uniaxico}
+
+\end_inset 
+
+Prisma anisótropo uniáxico.
+\end_inset 
+
+
+\layout Paragraph
+
+Respuesta
+\layout Standard
+
+Pasos a seguir: introducir la luz dentro del prisma.
+ Las componentes tangenciales dentro del prisma, por aplicación de las condicion
+es de contorno, serán (las de ambas ondas) cero, de modo que la propagación
+ continuará en la dirección de incidencia.
+\begin_inset Formula \begin{eqnarray*}
+\left|\mathbf{k}_{o}\right| & = & n_{or}\frac{\omega}{c}\\
+\left|\mathbf{k}_{e}\right| & = & n_{ex}\frac{\omega}{c}\end{eqnarray*}
+
+\end_inset 
+
+ Tenemos que imponer que la onda ordinaria sufra reflexión total: la componente
+ tangencial del vector de ondas debe ser tal que no haya ninguna componente
+ tangencial en el segundo medio que la pueda igualar
+\begin_inset Formula \begin{eqnarray*}
+\left|\mathbf{k}_{o}\right|\sin\theta & = & n_{o}\frac{\omega}{c}\sin\theta\geq\frac{\omega}{c}n\\
+n_{o}\sin\theta & \geq & n\end{eqnarray*}
+
+\end_inset 
+
+ La condición análoga para la onda extraordinaria es
+\begin_inset Formula \[
+n>n_{e}\sin\theta\]
+
+\end_inset 
+
+ combinando ambas desigualdades
+\begin_inset Formula \begin{eqnarray*}
+n_{o}\sin\theta & \geq n> & n_{e}\sin\theta\\
+1.44 & \geq n> & 1.29\end{eqnarray*}
+
+\end_inset 
+
+ ése es el intervalo de índices posibles.
+\layout Standard
+
+
+\emph on 
+Comentario
+\emph default 
+: este prisma es un polarizador (a la salida tenemos luz linealmente polarizada
+ independientemente del estado de polarización de la onda de incidencia)
+ .
+ La componente ordinaria no progresa más allá del prisma en la dirección
+ de interés (se suele colocar otro prisma debajo para enderezar el rayo
+ que nos interesa).
+\layout Paragraph
+\line_top 
+Problema
+\layout Standard
+
+
+\emph on 
+Supóngase que un polarizador lineal gira a una velocidad angular 
+\begin_inset Formula $\Omega$
+\end_inset 
+
+ entre un par de polarizadores cruzados entre sí (figura 
+\begin_inset LatexCommand \ref{fig: polarizador rotatorio entre otros dos}
+
+\end_inset 
+
+).
+ Demuéstrese que la intensidad luminosa emergente es
+\begin_inset Formula \[
+I(t)=\frac{I_{0}}{8}\left(1-\cos4\Omega t\right)\]
+
+\end_inset 
+
+ donde 
+\begin_inset Formula $I_{0}$
+\end_inset 
+
+ es la intensidad emergente del primer polarizador.
+ 
+\layout Paragraph
+
+Respuesta
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+nofig
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig: polarizador rotatorio entre otros dos}
+
+\end_inset 
+
+Los polarizadores del problema, 
+\begin_inset Formula $P_{1},P_{2}$
+\end_inset 
+
+ y 
+\begin_inset Formula $P_{3}$
+\end_inset 
+
+ respectivamente.
+ 
+\end_inset 
+
+La forma más cómoda es escribir las matrices y aplicarlas al estado de polarizac
+ión inicial.
+ Vamos a suponer que la polarización inicial es lineal y está vibrando según
+ el eje 
+\begin_inset Formula $x$
+\end_inset 
+
+.
+ Si 
+\begin_inset Formula $I_{0}=\left|\mathbf{A}\right|^{2}$
+\end_inset 
+
+
+\begin_inset Formula \[
+\mathbf{A}=\sqrt{I_{0}}\,\binom{1}{0}\]
+
+\end_inset 
+
+ ésta es la amplitud que abandona el primer polarizador.
+ Las matrices son
+\begin_inset Formula \[
+\mathsf{P}_{3}=\left(\begin{array}{cc}
+0 & 0\\
+0 & 1\end{array}\right)\]
+
+\end_inset 
+
+ y
+\begin_inset Formula \[
+\mathsf{P}_{2}=\left(\begin{array}{cc}
+\cos^{2}\Omega t & \sin\Omega t\cos\Omega t\\
+\sin\Omega t\cos\Omega t & \sin^{2}\Omega t\end{array}\right)\]
+
+\end_inset 
+
+ La amplitud emergente debe ser
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{A}' & = & \mathsf{P}_{3}\mathsf{P}_{2}\mathbf{A}\\
+ & = & \sqrt{I_{0}}\,\binom{0}{\sin\Omega t\cos\Omega t}\end{eqnarray*}
+
+\end_inset 
+
+ y la intensidad correspondiente
+\begin_inset Formula \begin{eqnarray*}
+I' & = & I_{0}\left(\sin\Omega t\cos\Omega t\right)^{2}\\
+ & = & \frac{I_{0}}{4}\sin^{2}2\Omega t\\
+ & = & \frac{I_{0}}{8}\left(1-\cos4\Omega t\right)\end{eqnarray*}
+
+\end_inset 
+
+ Sin hacer matrices, se puede razonar que el haz de luz a la salida del
+ 
+\begin_inset Formula $P_{2}$
+\end_inset 
+
+ estará vibrando en la dirección de su eje, es decir
+\begin_inset Formula \[
+\mathbf{A}''=\sqrt{I_{0}}\cos\Omega t\,\binom{\cos\Omega t}{\sin\Omega t}\]
+
+\end_inset 
+
+ el 
+\begin_inset Formula $P_{3}$
+\end_inset 
+
+ sólo deja pasar la componente 
+\begin_inset Formula $y$
+\end_inset 
+
+, por lo que 
+\begin_inset Formula \[
+\mathbf{A}'=\sqrt{I_{0}}\cos\Omega t\,\binom{0}{\sin\Omega t}\]
+
+\end_inset 
+
+ que es el resultado al que hemos llegado usando el formalismo matricial.
+ 
+\layout Paragraph
+\line_top 
+Problema
+\layout Standard
+
+
+\emph on 
+Sea el sistema de la figura.
+ 
+\begin_inset Formula $P_{1}$
+\end_inset 
+
+ y 
+\begin_inset Formula $P_{2}$
+\end_inset 
+
+ son dos polarizadores cuyos ejes de transmisión coinciden con el 
+\begin_inset Formula $x$
+\end_inset 
+
+ y el 
+\begin_inset Formula $y$
+\end_inset 
+
+, respectivamente, y 
+\begin_inset Formula $L$
+\end_inset 
+
+ es una lámina planoparalela de un medio anisótropo uniáxico con eje óptico
+ paralelo a las caras, formando un  ángulo 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+ con el 
+\begin_inset Formula $x$
+\end_inset 
+
+.
+ Suponiendo que perpendicularmente a 
+\begin_inset Formula $P_{1}$
+\end_inset 
+
+ inciden sobre el sistema dos ondas planas monocromáticas de longitudes
+ de onda 
+\begin_inset Formula $\lambda_{1}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\lambda_{2}$
+\end_inset 
+
+, ¿cuánto deberán valer 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+ y el espesor de la lámina para que el sistema deje pasar únicamente 
+\begin_inset Formula $\lambda_{1}$
+\end_inset 
+
+ con transmisión máxima eliminando completamente el otro haz?
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/dos-polarizadores-un-medio-uniaxico.eps
+	display monochrome
+	width 6cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig: sistema de polarizadores p1 y p2}
+
+\end_inset 
+
+Sistema de polarizadores.
+\end_inset 
+
+
+\layout Paragraph
+
+Respuesta
+\layout Standard
+
+Siempre podemos calcular las matrices de 
+\begin_inset Formula $L$
+\end_inset 
+
+ y 
+\begin_inset Formula $P_{2}$
+\end_inset 
+
+ y aplicarlas al estado de polarización procedente del primer polarizador,
+ 
+\begin_inset Formula $P_{1}$
+\end_inset 
+
+.El ángulo del eje óptico de la lámina con el eje 
+\begin_inset Formula $x$
+\end_inset 
+
+ lo etiquetamos 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+, por lo que el ángulo con el eje 
+\begin_inset Formula $y$
+\end_inset 
+
+ es 
+\begin_inset Formula $\overline{\alpha}=\alpha-\pi/2$
+\end_inset 
+
+.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+nofig
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Secciones por el plano 
+\begin_inset Formula $xy$
+\end_inset 
+
+ de 
+\begin_inset Formula $P_{1}$
+\end_inset 
+
+, 
+\begin_inset Formula $L$
+\end_inset 
+
+ y 
+\begin_inset Formula $P_{2}$
+\end_inset 
+
+ respectivamente
+\end_inset 
+
+
+\begin_inset Formula \[
+\mathbf{A}=\sqrt{I}\binom{1}{0}\]
+
+\end_inset 
+
+ La matriz de la lámina retardadora depende de la longitud de onda,
+\begin_inset Formula \[
+\mathsf{L}=\left(\begin{array}{cc}
+\cos^{2}\overline{\alpha}+e^{i\delta}\sin^{2}\overline{\alpha} & \cos\overline{\alpha}\sin\overline{\alpha}\left(1-e^{-i\delta}\right)\\
+\cos\overline{\alpha}\sin\overline{\alpha}\left(1-e^{-i\delta}\right) & \sin^{2}\overline{\alpha}+e^{i\delta}\cos^{2}\overline{\alpha}\end{array}\right)\]
+
+\end_inset 
+
+ con 
+\begin_inset Formula $\delta=\frac{2\pi}{\lambda}\left(n_{0}-n_{e}\right)d$
+\end_inset 
+
+ 
+\begin_inset Formula \[
+\mathsf{P}_{2}=\left(\begin{array}{cc}
+0 & 0\\
+0 & 1\end{array}\right)\]
+
+\end_inset 
+
+ Entonces
+\begin_inset Formula \[
+\mathbf{A}'=\mathsf{P}_{2}\mathsf{L}\mathbf{A}\]
+
+\end_inset 
+
+ de donde 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{A}' & = & \sqrt{I}\sin\overline{\alpha}\cos\overline{\alpha}\left(1-e^{-i\delta}\right)\binom{0}{1}\\
+I' & = & I\sin^{2}2\overline{\alpha}\sin^{2}\frac{\delta}{2}\end{eqnarray*}
+
+\end_inset 
+
+ pero tenemos 
+\begin_inset Formula $\delta_{i}=\frac{2\pi}{\lambda_{i}}\left(n_{o}-n_{e}\right)d$
+\end_inset 
+
+.
+ 
+\layout Enumerate
+
+Si 
+\begin_inset Formula $I'_{\lambda_{2}}=0$
+\end_inset 
+
+ entonces 
+\begin_inset Formula $\sin\frac{\delta_{2}}{2}=0$
+\end_inset 
+
+.
+ Por tanto 
+\begin_inset Formula $\delta_{2}=2\pi m$
+\end_inset 
+
+ con 
+\begin_inset Formula $m\in\mathcal{Z}$
+\end_inset 
+
+.
+ Ya tenemos una condición sobre 
+\begin_inset Formula $d$
+\end_inset 
+
+ de la lámina.
+\begin_inset Formula \[
+d=\frac{m\lambda_{2}}{n_{o}-n_{e}}\]
+
+\end_inset 
+
+Fijémonos en que para que la luz llegue según el eje 
+\begin_inset Formula $x$
+\end_inset 
+
+ al segundo polarizador, es necesario que la lámina no cambie el estado
+ de polarización de la luz incidente, es decir, que 
+\begin_inset Formula $\delta=2\pi m$
+\end_inset 
+
+.
+\layout Enumerate
+
+Para la segunda condición es necesario que se maximicen los dos factores
+\begin_inset Formula \[
+\sin2\overline{\alpha}=\pm1\]
+
+\end_inset 
+
+ de donde 
+\begin_inset Formula $\alpha=\pm\frac{\pi}{4}$
+\end_inset 
+
+ y
+\begin_inset Formula \[
+\sin^{2}\left(\frac{\delta_{1}}{2}\right)\]
+
+\end_inset 
+
+ debe ser máximo también, de donde 
+\begin_inset Formula \begin{eqnarray*}
+\delta_{1} & = & \left(2M+1\right)\pi\\
+ & = & 2\pi M\frac{\lambda_{2}}{\lambda_{1}}\frac{\left(n_{o}-n_{e}\right)_{\lambda_{2}}}{\left(n_{o}-n_{e}\right)_{\lambda_{1}}}\end{eqnarray*}
+
+\end_inset 
+
+ con 
+\begin_inset Formula $M\in\mathcal{Z}$
+\end_inset 
+
+.
+ Si suponemos que la diferencia de índices es la misma para ambas longitudes
+ de onda
+\begin_inset Formula \[
+\delta_{1}=2\pi M\frac{\lambda_{2}}{\lambda_{1}}\]
+
+\end_inset 
+
+ todo lo que podeos escribir es 
+\begin_inset Formula \[
+\frac{2M+1}{2m}=\frac{\lambda_{2}}{\lambda_{1}}\]
+
+\end_inset 
+
+ que no podríamos verificarlo siempre, porque a un lado tenemos un racional
+ y a otro un real.
+ Pero tenemos dos escapatorias 
+\begin_deeper 
+\layout Enumerate
+
+Los racionales son densos en los reales, y podemos aproximar un real cada
+ vez más eligiendo 
+\begin_inset Formula $m$
+\end_inset 
+
+ y 
+\begin_inset Formula $M$
+\end_inset 
+
+ cada vez más grandes.
+\layout Enumerate
+
+En el mundo real, donde no se puede medir con precisión infinita, el cociente
+ de la izquierda es en definitiva también un racional.
+\layout Standard
+
+Si tomamos un ejemplo práctico, 
+\begin_inset Formula \begin{eqnarray*}
+\lambda_{1} & = & 589.6nm\\
+\lambda_{2} & = & 589.0nm\end{eqnarray*}
+
+\end_inset 
+
+ y por simplificar, 
+\begin_inset Formula $M=m$
+\end_inset 
+
+, al despejar 
+\begin_inset Formula $m$
+\end_inset 
+
+ de 
+\begin_inset Formula \[
+\frac{2m+1}{m}=\frac{\lambda_{2}}{\lambda_{1}}\]
+
+\end_inset 
+
+ obtenemos 
+\begin_inset Formula $m\simeq491$
+\end_inset 
+
+ y 
+\begin_inset Formula $I_{1}'=0.99995I\simeq I$
+\end_inset 
+
+ 
+\end_deeper 
+\layout Paragraph
+\line_top 
+Problema
+\layout Standard
+
+
+\emph on 
+Un haz de luz esta formado por una mezcla de luz linealmente polarizada
+ (intensidad 
+\begin_inset Formula $I_{p}$
+\end_inset 
+
+) y luz no polarizada (intensidad 
+\begin_inset Formula $I_{np}$
+\end_inset 
+
+).
+ Indíquese cómo pueden obtenerse 
+\begin_inset Formula $I_{p}$
+\end_inset 
+
+ e 
+\begin_inset Formula $I_{np}$
+\end_inset 
+
+ a partir de la medida de la intensidad que atraviesa un polarizador que
+ puede orientarse como convenga.
+\layout Paragraph
+
+Respuesta
+\layout Standard
+
+Tenemos una combinación de luz linealmente polarizada y luz natural.
+\begin_inset Formula \[
+I'=\frac{I_{np}}{2}+I_{p}\cos^{2}\theta\]
+
+\end_inset 
+
+ Variando el 
+\begin_inset Formula $\theta$
+\end_inset 
+
+ podemos obtener las dos cantidades.
+ Si representamos la intensidad emergente frente a la posición del polarizador,
+ 
+\begin_inset Formula $I'\left(\theta\right)$
+\end_inset 
+
+ obtenemos una curva 
+\begin_inset Formula $\cos^{2}\theta$
+\end_inset 
+
+ 
+\layout Standard
+
+Tenemos una serie de máximos 
+\begin_inset Formula $I'_{max}$
+\end_inset 
+
+ y de mínimos 
+\begin_inset Formula $I'_{min}$
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray*}
+I'_{max} & = & \frac{I_{np}}{2}+I_{p}\\
+I'_{min} & = & I_{np}\end{eqnarray*}
+
+\end_inset 
+
+ con lo que
+\begin_inset Formula \begin{eqnarray*}
+I_{np} & = & 2I'_{min}\\
+I_{p} & = & I'_{max}-I'_{min}\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Paragraph
+\line_top 
+Problema 
+\layout Standard
+
+
+\emph on 
+Un haz plano de intensidad 
+\begin_inset Formula $I_{0}$
+\end_inset 
+
+ incide con  ángulo 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+ sobre un plano en el que se encuentran dos rendijas separadas una distancia
+ 
+\begin_inset Formula $d$
+\end_inset 
+
+.
+ 
+\layout Enumerate
+
+
+\emph on 
+Calcúlese la intensidad en un plano paralelo al que contiene la rendijas
+ y suficientemente alejado.
+ 
+\layout Enumerate
+
+
+\emph on 
+En una de las rendijas se coloca una lámina absorbente cuya transmitancia
+ es 
+\begin_inset Formula $0.01$
+\end_inset 
+
+.
+ Determínese la visibilidad.
+ 
+\layout Paragraph
+
+Respuesta
+\layout Enumerate
+
+Se cumple la hipótesis 
+\begin_inset Formula $x,d\ll D$
+\end_inset 
+
+.
+ Vamos a suponer 
+\begin_inset Formula $n=1$
+\end_inset 
+
+.
+ Hay ya una diferencia de fase ya al llegar al propio plano que contiene
+ las aberturas.Tenemos que calcular ese desfase previo para considerarlo
+ en el argumento del coseno del término de interferencia, 
+\begin_inset Formula $g_{2}-g_{1}=k\left(r_{2}-r_{1}\right)$
+\end_inset 
+
+.
+ La diferencia de fases al llegar a las aberturas es 
+\begin_inset Formula $\Delta$
+\end_inset 
+
+.
+ El camino óptico para la onda superior es pues 
+\begin_inset Formula $r_{1}+\Delta$
+\end_inset 
+
+ y para la inferior, 
+\begin_inset Formula $r_{2}$
+\end_inset 
+
+.
+ La diferencia de fases al llegar a la pantalla es, pues
+\begin_inset Formula \[
+dif=k\left(r_{2}-r_{1}\right)-k\Delta\]
+
+\end_inset 
+
+ 
+\begin_inset Formula $\Delta$
+\end_inset 
+
+ se obtiene fácilmente con argumentos geométricos: 
+\begin_inset Formula $\Delta=d\sin\alpha$
+\end_inset 
+
+.
+ Si aprovechamos la condición 
+\begin_inset Formula $x,d\ll D$
+\end_inset 
+
+ podemos además aproximar 
+\begin_inset Formula $r_{2}$
+\end_inset 
+
+ y 
+\begin_inset Formula $r_{1}$
+\end_inset 
+
+ y la diferencia de fase queda
+\begin_inset Formula \[
+dif\simeq\frac{2\pi}{\lambda}\frac{xd}{D}-kd\sin\alpha\]
+
+\end_inset 
+
+ en virtud de 
+\begin_inset Formula $x,d\ll D$
+\end_inset 
+
+ podemos escribir, también, 
+\begin_inset Formula $I_{1}\simeq I_{2}$
+\end_inset 
+
+.
+ La expresión final es 
+\begin_inset Formula \[
+I=2I_{2}\left(1+\cos\left(\frac{2\pi}{\lambda}\frac{xd}{D}-kd\sin\alpha\right)\right)\]
+
+\end_inset 
+
+
+\layout Enumerate
+
+Ponemos una lámina absorbente, por ejemplo en la abertura superior.
+ La intensidad que la atraviesa es un 
+\begin_inset Formula $1\%$
+\end_inset 
+
+ de la que incide sobre ella.
+ 
+\begin_inset Formula $I_{1}'=0.01I_{1}\simeq0.01I_{2}$
+\end_inset 
+
+.
+ El enunciado no nos da ninguna indicación sobre el efecto de esta lámina
+ absorbente sobre la fase, por lo que ponemos una cantidad indeterminada,
+ 
+\begin_inset Formula $\delta$
+\end_inset 
+
+
+\begin_inset Formula \[
+I=I_{2}\left(1+0.01+2\sqrt{0.01}\cos\left(\frac{2\pi}{\lambda}\frac{xd}{D}-kd\sin\alpha+\delta\right)\right)\]
+
+\end_inset 
+
+ la visibilidad es 
+\begin_inset Formula \begin{eqnarray*}
+V & = & \frac{I_{max}-I_{min}}{I_{max}+I_{min}}\\
+I_{max} & = & 1.21I_{2}\\
+I_{min} & = & 0.81I_{2}\\
+V & = & 0.198\end{eqnarray*}
+
+\end_inset 
+
+ la lámina absorbente hace que los mínimos ya no sean nulos, y por lo tanto,
+ la visibilidad no es buena.
+ 
+\layout Paragraph
+\line_top 
+Problema
+\noun on 
+ 
+\size small 
+(Young
+\noun default 
+ con una fuente extensa)
+\layout Standard
+
+
+\emph on 
+En el interferómetro de 
+\noun on 
+Young
+\noun default 
+ de la figura 
+\begin_inset LatexCommand \ref{fig: interf Young}
+
+\end_inset 
+
+, las dos rendijas son iluminadas por una fuente extensa.
+ La intensidad que se obtiene en la pantalla debida a una fuente puntual
+ en 
+\begin_inset Formula $x'$
+\end_inset 
+
+ es, si 
+\begin_inset Formula $x'\ll B$
+\end_inset 
+
+, 
+\begin_inset Formula \[
+dI_{x'}=2J_{0}\left\{ 1+\cos\left[\frac{2\pi}{\lambda}d\left(\frac{x}{D}+\frac{x'}{B}\right)\right]\right\} dx'\]
+
+\end_inset 
+
+ Donde 
+\begin_inset Formula $J_{0}$
+\end_inset 
+
+ es una constante.
+ 
+\layout Enumerate
+
+
+\emph on 
+Calcular la figura interferencial considerando la fuente extensa entre 
+\begin_inset Formula $-a/2$
+\end_inset 
+
+ y 
+\begin_inset Formula $a/2$
+\end_inset 
+
+ como un continuo de fuentes puntuales incoherentes entre sí.
+ 
+\layout Enumerate
+
+
+\emph on 
+Calcular la visibilidad.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/interferometro-young.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig: interf Young}
+
+\end_inset 
+
+Interferómetro de Young.
+\end_inset 
+
+ 
+\layout Paragraph
+
+Respuesta
+\layout Standard
+
+Según dice el enunciado
+\begin_inset Formula \[
+dI_{x'}=2J_{0}\left(1+\cos\left(\frac{2\pi}{\lambda}d\left(\frac{x}{D}+\frac{x'}{B}\right)\right)\right)dx'\]
+
+\end_inset 
+
+ el término 
+\begin_inset Formula $\frac{x'}{B}$
+\end_inset 
+
+ en el argumento del coseno es la diferencia de fase debida a que la fuente
+ puntual no está en el origen (esta fórmula sirve para la intensidad creada
+ por uno cualquiera de los puntos incoherentes de la fuente extensa) y las
+ ondas no llegan a la abertura con igual fase.
+ Si se cumple que 
+\begin_inset Formula $x',d'\ll B$
+\end_inset 
+
+
+\begin_inset Formula \[
+k\left(r'_{2}-r'_{1}\right)\simeq\frac{2\pi dx'}{B}\]
+
+\end_inset 
+
+ En virtud de la incoherencia de las fuentes puntuales sobre la pantalla
+ de observación no se suman amplitudes (puesto que no hay interferencia
+ entre las ondas provenientes de distintos puntos de la fuente extensa)
+ sino intensidades.
+\begin_inset Formula \[
+I=\int_{-\frac{a}{2}}^{\frac{a}{2}}dI_{x'}\]
+
+\end_inset 
+
+ Haciendo la integral y teniendo en cuenta que 
+\begin_inset Formula $\sin A-\sin B=2\cos\left(\frac{A+B}{2}\right)\sin\left(\frac{A-B}{2}\right)$
+\end_inset 
+
+ el resultado es
+\begin_inset Formula \[
+I=2J_{0}a\left(1+\mathrm{sinc}\,\left(\frac{\pi}{\lambda}\frac{ad}{B}\right)\cos\left(\frac{2\pi}{\lambda}\frac{xd}{D}\right)\right)\]
+
+\end_inset 
+
+ donde hemos introducido la función seno cardinal, 
+\begin_inset Formula $\mathrm{sinc}\,\left(x\right)=\frac{\sin x}{x}$
+\end_inset 
+
+.
+ Para hallar la visibilidad calculamos los máximos y mínimos, teniendo en
+ cuenta que el seno cardinal cambia de signo\SpecialChar \ldots{}
+
+\begin_inset Formula \begin{eqnarray*}
+I_{max} & = & 2J_{0}a\left(1+\left|\mathrm{sinc}\,\left(\frac{\pi}{\lambda}\frac{ad}{B}\right)\right|\right)\\
+I_{min} & = & 2J_{0}a\left(1-\left|\mathrm{sinc}\,\left(\frac{\pi}{\lambda}\frac{ad}{B}\right)\right|\right)\end{eqnarray*}
+
+\end_inset 
+
+ De donde 
+\begin_inset Formula $V=\left|\mathrm{sinc}\,\left(\frac{\pi}{\lambda}\frac{ad}{B}\right)\right|$
+\end_inset 
+
+ (figura 
+\begin_inset LatexCommand \ref{fig abs_senocardinal}
+
+\end_inset 
+
+).
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/m-abs-senocardinal.eps
+	display monochrome
+	width 5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig abs_senocardinal}
+
+\end_inset 
+
+
+\size small 
+
+\begin_inset Formula $V=V\left(\frac{\pi}{\lambda}\frac{ad}{B}\right)$
+\end_inset 
+
+
+\end_inset 
+
+La función crece a medida que el argumento decrece.
+ Cuanto mayor es el tamaño de la fuente peor es la visibilidad.
+ La visibilidad también desciende si se separan las aberturas (
+\begin_inset Formula $d$
+\end_inset 
+
+ crece) o si se reduce la distancia de la fuente a éstas 
+\begin_inset Formula $\left(B\right)$
+\end_inset 
+
+.
+ El primer mínimo nulo,
+\begin_inset Formula \[
+\frac{\pi ad}{\lambda B}=\pi\]
+
+\end_inset 
+
+ marca un criterio cuantitativo razonable para distinguir una zona de buena
+ visibilidad de otra de visibilidad mucho más pobre.
+\layout Description
+
+Ejemplo Si se tienen los datos 
+\begin_inset Formula $a=1mm$
+\end_inset 
+
+, 
+\begin_inset Formula $B=10cm$
+\end_inset 
+
+, 
+\begin_inset Formula $\lambda=600nm$
+\end_inset 
+
+ ¿cuál es la separación entre orificios 
+\begin_inset Formula $\left(d\right)$
+\end_inset 
+
+ que hace 
+\begin_inset Formula $V=0$
+\end_inset 
+
+?.
+\size small 
+
+\begin_inset Formula \begin{eqnarray*}
+\frac{\pi ad}{\lambda B} & = & \pi\\
+d & = & \frac{\lambda B}{a}\\
+ & = & 0.06mm\end{eqnarray*}
+
+\end_inset 
+
+ Para 
+\begin_inset Formula $V\neq0$
+\end_inset 
+
+ necesitamos 
+\begin_inset Formula $d<0.06mm$
+\end_inset 
+
+.
+ El interferómetro de 
+\noun on 
+Young
+\noun default 
+ es muy restrictivo cuando opera con fuentes extensas.
+ Eso hace que se puedan medir distancias (cualquiera de las que están en
+ el argumento del coseno) con gran precisión.
+ 
+\layout Standard
+
+El tipo de condiciones que hemos visto aparece en la bibliografía bajo el
+ epígrafe 
+\begin_inset Quotes eld
+\end_inset 
+
+coherencia espacial
+\begin_inset Quotes erd
+\end_inset 
+
+.
+\layout Standard
+
+Por otra parte, hay que subrayar que si bien nuestro interés aquí ha sido
+ encontrar zonas de 
+\begin_inset Formula $V$
+\end_inset 
+
+ alto (para poder observar mejor la interferencia) hay muchas aplicaciones
+ de medida que se basan en el efecto que acabamos de ver de rápida pérdida
+ de visibilidad.
+ Si conocemos los datos del interferómetro 
+\begin_inset Formula $\left(d,\lambda,B\right)$
+\end_inset 
+
+ podemos medir el tamaño de la fuente separando las aberturas hasta que
+ 
+\begin_inset Formula $V=0$
+\end_inset 
+
+: entonces 
+\begin_inset Formula $a=\frac{\lambda B}{d}$
+\end_inset 
+
+.
+ Esta técnica se aplica a la determinación del diámetro aparente de las
+ estrellas (conocida su distancia\SpecialChar \ldots{}
+) y entonces el dispositivo se llama 
+\emph on 
+interferómetro estelar de
+\emph default 
+ 
+\noun on 
+Michelson
+\noun default 
+.
+ 
+\layout Paragraph
+\line_top 
+Problema (interferencia con un espejo)
+\layout Standard
+
+
+\emph on 
+En el montaje de la figura 
+\begin_inset LatexCommand \ref{fig: interf con espejo}
+
+\end_inset 
+
+ se tienen dos fuentes puntuales incoherentes a distancias 
+\begin_inset Formula $d_{1}$
+\end_inset 
+
+ y 
+\begin_inset Formula $d_{2}$
+\end_inset 
+
+ del espejo que emiten con longitudes de onda 
+\begin_inset Formula $\lambda_{1}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\lambda_{2}$
+\end_inset 
+
+ respectivamente.
+ Determinar la relación que debe haber entre 
+\begin_inset Formula $d_{1}$
+\end_inset 
+
+, 
+\begin_inset Formula $d_{2}$
+\end_inset 
+
+, 
+\begin_inset Formula $\lambda_{1}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\lambda_{2}$
+\end_inset 
+
+ para que la figuras interferenciales de las dos fuentes coincidan.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/fuentes-puntuales-incoherentes.eps
+	display monochrome
+	width 5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig: interf con espejo}
+
+\end_inset 
+
+Interferencia con un espejo
+\size default 
+.
+\end_inset 
+
+ 
+\layout Paragraph
+
+Respuesta
+\layout Standard
+
+Antes de atacar el problema en sí debemos calcular la figura interferencial
+ creada por una sola fuente.
+ La interferencia es posible porque la luz llega por dos vías a la pantalla:
+\layout Enumerate
+
+directamente
+\layout Enumerate
+
+reflejándose en el espejo
+\layout Standard
+
+Siempre que se mantenga el requisito de diferencia de fase razonable, se
+ podrá decir que estas dos ondas son coherentes.
+ 
+\layout Standard
+
+Podemos hacer la misma operación que hicimos para simplificar el tratamiento
+ del interferómetro de Michelson: sustituir los espejos por las imágenes
+ que crean (pero teniendo en cuenta el desfase que introducen).
+ En este caso, tendremos dos fuentes puntuales simétricas respecto al plano
+ del espejo, y el sistema será equivalente a un interferómetro de 
+\noun on 
+Young
+\noun default 
+.
+ Se cumple, como para este, que 
+\begin_inset Formula $x,d\ll D$
+\end_inset 
+
+.
+ Entonces
+\begin_inset Formula \[
+I=2I_{0}\left(1+\cos\left(\frac{2\pi}{\lambda}\frac{2xd}{D}+\delta\right)\right)\]
+
+\end_inset 
+
+ Donde 
+\begin_inset Formula $\delta$
+\end_inset 
+
+ es el desfase (desconocido) introducido por la reflexión en un medio absorbente
+ cual es el espejo.
+ Por sencillez hemos considerado 
+\begin_inset Formula $\left|coef\, reflexi\acute{o}n\right|\simeq1$
+\end_inset 
+
+; Si no fuese así habría que arrastrar por todas partes 
+\begin_inset Formula $I_{2}=\left|r\right|^{2}I_{1}$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+Ahora podemos considerar las dos fuentes.
+ Se cumple, respectivamente para cada una de ellas:
+\begin_inset Formula \begin{eqnarray*}
+I & = & 2I_{0}\left(1+\cos\left(\frac{2\pi}{\lambda_{1}}\frac{2xd_{1}}{D}+\delta_{1}\right)\right)\\
+I & = & 2I_{0}\left(1+\cos\left(\frac{2\pi}{\lambda_{2}}\frac{2xd_{2}}{D}+\delta_{2}\right)\right)\end{eqnarray*}
+
+\end_inset 
+
+ Como las fuentes son incoherentes entre sí, cada par de imágenes debido
+ a una fuente crea su figura de interferencia independiente.
+ Queremos que la distribución de intensidad en 
+\begin_inset Formula $x$
+\end_inset 
+
+ sea igual para las dos fuentes:
+\begin_inset Formula \[
+\frac{2\pi}{\lambda_{1}}\frac{2dx_{1}}{D}=\frac{2\pi}{\lambda_{2}}\frac{2xd_{2}}{D}\]
+
+\end_inset 
+
+ implica la condición
+\begin_inset Formula \[
+\frac{d_{1}}{\lambda_{1}}=\frac{d_{2}}{\lambda_{2}}\]
+
+\end_inset 
+
+ además, debe cumplirse 
+\begin_inset Formula $\delta_{1}=\delta_{2}$
+\end_inset 
+
+ (mod
+\begin_inset Formula $\left(2\pi\right)$
+\end_inset 
+
+) para que los máximos coincidan.
+\layout Paragraph
+\line_top 
+Problema
+\layout Standard
+
+
+\emph on 
+En un interferómetro de 
+\noun on 
+Michelson
+\noun default 
+ iluminado de forma normal a los espejos se tiene un máximo de intensidad
+ para una frecuencia 
+\begin_inset Formula $\omega$
+\end_inset 
+
+.
+ 
+\layout Enumerate
+
+
+\emph on 
+Calcular la frecuencia más próxima a 
+\begin_inset Formula $\omega$
+\end_inset 
+
+ para la que también se tendría máxima intensidad para la misma separación
+ entre los espejos.
+ 
+\layout Enumerate
+
+
+\emph on 
+Misma cuestión para un 
+\noun on 
+Fabry
+\noun default 
+--
+\noun on 
+Perot
+\noun default 
+.
+\layout Paragraph
+
+Respuesta
+\layout Standard
+
+Hay que imponer que para la misma configuración del interferómetro tengamos
+ la misma figura para 
+\begin_inset Formula $\omega'$
+\end_inset 
+
+ y para 
+\begin_inset Formula $\omega$
+\end_inset 
+
+, utilizando la condición de máximo, y seleccionar el 
+\begin_inset Formula $\omega'$
+\end_inset 
+
+ más próximo a 
+\begin_inset Formula $\omega$
+\end_inset 
+
+.
+ La condición de máximo para 
+\begin_inset Formula $\theta=0$
+\end_inset 
+
+ es 
+\begin_inset Formula \[
+\frac{2\pi}{\lambda}n2d+\delta=2\pi M\]
+
+\end_inset 
+
+ en frecuencias 
+\begin_inset Formula $\left(\frac{2\pi}{\lambda}=\frac{\omega}{c}\right)$
+\end_inset 
+
+ tenemos
+\begin_inset Formula \[
+\frac{\omega}{c}2nd+\delta=2\pi M\]
+
+\end_inset 
+
+ de donde, para cada frecuencia, respectivamente
+\begin_inset Formula \begin{eqnarray*}
+\omega & = & \frac{c}{2nd}\left(2\pi M-\delta\right)\\
+\omega' & = & \frac{c}{2nd}\left(2\pi M'-\delta\right)\end{eqnarray*}
+
+\end_inset 
+
+ Las dos frecuencias más próximas a 
+\begin_inset Formula $\omega$
+\end_inset 
+
+ para las que también se tiene máximo son las que cumplen 
+\begin_inset Formula $M'=M\pm1$
+\end_inset 
+
+.
+\begin_inset Formula \[
+\omega'=\omega\pm\frac{\pi c}{nd}\]
+
+\end_inset 
+
+ Esta deducción la hemos hecho suponiendo que no había dispersión en el
+ índice de refracción 
+\begin_inset Formula $\left(n\left(\omega\right)=n\left(\omega'\right)\right)$
+\end_inset 
+
+ ni en el desfase 
+\begin_inset Formula $\left(\delta\left(\omega\right)=\delta\left(\omega'\right)\right)$
+\end_inset 
+
+, lo que no es generalmente el caso.
+\layout Standard
+
+El desarrollo del problema para un interferómetro de FP es análogo.
+\layout Paragraph
+\line_top 
+Problema 
+\size small 
+(poder resolutivo de un FP)
+\layout Standard
+
+
+\emph on 
+La separación entre los dos espejos de un interferómetro de 
+\noun on 
+Fabry
+\noun default 
+--
+\noun on 
+Perot
+\noun default 
+ es de 
+\begin_inset Formula $\unit{1}\centi\metre$
+\end_inset 
+
+.
+ Calcular la reflectancia de los espejos necesaria para distinguir las dos
+ frecuencias 
+\begin_inset Formula $\omega_{1}=\unit{3.543320\times10^{14}}\radianpersecond$
+\end_inset 
+
+ y 
+\begin_inset Formula $\omega_{2}=\unit{3.543387\times10^{14}}\radianpersecond$
+\end_inset 
+
+.
+ Supóngase que el medio en el interior del interferómetro es de índice 
+\begin_inset Formula $n=1$
+\end_inset 
+
+, que la incidencia es normal y además despréciese el cambio de fase producido
+ en las reflexiones.
+\layout Paragraph
+
+Respuesta
+\layout Standard
+
+El poder resolutivo del interferómetro tiene que ser tal que 
+\begin_inset Formula $\omega_{1}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\omega_{2}$
+\end_inset 
+
+ estén resueltas:
+\begin_inset Formula \[
+\frac{\lambda}{\Delta\lambda}\leq\frac{\pi}{2}M\sqrt{F}\]
+
+\end_inset 
+
+ Tenemos que encontrar el orden interferencial para poder despejar 
+\begin_inset Formula $F$
+\end_inset 
+
+, pues 
+\begin_inset Formula $F$
+\end_inset 
+
+ es la magnitud que podemos poner en función de 
+\begin_inset Formula $\left|r_{1}r_{2}\right|$
+\end_inset 
+
+.
+ Determinamos 
+\begin_inset Formula $M$
+\end_inset 
+
+ imponiendo que a 
+\begin_inset Formula $d=1cm$
+\end_inset 
+
+ estemos observando máximos en estas longitudes de onda.
+ La condición de máximo es
+\begin_inset Formula \[
+\frac{2\pi}{\lambda}nd\cos\theta+\delta=M\pi\]
+
+\end_inset 
+
+ Como el enunciado del problema no especifica 
+\begin_inset Formula $n,\delta,\theta$
+\end_inset 
+
+, tomamos el caso sencillo 
+\begin_inset Formula $n=1,\,\delta=0,\,\theta=0$
+\end_inset 
+
+.
+ El orden interferencial es pues 
+\begin_inset Formula $M=\frac{2d}{\lambda}$
+\end_inset 
+
+.
+ Pasamos de frecuencias a longitudes de onda 
+\begin_inset Formula $\lambda_{i}=\frac{2\pi c}{\omega_{i}}$
+\end_inset 
+
+.
+ Para el cálculo del orden interferencial podemos usar en el denominador
+ la media de las 
+\begin_inset Formula $\lambda_{i}$
+\end_inset 
+
+ o un valor de una de ellas, puesto que son muy próximos.
+ Con todo,
+\begin_inset Formula \[
+M=3760\]
+
+\end_inset 
+
+ y 
+\begin_inset Formula $F\geq81$
+\end_inset 
+
+.
+ Ahora entra en juego la expresión de 
+\begin_inset Formula $F$
+\end_inset 
+
+ 
+\begin_inset Formula \[
+F=\frac{4\left|r_{1}r_{2}\right|}{\left(1-\left|r_{1}r_{2}\right|\right)^{2}}\]
+
+\end_inset 
+
+ Utilizando 
+\begin_inset Formula $\left|r_{1}r_{2}\right|=x$
+\end_inset 
+
+ como incógnita y resolviendo la ecuación cuadrática, tenemos que para 
+\begin_inset Formula $F=81$
+\end_inset 
+
+ (su valor mínimo) 
+\begin_inset Formula $\left|r_{1}r_{2}\right|=0.80$
+\end_inset 
+
+ (hay otra solución, pero es superior a 
+\begin_inset Formula $1$
+\end_inset 
+
+, y por lo tanto, no aplicable a un coeficiente de reflexión).
+ Por lo tanto, el resultado final es 
+\begin_inset Formula \[
+\left|r_{1}r_{2}\right|\geq0.80\]
+
+\end_inset 
+
+
+\layout Paragraph
+\line_top 
+Problema 
+\size small 
+(FP con medio anisótropo)
+\layout Standard
+
+
+\emph on 
+Una onda armónica plana incide perpendicularmente sobre un interferómetro
+ de 
+\noun on 
+Fabry
+\noun default 
+--
+\noun on 
+Perot
+\noun default 
+.
+ El interior del interferómetro está  ocupado totalmente por un medio anisótropo
+ uniáxico cuyo eje óptico es paralelo a los espejos.
+ La onda incidente puede estar linealmente polarizada vibrando según el
+ eje óptico en un caso, y perpendicularmente al eje óptico en otro.
+ En ambos casos la intensidad incidente es la misma.
+ Razónese brevemente si la intensidad transmitida será  o no la misma en
+ los dos casos, para una separación arbitraria entre los espejos.
+\layout Paragraph
+
+Respuesta
+\layout Standard
+
+Para el interferómetro de FP se tiene 
+\begin_inset Formula \[
+I_{max}=\frac{T_{max}}{1+F\sin^{2}\varphi}I\]
+
+\end_inset 
+
+ con 
+\begin_inset Formula $\theta=0$
+\end_inset 
+
+, el desfase entre ondas consecutivas es 
+\begin_inset Formula $\varphi=\frac{2\pi}{\lambda}nd+\delta$
+\end_inset 
+
+.
+ Pero esto no vale en un medio anisótropo.
+ Debemos expresarlo de otro modo
+\begin_inset Formula \[
+\varphi=\left|\mathbf{k}\right|d+\delta\]
+
+\end_inset 
+
+
+\layout Enumerate
+
+Luz vibrando según el eje óptico, onda extraordinaria: 
+\begin_inset Formula $\left|\mathbf{k}_{e}\right|=n_{e}\frac{\omega}{c}$
+\end_inset 
+
+ en este caso particular en que 
+\begin_inset Formula $\mathbf{k}\perp e.\acute{o}.$
+\end_inset 
+
+  
+\layout Enumerate
+
+Luz perpendicular al eje óptico, onda ordinaria 
+\begin_inset Formula $\left|\mathbf{k}_{o}\right|=n_{o}\frac{\omega}{c}$
+\end_inset 
+
+ 
+\layout Standard
+
+El módulo de 
+\begin_inset Formula $\mathbf{k}$
+\end_inset 
+
+ es distinto para cada onda 
+\begin_inset Formula $\varphi$
+\end_inset 
+
+ es distinta dependiendo de la polarización y por lo tanto 
+\begin_inset Formula $I'$
+\end_inset 
+
+ es distinto para cada onda (polarización).
+\layout Standard
+
+Seguro que 
+\begin_inset Formula $T_{max}$
+\end_inset 
+
+ y 
+\begin_inset Formula $F$
+\end_inset 
+
+ también son distintos, pero este efecto será menor, ya que la figura de
+ interferencia de un FP es sobre todo sensible a los cambios de fase.
+\layout Paragraph
+\line_top 
+Problema
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+potencialmente un ejemplo -ATC.
+\end_inset 
+
+
+\layout Standard
+
+
+\emph on 
+Un haz plano monocromático incide normalmente sobre una abertura circular
+ de radio 
+\begin_inset Formula $R$
+\end_inset 
+
+.
+ Calcular el campo en el punto 
+\begin_inset Formula $P$
+\end_inset 
+
+ a una distancia 
+\begin_inset Formula $z$
+\end_inset 
+
+ del centro de la abertura usando las aproximaciones de 
+\noun on 
+Fresnel
+\noun default 
+ y 
+\noun on 
+Fraunhofer
+\noun default 
+.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+nofig
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Difracción de Fresnel y de Fraunhoffer por una abertura circular.
+\end_inset 
+
+ 
+\layout Paragraph
+
+Respuesta
+\layout Standard
+
+La expresión para la onda difractada en la aproximación de 
+\noun on 
+Fresnel
+\noun default 
+ es
+\begin_inset Formula \[
+\hat{u}=\frac{e^{ikz}}{i\lambda z}\int d\xi\, d\eta\, t\left(\xi,\eta\right)\, u\left(\xi,\eta\right)e^{i\frac{k}{2z}\left(\left(x-\xi\right)^{2}+\left(y-\eta\right)^{2}\right)}\]
+
+\end_inset 
+
+
+\layout Itemize
+
+el coeficiente de transmisión vale cero salvo sobre 
+\begin_inset Formula $\left(\xi,\eta\right)\in\Sigma$
+\end_inset 
+
+, que vale 1.
+ 
+\layout Itemize
+
+La iluminación es una oap.
+\begin_inset Formula \[
+u=u_{0}e^{i\mathbf{k}\cdot\mathbf{r}}\]
+
+\end_inset 
+
+ 
+\layout Itemize
+
+La incidencia es normal: 
+\begin_inset Formula $\mathbf{k}=k\mathbf{u}_{z}$
+\end_inset 
+
+.
+ La abertura está en 
+\begin_inset Formula $z=0$
+\end_inset 
+
+, con lo que
+\begin_inset Formula \[
+u=u_{0}e^{ikz}=u_{0}\]
+
+\end_inset 
+
+ 
+\layout Standard
+
+El punto 
+\begin_inset Formula $P$
+\end_inset 
+
+ tiene coordenadas 
+\begin_inset Formula $0,0,z$
+\end_inset 
+
+, con lo que la integral resulta
+\begin_inset Formula \[
+\hat{u}=\frac{e^{ikz}}{i\lambda z}u_{0}\int d\xi d\eta\, e^{i\frac{k}{2z}\left(\xi^{2}+\eta^{2}\right)}\]
+
+\end_inset 
+
+ lo hacemos en polares, evidentemente 
+\begin_inset Formula $\xi=\rho\cos\theta$
+\end_inset 
+
+ y 
+\begin_inset Formula $\eta=\rho\sin\theta$
+\end_inset 
+
+.
+ La integral en 
+\begin_inset Formula $\rho$
+\end_inset 
+
+ se hace con el cambio de variable 
+\begin_inset Formula $q=\rho^{2}$
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray*}
+\hat{u} & = & \frac{e^{ikz}}{i\lambda z}u_{0}\pi\int_{0}^{R^{2}}dq\, e^{i\frac{k}{2z}q}\\
+ & = & \frac{e^{ikz}}{i\lambda z}u_{0}\pi\frac{1}{i\frac{k}{2z}}\left(e^{i\frac{k}{2z}R^{2}}-1\right)\\
+ & = & u_{0}e^{ikz}\left(1-e^{i\frac{kR^{2}}{2z}}\right)\end{eqnarray*}
+
+\end_inset 
+
+ La fórmula válida para la aproximación de 
+\noun on 
+Fraunhofer
+\noun default 
+ se aplica siguiendo los mismo pasos 
+\begin_inset Formula \begin{eqnarray*}
+\hat{u} & = & \frac{e^{ik\left(z+\frac{x^{2}+y^{2}}{2z}\right)}}{i\lambda z}\int d\xi\, d\eta\, t\left(\xi,\eta\right)\, u\left(\xi,\eta\right)e^{-i\frac{k}{z}\left(x\xi+y\eta\right)}\\
+ & = & \frac{e^{ik\left(z+\frac{x^{2}+y^{2}}{2z}\right)}}{i\lambda z}\int_{\sum}d\xi d\eta\, u_{0}\\
+ & = & \frac{e^{ikz}}{i\lambda z}u_{0}\pi R^{2}\end{eqnarray*}
+
+\end_inset 
+
+ 
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+comparar las dos soluciones haciendo un plot 3D con variables
+\layout Standard
+
+R y z  -ATC
+\end_inset 
+
+Sabemos que la fórmula de FF es una aproximación de la de 
+\noun on 
+Fresnel
+\noun default 
+ en el límite de 
+\begin_inset Formula $z\fd\infty$
+\end_inset 
+
+.
+ Esta condición la podemos tener en cuenta desarrollando en sdp la expresión
+ obtenida mediante la fórmula de 
+\noun on 
+Fresnel:
+\begin_inset Formula \begin{eqnarray*}
+\hat{u} & \simeq & u_{0}e^{ikz}\left(1-1-ik\frac{kR^{2}}{2z}+\ldots\right)\\
+ & = & \frac{e^{ikz}}{i\lambda z}u_{0}\pi R^{2}\end{eqnarray*}
+
+\end_inset 
+
+ 
+\noun default 
+concluímos que el resultado vía FF es consistente con la aproximación realizada.
+\layout Paragraph
+\line_top 
+Problema
+\layout Standard
+
+
+\emph on 
+La figura de difracción de cierta abertura se observa en el plano focal
+ imagen de una lente.
+ Describir lo que le ocurre a la figura de difracción si la lente se desplaza
+ paralelamente al plano que contiene la abertura.
+ 
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+nofig
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+La lente se desplaza paralelamente a la abertura.
+\end_inset 
+
+
+\layout Paragraph
+
+Respuesta
+\layout Standard
+
+Tenemos una abertura genérica iluminada con una onda genérica.
+ Para responder a esta pregunta es necesario añadir la condición de que
+ la lente sea infinita, algo que hemos tomado implícitamente como cierto
+ en todo lo que hemos hecho hasta ahora, puesto que si no hubiéramos debido
+ tener en cuenta la difracción causada por ella.
+\layout Standard
+
+Lo que tiene de particular el plano focal imagen es que la luz que llega
+ a cualquier punto ha tenido que arribar a la lente en forma de haz de rayos
+ paralelos.
+ Si bajamos la lente una distancia 
+\begin_inset Formula $\Delta$
+\end_inset 
+
+, la imagen (cada punto) bajará una cantidad 
+\begin_inset Formula $\Delta$
+\end_inset 
+
+.
+ En principio la intensidad será la misma.
+ 
+\layout Standard
+
+La figura debe ser la misma pero desplazada en la misma medida en que desplacemo
+s la lente.
+\layout Paragraph
+\line_top 
+Problema
+\layout Standard
+
+
+\emph on 
+Sobre una abertura circular de radio 
+\begin_inset Formula $R$
+\end_inset 
+
+ se coloca una transparencia descrita por el coeficiente de transmision
+ 
+\begin_inset Formula $t(x)=\alpha(1+q\cos(px))$
+\end_inset 
+
+ siendo 
+\begin_inset Formula $\alpha,p,q$
+\end_inset 
+
+ constantes.
+ Calcular la figura de difracción de 
+\noun on 
+Fraunhofer
+\noun default 
+ en el plano focal imagen de una lente si la abertura se ilumina de forma
+ normal con una onda plana y monocromática.
+ Considérese 
+\begin_inset Formula $p\gg1/R$
+\end_inset 
+
+.
+ 
+\layout Paragraph
+
+Respuesta
+\layout Standard
+
+El coeficiente de transmisión es ahora 
+\begin_inset Formula \[
+t\left(\xi,\eta\right)=\alpha\left(1+q\cos p\xi\right)\]
+
+\end_inset 
+
+ con 
+\begin_inset Formula $p\gg\frac{1}{R}$
+\end_inset 
+
+.
+ La fórmula a utilizar es la de FF
+\begin_inset Formula \[
+\hat{u}\left(x',y'\right)\propto\int d\xi\, d\eta\, t\left(\xi,\eta\right)u\left(\xi,\eta\right)e^{-i\frac{k}{f'}\left(x'\xi+y'\eta\right)}\]
+
+\end_inset 
+
+ podemos considerar 
+\begin_inset Formula $u=u_{0}e^{i\mathbf{k}\cdot\mathbf{r}}=u_{0}e^{ikz}=u_{0}$
+\end_inset 
+
+ tomando el plano de la abertura como 
+\begin_inset Formula $z=0$
+\end_inset 
+
+.
+\begin_inset Formula \[
+\hat{u}\left(x',y'\right)\propto\alpha u_{0}\int_{\Sigma}d\xi d\eta\left(1+q\cos\left(p\xi\right)\right)e^{-i\frac{k}{f'}\left(x'\xi+y'\eta\right)}\]
+
+\end_inset 
+
+ Lo más cómodo es expresar el coseno en términos de exponenciales complejas
+\begin_inset Formula \[
+\hat{u}\left(x',y'\right)\propto\alpha u_{0}\int_{\Sigma}d\xi d\eta\left(1+\frac{q}{2}\left(e^{ip\xi}+e^{-ip\xi}\right)\right)e^{-i\frac{k}{f'}\left(x'\xi+y'\eta\right)}\]
+
+\end_inset 
+
+ rompemos la integral según los términos del integrando
+\begin_inset Formula \begin{eqnarray*}
+\alpha u_{0}\int_{\Sigma}d\xi d\eta\, e^{-i\frac{k}{f'}\left(x'\xi+y'\eta\right)}\\
+\alpha u_{0}\frac{q}{2}\int_{\Sigma}d\xi d\eta e^{-i\frac{k}{f'}\left(\left(x'-p\frac{f'}{k}\right)\xi+\eta y'\right)}\\
+\alpha u_{0}\frac{q}{2}\int_{\Sigma}d\xi d\eta e^{-i\frac{k}{f'}\left(\left(x'+p\frac{f'}{k}\right)\xi+\eta y'\right)}\end{eqnarray*}
+
+\end_inset 
+
+ las tres integrales son la misma, salvo un desplazamiento de 
+\begin_inset Formula $x'$
+\end_inset 
+
+.
+ Sólo tenemos que hacer una.
+ Conocemos la integral de la primera.
+ Si etiquetamos la integral como
+\begin_inset Formula \[
+\hat{u}_{circ}\left(x',y'\right)=u_{0}\int_{\Sigma}d\xi d\eta\, e^{-i\frac{k}{f'}\left(x'\xi+y'\eta\right)}\]
+
+\end_inset 
+
+ podemos expresar abreviadamente el resultado como
+\begin_inset Formula \[
+\hat{u}\left(x',y'\right)\propto\hat{u}_{circ}\left(x',y'\right)+\frac{q}{2}\hat{u}_{circ}\left(x'-p\frac{f'}{k},y'\right)+\frac{q}{2}\hat{u}_{circ}\left(x'+p\frac{f'}{k},y'\right)\]
+
+\end_inset 
+
+ como se ve, cada uno de los términos tiene un peso modulado por un coeficiente,
+ 
+\begin_inset Formula $\frac{q}{2}$
+\end_inset 
+
+ o 
+\begin_inset Formula $1$
+\end_inset 
+
+.
+ Podríamos ahora sustituir las funciones de 
+\noun on 
+Bessel
+\noun default 
+, etc.
+ 
+\layout Standard
+
+Podemos utilizar la condición 
+\begin_inset Formula $p\gg\frac{1}{R}$
+\end_inset 
+
+ para simplificar la forma que tendrá el módulo al cuadrado del campo (la
+ intensidad).
+ 
+\layout Standard
+
+
+\begin_inset Formula $p$
+\end_inset 
+
+ es el factor de separación de las tres funciones.
+ Esto lo que puede suponer es que al hacer el cuadrado, los términos cruzados
+ sean despreciables, al no solaparse las figuras de difracción dos a dos.
+ Para verificarlo necesitamos una estimación del tamaño de la figura de
+ difracción: usaremos el radio del primer máximo (en cuyo interior está
+ el 84% de la intensidad).
+ 
+\begin_inset Formula $r'=1.22\frac{\lambda f}{2R}$
+\end_inset 
+
+.
+ Esperamos que
+\begin_inset Formula \[
+\frac{pf'}{k}\gg\frac{f'}{kR}=\frac{f'\lambda}{2\pi R}=\frac{1}{1.22\pi}r'\]
+
+\end_inset 
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+nofig
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Aspecto en la pantalla de observación.
+\end_inset 
+
+ lo que, a partir de la condición que nos han dado es cierto.
+ Por lo tanto confirmamos el que las figuras de difracción no solapan (tienen
+ una distancia de 
+\begin_inset Formula $\frac{pf'}{k}$
+\end_inset 
+
+ sobre el eje 
+\begin_inset Formula $x$
+\end_inset 
+
+ con la central).
+\layout Paragraph
+\line_top 
+Problema
+\layout Standard
+
+
+\emph on 
+Se observa la figura de difracción en aproximación de 
+\noun on 
+Fraunhofer
+\noun default 
+ producida por una onda armónica y plana de longitud de onda 
+\begin_inset Formula $\lambda$
+\end_inset 
+
+ que incide de forma normal sobre una rendija de anchura 
+\begin_inset Formula $a$
+\end_inset 
+
+.
+ Si se dobla la anchura de la rendija 
+\begin_inset Formula $a'=2a$
+\end_inset 
+
+, ¿cuál debería ser la longitud de onda 
+\begin_inset Formula $\lambda'$
+\end_inset 
+
+ para que los máximos y mínimos de difracción estuvieran en los mismos lugares?
+ 
+\layout Paragraph
+
+Respuesta
+\layout Standard
+
+Buscamos 
+\begin_inset Formula $\lambda'$
+\end_inset 
+
+ tal que 
+\begin_inset Formula $a'=2a$
+\end_inset 
+
+.
+ Tenemos que calcular la figura de difracción, cambiar los parámetros e
+ imponer que máximos y mínimos estén en los mismos sitios.
+\begin_inset Formula \begin{eqnarray*}
+\hat{u}\left(x'\right) & \propto & \mathrm{sinc}\,\left(\frac{\pi x'a}{\lambda f}\right)\\
+\hat{u}'\left(x'\right) & \propto & \mathrm{sinc}\,\left(\frac{\pi x'a'}{\lambda'f'}\right)\end{eqnarray*}
+
+\end_inset 
+
+ Las funciones tienen que ser iguales, salvo constante de proporcionalidad.
+ Esto implica que los argumentos deben ser iguales.
+\begin_inset Formula \begin{eqnarray*}
+\frac{a}{\lambda} & = & \frac{a'}{\lambda'}\\
+\lambda' & = & \frac{a'}{a}\lambda\\
+ & = & 2\lambda\end{eqnarray*}
+
+\end_inset 
+
+ necesitamos una onda con el doble de longitud de onda.
+\layout Paragraph
+\line_top 
+Problema
+\layout Standard
+
+
+\emph on 
+Calcúlese la distancia mínima entre dos puntos de la superficie de Marte
+ para que sus imágenes puedan resolverse por un telescopio cuya abertura
+ es circular con diámetro 60 cm.
+ Considérese que la distancia Tierra-Marte es de 
+\begin_inset Formula $\unit{56\times10^{6}}\kilo\metre$
+\end_inset 
+
+ y que la luz es monocromática con 
+\begin_inset Formula $\lambda=\unit{560}\nano\metre$
+\end_inset 
+
+.
+ 
+\layout Paragraph
+
+Respuesta
+\layout Standard
+
+
+\begin_inset Formula $r'$
+\end_inset 
+
+ es el radio del máximo central de la figura de difracción:
+\begin_inset Formula \[
+d\geq r'=1.22\frac{\lambda f'}{2R}\]
+
+\end_inset 
+
+ El poder resolutivo del instrumento óptico es 
+\begin_inset Formula \[
+\frac{D}{L}=\frac{d}{f'}\geq1.22\frac{\lambda}{2R}\]
+
+\end_inset 
+
+ donde 
+\begin_inset Formula $D$
+\end_inset 
+
+ es la distancia entre puntos que queremos resolver y 
+\begin_inset Formula $L$
+\end_inset 
+
+ su distancia al instrumento.
+ 
+\begin_inset Formula $2R=60cm$
+\end_inset 
+
+, 
+\begin_inset Formula $L=56\times10^{6}Km$
+\end_inset 
+
+ y 
+\begin_inset Formula $\lambda=560nm$
+\end_inset 
+
+.
+ La incógnita es 
+\begin_inset Formula $D$
+\end_inset 
+
+ en la ecuación
+\begin_inset Formula \[
+\frac{D}{L}=1.22\frac{\lambda}{2R}\]
+
+\end_inset 
+
+ de donde 
+\begin_inset Formula $D=63.8Km$
+\end_inset 
+
+.
+ Los detalles deben distar entre sí más de 
+\begin_inset Formula $64Km$
+\end_inset 
+
+ si queremos verlos.
+ 
+\layout Paragraph
+\line_top 
+Problema
+\layout Standard
+
+
+\emph on 
+Un haz plano de longitud de onda 
+\begin_inset Formula $\lambda$
+\end_inset 
+
+ incide normalmente sobre un plano que contiene dos rendijas idénticas de
+ anchura 
+\begin_inset Formula $b$
+\end_inset 
+
+ separadas una distancia 
+\begin_inset Formula $d$
+\end_inset 
+
+.
+ Se observa la intensidad en el plano focal imagen de una lente convergente
+ de focal imagen 
+\begin_inset Formula $f'$
+\end_inset 
+
+.
+ Delante de una de las rendijas se coloca una lámina planoparalela de espesor
+ 
+\begin_inset Formula $\ell$
+\end_inset 
+
+ e índice de refracción 
+\begin_inset Formula $n$
+\end_inset 
+
+.
+ Considérese que la amplitud de la onda no cambia al atravesar dicha lámina.
+ Calcúlese el punto del plano focal imagen en el que se forma el máximo
+ de intensidad de orden 
+\begin_inset Formula $m=0$
+\end_inset 
+
+.
+ Estímese el orden 
+\begin_inset Formula $m$
+\end_inset 
+
+ del máximo que tiene la mayor intensidad.
+ Para este apartado considérese 
+\begin_inset Formula $n=1.5$
+\end_inset 
+
+ y 
+\begin_inset Formula $\ell=200\lambda$
+\end_inset 
+
+.
+ 
+\layout Paragraph
+
+Respuesta
+\layout Standard
+
+Parametrizaremos el punto del plano focal imagen donde 
+\begin_inset Formula $M=0$
+\end_inset 
+
+ por 
+\begin_inset Formula $x'$
+\end_inset 
+
+ o 
+\begin_inset Formula $\theta'$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+Las dos aberturas produciran una distribución de intensidades de interferencia--
+difracción.
+ El término que identificamos como interferencia es el primer factor en
+\begin_inset Formula \[
+I\left(x'\right)\propto\left(1+\cos\varphi\right)\left(\frac{\sin\phi}{\phi}\right)^{2}\]
+
+\end_inset 
+
+ si las intensidades son, como es el caso, iguales.
+ 
+\begin_inset Formula $\varphi=2\pi M=0$
+\end_inset 
+
+ es la condición que debemos imponer sobre la variable 
+\begin_inset Formula $\varphi$
+\end_inset 
+
+, que es la diferencia de fase entre las ondas que pasan por cada una de
+ las rendijas.
+  
+\layout Standard
+
+Una forma de resolverlo es plantear la integral de FF, identificando la
+ variable allí donde aparezca.
+ Pero es más rápido calcularla directamente por métodos geométricos.
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+nofig
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+las trayectorias que van a interferir son paralelas entre las aberturas
+ y la lente delgada.
+\end_inset 
+
+Si los ángulos son grandes, 
+\begin_inset Formula $\tan\theta'=\frac{x'}{f'}$
+\end_inset 
+
+.
+ Si son pequeños podemos (y vamos a hacerlo) sustituir la tangente por el
+ seno.
+\layout Standard
+
+Como la incidencia es normal, los planos equifase son paralelos al plano
+ de las aberturas.
+ Al entrar una onda en el medio refractivo, la velocidad de fase de ambas
+ ondas ya no será la misma.
+ A partir de un plano perpendicular a las ondas planas que salen de la abertura
+ inclinadas con ángulo 
+\begin_inset Formula $\theta'$
+\end_inset 
+
+ ya no hay diferencia de fase, por lo que el problema se reduce a calcular
+ la diferencia de camino óptico entre las trayectorias que se muestran en
+ la figura.
+ La diferencia (camino por abajo 
+\begin_inset Formula $-$
+\end_inset 
+
+ camino por arriba) es 
+\begin_inset Formula \[
+l+d\sin\theta'-nl\]
+
+\end_inset 
+
+ o, en términos de fase
+\begin_inset Formula \begin{eqnarray*}
+\varphi & = & \frac{2\pi}{\lambda}\left(d\sin\theta'-l\left(n-1\right)\right)\\
+ & = & 0\end{eqnarray*}
+
+\end_inset 
+
+ de aquí se extrae que 
+\begin_inset Formula $\sin\theta'=\frac{l\left(n-1\right)}{d}\simeq\frac{x'}{f'}$
+\end_inset 
+
+, por lo que
+\begin_inset Formula \[
+x'=f'\frac{l\left(n-1\right)}{d}\]
+
+\end_inset 
+
+ que es la solución suponiendo el ángulo 
+\begin_inset Formula $\theta'$
+\end_inset 
+
+ pequeño.
+ 
+\layout Standard
+
+En cuanto al orden del máximo de mayor intensidad, hay que recordar que
+ el segundo factor
+\begin_inset Formula \[
+I\left(x'\right)\propto\left(1+\cos\varphi\right)\left(\frac{\sin\phi}{\phi}\right)^{2}\]
+
+\end_inset 
+
+ modula la intensidad del primero.
+ La variable 
+\begin_inset Formula $\phi$
+\end_inset 
+
+ es función de 
+\begin_inset Formula $x'$
+\end_inset 
+
+, por lo que podemos calcular el 
+\begin_inset Formula $x'$
+\end_inset 
+
+ para el que la difracción tiene su centro de intensidad, y de ahí pasar
+ al número 
+\begin_inset Formula $M$
+\end_inset 
+
+ correspondiente.
+ En 
+\noun on 
+Fraunhofer:
+\begin_inset Formula \[
+\phi=\frac{kx'}{f'}\frac{b}{2}\]
+
+\end_inset 
+
+ 
+\noun default 
+que tenía máximo en 
+\begin_inset Formula $\phi=0$
+\end_inset 
+
+
+\noun on 
+ 
+\noun default 
+o bien, 
+\begin_inset Formula $x'=0$
+\end_inset 
+
+ o 
+\begin_inset Formula $\theta'=0$
+\end_inset 
+
+.
+ Llevándolo a
+\noun on 
+ 
+\begin_inset Formula \begin{eqnarray*}
+\varphi & = & \frac{2\pi}{\lambda}\left(d\frac{x'}{f'}-l\left(n-1\right)\right)\\
+ & = & 2\pi M\end{eqnarray*}
+
+\end_inset 
+
+
+\noun default 
+ tenemos 
+\begin_inset Formula $M=-\frac{l\left(n-1\right)}{\lambda}=-100$
+\end_inset 
+
+.
+\layout Standard
+
+
+\emph on 
+Comentario
+\emph default 
+: en todos los problemas que hemos visto hemos visto que el máximo de difracción
+ siempre está en la dirección de incidencia del haz, pues ése es el resultado
+ de la OG.
+ Se puede aprovechar este resultado para decir que el máximo de difracción
+ estará en la dirección (la normal) de incidencia del haz plano, es decir
+ en el centro del plano focal imagen.
+\layout Section
+
+Otros ejercicios y problemas (por resolver)
+\layout Enumerate
+
+Clasificar los cristales cuyos tensores dieléctricos son los siguientes
+ 
+\begin_inset Formula \[
+\left(\begin{array}{ccc}
+2 & 0 & 0\\
+0 & 2 & 0\\
+0 & 0 & 2\end{array}\right),\quad\left(\begin{array}{ccc}
+1 & 0 & 0\\
+0 & 3 & 0\\
+0 & 0 & 3\end{array}\right),\quad\left(\begin{array}{ccc}
+2 & 1 & 0\\
+1 & 1 & 0\\
+0 & 0 & 1\end{array}\right)\]
+
+\end_inset 
+
+ y hallar los ejes principales.
+ 
+\layout Enumerate
+
+3Una onda armónica plana se propaga en un medio uniáxico estando el eje
+ óptico en la dirección 
+\begin_inset Formula $z$
+\end_inset 
+
+.
+ La fase se propaga en la dirección 
+\begin_inset Formula $x$
+\end_inset 
+
+.
+ Demostrar que 
+\begin_inset Formula $\mathbf{E}$
+\end_inset 
+
+ siempre está  en el plano 
+\begin_inset Formula $yz$
+\end_inset 
+
+.
+ Si en 
+\begin_inset Formula $x=0$
+\end_inset 
+
+ la onda vale 
+\begin_inset Formula $\mathbf{E}(x=0,t)=\mathbf{E}_{0}e^{-i\omega t}$
+\end_inset 
+
+ calcular el campo en 
+\begin_inset Formula $x=d$
+\end_inset 
+
+.
+ 
+\layout Enumerate
+
+Calcular el ángulo formado por el rayo extraordinario y el ordinario que
+ salen de la combinación de los dos prismas de la figura hechos del mismo
+ material uniáxico, si 
+\begin_inset Formula $\theta=15^{\circ}$
+\end_inset 
+
+, 
+\begin_inset Formula $n_{\textrm{o}}=1.66$
+\end_inset 
+
+ y 
+\begin_inset Formula $n_{\textrm{e}}=1.49$
+\end_inset 
+
+.
+ 
+\layout Enumerate
+
+Un detector situado a una altura 
+\begin_inset Formula $h$
+\end_inset 
+
+ sobre el océano recibe ondas de frecuencia 
+\begin_inset Formula $\nu$
+\end_inset 
+
+ procedentes de una estrella lejana.
+ Al detector llega la onda directa desde la estrella y la reflejada en la
+ superficie del océano.
+ Encontrar el valor de la intensidad detectada en función del ángulo 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+ que la estrella forma sobre el horizonte.
+ Calcular al visibilidad.
+ Por sencillez considérese que el coeficiente de reflexión 
+\begin_inset Formula $r$
+\end_inset 
+
+ es independiente del  ángulo de incidencia.
+ Si 
+\begin_inset Formula $\nu=\unit{10^{8}}\hertz$
+\end_inset 
+
+, 
+\begin_inset Formula $r=0.7$
+\end_inset 
+
+ y 
+\begin_inset Formula $\alpha=\unit{45}\degree$
+\end_inset 
+
+ calcular el valor mínimo de 
+\begin_inset Formula $h$
+\end_inset 
+
+ para que se tenga intensidad máxima.
+ 
+\layout Enumerate
+
+Estimar el número de máximos de interferencia que hay en el máximo central
+ de la difracción producida por dos rendijas idénticas iluminadas normalmente
+ por un haz plano monocromático.
+ 
+\layout Enumerate
+
+Calcular la posición de los máximos principales en aproximación de 
+\noun on 
+Fraunhofer
+\noun default 
+ para la red de la figura que está hecha de escalones de un medio transparente
+ de índice de refracción 
+\begin_inset Formula $n$
+\end_inset 
+
+.
+\layout Enumerate
+
+Considérese la onda armónica 
+\begin_inset Formula \[
+\mathbf{E}=\mathbf{E}_{0}e^{i(\mathbf{k}_{c}\mathbf{r}-\omega t)}\]
+
+\end_inset 
+
+ con vector de ondas complejo 
+\begin_inset Formula $\mathbf{k}_{c}=\mathbf{k}+i\mathbf{a}$
+\end_inset 
+
+ y con cierto vector amplitud compleja dado por 
+\begin_inset Formula $\mathbf{E}_{0}=\alpha\mathbf{k}+\beta\mathbf{a}$
+\end_inset 
+
+, donde 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+ y 
+\begin_inset Formula $\beta$
+\end_inset 
+
+ son escalares complejos.
+ Esta onda se propaga en cierto medio de índice complejo 
+\begin_inset Formula $n_{c}=n+ik$
+\end_inset 
+
+.
+ Determinar la condición o condiciones que han de verificar 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+ y 
+\begin_inset Formula $\beta$
+\end_inset 
+
+.
+ Calcúlese el vector de 
+\noun on 
+Poynting
+\noun default 
+ de esta onda.
+\layout Enumerate
+
+Cierto medio dieléctrico e isótropo posee una única frecuencia de resonancia
+ 
+\begin_inset Formula $\omega_{0}$
+\end_inset 
+
+: 
+\begin_deeper 
+\layout Enumerate
+
+¿Es posible que siendo 
+\begin_inset Formula $\omega_{1}<\omega_{2}$
+\end_inset 
+
+ se tenga 
+\begin_inset Formula $\Re\left\{ n\left(\omega\right)\right\} >\Re\left\{ n\left(\omega\right)\right\} $
+\end_inset 
+
+
+\layout Enumerate
+
+En las mismas condiciones del apartado anterior: ¿para cuál de las frecuencias
+ se tendrá una velocidad de fase mayor? (para este apartado supóngase que
+ el medio es transparente y la onda es plana).
+\end_deeper 
+\layout Enumerate
+
+Considérese una onda armónica y plana que incide sobre una superficie plana
+ que seapra dos medios transparentes e isótropos de distinto índice.
+ El primer medio tiene índice 
+\begin_inset Formula $n$
+\end_inset 
+
+ y el segundo medio tiene índice 1.
+ Se sabe que para incidencias desde el primer medio superiores a la del
+ ángulo crítico (reflexión total) se produce en el segundo medio una onda
+ cuya amplitud decrece exponencialmente con la distancia a la superficie
+ de discontinuidad de índice.
+ Se quiere saber en cuál de las dos situaciones siguientes el decrecimiento
+ exponencial es mayor: 
+\begin_deeper 
+\layout Enumerate
+
+ángulo de incidencia próximo al ángulo crítico.
+\layout Enumerate
+
+ángulo de incidencia próximo a 
+\begin_inset Formula $\frac{\pi}{2}$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+Supóngase en ambos casos que la amplitud en el segundo medio sobre la superficie
+ de discontinuidad es la misma.
+\end_deeper 
+\layout Enumerate
+
+Una onda armónica y plana de frecuencia 
+\begin_inset Formula $\omega$
+\end_inset 
+
+ se propaga con vector de ondas en la dirección del eje 
+\series bold 
+
+\begin_inset Formula $Z$
+\end_inset 
+
+
+\series default 
+.
+ Esta onda atraviesa consecutivamente tres polarizadores cuyos ejes de transmisi
+ón están en el plano 
+\series bold 
+
+\begin_inset Formula $XY$
+\end_inset 
+
+
+\series default 
+.
+ El primer polarizador tiene el eje de transmisión en la dirección 
+\begin_inset Formula $X$
+\end_inset 
+
+.
+ El eje del segundo polarizador gira a velocidad constante 
+\begin_inset Formula $\Omega$
+\end_inset 
+
+.
+ El eje del tercer polarizador coincide con el eje 
+\begin_inset Formula $Y$
+\end_inset 
+
+.
+ Se pide demostrar que tras atravesar los tres polarizadores la onda 
+\series bold 
+no 
+\series default 
+es monocromática.
+ Determínense las frecuencias que contiene.
+\layout Enumerate
+
+Cierta onda se describe por la expresión 
+\begin_inset Formula $\mathbf{V}\left(z,t\right)=\mathbf{V}_{0}e^{-i\left(az^{2}+bt^{2}+2\sqrt{ab}zt\right)}$
+\end_inset 
+
+.
+ ¿Es una onda plana?.
+ ¿Es armónica? ¿Cuál es la velocidad de propagación de las superficies donde
+ 
+\begin_inset Formula $\mathbf{V}$
+\end_inset 
+
+ toma el mismo valor?.
+\layout Enumerate
+
+Cierto campo eléctrico viene dado por la expresión
+\size small 
+
+\begin_inset Formula \[
+\mathbf{E}=\mathbf{E}_{0}\cos\left[\frac{k}{2}\mathbf{r}\cdot\left(\mathbf{u}_{1}-\mathbf{u}_{2}\right)\right]\cos\left[\omega t-\frac{k}{2}\mathbf{r}\cdot\left(\mathbf{u}_{1}+\mathbf{u}_{2}\right)\right]\]
+
+\end_inset 
+
+
+\size default 
+ donde 
+\begin_inset Formula $\mathbf{u}_{1}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathbf{u}_{2}$
+\end_inset 
+
+ son dos vectores unitarios constantes y 
+\begin_inset Formula $k=\frac{\omega}{c}$
+\end_inset 
+
+.
+ Se pide: 
+\begin_deeper 
+\layout Enumerate
+
+¿Es una onda armónica?.
+ 
+\layout Enumerate
+
+Calcular su representación compleja.
+ 
+\layout Enumerate
+
+Calcular su velocidad de fase.
+ 
+\layout Enumerate
+
+Expresar 
+\begin_inset Formula $\mathbf{E}\left(\mathbf{r},t\right)$
+\end_inset 
+
+ como superposición de ondas planas.
+\end_deeper 
+\layout Enumerate
+
+Hállese el valor instantáneo del vector de 
+\noun on 
+Poynting
+\noun default 
+ 
+\begin_inset Formula $\mathbf{S}$
+\end_inset 
+
+ de la onda electromagnética en el vacío cuyo campo eléctrico viene dado
+ por 
+\begin_inset Formula \[
+\mathbf{E}=\Re\left\{ E_{0}\left(\mathbf{u}_{x}+i\mathbf{u}_{y}\right)e^{i\left(kz-\omega t\right)}\right\} \]
+
+\end_inset 
+
+
+\layout Enumerate
+
+El campo eléctrico correspondiente a una onda plana monocromática propagándose
+ en la dirección 
+\begin_inset Formula $Z$
+\end_inset 
+
+ tiene la forma 
+\begin_inset Formula \[
+\mathbf{E}=A\sin\left(\omega t-kz\right)\mathbf{i}+B\cos\left(\omega t-kz\right)\mathbf{j}\]
+
+\end_inset 
+
+ donde 
+\begin_inset Formula $A,B$
+\end_inset 
+
+ son constantes, con 
+\begin_inset Formula $B>A$
+\end_inset 
+
+ e 
+\begin_inset Formula $\mathbf{i},\mathbf{j}$
+\end_inset 
+
+ son vectores unitarios en las direcciones 
+\begin_inset Formula $x$
+\end_inset 
+
+ y 
+\begin_inset Formula $y$
+\end_inset 
+
+ respectivamente.
+ Calcúlese el promedio temporal del vector de 
+\noun on 
+Poynting
+\noun default 
+ de dicho campo.
+ Demuéstrese que 
+\begin_inset Formula $\mathbf{E}$
+\end_inset 
+
+ puede escribirse como la superposición de dos campos, uno de ellos linealmente
+ polarizado y el otro circularmente polarizado.
+ Escríbanse las expresiones para ambos campos.
+\layout Enumerate
+
+Una onda armónica plana tiene frecuencia 
+\begin_inset Formula $\omega$
+\end_inset 
+
+ y vector de ondas 
+\begin_inset Formula $\mathbf{k}$
+\end_inset 
+
+ en cierto sistema de referencia.
+ Aplicando una transformación de 
+\noun on 
+Lorentz
+\noun default 
+ a la fase 
+\begin_inset Formula $\fase$
+\end_inset 
+
+ demostrar que la frecuencia observada en un sistema de referencia que se
+ mueve con velocidad 
+\begin_inset Formula $\mathbf{v}$
+\end_inset 
+
+ respecto al anterior es 
+\begin_inset Formula $\omega'\simeq\omega-\mathbf{k}\cdot\mathbf{v}$
+\end_inset 
+
+ si 
+\begin_inset Formula $\left|\mathbf{v}\right|\ll c$
+\end_inset 
+
+.
+\layout Enumerate
+
+Un electrón ligado se ilumina con una onda armónica plana de frecuencia
+ 
+\begin_inset Formula $\omega$
+\end_inset 
+
+ siendo la amplitud del campo eléctrico de 
+\begin_inset Formula $\unit{10}\kilo\volt\per\metre$
+\end_inset 
+
+.
+ La frecuencia de resonancia del electrón es 
+\begin_inset Formula $\omega_{0}=\unit{4\times10^{15}}\radian\per\second$
+\end_inset 
+
+ y la constante de amortiguamiento es 
+\begin_inset Formula $\gamma=\unit{10^{8}}\hertz$
+\end_inset 
+
+.
+ Calcular la amplitud de oscilación del electrón y compararla con 
+\begin_inset Formula $c$
+\end_inset 
+
+ en los casos 
+\begin_inset Formula $\omega=\unit{5\times10^{15}}\radian\per\second$
+\end_inset 
+
+ y 
+\begin_inset Formula $\omega=\omega_{0}$
+\end_inset 
+
+.
+\layout Enumerate
+
+Comprobar que 
+\begin_inset Formula $\epsilon_{0}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\sigma$
+\end_inset 
+
+ tienen las mismas dimensiones.
+\layout Enumerate
+
+De un medio se sabe que 
+\begin_inset Formula $\epsilon_{gen}$
+\end_inset 
+
+ es un escalar complejo que no depende del punto y que sí depende de la
+ frecuencia.
+ Dígase si el medio es o no es homogéneo, absorbente, conductor, dispersivo
+ o isótropo.
+\layout Enumerate
+
+En cierto medio material se propaga una onda cuya representación compleja
+ es
+\begin_inset Formula \[
+\mathbf{E}=\mathbf{E}_{0}e^{-\frac{3\omega}{c}z}e^{i\left(\frac{3\omega}{2c}z-\omega t\right)}\]
+
+\end_inset 
+
+ calcular los valores de 
+\begin_inset Formula $n$
+\end_inset 
+
+ y 
+\begin_inset Formula $\kappa$
+\end_inset 
+
+ de dicho medio.
+\layout Enumerate
+
+Sea la onda armónica inhomogénea en un medio absorbente con campo eléctrico
+ 
+\begin_inset Formula \[
+\mathbf{E}=\mathbf{E}_{0}e^{-\mathbf{a}\cdot\mathbf{r}}e^{i\fase}\]
+
+\end_inset 
+
+ siendo 
+\begin_inset Formula $\mathbf{k}=b\left(1,0,0\right)$
+\end_inset 
+
+, 
+\begin_inset Formula $\mathbf{a}=b\left(1,1,0\right)$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathbf{E}_{0}=E_{0}\left(1,-1+i,d\right)$
+\end_inset 
+
+, donde 
+\begin_inset Formula $b,d,E_{0}$
+\end_inset 
+
+ son constantes 
+\begin_inset Formula $\in\Re$
+\end_inset 
+
+.
+ Dígase si los vectores 
+\emph on 
+reales 
+\emph default 
+correspondientes a 
+\begin_inset Formula $\mathbf{E},\mathbf{H}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathbf{k}$
+\end_inset 
+
+ en 
+\begin_inset Formula $t=0$
+\end_inset 
+
+, 
+\begin_inset Formula $\mathbf{r}=\ceron$
+\end_inset 
+
+ son perpendiculares entre sí.
+\layout Enumerate
+
+En las proximidades de una resonancia
+\begin_inset Formula \[
+\omega^{2}-\omega_{0}^{2}=\left(\omega+\omega_{0}\right)\left(\omega-\omega_{0}\right)\simeq2\omega_{0}\left(\omega-\omega_{0}\right)\]
+
+\end_inset 
+
+ con lo que para un medio poco denso 
+\begin_inset Formula $n$
+\end_inset 
+
+ y 
+\begin_inset Formula $\kappa$
+\end_inset 
+
+ pueden aproximarse por
+\begin_inset Formula \begin{eqnarray*}
+n & \simeq & 1+\frac{Nq^{2}}{4m\epsilon_{0}\omega_{0}}\frac{\omega_{0}-\omega}{\left(\omega-\omega_{0}\right)^{2}+\left(\frac{\gamma}{2}\right)^{2}}\\
+\kappa & \simeq & \frac{Nq^{2}}{8m\epsilon_{0}\omega_{0}}\frac{\gamma}{\left(\omega-\omega_{0}\right)^{2}+\left(\frac{\gamma}{2}\right)^{2}}\end{eqnarray*}
+
+\end_inset 
+
+ demostrar que los valores máximos de 
+\begin_inset Formula $n$
+\end_inset 
+
+ y de 
+\begin_inset Formula $\kappa$
+\end_inset 
+
+ se obtienen para 
+\begin_inset Formula $\omega=\omega_{0}-\frac{\gamma}{2}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\omega_{0}$
+\end_inset 
+
+ respectivamente.
+ Evaluar tales valores máximos para el caso 
+\begin_inset Formula $N=\unit{10^{22}}\metre\rpcubed$
+\end_inset 
+
+, 
+\begin_inset Formula $\omega_{0}=\unit{10^{16}}\radian\per\second$
+\end_inset 
+
+ y 
+\begin_inset Formula $\gamma=\unit{10^{11}}\hertz$
+\end_inset 
+
+.
+\layout Enumerate
+
+Considérese un medio poco denso cuyo índice de refracción en el visible
+ viene determinado por una única frecuencia de resonancia en el ultravioleta.
+ Despreciando 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+ y usando 
+\begin_inset Formula $\omega\ll\omega_{0}$
+\end_inset 
+
+ demostrar que 
+\begin_inset Formula $n$
+\end_inset 
+
+ puede aproximarse por 
+\begin_inset Formula $n\simeq A+\frac{B}{\lambda^{2}}$
+\end_inset 
+
+ siendo 
+\begin_inset Formula $A$
+\end_inset 
+
+ y 
+\begin_inset Formula $B$
+\end_inset 
+
+ constantes y 
+\begin_inset Formula $\lambda=\frac{2\pi c}{\omega}$
+\end_inset 
+
+.
+\layout Enumerate
+
+Se tienen las mismas condiciones del problema anterior salvo que la frecuencia
+ de resonancia 
+\begin_inset Formula $\omega_{0}'$
+\end_inset 
+
+ está en el infrarrojo.
+ Demostrar que su índice de refracción en el visible, 
+\begin_inset Formula $n'$
+\end_inset 
+
+ puede aproximarse por 
+\begin_inset Formula $n'\simeq A'-B'\lambda^{2}$
+\end_inset 
+
+ si 
+\begin_inset Formula $\omega\gg\omega_{0}$
+\end_inset 
+
+.
+\layout Enumerate
+
+Se dispone de tres medios dieléctricos cada uno de ellos con una sola resonancia
+ situada en 
+\begin_inset Formula $\unit{1000}\angstrom$
+\end_inset 
+
+, 
+\begin_inset Formula $\unit{4000}\angstrom$
+\end_inset 
+
+ y 
+\begin_inset Formula $\unit{8000}\angstrom$
+\end_inset 
+
+ respectivamente (todo lo demás se supone idéntico en los tres medios).
+ Se quiere tener la mayor dispersión 
+\begin_inset Formula $\da{n}{\omega}$
+\end_inset 
+
+ posible para 
+\begin_inset Formula $\lambda=\unit{5000}\angstrom$
+\end_inset 
+
+.
+ ¿Cuál de los tres medios es el más adecuado?.
+\layout Enumerate
+
+Aproximar el índice de refracción de un dieléctrico para frecuencias mucho
+ mayores que cualquiera de las de resonancia.
+\layout Enumerate
+
+Demostrar que la conductividad en el límite 
+\begin_inset Formula $\omega\fd0$
+\end_inset 
+
+ vale 
+\begin_inset Formula $\sigma\simeq\frac{Nq^{2}}{m\gamma}$
+\end_inset 
+
+.
+ Si la conductividad del cobre en tal límite es 
+\begin_inset Formula $\sigma=\unit{5.5\times10^{7}}\ohm^{-1}\usk\reciprocal\metre$
+\end_inset 
+
+ y sabiendo que 
+\begin_inset Formula $N=\unit{8\times10^{28}}\metre\rpcubed$
+\end_inset 
+
+ calcular 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+.
+\layout Enumerate
+
+Demostrar que si el índice de refracción del segundo medio (
+\begin_inset Formula $n'$
+\end_inset 
+
+) es menor que el del primer medio 
+\begin_inset Formula $\left(n\right)$
+\end_inset 
+
+, siendo ambos reales con 
+\begin_inset Formula $n>n'$
+\end_inset 
+
+ se tiene que 
+\begin_inset Formula $t_{\parallel}>1$
+\end_inset 
+
+ y 
+\begin_inset Formula $t_{\perp}>1$
+\end_inset 
+
+ para cualquier ángulo de incidencia menor que el crítico.
+\layout Enumerate
+\noindent 
+Consideremos un diedro rectángulo que separa dos dieléctricos de índices
+ reales 
+\begin_inset Formula $n$
+\end_inset 
+
+ y 
+\begin_inset Formula $n'$
+\end_inset 
+
+ que verifican 
+\begin_inset Formula $\frac{n}{n'}=\sqrt{3}$
+\end_inset 
+
+.
+ Un haz plano linealmente polarizado con azimut 
+\begin_inset Formula $45^{\circ}$
+\end_inset 
+
+ sufre dos reflexiones tal y como se muestra en la figura
+\begin_inset LatexCommand \ref{fig: diedro rectangulo}
+
+\end_inset 
+
+.
+ Hállense los dos valores posibles del ángulo de incidencia 
+\begin_inset Formula $\theta$
+\end_inset 
+
+ para que el haz 
+\begin_inset Formula $S_{3}$
+\end_inset 
+
+ esté linealmente polarizado perpendicular al plano del papel.
+ Para cada una de las dos soluciones hállese la intensidad del haz 
+\begin_inset Formula $S_{3}$
+\end_inset 
+
+ y también indíquese cualitativamente el tipo de polarización de los haces
+ emergentes 
+\begin_inset Formula $S_{1}$
+\end_inset 
+
+ y 
+\begin_inset Formula $S_{2}$
+\end_inset 
+
+.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/diedro-rectangulo.eps
+	display monochrome
+	width 4cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig: diedro rectangulo}
+
+\end_inset 
+
+Diedro rectángulo.
+\end_inset 
+
+
+\layout Enumerate
+\noindent 
+Una lámina planoparalela de un medio dieléctrico, isótropo y homogéneo de
+ índice de refracción 
+\begin_inset Formula $n_{0}$
+\end_inset 
+
+ y espesor 
+\begin_inset Formula $d$
+\end_inset 
+
+ está en contacto con un medio metálico de constantes 
+\begin_inset Formula $n$
+\end_inset 
+
+ y 
+\begin_inset Formula $\kappa$
+\end_inset 
+
+.
+ Una onda plana monocromática circularmente polarizada a derechas incide
+ perpendicularmente desde el vacío sobre la superficie del dieléctrico,
+ atraviesa éste, se refleja en el metal y emerge de nuevo al vacío (en sentido
+ contrario al incidente).
+ Determínese el estado de polarización del haz: 
+\begin_deeper 
+\layout Enumerate
+
+después de atravesar el dieléctrico a la ida (punto 1 de la figura).
+\layout Enumerate
+
+después de reflejarse en el metal (punto 2 de la figura).
+\layout Enumerate
+
+en el vacío a la vuelta (punto 3 de la figura).
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/lamina-dielectrica-y-medio-metalico.eps
+	display monochrome
+	width 6cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Problema 35
+\end_inset 
+
+
+\end_deeper 
+\layout Enumerate
+
+Una onda armónica plana incide desde el vacío sobre la superficie plana
+ de un medio uniáxico con  ángulo de incidencia 
+\begin_inset Formula $30^{\circ}$
+\end_inset 
+
+.
+ El eje óptico está  en el plano de incidencia y es normal a la superficie.
+ Calcular el  ángulo que forman los vectores de onda de las ondas extraordinaria
+ y ordinaria si 
+\begin_inset Formula $n_{o}=1.658$
+\end_inset 
+
+ y 
+\begin_inset Formula $n_{e}=1.486$
+\end_inset 
+
+.
+ 
+\layout Enumerate
+
+Se tiene un prisma 
+\begin_inset Formula $ABC$
+\end_inset 
+
+ de material uniáxico.
+ La luz incide normalmente a la cara 
+\begin_inset Formula $AB$
+\end_inset 
+
+.
+ Describir los rayos refractados por el prisma y su estado de polarización
+ a la salida del prisma para las siguientes disposiciones del eje óptico:
+ 
+\begin_deeper 
+\layout Enumerate
+
+Paralelo a las aristas.
+\layout Enumerate
+
+Normal a la cara 
+\begin_inset Formula $AB$
+\end_inset 
+
+.
+\layout Enumerate
+
+Paralelo a la cara 
+\begin_inset Formula $AB$
+\end_inset 
+
+ y normal a las aristas.
+\end_deeper 
+\layout Enumerate
+
+Un haz de luz linealmente polarizado pasa a través de una lámina de retardo
+ 
+\begin_inset Formula $\phi$
+\end_inset 
+
+ y de un polarizador.
+ El eje óptico de la lámina est  a 45
+\begin_inset Formula $^{\circ}$
+\end_inset 
+
+ con el campo de la luz incidente y el eje de transmisión del polarizador
+ es ortogonal al mismo.
+ Demuéstrese que la intensidad emergente es proporcional a 
+\begin_inset Formula $\sin^{2}(\phi/2)$
+\end_inset 
+
+.
+ 
+\layout Enumerate
+
+Un dispositivo óptico está constituido por un polarizador ideal y una lámina
+ cuarto de onda pegados, formando sus ejes entre sí un ángulo 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+.
+ Sobre la cara del polarizador incide perpendicularmente un haz de luz linealmen
+te polarizado vibrando en la dirección del eje óptico de la lámina.
+ Se pide: (a) Calcular los semiejes y la orientación de la elipse de polarizació
+n del haz a la salida del dispositivo.
+ (b) el valor de 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+ necesario para que la intensidad a la salida sea la misma que la incidente.
+\layout Enumerate
+
+Consideremos un haz plano monocromático linealmente polarizado a 45
+\begin_inset Formula $^{\circ}$
+\end_inset 
+
+ respecto del plano de la figura 
+\begin_inset LatexCommand \ref{fig: medio anisotropo trizona}
+
+\end_inset 
+
+.
+ Dicho haz incide perpendicularmente sobre una lámina planoparalela de espesor
+ 
+\begin_inset Formula $d_{1}$
+\end_inset 
+
+ de un medio anisótropo uniáxico con su eje óptico perpendicular a las caras.
+ A continuación atraviesa otra lámina de espesor 
+\begin_inset Formula $d_{2}$
+\end_inset 
+
+ del mismo material con su eje óptico paralelo a las caras y paralelo al
+ plano del papel; y, por último, incide sobre una nueva lámina de espesor
+ 
+\begin_inset Formula $d_{3}$
+\end_inset 
+
+ del mismo material y con el eje óptico perpendicular al plano del papel.
+ Determinar el estado de polarización a la salida cuando: 
+\begin_deeper 
+\layout Enumerate
+
+
+\begin_inset Formula $d_{1}$
+\end_inset 
+
+ = 
+\begin_inset Formula $d_{2}$
+\end_inset 
+
+ = 
+\begin_inset Formula $d_{3}$
+\end_inset 
+
+ 
+\layout Enumerate
+
+
+\begin_inset Formula $d_{1}\neq$
+\end_inset 
+
+ 
+\begin_inset Formula $d_{2}$
+\end_inset 
+
+ = 
+\begin_inset Formula $d_{3}$
+\end_inset 
+
+.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/tres-medios-anisotropos.eps
+	display monochrome
+	width 5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig: medio anisotropo trizona}
+
+\end_inset 
+
+Medio anisótropo uniáxico con tres zonas.
+\end_inset 
+
+ 
+\end_deeper 
+\layout Enumerate
+
+Un haz de luz es mezcla de luz no polarizada y luz elípticamente polarizada.
+ Se coloca una lámina cuarto de onda cuyos ejes coinciden con los ejes principal
+es de la elipse de polarización de la luz.
+ ¿Cual es la polarización de la luz a la salida de la lámina? 
+\layout Enumerate
+
+Dos ondas planas y monocromáticas de la misma longitud de onda inciden formando
+ ángulos 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+ y 
+\begin_inset Formula $-\alpha$
+\end_inset 
+
+ con la normal a una superficie que contiene una abertura cuadrada de lado
+ 
+\begin_inset Formula $a$
+\end_inset 
+
+.
+ Calcular la distribución de amplitudes en el plano focal imagen de una
+ lente.
+ 
+\layout Enumerate
+
+Un sistema óptico formador de imagen puede utilizarse con luz de longitud
+ de onda 
+\begin_inset Formula $\lambda_{1}$
+\end_inset 
+
+ o bien con luz de longitud de onda 
+\begin_inset Formula $\lambda_{2}$
+\end_inset 
+
+, siendo 
+\begin_inset Formula $\lambda_{1}>\lambda_{2}$
+\end_inset 
+
+.
+ Razónese cualitativamente con cuál de las dos longitudes de onda el poder
+ resolutivo del instrumento es mayor.
+ 
+\layout Enumerate
+
+Una red de difracción que contiene 500 rendijas por milímetro se ilumina
+ de forma normal con una onda plana y monocromática de 
+\begin_inset Formula $\lambda=\unit{500}\nano\metre$
+\end_inset 
+
+.
+ Calcular los ángulos que forman con la normal a la red los máximos de orden
+ 1 y 2.
+ 
+\layout Enumerate
+
+Una red de difracción tiene un anchura de 
+\begin_inset Formula $\unit{10}\centi\metre$
+\end_inset 
+
+ .
+ Calcular el número de rendijas necesarias y la separación entre ellas para
+ que en el máximo de orden 1 se resuelva el doblete amarillo del sodio.
+ 
+\layout Enumerate
+
+Se dispone de dos redes de difracción con 453 y 325 rendijas por milímetro
+ respectivamente.
+ La primera tiene una longitud de 
+\begin_inset Formula $\unit{11.2}\milli\metre$
+\end_inset 
+
+ y la segunda 
+\begin_inset Formula $\unit{17}\milli\metre$
+\end_inset 
+
+.
+ ¿Cuál tiene mayor poder resolutivo? 
+\the_end

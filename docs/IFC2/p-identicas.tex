@@ -1,0 +1,1236 @@
+\documentclass[spanish,a4paper,12pt]{book}
+\usepackage{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{eurosym}
+\input{lyxpackages.sty}
+\input{IFC2-packages.sty}
+\input{IFC2-macros.sty}
+\begin{document}
+\chapter{Partículas idénticas}
+
+
+\section{Introducción}
+
+
+\subsection{Planteamiento del problema}
+
+\begin{description}
+\item [Partículas~idénticas] son aquéllas que tienen iguales todas sus
+propiedades y características físicas tales como masa, carga, espín,
+etc (nuevas propiedades que aún no has sido introducidas en este
+curso).
+\end{description}
+
+El problema esencial que se plantea al trabajar con partículas
+idénticas es determinar si son distinguibles o no. Dicho de otra
+manera, si podemos asociarles etiquetas alfanuméricas. En el primer
+caso será posible distinguir las coordenadas, momentos, espines de
+estas partículas en cualquier función en la que intervengan. Podremos
+entonces trabajar con una función de onda de argumentos bien
+etiquetados: \( \psi \left( \mathbf{r}_{1},\mathbf{r}_{2},\ldots
+\right) \), y el estudio de sistemas constituídos por varias
+partículas idénticas, aunque más farragoso, no contendrá aspectos
+esencialmente nuevos.  Si, por el contrario, resulta que son
+indistinguibles no podemos hablar sin más de la función \( \psi \left(
+\mathbf{r}_{1},\mathbf{r}_{2},\ldots \right) \) y nos enfrentamos a un
+problema verdaderamente nuevo al que tendremos que dar solución.
+
+
+\subsection{Partículas clásicas}
+
+Consideremos brevemente el problema de partículas idénticas en
+mecánica clásica. En este paradigma, posición y momento son
+simultáneamente determinables para todo \( t \) con precisión
+arbitraria y sin perturbar el sistema. Por lo tanto podemos trazar las
+trayectorias que siguen las partículas sin ninguna ambigüedad y, si
+éste es el caso, también podemos asociarles etiquetas. Tomemos en
+consideración la situación ilustrada en la figura\ref{fig:int-p-identicas}.
+
+\begin{figure}
+{\centering \includegraphics[width=4cm]{fig/choque.eps} \par}
+{\centering \subfigure{\includegraphics[width=8cm]{fig/dosposibilidades.eps}
+\par}}
+\caption{\label{fig:int-p-identicas}Dos partículas convergen en el estado inicial y
+un tiempo después divergen (estado final). ¿Podemos saber cómo
+ha evolucionado el sistema?. Hay dos casos posibles en lo que concierne a la
+identificación de las partículas, que se muestran en las figuras inferiores.
+}
+\end{figure}
+%
+Dos partículas poseen momentos opuestos en el instante inicial \( t=0
+\) y asintóticamente alcanzan un estado en el que los momentos finales
+se han modificado, debido al proceso de interacción que han
+experimentado, pero siguen siendo opuestos debido a la conservación
+del momento total del sistema. Si en \( t=0 \) asociamos la etiqueta
+\( 1 \) a la partícula de la izquierda y \( 2 \) a la de la derecha,
+¿podremos saber quienes son \( 1 \) y \( 2 \) en el instante
+final?. Como en la mecánica clásica podemos medir sucesivamente la
+posición de una partícula sin perturbar el estado del sistema también
+podremos trazar, a medida que el tiempo avanza, la trayectoria de cada
+una de las dos partículas, y por tanto distinguir entre los dos casos
+que se dan en la figura.
+
+Existe, no obstante, una cierta ambigüedad en la elección de las
+etiquetas.  Si un observador llama 1 a una de las partículas, otro
+puede asociarle la etiqueta 2. Sin embargo, esta ambigüedad no afecta
+al valor de las magnitudes físicas puesto que todas ellas son
+simétricas bajo el intercambio de coordenadas. En efecto, para
+cualquier magnitud física \( Q \) dependiente de las coordenadas,
+momentos, etc. se verifica que
+
+\[ Q\left(\mathbf{r}_{1},\mathbf{p}_{1};\mathbf{r}_{2},\mathbf{p}_{2}\right)
+=Q\left(\mathbf{r}_{2},\mathbf{p}_{2};\mathbf{r}_{1},\mathbf{p}_{1}\right)\] 
+%
+Obsérvese que el problema de la indistinguibilidad no se plantea
+nunca en la mecánica clásica sean las partículas idénticas o no.
+
+En realidad, existe un caso bastante académico que plantea un pequeño
+problema. Este caso singular corresponde a dos partículas idénticas
+puntuales que coinciden exactamente en el mismo punto del espacio
+en un instante \( t_{0} \), instante en el que son indistinguibles.
+
+\begin{figure}
+{\centering \includegraphics[width=4cm]{fig/choque-indistinguible.eps} \par}
+\caption{Hasta \protect\( t_{0}\protect \) podemos añadir etiquetas,
+y en \protect\( t_{0}\protect \) las pierden para inmediatamente
+después recuperarlas.}
+\end{figure}
+%
+Posteriormente, las dos trayectorias se distinguen perfectamente y
+podemos asociarles nuevamente etiquetas. Por supuesto que aparece
+nuevamente la ambigüedad sobre a quién asociarle la etiqueta 1 (o
+2), pero ello no tiene consecuencia alguna en el valor de las
+distintas cantidades físicas (energía, momento lineal total, etc.) del
+sistema, debido a la simetría de las mismas bajo intercambio de
+etiquetas. De todas formas se trata de un problema extraordinariamente
+académico.  Sabemos, por ejemplo, que el potencial efectivo de
+\noun{Coulomb} en una dimensión tiene una forma tal que para cualquier
+\( E>0 \) existe un \( r_{0} \) (\emph{parámetro de impacto}) que nos
+indica la distancia de máxima aproximación de las dos partículas. Es
+decir, éstas no pueden situarse a una distancia menor que \( r_{0} \)
+y en consecuencia nunca se encontrarán en el mismo punto del
+espacio.\footnote{No obstante, en la práctica \( r_{0} \) puede ser
+tan pequeño que nuestro instrumento de medida no sea capaz de
+resolverlo y parecerá que las dos partículas se superponen.}
+
+
+\subsection{Partículas cuánticas}
+
+Como vamos a ver inmediatamente, la situación cambia radicalmente en
+mecánica cuántica donde el estado del sistema no viene dado por las
+posiciones y velocidades de las partículas, sino por su función de
+onda. Para simplificar la discusión consideremos dos partículas
+idénticas, inicialmente muy alejadas la una de la otra y cada una de
+ellas descrita por su paquete de ondas (figura \ref{fig particulas
+identicas como sist. indep}).
+
+\begin{figure}
+{\centering \includegraphics[width=6cm]{fig/solapamiento-cero.eps} \par}
+\caption{\label{fig particulas identicas como sist. indep}Se representan
+fdo \protect\( \psi _{1}\protect \) y \protect\( \psi _{2}\protect \)
+normalizadas y con probabilidad significativa sólo en una pequeña
+región (el solapamiento de las dos funciones de onda es cero).}
+\end{figure}
+
+En esta situación existen dos regiones del espacio claramente
+separadas, esto es, sin solapamiento, en cada una de las cuales existe
+probabilidad uno de encontrar una partícula. Dado que las dos regiones
+de probabilidad no nula aparecen claramente separadas, podemos
+distinguir las dos partículas. No podemos hablar de trayectorias, como
+en la mecánica clásica, sino de regiones distinguibles y por lo tanto
+etiquetables.
+
+Supongamos que las dos partículas forman un estado ligado bajo la
+acción de un cierto potencial atractivo, es decir, que la energía total
+del sistema es \( E<0 \). Debido al caracter atractivo del potencial,
+los dos paquetes de ondas (partículas) se mueven hacia el centro del
+mismo a la vez que se ensanchan, y finalmente las dos regiones de
+probabilidad comienzan a solaparse.
+
+\begin{figure}
+{\centering \includegraphics[width=6cm]{fig/solapamiento.eps} \par}
+\caption{Merced a la evolución guiada por el potencial
+atractivo, los dos paquetes se aproximan a la vez que ensanchan y
+finalmente se solapan.}
+\end{figure}
+
+El problema de la distinguibilidad se plantea cuando los dos paquetes
+de onda se solapan apreciablemente. Podemos, en general, determinar la
+probabilidad de encontrar una partícula, pero no podemos \emph{saber
+cuál} de las dos \emph{partículas} hemos detectado, ya que a esa
+amplitud de probabilidad contribuyen ambos paquetes de onda. Como son
+idénticas, no hay criterios para diferenciar cuál de ellas se ha
+encontrado. Además, como \( E<0 \) las dos partículas forman un
+sistema ligado y quedan atrapadas en la zona donde el potencial toma
+valores apreciables, que normalmente suele ser pequeña. Así el
+solapamiento continua siendo alto de forma indefinida.
+
+
+\begin{figure}
+{\centering \includegraphics[width=6.5cm]{fig/dispersion.eps} \par}
+\caption{Dos partículas caracterizadas por sus paquetes de
+onda convergen hacia la región de interacción. El paquete de onda
+saliente forma un frente de ondas que avanza hacia los detectores. }
+\end{figure}
+
+Otro ejemplo es el proceso de dispersión de dos partículas idénticas
+en mecánica cuántica.  En el momento inicial \( t=0 \), las dos
+partículas vienen descritas igual que antes por sus paquetes de onda,
+aunque en la práctica se trabaje con ondas planas. Argumentos muy
+generales basados en la ecS permiten deducir que la función de
+onda lejos de la zona de interacción (donde se emplazan los
+detectores) es de la forma
+
+\[f(\Omega )\frac{\exp {i\mathbf{k}\cdot \mathbf{r}}}{r},\]
+%
+y por tanto la densidad de probabilidad se comporta como \(
+\dfrac{f(\Omega )^{2}}{r^{2}} \).  En la práctica la región de
+probabilidad no nula forma un frente de onda (que en la figura hemos
+supuesto que es esférico) al que contribuyen las dos partículas y al
+llegar a los detectores es absolutamente imposible diferenciar entre
+ellas.
+
+
+\section{Sistemas de dos partículas idénticas}
+
+En esta sección estudiaremos como influyen las ideas anteriores en
+la función de onda de un sistema formado por dos partículas idénticas.
+Denotaremos esta función de forma simplificada como
+
+\[\psi \left( 1,2\right) \]
+%
+donde \( 1\doteq \{\mathbf{r}_{1},S_{1z},\ldots \} \) y \( 2\doteq
+\{\mathbf{r}_{2},S_{2z},\cdots \} \) son en sentido amplio las
+coordenadas de cada partícula. No existe ninguna restrición para que
+la función de onda anterior dependa del tiempo; no hemos hecho
+explicita dicha dependencia para simplificar la notación
+
+Obsérvese que se presenta la siguiente contradicción: por un lado
+indistinguibilidad no permite asociar etiquetas a las coordenadas de
+las partículas, pero por otro son necesarias para poder construir
+funciones multivariable.  Existen diversos caminos para sortear este
+problema que conducen al mismo resultado.
+
+
+\subsection{Afirmación fuerte}
+
+Una forma de proceder consiste en afirmar que la permutación de las
+coordenadas de las dos partículas que forman el sistema no modifica
+el estado del mismo. Por lo tanto \( \psi \left( 1,2\right)  \)
+y \( \psi \left( 2,1\right)  \) caracterizan exactamente el mismo
+estado del sistema. Por ello debe cumplirse que 
+
+\[\psi \left( 2,1\right) =e^{i\alpha }\psi \left( 1,2\right) ,\]
+%
+es decir, la diferencia entre ambas \emph{}funciones de onda es, a lo
+sumo, una fase global. Entonces
+
+\[ \psi (2,1)=e^{i\alpha }\psi\left(1,2\right) = e^{i\alpha}
+\left( e^{i\alpha}\psi\left(2,1\right) \right) =
+\left( e^{i\alpha}\right)^{2}\psi\left(2,1\right),\]
+%
+o sea
+
+\[ \left( e^{i\alpha }\right) ^{2}=1\to e^{i\alpha }=± 1\] 
+%
+Esta forma de introducir en el formalismo de la FC la
+indistinguibilidad conduce a que el intercambio de los argumentos de
+la función de onda produce, a lo sumo, un cambio de signo. Según estos
+argumentos, la función de onda del sistema solo puede ser simétrica o
+antisimétrica.  Se trata de una conclusión extraordinariamente fuerte
+y debemos preguntarnos ahora si es compatible con la experiencia. La
+respuesta es afirmativa. \emph{Todos los resultados experimentales
+conocidos hasta el presente son consistentes con el hecho de que la
+fdo sea simétrica o antisimétrica bajo el intercambio de las
+coordenadas de dos partículas. No menos importante es que la simetría
+de intercambio de la fdo (su simetría o antisimetría bajo el
+intercambio de coordenadas) sólo depende del espín que poseen las
+partículas del sistema}. En concreto tenemos que:
+
+\begin{enumerate}
+\item las funciones de onda de sistemas formados por \emph{fermiones,}
+es decir partículas de espín semientero, son siempre antisimétricas.
+\item las funciones de onda de sistemas formados por \emph{bosones,}
+es decir partículas de espín entero, son siempre simétricas.
+\item no existen funciones de onda con simetría mezclada.
+\end{enumerate}
+
+\subsection{Afirmación débil}
+
+El argumento precedente, que conduce a la invariancia del estado bajo
+el intercambio de las coordenadas de dos partículas idénticas, es en
+realidad falso. Lo único que realmente podemos deducir es que dicho
+intercambio no puede dar lugar a diferencias observables. De forma más
+precisa, debemos imponer que los posibles resultados de cualquier
+medida permanezcan inalterados bajo el intercambio de coordenadas.
+
+Sea \( \mathrm{P}_{12} \) el operador que al actuar sobre un estado
+intercambia todas las coordenadas asociadas a las partículas
+etiquetadas 1 y 2
+
+\[\mathrm{P}_{12}\psi(1,2)=\psi(2,1)\]
+%
+Algunas propiedades de este operador son
+
+\begin{enumerate}
+\item \( \mathrm{P}_{12}^{2}=1\longrightarrow \mathrm{P}_{12}=\mathrm{P}^{-1}_{12}\)
+
+\[\mathrm{P}_{12}^{2}\psi(1,2)=\mathrm{P}_{12}(\mathrm{P}_{12}\psi(1,2))=\mathrm{P}_{12}\psi(2,1)=\psi(1,2)\]
+%
+Como este resultado es válido cualquiera que sea $\psi(1,2)$
+concluimos que $\mathrm{P}_{12}^2=1$.
+
+\item \( \mathrm{P}_{12}^{\dagger} \mathrm{O}(1,2) \mathrm{P}_{12} =
+\mathrm{O}(2,1) \), donde \( \mathrm{O} \) es un operador cualquiera
+que depende (en general) de las coordenadas de las dos partículas.  La
+demostración de esta propiedad requiere estudiar los elementos de
+matriz de dicho operador entre estados \( \ket{\phi}\) y \(\ket{\psi}
+\) cualesquiera.  Así,
+
+\[\Braket{\phi }{\mathrm{O}}{\psi }=\iint d1d2\phi ^{*}(1,2)\mathrm{O}(1,2)\psi (1,2)\]
+%
+donde $\displaystyle\iint di = \displaystyle\sum_{s_{z_i}}\int d\mathbf{r}_i$ y
+%
+\[\Braket{\mathrm{P}_{12}\phi }{\mathrm{O}}{\mathrm{P}_{12}\psi } = 
+\iint d1d2\phi ^{*}(2,1)\mathrm{O}(1,2)\psi (2,1)=\int d1d2\phi ^{*}(1,2)\mathrm{O}(2,1)\psi (1,2).\]
+%
+Ahora bien
+
+\[\Braket{\mathrm{P}_{12}\phi }{\mathrm{O}}{\mathrm{P}_{12}\psi } = 
+\Braket{\phi }{\mathrm{P}^{\dagger }_{12}\mathrm{O}\mathrm{P}_{12}}{\psi } = 
+\int d1d2\phi^{*}(1,2)\left( \mathrm{P}_{12}^{\dagger }\mathrm{O}(1,2)\mathrm{P}_{12}\right)\psi(1,2),\]
+%
+y puesto que esto es cierto para fdo arbitrarias llegamos a la
+identidad superior entre operadores.
+
+\item \( \mathrm{P}_{12}^{\dagger }=\mathrm{P}^{-1}_{12} \). Esta
+propiedad es una consecuencia directa de la anterior. En efecto, si
+elegimos $\mathrm{O(1,2)} = 1$
+
+\[ \mathrm{P}_{12}^{\dagger} \mathrm{P}_{12} = 1, \]
+%
+Así, tenemos que el operador $\mathrm{P}_{12}$ verifica que 
+
+\[ \mathrm{P}_{12}^{\dagger} = \mathrm{P}_{12}^{-1} = \mathrm{P}_{12}. \]
+
+\end{enumerate}
+
+Como decíamos al principio los resultados de cualquier medida no deben
+verse alterados bajo un intercambio de coordenadas. Por tanto,
+cualquiera que sea \( \ket{\psi} \) debe cumplirse que
+
+\[\Braket{\psi }{\mathrm{O}}{\psi } = 
+\Braket{\psi }{\mathrm{P}_{12}^{\dagger }\mathrm{O}\mathrm{P}_{12}}{\psi } 
+\to \mathrm{O}(1,2)=\mathrm{P}_{12}^{\dagger }\mathrm{O}(1,2)\mathrm{P}_{12}=\mathrm{O}(2,1),\]
+%
+es decir, el observable debe ser simétrico bajo el intercambio de las
+coordenadas de las dos partículas. Esta es la primera gran
+consecuencia de la indistinguibilidad, que en la práctica no produce
+un gran efecto porque las magnitudes físicas (clásicas) poseen
+esta propiedad.
+%
+Por otro lado la energía (el hamiltoniano) es un observable y debe
+cumplir que 
+
+\[\mathrm{H}(1,2) = \mathrm{H}(2,1) = \mathrm{P}_{12}^{\dagger }
+\mathrm{H}(1,2)\mathrm{P}_{12} \to \left[\mathrm{H},\mathrm{P}_{12}\right] =0,\]
+%
+lo que automáticamente nos lleva a que los autoestados del
+hamiltoniano deben serlo simultáneamente del operador de
+permutación. Ahora bien, dado que \( \mathrm{P}_{12}^{2}=1 \), este
+operador sólo posee autofunciones simétricas o antisimétricas
+correspondientes a los autovalores \( \lambda =± 1 \). En efecto,
+sea \( \phi (1,2) \) una de sus autofunciones, es decir
+
+\[\mathrm{P}_{12}\phi (1,2)=\lambda \phi (1,2),\]
+%
+entonces
+
+\[\phi (1,2)=\mathrm{P}_{12}^{2}\phi (1,2)=\lambda \mathrm{P}_{12}\phi (1,2) = 
+\lambda ^{2}\phi (1,2)\to \lambda =± 1,\]
+%
+con lo cual
+
+\[\phi (2,1)=\mathrm{P}_{12}\phi (1,2)=± \phi (1,2).\]
+%
+Según los argumentos expuestos anteriormente las autofunciones de
+$\mathrm{H}$ también deben ser simétricas o antisimétricas. Esto no
+plantea dificultad ya que si \( \psi (1,2) \) es autofunción de \(
+\mathrm{H} \) con autovalor \( E \)
+
+\[\mathrm{H}(1,2)\psi (1,2)=E\psi (1,2),\]
+%
+también se cumple que
+
+\[\mathrm{H}(2,1)\psi (2,1)=\mathrm{H}(1,2)\psi (2,1)=E\psi (2,1),\]
+o en general
+%
+\[\mathrm{H}(1,2)\left( a\psi (1,2)+b\psi (2,1)\right) =E\left( a\psi (1,2)+b\psi (2,1)\right).\]
+%
+Por lo tanto, cualquier combinación lineal de \( \psi (1,2) \) y \(
+\psi (2,1) \) es autofunción con energía \( E \). Indistinguibilidad
+impone que sólo dos de ellas son físicamente aceptables: las
+combinaciones simétrica y antisimétrica\footnote{Nótese que las fases
+internas de una fdo son esenciales. Cambiar o eliminar dichas fases
+significa cambiar radicalmente la naturaleza de dicha fdo. Por el
+contrario las fases globales son irrelevantes y pueden ser eliminadas
+de la fdo sin afectar a ningún proceso de medida.}.
+
+\[\begin{array}{ccc}
+\psi^{(S)}(1,2) & = & \dfrac{1}{\sqrt{2}}\left( \psi (1,2)+\psi (2,1)\right) \\
+\psi^{(A)}(1,2) & = & \dfrac{1}{\sqrt{2}}\left( \psi (1,2)-\psi (2,1)\right) 
+\end{array}\]
+%
+No podemos llevar más lejos las consecuencias asociadas a la
+indistinguibilidad de las partículas idénticas. En principio, nada
+impediría que en un mismo sistema formado por partículas idénticas
+coexistiesen los dos tipos de solución. Sin embargo, el enorme
+conjunto de datos experimentales demuestra que esto no ocurre. Por
+ejemplo, el nivel fundamental del átomo de helio (Z=2) no está
+degenerado, es decir no existen dos funciones de onda, una simétrica y
+otra antisimétrica, con la misma energía. Si así ocurriese, dicho
+nivel contendría dos subniveles con espín $s=0$ y $s=1$, y sólo se
+observa un estado de espín cero. Un sistema formado por partículas
+idénticas viene caracterizado por fdo con una sola simetría de
+intercambio, y ésta viene determinada única y exclusivamente por el
+espín de las partículas.
+
+\section{Caso general: postulado de simetrización}
+
+A continuación postulamos las propiedades de la función de onda de un
+sistema constituido por \(N\) partículas idénticas ($N\geq 2$). Para
+\(1\leq i,j\leq N \), tenemos que
+
+\[\psi\left(1,2,\ldots,\mathbf{i},\ldots,\mathbf{j},\ldots,N\right) = 
+  \psi\left(1,2,\ldots,\mathbf{j},\ldots,\mathbf{i},\ldots,N\right), \]
+%
+si el sistema está formado por bosones y 
+
+\[\psi\left(1,2,\ldots,\mathbf{i},\ldots,\mathbf{j},\ldots,N\right) = 
+  -\psi\left(1,2,\ldots,\mathbf{j},\ldots,\mathbf{i},\ldots,N\right), \]
+%
+si está formado por fermiones. En estas expresiones la negrita subraya
+las etiquetas que se intercambian. Las dos relaciones anteriores
+constituyen el \emph{postulado de (anti)simetrización de la función de
+onda}. En el caso de los fermiones se llama también principio (fuerte)
+de exclusión de \noun{Pauli}. Este postulado tiene validez general
+excepto en unos pocos casos, entre los que destacaremos dos:
+
+\begin{itemize}
+\item cuando las partículas se encuentran muy alejadas y sus paquetes de
+onda no solapan. 
+\item cuando inicialmente las dos partículas tienen proyecciones de su
+espín opuestas y la interacción entre ellas no modifica este hecho, lo
+cual permite considerarlas como distinguibles.
+\end{itemize}
+
+Podemos escribir el postulado de forma más compacta como 
+
+\[\psi \left( 1,2,\ldots,N\right)=\left( ± 1\right)^{\mathrm{N}_{p}}
+\psi\left( i_{1},i_{2},i_{3},\ldots ,i_{N}\right),\]
+%
+donde \( \left\{ i_{1},i_{2},i_{3},\ldots ,i_{N}\right\}  \) es una
+permutación de la secuencia \( \left\{ 1,2,3\ldots ,N\right\}  \)
+y \( \mathrm{N}_{p} \) es el número de transposiciones de dos índices
+necesarias para pasar de una secuencia a otra.
+
+\begin{description}
+\item [Ejemplo]{\small \( \left\{ 1,2,3\right\} \fd \left\{ 3,1,2\right\}  \)
+se puede escribir como \( \left\{ 1,2,3\right\} \fd \left\{ 3,2,1\right\} \fd \left\{ 3,1,2\right\}\),
+es decir, como dos transposiciones sucesivas. Por tanto
+
+ \[\psi \left( 1,2,3\right) =\left( ± 1\right) ^{2}\psi\left( 3,1,2\right)= \psi\left( 3,1,2\right),\]
+%
+expresión que también se puede hallar aplicando de forma sucesiva las
+dos transposiciones según la regla particular para una transposición
+escrita más arriba.}
+\end{description}
+
+Una función de onda que no satisfaga los requisitos anteriores es
+errónea excepto que nos encontremos en uno de los pocos casos en los
+que el postulado no se aplica. Señalemos por último, que aunque en
+mecánica cuántica la (anti)simetrización de la función de onda se ha
+introducido como un postulado, en teoría cuántica de campos surge como
+un teorema conocido como \emph{teorema espín--estadística}.
+
+\paragraph{Forma débil del principio de exclusión de \noun{Pauli}}
+
+Determinemos la probabilidad de que dos fermiones se encuentren en la
+misma posición \( \mathbf{r} \) y con proyección del espín \( S_{z}
+\).  La función de onda verifica que
+
+\[\psi \left( \mathbf{r},S_{z};\mathbf{r},S_{z}\right) = 
+-\psi \left( \mathbf{r},S_{z};\mathbf{r},S_{z}\right) =0\]
+%
+y, en consecuencia, la probabilidad asociada a dicho suceso es
+cero. La afirmación de que es imposible encontrar dos fermiones
+idénticos en la misma posición, con la misma proyección del espín
+constituye la forma débil del principio de exclusión.  Enunciaremos
+este mismo principio de forma un poco más general cuando a
+continuación introduzcamos fdos determinantales\footnote{En física
+atómica, molecular o nuclear las fdos vienen dadas de forma aproximada
+por determinantes en muchos casos.}.
+
+La forma débil del principio de exclusión introduce una pregunta
+bastante interesante. De acuerdo con lo que hemos estudiado hasta
+ahora no hay ninguna restricción para que dos bosones con la misma
+proyección del espín (y quiza otros números cuánticos iguales) se
+sitúen en el mismo punto del espacio \( \mathbf{r} \). \emph{¿}Se
+trata de una situación realista o es un artefacto de la
+teoría?\footnote{De todas formas no existe capacidad experimental
+(técnica) para distinguir esta situación de otra en la que las dos
+partículas se encuentran infinitesimalmente cerca. Un experimento no
+determina nunca \( |\psi (\mathbf{r})|^{2} \) , sino
+\(\overline{\left|\psi \left( \mathbf{r}\right) \right|^{2}}\Delta
+\mathbf{r}\), es decir el valor medio de la densidad de probabilidad
+en una región muy pequeña, pero finita.}.
+
+
+\section{Zoología de partículas}
+
+
+\subsection{Partículas fundamentales}
+
+Llamamos así a aquellas partículas que son puntuales y por tanto no
+tienen estructura interna, esto es que no están compuestas de otras
+(al menos con el grado de conocimiento actual). Distinguimos entre
+aquellas partículas que son los constituyentes básicos de toda la
+materia conocida y las partículas {\em portadoras}, que transmiten las
+diversas interacciones. Las primeras son siempre fermiones con espín
+\( s=1/2 \).  En la tabla \ref{tab. directorio de part=B4iculas
+elementales} sólo hemos incluido la mitad ya que faltan las
+antipartículas correspondientes. Cada antipartícula posee todas
+sus caracteri\'{s}ticas físicas iguales a las de su partícula excepto
+la carga eléctrica, que tiene signo opuesto. Tampoco aparece su
+clasificación en tres familias, ni se detallan todos los números
+cuánticos que son necesarios para su perfecto etiquetado.
+
+Las partículas {\em portadoras} conocidas son todas bosones de espín
+\( s=1 \).  El gravitón, que aún no ha sido detectado\footnote{A
+diferencia de lo que ocurre con las ondas electromagnéticas que son
+fáciles de detectar y de generar, hasta ahora no ha sido posible
+detectar ondas gravitacionales. De la misma manera que las ecuaciones
+del electromagnétismo predecían la existencia de ondas
+electromagnéticas ya antes de ser observadas, la relatividad general
+predice la existencia de este tipo de ondas y la partícula asociada a
+este campo debe poseer espín dos.}, posee sin duda alguna espín \( s=2
+\). Algunas de estas partículas, como el fotón, no poseen masa, otras
+como los gluones son capaces de interaccionar consigo mismas, etc.
+
+\begin{table}
+{\centering \includegraphics[width=9cm]{fig/partic-elem-src.eps} \par}
+\caption{Partículas elementales conocidas (exceptuando el
+gravitón).  Todos los fermiones tienen su antipartícula
+correspondiente. Algunas partículas se conocen simplemente como una
+letra: \emph{quarks} u y d, bosones \protect\(
+Z^{0}\protect \) y \protect\( W^{±}\protect \).  Otras tienen
+nombre propio: \protect\( \mu \protect \) = muón, \protect\( \tau
+\protect \) = tauón, \protect\( \nu _{e}\protect \) = neutrino
+electrónico,\ldots \protect\( \gamma \protect \) = fotón, \protect\(
+g\protect \) = gluón, \protect\( G\protect \) = gravitón. En el caso
+de las partículas portadoras hemos añadido entre paréntesis la
+interacción con la que están relacionadas. \textbf{EM =}
+int. electromagnética \textbf{, E}\textbf{D} = int. electrodébil, \textbf{F} =
+int. fuerte, \textbf{GR} =
+int. gravitatoria. \label{tab. directorio de part=B4iculas
+elementales}}
+\end{table}
+ 
+\subsection{Partículas compuestas}
+
+Las partículas compuestas se comportan como fermiones o como bosones,
+según sea su espín, en procesos en los que su estructura interna es
+irrelevante. Por ejemplo, un sistema formado por dos
+\emph{positronios} (átomo exótico y de vida extraordinariamente breve
+formado por un electrón y un positrón y cuyo espín es \( s=0 \)) puede
+funcionar como dos partículas fundamentales que se comportan como
+bosones si las partículas individuales de un positronio no {}``ven{}''
+a las de otro. Otro ejemplo es el de los átomos de He. A energías
+típicas de \( 1eV \) la interacción entre dos átomos de He es tal que
+pueden ser tratadas como partículas elementales de espín cero, y por
+lo tanto, como bosones. A energías del orden del \( MeV \) dos
+protones (\( s=\frac{1}{2}\)) pueden considerarse como dos fermiones,
+aunque sepamos que están compuestos de quarks. El que la estructura
+interna de un sistema o partícula se haga evidente o no depende sobre
+todo de las energías a las que trabajamos. Una forma muy burda de
+estimar si la estructura de una partícula es relevante consiste en
+calcular su longitud de onda de \noun{de Broglie.} Así a una energía
+del orden de \( 1eV \) tenemos que la longitud de onda asociada al
+atomo de \( He \) es aproximadamente \( \lambda \simeq 0.3A \).  Ésta
+es del tamaño del propio átomo y no puede resolver la estructura de
+otro átomo de Helio, compuesto por dos electrones puntuales y un
+núcleo cuyo tamaño es del orden de $10^{-5}\,A$.
+
+
+\subsubsection{Ejemplos}
+
+\begin{itemize}
+\item \textbf{\small Fermiones:} {\small el protón, el núcleo \(^3\)He$_2$,
+etc.}{\small \par}
+\item \textbf{\small Bosones:} {\small piones \( \pi ^{0},\pi ^{± } \),
+el núcleo $^4$He$_2$ ( partícula \( \alpha  \)), el átomo de He, etc.}{\small \par}
+\end{itemize}
+
+\section{Antisimetrización de funciones de onda producto}
+
+\subsection{Sistemas de dos partículas}
+
+A lo largo de toda esta sección trabajaremos con un sistema de
+fermiones idénticos. El caso de bosones se trataría de forma
+totalmente análoga.  Consideremos un tipo de hamiltoniano muy simple,
+pero que se presenta (aunque sea de forma aproximada) frecuentemente
+en la Naturaleza:
+
+\[ H=h\left( 1\right) +h(2) \]
+%
+donde \( h\left( i\right)  \) sólo depende de los grados de libertad
+de la i-esima partícula (coordenadas espaciales, momentos, espines\ldots). Es decir
+
+\[h\left( i\right) =\frac{\mathbf{p}_{i}^{2}}{2m_{i}}+V\left( \mathbf{r}_{i},\mathbf{S}_{i},\ldots \right). \]
+%
+Normalmente, los hamiltonianos de la forma \( H=\sum h(i) \), y en
+general las magnitudes de la forma \( O=\sum o(i) \) , se dice que son
+\emph{a un cuerpo}. Esta nomenclatura se extiende también a los
+operadores correspondientes
+
+Sean \( \phi _{a} \) y \( e_{a} \) las autofunciones y autoenergías de \( \mathrm{h}\left( i\right) \),
+respectivamente:
+
+\[\mathrm{h}\left( i\right) \phi _{a}\left( i\right) =e_{a}\phi _{a}\left( i\right),\]
+%
+con
+
+\[\begin{array}{ccc}
+\displaystyle\int di\, \phi _{a}^{*}\left( i\right) \phi _{b}\left( i\right)  & = & \delta _{ab},\\
+\displaystyle\sum _{a}\phi _{a}^{*}\left( i\right) \phi _{a}\left( j\right)  & = & \delta _{ij},
+\end{array}\]
+%
+donde \( \phi _{a}\left( i\right) =\phi _{a}\left(
+\mathbf{r}_{i},S_{zi}\right)\) y \( \displaystyle\int di=\displaystyle\sum
+_{S_{z_i}}\int \mathbf{dr}_{i} \).
+%
+Demostremos que los autoestados del hamiltoniano \( \mathrm{H} \) son
+de la forma
+
+\[\Phi _{ab}\left( 1,2\right) =\phi _{a}\left( 1\right) \phi _{b}\left( 2\right). \]
+%
+En efecto, 
+
+\[\mathrm{H}\phi _{a}\left( 1\right) \phi _{b}\left( 2\right) = \left( \mathrm{h}\left( 1\right) +
+\mathrm{h}\left( 2\right) \right) \phi _{a}\left( 1\right) \phi _{b}\left( 2\right) = \ldots = 
+\left( e_{a}+e_{b}\right) \phi _{a}\left( 1\right) \phi _{b}\left( 2\right), \]
+%
+es decir, \( \Phi _{ab} \) es autoestado de \( \mathrm{H} \) con energía \( E_{ab}=e_{a}+e_{b} \),
+
+\[\mathrm{H}\Phi _{ab}\left( 1,2\right) =\left( e_{a}+e_{b}\right) \Phi _{ab}\left( 1,2\right) = 
+E_{ab}\Phi _{ab}\left( 1,2\right). \]
+%
+Ahora bien, dado que 
+
+\[\phi _{a}\left( 1\right) \phi _{b}\left( 2\right) \neq -\phi _{a}\left( 2\right) \phi _{b}\left( 1\right), \]
+%
+estas autofunciones no satisfacen el postulado de antisimetrización.
+La forma de resolver este inconveniente consiste en construir
+combinaciones lineales adecuadas. Por ejemplo
+
+\[\Phi _{ab}\left( 1,2\right) \fld \Phi _{ab}^{(A)}\left(1,2\right) = 
+\frac{1}{\sqrt{2}}\left( \phi _{a}\left( 1\right) \phi_{b}\left( 2\right)-
+\phi _{a}\left( 2\right) \phi _{b}\left( 1\right) \right). \] 
+%
+La nueva función de onda cumple varias propiedades importantes:
+
+\begin{enumerate}
+\item El postulado de antisimetrización: 
+
+\[\Phi ^{(A)}_{ab}(1,2)=\frac{1}{\sqrt{2}}\left( \phi_{a}\left( 1\right) \phi _{b}\left( 2\right) - 
+\phi _{a}\left( 2\right) \phi _{b}\left( 1\right) \right) = 
+-\frac{1}{\sqrt{2}}\left( \phi _{a}\left( 2\right) \phi _{b}\left( 1\right) - 
+\phi _{a}\left( 1\right) \phi _{b}\left( 2\right) \right) =-\Phi ^{(A)}_{ab}(2,1).\]
+
+\item Si las funciones \( \phi  \) de una partícula están convenientemente normalizadas
+
+\begin{eqnarray*}
+\iint d1d2\left| \Phi ^{(A)}_{ab}\right| ^{2} & = & 1,\\
+\iint d1d2\left( \Phi _{ab}^{(A)}\left( 1,2\right) \right) ^{*}\Phi _{cb}^{(A)}\left( 1,2\right)
+ & = & \delta _{ac}\delta _{bd}-\delta _{ad}\delta _{bc}.
+\end{eqnarray*}
+ 
+\item Es autofunción del hamiltoniano del sistema completo
+
+\[\mathrm{H}\Phi _{ab}^{(A)}=E_{ab}\Phi _{ab}^{(A)}.\]
+
+\item Podemos reescribir estas funciones usando una notación determinantal
+
+\[\Phi _{ab}^{(A)}\left( 1,2\right) = \frac{1}{\sqrt{2}}\left| \begin{array}{cc}
+\phi _{a}\left( 1\right)  & \phi _{a}\left( 2\right) \\
+\phi _{b}\left( 1\right)  & \phi _{b}\left( 2\right) 
+\end{array}\right|,\]
+%
+notación que fue introducida por el físico estadounidense
+\noun{J.C. Slater}, razón por la cual estas funciones reciban el
+nombre de \emph{determinantes de} \emph{\noun{Slater}}.
+
+\end{enumerate}
+
+\subsection{Sistemas de N partículas}
+
+El hamiltoniano del sistema viene dado por 
+
+\[H=h\left( 1\right) +h\left( 2\right) +\ldots +h\left( N\right) =\sum ^{N}_{i=1}h\left( i\right) \]
+%
+y al igual que antes es trivial demostrar que las autofunciones del
+operador asociado \( \mathrm{H} \) son
+
+\[\Phi _{a1,a2,...,aN}(1,2,..,N) =\phi _{a_1}\left( 1\right) \phi _{a_2}\left( 2\right) \cdots
+\phi _{a_N}\left( N,\right) = \prod _{i=1}^{N}\phi _{a_i}\left( i\right),\]
+%
+ya que
+
+\[\begin{split}
+  \mathrm{H}\prod _{i=1}^{N}\phi _{a_i}\left( i\right) &  = 
+  \left(\ldots + \mathrm{h}(j)+\ldots\right)\prod _{i=1}^{N}\phi _{a_i}\left( i\right)  = 
+  \ldots+\phi_{a_1}(1)\phi_{a_2}(2)\ldots\mathrm{h}(j)\phi_{a_j}\left( j\right)\ldots\phi_{a_N}\left( N\right) \\
+  & = \ldots + e_{a_j}\prod _{i=1}^{N}\phi _{a_i}\left( i\right)+ \ldots =
+  \left( \sum _{i=1}^{N}e_{a_i}\right)\prod _{i=1}^{N}\phi _{ai}\left( i\right),
+\end{split}\]
+%
+y si utilizamos la siguiente notación más compacta
+
+\[\begin{array}{lcl}
+\Phi_{\left\{a_i\right\}}\left(1,2\ldots,N\right)& =& \prod_{i=1}^{N}\phi _{a_i}\left( i\right),\\
+E_{\left\{ ai\right\} } & = & \sum _{i=1}^{N}e_{a_i}, \\
+\end{array} \]
+%
+podemos escribir
+\[\mathrm{H}\Phi _{\left\{a_i\right\} }\left( 1,2\ldots ,N\right) = 
+E_{\left\{a_i\right\} }\Phi _{\left\{a_i\right\} }\left(1,2,\ldots,N\right).\]
+%
+Al igual que en el caso de dos partículas, las funciones producto \(
+\Phi _{\left\{ ai\right\} }\left( 1,2\ldots ,N\right) \) no satisfacen
+el postulado de antisimetrización, y obtenemos una versión
+antisimetrizada introduciendo el determinante
+%
+\[\Phi_{\left\{a_i\right\} }^{(A)} = \mathcal{A}\left\{\phi_{a_1}\left(1\right)\cdots
+\phi_{a_N}\left( N\right) \right\} = \frac{1}{\sqrt{N!}} \left| \begin{array}{cccc}
+\phi _{a_1}\left(1\right)  &  & \ldots  & \phi _{a_1}\left(N\right) \\
+                           &  &         &                            \\
+\vdots                     &  & \ddots  &                             \\
+\phi _{aN}\left( 1\right)  &  &         & \phi _{aN}\left( N\right) 
+\end{array}\right| = \frac{1}{\sqrt{N!}}\left| \begin{array}{ccc}
+        & \vdots                     &        \\
+\ldots  & \phi _{ai}\left( j\right)  & \ldots \\
+        & \vdots                     & 
+\end{array}\right|,\]
+%
+donde el factor \( \frac{1}{\sqrt{N!}} \) está asociado a la normalización
+de una función determinantal \( N× N \), que tiene \( N! \)
+términos. 
+
+\begin{description}
+{\small
+\item [Ejemplo] Construya el determinante de \noun{Slater} de 3 fermiones
+en estados de una partícula etiquetados por \( a,b,c \) 
+
+\[\Phi _{abc}^{(A)}\left( 1,2,3\right) =\frac{1}{\sqrt{6}}\left| \begin{array}{ccc}
+\phi _{a}\left( 1\right)  & \phi _{a}\left( 2\right)  & \phi _{a}\left( 3\right) \\
+\phi _{b}\left( 1\right)  & \phi _{b}\left( 2\right)  & \phi _{b}\left( 3\right) \\
+\phi _{c}\left( 1\right)  & \phi _{c}\left( 2\right)  & \phi _{c}\left( 3\right) 
+\end{array}\right| \]
+%
+Obsérvese que transponer la matriz no altera el determinante (a tener
+en cuenta cuando se consulte la bibliografía). Para hacerse una idéa
+más clara de lo farragoso que es trabajar con estas funciones,
+supongamos ahora que deseamos calcular
+%
+\[\bra{\Phi _{abc}^{(A)}}\sum _{1=i<j=3}\frac{e^{2}}{\left| \mathrm{r}_{\mathsf{i}} - 
+\mathrm{r}_{\mathsf{j}}\right| ^{2}}\ket{\Phi _{abc}^{(A)}}\]
+%
+Este elemento de matriz es una combinación lineal de \( 3*6*6 \)
+términos. El llamado \emph{formalismo de segunda cuantización} permite
+trabajar de forma mucho más comoda con fdo (anti)simetrizadas de \( N
+\) partículas.}
+\end{description}
+
+El principio de exclusión de Pauli, en su forma débil, puede
+enunciarse de manera más general. Supongamos que dos de los fermiones
+estuvieran en el mismo estado \( a \), por ejemplo. Entonces
+\(\Phi_{\ldots a \ldots a \ldots c}=0 \) ya que el determinante de
+\noun{Slater} poseería dos filas idénticas.  Por tanto, la
+probabilidad asociada a este suceso es cero. \emph{Así, Podemos decir
+que la probabilidad de encontrar dos fermiones con los mismos numeros
+cuánticos iguales es cero.} Este resultado tiene validez universal
+aunque haya sido obtenido para fdos determinantales. La razón básica
+para ello es que cualquier fdo puede escribirse como una combinación
+lineal de determinantes de \noun{Slater}.
+
+Conviene comentar que el concepto de indistinguibilidad de partículas
+idénticas se introdujo en mecánica cuántica de una manera radicalmente
+diferente a la que nosotros hemos seguido en este curso. Estudiando
+los espectros de átomos multielectrónicos, \noun{Pauli} se dió cuenta
+que debía existir algún tipo de restricción sobre los estados
+accesibles por los electrones si no se quería predecir un número
+excesivo de estados que no se observaban en la experiencia.  Así nació
+el llamado principio de exclusión de \noun{Pauli} (en su forma débil)
+que desarrollado de forma más profunda conduce al concepto inicial.
+
+\subsection{Sistemas de dos partículas con buen espín total}
+
+Cuando construimos un determinante de \noun{Slater} tratamos
+simultáneamente los grados de libertad orbitales y de espín por lo que
+es muy probable que ni la parte orbital ni la de espín poseean una
+simetría de intercambio bien definida. Ahora bien, podríamos estar
+interesados en construir estados completamente antisimétricos cuya
+parte orbital sea simétrica y cuya parte de espín sea antisimétrica (o
+viceversa). No se trata de un \emph{antojo} sino que las funciones con
+buen momento angular orbital y buen espín total son de este tipo.
+
+Consideremos un sistema formado por dos electrones, o en general, por
+dos fermiones idénticos de espín \( s=1/2 \). En este caso las
+autofunciones de \( h(i) \) se pueden escribir como
+
+\[\phi _{\alpha }\left( i\right) = \varphi _{a}\left( \mathbf{r}_{i}\right) 
+\chi _{m_{s_i}}^{\left( i\right) },\; \alpha =(a,m_s),\]
+%
+donde
+
+\begin{eqnarray*}
+\chi ^{\left( i\right) }_{-\frac{1}{2}} & = & \binom{0}{1},\\
+\chi ^{\left( i\right) }_{\frac{1}{2}} & = & \binom{1}{0},
+\end{eqnarray*}
+%
+es decir, cada autofunción es producto de una parte orbital y otra
+de espín. La parte obital será en general de la forma 
+
+\[\varphi _{a}\left( \mathbf{r}_{i}\right) =R_{n_{a}l_{a}}\left( r_{i}\right) Y_{m_{a}}^{l_{a}}\left( \Omega _{i}\right), \]
+%
+y recordemos que las funciones de espín satisfacen
+
+
+\begin{eqnarray*}
+\mathsf{S}_{i}^{2}\chi _{m_{s_i}}^{\left( i\right) } & = & \hbar ^{2}s_{i}\left( s_{i}+1\right) 
+\chi _{m_{s_i}}^{\left( i\right) }=\frac{3}{4}\hbar ^{2}\chi _{m_{s_i}}^{\left( i\right) }\\
+\mathrm{S}_{zi}\chi _{m_{s_i}}^{\left( i\right) } & = & \hbar m_{s_i}\chi _{m_{s_i}}^{\left( i\right) } = 
+± \frac{1}{2}\hbar \chi ^{(i)}_{m_{s_i}}
+\end{eqnarray*}
+%
+Es posible contruir funciones de onda de dos partículas totalmente
+antisimétricas que sean simétricas bajo el intercambio de las
+coordenadas espaciales y antisimétricas bajo el intercabio de las de
+espín, o viceversa. Fijémonos primero en la parte de
+espín. Empezaremos construyendo funciones de espín simétricas
+convenientemente normalizadas
+
+\[\Xi^{S} = \left\{\begin{array}{l}
+ \chi _{\frac{1}{2}}^{\left( 1\right) }\chi ^{\left( 2\right) }_{\frac{1}{2}},  \\
+ \dfrac{1}{\sqrt{2}}\left( \chi _{\frac{1}{2}}^{\left( 1\right) }\chi ^{\left( 2\right) }_{-\frac{1}{2}}+
+ \chi _{-\frac{1}{2}}^{\left( 1\right) }\chi ^{\left( 2\right) }_{\frac{1}{2}}\right), \\
+ \chi _{-\frac{1}{2}}^{\left( 1\right) }\chi ^{\left( 2\right) }_{-\frac{1}{2}}, 
+\end{array}\right.\]
+%
+y la única función antisimétrica posible es 
+
+\[\Xi^{A} = \dfrac{1}{\sqrt{2}}\left(\chi _{\frac{1}{2}}^{\left( 1\right) }\chi ^{\left( 2\right) }_{-\frac{1}{2}}-
+\chi _{-\frac{1}{2}}^{\left( 1\right) }\chi^{\left( 2\right) }_{\frac{1}{2}}\right).\]
+
+Intentemos determinar la forma de las funciones de espín de dos
+partículas que son autofunciones de \( \mathbf{S}^{2}=\left(
+\mathbf{S}_{1} + \mathbf{S}_{2}\right) ^{2} \) y \(S_{z} = S_{z_1} +
+S_{z_2} \). Como \(s_{i}=1/2 \) el número cuántico de espín total es
+\( s\in \left\{ 0,1\right\} \) y por supuesto las terceras componentes
+cumplen que \( m_{s}=m_{1}+m_{2}\). Tal y como hemos repetido varias
+veces a lo largo de este curso las fuciones asociadas al momento (de
+espín) suma se construyen mediante los coeficientes de CG. Así,
+
+\[\Xi_{m_{s}}^{s} = \sum _{m_{1},m_{2}}\braket{\frac{1}{2}m_{1}\frac{1}{2}m_{2}}{sm_{s}}
+\chi _{m_{1}}^{\left( 1\right) }\chi _{m_{2}}^{\left( 2\right) },\]
+%
+de manera que para las cuatro combinaciones posibles de valores de $s$ y $m_s$ resulta
+
+\[\Xi^{s=1}_{m_s} = \left\{\begin{array}{ll}
+\chi _{\frac{1}{2}}^{\left( 1\right) }\chi _{\frac{1}{2}}^{\left( 2\right)} & m_s = 1\\
+\frac{1}{\sqrt{2}}\left( \chi _{\frac{1}{2}}^{\left( 1\right) }\chi _{-\frac{1}{2}}^{\left( 2\right) }+
+\chi _{-\frac{1}{2}}^{\left( 1\right) }\chi _{\frac{1}{2}}^{\left( 2\right) }\right)&m_s=0\\
+\chi _{-\frac{1}{2}}^{\left( 1\right) }\chi _{-\frac{1}{2}}^{\left( 2\right) }&m_s=-1
+\end{array}\right.\]
+
+\[\Xi _{s=0}^{m_s=0} = \frac{1}{\sqrt{2}}\left( \chi _{\frac{1}{2}}^{\left( 1\right) }\chi ^{\left( 2\right) }_{-\frac{1}{2}}-
+\chi _{-\frac{1}{2}}^{\left( 1\right) }\chi ^{\left( 2\right) }_{\frac{1}{2}}\right) \]
+%
+De acuerdo con estas expresiones las tres fdo \( \Xi _{m_{s}}^{s=1} \)
+son completamente simétricas bajo el intercambio de las dos
+partículas. Por el contrario la única función con \( s=0 \) coincide
+con la fdo completamente antisimétrica. Muchas veces se utiliza la
+nomenclatura de \emph{triplete de espín} para referirse a los tres
+estados \( s=1,m_{s}\in \{-1,0,1\} \) y de \emph{singlete de espín}
+para referirse al estado con \( s=0 \).
+
+Ahora debemos combinarlas con una parte orbital adecuada de manera que
+la fdo global satisfaga el ppo de exclusión. Con este fin, las fdos con
+espín $s=1$ deben combinarse con una fdo orbital antisimétrica y la
+fdo con espin s=0 con una fdo orbital que sea simétrica. Es decir
+
+\[\Phi_{ab,\;m_s}^s = \left\{\begin{array}{ll}
+\mathcal{A}\left\{\varphi_{a}\left(\mathbf{r}_{1}\right)\varphi_{b}\left(\mathbf{r}_{2}\right)\right\}
+\Xi _{m_{s}}^{1}, & s=1, \\
+\mathcal{S}\left\{ \varphi_{a}\left(\mathbf{r}_{1}\right)\varphi _{b}\left(\mathbf{r}_{2}\right)\right\}
+\Xi _{0}^{0}, & s=0, 
+\end{array}\right.\]
+%
+donde 
+
+\[\begin{array}{l}
+\mathcal{A} = \dfrac{1}{\sqrt{2}}\left(1-\mathrm{P}_{12}\right),\\
+\mathcal{S} = \dfrac{1}{\sqrt{2}}\left(1+\mathrm{P}_{12}\right),\\
+\end{array}\]
+%
+y por tanto
+
+\[\begin{array}{lcl}
+\mathcal{A}\left\{ \varphi _{a}\left( \mathbf{r}_{1}\right) \varphi _{b}\left( \mathbf{r}_{2}\right) \right\}
+& =& \frac{1}{\sqrt{2}}\left( \varphi _{a}\left( \mathbf{r}_{1}\right) \varphi _{b}\left( \mathbf{r}_{2}\right)-
+\varphi _{a}\left( \mathbf{r}_{2}\right) \varphi _{b}\left( \mathbf{r}_{1}\right) \right),\\
+\mathrm{S}\left\{ \varphi _{a}\left( \mathbf{r}_{1}\right) \varphi _{b}\left( \mathbf{r}_{2}\right) \right\}
+& =& \frac{1}{\sqrt{2}}\left( \varphi _{a}\left( \mathbf{r}_{1}\right) \varphi _{b}\left( \mathbf{r}_{2}\right) + 
+\varphi _{a}\left( \mathbf{r}_{2}\right) \varphi _{b}\left( \mathbf{r}_{1}\right) \right).
+\end{array}\]
+
+Es fácil verificar que estas funciones de onda son autoestados de
+hamiltonianos a un cuerpo que no dependan del espín
+
+\[ H=h\left( \mathbf{r}_1\right) +h\left( \mathbf{r}_2\right), \]
+%
+donde utilizamos la notación \( h\left( \mathbf{r}_{1}\right)  \), en lugar de \( h(1) \),
+para recalcar que no depende del espín. Si se verifica que   
+
+\[\mathrm{h}(\mathbf{r})\varphi _{a}(\mathbf{r})=e_{a}\varphi _{a}(\mathbf{r}),\]
+%
+entonces, teniendo en cuenta que el hamiltoniano es simétrico y conmuta con $\mathrm{P}_{12}$
+
+\[\mathrm{H}\Phi _{ab,\;m_s}^{s} = \mathrm{H}\left\{\dfrac{1 ± \mathrm{P}_{12}}{\sqrt{2}}
+\varphi_{a}\left(\mathbf{r}_{1}\right)\varphi_{b}\left(\mathbf{r}_{2}\right)\right\}\Xi _{s}^{m_s} =
+\left\{\dfrac{1± \mathrm{P}_{12}}{\sqrt{2}} \mathrm{H}
+\varphi_{a}\left(\mathbf{r}_{1}\right)\varphi_{b}\left(\mathbf{r}_{2}\right)\right\}\Xi _{s}^{m_s},\]
+%
+y como ya hemos demostrado que 
+
+\[ \mathrm{H}\varphi_{a}\left(\mathbf{r}_{1}\right)\varphi_{b}\left(\mathbf{r}_{2}\right) =
+   \left(\mathrm{h}\left(\mathbf{r}_1\right)+\mathrm{h}\left(\mathbf{r}_2\right)\right) 
+   \varphi_{a}\left(\mathbf{r}_{1}\right)\varphi_{b}\left(\mathbf{r}_{2}\right) = 
+   (e_a+e_b)\varphi_{a}\left(\mathbf{r}_{1}\right)\varphi_{b}\left(\mathbf{r}_{2}\right),\]
+%
+deducimos trivialmente que
+
+\[\mathrm{H}\Phi _{ab,\;m_s}^{s} =  \left(e_a+e_b\right)\Phi _{ab,\;m_s}^{s}.\]
+%
+De esta forma hemos construido autofunciones de $\mathrm{H} =
+\mathrm{h}\left( \mathbf{r}_1\right) +
+\mathrm{h}\left(\mathbf{r}_2\right)$, que satisfacen el postulado de
+antisimetrización y que poseen buen espín total. Además, es fácil
+darse cuenta que también son autofunciones de hamiltonianos de la
+forma
+
+\[\mathrm{H} = \left(\mathrm{h}\left(\mathbf{r}_1\right)+\mathrm{h}\left(\mathbf{r}_2\right)\right)
+               \left(\theta_1\mathsfbf{S}^2_1+\theta_2\mathsfbf{S}^2_2 +
+               \Theta\mathsfbf{S}_1\cdot\mathsfbf{S}_2\right), \]
+%
+donde $\theta_{1(2)}$ y $\Theta$ son constantes arbitrarias.
+
+También pueden construirse funciones con momento angular orbital total
+y con momento angular total bien definidos, pero como este proceso es
+más complicado lo dejaremos para el curso de Física Atómica y
+Molecular.
+
+
+\section{Repulsión efectiva}
+\label{sec repulsion efectiva} 
+
+En sistemas formados por varias partículas la simetría de intercambio
+de la función de onda puede dar lugar a una suerte de repulsión
+efectiva entre las partículas, aunque entre ellas no exista
+interacción alguna. Este fenómeno tiene implicaciones físicas
+importantes como es el caso de la formación de los núcleos atómicos.
+
+Para entender mejor como actúa dicha repulsión, estudiemos el caso de
+dos partículas idénticas que no interaccionan entre sí y que se
+encuentran dentro de una caja unidimensional. El espín de dichas
+partículas puede ser cualquiera, y por tanto tratarse tanto de
+fermiones como de bosones.  El hamiltoniano del sistema es de la forma
+
+\[ H=h(1)+h(2), \]
+%
+donde cada sumando consta de un término de energía cinética más un
+potencial del tipo pozo cuadrado infinito, que representa las paredes
+impenetrables de la caja, es decir:
+
+\[ h(i) = \frac{p_{i}^{2}}{2m}+V\left( x_{i}\right),\]
+%
+y tal que 
+
+\[V(x) = \left\{\begin{array}{lcl}
+0 & si & \left| x\right| <\frac{a}{2}\\
+\infty & si & \left| x\right| \geq \frac{a}{2}
+\end{array}\right.\]
+%
+La resolución detallada de la ecS de una partícula conduce a las
+siguientes energías y autofunciones
+
+\[\mathrm{h}(i) \phi _{n}\left( x_{i}\right) = e_{n}\phi _{n}\left( x_{i}\right)\]
+%
+donde
+
+\[e_{n} = \frac{\hbar ^{2}}{2m}\left( \frac{\pi n}{a}\right) ^{2}=e_{0}n^{2},\; n\in \mathbb{N} \]
+%
+y
+\[\phi_{n}\left( x\right) = \left\{\begin{array}{ll}
+0, &    \left|x\right| \geq \frac{a}{2},\\
+\dfrac{2}{a}\sin\left[n\pi\left(\dfrac{x}{a}+\dfrac{1}{2}\right)\right], &  \left|x\right| < \frac{a}{2},\\
+\end{array}\right. ,\; n\in\mathbb{N}\]
+%
+Dado que no existe interacción entre las dos partículas, la resolución
+de la ecS correspondiente al sistema completo es trivial una vez que
+tenemos resuelto el problema de una partícula. En efecto, sabemos que
+
+\[\mathrm{H}\Phi \left( x_{1},x_{2}\right) = E_{nm}\Phi _{nm}\left( x_{1},x_{2}\right),\]
+%
+donde las energías son simplemente 
+
+\[E_{nm} = e_{0}\left( n^{2}+m^{2}\right), \]
+%
+y las autofunciones del sistema factorizan en una parte espacial y otra de espín
+
+\[\Phi^s_{nm}\left( x_{1},x_{2}\right) = \Theta_{nm}\left( x_{1},x_{2}\right)\Xi^s.\]
+%
+En realidad, tenemos que considerar soluciones para la parte espacial
+con diferente simetría de intercambio
+
+\[\Theta_{nm}\left(x_{1},x_{2}\right) = 
+  \left\{\begin{array}{lcl}
+  \Theta^{(A)}_{nm}\left(x_{1},x_{2}\right) & = &
+  \mathcal{A}\left\{ \phi _{n}\left( x_{1}\right) \phi _{m}\left( x_{2}\right) \right\}\\
+  \Theta^{(S)}_{nm}\left( x_{1},x_{2}\right) & = &
+  \mathcal{S}\left\{ \phi _{n}\left( x_{1}\right) \phi _{m}\left( x_{2}\right) \right\}
+  \end{array}\right. \]
+%
+y combinarlas adecuadamente de forma que la fdo global sea simétrica o
+antisimétrica según que las partículas constituyentes sean bosones o
+fermiones respectivamente.  Dado que
+$\Theta^{(A)}_{nm}\left(x_{1},x_{2}\right)$ es antisimétrica debe
+combinarse con una parte de espín simétrica en el caso de que las
+partículas sean fermiones y con una parte de espín antisimétrica si se
+trata de bosones. Las funciones
+$\Theta^{(A)}_{nm}\left(x_{1},x_{2}\right)$ son simétricas y por tanto
+deben combinarse con funciones de espín simétricas o antisimétricas,
+según que las partículas sean fermiones o bosones. 
+Escribamos de forma explícita las energías y las autofunciones
+correspondiente a los primeros niveles de energía. La energía más baja
+posible en el sistema es
+
+
+\[E_{11}=2e_{0},\]
+%
+cuya fdo tiene una parte orbital de la forma
+
+\[\Theta^{(S)}_{11}\left( x_{1},x_{2}\right) =\phi _{1}\left( x_{1}\right) \phi _{1}\left( x_{2}\right).\]
+%
+Resulta imposible construir en este caso una fdo cuya parte orbital
+sea antisimétrica. Por lo tanto, si se tratase de un sistema formado
+por dos fermiones su parte de espín debería ser antisimétrica. Si por
+el contrario fuesen dos bosones tendríamos necesariamente una parte de
+espín simétrica.
+%
+El siguiente nivel de energía es
+
+\[E_{12}=5e_{0},\]
+%
+y dependiendo del espín (de la simetría de intercambio de $\Xi^s$) podemos
+tener partes espaciales 
+
+\begin{eqnarray*}
+\Theta^{(A)}_{12}\left( x_{1},x_{2}\right)  & = & \frac{1}{\sqrt{2}}\left(\phi_{1}\left( x_{1}\right)\phi_{2}\left( x_{2}\right)
+-\phi _{1}\left( x_{2}\right) \phi _{2}\left( x_{1}\right) \right), \\
+\Theta^{(S)}_{12}\left( x_{1},x_{2}\right)  & = & \frac{1}{\sqrt{2}}\left(\phi_{1}\left( x_{1}\right)\phi_{2}\left( x_{2}\right)
++\phi _{1}\left( x_{2}\right) \phi _{2}\left( x_{1}\right) \right). 
+\end{eqnarray*}
+%
+Substituyendo \( \phi _{1} \) y \( \phi _{2} \) por sus expresiones
+resulta que dentro de la caja (\( \left| x\right| <\frac{a}{2} \))
+
+\[\Theta_{11}^{(S)} = \frac{2}{a}\cos \frac{\pi x_{1}}{a}\cos \frac{\pi x_{2}}{a},\]
+%
+y
+
+\begin{eqnarray*}
+\Theta_{12}^{(S)} & = & -\frac{\sqrt{2}}{a}\left( \cos \frac{\pi x_{1}}{a}\sin \frac{\pi x_{2}}{a}+
+\cos \frac{\pi x_{2}}{a}\sin \frac{\pi x_{1}}{a}\right) \\
+\Theta_{12}^{(A)} & = & -\frac{\sqrt{2}}{a}\left( \cos \frac{\pi x_{1}}{a}\sin \frac{\pi x_{2}}{a}-
+\cos \frac{\pi x_{2}}{a}\sin \frac{\pi x_{1}}{a}\right) 
+\end{eqnarray*}
+%
+Si representamos las densidades de probabilidad
+
+\[\left| \Phi \left( x_{1},x_{2}\right) \right| ^{2},\]
+%
+asociadas a estas funciones aparece claramente la <<repulsión>> que
+experimentan las partículas del sistema cuando éste viene
+caracterizado por funciones orbitales antisimétricas. Como puede
+observarse en las figuras \ref{fig.2particulas_caja_1}-\ref{fig.2particulas_caja_3}, en el caso de las
+soluciones simétricas, \(\Theta^{(S)}_{11} \) y \(\Theta^{(S)}_{12}\)
+el máximo o máximos se encuentran siempre sobre la recta \(
+x_{1}=x_{2} \), lo que indica que las dos partículas tienden a
+situarse juntas. Por el contrario, para la
+solución de tipo antisimétrico \( \Theta_{12}^{(A)} \) los máximos
+están sobre la recta \( x_{1}=-x_{2} \), lo que demuestra que las dos
+partículas tienden a alejarse dentro de los límites impuestos por las
+paredes de la caja.
+
+
+\begin{figure*}[h]
+{\centering \subfigure{\resizebox*{0.45\columnwidth}{!}{\includegraphics{fig/dens-prob-Phi11-src.eps}}} 
+\subfigure{\resizebox*{0.45\columnwidth}{!}{\includegraphics{fig/niveles-dens-prob-Phi-11-src.eps}}} \par}
+
+
+\caption{{\small Densidad de probabilidad asociada a \protect\( \Phi
+_{11}^{(S)}\protect \)para \protect\( a=1\protect \). La partícula se
+mueve libremente desde \protect\( x=-\frac{1}{2}\protect \) a
+\protect\( x=\frac{1}{2}\protect \).}  {\small La densidad de
+probabilidad alcanza su máximo cuando las dos partículas se encuentran
+juntas en el origen de coordenadas. La probabilidad de que las dos
+partículas estén separadas una distancia relativamente grande se hace
+cero rápidamente.}}
+\label{fig.2particulas_caja_1}
+\end{figure*} 
+
+\begin{figure*}[h]
+{\centering \subfigure{\resizebox*{0.45\columnwidth}{!}{\includegraphics{fig/dens-prob-Phi12-s-src.eps}}} 
+\resizebox*{0.45\columnwidth}{!}{\includegraphics{fig/niveles-dens-prob-Phi-12-s-src.eps}} \par}
+
+
+\caption{{\small Densidad de probabilidad correspondiente a \protect\(
+\Phi _{12}^{(S)}\protect \) para \protect\( a=1\protect \). La
+partícula se mueve libremente desde \protect\( x=-\frac{1}{2}\protect
+\) a \protect\( x=\frac{1}{2}\protect \).  La densidad de probabilidad
+tiene dos máximos situados sobre \protect\( y=x\protect \), situación
+que corresponde a que las partículas se localicen juntas en dos puntos
+simétricos con respecto al centro de la caja.}}
+\label{fig.2particulas_caja_2}
+\end{figure*}
+ 
+\begin{figure*}[h]
+{\centering \subfigure{\resizebox*{0.45\columnwidth}{!}{\includegraphics{fig/dens-prob-Phi12-a-src.eps}}} 
+\subfigure{\resizebox*{0.45\columnwidth}{!}{\includegraphics{fig/niveles-dens-prob-Phi-12-a-src.eps}}} \par}
+
+
+\caption{{\small Densidad de probabilidad asociada a  \protect\( \Phi _{12}^{(A)}\protect \)
+(fermiones) para \protect\( a=1\protect \). La partícula se mueve
+libremente desde \protect\( x=-\frac{1}{2}\protect \) a \protect\( x=\frac{1}{2}\protect \).
+Los dos máximos de la densidad de probabilidad están sobre la recta \protect\( y=-x\protect \),
+lo que implica que las dos partículas se encuentran separadas y localizadas en puntos
+simétricos con respecto al centro.}}
+\label{fig.2particulas_caja_3}
+\end{figure*}
+
+\section{Problemas}
+
+\subsection{Enunciados}
+
+\begin{enumerate}
+\item {[}A{]} Escriba en forma de determinante de \noun{Slater} las funciones
+de onda correspondientes a la configuración \( \left( 2p\right) ^{2} \)
+
+\begin{enumerate}
+\item con \( m_{l}=2 \) y \( m_{s}=0 \) \( \left( m_{l}=m_{l1}+m_{l2}\right)  \)
+\item con \( m_{l}=1 \) y \( m_{s}=1 \) \( \left( m_{s}=m_{s1}+m_{s2}\right)  \)
+\end{enumerate}
+\item {[}A{]} Escriba en forma de determinante de \noun{Slater} o como
+combinación lineal de determinantes de \noun{Slater} la función
+de onda asociada a \( \left( 1s,nlm\right) ^{3}X\left( l\right)  \)
+con \( m_{s}=0 \). Por ejemplo \( \left( 1s,2pm\right) ^{3}P \).
+\item {[}A{]} Considere la siguiente configuración del átomo de Litio.\[
+3s3p3d\]
+ (hiperexcitado: de hecho, está en el continuo). Construya fdo completamente
+antisimétricas que correspondan a \( m_{l}=1 \) y \( m_{s}=\frac{3}{2} \).
+\item {[}A{]} Dos electrones se encuentran en el mismo estado de espín (esto
+implica que la fdo de espín del sistema es simétrica y, por tanto,
+que la fdo orbital es completamente antisimétrica). Si cada electrón está
+representado por un paquete gausiano de la forma\[
+\begin{array}{ccc}
+\phi _{1} & = & \left( \frac{\mu }{\sqrt{\pi }}\right) ^{1/2}\exp {-\frac{\mu ^{2}(x-a)^{2}}{2}},\\
+\phi _{2} & = & \left( \frac{\mu }{\sqrt{\pi }}\right) ^{1/2}\exp {-\frac{\mu ^{2}(x+a)^{2}}{2}},
+\end{array}\]
+~es decir, uno centrado en \( x=a \) y otro en \( x=-a \).
+
+\begin{enumerate}
+\item Construya una fdo orbital convenientemente normalizada .
+\item Si \( \mu =2A^{-1} \)estime el valor de \( a \) para el que los
+efectos del principio de \noun{Pauli} son despreciables.
+\end{enumerate}
+\item {[}A{]} Consideremos un sistema formado por dos partículas idénticas,
+cada una de las cuales viene caracterizada por una fdo\[
+\phi _{m}(\alpha )=\frac{\exp {(im\alpha )}}{\sqrt{2\pi }},\, \, \alpha \in [0,2\pi ],\, \, m\in \mathrm{Z}.\]
+ Podemos tener tres posibilidades para la fdo del sistema, a saber:
+i) producto no simetrizado de las \( \phi _{m} \), \( \Phi ^{(0)}_{mn} \),
+ii) fdo completamente antisimétrica \( \Phi ^{(-1)}_{mn} \) y iii)
+fdo completamente simétrica \( \Phi ^{(1)}_{mn} \). Se pide que
+
+\begin{enumerate}
+\item Escriba estas fdo convenientemente normalizadas
+\item Calcule las densidades de probabilidad asociadas a estas fdo. ¿ En
+qué caso es mayor la prb. de encontrar al sistema en la configuración
+\( \alpha _{1}=\alpha _{2} \)?.
+\item Evalúe en los tres casos la separación media dada por \( \left\langle (\alpha _{1}-\alpha _{2})^{2}\right\rangle . \)
+\end{enumerate}
+\item {[}A{]} Dos electrones se encuentran en el mismo estado de espín y
+dentro de una caja unidimensional de paredes reflectantes perfectas,
+situadas en \( x=± \frac{L}{2} \).Obtenga la energía del estado
+fundamental y escriba la fdo del mismo. Si en vez de electrones tuviesemos
+piones ¿cúal sería la energía del estado fundamental?.
+\end{enumerate}
+
+\subsection{Algunas soluciones}
+
+\begin{enumerate}
+\item ~
+
+\begin{enumerate}
+\item Los dos \( m_{li}=1 \) (de cada partícula) por ser el \( m_{l} \)
+total \( 2 \). Para el \( m_{s} \), tenemos \( m_{s1}=\frac{1}{2} \)
+y \( m_{s2}=-\frac{1}{2} \) o bien \( m_{s1}=-\frac{1}{2} \) y \( m_{s2}=\frac{1}{2} \).
+La pregunta es cuántas fdo distintas podemos construir con estas posibilidades.\begin{eqnarray*}
+\phi _{1} & = & \varphi _{211}\left( \mathbf{r}_{i}\right) \chi _{\frac{1}{2}}^{\left( i\right) }\\
+\phi _{2} & = & \varphi _{211}\left( \mathbf{r}_{i}\right) \chi _{-\frac{1}{2}}^{\left( i\right) }
+\end{eqnarray*}
+\begin{eqnarray*}
+\Phi _{m_{l}=2,m_{s}=0}\left( 1,2\right)  & = & \frac{1}{\sqrt{2}}\left| \begin{array}{cc}
+\phi _{1}\left( 1\right)  & \phi _{1}\left( 2\right) \\
+\phi _{2}\left( 1\right)  & \phi _{2}\left( 2\right) 
+\end{array}\right| \\
+ & = & \frac{1}{\sqrt{2}}\left| \begin{array}{cc}
+\varphi _{211}\left( \mathbf{r}_{1}\right) \chi _{\frac{1}{2}}^{\left( 1\right) } & \varphi _{211}\left( \mathbf{r}_{2}\right) \chi _{\frac{1}{2}}^{\left( 2\right) }\\
+\varphi _{211}\left( \mathbf{r}_{1}\right) \chi _{-\frac{1}{2}}^{\left( 1\right) } & \varphi _{211}\left( \mathbf{r}_{2}\right) \chi _{-\frac{1}{2}}^{\left( 2\right) }
+\end{array}\right| 
+\end{eqnarray*}
+ Demostrar que esto tiene buen espín. Para ello debemos recordar cómo
+son las funciones de onda de dos partículas con buen espín. Vamos
+a desarrollar el determinante\[
+\Phi _{m_{l}=2,m_{s}=0}=\varphi _{211}\left( \mathbf{r}_{1}\right) \varphi _{211}\left( \mathbf{r}_{2}\right) \frac{1}{\sqrt{2}}\left( \chi ^{\left( 1\right) }_{\frac{1}{2}}\chi ^{\left( 2\right) }_{-\frac{1}{2}}-\chi ^{\left( 1\right) }_{-\frac{1}{2}}\chi ^{\left( 2\right) }_{\frac{1}{2}}\right) \]
+ Entre paréntesis está la fdo de espín cero, luego la respuesta es
+que sí. La forma más elegante de hacer esto es aplicar \( \mathrm{S}^{2} \)
+y \( \mathrm{S}_{z} \) sobre la función de onda \( \Phi _{\ldots } \)
+y comprobar que el espín está bien definido.
+\item con \( m_{l}=1 \) y \( m_{s}=1 \). \( m_{s1}=\frac{1}{2} \) y \( m_{s2}=\frac{1}{2} \)
+mientras que para \( m_{l} \) hay opciones\( 1,0 \) y \( 0,1 \).
+El determinante es\[
+\Phi _{m_{l}=1,m_{s}=1}=\frac{1}{\sqrt{2}}\left| \begin{array}{cc}
+\ket{211}^{1}\ket{\frac{1}{2}}^{1} & \ket{211}^{2}\ket{\frac{1}{2}}^{2}\\
+\ket{210}^{1}\ket{\frac{1}{2}}^{1} & \ket{210}^{2}\ket{\frac{1}{2}}^{2}
+\end{array}\right| \]
+ Desarrollando el determinante\begin{eqnarray*}
+\Phi _{m_{l}=1,m_{s}=1} & = & \frac{1}{\sqrt{2}}\ket{\frac{1}{2}}^{1}\ket{\frac{1}{2}}^{2}\left( \ket{211}^{1}\ket{210}^{2}-\ket{211}^{2}\ket{210}^{1}\right) \\
+ & = & \frac{1}{\sqrt{2}}\ket{1,1}^{1,2}\left( \ket{211}^{1}\ket{210}^{2}-\ket{211}^{2}\ket{210}^{1}\right) 
+\end{eqnarray*}
+ lo que demuestra que (contrariamente a lo habitual) este determinante
+tiene buen espín también.\end{enumerate}
+\end{enumerate}
+
+\end{document}

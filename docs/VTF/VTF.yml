@@ -1,0 +1,123 @@
+---
+alquafeatures:
+    - manifiesto
+    - pub
+    - librosabiertos
+authors:
+    -
+        email: alvaro@alqua.org
+        name: Álvaro Tejero Cantero
+        url: 'http://alqua.org/people/alvaro'
+    -
+        email: marta@alqua.org
+        name: Marta Balbás Gambra
+        url: 'http://alqua.org/people/marta'
+base_url: 'http://alqua.org/libredoc/'
+bodyunits:
+    - 
+      name: Variedades diferenciables
+      basename: var-dif
+
+    - 
+      name: Campos tensoriales y derivada de Lie
+      basename: tensores-lie
+              
+    - 
+      name: Formas diferenciales
+      basename: formas-dif
+
+    - 
+      name: Geometría riemmanniana o pseudoriemanniana
+      basename: riemanniana
+
+appendixes:
+    - 
+      name: Bibliografía
+      basename: bibvtf
+
+classification:
+    area: geometría diferencial
+    doctype: libro
+    series: apuntes
+    udc: '514.7'
+coverimage: figps/fig-app-de-carta-simple.eps
+dedication: []
+description: Curso avanzado de geometría diferencial, con una introducción a las variedades diferenciables, los campos tensoriales y la geometría riemanniana, orientado a familiarizar al lector con los métodos geométricos de la moderna física matemática. Contiene numerosos ejemplos y figuras.
+editors:
+    -
+        email: alvaro@alqua.org
+        name: Álvaro Tejero Cantero
+        url: 'http://alqua.org/people/alvaro'
+features:
+    - toc
+    - ind
+    - lic
+keywords: ['tensores', 'variedades diferenciables', 'formas diferenciales','geometría riemanniana', 'campos tensoriales', 'derivada de Lie', 'teorema de Frobënius','formas simplécticas', 'mecánica hamiltoniana','conexión']
+language: es
+license:
+    backcover: 'Aprende en comunidad - http://alqua.org'
+    frontcover: 'Un libro libre de Alqua'
+    invariant:
+        - Manifiesto de alqua
+    name: CC-by_nc_sa
+    version: '1.0'
+    restrictions:
+     - by
+     - nc
+     - sa
+note: ''
+publisher:
+    email: alqua@alqua.org
+    name: alqua
+    url: 'http://alqua.org'
+
+releases:
+    - 
+      number: '0.0.1'
+      date:  '2001-02-28'
+      description:
+          - Primera versión del documento, con la estructura del curso de geometría diferencial avanzada impartido por Luis Manuel Romero en la facultad de Física de la UCM entre febrero y junio de 2001.
+          - Agradecemos a Teresa Marrodán Undagoitia la realización de las figuras del capítulo de variedades.
+    - 
+      number: '1.0.0'
+      date: '2002-05-13'
+      description:
+          - Corrección de erratas --ATC, MBG.
+          - Gran homogeneización notacional en todo el documento --ATC, MBG.
+          - Nuevas figuras --ATC, MBG.
+          - Pequeñas reestructuraciones en algunos apartados --ATC, MBG.
+          - Eliminadas lista de figuras y de tablas -ATC.
+          - Numerosas correcciones de presentación (pies de las figuras, ejemplos) --ATC.
+          - Inserción de secciones Por Hacer al final de los capítulos --ATC, MBG.
+          - Eliminación de redundancias, sobre todo en los cap. de variedades y tensores --ATC, MBG.
+          - Reestructurado el ejemplo de la banda de Möbius (en el capítulo de variedades) --ATC.
+          - Cambios en la sección sobre la derivada de Lie --ATC, MBG.
+    - 
+       number: '1.1.0'
+       date: '2004-04-15'
+       description:
+            - Cambio de licencia a la Attribution Share-Alike Non-Commercial de Creative Commons.
+            - 'Incorporación de la versión 2.0 del manifiesto y de la descripción del proyecto LibrosAbiertos.'
+
+requisites: ['Álgebra y cálculo de primero de carrera.', 'Conveniente geometría diferencial de curvas y superficies.']
+shorttitle: VTF
+sourceformat:
+    ext: lyx
+    macros:
+        - VTF-macros.sty
+    name: LyX
+    packages:
+        - VTF-packages.sty
+        - lyxpackages.sty
+    ver: '1.3'
+subtitle: []
+title: Variedades, tensores y física
+todo:
+    - Mejorar las figuras.
+    - Escribir párrafos introductorios en los capítulos y en los apartados de primer nivel. En ellos debería hablarse de la importancia de lo que se va a explicar seguidamente, de cuál es su papel en la disciplina y su rango de aplicabilidad en las Matemáticas y la Física.
+    - En general en cada apartado podríamos intentar seguir un esquema de introducción informal apelando a nociones intuitivas, seguida de una explicación formal (definiciones, teoremas, pruebas) y por último ejemplos y aplicaciones, todo ello sin ser demasiado rígidos.
+    - Completar el uso de la notación funcional.
+    - Encontrar el lugar y el momento oportunos para introducir referencias a la física. En particular, hablar acerca de la diferencia entre espacio producto y fibrado en relación con el espacio de fases de la mecánica.
+    - Añadir un apéndice con ejercicios resueltos.
+    - Factorizar los términos comunes en el índice alfabético.  
+    - Comentar la bibliografía.

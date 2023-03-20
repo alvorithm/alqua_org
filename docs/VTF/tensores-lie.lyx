@@ -1,0 +1,5552 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass scrbook
+\begin_preamble
+\input{macros.sty}
+\end_preamble
+\language spanish
+\inputencoding auto
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize a4paper
+\paperpackage a4
+\use_geometry 1
+\use_amsmath 1
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+
+\layout Chapter
+
+Campos tensoriales y derivada de Lie
+\layout Section
+
+Introducción
+\layout Standard
+
+Las entidades que modelan magnitudes físicas se transforman con frecuencia
+ de modo tensorial.
+ Además existen ciertos conjuntos de transformaciones frente a las cuales
+ estas magnitudes no varían.
+ Sobre qué es una ley de transformación tensorial, y sobre qué se entiende
+ por variación de un tensor cuando se 
+\emph on 
+desplaza
+\emph default 
+ por una variedad hablaremos en este capítulo.
+\layout Section
+
+Construcción de tensores
+\layout Standard
+
+Vamos a construir los tensores de la forma clásica (utilizando coordenadas)
+ a partir del producto tensorial de vectores.
+ El producto de 
+\begin_inset Formula $r$
+\end_inset 
+
+ vectores contravariantes conducirá a tensores 
+\begin_inset Formula $r$
+\end_inset 
+
+ veces contravariantes, el producto de 
+\begin_inset Formula $s$
+\end_inset 
+
+ covectores conducirá a los tensores 
+\begin_inset Formula $s$
+\end_inset 
+
+ veces covariantes y los productos de 
+\begin_inset Formula $r$
+\end_inset 
+
+ vectores contravariantes y 
+\begin_inset Formula $s$
+\end_inset 
+
+ covectores permitirán definir el tensor más general: 
+\begin_inset Formula $r$
+\end_inset 
+
+ veces contravariante y 
+\begin_inset Formula $s$
+\end_inset 
+
+ veces covariante.
+\layout Standard
+
+La definición de tensor para una variedad es análoga a la definición en
+ 
+\begin_inset Formula $\cR{m}$
+\end_inset 
+
+ una vez que hemos pasado de los puntos de la variedad a puntos de 
+\begin_inset Formula $\cR{m}$
+\end_inset 
+
+ mediante la aplicación de carta gracias a la estructura diferenciable de
+ la variedad.
+\layout Subsection
+
+Tensores tangentes a la variedad en un punto
+\layout Standard
+
+Para construir los tensores 
+\begin_inset Formula $\left(2,0\right)$
+\end_inset 
+
+, dos contravariantes, cero covariantes tomamos dos vectores 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathsf{w}$
+\end_inset 
+
+ del espacio tangente.
+ 
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{v} & = & v^{i}\left.\dpxi{}\right|_{P}\\
+\mathsf{w} & = & w^{j}\left.\dpxj{}\right|_{P}\end{eqnarray*}
+
+\end_inset 
+
+ Formamos un nuevo objeto como el 
+\emph on 
+producto
+\emph default 
+ 
+\emph on 
+tensorial
+\emph default 
+ de los dos vectores, 
+\begin_inset Formula $\mathsf{T}=\mathsf{v}\otimes\mathsf{w}$
+\end_inset 
+
+ así
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Recuerda que a partir de ahora suponemos todas las derivadas evaluadas en
+ 
+\begin_inset Formula $P$
+\end_inset 
+
+, o más precisamente, en 
+\begin_inset Formula $\varphi_{a}\left[P\right]$
+\end_inset 
+
+.
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{T} & = & v^{i}w^{j}\dpxi{}\otimes\dpxj{}\\
+ & = & T^{ij}\dpxi{}\otimes\dpxj{}\end{eqnarray*}
+
+\end_inset 
+
+ Las componentes de 
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+ en la base 
+\begin_inset Formula $\dpxi{}\otimes\dpxj{}$
+\end_inset 
+
+ (producto tensorial de las bases de los espacios tangentes) son 
+\begin_inset Formula $T^{ij}=v^{i}v^{j}$
+\end_inset 
+
+ (en el sistema de coordenadas 
+\begin_inset Formula $x^{1}\ldots x^{m}$
+\end_inset 
+
+).
+ 
+\layout Standard
+
+Como conocemos las reglas de transformación de las componentes de los vectores,
+ podemos imaginar cómo son las de los tensores: en cualquier otro sistema
+ de coordenadas, 
+\begin_inset Formula $x^{1'}\ldots x^{m'}$
+\end_inset 
+
+ las nuevas componentes son:
+\begin_inset Formula \begin{eqnarray}
+T^{i'j'} & = & v^{i'}w^{j'}\nonumber \\
+ & = & \dpxi{x^{i'}}v^{i}\dpxj{x^{j'}}w^{j}\nonumber \\
+ & = & \dpxi{x^{i'}}\dpxj{x^{j'}}T^{ij}\label{ec def clasica cambio T 2,0}\end{eqnarray}
+
+\end_inset 
+
+
+\layout Standard
+
+Esta es la manera de construir objetos contravariantes y obtener su comportamien
+to bajo cambios de coordenadas a partir de tantos vectores del espacio tangente
+ como índices tenga el objeto buscado.
+ La expresión 
+\begin_inset LatexCommand \ref{ec def clasica cambio T 2,0}
+
+\end_inset 
+
+ es la definición clásica de los tensores dos veces contravariantes.
+ 
+\layout Standard
+
+Podemos construir un espacio lineal con este tipo de objetos: un espacio
+ lineal de tensores 2-contravariantes, de dimensión 
+\begin_inset Formula $m^{2}$
+\end_inset 
+
+.
+ Una combinación lineal de tensores se transformará del mismo modo que un
+ tensor.
+ El espacio de los tensores 2-contravariantes tangentes a la variedad 
+\begin_inset Formula $M$
+\end_inset 
+
+ en el punto 
+\begin_inset Formula $P$
+\end_inset 
+
+ se denotará 
+\begin_inset Formula $T_{0\, P}^{2}\left[M\right]$
+\end_inset 
+
+ o 
+\emph on 
+tensores de tipo 
+\begin_inset Formula $\left(2,0\right)$
+\end_inset 
+
+.
+\layout Standard
+
+Generalizando el proceso constructivo se define el
+\layout Description
+
+Tensor\SpecialChar ~
+
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+\SpecialChar ~
+
+\begin_inset Formula $r$
+\end_inset 
+
+\SpecialChar ~
+veces\SpecialChar ~
+contravariante tangente a la variedad 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ 
+\begin_inset Formula $M$
+\end_inset 
+
+ en el punto 
+\begin_inset Formula $P$
+\end_inset 
+
+ es un conjunto de 
+\begin_inset Formula $m^{r}$
+\end_inset 
+
+ números reales 
+\begin_inset Formula $T^{i_{1}\ldots i_{r}}$
+\end_inset 
+
+ (componentes en el sistema de coordenadas 
+\begin_inset Formula $x^{1}\ldots x^{m}$
+\end_inset 
+
+ asociado a la carta 
+\begin_inset Formula $\left(U_{a},\varphi_{a}\right)$
+\end_inset 
+
+, 
+\begin_inset Formula $P\in U_{a}$
+\end_inset 
+
+) junto con la condición de que en cualquier otro sistema de coordenadas
+ 
+\begin_inset Formula $x^{1'}\ldots x^{m'}$
+\end_inset 
+
+ asociado a cualquier carta admisible 
+\begin_inset Formula $\left(U_{b},\varphi_{b}\right)$
+\end_inset 
+
+ tal que 
+\begin_inset Formula $P\in U_{b}$
+\end_inset 
+
+ las 
+\begin_inset Formula $m^{r}$
+\end_inset 
+
+ componentes de 
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+ son 
+\begin_inset Formula \begin{equation}
+T^{i_{1}'\ldots i_{r}'}=T^{i_{1}\ldots i_{r}}\dpa{x^{i_{1}'}}{x^{i_{1}}}\cdots\dpa{x^{i'_{r}}}{x^{i_{r}}}\label{ec def tensores r,0}\end{equation}
+
+\end_inset 
+
+ es decir, un objeto tal que cada coordenada se transforma de modo contravariant
+e.
+ El conjunto de estos tensores se denotará 
+\begin_inset Formula $T_{0\, P}^{r}\left[M\right]$
+\end_inset 
+
+.
+ 
+\layout Subsection
+
+Tensores covariantes 
+\layout Standard
+
+Sean dos elementos del espacio cotangente, 
+\begin_inset Formula $\mathsf{a},\mathsf{b}\in T_{P}^{*}\left[M\right]$
+\end_inset 
+
+.
+ Están dados por
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Entiendase todo 
+\begin_inset Formula $dx^{j}$
+\end_inset 
+
+ en lo sucesivo evaluado en 
+\begin_inset Formula $P$
+\end_inset 
+
+ 
+\begin_inset Formula $\left(\varphi_{a}\left[P\right]\right)$
+\end_inset 
+
+, lo mismo con las derivadas parciales.
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{a} & = & a_{i}dx^{i}\\
+\mathsf{b} & = & b_{j}dx^{j}\end{eqnarray*}
+
+\end_inset 
+
+ el objeto lo construimos del mismo modo que antes, mediante el producto
+ tensorial: 
+\begin_inset Formula $\mathsf{T}=\mathsf{a}\otimes\mathsf{b}$
+\end_inset 
+
+
+\begin_inset Formula \[
+\mathsf{T}=a_{i}b_{j}dx^{i}\otimes dx^{j}\]
+
+\end_inset 
+
+ donde 
+\begin_inset Formula $T_{ij}=a_{i}b_{j}$
+\end_inset 
+
+ son las componentes de 
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+ en la base 
+\begin_inset Formula $dx^{i}\otimes dx^{j}$
+\end_inset 
+
+.
+\layout Standard
+
+Sólo tenemos que escribir el cambio de coordenadas como cambio de cada uno
+ de los factores 
+\begin_inset Formula \begin{eqnarray}
+T_{i'j'} & = & a_{i'}b_{j'}\nonumber \\
+ & = & \dpa{x^{i}}{x^{i'}}a_{i}\dpa{x^{j}}{x^{j'}}b_{j}\nonumber \\
+ & = & \dpa{x^{i}}{x^{i'}}\dpa{x^{j}}{x^{j'}}a_{i}b_{j}\nonumber \\
+ & = & \dpa{x^{i}}{x^{i'}}\dpa{x^{j}}{x^{j'}}T_{ij}\label{ec cambio tensores 0,2}\end{eqnarray}
+
+\end_inset 
+
+ análogamente a como hicimos con el contravariante, podemos definir el espacio
+ lineal 
+\begin_inset Formula $T_{2P}^{0}\left[M\right]$
+\end_inset 
+
+ de las combinaciones lineales de objetos de este tipo, el espacio de tensores
+ 2 veces covariantes, o tensores de tipo 
+\emph on 
+
+\begin_inset Formula $\left(0,2\right)$
+\end_inset 
+
+
+\emph default 
+.
+ 
+\layout Description
+
+Tensor\SpecialChar ~
+
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+\SpecialChar ~
+
+\begin_inset Formula $s$
+\end_inset 
+
+\SpecialChar ~
+veces\SpecialChar ~
+covariante es un conjunto de 
+\begin_inset Formula $m^{s}$
+\end_inset 
+
+ números reales 
+\begin_inset Formula $T_{i_{1}\ldots i_{s}}$
+\end_inset 
+
+ (componentes en el sistema de coordenadas 
+\begin_inset Formula $x^{1}\ldots x^{m}$
+\end_inset 
+
+ asociado a la carta 
+\begin_inset Formula $\left(U_{a},\varphi_{a}\right)$
+\end_inset 
+
+, 
+\begin_inset Formula $P\in U_{a}$
+\end_inset 
+
+) junto con la condición de que en cualquier otro sistema de coordenadas
+ 
+\begin_inset Formula $x^{1'}\ldots x^{m'}$
+\end_inset 
+
+ asociado a cualquier carta admisible 
+\begin_inset Formula $\left(U_{b},\varphi_{b}\right)$
+\end_inset 
+
+ tal que 
+\begin_inset Formula $P\in U_{b}$
+\end_inset 
+
+ las 
+\begin_inset Formula $m^{s}$
+\end_inset 
+
+ componentes de 
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+ son
+\begin_inset Formula \[
+T_{i_{1}'\ldots i_{s}'}=T_{i_{1}\ldots i_{s}}\dpa{x^{i_{1}}}{x^{i_{1}'}}\cdots\dpa{x^{i_{s}}}{x^{i_{s}'}}\]
+
+\end_inset 
+
+es decir, un objeto tal que cada coordenada se transforma de modo covariante.
+ El conjunto de estos tensores se denotará 
+\begin_inset Formula $T_{s\, P}^{0}\left[M\right]$
+\end_inset 
+
+.
+ 
+\layout Subsection
+
+Tensores 
+\begin_inset Formula $\left(r,s\right)$
+\end_inset 
+
+
+\layout Standard
+
+El siguiente paso que se le ocurre a uno es construir mediante productos
+ tensoriales de vectores y covectores objetos mixtos: varias veces covariantes
+ y varias veces contravariantes.
+\layout Standard
+
+Veamos el ejemplo de un tensor tipo 
+\begin_inset Formula $\left(1,1\right)$
+\end_inset 
+
+.
+ 
+\begin_inset Formula $\mathsf{T}=\mathsf{v}\otimes\mathsf{a}$
+\end_inset 
+
+ tiene por componentes 
+\begin_inset Formula $T_{j}^{i}=v^{i}a_{j}$
+\end_inset 
+
+ en la base 
+\begin_inset Formula $\dpxi{}\otimes dx^{j}$
+\end_inset 
+
+.
+ Sus componentes se transforman según la siguiente ley:
+\begin_inset Formula \begin{eqnarray}
+T_{j'}^{i'} & = & v^{i'}a_{j'}\\
+ & = & \dpa{x^{i'}}{x^{i}}v^{i}\dpa{x^{j}}{x^{j'}}a_{j}\\
+ & = & T_{j}^{i}\dpa{x^{i'}}{x^{i}}\dpa{x^{j}}{x^{j'}}\label{ec cambio tensores 1,1}\end{eqnarray}
+
+\end_inset 
+
+ Son objetos de 
+\begin_inset Formula $m^{2}$
+\end_inset 
+
+ componentes pertenecientes al espacio de tensores 
+\begin_inset Formula $T_{1\, P}^{1}\left[M\right]$
+\end_inset 
+
+.
+\layout Description
+
+tensor\SpecialChar ~
+
+\begin_inset Formula $r$
+\end_inset 
+
+\SpecialChar ~
+veces\SpecialChar ~
+contravariante\SpecialChar ~
+y\SpecialChar ~
+
+\begin_inset Formula $s$
+\end_inset 
+
+\SpecialChar ~
+veces\SpecialChar ~
+covariante tangente a 
+\begin_inset Formula $M$
+\end_inset 
+
+ en el punto 
+\begin_inset Formula $P$
+\end_inset 
+
+ es un conjunto de 
+\begin_inset Formula $m^{r+s}$
+\end_inset 
+
+ números reales 
+\begin_inset Formula \[
+\left\{ T_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{r}}\right\} _{i,j=1\ldots m}\]
+
+\end_inset 
+
+ (componentes en un sistema de coordenadas 
+\begin_inset Formula $x^{1}\ldots x^{m}$
+\end_inset 
+
+ asociado a una carta 
+\begin_inset Formula $\left(U_{a},\varphi_{a}\right)$
+\end_inset 
+
+ tal que 
+\begin_inset Formula $P\in U_{b}$
+\end_inset 
+
+) junto con la condición de que las componentes en cualquier otro sistema
+ de coordenadas 
+\begin_inset Formula $x^{1'}\ldots x^{m'}$
+\end_inset 
+
+ asociado a otra carta admisible, 
+\begin_inset Formula $\left(U_{b},\varphi_{b}\right)$
+\end_inset 
+
+ con 
+\begin_inset Formula $P\in U_{b}$
+\end_inset 
+
+ son
+\begin_inset Formula \begin{equation}
+T_{j'_{1}\ldots j_{s}'}^{i'_{1}\ldots i'_{r}}=\dpa{x^{i'_{1}}}{x^{i_{1}}}\cdots\da{x^{i_{r}'}}{x^{i_{r}}}\dpa{x^{j_{1}}}{x^{j_{1}'}}\cdots\dpa{x^{j_{s}}}{x^{j_{s}'}}T_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{r}}\label{ec cambio tensores r,s}\end{equation}
+
+\end_inset 
+
+ aquí hay 
+\begin_inset Formula $r+s$
+\end_inset 
+
+ sumatorios camuflados por el convenio de Einstein.
+ 
+\layout Paragraph
+
+Observaciones:
+\layout Enumerate
+
+No existe necesariamente simetría en los índices del tensor: en general,
+ 
+\begin_inset Formula $T_{ij}\neq T_{ji}$
+\end_inset 
+
+.
+ Ver 
+\begin_inset LatexCommand \ref{sec propiedades de simetria}
+
+\end_inset 
+
+.
+ De hecho, el producto tensorial es 
+\emph on 
+no
+\emph default 
+ conmutativo.
+\layout Enumerate
+
+Para intercambiar índices de arriba a abajo se necesitan aplicaciones especiales
+, un subconjunto de las cuales son las métricas.
+ Ellas asocian a determinado objeto contravariante un objeto covariante.
+\layout Enumerate
+
+Hay una definición intrínseca (invariante frente al sistema de coordenadas)
+ de tensor a partir del concepto de aplicación multilineal que actúa sobre
+ 
+\begin_inset Formula $r$
+\end_inset 
+
+ copias del espacio cotangente y 
+\begin_inset Formula $s$
+\end_inset 
+
+ copias del espacio tangente.
+\layout Section
+
+Operaciones con tensores
+\layout Standard
+
+Nos interesa definir operaciones entre tensores puesto que numerosas magnitudes
+ físicas se comportan como tensores frente al cambio de coordenadas.
+ Una ecuación en la que sólo se realicen operaciones como las que explicamos
+ en este apartado se denomina 
+\emph on 
+ecuación tensorial
+\emph default 
+.
+\layout Subsection
+
+Suma de tensores
+\layout Standard
+
+Dados 
+\begin_inset Formula $\mathsf{T},\mathsf{S}$
+\end_inset 
+
+ tensores de tipo 
+\begin_inset Formula $\left(r,s\right)$
+\end_inset 
+
+ con componentes 
+\begin_inset Formula $T_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{r}},S_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{r}}$
+\end_inset 
+
+ el tensor suma 
+\begin_inset Formula $\mathsf{P}=\mathsf{T}+\mathsf{S}$
+\end_inset 
+
+ tiene las componentes:
+\begin_inset Formula \[
+P_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{r}}=T_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{r}}+S_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{r}}\]
+
+\end_inset 
+
+ 
+\layout Standard
+
+La suma sólo está definida entre tensores del mismo tipo, asociados a la
+ misma variedad en el mismo punto.
+ De manera análoga se puede definir el producto por un número real.
+\layout Standard
+
+Demostrar que el objeto resultante de cualquier operación es un tensor,
+ es verificar que se transforma como dicta 
+\begin_inset LatexCommand \ref{ec cambio tensores r,s}
+
+\end_inset 
+
+, es decir, como un tensor.
+ Por ejemplo, para el tensor suma,
+\begin_inset Formula \begin{eqnarray*}
+P_{j'_{1}\ldots j'_{s}}^{i'_{1}\ldots i'_{r}} & = & \dpa{x^{i_{1}'}}{x^{i_{1}}}\cdots\dpa{x^{i_{r}'}}{x^{i_{r}}}\dpa{x^{j_{1}}}{x^{j_{1}'}}\cdots\dpa{x^{j_{s}}}{x^{j_{s}'}}T_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{r}}+\dpa{x^{i_{1}'}}{x^{i_{1}}}\cdots\dpa{x^{i_{r}'}}{x^{i_{r}}}\dpa{x^{j_{1}}}{x^{j_{1}'}}\cdots\dpa{x^{j_{s}}}{x^{j_{s}'}}S_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{r}}\\
+ & = & \left(T_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{r}}+S_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{r}}\right)\dpa{x^{i_{1}'}}{x^{i_{1}}}\cdots\dpa{x^{i_{r}'}}{x^{i_{r}}}\dpa{x^{j_{1}}}{x^{j_{1}'}}\cdots\dpa{x^{j_{s}}}{x^{j_{s}'}}\\
+ & = & P_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{r}}\dpa{x^{i_{1}'}}{x^{i_{1}}}\cdots\dpa{x^{i_{r}'}}{x^{i_{r}}}\dpa{x^{j_{1}}}{x^{j_{1}'}}\cdots\dpa{x^{j_{s}}}{x^{j_{s}'}}\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Subsection
+
+Contracción
+\layout Standard
+
+Es una aplicación que produce un tensor cuyos grados (de covariancia y contravar
+iancia) son ambos uno menor que los del tensor de partida:
+\layout Standard
+
+
+\family sans 
+
+\begin_inset Formula \[
+\mathsf{T}\in T_{s\, P}^{r}\left[M\right]\fd\mathsf{P}\in T_{s-1\, P}^{r-1}\left[M\right]\]
+
+\end_inset 
+
+
+\family default 
+ Para realizar la operación etiquetamos los índices a contraer con el mismo
+ índice mudo.
+ Esto equivale, con la convención de Einstein, a sumar en tales índices.
+\layout Description
+
+
+\size small 
+Ejemplo sea 
+\begin_inset Formula $\mathsf{T}\in T_{3\, P}^{2}\left[M\right]$
+\end_inset 
+
+, con coordenadas 
+\begin_inset Formula $T_{klq}^{ij}$
+\end_inset 
+
+.
+ Tenemos que decidir en qué índice queremos contraer.
+ Si sumamos podemos definir 
+\begin_inset Formula $\mathsf{P}\in T_{2\, P}^{1}\left[M\right]$
+\end_inset 
+
+ de componentes 
+\begin_inset Formula $P_{lq}^{j}$
+\end_inset 
+
+ como aquel conjunto de números reales que se construye sumando en el primer
+ índice contravariante y en el primer índice covariante:
+\begin_inset Formula \begin{eqnarray*}
+P_{lq}^{j} & \equiv & T_{ilq}^{ij}\\
+ & = & \sum_{i=1}^{m}T_{ilq}^{ij}\end{eqnarray*}
+
+\end_inset 
+
+Hay otras formas de contraer un tensor.
+ Por ejemplo, sumando en el primer índice contravariante y el segundo covariante
+ obtendríamos
+\size default 
+ 
+\size small 
+
+\begin_inset Formula $S_{kq}^{j}=T_{kiq}^{ij}$
+\end_inset 
+
+
+\family sans 
+\size default 
+.
+
+\size small 
+ 
+\family default 
+Una contracción adicional del 
+\begin_inset Formula $S_{kq}^{j}$
+\end_inset 
+
+ nos daría un covector, 
+\begin_inset Formula $a_{jq}^{j}=a_{q}$
+\end_inset 
+
+.
+\begin_deeper 
+\layout Standard
+
+
+\size small 
+Un error típico es contraer un índice que ya ha sido contraído, porque aparecen
+ tres índices iguales.
+ En los dos índices que son explícitamente iguales ya no puedo sumar más,
+ ya están sumados.
+ 
+\begin_inset Formula $T_{iiq}^{ij}$
+\end_inset 
+
+ es un absurdo.
+\end_deeper 
+\layout Description
+
+
+\size small 
+Ejemplo Sea 
+\begin_inset Formula $T_{j}^{i}=v^{i}a_{j}$
+\end_inset 
+
+.
+ La contracción de un tensor 
+\begin_inset Formula $\left(1,1\right)$
+\end_inset 
+
+ es sumar en el único índice disponible, para obtener un objeto 
+\begin_inset Formula $\left(0,0\right)$
+\end_inset 
+
+.
+ Esto es como calcular la traza de una matriz: 
+\begin_inset Formula \[
+T_{i}^{i}=v^{i}a_{i}=a^{1}v_{1}+\ldots+a^{m}v_{m}\]
+
+\end_inset 
+
+
+\layout Standard
+
+Si contraes el primero covariante con el primero contravariante el resultado
+ es un tensor distinto que si contraes el segundo covariante con el primero
+ contravariante.
+\layout Standard
+
+Veamos que los objetos contraídos son a su vez tensores.
+ Usaremos para ello 
+\begin_inset Formula $\mathsf{T}\in T_{2\, P}^{1}\left[M\right]$
+\end_inset 
+
+ de componentes 
+\begin_inset Formula $T_{jk}^{i}$
+\end_inset 
+
+, contraído a 
+\begin_inset Formula $S_{k}=T_{ik}^{i}$
+\end_inset 
+
+.
+ De 
+\begin_inset Formula \[
+T_{i'k'}^{i'}=\dpa{x^{i}}{x^{i'}}\dpa{x^{i'}}{x^{i}}\dpa{x^{k}}{x^{k'}}T_{ik}^{i}\]
+
+\end_inset 
+
+se deduce inmediatamente que
+\begin_inset Formula \[
+S_{k'}=\dpa{x^{k}}{x^{k'}}S_{k}\]
+
+\end_inset 
+
+
+\layout Subsection
+
+Producto tensorial
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+En la formulación clásica se le ha llamado 
+\emph on 
+producto exterior
+\emph default 
+, pero esta denominación puede conducir a confusión.
+ 
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Formula \begin{eqnarray*}
+\otimes:T_{s_{1}\, P}^{r_{1}}\left[M\right]\times T_{s_{2}\, P}^{r_{2}}\left[M\right] & \fd & T_{s_{1}+s_{2}}^{r_{1}+r_{2}}\\
+\left(\mathsf{T},\mathsf{S}\right) & \mapsto & \mathsf{P}=\otimes\left[\mathsf{T},\mathsf{S}\right]=\mathsf{T}\otimes\mathsf{S}\\
+\left(T_{j_{1}\ldots j_{s_{1}}}^{i_{1}\ldots i_{r_{1}}},S_{l_{1}\ldots l_{s_{2}}}^{k_{1}\ldots k_{r_{2}}}\right) & \mapsto & P_{j_{1}\ldots j_{s_{2}},l_{1}\ldots l_{s_{2}}}^{i_{1}\ldots i_{r_{1}},k_{1}\ldots k_{r_{2}}}=T_{j_{1}\ldots j_{s_{1}}}^{i_{1}\ldots i_{r_{1}}}S_{l_{1}\ldots l_{s_{2}}}^{k_{1}\ldots k_{r_{2}}}\end{eqnarray*}
+
+\end_inset 
+
+ 
+\layout Description
+
+
+\size small 
+Ejemplo Sea 
+\begin_inset Formula $\mathsf{T}\in T_{1\, P}^{1}\left[M\right]$
+\end_inset 
+
+ con componentes 
+\begin_inset Formula $T_{j}^{i}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathsf{S}\in T_{1\, P}^{2}\left[M\right]$
+\end_inset 
+
+ con componentes 
+\begin_inset Formula $S_{m}^{kl}$
+\end_inset 
+
+.
+ Entonces 
+\begin_inset Formula $\mathsf{P}\in T_{2\, P}^{3}\left[M\right]$
+\end_inset 
+
+ con componentes
+\begin_inset Formula \[
+P_{jm}^{ikl}=T_{j}^{i}S_{m}^{kl}\]
+
+\end_inset 
+
+ se transforma así:
+\begin_inset Formula \begin{eqnarray*}
+P_{j'm'}^{i'k'l'} & = & \dpa{x^{i'}}{x^{i}}\dpa{x^{j}}{x^{j'}}T_{j}^{i}\dpa{x^{k'}}{x^{k}}\dpa{x^{l'}}{x^{l}}\dpa{x^{m}}{x^{m'}}S_{m}^{kl}\\
+ & = & \dpa{x^{i'}}{x^{i}}\dpa{x^{j}}{x^{j'}}\dpa{x^{k'}}{x^{k}}\dpa{x^{l'}}{x^{l}}\dpa{x^{m}}{x^{m'}}P_{jm}^{ikl}\end{eqnarray*}
+
+\end_inset 
+
+ y tiene el comportamiento esperado para un tensor si se escribe como producto
+ de 
+\begin_inset Formula $T_{j'}^{i'}$
+\end_inset 
+
+ y 
+\begin_inset Formula $S_{m'}^{k'l'}$
+\end_inset 
+
+.
+\layout Subsection
+
+Producto interior
+\layout Standard
+
+Es una combinación de operaciones: el producto tensorial y la contracción.
+ Consideremos un tensor 
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+ tipo 
+\begin_inset Formula $\left(1,1\right)$
+\end_inset 
+
+ y un tensor 
+\begin_inset Formula $\mathsf{S}$
+\end_inset 
+
+ tipo 
+\begin_inset Formula $\left(0,2\right)$
+\end_inset 
+
+ (misma variedad y mismo punto 
+\begin_inset Formula $P$
+\end_inset 
+
+).
+ 
+\begin_inset Formula $\mathsf{P}=\mathsf{T}\otimes\mathsf{S}$
+\end_inset 
+
+ tiene entonces las componentes 
+\begin_inset Formula \[
+P_{jkl}^{i}=T_{j}^{i}S_{kl}\]
+
+\end_inset 
+
+ ahora podemos contraer el primer contravariante con el segundo covariante,
+ 
+\begin_inset Formula \[
+Q_{jl}=P_{jil}^{i}\]
+
+\end_inset 
+
+ que en términos de las componentes de 
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathsf{S}$
+\end_inset 
+
+ es
+\begin_inset Formula \[
+Q_{jl}=T_{j}^{i}S_{il}\]
+
+\end_inset 
+
+
+\layout Standard
+
+Podemos considerar la operación compuesta como una operación única, metida
+ en una lata: (contracción 
+\begin_inset Formula $\circ$
+\end_inset 
+
+ producto tensorial)\SpecialChar \@.
+ A esto se le suele llamar 
+\emph on 
+producto interior de tensores
+\emph default 
+
+\begin_inset LatexCommand \index{producto interior de tensores}
+
+\end_inset 
+
+.
+ Evidentemente, no hay un único producto interior, ya que hay varios modos
+ de contraer.
+\layout Description
+
+
+\size small 
+Ejemplo (el producto escalar).
+ Supongamos que tenemos 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathsf{a}$
+\end_inset 
+
+, tensores 
+\begin_inset Formula $\left(1,0\right)$
+\end_inset 
+
+ y 
+\begin_inset Formula $\left(0,1\right)$
+\end_inset 
+
+ respectivamente en el mismo punto 
+\begin_inset Formula $P$
+\end_inset 
+
+ de la variedad 
+\begin_inset Formula $M$
+\end_inset 
+
+.
+ Pues bien, podemos construir 
+\begin_inset Formula $T_{j}^{i}=v^{i}a_{j}$
+\end_inset 
+
+ mediante el producto tensorial y acabar el producto interior contrayendo
+ ese símbolo:
+\begin_inset Formula \[
+P=T_{i}^{i}=v^{i}a_{i}\]
+
+\end_inset 
+
+
+\layout Section
+
+Definición invariante de tensores tangentes a 
+\begin_inset Formula $M$
+\end_inset 
+
+ en un punto 
+\begin_inset Formula $P$
+\end_inset 
+
+ 
+\layout Standard
+
+El tensor como tal no privilegia ningún sistema de coordenadas, de hecho
+ el tensor es el conjunto de todas las posibles coordenadas en todos los
+ posibles sistemas de coordenadas.
+ Para soslayar este problema de aparente dependencia del sistema de coordenadas
+ damos una nueva definición, que se basa en considerar una aplicación multilinea
+l que toma copias de los espacios tangente y cotangente y produce un número.
+\layout Subsection
+
+Covectores como aplicaciones lineales
+\layout Standard
+
+Recordemos que 
+\begin_inset Formula $\mathsf{a}\in T_{P}^{*}\left[M\right]$
+\end_inset 
+
+.
+ Este dual está constituido por aplicaciones lineales como 
+\begin_inset Formula $\mathsf{a}$
+\end_inset 
+
+ que toman elementos del espacio tangente y los llevan a números reales.
+ Luego 
+\begin_inset Formula $\mathsf{a}$
+\end_inset 
+
+ no es más que una aplicación lineal dada por
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{a}:T_{P}\left[M\right] & \fd & \cR{}\\
+\mathsf{v} & \mapsto & \mathsf{a}\left[\mathsf{v}\right]\end{eqnarray*}
+
+\end_inset 
+
+ Los covectores son parte del espacio 
+\begin_inset Formula $T_{1\, P}^{0}\left[M\right]\equiv T_{P}^{*}\left[M\right]$
+\end_inset 
+
+.
+ La linealidad significa nada más que
+\begin_inset Formula \[
+\mathsf{a}\left[k_{1}\mathsf{v}+k_{2}\mathsf{w}\right]=k_{1}\mathsf{a}\left[\mathsf{v}\right]+k_{2}\mathsf{a}\left[\mathsf{w}\right]\]
+
+\end_inset 
+
+ Dada la base del espacio cotangente 
+\begin_inset Formula $\left\{ \mathsf{e}^{i}\right\} \equiv\{ dx^{i}\}$
+\end_inset 
+
+ podemos expresar cualquier elemento del espacio cotangente como combinación
+ lineal de elementos de su base.
+ Lo mismo con los vectores contravariantes y su base correspondiente.
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{a}\left[\mathsf{v}\right] & = & a_{i}\,\, dx^{i}\left[v^{j}\left.\dpxj{}\right|_{P}\right]\\
+ & = & a_{i}v^{j}\,\, dx^{i}\left[\dpxj{}\right]\end{eqnarray*}
+
+\end_inset 
+
+ pero por definición la actuación de la base del cotangente sobre la base
+ del tangente es 
+\begin_inset Formula $\delta_{j}^{i}$
+\end_inset 
+
+:
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{a}\left[\mathsf{v}\right] & = & a_{i}v^{j}\delta_{j}^{i}\\
+ & = & a_{k}v^{k}\end{eqnarray*}
+
+\end_inset 
+
+ Esto nos permite interpretar los vectores covariantes como aplicaciones
+ lineales sobre una copia del espacio tangente.
+ 
+\layout Subsection
+
+Vectores contravariantes como aplicaciones lineales
+\layout Standard
+
+También se pueden interpretar los elementos del espacio tangente como aplicacion
+es lineales.
+ Consideremos 
+\begin_inset Formula $\mathsf{v}\in T_{P}\left[M\right]$
+\end_inset 
+
+.
+ Es una aplicación que a cada elemento del espacio cotangente le hace correspond
+er un número real:
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{v}:T_{P}^{*}\left[M\right] & \fd & \cR{}\\
+\mathsf{a} & \mapsto & \mathsf{v}\left[\mathsf{a}\right]\equiv\mathsf{a}\left[\mathsf{v}\right]\end{eqnarray*}
+
+\end_inset 
+
+ Esto nos permite hacer una interpretación de un vector como una aplicación
+ lineal de una copia del espacio cotangente en 
+\begin_inset Formula $\cR{}$
+\end_inset 
+
+.
+ La linealidad se deriva de la linealidad de la aplicación 
+\begin_inset Formula $\mathsf{a}\left[\mathsf{v}\right]$
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{v}\left[k_{1}\mathsf{a}+k_{2}\mathsf{b}\right] & \equiv & \left(k_{1}\mathsf{a}+k_{2}\mathsf{b}\right)\left[\mathsf{v}\right]\\
+ & = & k_{1}\mathsf{a}\left[\mathsf{v}\right]+k_{2}\mathsf{b}\left[\mathsf{v}\right]\\
+ & \equiv & k_{1}\mathsf{v}\left[\mathsf{a}\right]+k_{2}\mathsf{v}\left[\mathsf{b}\right]\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Subsection
+
+Tensores 
+\begin_inset Formula $\left(0,2\right)$
+\end_inset 
+
+ como aplicaciones multilineales
+\layout Standard
+
+Se plantea el problema de interpretar los tensores de orden superior.
+ Para ello procedemos, como en la definición de tensor, de modo constructivo.
+ Supongamos que queremos formar los tensores tipo 
+\begin_inset Formula $\left(0,2\right)$
+\end_inset 
+
+.
+ Sean dos covectores 
+\begin_inset Formula $\mathsf{a},\mathsf{b}$
+\end_inset 
+
+ de tipo 
+\begin_inset Formula $\left(0,1\right)$
+\end_inset 
+
+.
+ Es de esperar que este objeto se coma dos vectores.
+ Definimos la aplicación 
+\begin_inset Formula \begin{eqnarray}
+\otimes:T_{P}\left[M\right]\times T_{P}\left[M\right] & \fd & \cR{}\nonumber \\
+\left(\mathsf{v},\mathsf{w}\right) & \mapsto & \otimes\left[\mathsf{a},\mathsf{b}\right]=\left(\mathsf{a}\otimes\mathsf{b}\right)\left[\mathsf{v},\mathsf{w}\right]\equiv\mathsf{a}\left[\mathsf{v}\right]\mathsf{b}\left[\mathsf{w}\right]\label{ec def tensor 0,2 como app multilin}\end{eqnarray}
+
+\end_inset 
+
+ que a cada par de vectores contravariantes asocia un número real: el producto
+ de la actuación de cada uno de los covectores sobre su vector respectivo.
+ Esta aplicación, que actúa sobre dos copias del espacio tangente, es lineal
+ en sus dos argumentos.
+ En efecto, para el primero se cumple:
+\begin_inset Formula \begin{eqnarray*}
+\left(\mathsf{a}\otimes\mathsf{b}\right)\left[k_{1}\mathsf{v}_{1}+k_{2}\mathsf{v}_{2},\mathsf{w}\right] & \equiv & \mathsf{a}\left[k_{1}\mathsf{v}_{1}+k_{2}\mathsf{v}_{2}\right]\mathsf{b}\left[\mathsf{w}\right]\\
+ & = & \left(k_{1}\mathsf{a}\left[\mathsf{v}_{1}\right]+k_{2}\mathsf{a}\left[\mathsf{v}_{2}\right]\right)\mathsf{b}\left[\mathsf{w}\right]\\
+ & = & k_{1}\mathsf{a}\left[\mathsf{v}_{1}\right]\mathsf{b}\left[\mathsf{w}\right]+k_{2}\mathsf{a}\left[\mathsf{v}_{2}\right]\mathsf{b}\left[\mathsf{w}\right]\\
+ & = & k_{1}\left(\mathsf{a}\otimes\mathsf{b}\right)\left[\mathsf{v}_{1},\mathsf{w}\right]+k_{2}\left(\mathsf{a}\otimes\mathsf{b}\right)\left[\mathsf{v}_{2},\mathsf{w}\right]\end{eqnarray*}
+
+\end_inset 
+
+ Análogamente se prueba la linealidad en el segundo argumento, de modo que
+ 
+\begin_inset Formula $\mathsf{a}\otimes\mathsf{b}$
+\end_inset 
+
+ es una aplicación bilineal.
+\layout Standard
+
+Es evidente que 
+\begin_inset Formula $\mathsf{a}\otimes\mathsf{b}\neq\mathsf{b}\otimes\mathsf{a}$
+\end_inset 
+
+.
+ Esto se ve porque el primer factor, 
+\begin_inset Formula $\mathsf{a}$
+\end_inset 
+
+, del producto tensorial actúa sobre el primer argumento y el segundo factor,
+ 
+\begin_inset Formula $\mathsf{b}$
+\end_inset 
+
+, sobre el segundo argumento 
+\begin_inset Formula $\mathsf{w}$
+\end_inset 
+
+ (ver definición 
+\begin_inset LatexCommand \ref{ec def tensor 0,2 como app multilin}
+
+\end_inset 
+
+).
+\layout Standard
+
+Ahora podemos construir un espacio lineal mediante combinaciones lineales:
+ el espacio lineal de los tensores de tipo 
+\begin_inset Formula $\left(0,2\right)$
+\end_inset 
+
+.
+ Si 
+\begin_inset Formula $k_{1},k_{2}\in\cR{}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathsf{a},\mathsf{b},\mathsf{c},\mathsf{d}$
+\end_inset 
+
+ son covectores y 
+\begin_inset Formula $\mathsf{v},\mathsf{w}$
+\end_inset 
+
+ vectores tangentes a la misma variedad en el mismo punto se cumple que:
+\begin_inset Formula \[
+\left(k_{1}\left(\mathsf{a}\otimes\mathsf{b}\right)+k_{2}\left(\mathsf{c}\otimes\mathsf{d}\right)\right)\left[\mathsf{v},\mathsf{w}\right]=\ldots=k_{1}\mathsf{a}\left[\mathsf{v}\right]\mathsf{b}\left[\mathsf{w}\right]+k_{2}\mathsf{c}\left[\mathsf{v}\right]\mathsf{d}\left[\mathsf{w}\right]\]
+
+\end_inset 
+
+ Un tensor de tipo 
+\begin_inset Formula $\left(0,2\right)$
+\end_inset 
+
+ es una aplicación bilineal que actúa sobre dos copias del espacio tangente:
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{T}:T_{P}\left[M\right]\times T_{P}\left[M\right] & \fd & \cR{}\\
+\left(\mathsf{v},\mathsf{w}\right) & \mapsto & \mathsf{T}\left[\mathsf{v},\mathsf{w}\right]\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Subsection
+
+Conexión entre la interpretación intrínseca y la clásica
+\begin_inset LatexCommand \label{ssec conexion int intrinseca int clasica}
+
+\end_inset 
+
+
+\layout Subsubsection
+
+Tensores 
+\begin_inset Formula $\left(0,2\right)$
+\end_inset 
+
+
+\layout Standard
+
+Queremos tender un puente con la definición tradicional.
+ Para ello vamos a buscar una base para los tensores dos veces covariantes
+ a partir de una base del espacio cotangente, simplemente por un producto
+ tensorial de elementos de la base.
+ Dados un sistema de coordenadas 
+\begin_inset Formula $x^{1}\ldots x^{m}$
+\end_inset 
+
+, una carta 
+\begin_inset Formula $\left(U_{a},\varphi_{a}\right)$
+\end_inset 
+
+ con 
+\begin_inset Formula $P\in U_{a}$
+\end_inset 
+
+ y la base 
+\begin_inset Formula $\{ dx^{i}\}_{i=1\ldots m}$
+\end_inset 
+
+ de 
+\begin_inset Formula $T_{P}^{*}\left[M\right]$
+\end_inset 
+
+, la base para el espacio de tensores 
+\begin_inset Formula $\left(0,2\right)$
+\end_inset 
+
+, de 
+\begin_inset Formula $m^{2}$
+\end_inset 
+
+ elementos es: 
+\begin_inset Formula \[
+\left\{ dx^{i}\otimes dx^{j}\right\} _{i,j=1\ldots m}\]
+
+\end_inset 
+
+ eso quiere decir que cualquier 
+\begin_inset Formula $\mathsf{T}\in T_{2\, P}^{0}\left[M\right]$
+\end_inset 
+
+ se puede escribir como
+\begin_inset Formula \[
+\mathsf{T}=T_{ij}\left(dx^{i}\otimes dx^{j}\right)\]
+
+\end_inset 
+
+ Ahora pasamos a un nuevo sistema de coordenadas 
+\begin_inset Formula $x^{1'}\ldots x^{m'}$
+\end_inset 
+
+ con una base para los tensores 
+\begin_inset Formula $\left(0,2\right)$
+\end_inset 
+
+ asociada que es 
+\begin_inset Formula \[
+\left\{ dx^{i'}\otimes dx^{j'}\right\} _{i',j'=1\ldots m}\]
+
+\end_inset 
+
+Para expresar los antiguos en función de los nuevos no hay más que tener
+ en cuenta la consistencia del convenio de Einstein:
+\begin_inset Formula \[
+dx^{i}=\dpa{x^{i}}{x^{i'}}dx^{i'}\]
+
+\end_inset 
+
+ así que, empleando para la segunda igualdad la linealidad del producto
+ tensorial,
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{T} & = & T_{ij}\left(\dpa{x^{i}}{x^{i'}}dx^{i'}\otimes\dpa{x^{j}}{x^{j'}}dx^{j'}\right)\\
+ & = & T_{ij}\dpa{x^{i}}{x^{i'}}\dpa{x^{j}}{x^{j'}}\left(dx^{i'}\otimes dx^{j'}\right)\end{eqnarray*}
+
+\end_inset 
+
+ de modo que reencontramos a partir de la definición intrínseca la definición
+ clásica:
+\begin_inset Formula \[
+T_{i'j'}=T_{ij}\dpa{x^{i}}{x^{i'}}\dpa{x^{j}}{x^{j'}}\]
+
+\end_inset 
+
+ 
+\layout Standard
+
+Veamos cuál es la expresión en términos de las componentes de 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathsf{w}$
+\end_inset 
+
+ de 
+\begin_inset Formula $\mathsf{T}\left[\mathsf{v},\mathsf{w}\right]\in\cR{}$
+\end_inset 
+
+: 
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{T}\left[\mathsf{v},\mathsf{w}\right] & = & T_{ij}\left(dx^{i}\otimes dx^{j}\right)\left[\mathsf{v},\mathsf{w}\right]\\
+ & = & T_{ij}dx^{i}\left[\mathsf{v}\right]dx^{j}\left[\mathsf{w}\right]\\
+ & = & T_{ij}dx^{i}\left[v^{l}\dpa{}{x^{l}}\right]dx^{j}\left[w^{k}\dpa{}{x^{k}}\right]\\
+ & = & T_{ij}v^{i}w^{j}\end{eqnarray*}
+
+\end_inset 
+
+ ya que 
+\begin_inset Formula $dx^{i}\left[v^{l}\dpa{}{x^{l}}\right]=v^{l}\delta_{l}^{i}=v^{i}$
+\end_inset 
+
+ y 
+\begin_inset Formula $dx^{j}\left[w^{k}\dpa{}{x^{k}}\right]=w^{k}\delta_{k}^{j}=w^{j}$
+\end_inset 
+
+ por ser bases duales (ver
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+ 
+\backslash 
+vref{ec las bases duales y delta i j}
+\end_inset 
+
+).
+\layout Subsubsection
+
+Tensores 
+\begin_inset Formula $\left(2,0\right)$
+\end_inset 
+
+ 
+\layout Standard
+
+Los tensores tipo 
+\begin_inset Formula $\left(2,0\right)$
+\end_inset 
+
+ como aplicación esperan dos covectores y devuelven un número real:
+\begin_inset Formula \begin{eqnarray}
+\mathsf{v}\otimes\mathsf{w}:T_{P}^{*}\left[M\right]\times T_{P}^{*}\left[M\right] & \fd & \cR{}\nonumber \\
+\left(\mathsf{a},\mathsf{b}\right) & \mapsto & \left(\mathsf{v}\otimes\mathsf{w}\right)\left[\mathsf{a},\mathsf{b}\right]=\mathsf{v}\left[\mathsf{a}\right]\mathsf{w}\left[\mathsf{b}\right]\equiv\mathsf{a}\left[\mathsf{v}\right]\mathsf{b}\left[\mathsf{w}\right]\label{ec def intrinseca tensores 2,0}\end{eqnarray}
+
+\end_inset 
+
+ Podemos definir las combinaciones de objetos de este tipo.
+ Dados 
+\begin_inset Formula $k_{1},k_{2}\in\cR{}$
+\end_inset 
+
+ 
+\begin_inset Formula \begin{eqnarray*}
+\left(k_{1}\mathsf{v}\otimes\mathsf{w}+k_{2}\mathsf{t}\otimes\mathsf{u}\right)\left[\mathsf{a},\mathsf{b}\right] & = & k_{1}\mathsf{v}\left[\mathsf{a}\right]\mathsf{w}\left[\mathsf{b}\right]+k_{2}\mathsf{t}\left[\mathsf{a}\right]\mathsf{u}\left[\mathsf{b}\right]\\
+ & = & k_{1}\mathsf{a}\left[\mathsf{v}\right]\mathsf{b}\left[\mathsf{w}\right]+k_{2}\mathsf{a}\left[\mathsf{t}\right]\mathsf{b}\left[\mathsf{u}\right]\end{eqnarray*}
+
+\end_inset 
+
+ 
+\layout Standard
+
+
+\begin_inset Formula $T_{0\, P}^{2}\left[M\right]$
+\end_inset 
+
+, al que pertenecen estas combinaciones, es un espacio lineal sobre el cuerpo
+ de los reales, porque hemos definido la suma de tensores 
+\begin_inset Formula $\left(2,0\right)$
+\end_inset 
+
+ y el producto por los elementos del cuerpo de escalares, 
+\begin_inset Formula $\cR{}$
+\end_inset 
+
+.
+ Queremos construir una base natural asociada al sistema de coordenadas
+ 
+\begin_inset Formula $x^{1}\ldots x^{m}$
+\end_inset 
+
+ de una carta 
+\begin_inset Formula $\left(U_{a},\varphi_{a}\right)$
+\end_inset 
+
+, 
+\begin_inset Formula $P\in U_{a}$
+\end_inset 
+
+.
+ La base natural del espacio tangente, 
+\begin_inset Formula $\left\{ \left.\dpxi{}\right|_{P}\right\} _{i=1\ldots m}$
+\end_inset 
+
+ permite construir una base de los tensores dos veces contravariantes del
+ siguiente modo:
+\begin_inset Formula \[
+\left\{ \dpxi{}\otimes\dpxj{}\right\} _{i,j=1\ldots m}\]
+
+\end_inset 
+
+ Todo 
+\begin_inset Formula $\mathsf{T}\in T_{0\, P}^{2}\left[M\right]$
+\end_inset 
+
+ podemos expresarlo así:
+\begin_inset Formula \[
+\mathsf{T}=T^{ij}\dpxi{}\otimes\dpxj{}\]
+
+\end_inset 
+
+ En otro sistema de coordenadas dispondremos también de una base alternativa
+\begin_inset Formula \[
+\mathsf{T}=T^{i'j'}\dpa{}{x^{i'}}\otimes\dpa{}{x^{j'}}\]
+
+\end_inset 
+
+ utilizando las reglas de transformación sobre los factores del producto
+ tensorial podemos escribir:
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{T} & = & T^{ij}\dpxi{}\otimes\dpxj{}\\
+ & = & T^{ij}\left(\dpxi{x^{i'}}\dpa{}{x^{i'}}\otimes\dpxj{x^{j'}}\dpa{}{x^{j'}}\right)\end{eqnarray*}
+
+\end_inset 
+
+ y la linealidad del producto tensorial,
+\begin_inset Formula \[
+\mathsf{T}=T^{ij}\dpxi{x^{i'}}\dpxj{x^{j'}}\left(\dpa{}{x^{i'}}\otimes\dpa{}{x^{j'}}\right)\]
+
+\end_inset 
+
+ de modo que la transformación de coordenadas del objeto total es 
+\begin_inset Formula \[
+T^{i'j'}=T^{ij}\dpxi{x^{i'}}\dpxj{x^{j'}}\]
+
+\end_inset 
+
+
+\layout Standard
+
+Nos gustaría saber cuál es la expresión en coordenadas de la actuación de
+ un tensor de tipo 
+\begin_inset Formula $\left(2,0\right)$
+\end_inset 
+
+ sobre un par de covectores.
+ Teniendo en cuenta la linealidad y las reglas tensoriales
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{T}\left[\mathsf{a},\mathsf{b}\right] & = & \left(T^{ij}\dpxi{}\otimes\dpxj{}\right)\left[\mathsf{a},\mathsf{b}\right]\\
+ & = & T^{ij}\dpxi{}\left[\mathsf{a}\right]\dpxj{}\left[\mathsf{b}\right]\\
+ & = & T^{ij}\dpxi{}\left[a_{k}dx^{k}\right]\dpxj{}\left[b_{l}dx^{l}\right]\\
+ & = & T^{ij}a_{k}b_{l}\dpxi{}\left[dx^{k}\right]\dpxj{}\left[dx^{l}\right]\\
+ & = & T^{ij}a_{k}b_{l}\delta_{i}^{k}\delta_{j}^{l}\\
+ & = & T^{ij}a_{i}b_{j}\end{eqnarray*}
+
+\end_inset 
+
+ El valor obtenido es independiente del sistema de coordenadas utilizado,
+ es un invariante frente a cambios del sistema de coordenadas, un número
+ real independiente del sistema de coordenadas.
+ Es un invariante por construcción; la definición intrínseca parte precisamente
+ de este hecho.
+\layout Subsubsection
+
+Tensores 
+\begin_inset Formula $\left(1,1\right)$
+\end_inset 
+
+
+\layout Description
+
+Tensor\SpecialChar ~
+
+\begin_inset Formula $\left(1,1\right)$
+\end_inset 
+
+\SpecialChar ~
+
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+\SpecialChar ~
+tangente a la variedad 
+\begin_inset Formula $M$
+\end_inset 
+
+ en el punto 
+\begin_inset Formula $P$
+\end_inset 
+
+ es una aplicación bilineal que actúa sobre una copia del espacio cotangente
+ (por la vez que es contravariante) y otra del espacio tangente (por la
+ vez que es covariante) y produce un número real:
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{T}:T_{P}^{*}\left[M\right]\times T_{P}\left[M\right] & \fd & \cR{}\\
+\left(\mathsf{a},\mathsf{v}\right) & \mapsto & \mathsf{T}\left[\mathsf{a},\mathsf{v}\right]\end{eqnarray*}
+
+\end_inset 
+
+ 
+\begin_inset Formula $\mathsf{T}\in T_{1\, P}^{1}\left[M\right]$
+\end_inset 
+
+ es una aplicación lineal en los dos argumentos:
+\begin_inset Formula \[
+\mathsf{T}\left[k_{1}\mathsf{a}+k_{2}\mathsf{b},\mathsf{v}\right]=k_{1}\mathsf{T}\left[\mathsf{a},\mathsf{v}\right]+k_{2}\mathsf{T}\left[\mathsf{b},\mathsf{v}\right]\]
+
+\end_inset 
+
+
+\layout Standard
+
+La base de estos tensores es, por el mismo procedimiento constructivo que
+ antes,
+\begin_inset Formula \[
+\left\{ \dpxi{}\otimes dx^{j}\right\} _{i,j=1\ldots m}\]
+
+\end_inset 
+
+y actúa sobre un covector y un vector contravariante así:
+\begin_inset Formula \[
+\left(\dpxi{}\otimes dx^{j}\right)\left[\mathsf{a},\mathsf{v}\right]=\dpxi{}\left[\mathsf{a}\right]dx^{j}\left[\mathsf{v}\right]\]
+
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+ se expresa así en la base:
+\begin_inset Formula \[
+\mathsf{T}=T_{j}^{i}\dpxi{}\otimes dx^{j}\]
+
+\end_inset 
+
+ en otro sistema de coordenadas la base correspondiente será
+\begin_inset Formula \[
+\mathsf{T}=T_{j'}^{i'}\dpa{}{x^{i'}}\otimes dx^{j'}\]
+
+\end_inset 
+
+ como los elementos de la base normal se pueden expresar así en función
+ de los elementos de la base prima:
+\begin_inset Formula \begin{eqnarray*}
+\dpxi{} & = & \dpxi{x^{i'}}\dpa{}{x^{i'}}\\
+dx^{j} & = & \dpa{x^{j}}{x^{j'}}dx^{j'}\end{eqnarray*}
+
+\end_inset 
+
+ es decir
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{T} & = & T_{j'}^{i'}\dpa{}{x^{i'}}\otimes\dpa{}{x^{j'}}\\
+ & = & T_{j}^{i}\left(\dpxi{x^{i'}}\dpa{}{x^{i'}}\otimes\dpa{x^{j}}{x^{j'}}dx^{j'}\right)\\
+ & = & T_{j}^{i}\dpxi{x^{i'}}\dpa{x^{j}}{x^{j'}}\left(\dpa{}{x^{i'}}\otimes dx^{j'}\right)\end{eqnarray*}
+
+\end_inset 
+
+En conclusión:
+\begin_inset Formula \[
+T_{j'}^{i'}=\dpxi{x^{i'}}\dpa{x^{j}}{x^{j'}}T_{j}^{i}\]
+
+\end_inset 
+
+ En cuanto a la expresión en coordenadas de la actuación de este objeto
+ sobre un vector y un covector es 
+\begin_inset Formula \[
+\mathsf{T}\left[\mathsf{a},\mathsf{v}\right]=T_{j}^{i}a_{i}v^{j}\]
+
+\end_inset 
+
+
+\layout Subsubsection
+
+Tensores 
+\begin_inset Formula $\left(r,s\right)$
+\end_inset 
+
+ 
+\layout Description
+
+Tensor\SpecialChar ~
+de\SpecialChar ~
+tipo\SpecialChar ~
+
+\begin_inset Formula $\left(r,s\right)$
+\end_inset 
+
+\SpecialChar ~
+
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+ tangente a la variedad 
+\begin_inset Formula $M$
+\end_inset 
+
+ en un punto 
+\begin_inset Formula $P$
+\end_inset 
+
+ es una aplicación multilineal de 
+\begin_inset Formula $r$
+\end_inset 
+
+ copias del espacio cotangente y 
+\begin_inset Formula $s$
+\end_inset 
+
+ copias del espacio tangente 
+\begin_inset Formula $T_{P}^{*}\left[M\right]\times\cdots\times T_{P}^{*}\left[M\right]\times T_{P}\left[M\right]\times\cdots\times T_{P}\left[M\right]$
+\end_inset 
+
+ en 
+\begin_inset Formula $\cR{}$
+\end_inset 
+
+.
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{T}:T_{P}^{*}\left[M\right]\times\cdots\times T_{P}^{*}\left[M\right]\times T_{P}\left[M\right]\times\cdots\times T_{P}\left[M\right] & \fld & \cR{}\\
+\left(\mathsf{a}_{1},\ldots\mathsf{a}_{r},\mathsf{v}_{1}\ldots\mathsf{v}_{s}\right) & \mapsto & \mathsf{T}\left[\mathsf{a}_{1},\ldots\mathsf{a}_{r},\mathsf{v}_{1}\ldots\mathsf{v}_{s}\right]\end{eqnarray*}
+
+\end_inset 
+
+ Tiene que ser lineal en cada uno de sus argumentos.
+ Para el argumento 
+\begin_inset Formula $i$
+\end_inset 
+
+:
+\begin_inset Formula \[
+\mathsf{T}\left[\mathsf{a}_{1}\ldots,k_{1}\mathsf{a}_{i}+k_{2}\mathsf{b}_{i},\ldots\mathsf{a}_{r},\mathsf{v}_{1}\ldots\mathsf{v}_{s}\right]=k_{1}\mathsf{T}\left[\mathsf{a}_{1}\ldots,\mathsf{a}_{i},\ldots\mathsf{a}_{r},\mathsf{v}_{1}\ldots\mathsf{v}_{s}\right]+k_{2}\mathsf{T}\left[\mathsf{a}_{1}\ldots,\mathsf{b}_{i},\ldots\mathsf{a}_{r},\mathsf{v}_{1}\ldots\mathsf{v}_{s}\right]\]
+
+\end_inset 
+
+
+\layout Description
+
+producto\SpecialChar ~
+tensorial sean 
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+ 
+\begin_inset Formula $\left(r_{1},s_{1}\right)$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathsf{S}$
+\end_inset 
+
+ 
+\begin_inset Formula $\left(r_{2},s_{2}\right)$
+\end_inset 
+
+.
+ Se define como el producto tensorial de 
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+ por 
+\begin_inset Formula $\mathsf{S}$
+\end_inset 
+
+ y se denota 
+\begin_inset Formula $\mathsf{T}\otimes\mathsf{S}$
+\end_inset 
+
+ a un tensor de tipo 
+\begin_inset Formula $\left(r_{1}+r_{2},s_{1}+s_{2}\right)$
+\end_inset 
+
+ dado por la siguiente relación:
+\begin_inset Formula \[
+\left(\mathsf{T}\otimes\mathsf{S}\right)\left[\mathsf{a}_{1}\ldots\mathsf{a}_{r_{1}},\mathsf{b}_{1}\ldots\mathsf{b}_{r_{2}},\mathsf{v}_{1}\ldots\mathsf{v}_{s_{1}},\mathsf{w}_{1}\ldots\mathsf{w}_{s_{2}}\right]\equiv\mathsf{T}\left[\mathsf{a}_{1}\ldots\mathsf{a}_{r_{1}},\mathsf{v}_{1}\ldots\mathsf{v}_{s_{1}}\right]\,\mathsf{S}\left[\mathsf{b}_{1}\ldots\mathsf{b}_{r_{2}},\mathsf{w}_{1}\ldots\mathsf{w}_{s_{2}}\right]\]
+
+\end_inset 
+
+
+\layout Description
+
+propiedades\SpecialChar ~
+de\SpecialChar ~
+
+\begin_inset Formula $\otimes$
+\end_inset 
+
+ 
+\begin_deeper 
+\layout Enumerate
+
+Asociativa 
+\begin_inset Formula $\left(\mathsf{T}\otimes\mathsf{S}\right)\otimes\mathsf{P}=\mathsf{T}\otimes\left(\mathsf{S}\otimes\mathsf{P}\right)$
+\end_inset 
+
+ 
+\layout Enumerate
+
+Distributiva respecto de la suma:
+\begin_deeper 
+\layout Enumerate
+
+
+\begin_inset Formula $\left(\mathsf{P}+\mathsf{Q}\right)\otimes\mathsf{T}=\mathsf{P}\otimes\mathsf{T}+\mathsf{Q}\otimes\mathsf{T}$
+\end_inset 
+
+ 
+\layout Enumerate
+
+
+\begin_inset Formula $\mathsf{T}\otimes\left(\mathsf{P}+\mathsf{Q}\right)=\mathsf{T}\otimes\mathsf{P}+\mathsf{T}\otimes\mathsf{Q}$
+\end_inset 
+
+ 
+\layout Standard
+
+(
+\begin_inset Formula $\mathsf{P}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathsf{Q}$
+\end_inset 
+
+ ambos tensores 
+\begin_inset Formula $\left(r,s\right)$
+\end_inset 
+
+) 
+\end_deeper 
+\layout Enumerate
+
+En general no conmutativo: 
+\begin_inset Formula $\mathsf{T}\otimes\mathsf{S}\neq\mathsf{S}\otimes\mathsf{T}$
+\end_inset 
+
+
+\end_deeper 
+\layout Description
+
+base
+\begin_inset LatexCommand \label{base de tensores}
+
+\end_inset 
+
+ Una base en el sistema de coordenadas 
+\begin_inset Formula $x^{1}\ldots x^{m}$
+\end_inset 
+
+ es 
+\begin_inset Formula \[
+\left\{ \dpa{}{x^{i_{1}}}\otimes\cdots\otimes\dpa{}{x^{i_{r}}}\otimes dx^{j_{1}}\otimes\cdots\otimes dx^{j_{s}}\right\} _{\forall i_{1}\ldots i_{r},j_{1}\ldots j_{s}=1\ldots m}\]
+
+\end_inset 
+
+La dimensión de un tensor de tipo 
+\begin_inset Formula $\left(r,s\right)$
+\end_inset 
+
+ es 
+\begin_inset Formula $m^{r+s}$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+ se expresa con diferentes coeficientes en función de la base:
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{T} & = & T_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{r}}\dpa{}{x^{i_{1}}}\otimes\cdots\otimes\dpa{}{x^{i_{r}}}\otimes dx^{j_{1}}\otimes\cdots\otimes dx^{j_{s}}\\
+ & = & T_{j'_{1}\ldots j'_{s}}^{i'_{1}\ldots i'_{r}}\dpa{}{x^{i'_{1}}}\otimes\cdots\otimes\dpa{}{x^{i'_{r}}}\otimes dx^{j'_{1}}\otimes\cdots\otimes dx^{j'_{s}}\end{eqnarray*}
+
+\end_inset 
+
+sustituyendo las expresiones de cambio de coordenadas y utilizando la linealidad
+, vemos que cada índice se transforma consecuentemente con su tipo
+\begin_inset Formula \[
+T_{j'_{1}\ldots j'_{s}}^{i'_{1}\ldots i'_{r}}=\dpa{x^{i_{1}'}}{x^{i_{1}}}\cdots\dpa{x^{i'_{r}}}{x^{i_{r}}}\dpa{x^{j_{1}}}{x^{j_{1}'}}\ldots\dpa{x^{j_{s}}}{x^{j'_{s}}}T_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{r}}\]
+
+\end_inset 
+
+
+\layout Description
+
+
+\size small 
+Ejemplo Veamos la actuación de un 
+\begin_inset Formula $\left(2,3\right)$
+\end_inset 
+
+ sobre dos covectores y tres vectores contravariantes:
+\begin_inset Formula \[
+\mathsf{T}\left[\mathsf{a},\mathsf{b},\mathsf{v},\mathsf{w},\mathsf{u}\right]=T_{klq}^{ij}a_{i}b_{j}v^{k}w^{l}u^{q}\]
+
+\end_inset 
+
+ tenemos que contraer las componentes del primer covector con el primer
+ índice contravariante, etc.
+ El resultado es un número real independiente del sistema de coordenadas.
+\layout Section
+
+Campos tensoriales
+\layout Subsection
+
+Introducción
+\layout Standard
+
+Desde el punto de vista clásico un tensor 
+\begin_inset Formula $\left(2,3\right)$
+\end_inset 
+
+ es un conjunto de 
+\begin_inset Formula $m^{5}$
+\end_inset 
+
+ números reales (componentes) asociado a un punto 
+\begin_inset Formula $P$
+\end_inset 
+
+ de la variedad 
+\begin_inset Formula $M$
+\end_inset 
+
+.
+ Si construimos un campo tensorial asociando a cada punto 
+\begin_inset Formula $P$
+\end_inset 
+
+ de 
+\begin_inset Formula $E\subset M$
+\end_inset 
+
+ un tensor 
+\begin_inset Formula $\left(2,3\right)$
+\end_inset 
+
+ tangente a la variedad en ese punto tenemos 
+\begin_inset Formula $m^{5}$
+\end_inset 
+
+ funciones definidas en el subconjunto 
+\begin_inset Formula $E$
+\end_inset 
+
+ de las coordenadas del punto 
+\begin_inset Formula $P$
+\end_inset 
+
+, 
+\begin_inset Formula $x^{1}\ldots x^{m}$
+\end_inset 
+
+ y tales que para cualquier otro sistema de coordenadas se cumple que
+\begin_inset Formula \[
+T_{k'l'r'}^{i'j'}=T_{klr}^{ij}\dpa{x^{i'}}{x^{i}}\dpa{x^{j'}}{x^{j}}\dpa{x^{k}}{x^{k'}}\dpa{x^{l}}{x^{l'}}\dpa{x^{r}}{x^{r'}}\]
+
+\end_inset 
+
+ los coeficientes del cambio y las coordenadas del tensor dependen ahora
+ de las coordenadas del punto considerado 
+\begin_inset Formula \begin{eqnarray}
+T_{k'l'r'}^{i'j'}\left[x^{1'}\ldots x^{m'}\right] & = & \dpxi{x^{i'}}\left[x^{1}\left[x^{1'}\ldots x^{m'}\right]\ldots x^{m}\left[x^{1'}\ldots x^{m'}\right]\right]\times\nonumber \\
+ &  & \dpxj{x^{j'}}\left[x^{1}\left[x^{1'}\ldots x^{m'}\right]\ldots x^{m}\left[x^{1'}\ldots x^{m'}\right]\right]\times\nonumber \\
+ &  & \dpa{x^{k}}{x^{k'}}\left[x^{1'}\ldots x^{m'}\right]\dpa{x^{l}}{x^{l'}}\left[x^{1'}\ldots x^{m'}\right]\dpa{x^{r}}{x^{r'}}\left[x^{1'}\ldots x^{m'}\right]\times\nonumber \\
+ &  & T_{klr}^{ij}\left[x^{1}\left[x^{1'}\ldots x^{m'}\right]\ldots x^{m}\left[x^{1'}\ldots x^{m'}\right]\right]\label{ec componentes tensor depd coord}\end{eqnarray}
+
+\end_inset 
+
+
+\layout Subsection
+
+Campos vectoriales 
+\layout Standard
+
+Para caracterizar el campo de vectores tangentes a una superficie (u otras
+ variedades más sofisticadas) es necesario introducir la siguiente definición
+\layout Description
+
+campo\SpecialChar ~
+vectorial\SpecialChar ~
+contravariante\SpecialChar ~
+tangente\SpecialChar ~
+a\SpecialChar ~
+la\SpecialChar ~
+variedad\SpecialChar ~
+
+\begin_inset Formula $M$
+\end_inset 
+
+
+\begin_inset LatexCommand \index{campo contravariante}
+
+\end_inset 
+
+ Un campo vectorial 
+\begin_inset Formula $Y$
+\end_inset 
+
+ tangente a la variedad 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ 
+\begin_inset Formula $M$
+\end_inset 
+
+ es una aplicación de 
+\begin_inset Formula $E\subset M$
+\end_inset 
+
+ tal que a cada 
+\begin_inset Formula $P\in E$
+\end_inset 
+
+ le asocia un elemento de 
+\begin_inset Formula $T_{P}\left[M\right]$
+\end_inset 
+
+.
+ 
+\begin_inset Formula \begin{eqnarray*}
+Y:E\subset M & \fd & T_{P}\left[M\right]\\
+P & \mapsto & \mathsf{y}\end{eqnarray*}
+
+\end_inset 
+
+su expresión en coordenadas hace 
+\begin_inset Formula $x^{1}\ldots x^{m}\mapsto\left.Y^{i}\left[x^{1}\ldots x^{m}\right]\right|_{P}\dpxi{}.$
+\end_inset 
+
+ 
+\layout Standard
+
+El espacio formado por todos los campos vectoriales 
+\begin_inset Formula $Y$
+\end_inset 
+
+ tangentes a la variedad 
+\begin_inset Formula $M$
+\end_inset 
+
+ lo denotamos 
+\begin_inset Formula $\aleph\left[M\right]$
+\end_inset 
+
+.
+ Dado un sistema de coordenadas en la variedad, 
+\begin_inset Formula $x^{1}\ldots x^{m}$
+\end_inset 
+
+, asociado a una carta 
+\begin_inset Formula $\left(U_{a},\varphi_{a}\right)$
+\end_inset 
+
+, podremos expresar el campo vectorial 
+\begin_inset Formula $Y$
+\end_inset 
+
+ en la restricción 
+\begin_inset Formula $E\cap U_{a}$
+\end_inset 
+
+ en función de estas coordenadas:
+\begin_inset Formula \[
+Y=Y^{i}\left[x^{1}\ldots x^{m}\right]\dpxi{}\]
+
+\end_inset 
+
+
+\layout Standard
+
+Necesitamos definir el grado de diferenciabilidad de un campo vectorial.
+ En la interpretación intrínseca, el campo es un conjunto de aplicaciones
+ de clase 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ que a un covector le hacen corresponder un número dependiente del punto.
+ Al hacer actuar el campo vectorial sobre una función 
+\begin_inset Formula $f\in\mathcal{F}_{P}^{\infty}\left[M\right]$
+\end_inset 
+
+ se obtiene una función del punto, 
+\begin_inset Formula $Y\left[f\right]=g$
+\end_inset 
+
+ cuya expresión en coordenadas será
+\begin_inset Formula \[
+g=Y\left[f\right]=Y^{i}\left[x^{1}\ldots x^{m}\right]\dpxi{f}\]
+
+\end_inset 
+
+ sólo válida en un dominio de definición que es el del campo vectorial 
+\begin_inset Formula $Y$
+\end_inset 
+
+.
+ Un campo vectorial 
+\begin_inset Formula $Y$
+\end_inset 
+
+ es de clase 
+\begin_inset Formula $\mathcal{C}^{k}$
+\end_inset 
+
+ con dominio de definición 
+\begin_inset Formula $E\subset M$
+\end_inset 
+
+ si actuando sobre funciones de clase 
+\begin_inset Formula $\mathcal{F}_{P}^{\infty}\left[M\right]$
+\end_inset 
+
+ da funciones 
+\begin_inset Formula $g$
+\end_inset 
+
+ de clase 
+\begin_inset Formula $\mathcal{C}^{k}$
+\end_inset 
+
+.
+ Habrá que exigir que el dominio de definición 
+\begin_inset Formula $E$
+\end_inset 
+
+ sea abierto.
+ Veamos que esta afirmación no depende del sistema de coordenadas:
+\layout Description
+
+proposición En términos de componentes en un determinado sistema de coordenadas
+ un campo 
+\begin_inset Formula $Y$
+\end_inset 
+
+ es de clase 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ si en 
+\emph on 
+algún
+\emph default 
+ sistema de coordenadas sus componentes son 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ para cada punto 
+\begin_inset Formula $P$
+\end_inset 
+
+ de 
+\begin_inset Formula $E\subset M$
+\end_inset 
+
+, ya que se puede comprobar que un campo vectorial que es de clase 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ en un determinado sistema de coordenadas lo es también en todos los demás.
+\begin_deeper 
+\layout Standard
+
+Sea 
+\begin_inset Formula $Y\in\aleph\left[M\right]$
+\end_inset 
+
+.
+ Escribimos 
+\begin_inset Formula $Y$
+\end_inset 
+
+ en el sistema normal 
+\begin_inset Formula \[
+Y=Y^{i}\left[x^{1}\ldots x^{m}\right]\dpxi{}\]
+
+\end_inset 
+
+ y en otras coordenadas cualesquiera 
+\begin_inset Formula $x^{1'}\ldots x^{m'}$
+\end_inset 
+
+ 
+\begin_inset Formula \[
+Y^{i'}\left[x^{1'}\ldots x^{m'}\right]=\dpxi{x^{i'}}\left[x^{1}\left[x^{1'}\ldots x^{m'}\right]\ldots x^{m}\left[x^{1'}\ldots x^{m'}\right]\right]Y^{i}\left[x^{1}\left[x^{1'}\ldots x^{m'}\right]\ldots x^{m}\left[x^{1'}\ldots x^{m'}\right]\right]\]
+
+\end_inset 
+
+ si 
+\begin_inset Formula $Y^{i}\left[x^{1}\ldots x^{m}\right]$
+\end_inset 
+
+ son 
+\begin_inset Formula $\mathcal{C}^{k}$
+\end_inset 
+
+ como los cambios de coordenadas 
+\begin_inset Formula $x^{1}[x^{1'}\ldots x^{m'}]$
+\end_inset 
+
+ 
+\begin_inset Formula $\ldots$
+\end_inset 
+
+ 
+\begin_inset Formula $x^{m}[x^{1'}\ldots x^{m'}]$
+\end_inset 
+
+ (y sus inversos) son 
+\begin_inset Formula $\mathcal{C}^{\infty}$
+\end_inset 
+
+ por ser la variedad a su vez 
+\begin_inset Formula $\mathcal{C}^{\infty}$
+\end_inset 
+
+ (compatibilidad de cartas) la composición de los coeficientes 
+\begin_inset Formula $Y^{i}\left[x^{1}\ldots x^{m}\right]$
+\end_inset 
+
+ con los cambios es 
+\begin_inset Formula $\mathcal{C}^{k}$
+\end_inset 
+
+.
+ 
+\end_deeper 
+\layout Subsection
+
+Campos tensoriales
+\layout Description
+
+un\SpecialChar ~
+campo\SpecialChar ~
+tensorial\SpecialChar ~
+
+\begin_inset Formula $\left(r,s\right)$
+\end_inset 
+
+\SpecialChar ~
+
+\begin_inset Formula $\tau$
+\end_inset 
+
+\SpecialChar ~
+tangente\SpecialChar ~
+a\SpecialChar ~
+
+\begin_inset Formula $M$
+\end_inset 
+
+ es una aplicación con dominio 
+\begin_inset Formula $E\subset M$
+\end_inset 
+
+ que a cada 
+\begin_inset Formula $P\in E$
+\end_inset 
+
+ hace corresponder un tensor 
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+ de tipo 
+\begin_inset Formula $\left(r,s\right)$
+\end_inset 
+
+ tangente a 
+\begin_inset Formula $M$
+\end_inset 
+
+ en 
+\begin_inset Formula $P$
+\end_inset 
+
+ (un elemento de 
+\begin_inset Formula $T_{s\, P}^{r}\left[M\right]$
+\end_inset 
+
+:
+\begin_inset Formula \begin{eqnarray*}
+\tau\in T_{s}^{r}\left[M\right]:E\subset M & \fd & T_{s\, P}^{r}\left[M\right]\\
+P & \mapsto & \mathsf{T}\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Standard
+
+En un sistema de coordenadas 
+\begin_inset Formula $x^{1}\ldots x^{m}$
+\end_inset 
+
+ 
+\begin_inset Formula $\tau$
+\end_inset 
+
+ (con dominio 
+\begin_inset Formula $E\cap U_{a}$
+\end_inset 
+
+) se escribe así
+\begin_inset LatexCommand \label{tx cartas y campos tensoriales}
+
+\end_inset 
+
+:
+\begin_inset Formula \[
+\tau=\tau_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{r}}\left[x^{1}\ldots x^{m}\right]\dpa{}{x^{i_{1}}}\otimes\cdots\otimes\dpa{}{x^{i_{r}}}\otimes dx^{j_{1}}\otimes\cdots\otimes dx^{j_{s}}\]
+
+\end_inset 
+
+En otro sistema de coordenadas 
+\begin_inset Formula $x^{1'}\ldots x^{m'}$
+\end_inset 
+
+:
+\layout Standard
+
+
+\begin_inset Formula \begin{eqnarray*}
+\tau_{j'_{1}\ldots j'_{s}}^{i'_{1}\ldots i'_{r}}\left[x^{1'}\ldots x^{m'}\right] & = & \dpa{x^{i_{1}'}}{x^{i_{1}}}\left[x\left[x'\right]\right]\cdots\dpa{x^{i'_{r}}}{x^{i_{r}}}\left[x\left[x'\right]\right]\times\\
+ &  & \dpa{x^{j_{1}}}{x^{j_{1}'}}\left[x'\right]\cdots\dpa{x^{j_{s}}}{x^{j_{s}'}}\left[x'\right]\,\tau_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{r}}\left[x^{1}\left[x^{1'}\ldots x^{m'}\right]\ldots x^{m}\left[x^{1'}\ldots x^{m'}\right]\right]\end{eqnarray*}
+
+\end_inset 
+
+ donde el dominio de definición es 
+\begin_inset Formula $E\cap U_{a}\cap U_{b}$
+\end_inset 
+
+.
+\layout Standard
+
+Respecto a la diferenciabilidad de los campos tensoriales se tiene un resultado
+ análogo al de los campos vectoriales.
+\layout Paragraph
+
+Interpretación intrínseca
+\layout Standard
+
+Tenemos que hacer la interpretación de campos tensoriales actuando sobre
+ vectores o covectores.
+ Un campo tensorial será una aplicación que toma 
+\begin_inset Formula $r$
+\end_inset 
+
+ campos tensoriales 
+\begin_inset Formula $\left(0,1\right)$
+\end_inset 
+
+ y 
+\begin_inset Formula $s$
+\end_inset 
+
+ campos tensoriales 
+\begin_inset Formula $\left(1,0\right)$
+\end_inset 
+
+.
+ Sea 
+\begin_inset Formula $A$
+\end_inset 
+
+ un campo covariante
+\begin_inset Formula \begin{eqnarray*}
+A:E\subset M & \fd & T_{P}^{*}\left[M\right]\\
+\left(x^{1}\ldots x^{m}\right) & \mapsto & A=A_{i}\left[x^{1}\ldots x^{m}\right]dx^{i}\end{eqnarray*}
+
+\end_inset 
+
+ Si 
+\begin_inset Formula $X\in\aleph\left[M\right]$
+\end_inset 
+
+ podemos decir que 
+\begin_inset Formula $A\left[X\right]$
+\end_inset 
+
+ es 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ si su actuación 
+\begin_inset Formula $A\left[X\right]=f$
+\end_inset 
+
+ da lugar a funciones 
+\begin_inset Formula $\Cinf.$
+\end_inset 
+
+ Interpretación de un campo tensorial 
+\begin_inset Formula $\left(r,s\right)$
+\end_inset 
+
+: 
+\begin_inset Formula $\tau$
+\end_inset 
+
+ actúa sobre 
+\begin_inset Formula $r$
+\end_inset 
+
+ campos vectoriales covariantes y 
+\begin_inset Formula $s$
+\end_inset 
+
+ campos vectoriales contravariantes.
+\begin_inset Formula \[
+\tau\left[A_{1}\ldots A_{r},X_{1}\ldots X_{s}\right]=g\left[P\right]\]
+
+\end_inset 
+
+resultando una función de punto, 
+\begin_inset Formula $g$
+\end_inset 
+
+.
+ Será 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ si su actuación sobre cualesquiera campos vectoriales que pongamos como
+ argumentos produce funciones de clase 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+.
+\layout Subsubsection
+
+Acerca de la notación
+\layout Standard
+
+En lo sucesivo llamaremos a los campos tensoriales también con letras rectas,
+ presentación que hasta ahora reservábamos a los tensores 
+\emph on 
+en un punto.
+ 
+\emph default 
+La ambigüedad quedará salvada por la presencia de una serie de argumentos
+ que indican que las componentes del tensor dependen del punto de la variedad.
+ Es decir, con un ejemplo en baja dimensión
+\begin_inset Formula \[
+\mathsf{v}\left[f\right]=v^{i}\left[x^{1}\ldots x^{m}\right]\dpa{\hat{f}}{x^{i}}\left[x^{1}\ldots x^{m}\right]\]
+
+\end_inset 
+
+ debe entenderse como un 
+\emph on 
+campo vectorial
+\emph default 
+ ya que las componentes 
+\begin_inset Formula $v^{i}$
+\end_inset 
+
+ de 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ en cierto sistema de coordenadas dependen del punto.
+\layout Section
+
+Propiedades de simetría
+\begin_inset LatexCommand \label{sec propiedades de simetria}
+
+\end_inset 
+
+
+\layout Standard
+
+Los tensores que observan simetrías bajo permutaciones de los índices se
+ pueden especificar con un número menor de cantidades independientes.
+ Ejemplos: el tensor electromagnético (antisimétrico), la métrica de una
+ superficie (simétrica), el tensor de tensiones de un fluido (simétrico)\SpecialChar \ldots{}
+
+\layout Standard
+
+Debemos enfrentarnos pues, ante la presencia generalizada de estas propiedades
+ en objetos matemáticos de la física, con su definición rigurosa y la de
+ las propiedades asociadas.
+ Nos centraremos primero en la definición de la simetría de tensores para
+ después pasar a la de campos tensoriales.
+ 
+\layout Standard
+
+Decimos que un tensor es totalmente covariante si es tipo 
+\begin_inset Formula $\left(0,s\right)$
+\end_inset 
+
+, y totalmente contravariante si es tipo 
+\begin_inset Formula $\left(r,0\right)$
+\end_inset 
+
+.
+\layout Subsection
+
+Simetría y antisimetría en los índices
+\layout Description
+
+tensor\SpecialChar ~
+simétrico (definición clásica).
+ Sea 
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+ un tensor de tipo 
+\begin_inset Formula $\left(r,s\right)$
+\end_inset 
+
+ tangente a la variedad 
+\begin_inset Formula $M$
+\end_inset 
+
+ en el punto 
+\begin_inset Formula $P$
+\end_inset 
+
+.
+ Decimos que 
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+ es simétrico en sus índices 
+\begin_inset Formula $p$
+\end_inset 
+
+-ésimo y 
+\begin_inset Formula $q$
+\end_inset 
+
+-ésimo si en un sistema de coordenadas sus componentes cumplen que 
+\begin_inset Formula \[
+T_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{p}\ldots i_{q}\ldots i_{r}}=T_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{q}\ldots i_{p}\ldots i_{r}}\]
+
+\end_inset 
+
+ para todo 
+\begin_inset Formula $i_{1}\ldots i_{r},j_{1}\ldots j_{s}=1\ldots m$
+\end_inset 
+
+.
+ 
+\layout Description
+
+
+\size small 
+Ejemplo Estas simetrías para el primer y tercero índices contravariantes
+ se reflejan en un tensor 3 contravariante y 1 covariante así: 
+\begin_inset Formula $T_{4}^{123}=T_{4}^{321}$
+\end_inset 
+
+.
+\layout Standard
+
+Análoga definición se puede aplicar para la simetría en índices covariantes.
+ Para imponer condiciones de simetría sobre índices de diferente tipo se
+ necesita tener un dispositivo para bajar o subir índices, tal como una
+ métrica o un espacio simpléctico.
+ 
+\layout Standard
+
+Nótese que hemos hablado de simetría para un cierto sistema de coordenadas.
+ Es importante convencerse de que un tensor que es simétrico en un cierto
+ sistema de coordenadas lo es en todos los demás.
+\begin_inset Formula \[
+T_{j'_{1}\ldots j'_{s}}^{i_{1}'\ldots i'_{p}\ldots i'_{q}\ldots i'_{r}}=\dpa{x^{i_{1}'}}{x^{i_{1}}}\cdots\dpa{x^{i_{p}'}}{x^{i_{p}}}\cdots\dpa{x^{i_{q}'}}{x^{i_{q}}}\cdots\dpa{x^{i_{r}'}}{x^{i_{r}}}\dpa{x^{j_{1}}}{x^{j_{1}'}}\cdots\dpa{x^{j_{s}}}{x^{j_{s}'}}T_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{p}\ldots i_{q}\ldots i_{r}}\]
+
+\end_inset 
+
+ pero como
+\begin_inset Formula \[
+T_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{p}\ldots i_{q}\ldots i_{r}}=T_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{q}\ldots i_{p}\ldots i_{r}}\]
+
+\end_inset 
+
+ se tiene que también
+\begin_inset Formula \[
+T_{j'_{1}\ldots j_{s}}^{i_{1}'\ldots i'_{p}\ldots i'_{q}\ldots i_{r}}=T_{j'_{1}\ldots j_{s}}^{i_{1}'\ldots i'_{q}\ldots i'_{p}\ldots i_{r}}\]
+
+\end_inset 
+
+ Concluimos que las propiedades de simetría son intrínsecas del tensor,
+ y no dependen del sistema de coordenadas.
+\layout Description
+
+tensor\SpecialChar ~
+antisimétrico (definición clásica) en el índice 
+\begin_inset Formula $p$
+\end_inset 
+
+-ésimo y 
+\begin_inset Formula $q$
+\end_inset 
+
+-ésimo es el que cumple
+\begin_inset Formula \[
+T_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{p}\ldots i_{q}\ldots i_{r}}=-T_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{q}\ldots i_{p}\ldots i_{r}}\]
+
+\end_inset 
+
+
+\layout Description
+
+simetría\SpecialChar ~
+y\SpecialChar ~
+antisimetría (definición intrínseca) Sea 
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+ un tensor de tipo 
+\begin_inset Formula $\left(r,s\right)$
+\end_inset 
+
+ tangente a la variedad 
+\begin_inset Formula $M$
+\end_inset 
+
+ en el punto 
+\begin_inset Formula $P$
+\end_inset 
+
+.
+ Se dice que 
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+ es simétrico (antisimétrico) en sus argumentos 
+\begin_inset Formula $p$
+\end_inset 
+
+-ésimo y 
+\begin_inset Formula $q$
+\end_inset 
+
+-ésimo si se cumple que
+\begin_inset Formula \[
+\mathsf{T}\left[\mathsf{a}_{1}\ldots\mathsf{a}_{p}\ldots\mathsf{a}_{q}\ldots\mathsf{a}_{r},\mathsf{v}_{1}\ldots\mathsf{v}_{s}\right]=\left(-\right)\,\mathsf{T}\left[\mathsf{a}_{1}\ldots\mathsf{a}_{q}\ldots\mathsf{a}_{p}\ldots\mathsf{a}_{r},\mathsf{v}_{1}\ldots\mathsf{v}_{s}\right]\]
+
+\end_inset 
+
+
+\layout Description
+
+
+\size small 
+Ejemplo 
+\begin_inset Formula $\mathsf{T}\left[\mathsf{a},\mathsf{b},\mathsf{c},\mathsf{v}\right]=\mathsf{T}\left[\mathsf{c},\mathsf{b},\mathsf{a},\mathsf{v}\right]$
+\end_inset 
+
+ con el convenio habitual para denotar vectores y covectores, es un tensor
+ 3 contravariante simétrico en 
+\begin_inset Formula $\mathsf{a},\mathsf{c}$
+\end_inset 
+
+, 1 covariante.
+ Ahora queda más patente por qué no se puede hacer una definición directa
+ de simetría en índices de diferente naturaleza, sin encontrar antes un
+ proceso de asignación de un vector covariante a cada vector contravariante.
+ 
+\layout Standard
+
+La definición clásica y la intrínseca son equivalentes a efectos de simetría.
+ Comprobémoslo utilizando un tensor 
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+ tipo 
+\begin_inset Formula $\left(2,1\right)$
+\end_inset 
+
+ simétrico en sus índices contravariantes, 
+\begin_inset Formula \[
+T_{k}^{ij}=T_{k}^{ji}\quad\Fdi\quad\mathsf{T}\left[\mathsf{a},\mathsf{b},\mathsf{v}\right]=\mathsf{T}\left[\mathsf{b},\mathsf{a},\mathsf{v}\right]\]
+
+\end_inset 
+
+
+\layout Enumerate
+
+
+\begin_inset Formula $\Fd$
+\end_inset 
+
+ 
+\begin_inset Formula $(T_{k}^{ij}=T_{k}^{ji})$
+\end_inset 
+
+ La expresión en coordenadas es
+\begin_inset Formula \begin{eqnarray*}
+T\left[\mathsf{a},\mathsf{b},\mathsf{v}\right] & = & T_{k}^{ij}a_{i}b_{j}v^{k}\\
+ & = & T_{k}^{ji}a_{i}b_{j}v^{k}\\
+ & = & \mathsf{T}\left[\mathsf{b},\mathsf{a},\mathsf{v}\right]\end{eqnarray*}
+
+\end_inset 
+
+ por tanto la definición clásica implica la definición intrínseca.
+ 
+\layout Enumerate
+
+
+\begin_inset Formula $\Fi$
+\end_inset 
+
+ 
+\begin_inset Formula $(T\left[\mathsf{a},\mathsf{b},\mathsf{v}\right]=T\left[\mathsf{b},\mathsf{a},\mathsf{v}\right])$
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray*}
+T_{k}^{ij} & = & \mathsf{T}\left[dx^{i},dx^{j},\dpa{}{x^{k}}\right]\\
+ & = & \mathsf{T}\left[dx^{j},dx^{i},\dpa{}{x^{k}}\right]\\
+ & = & T_{k}^{ji}\end{eqnarray*}
+
+\end_inset 
+
+escribimos el tensor en componentes:
+\begin_inset Formula \[
+\mathsf{T}=T_{r}^{pq}\dpa{}{x^{p}}\otimes\dpa{}{x^{q}}\otimes dx^{r}\]
+
+\end_inset 
+
+ por lo tanto
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{T}\left[dx^{i},dx^{j},\dpa{}{x^{k}}\right] & = & \left(T_{r}^{pq}\dpa{}{x^{p}}\otimes\dpa{}{x^{q}}\otimes dx^{r}\right)\left[dx^{i},dx^{j},\dpa{}{x^{k}}\right]\\
+ & = & T_{r}^{pq}\dpa{}{x^{p}}\left[dx^{i}\right]\dpa{}{x^{q}}\left[dx^{j}\right]dx^{r}\left[\dpa{}{x^{k}}\right]\\
+ & = & T_{r}^{pq}\delta_{p}^{i}\delta_{q}^{j}\delta_{k}^{r}\\
+ & = & T_{k}^{ij}\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Subsection
+
+Tensores contravariante y covariantemente simétricos
+\layout Standard
+
+Se dice que un tensor es contravariantemente (covariantemente) simétrico
+ (en el sentido clásico) si es simétrico bajo el intercambio de cualquier
+ par de índices contravariantes (covariantes).
+ En el formalismo intrínseco, el tensor debe ser simétrico respecto de la
+ permuta de cualquier par de argumentos contravariantes (covariantes).
+\layout Standard
+
+Se dice que un tensor es totalmente simétrico si es contravariantemente
+ y covariantemente simétrico.
+ Nos interesa a menudo considerar tensores totalmente simétricos, y dentro
+ de ellos los que son completamente contravariantes o covariantes.
+\layout Subsection
+
+Tensores totalmente simétricos, totalmente contravariantes
+\layout Subsubsection
+
+Definición
+\layout Description
+
+tensor\SpecialChar ~
+contravariantemente\SpecialChar ~
+simétrico se dice de un tensor que es contravariantemen
+te simétrico si es simétrico en cualquier par de índices contravariantes.
+ Si consideramos tensores totalmente contravariantes (tipo 
+\begin_inset Formula $\left(r,0\right)$
+\end_inset 
+
+) totalmente simétricos, constatamos que hay un subconjunto de las componentes
+ que sirve para caracterizarlos completamente: 
+\begin_inset Formula $T^{i_{1}\ldots i_{r}}$
+\end_inset 
+
+ con 
+\begin_inset Formula $1\leq i_{1}\leq i_{2}\leq\ldots\leq i_{r}\leq m$
+\end_inset 
+
+ (secuencia no decreciente de índices) determina completamente el tensor.
+ 
+\layout Description
+
+
+\size small 
+Ejemplo si tenemos 
+\begin_inset Formula $T^{123}$
+\end_inset 
+
+ también tenemos 
+\begin_inset Formula $T^{123}=T^{312}=T^{132}=T^{321}$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+El conjunto de los tensores totalmente simétricos se suele denotar 
+\begin_inset Formula $S_{0\, P}^{r}\left[M\right]$
+\end_inset 
+
+, y constituye un subespacio lineal del espacio lineal 
+\begin_inset Formula $\mathsf{T}_{0\, P}^{r}\left[M\right]$
+\end_inset 
+
+.
+ Las combinaciones lineales
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{Q} & = & a\mathsf{T}+b\mathsf{P}\\
+Q^{i_{1}\ldots i_{r}} & = & aT^{i_{1}\ldots i_{r}}+bP^{i_{1}\ldots i_{r}}\end{eqnarray*}
+
+\end_inset 
+
+ de tensores 
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathsf{P}$
+\end_inset 
+
+ simétricos dan lugar a un 
+\begin_inset Formula $\mathsf{Q}\in S_{0\, P}^{r}\left[M\right]$
+\end_inset 
+
+.
+\layout Standard
+
+
+\begin_inset Formula $S_{0\, P}^{2}\left[M\right]$
+\end_inset 
+
+ es isomorfo al conjunto de las matrices simétricas 
+\begin_inset Formula $2\times2$
+\end_inset 
+
+, y tiene el siguiente número de elementos independientes:
+\begin_inset Formula \begin{eqnarray*}
+\binom{m}{2}+m & = & \frac{m!}{2!\left(m-2\right)!}+m\\
+ & = & \frac{m\left(m-1\right)}{2}+m\\
+ & = & m\frac{m+1}{2}\end{eqnarray*}
+
+\end_inset 
+
+ De manera heurística basta con percatarse de que hay 
+\begin_inset Formula $\frac{m\times m}{2}$
+\end_inset 
+
+ elementos independientes, más la diagonal, que a su vez tiene 
+\begin_inset Formula $\frac{m}{2}$
+\end_inset 
+
+.
+\layout Description
+
+
+\size small 
+Ejercicio Demostrar que la dimensión del espacio en general para un tensor
+ 
+\begin_inset Formula $\left(r,0\right)$
+\end_inset 
+
+ es 
+\begin_inset Formula $\binom{m+r-1}{r}$
+\end_inset 
+
+.
+\layout Subsubsection
+
+Simetrización de un tensor 
+\begin_inset Formula $\left(r,0\right)$
+\end_inset 
+
+
+\begin_inset LatexCommand \label{tx simetrizacion tensor r-0}
+
+\end_inset 
+
+
+\layout Standard
+
+Dado un tensor 
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+ de tipo 
+\begin_inset Formula $\left(r,0\right)$
+\end_inset 
+
+ a partir de él podemos definir un tensor totalmente simétrico 
+\begin_inset Formula $\mathsf{T}_{\mathsf{s}}\in S_{0\, P}^{r}\left[M\right]$
+\end_inset 
+
+, así:
+\begin_inset Formula \[
+\mathsf{T}_{\mathsf{s}}\left[\mathsf{a}_{1}\ldots\mathsf{a}_{r}\right]=\frac{1}{r!}\sum_{\left(1\ldots r\right)}\mathsf{T}\left[\mathsf{a}_{1}\ldots\mathsf{a}_{r}\right]\]
+
+\end_inset 
+
+ donde la suma se extiende a todas las posibles permutaciones de índices,
+ 
+\begin_inset Formula $\left(1\ldots r\right)$
+\end_inset 
+
+.
+ 
+\layout Description
+
+
+\size small 
+Ejemplos Vamos a simetrizar un tensor de tipo 
+\begin_inset Formula $\left(2,0\right)$
+\end_inset 
+
+ y otro 
+\begin_inset Formula $\left(3,0\right)$
+\end_inset 
+
+, tanto de forma intrínseca como según la definición clásica: 
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{T}_{\mathsf{s}}\left[\mathsf{a},\mathsf{b}\right] & = & \frac{1}{2}\left(\mathsf{T}\left[\mathsf{a},\mathsf{b}\right]+\mathsf{T}\left[\mathsf{b},\mathsf{a}\right]\right)\\
+T_{\mathsf{s}}^{ij} & = & \frac{1}{2}\left(T^{ij}+T^{ji}\right)\end{eqnarray*}
+
+\end_inset 
+
+ la simetrización de un objeto 
+\begin_inset Formula $\left(3,0\right)$
+\end_inset 
+
+: 
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{T}_{\mathsf{s}}\left[\mathsf{a},\mathsf{b},\mathsf{c}\right] & = & \frac{1}{6}\left(\mathsf{T}\left[\mathsf{a},\mathsf{b},\mathsf{c}\right]+\mathsf{T}\left[\mathsf{a},\mathsf{c},\mathsf{b}\right]+\mathsf{T}\left[\mathsf{c},\mathsf{a},\mathsf{b}\right]+\mathsf{T}\left[\mathsf{c},\mathsf{b},\mathsf{a}\right]+\mathsf{T}\left[\mathsf{b},\mathsf{c},\mathsf{a}\right]+\mathsf{T}\left[\mathsf{b},\mathsf{a},\mathsf{c}\right]\right)\\
+T_{\mathsf{s}}^{ijk} & = & \frac{1}{6}\left(T^{ijk}+T^{ikj}+T^{kij}+T^{jik}+T^{jki}+T^{kji}\right)\end{eqnarray*}
+
+\end_inset 
+
+ Como puede imaginarse, con un objeto 
+\begin_inset Formula $\left(4,0\right)$
+\end_inset 
+
+ la suma se extiende a 24 términos, etc.
+ 
+\layout Subsubsection
+
+Producto tensorial simétrico
+\layout Standard
+
+La operación de simetrización permite definir un tipo especial de producto
+ tensorial que a partir de dos tensores produce un tensor también totalmente
+ simétrico.
+\layout Standard
+
+El producto tensorial de dos tensores simétricos 
+\begin_inset Formula $\mathsf{T}\in S_{0\, P}^{r_{1}}\left[M\right]$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathsf{P}\in S_{0\, P}^{r_{1}}\left[M\right]$
+\end_inset 
+
+ no es, en general, simétrico: 
+\begin_inset Formula \[
+\mathsf{T}\otimes\mathsf{P}\not\in S_{0\, P}^{r_{1}+r_{2}}\left[M\right]\]
+
+\end_inset 
+
+así que definimos el producto tensorial simétrico (que admite argumentos
+ tensoriales 
+\emph on 
+de cualquier tipo de simetría o falta de ella
+\emph default 
+) como la composición del producto tensorial habitual y la operación de
+ simetrización
+\begin_inset Formula \begin{eqnarray*}
+\otimes_{\mathsf{s}}\equiv\left(\quad\right)_{\mathsf{s}}\circ\otimes:T_{0\, P}^{r_{1}}\left[M\right]\times T_{0\, P}^{r_{2}}\left[M\right] & \fd & S_{0\, P}^{r_{1}+r_{2}}\left[M\right]\\
+\left(\mathsf{T},\mathsf{P}\right) & \mapsto & \mathsf{T}\otimes_{\mathsf{s}}\mathsf{P}\equiv\left(T\otimes P\right)_{\mathsf{s}}\end{eqnarray*}
+
+\end_inset 
+
+ podemos construir una base del espacio tensorial 
+\begin_inset Formula $S_{0\, P}^{r}\left[M\right]$
+\end_inset 
+
+ utilizando el producto tensorial simétrico de elementos de la base del
+ espacio tangente (si es 
+\begin_inset Formula $r$
+\end_inset 
+
+ veces contravariante) o cotangente.
+ 
+\layout Description
+
+
+\size small 
+Ejemplo Base de 
+\begin_inset Formula $S_{0\, P}^{2}\left[M\right]$
+\end_inset 
+
+.
+ En virtud de la simetría 
+\begin_inset Formula $\left(\mathsf{T}\otimes\mathsf{P}\right)_{\mathsf{s}}=\left(\mathsf{P}\otimes\mathsf{T}\right)_{\mathsf{s}}$
+\end_inset 
+
+ se puede escribir 
+\begin_inset Formula $\left(\mathsf{e}_{1}\otimes\mathsf{e}_{2}\right)_{\mathsf{s}}=\left(\dpa{}{x^{1}}\otimes\dpa{}{x^{2}}\right)_{\mathsf{s}}$
+\end_inset 
+
+ como el producto normal, 
+\begin_inset Formula $\mathsf{e}_{1}\mathsf{e}_{2}$
+\end_inset 
+
+, que también es conmutativo.
+ Tomamos todos los elementos de la base, realizamos sus productos tensoriales
+ simétricos y los ordenamos de menor a mayor:
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{e}_{1}\mathsf{e}_{2} & = & \frac{1}{2}\left(\mathsf{e}_{1}\otimes\mathsf{e}_{2}+\mathsf{e}_{2}\otimes\mathsf{e}_{1}\right)\\
+\mathsf{e}_{2}\mathsf{e}_{1} & = & \frac{1}{2}\left(\mathsf{e}_{2}\otimes\mathsf{e}_{1}+\mathsf{e}_{1}\otimes\mathsf{e}_{2}\right)\end{eqnarray*}
+
+\end_inset 
+
+ Para 
+\begin_inset Formula $S_{0\, P}^{3}\left[M\right]$
+\end_inset 
+
+ uno de los 10 elementos de la base es
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+
+\begin_inset Formula $\doteq$
+\end_inset 
+
+ indica una igualdad formal, como cuando se iguala el producto vectorial
+ a un determinante imposible que oficia de regla mnemotécnica.
+\end_inset 
+
+: 
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{e}_{1}\otimes_{\mathsf{s}}\mathsf{e}_{2}\otimes_{\mathsf{s}}\mathsf{e}_{3} & \doteq & \mathsf{e}_{1}\mathsf{e}_{2}\mathsf{e}_{3}\\
+ & = & \frac{1}{6}\left(\mathsf{e}_{1}\otimes\mathsf{e}_{2}\otimes\mathsf{e}_{3}+\mathsf{e}_{1}\otimes\mathsf{e}_{3}\otimes\mathsf{e}_{2}+\mathsf{e}_{2}\otimes\mathsf{e}_{3}\otimes\mathsf{e}_{1}+\mathsf{e}_{2}\otimes\mathsf{e}_{1}\otimes\mathsf{e}_{3}+\mathsf{e}_{3}\otimes\mathsf{e}_{1}\otimes\mathsf{e}_{2}+\mathsf{e}_{3}\otimes\mathsf{e}_{2}\otimes\mathsf{e}_{1}\right)\end{eqnarray*}
+
+\end_inset 
+
+ (hay otros 9, como 
+\begin_inset Formula $\mathsf{e}_{1}\mathsf{e}_{1}\mathsf{e}_{2}$
+\end_inset 
+
+) que cumplen las ordenaciones de índices posibles.
+ Si hacemos actuar la base del espacio tangente (simetrizada) sobre elementos
+ de la base del espacio cotangente, 
+\begin_inset Formula $\mathsf{e}^{i}$
+\end_inset 
+
+ al ser
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{e}_{j}\left[\mathsf{e}^{i}\right] & = & \dpxj{}\left[dx^{i}\right]\\
+ & = & \delta_{j}^{i}\end{eqnarray*}
+
+\end_inset 
+
+ se obtiene 
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{e}_{1}\mathsf{e}_{2}\mathsf{e}_{3}\left[\mathsf{e}^{1},\mathsf{e}^{2},\mathsf{e}^{3}\right] & = & \left(\left(\mathsf{e}_{1}\otimes\mathsf{e}_{2}\otimes\mathsf{e}_{3}\right)\left[\mathsf{e}^{1},\mathsf{e}^{2},\mathsf{e}^{3}\right]\right)_{\mathsf{s}}\\
+ & = & \left(\mathsf{e}_{1}\left[\mathsf{e}^{1}\right]\mathsf{e}_{2}\left[\mathsf{e}^{2}\right]\mathsf{e}_{3}\left[\mathsf{e}^{3}\right]\right)_{\mathsf{s}}\\
+ & = & \frac{1}{6}\left(\left(\mathsf{e}_{1}\otimes\mathsf{e}_{2}\otimes\mathsf{e}_{3}\right)\left[\mathsf{e}^{1},\mathsf{e}^{2},\mathsf{e}^{3}\right]+0+\ldots+0\right)\\
+ & = & \frac{1}{6}\end{eqnarray*}
+
+\end_inset 
+
+ Problema: la actuación la base de tensores contravariantes (simétricos)
+ sobre la base de tensores covariantes no da 
+\begin_inset Formula $1$
+\end_inset 
+
+ como podríamos esperar.
+ Eso es por culpa del proceso de simetrización, que ha introducido un factor
+\begin_inset Formula $\frac{1}{r!}$
+\end_inset 
+
+.
+ 
+\layout Subsection
+
+Tensores totalmente antisimétricos, totalmente covariantes
+\layout Standard
+
+Los tensores totalmente antisimétricos totalmente covariantes son la base
+ algebraica para las formas diferenciales.
+ 
+\layout Standard
+
+Consideremos el tensor 
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+ de componentes 
+\begin_inset Formula $T_{j_{1}\ldots j_{s}}$
+\end_inset 
+
+, totalmente covariante (tipo 
+\begin_inset Formula $\left(0,s\right)$
+\end_inset 
+
+) y totalmente antisimétrico.
+ Basta con dar las componentes con sus índices ordenados de menor a mayor
+ 
+\begin_inset Formula $1\leq j_{1}<\ldots<j_{s}\leq m$
+\end_inset 
+
+, pero no se pueden repetir, porque en ese caso el valor de la componente
+ correspondiente se tendría que anular:
+\begin_inset Formula \[
+0=T_{iik}=-T_{iik}\]
+
+\end_inset 
+
+ Se puede obtener una componente cuyos índices no observen la ordenación
+ descrita introduciendo un signo negativo por cada permutación de índices
+ a partir de un conjunto de índices ordenados
+\begin_inset Formula \[
+T_{321}=-T_{312}=T_{132}=-T_{123}\]
+
+\end_inset 
+
+
+\layout Standard
+
+El espacio de los tensores completamente antisimétricos de tipo 
+\begin_inset Formula $\left(0,s\right)$
+\end_inset 
+
+, 
+\begin_inset Formula $\Lambda_{s\, P}^{0}\left[M\right]$
+\end_inset 
+
+ es un subespacio lineal de 
+\begin_inset Formula $T_{s\, P}^{0}\left[M\right]$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+El número componentes independientes de un tensor de 
+\begin_inset Formula $\Lambda_{s\, P}^{0}\left[M\right]$
+\end_inset 
+
+ es 
+\begin_inset Formula $\binom{m}{s}$
+\end_inset 
+
+.
+ 
+\layout Description
+
+
+\size small 
+Ejemplo el número de componentes de un objeto de 
+\begin_inset Formula $\Lambda_{2\, P}^{0}$
+\end_inset 
+
+ es 
+\begin_inset Formula \[
+\binom{m}{2}=\frac{m!}{2!\left(m-2\right)!}=\frac{m\left(m-1\right)}{2}\]
+
+\end_inset 
+
+
+\layout Subsubsection
+
+Antisimetrización
+\layout Standard
+
+A partir de un tensor no antisimétrico, 
+\begin_inset Formula $\mathsf{T}\in T_{s\, P}^{0}\left[M\right]$
+\end_inset 
+
+ podemos construir un tensor totalmente antisimétrico, 
+\begin_inset Formula $\mathsf{T}_{\mathsf{a}}\in\Lambda_{s\, P}^{0}\left[M\right]$
+\end_inset 
+
+ del siguiente modo:
+\begin_inset Formula \[
+\mathsf{T}_{\mathsf{a}}\left[\mathsf{v}_{1}\ldots\mathsf{v}_{s}\right]=\frac{1}{s!}\sum_{\left(1\ldots s\right)}\left(-1\right)^{\sigma}\mathsf{T}\left[\mathsf{v}_{1}\ldots\mathsf{v}_{s}\right]\]
+
+\end_inset 
+
+ donde 
+\begin_inset Formula $\sigma$
+\end_inset 
+
+ es el signo de la permutación.
+ En componentes, podemos denotar 
+\begin_inset Formula $T_{\mathsf{a},ij}$
+\end_inset 
+
+ por 
+\begin_inset Formula $T_{\left[ij\right]}$
+\end_inset 
+
+.
+ 
+\layout Description
+
+
+\size small 
+Ejemplo para un tensor dos covariante:
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{T}_{\mathsf{a}}\left[\mathsf{v},\mathsf{w}\right] & = & \frac{1}{2!}\left(\mathsf{T}\left[\mathsf{v},\mathsf{w}\right]-\mathsf{T}\left[\mathsf{w},\mathsf{v}\right]\right)\\
+T_{[ij]} & = & \frac{1}{2}\left(T_{ij}-T_{ji}\right)\end{eqnarray*}
+
+\end_inset 
+
+ y para un tres covariante:
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{T}_{\mathsf{a}}\left[\mathsf{v},\mathsf{w},\mathsf{x}\right] & = & \frac{1}{3!}\left(\mathsf{T}\left[\mathsf{v},\mathsf{w},\mathsf{x}\right]-\mathsf{T}\left[\mathsf{v},\mathsf{x},\mathsf{w}\right]+\mathsf{T}\left[\mathsf{x},\mathsf{v},\mathsf{w}\right]-\mathsf{T}\left[\mathsf{w},\mathsf{v},\mathsf{x}\right]+\mathsf{T}\left[\mathsf{w},\mathsf{x},\mathsf{v}\right]-\mathsf{T}\left[\mathsf{x},\mathsf{w},\mathsf{v}\right]\right)\\
+T_{[ijk]} & = & \frac{1}{3!}\left(T_{ijk}-T_{ikj}+T_{kij}-T_{jik}+T_{jki}-T_{kji}\right)\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Subsubsection
+
+Producto tensorial antisimétrico
+\layout Standard
+
+Es un producto tensorial que conserva la antisimetría 
+\emph on 
+si
+\emph default 
+ los argumentos son a su vez antisimétricos.
+ Atención, no debe confundirse con el producto exterior, que definiremos
+ más adelante (ver 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+vref{ssec def de producto interior}
+\end_inset 
+
+).
+ Si 
+\begin_inset Formula $\mathsf{F}\in\Lambda_{s_{1}}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathsf{G}\in\Lambda_{s_{2}}$
+\end_inset 
+
+, 
+\begin_inset Formula $\mathsf{F}\otimes\mathsf{G}\not\in\Lambda_{s_{1}+s_{2}}$
+\end_inset 
+
+.
+ Construyamos
+\begin_inset Formula \begin{eqnarray*}
+\otimes_{\mathsf{a}}\equiv\left(\quad\right)_{\mathsf{a}}\circ\otimes:\Lambda_{s_{1}\, P}^{0}\left[M\right]\times\Lambda_{s_{2}\, P}^{0}\left[M\right] & \fd & \Lambda_{s_{1}+s_{2}\, P}^{0}\left[M\right]\\
+\left(\mathsf{F},\mathsf{G}\right) & \mapsto & \mathsf{F}\otimes_{\mathsf{a}}\mathsf{G}\equiv\left(\mathsf{F}\otimes\mathsf{G}\right)_{\mathsf{a}}\end{eqnarray*}
+
+\end_inset 
+
+El interés de estos tensores aparece en conexión con los determinantes y
+ su interpretación geométrica como áreas o volúmenes.
+ Es natural utilizar estos recintos como espacios de integración, lo que
+ conducirá a justificar la utilidad de las formas diferenciales.
+\layout Standard
+
+Todo lo anterior está referido a una carta en particular (ver razonamientos
+ en la definición de campo tensorial 
+\begin_inset LatexCommand \vpageref{tx cartas y campos tensoriales}
+
+\end_inset 
+
+).
+\layout Description
+
+
+\size small 
+Ejemplos Un campo tensorial de especial interés es la métrica riemanniana
+\begin_inset LatexCommand \index{métrica riemanniana}
+
+\end_inset 
+
+ o semiriemanniana, que es de tipo 
+\begin_inset Formula $\left(0,2\right)$
+\end_inset 
+
+ (totalmente covariante), totalmente simétrico, de tipo 
+\begin_inset Formula $\mathcal{C}^{k}$
+\end_inset 
+
+ y no degenerado (
+\begin_inset Formula $\Fdi$
+\end_inset 
+
+ 
+\begin_inset Formula $\forall\mathsf{v}\neq0\,\,\exists\mathsf{w}:g\left[\mathsf{v},\mathsf{w}\right]\neq0$
+\end_inset 
+
+, es decir 
+\begin_inset Formula $g$
+\end_inset 
+
+ tiene inversa).
+ Dado el campo tensorial 
+\emph on 
+métrica riemanniana
+\emph default 
+ 
+\begin_inset Formula $\mathsf{g}$
+\end_inset 
+
+,
+\begin_inset Formula \[
+\mathsf{g}\left[\mathsf{v},\mathsf{w}\right]=g_{ij}v^{i}w^{j}\]
+
+\end_inset 
+
+ es una forma cuadrática diagonalizable, cuya signatura, la serie de signos
+ de elementos de la diagonal, es la misma en todos los puntos de la variedad.
+ Esto quiere decir que una métrica definida positiva (riemanniana) debe
+ serlo en todos los puntos de la variedad.
+ Cuando la signatura es 
+\begin_inset Formula $--\ldots+$
+\end_inset 
+
+ ó 
+\begin_inset Formula $+--\ldots-$
+\end_inset 
+
+ se dice que la métrica es lorentziana o de Minkowski.
+ En todo otro caso, la métrica es pseudo (o semi) riemanniana.
+ 
+\layout Subsection
+
+Campos tensoriales y simetría
+\layout Standard
+
+Como los campos tensoriales no son más que una aplicación que asigna a cada
+ punto de la variedad un tensor, definirlos como simétricos o antisimétricos
+ se reduce a imponer la simetría (antisimetría) de los tensores correspondientes
+ a cada punto:
+\begin_inset Formula \[
+T_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{p}\ldots i_{q}\ldots i_{r}}\left[x^{1}\ldots x^{m}\right]=\left(\pm\right)T_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{q}\ldots i_{p}\ldots i_{r}}\left[x^{1}\ldots x^{m}\right]\]
+
+\end_inset 
+
+
+\layout Section
+
+Campos vectoriales, curvas integrales y flujos
+\layout Standard
+
+Imaginemos un vector 
+\begin_inset Formula $\mathsf{v}\in T_{P}\left[M\right]$
+\end_inset 
+
+ y una función 
+\begin_inset Formula $f\in\mathcal{F}^{\infty}\left[M\right]$
+\end_inset 
+
+.
+ 
+\begin_inset Formula $\mathsf{v}\left[f\right]$
+\end_inset 
+
+ indica cuál es la variación de 
+\begin_inset Formula $f$
+\end_inset 
+
+ a lo largo de la dirección indicada por el vector tangente 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ en 
+\begin_inset Formula $P$
+\end_inset 
+
+.
+ Buscamos generalizar esto para campos tensoriales, intentando definir cuál
+ es la variación de un campo tensorial en la dirección indicada por determinado
+ campo de vectores.
+ En esencia esto nos conduce al concepto de 
+\emph on 
+derivada de Lie
+\begin_inset LatexCommand \index{derivada de Lie}
+
+\end_inset 
+
+.
+
+\emph default 
+ Para ello debemos introducir las curvas integrales asociadas a un campo
+ vectorial y el flujo de dicho campo.
+\layout Standard
+
+Un campo vectorial se puede interpretar usando la clásica analogía del fluido,
+ en la que la trayectoria de una partícula se asimila a las curvas integrales
+ y donde la evolución de un volumen de fluido da la idea de flujo.
+ 
+\layout Subsection
+
+Curvas integrales
+\layout Standard
+
+Una curva definida sobre una variedad es una aplicación 
+\begin_inset Formula \begin{eqnarray*}
+\gamma:\left[a,b\right]\in\Bbb R & \fd & M\\
+t & \mapsto & \gamma\left[t\right]=P\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Standard
+
+El campo vectorial asigna a cada punto de la variedad un vector (figura
+ 
+\begin_inset LatexCommand \ref{fig campo vect sobre M y c int}
+
+\end_inset 
+
+).
+ Si el vector coincide en cada punto de la curva con su vector tangente,
+ la curva es una 
+\emph on 
+curva integral
+\begin_inset LatexCommand \index{curva integral}
+
+\end_inset 
+
+.
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-curvas-integrales-sobre-la-var.eps
+	display monochrome
+	width 14cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig campo vect sobre M y c int}
+
+\end_inset 
+
+Campo vectorial sobre la variedad.
+ Las curvas integrales enhebran el campo.
+\end_inset 
+
+¿Cómo se refleja esto en la estructura diferenciable de la variedad?.
+ La aplicación en coordenadas es:
+\begin_inset Formula \begin{eqnarray*}
+\hat{\gamma}\equiv\varphi_{a}\circ\gamma:\Bbb R & \fd & \cR{m}\\
+t & \mapsto & \left(x^{1}\left[t\right]\ldots x^{m}\left[t\right]\right)\end{eqnarray*}
+
+\end_inset 
+
+y su diferencial 
+\begin_inset Formula \begin{eqnarray*}
+\dt{\gamma}:T_{t}\left[\cR{}\right] & \fd & T_{P}\left[M\right]\\
+a\dt{} & \mapsto & \mathsf{v}\end{eqnarray*}
+
+\end_inset 
+
+ en coordenadas
+\begin_inset Formula \begin{eqnarray*}
+\dt{\hat{\gamma}}\equiv\varphi_{a}\circ\dt{\gamma}:T_{t}\left[\cR{}\right] & \fd & T_{\varphi_{a}\left[\gamma\left[t\right]\right]}\left[\cR{m}\right]\\
+a\dt{} & \mapsto & \left(\dt{x^{1}}\ldots\dt{x^{m}}\right)\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Standard
+
+Como era de esperar, si queremos encontrar precisamente estas curvas 
+\emph on 
+enhebradoras
+\emph default 
+, tenemos que resolver un sistema de ecuaciones diferenciales ordinarias.
+ La condición para hallar la curva es que su vector tangente en cada punto
+ sea igual al vector 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ del campo vectorial en ese punto: 
+\begin_inset Formula \begin{equation}
+\dt{\gamma}=\left.\mathsf{v}\right|_{\gamma\left[t\right]}\label{ec def de curva integral}\end{equation}
+
+\end_inset 
+
+ ecuación que se puede llevar a coordenadas utilizando la aplicación de
+ carta:
+\begin_inset Formula \begin{eqnarray*}
+\frac{d\left[\varphi_{a}^{i}\circ\gamma\right]}{dt} & = & v^{i}\left[\varphi_{a}\circ\gamma\left[t\right]\right]\dpa{}{x^{i}}\\
+ & = & v^{i}\left[x^{1}\left[t\right]\ldots x^{m}\left[t\right]\right]\dpxi{}\end{eqnarray*}
+
+\end_inset 
+
+ donde 
+\begin_inset Formula $\varphi_{a}^{i}$
+\end_inset 
+
+ no es más que la coordenada 
+\begin_inset Formula $i$
+\end_inset 
+
+ (
+\begin_inset Formula $\varphi_{a}^{i}=u^{i}\circ\varphi_{a}$
+\end_inset 
+
+), de modo que 
+\begin_inset Formula $\varphi_{a}^{i}\circ\gamma$
+\end_inset 
+
+ no es más que, abusando de la notación, la coordenada 
+\begin_inset Formula $x^{i}$
+\end_inset 
+
+ de la curva: 
+\begin_inset Formula \begin{equation}
+\dt{x^{i}}=v^{i}\left[x^{1}\left[t\right]\ldots x^{m}\left[t\right]\right]\quad i=1\ldots m\label{ec calculo curvas integrales}\end{equation}
+
+\end_inset 
+
+ sistema de 
+\begin_inset Formula $m$
+\end_inset 
+
+ ecuaciones ordinarias para las funciones 
+\begin_inset Formula $x^{i}$
+\end_inset 
+
+.
+ Para determinar la curva integral (que será única por el teorema de existencia
+ y unicidad) debemos aportar una condición inicial (dar un punto cualquiera
+ de la curva, 
+\begin_inset Formula $\left(t,x^{1}\ldots x^{m}\right)$
+\end_inset 
+
+).
+\layout Description
+
+
+\size small 
+Ejemplo
+\size default 
+ 
+\size small 
+Consideremos el siguiente campo de vectores, 
+\begin_inset Formula \[
+\mathsf{v}=x^{2}\dpx{}+z\dpy{}-y\dpz{}\]
+
+\end_inset 
+
+ Para calcular sus curvas integrales debemos imponer las siguientes condiciones
+ (un sistema de ecuaciones ordinarias):
+\begin_inset Formula \begin{eqnarray*}
+\dt{x} & = & x^{2}\\
+\dt{y} & = & z\\
+\dt{z} & = & -y\end{eqnarray*}
+
+\end_inset 
+
+ la solución de la primera ecuación, que está desacoplada, es
+\begin_inset Formula \[
+x=\frac{1}{t_{0}-t}\]
+
+\end_inset 
+
+ combinando las otras dos
+\begin_inset Formula \[
+\ddt{y}=-y\]
+
+\end_inset 
+
+ con lo que 
+\begin_inset Formula $y=A\sin t+B\cos t$
+\end_inset 
+
+ y 
+\begin_inset Formula $z=y'=A\cos t-B\sin t$
+\end_inset 
+
+.
+ Para 
+\begin_inset Formula $t=0$
+\end_inset 
+
+ se cumple 
+\begin_inset Formula \[
+x_{0}=\frac{1}{t_{0}}\quad y_{0}=B\quad z_{0}=A\]
+
+\end_inset 
+
+ por lo que la solución se expresa en función de los datos iniciales del
+ siguiente modo:
+\begin_inset Formula \begin{eqnarray*}
+x\left[t\right] & = & -\frac{1}{\frac{1}{x_{0}}-t}\\
+y\left[t\right] & = & z_{0}\sin t+y_{0}\cos t\\
+z\left[t\right] & = & z_{0}\cos t-y_{0}\cos t\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Standard
+
+En el ejemplo anterior hemos cubierto la variedad con una sola carta.
+
+\size small 
+ 
+\size default 
+Si tuviésemos varias cartas (figura 
+\begin_inset LatexCommand \ref{fig curvas int con M varias cartas}
+
+\end_inset 
+
+), para cada una de ellas deberíamos resolver un sistema de ecuaciones diferenci
+ales ordinarias.
+ Tomaríamos una carta 
+\begin_inset Formula $\left(U_{a},\varphi_{a}\right)$
+\end_inset 
+
+ tal que 
+\begin_inset Formula $P_{0}\in U_{a}$
+\end_inset 
+
+ e integraríamos el sistema diferencial a lo largo de toda su extensión.
+ En la carta 
+\begin_inset Formula $\left(U_{b},\varphi_{b}\right)$
+\end_inset 
+
+, que necesariamente deberá solapar con la anterior, deberíamos buscar un
+ punto, perteneciente a la intersección, 
+\begin_inset Formula $P$
+\end_inset 
+
+.
+ Así vamos 
+\emph on 
+cosiendo
+\emph default 
+ las curvas, utilizando el conjunto de cartas para resolver en cada región
+ un sistema diferente de ecuaciones diferenciales ordinarias (tipo 
+\begin_inset LatexCommand \ref{ec calculo curvas integrales}
+
+\end_inset 
+
+).
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-curvas-int-con-varias-cartas.eps
+	display monochrome
+	width 9cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig curvas int con M varias cartas}
+
+\end_inset 
+
+Curvas integrales en una variedad recubierta por varias cartas.
+\end_inset 
+
+ Para 
+\begin_inset Formula $t=0$
+\end_inset 
+
+ (punto 
+\begin_inset Formula $P_{0}$
+\end_inset 
+
+) tendremos 
+\begin_inset Formula $x^{i}\left[0\right]=x_{0}^{i}$
+\end_inset 
+
+, trabajando en 
+\begin_inset Formula $U_{a}$
+\end_inset 
+
+, mientras que para 
+\begin_inset Formula $t=\tau$
+\end_inset 
+
+ (punto 
+\begin_inset Formula $P\in U_{b}$
+\end_inset 
+
+) se cumplirá
+\begin_inset Formula \[
+\dt{x^{i'}}=v^{i'}\left[x^{1'}\left[t\right]\ldots x^{m'}\left[t\right]\right]\]
+
+\end_inset 
+
+ La garantía de continuidad la aporta el hecho de que 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ es 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+.
+ Aunque haya zonas en las que tenemos dos parametrizaciones, éstas no son
+ contradictorias.
+ Cuando ocurre que todas las curvas integrales de un campo vectorial pueden
+ extenderse para todo 
+\begin_inset Formula $t$
+\end_inset 
+
+, se dice que se trata de un campo vectorial 
+\emph on 
+completo
+\begin_inset LatexCommand \index{campo vectorial completo}
+
+\end_inset 
+
+.
+\layout Description
+
+Existencia\SpecialChar ~
+y\SpecialChar ~
+unicidad\SpecialChar ~
+de\SpecialChar ~
+curvas\SpecialChar ~
+integrales
+\begin_inset LatexCommand \index{existencia y unicidad de curvas integrales}
+
+\end_inset 
+
+ (teorema) Sean 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ un campo vectorial contravariante de clase 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ definido en 
+\begin_inset Formula $E\subset M$
+\end_inset 
+
+, 
+\begin_inset Formula $P\in E$
+\end_inset 
+
+ un punto de dicha variedad y 
+\begin_inset Formula $c$
+\end_inset 
+
+ un número real.
+ Entonces existe una única curva integral 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+ y un número real 
+\begin_inset Formula $r$
+\end_inset 
+
+ tal que 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+ está definida en 
+\begin_inset Formula $\left(t-c\right)<r$
+\end_inset 
+
+ y 
+\begin_inset Formula $\gamma\left[c\right]=P$
+\end_inset 
+
+.
+\begin_deeper 
+\layout Standard
+
+Esto quiere decir que en torno a 
+\begin_inset Formula $P$
+\end_inset 
+
+ localmente existe una única curva integral que pasa por 
+\begin_inset Formula $P$
+\end_inset 
+
+.
+\layout Standard
+
+La unicidad se interpreta del siguiente modo: si 
+\begin_inset Formula $\exists$
+\end_inset 
+
+ otra curva 
+\begin_inset Formula $\hat{\gamma}\left[t\right]$
+\end_inset 
+
+ en la intersección de dominios de definición (
+\begin_inset Formula $\left|t-c\right|<r$
+\end_inset 
+
+ y 
+\begin_inset Formula $\left|t-c\right|<\hat{r}$
+\end_inset 
+
+) las dos curvas son la misma.
+\end_deeper 
+\layout Subsection
+
+Flujo de un campo vectorial
+\layout Standard
+
+Se denomina 
+\emph on 
+flujo
+\begin_inset LatexCommand \index{flujo de un campo vectorial}
+
+\end_inset 
+
+
+\emph default 
+ al conjunto de vectores tangentes a una curva integral.
+ Así el flujo define una clase de curvas en un punto, o, de otro modo, obtenemos
+ la curva integral integrando las ecuaciones diferenciales ordinarias del
+ flujo.
+\layout Subsubsection
+
+Definición
+\layout Standard
+
+Un recinto 
+\begin_inset Formula $R$
+\end_inset 
+
+ se hace evolucionar con el tiempo a 
+\begin_inset Formula $R'$
+\end_inset 
+
+ y posteriormente a 
+\begin_inset Formula $R''$
+\end_inset 
+
+.
+ Cada punto se transporta con la variación del parámetro de la curva integral
+ que le corresponde (
+\begin_inset Formula $s$
+\end_inset 
+
+ en la figura 
+\begin_inset LatexCommand \ref{fig evol de un vol de fluido con flujo}
+
+\end_inset 
+
+).
+ El campo vectorial a través de sus curvas integrales determina el flujo
+ de un recinto con el parámetro.
+ Se define el flujo de un campo vectorial
+\begin_inset LatexCommand \index{flujo de un campo vectorial}
+
+\end_inset 
+
+ como el conjunto de aplicaciones 
+\begin_inset Formula $\mu_{s}$
+\end_inset 
+
+ que van de un subconjunto 
+\begin_inset Formula $E_{s}\subset E$
+\end_inset 
+
+ de la variedad a la variedad 
+\begin_inset Formula $M$
+\end_inset 
+
+.
+\begin_inset Formula \begin{eqnarray*}
+\mu_{s}:\Bbb R\times E_{s} & \fd & M\\
+\left(s,P\right) & \mapsto & \mu_{s}\left[P\right]=\gamma_{P}\left[s\right]\end{eqnarray*}
+
+\end_inset 
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-evol-de-un-vol-con-un-flujo.eps
+	display monochrome
+	width 6cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig evol de un vol de fluido con flujo}
+
+\end_inset 
+
+Evolución de un volumen de fluido mediante el flujo.
+ 
+\begin_inset Formula $P_{1}=\gamma_{P_{1}}\left[0\right]$
+\end_inset 
+
+=
+\begin_inset Formula $\mu_{0}\left[P_{1}\right]$
+\end_inset 
+
+, 
+\begin_inset Formula $P_{1}'=\gamma_{P_{1}}\left[s\right]=\mu_{s}\left[P_{1}\right]$
+\end_inset 
+
+, 
+\begin_inset Formula $P_{1}''=\gamma_{P_{1}}\left[s+t\right]=\mu_{s+t}\left[P_{1}\right]$
+\end_inset 
+
+,
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+quad
+\end_inset 
+
+ 
+\begin_inset Formula $P_{2}=\gamma_{P_{2}}\left[0\right]=\mu_{0}\left[P_{2}\right]$
+\end_inset 
+
+, 
+\begin_inset Formula $P_{2}'=\gamma_{P_{2}}\left[s\right]=\mu_{s}\left[P_{2}\right]$
+\end_inset 
+
+, 
+\begin_inset Formula $P_{2}''=\gamma_{P_{2}}\left[s+t\right]=\mu_{s+t}\left[P_{2}\right]$
+\end_inset 
+
+ .
+ 
+\begin_inset Formula $E_{s+t}\fd E_{t}\fd E_{0}$
+\end_inset 
+
+.
+\end_inset 
+
+ 
+\layout Standard
+
+El conjunto 
+\begin_inset Formula $E_{s}$
+\end_inset 
+
+ está formado por todos los puntos de 
+\begin_inset Formula $E$
+\end_inset 
+
+ tales que su curva integral se puede extender hasta el valor del parámetro
+ 
+\begin_inset Formula $s$
+\end_inset 
+
+, una definición 
+\emph on 
+ad hoc
+\emph default 
+ del dominio para que 
+\begin_inset Formula $\mu_{s}$
+\end_inset 
+
+ sea efectivamente una función (se podría dar el caso de que la curva integral
+ que pasa por un punto no fuese extensible para todos los valores del parámetro
+ 
+\begin_inset Formula $s\in\cR{}$
+\end_inset 
+
+).
+ Para cada valor del parámetro tendremos un subconjunto 
+\begin_inset Formula $E_{s}$
+\end_inset 
+
+, dependiente tanto de la regularidad del campo como de la curva integral.
+ Para cada valor del parámetro 
+\begin_inset Formula $s$
+\end_inset 
+
+ tenemos una aplicación, y el conjunto de todas estas aplicaciones 
+\begin_inset Formula $\mu_{s}$
+\end_inset 
+
+ es lo que llamamos 
+\emph on 
+flujo del campo vectorial.
+\layout Standard
+
+Se trata de una definición invariante frente a reparametrizaciones, porque
+ la parametrización es la dada por el sistema de ecuaciones diferenciales
+ que hemos resuelto para hallar las curvas integrales.
+\layout Subsubsection
+
+Propiedades
+\layout Enumerate
+
+Si los dominios de 
+\begin_inset Formula $\mu_{s}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mu_{t}$
+\end_inset 
+
+ están bien definidos, entonces 
+\begin_inset Formula $\mu_{t}\circ\mu_{s}=\mu_{s+t}$
+\end_inset 
+
+ (figura 
+\begin_inset LatexCommand \ref{fig evol de un vol de fluido con flujo}
+
+\end_inset 
+
+).
+ El único problema puede darlo el dominio de definición, por lo que hay
+ que restringirlo a la intersección de ambos.
+ 
+\layout Enumerate
+
+
+\begin_inset Formula $\mu_{s}\circ\mu_{-s}=1$
+\end_inset 
+
+.
+\layout Standard
+
+Los flujos constituyen un 
+\emph on 
+grupo uniparamétrico de transformaciones
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Recibe el nombre de grupo uniparamétrico de transformaciones del conjunto
+ 
+\begin_inset Formula $R$
+\end_inset 
+
+ la familia 
+\begin_inset Formula $\left\{ \mu_{s}\right\} $
+\end_inset 
+
+ de aplicaciones del conjunto 
+\begin_inset Formula $M$
+\end_inset 
+
+ en sí mismo, numeradas con el conjunto de los números reales que cumplen
+ las propiedades enunciadas.
+ Se trata de un grupo conmutativo de aplicaciones biunívocas.
+ Ver 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+cite{Arnold}
+\end_inset 
+
+.
+\end_inset 
+
+.
+\layout Section
+
+Derivada de Lie
+\layout Standard
+
+La derivada de Lie permite estudiar la variación de un campo tensorial 
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+ no sólo sobre curvas coordenadas, 
+\begin_inset Formula $x^{\mu}$
+\end_inset 
+
+, sino sobre curvas las curvas integrales de un campo cualquiera, 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+:
+\begin_inset Formula \[
+\mathsf{v}=v^{\mu}\left[x^{1}\ldots x^{m}\right]\dpa{}{x^{\mu}}\]
+
+\end_inset 
+
+
+\layout Subsubsection
+
+Dos transformaciones generales
+\layout Standard
+
+Sea una transformación 
+\begin_inset Formula $F$
+\end_inset 
+
+ 
+\begin_inset Formula \begin{eqnarray*}
+F:M & \fd & M\\
+P & \mapsto & \tilde{P}\\
+\hat{F}\equiv\varphi_{2}\circ F\circ\varphi_{1}^{-1}:\cR{m} & \fd & \cR{m}\\
+\left(x^{1}\ldots x^{m}\right) & \mapsto & \left(\tilde{x}^{1}\ldots\tilde{x}^{m}\right)\end{eqnarray*}
+
+\end_inset 
+
+ aceptemos que podemos expresar 
+\begin_inset Formula $P$
+\end_inset 
+
+ y 
+\begin_inset Formula $\tilde{P}$
+\end_inset 
+
+ en un mismo sistema de coordenadas, 
+\begin_inset Formula $\tilde{x}^{\mu}=F\left[x^{1}\ldots x^{m}\right]$
+\end_inset 
+
+ abusando de la notación.
+ La aplicación inversa la denotamos por 
+\begin_inset Formula $G$
+\end_inset 
+
+ (por conveniencia notacional): 
+\begin_inset Formula \begin{eqnarray*}
+G:M & \fd & M\\
+\tilde{P} & \mapsto & P\\
+\hat{G}\equiv\varphi_{1}\circ G\circ\varphi_{2}^{-1}:\cR{m} & \fd & \cR{m}\\
+\left(\tilde{x}^{1}\ldots\tilde{x}^{m}\right) & \mapsto & \left(x^{1}\ldots x^{m}\right)\end{eqnarray*}
+
+\end_inset 
+
+y 
+\begin_inset Formula $x^{\nu}=G^{\nu}\left[\tilde{x}^{1}\ldots\tilde{x}^{m}\right]$
+\end_inset 
+
+ abusando una vez más de la notación.
+\layout Subsubsection
+
+Sistema de coordenadas arrastrado
+\layout Standard
+
+Definimos el 
+\emph on 
+sistema de coordenadas arrastrado correspondiente a la aplicación 
+\begin_inset Formula $F$
+\end_inset 
+
+
+\begin_inset LatexCommand \index{sistema de coordenadas arrastrado}
+
+\end_inset 
+
+ 
+\emph default 
+como el sistema de coordenadas (denotado por primas) tal que el punto 
+\begin_inset Formula $\tilde{P}$
+\end_inset 
+
+ tiene 
+\emph on 
+las mismas
+\emph default 
+ coordenadas una vez arrastrado (primas) que tenía 
+\begin_inset Formula $P$
+\end_inset 
+
+ sin arrastrar (sin primas).
+\begin_inset Formula \begin{eqnarray}
+\tilde{x}^{\mu'} & \equiv & \delta_{\mu}^{\mu'}x^{\mu}\label{ec sist de coord arrastrado}\\
+ & = & x^{\mu'}\nonumber \end{eqnarray}
+
+\end_inset 
+
+ 
+\layout Standard
+
+El punto 
+\begin_inset Formula $P$
+\end_inset 
+
+ lo podemos expresar en términos de las coordenadas de 
+\begin_inset Formula $\tilde{P}$
+\end_inset 
+
+, sin más que utilizar 
+\begin_inset Formula $G$
+\end_inset 
+
+:
+\begin_inset Formula \begin{eqnarray*}
+\tilde{x}^{\mu'} & = & \delta_{\mu}^{\mu'}x^{\mu}\\
+ & = & \delta_{\mu}^{\mu'}G^{\mu}\left[\tilde{x}^{\nu}\right]\end{eqnarray*}
+
+\end_inset 
+
+ supongamos relleno el dominio de definición por una gelatina (figura 
+\begin_inset LatexCommand \ref{fig gelatina}
+
+\end_inset 
+
+), marcada por una malla.
+ La transformación 
+\begin_inset Formula $F$
+\end_inset 
+
+ deforma la gelatina (traslación, giro, estiramiento\SpecialChar \ldots{}
+).
+ Al efectuar esta operación obtenemos una nueva malla, caracterizada por
+ el sistema de coordenadas primas.
+ Las coordenadas de un punto respecto al original deben ser las mismas que
+ la del transformado respecto al sistema de coordenadas deformado.
+ 
+\layout Description
+
+campo\SpecialChar ~
+tensorial\SpecialChar ~
+arrastrado dado un campo tensorial 
+\begin_inset Formula $T_{k}^{ij}$
+\end_inset 
+
+ se define el campo tensorial arrastrado de modo que sus componentes en
+ el punto transformado 
+\begin_inset Formula $\left(\tilde{P}\right)$
+\end_inset 
+
+ y en el sistema de coordenadas transformado (con primas) sean las mismas
+ que el original tenía en el punto y sistema de partida.
+ Por ejemplo, para 
+\begin_inset Formula $\mathsf{T}\in T_{1}^{2}\left[M\right]$
+\end_inset 
+
+ 
+\begin_inset Formula \[
+\hat{T}_{k'}^{i'j'}\left[\tilde{P}\right]=\delta_{i}^{i'}\delta_{j}^{j'}\delta_{k'}^{k}T_{k}^{ij}\left[P\right]\]
+
+\end_inset 
+
+
+\layout Standard
+
+En términos de la gelatina, si tenemos un vector en cada punto de la gelatina--d
+ominio, la flechita deformada por la aplicación tendrá con respecto al sistema
+ deformado las mismas componentes que tenía la flechita original en el sistema
+ sin deformar.
+ 
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-gelatina-lie.eps
+	display monochrome
+	width 5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig gelatina}
+
+\end_inset 
+
+
+\begin_inset Formula $F$
+\end_inset 
+
+ transforma puntos y deforma las bases, 
+\begin_inset Formula $x^{i}\mapsto\tilde{x}^{i}$
+\end_inset 
+
+.
+\end_inset 
+
+
+\layout Subsubsection
+
+Arrastre por un flujo
+\layout Standard
+
+Sea el flujo 
+\begin_inset Formula \begin{eqnarray*}
+\mu_{\varepsilon}:E_{\varepsilon}\subset M & \fd & M\\
+P & \mapsto & \tilde{P}\end{eqnarray*}
+
+\end_inset 
+
+asociado a un campo vectorial 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ cuyas curvas integrales se obtienen al resolver el sistema de ecuaciones
+ 
+\begin_inset Formula \[
+\dt{x^{\mu}}=v^{\mu}\left[x^{k}\left[t\right]\right]\]
+
+\end_inset 
+
+ 
+\layout Standard
+
+En coordenadas el flujo arrastra de 
+\begin_inset Formula $P$
+\end_inset 
+
+ a 
+\begin_inset Formula $\tilde{P}$
+\end_inset 
+
+ según la siguiente aplicación (a primer orden)
+\begin_inset Formula \begin{equation}
+x^{\mu}\mapsto\tilde{x}^{\mu}=x^{\mu}+\varepsilon v^{\mu}+O\left(\varepsilon^{2}\right)\label{ec arrastre lie uno}\end{equation}
+
+\end_inset 
+
+despejando 
+\begin_inset Formula \[
+x^{\mu}=\tilde{x}^{\mu}-\varepsilon v^{\mu}+O\left(\varepsilon^{2}\right)\]
+
+\end_inset 
+
+es la aplicación inversa, 
+\begin_inset Formula $G$
+\end_inset 
+
+.
+\layout Standard
+
+Según la definición de sistema de coordenadas arrastrado, (ecuación 
+\begin_inset LatexCommand \ref{ec sist de coord arrastrado}
+
+\end_inset 
+
+), las componentes del punto transformado (con tilde) en el sistema prima
+ serán las mismas que las del punto sin transformar (sin tilde) en el sistema
+ de coordenadas de partida (sin primas):
+\begin_inset Formula \begin{eqnarray*}
+\tilde{x}^{\mu'} & = & \delta_{\mu}^{\mu'}x^{\mu}\\
+ & = & \delta_{\mu}^{\mu'}\left(\tilde{x}^{\mu}-\varepsilon v^{\mu}\right)\end{eqnarray*}
+
+\end_inset 
+
+El sistema de coordenadas nuevo se define por el siguiente cambio (cambio
+ directo)
+\begin_inset Formula \begin{equation}
+x^{\mu'}=\delta_{\mu}^{\mu'}\left(x^{\mu}-\varepsilon v^{\mu}\right)\label{ec tr directa lie}\end{equation}
+
+\end_inset 
+
+Manipulando la expresión anterior
+\begin_inset Formula \begin{eqnarray*}
+\delta_{\mu'}^{\nu}x^{\mu'} & = & \delta_{\mu}^{\nu}\delta_{\mu}^{\mu^{'}}\left(x^{\mu}-\varepsilon v^{\mu}\right)\\
+ & = & \delta_{\mu}^{\nu}\left(x^{\mu}-\varepsilon v^{\mu}\right)\\
+ & = & x^{\nu}-\varepsilon v^{\nu}\end{eqnarray*}
+
+\end_inset 
+
+se llega a la relación que permite volver del nuevo sistema de coordenadas
+ (aquel en el que las coordenadas no varían al arrastrar) al viejo (cambio
+ inverso)
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+x^{\nu}=\delta_{\mu'}^{\nu}x^{\mu'}+\varepsilon v^{\nu}\label{ec tr inversa lie}\end{equation}
+
+\end_inset 
+
+ Ambos cambios 
+\begin_inset LatexCommand \ref{ec tr directa lie}
+
+\end_inset 
+
+ y 
+\begin_inset LatexCommand \ref{ec tr inversa lie}
+
+\end_inset 
+
+ están escritos en aproximación lineal, 
+\begin_inset Formula $O\left(\varepsilon^{2}\right)$
+\end_inset 
+
+.
+\layout Paragraph
+
+¿Cómo definimos un tensor arrastrado? 
+\layout Standard
+
+Queremos expresar el tensor arrastrado por el flujo en función del tensor
+ antes de arrastrar.
+ Debemos calcular las matrices jacobianas del cambio de coordenadas
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Elegimos un tensor (1,1) para ilustrar el apartado por que es el más simple
+ con jacobianas de los dos tipos.
+\end_inset 
+
+
+\begin_inset Formula \[
+T_{j'}^{i'}=\dpxi{x^{i'}}\dpa{x^{j}}{x^{j'}}T_{j}^{i}\]
+
+\end_inset 
+
+ en el sistema de coordenadas arrastrado (con primas), para lo cual nos
+ servimos de las ecuaciones de cambio 
+\begin_inset LatexCommand \ref{ec tr directa lie}
+
+\end_inset 
+
+ y 
+\begin_inset LatexCommand \ref{ec tr inversa lie}
+
+\end_inset 
+
+.
+ Así obtenemos ambas jacobianas,
+\begin_inset Formula \begin{eqnarray}
+\dpa{x^{\mu'}}{x^{\alpha}} & = & \delta_{\mu}^{\mu'}\left(\dpa{x^{\mu}}{x^{\alpha}}-\varepsilon\dpa{v^{\mu}}{x^{\alpha}}\right)+O\left(\varepsilon^{2}\right)\nonumber \\
+ & = & \delta_{\mu}^{\mu'}\left(\delta_{\alpha}^{\mu}-\varepsilon v_{,\alpha}^{\mu}\right)+O\left(\varepsilon^{2}\right)\label{ec jacobiana lie prima no prima}\end{eqnarray}
+
+\end_inset 
+
+ y 
+\begin_inset Formula \begin{eqnarray}
+\dpa{x^{\nu}}{x^{\beta'}} & = & \delta_{\mu^{'}}^{\nu}\dpa{x^{\mu'}}{x^{\beta'}}+\varepsilon\dpa{v^{\nu}}{x^{\beta'}}\nonumber \\
+ & = & \delta_{\mu^{'}}^{\nu}\delta_{\beta'}^{\mu'}+\varepsilon\dpa{v^{\nu}}{x^{k}}\dpa{x^{k}}{x^{\beta'}}\nonumber \\
+ & = & \delta_{\beta'}^{\nu}+\varepsilon v_{,k}^{\nu}\delta_{\beta'}^{k}\nonumber \\
+ & = & \delta_{k}^{\nu}\delta_{\beta'}^{k}+\varepsilon v_{,k}^{\nu}\delta_{\beta'}^{k}\nonumber \\
+ & = & \delta_{\beta'}^{k}\left(\delta_{k}^{\nu}+\varepsilon v_{,k}^{\nu}\right)\label{ec jacobiana lie no prima prima}\end{eqnarray}
+
+\end_inset 
+
+en el desarrollo anterior se ha utilizado que
+\begin_inset Formula \begin{eqnarray*}
+\dpa{x^{k}}{x^{s'}} & = & \delta_{s'}^{k}\dpa{x^{s'}}{x^{\beta'}}\\
+ & = & \delta_{s'}^{k}\delta_{\beta'}^{s'}\\
+ & = & \delta_{\beta'}^{k}+O\left(\varepsilon\right)\end{eqnarray*}
+
+\end_inset 
+
+y se ha denotado la derivación respecto a una variable precediéndola de
+ una coma y ubicándola como subíndice.
+\layout Standard
+
+Es conveniente para lo que sigue resumir el cambio de coordenadas por el
+ que se define el sistema de coordenadas arrastrado.
+ Es
+\begin_inset Formula \begin{eqnarray}
+x^{\mu'} & = & \delta_{\mu}^{\mu'}\left(x^{\mu}-\varepsilon v^{\mu}\right)\label{ec resumen arrastre lie 1}\\
+x^{\nu} & = & \delta_{\mu'}^{\nu}x^{\mu'}+\varepsilon v^{\nu}\label{ec resumen arrastre lie 2}\end{eqnarray}
+
+\end_inset 
+
+ con los jacobianos:
+\begin_inset Formula \begin{eqnarray}
+\dpa{x^{\mu'}}{x^{\alpha}} & = & \delta_{\mu}^{\mu'}\left(\delta_{\alpha}^{\mu}-\varepsilon v_{,\alpha}^{\mu}\right)\label{ec resumen jacob lie 1}\\
+\dpa{x^{\nu}}{x^{\beta'}} & = & \delta_{\beta'}^{k}\left(\delta_{k}^{\nu}+\varepsilon v_{,k}^{\nu}\right)\label{ec resumen jacob lie 2}\end{eqnarray}
+
+\end_inset 
+
+ (todo a 
+\begin_inset Formula $O\left(\varepsilon^{2}\right)$
+\end_inset 
+
+).
+ 
+\layout Subsubsection
+
+Definición de la derivada de Lie
+\layout Standard
+
+Sean 
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+ un campo tensorial y 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ un campo vectorial contravariante.
+ Se define la derivada de Lie
+\begin_inset LatexCommand \index{derivada de Lie}
+
+\end_inset 
+
+ de 
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+ a lo largo de 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ como:
+\begin_inset Formula \[
+\mathcal{L}_{\mathsf{v}}\mathsf{T}\equiv-\lim_{\varepsilon\fd0}\frac{\tilde{\mathsf{T}}\left[x^{\mu}\right]-\mathsf{T}\left[x^{\mu}\right]}{\varepsilon}\]
+
+\end_inset 
+
+ donde 
+\begin_inset Formula $\tilde{\mathsf{T}}$
+\end_inset 
+
+ es el campo tensorial arrastrado a lo largo del flujo 
+\begin_inset Formula $\mu_{\varepsilon}$
+\end_inset 
+
+ del campo 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+.
+ Nótese que ambos campos son evaluados en el punto 
+\begin_inset Formula $P$
+\end_inset 
+
+ (de coordenadas 
+\begin_inset Formula $x^{\mu}$
+\end_inset 
+
+).
+\layout Subsection
+
+Derivada de Lie de un campo 
+\begin_inset Formula $\left(1,0\right)$
+\end_inset 
+
+
+\layout Standard
+
+Sea 
+\begin_inset Formula $\mathsf{w}$
+\end_inset 
+
+ un campo vectorial contravariante.
+ El campo vectorial arrastrado, 
+\begin_inset Formula $\tilde{\mathsf{w}}$
+\end_inset 
+
+, se define así:
+\begin_inset Formula \begin{eqnarray*}
+\tilde{w}^{\mu'}\left[x^{k}+\varepsilon v^{k}\right] & = & \delta_{\mu}^{\mu'}w^{\mu}\left[x^{k}\right]\\
+\tilde{w}^{\mu'}\left[x^{k}\right] & = & \delta_{\mu}^{\mu'}w^{\mu}\left[x^{k}-\varepsilon v^{k}\right]\end{eqnarray*}
+
+\end_inset 
+
+ desarrollando Taylor:
+\begin_inset Formula \[
+\tilde{w}^{\mu'}\left[x^{k}\right]=\delta_{\mu}^{\mu'}\left(w^{\mu}\left[x^{k}\right]-\varepsilon w_{,k}^{\mu}v^{k}+O\left(\varepsilon^{2}\right)\right)\]
+
+\end_inset 
+
+ tenemos las componentes en el sistema prima, y las que queremos son las
+ del sistema sin prima.
+ La componente 
+\begin_inset Formula $\mu$
+\end_inset 
+
+-ésima de la derivada de Lie es
+\begin_inset Formula \[
+\left(\mathcal{L}_{\mathsf{v}}\mathsf{w}\right)^{\mu}=-\lim_{\varepsilon\fd0}\frac{\tilde{w}^{\mu}\left[x^{k}\right]-w^{\mu}\left[x^{k}\right]}{\varepsilon}\]
+
+\end_inset 
+
+ el campo vectorial arrastrado
+\begin_inset Formula \begin{eqnarray*}
+\tilde{w}^{\nu}\left[x^{k}\right] & = & \dpa{x^{\nu}}{x^{\mu'}}\tilde{w}^{\mu'}\left[x^{k}\right]\\
+ & = & \delta_{\mu'}^{k}\left(\delta_{k}^{\nu}+\varepsilon v_{,k}^{\nu}\right)\delta_{\mu'}^{\mu}\left(w^{\mu}-\varepsilon w_{,k}^{\mu}v^{k}\right)\\
+ & = & \delta_{\mu}^{k}\left(\delta_{k}^{\nu}+\varepsilon v_{,k}^{\nu}\right)\left(w^{\mu}-\varepsilon w_{,i}^{\mu}v^{i}\right)\\
+ & = & \left(\delta_{k}^{\nu}+\varepsilon v_{,k}^{\nu}\right)\left(w^{k}-\varepsilon w_{,i}^{k}v^{i}\right)\\
+ & = & \delta_{k}^{\nu}w^{k}+\varepsilon\left(-\delta_{k}^{\nu}w_{,i}^{k}v^{i}+v_{,k}^{\nu}w^{k}\right)\\
+ & = & w^{\nu}+\varepsilon\left(-w_{,i}^{\mu}v^{i}+v_{,k}^{\nu}w^{k}\right)\end{eqnarray*}
+
+\end_inset 
+
+ Finalmente, la componente 
+\begin_inset Formula $\nu$
+\end_inset 
+
+-ésima de la derivada de Lie de 
+\begin_inset Formula $\mathsf{w}$
+\end_inset 
+
+ a lo largo de 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ se escribe 
+\begin_inset Formula \[
+\left(\mathcal{L}_{\mathsf{v}}\mathsf{w}\right)^{\nu}=w_{,k}^{\nu}v^{k}-v_{,k}^{\nu}w^{k}\]
+
+\end_inset 
+
+ o, abusando peligrosamente de la notación, 
+\begin_inset Formula $\mathcal{L}_{\mathsf{v}}w^{\nu}$
+\end_inset 
+
+.
+ El segundo término refleja la deformación de la base.
+ La derivada de Lie de un campo vectorial a lo largo de otro es el conmutador
+ de ambos:
+\begin_inset Formula \[
+\mathcal{L}_{\mathsf{v}}\mathsf{w}=\left[\mathsf{v},\mathsf{w}\right]\]
+
+\end_inset 
+
+
+\layout Standard
+
+Idea geométrica: no sirven como coordenadas 
+\begin_inset Formula $\mathsf{w}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ a menos que su conmutador (derivada de Lie) sea nulo.
+ 
+\layout Standard
+
+En general, arrastrando 
+\begin_inset Formula $P$
+\end_inset 
+
+ primero según 
+\begin_inset Formula $\mathsf{w}$
+\end_inset 
+
+ y después según 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ no se obtiene el mismo resultado que operando en el orden opuesto (ver
+ figura 
+\begin_inset LatexCommand \ref{fig int geometrica dlie}
+
+\end_inset 
+
+).
+ La diferencia entre 
+\begin_inset Formula $\tilde{P}'$
+\end_inset 
+
+ y 
+\begin_inset Formula $P''$
+\end_inset 
+
+ es, a segundo orden, la derivada de Lie.
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-int-geometrica-d-lie.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig int geometrica dlie}
+
+\end_inset 
+
+Interpretación geométrica de la derivada de Lie.
+ 
+\begin_inset Formula $P\fd P'$
+\end_inset 
+
+ curvas integrales de 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+.
+ 
+\begin_inset Formula $P'\fd P''$
+\end_inset 
+
+ curvas integrales de 
+\begin_inset Formula $\mathsf{w}$
+\end_inset 
+
+.
+\end_inset 
+
+
+\layout Subsection
+
+Derivada de Lie de un campo 
+\begin_inset Formula $\left(1,1\right)$
+\end_inset 
+
+
+\layout Standard
+
+La derivada de Lie es un campo tensorial del mismo tipo que su argumento.
+ Su expresión para un tensor 
+\begin_inset Formula $\left(1,1\right)$
+\end_inset 
+
+ contiene dos términos correctivos:
+\begin_inset Formula \[
+\left(\mathcal{L}_{\mathsf{v}}\mathsf{T}\right)_{\nu}^{\mu}=T_{\nu,k}^{\mu}v^{k}-T_{\nu}^{k}v_{,k}^{\mu}+T_{k}^{\mu}v_{,\nu}^{k}\]
+
+\end_inset 
+
+ Para calcularla nos valemos de las relaciones de cambio al sistema arrastrado,
+ 
+\begin_inset LatexCommand \ref{ec resumen arrastre lie 1}
+
+\end_inset 
+
+,
+\begin_inset LatexCommand \ref{ec resumen arrastre lie 2}
+
+\end_inset 
+
+,
+\begin_inset LatexCommand \ref{ec resumen jacob lie 1}
+
+\end_inset 
+
+ y 
+\begin_inset LatexCommand \ref{ec resumen jacob lie 2}
+
+\end_inset 
+
+: 
+\begin_inset Formula \[
+\tilde{T}_{\nu'}^{\mu'}\left[x^{k}+\varepsilon v^{k}\right]=\delta_{\mu}^{\mu'}\delta_{\nu'}^{\nu}T_{\nu}^{\mu}\left[x^{k}\right]\]
+
+\end_inset 
+
+ con lo que 
+\begin_inset Formula \begin{eqnarray*}
+\tilde{T}_{\nu'}^{\mu'}\left[x^{k}\right] & = & \delta_{\mu}^{\mu'}\delta_{\nu'}^{\nu}T_{\nu}^{\mu}\left[x^{k}-\varepsilon v^{k}\right]\\
+ & = & \delta_{\mu}^{\mu'}\delta_{\nu'}^{\nu}\left(T_{\nu}^{\mu}\left[x^{k}\right]-\varepsilon T_{\nu,k}^{\mu}v^{k}\left[x^{k}\right]\right)\end{eqnarray*}
+
+\end_inset 
+
+ y
+\begin_inset Formula \begin{eqnarray*}
+\tilde{T}_{s}^{r}\left[x^{k}\right] & = & \dpa{x^{r}}{x^{\mu'}}\dpa{x^{\nu'}}{s}\tilde{T}_{\nu'}^{\mu'}\left[x^{k}\right]\\
+ & = & \delta_{\mu'}^{\beta}\left(\delta_{\beta}^{r}+\varepsilon v_{,\beta}^{r}\right)\delta_{l}^{\nu'}\left(\delta_{s}^{l}-\varepsilon v_{,s}^{l}\right)\delta_{\mu}^{\mu'}\delta_{\nu'}^{\nu}\left(T_{\nu}^{\mu}-\varepsilon T_{\nu,k}^{\mu}v^{k}\right)\end{eqnarray*}
+
+\end_inset 
+
+ utilizando las expresiones de los jacobianos del cambio de coordenadas
+ y 
+\begin_inset Formula $\tilde{T}_{\nu'}^{\mu'}\left[x^{k}\right]$
+\end_inset 
+
+ hasta orden 
+\begin_inset Formula $\varepsilon$
+\end_inset 
+
+.
+ Simplificando:
+\begin_inset Formula \begin{eqnarray*}
+\tilde{T}_{s}^{r}\left[x^{k}\right] & = & \delta_{\mu}^{\beta}\delta_{l}^{\nu}\left(\delta_{\beta}^{r}+\varepsilon v_{,\beta}^{r}\right)\left(\delta_{s}^{l}-\varepsilon v_{,s}^{l}\right)\left(T_{\nu}^{\mu}-\varepsilon T_{\nu,k}^{\mu}v^{k}\right)\\
+ & = & \left(\delta_{\beta}^{r}+\varepsilon v_{,\beta}^{r}\right)\left(\delta_{s}^{l}-\varepsilon v_{,s}^{l}\right)\left(T_{l}^{\beta}-\varepsilon T_{l,k}^{\beta}v^{l}\right)\end{eqnarray*}
+
+\end_inset 
+
+ y desarrollando hasta orden 
+\begin_inset Formula $\varepsilon$
+\end_inset 
+
+:
+\begin_inset Formula \begin{eqnarray*}
+\tilde{T}_{s}^{r}\left[x^{k}\right] & = & \delta_{\beta}^{r}\delta_{s}^{l}T_{l}^{\beta}+\varepsilon\left(-\delta_{\beta}^{r}\delta_{s}^{l}T_{l,k}^{\beta}v^{k}+v_{,\beta}^{r}\delta_{s}^{l}T_{l}^{\beta}-\delta_{\beta}^{r}v_{,s}^{l}T_{l}^{\beta}\right)+O\left(\varepsilon^{2}\right)\\
+ & = & T_{s}^{r}+\varepsilon\left(-T_{s,k}^{r}v^{k}+v_{,\beta}^{r}T_{s}^{\beta}-v_{,s}^{l}T_{l}^{r}\right)+O\left(\varepsilon^{2}\right)\end{eqnarray*}
+
+\end_inset 
+
+ debemos comprobar que tras las contracciones no sobran índices.
+ Ahora tenemos que calcular la derivada de Lie, objetivo inicial.
+\begin_inset Formula \begin{eqnarray*}
+\left(\mathcal{L}_{\mathsf{v}}\mathsf{T}\right)_{s}^{r} & = & -\lim_{\varepsilon\fd0}\frac{\tilde{T}_{s}^{r}-T_{s}^{r}}{\varepsilon}\\
+ & = & T_{s,k}^{r}v^{k}-T_{s}^{k}v_{,k}^{r}+T_{k}^{r}v_{,s}^{k}\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Description
+
+Interpretación el primer término es la derivada direccional del tensor según
+ 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+.
+ Los otros términos tienen signo positivo si el término en que se corrige
+ (aquel en que se suma) es covariante, y negativo si es contravariante.
+ Si el campo vectorial es constante (por ejemplo, 
+\begin_inset Formula $\dpx{}$
+\end_inset 
+
+), entonces los términos correctivos (que llevan derivadas de sus componentes)
+ se anulan.
+\layout Subsection
+
+Isometrías
+\layout Standard
+
+La derivada de Lie nos da la variación del campo tensorial visto al moverse
+ según un arrastre dado por un campo vectorial 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+.
+ Cuando el tensor de partida es igual al de llegada se dice que el campo
+ vectorial 
+\emph on 
+deja invariante
+\emph default 
+ el tensor arrastrado.
+ Un caso particularmente interesante se produce cuando se trata de una métrica
+ (campo tensorial simétrico, dos veces covariante, no degenerado y tal que
+ la signatura es la misma en todos los puntos de la variedad).
+ Supongamos que tenemos un campo vectorial 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ que la deja invariante, 
+\begin_inset Formula \[
+\mathcal{L}_{\mathsf{v}}\mathsf{g}=0\]
+
+\end_inset 
+
+ entonces al movernos con el flujo los productos escalares y los ángulos
+ no varían.
+ A estos campos vectoriales tan interesantes se los denomina 
+\emph on 
+isometrías
+\begin_inset LatexCommand \index{isometrías}
+
+\end_inset 
+
+ 
+\emph default 
+o 
+\emph on 
+campos
+\emph default 
+ 
+\emph on 
+de
+\emph default 
+ 
+\emph on 
+Killing
+\emph default 
+
+\begin_inset LatexCommand \index{campos de Killing}
+
+\end_inset 
+
+.
+ Estos campos dan bastante información sobre las propiedades de la métrica
+ por lo que nos interesa obtener su forma más general para la métrica dada.
+\layout Standard
+
+Siguiendo la regla mnemotécnica descrita en el apartado anterior,
+\begin_inset Formula \[
+\left(\mathcal{L}_{\mathsf{v}}\mathsf{g}\right)_{\mu\nu}=g_{\mu\nu,k}v^{k}+g_{k\nu}v_{,\mu}^{k}+g_{\mu k}v_{,\nu}^{k}\]
+
+\end_inset 
+
+ es igual a 
+\begin_inset Formula $0$
+\end_inset 
+
+ para todo campo que deja invariante la métrica.
+ La derivada de Lie, como tensor, debe tener todos sus elementos cero, lo
+ que proporciona un sistema de ecuaciones diferenciales ordinarias de primer
+ orden en 
+\begin_inset Formula $v^{k}$
+\end_inset 
+
+.
+\layout Description
+
+
+\size small 
+Ejemplo tomemos la métrica de la esfera:
+\begin_inset Formula \[
+ds^{2}=a^{2}\left(d\theta^{2}+\sin^{2}\theta d\varphi^{2}\right)\]
+
+\end_inset 
+
+ 
+\begin_inset Formula $d\varphi^{2}$
+\end_inset 
+
+ significa producto tensorial simétrico de 
+\begin_inset Formula $d\varphi\otimes_{\mathsf{s}}d\varphi$
+\end_inset 
+
+.
+ Esto nos dice simplemente que las componentes del tensor en estas coordenadas
+ son:
+\begin_inset Formula \begin{eqnarray*}
+g_{\theta\theta} & = & a^{2}\\
+g_{\varphi\theta}=g_{\theta\varphi} & = & 0\\
+g_{\varphi\varphi} & = & a^{2}\sin^{2}\theta\end{eqnarray*}
+
+\end_inset 
+
+ el campo vectorial 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ lo escribimos como
+\begin_inset Formula \[
+\mathsf{v}\equiv v^{\theta}\left[\theta,\varphi\right]\dpa{}{\theta}+v^{\varphi}\left[\theta,\varphi\right]\dpa{}{\varphi}\]
+
+\end_inset 
+
+ tenemos anulación de todas las componentes de la derivada de Lie:
+\begin_inset Formula \begin{eqnarray*}
+\left(\mathcal{L}_{\mathsf{v}}\mathsf{g}\right)_{\theta\theta} & = & 0\\
+ & = & g_{\theta\theta,k}v^{k}+g_{k\theta}v_{,\theta}^{k}+g_{\theta k}v_{,\theta}^{k}\end{eqnarray*}
+
+\end_inset 
+
+ como 
+\begin_inset Formula $g_{\theta\theta}$
+\end_inset 
+
+ es una constante el primer término se anula.
+ Además, 
+\begin_inset Formula $g_{k\theta}=g_{\theta k}$
+\end_inset 
+
+ por la simetría 
+\begin_inset Formula \begin{eqnarray*}
+0 & = & 2g_{\theta k}v_{,\theta}^{k}\\
+ & = & 2g_{\theta\theta}v_{,\theta}^{\theta}+2g_{\theta\varphi}v_{,\theta}^{\varphi}\\
+ & = & 2a^{2}v_{,\theta}^{\theta}\end{eqnarray*}
+
+\end_inset 
+
+ En la otra coordenada.
+\begin_inset Formula \begin{eqnarray*}
+\left(\mathcal{L}_{\mathsf{v}}\mathsf{g}\right)_{\theta\varphi} & = & g_{\varphi\varphi}v_{,\theta}^{\varphi}+g_{\theta\theta}v_{,\varphi}^{\theta}\\
+ & = & a^{2}\sin^{2}\theta v_{,\theta}^{\varphi}+a^{2}v_{,\varphi}^{\theta}\end{eqnarray*}
+
+\end_inset 
+
+ la anulación de la componente 
+\begin_inset Formula $\left(\mathcal{L}_{\mathsf{v}}\mathsf{g}\right)_{\theta\theta}$
+\end_inset 
+
+ nos dice que 
+\begin_inset Formula $v_{,\theta}^{\theta}=0$
+\end_inset 
+
+ y por tanto 
+\begin_inset Formula $v^{\theta}=h\left[\varphi\right]$
+\end_inset 
+
+ y la de 
+\begin_inset Formula $\left(\mathcal{L}_{\mathsf{v}}\mathsf{g}\right)_{\theta\varphi}=\left(\mathcal{L}_{\mathsf{v}}\mathsf{g}\right)_{\varphi\theta}$
+\end_inset 
+
+ que 
+\begin_inset Formula \[
+\sin^{2}\theta v_{,\theta}^{\varphi}+v_{,\varphi}^{\theta}=0\]
+
+\end_inset 
+
+ La anulación de la componente 
+\begin_inset Formula $\left(\mathcal{L}_{\mathsf{v}}\mathsf{g}\right)_{\varphi\varphi}$
+\end_inset 
+
+ implica: 
+\begin_inset Formula \begin{eqnarray*}
+0 & = & g_{\varphi\varphi,k}v^{k}+g_{k\varphi}v_{,\varphi}^{k}+g_{\varphi k}v_{,\varphi}^{k}\\
+ & = & g_{\varphi\varphi,k}v^{k}+2g_{\varphi k}v_{,\varphi}^{k}\\
+ & = & g_{\varphi\varphi,\theta}v^{\theta}+2g_{\varphi\varphi}v_{,\varphi}^{\varphi}\end{eqnarray*}
+
+\end_inset 
+
+ ya que 
+\begin_inset Formula $g_{\varphi\varphi,\varphi}v^{\varphi}$
+\end_inset 
+
+ y 
+\begin_inset Formula $g_{\varphi\theta}v_{,\varphi}^{\theta}$
+\end_inset 
+
+ son términos nulos.
+ De aquí:
+\begin_inset Formula \[
+2a^{2}\sin\theta\cos\theta v^{\theta}+2a^{2}\sin^{2}\theta v_{,\varphi}^{\varphi}=0\]
+
+\end_inset 
+
+ como 
+\begin_inset Formula $a\neq0$
+\end_inset 
+
+ se tiene
+\begin_inset Formula \[
+v_{,\varphi}^{\varphi}+\frac{\cos\theta}{\sin\theta}v^{\theta}=0\]
+
+\end_inset 
+
+ el sistema de tres ecuaciones en derivadas parciales que debemos integrar
+ es
+\begin_inset Formula \begin{eqnarray*}
+v_{,\theta}^{\theta} & = & 0\\
+v_{,\varphi}^{\theta}+\sin^{2}\theta v_{,\theta}^{\varphi} & = & 0\\
+v_{,\varphi}^{\varphi}+\frac{\cos\theta}{\sin\theta}v^{\theta} & = & 0\end{eqnarray*}
+
+\end_inset 
+
+ la primera condición nos dice que 
+\begin_inset Formula $v^{\theta}=h\left[\varphi\right]$
+\end_inset 
+
+.
+ Por otra parte, 
+\begin_inset Formula $v_{,\varphi}^{\theta}=\dot{h}\left[\varphi\right]$
+\end_inset 
+
+ y 
+\begin_inset Formula $\sin^{2}\theta v_{,\theta}^{\varphi}+\dot{h}=0$
+\end_inset 
+
+ de donde
+\begin_inset Formula \begin{eqnarray*}
+v^{\varphi} & = & -\dot{h}\int\frac{1}{\sin^{2}\theta}d\theta+g\left[\varphi\right]\\
+ & = & \dot{h}\frac{\cos\theta}{\sin\theta}+g\left[\varphi\right]\end{eqnarray*}
+
+\end_inset 
+
+ es la solución general.
+ La tercera ecuación es
+\begin_inset Formula \begin{eqnarray*}
+\ddot{h}\frac{\cos\theta}{\sin\theta}+\dot{g}+\frac{\cos\theta}{\sin\theta}h & = & 0\\
+\left(\ddot{h}+h\right)\frac{\cos\theta}{\sin\theta}+\dot{g} & = & 0\end{eqnarray*}
+
+\end_inset 
+
+ como esto ha de verificarse para todo 
+\begin_inset Formula $\theta$
+\end_inset 
+
+ lo anterior implica que
+\begin_inset Formula \begin{eqnarray*}
+\ddot{h}+h & = & 0\\
+\dot{g} & = & 0\end{eqnarray*}
+
+\end_inset 
+
+ por lo tanto 
+\begin_inset Formula $h=A\cos\varphi+B\sin\varphi$
+\end_inset 
+
+ y 
+\begin_inset Formula $g=C$
+\end_inset 
+
+.
+ En conclusión, 
+\begin_inset Formula \begin{eqnarray*}
+v^{\theta} & = & A\cos\varphi+B\sin\varphi\\
+v^{\varphi} & = & \left(-A\sin\varphi+B\cos\varphi\right)\frac{\cos\theta}{\sin\theta}+C\end{eqnarray*}
+
+\end_inset 
+
+ el campo vectorial es, agrupando las constantes:
+\begin_inset Formula \[
+\mathsf{v}=A\left(\cos\varphi\dpa{}{\theta}-\sin\varphi\frac{\cos\varphi}{\sin\varphi}\dpa{}{\varphi}\right)+B\left(\sin\varphi\dpa{}{\theta}+\cos\varphi\frac{\cos\theta}{\sin\theta}\dpa{}{\varphi}\right)+C\dpa{}{\varphi}\]
+
+\end_inset 
+
+ finalmente, los generadores son
+\begin_inset Formula \begin{eqnarray*}
+\xi_{1} & = & \cos\varphi\dpa{}{\theta}-\sin\varphi\frac{\cos\theta}{\sin\theta}\dpa{}{\varphi}\\
+\xi_{2} & = & \sin\varphi\dpa{}{\theta}+\cos\varphi\frac{\cos\theta}{\sin\theta}\dpa{}{\varphi}\\
+\xi_{3} & = & \dpa{}{\varphi}\end{eqnarray*}
+
+\end_inset 
+
+ Si 
+\begin_inset Formula $\mathsf{v}=\dpx{}$
+\end_inset 
+
+ la derivada de Lie respecto a 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ es sólo la derivada respecto a 
+\begin_inset Formula $x$
+\end_inset 
+
+.
+ El tercer generador deberíamos haberlo adivinado desde el principio, por
+ la forma de la derivada de Lie.
+ Que la métrica no dependa respecto a una variable, por ejemplo 
+\begin_inset Formula $y$
+\end_inset 
+
+ implica que el campo vectorial 
+\begin_inset Formula $\dpa{}{y}$
+\end_inset 
+
+ deja invariante la métrica.
+\begin_deeper 
+\layout Standard
+
+
+\size small 
+Se puede intentar resolver el sistema de ecuaciones sustituyendo la primera
+ en la tercera, pero es un poco más difícil.
+ Uno puede preguntarse qué vale el conmutador en este caso.
+ Comprobaremos que el conmutador, en este caso, deja invariante la métrica.
+ El conmutador es un nuevo campo vectorial.
+ 
+\begin_inset Formula \begin{eqnarray*}
+\left[\xi_{1},\xi_{3}\right]f & = & \left(\cos\varphi\dpa{}{\theta}-\sin\varphi\frac{\cos\theta}{\sin\theta}\dpa{}{\varphi}\right)\left[\dpa{f}{\varphi}\right]-\left(\dpa{}{\varphi}\right)\left[\cos\varphi\dpa{f}{\theta}-\sin\varphi\frac{\cos\theta}{\sin\theta}\dpa{f}{\varphi}\right]\\
+ & = & \cos\varphi\ddpas{f}{\theta}{\varphi}-\sin\varphi\frac{\cos\theta}{\sin\theta}\ddpa{f}{\varphi}-\left(-\sin\varphi\dpa{f}{\theta}+\cos\varphi\ddpas{f}{\varphi}{\theta}-\cos\varphi\frac{\cos\theta}{\sin\theta}\dpa{f}{\varphi}-\sin\varphi\frac{\cos\theta}{\sin\theta}\ddpa{f}{\varphi}\right)\end{eqnarray*}
+
+\end_inset 
+
+ por igualdad de las derivadas cruzadas
+\begin_inset Formula \[
+\left[\xi_{1},\xi_{3}\right]=+\sin\varphi\dpa{}{\theta}+\cos\varphi\frac{\cos\theta}{\sin\theta}\dpa{}{\varphi}\]
+
+\end_inset 
+
+ contribuyen las derivadas sobre los coeficientes, porque las derivadas
+ segundas se cancelan siempre.
+ Ahora nos damos cuenta de un hecho curioso:
+\begin_inset Formula \[
+\left[\xi_{1},\xi_{3}\right]=\xi_{2}\]
+
+\end_inset 
+
+ el conmutador es, efectivamente un campo vectorial.
+ Vamos a calcular ahora este otro conmutador:
+\begin_inset Formula \begin{eqnarray*}
+\left[\xi_{1},\xi_{2}\right] & = & \left(\sin\varphi\dpa{}{\theta}+\cos\varphi\frac{\cos\theta}{\sin\theta}\dpa{}{\varphi}\right)\dpa{}{\varphi}-\left(\dpa{}{\varphi}\right)\left(\sin\varphi\dpa{}{\theta}+\cos\varphi\frac{\cos\theta}{\sin\theta}\dpa{}{\varphi}\right)\\
+ & = & -\left(\cos\varphi\dpa{}{\theta}\right)-\sin\varphi\frac{\cos\theta}{\sin\theta}\dpa{}{\varphi}\end{eqnarray*}
+
+\end_inset 
+
+ con lo que
+\begin_inset Formula \[
+\left[\xi_{1},\xi_{2}\right]=-\xi_{3}\]
+
+\end_inset 
+
+ análogamente se calcula que 
+\begin_inset Formula $\left[\xi_{2},\xi_{3}\right]=-\xi_{1}$
+\end_inset 
+
+.
+ El conmutador de dos campos que dejan invariante una métrica es un campo
+ que la deja invariante.
+ De hecho esta propiedad, que es general, permite afirmar que estos campos
+ forman un grupo de Lie (
+\begin_inset Formula $SO\left(3\right)$
+\end_inset 
+
+).
+ 
+\begin_inset Quotes eld
+\end_inset 
+
+Se ve, o por lo menos, se intuye
+\begin_inset Quotes erd
+\end_inset 
+
+.
+\end_deeper 
+\layout Section
+
+Definición axiomática de la derivada de Lie
+\layout Standard
+
+Podemos abordar una definición alternativa de la derivada de Lie extrayendo
+ de entre las propiedades de una derivada de arrastre las que determinan
+ de modo completo y unívoco la operación.
+ 
+\layout Standard
+
+Sea 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ un campo vectorial de clase 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ en una variedad diferenciable 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ 
+\begin_inset Formula $M$
+\end_inset 
+
+ entonces se cumplen las siguientes propiedades:
+\layout Enumerate
+
+Si 
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+ es un campo tensorial de tipo 
+\begin_inset Formula $\left(r,s\right)$
+\end_inset 
+
+ y clase 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ 
+\begin_inset Formula $\mathcal{L}_{\mathsf{v}}\mathsf{T}$
+\end_inset 
+
+ es un campo tensorial de tipo 
+\begin_inset Formula $\left(r,s\right)$
+\end_inset 
+
+ de clase 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+.
+\layout Enumerate
+
+
+\begin_inset Formula $\mathcal{L}_{\mathsf{v}}\mathsf{T}$
+\end_inset 
+
+ tiene las mismas propiedades de simetría o antisimetría que tiene 
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+.
+\layout Enumerate
+
+Dados dos campos tensoriales 
+\begin_inset Formula $\mathsf{T},\mathsf{S}$
+\end_inset 
+
+ del mismo tipo, 
+\begin_inset Formula $\mathcal{L}_{\mathsf{v}}\left[\mathsf{T}+\mathsf{S}\right]=\mathcal{L}_{\mathsf{v}}\mathsf{T}+\mathcal{L}_{\mathsf{v}}\mathsf{S}$
+\end_inset 
+
+.
+\layout Enumerate
+
+Para dos campos tensoriales de cualquier tipo 
+\begin_inset Formula $\mathcal{L}_{\mathsf{v}}\left[\mathsf{T}\otimes\mathsf{S}\right]=\mathcal{L}_{\mathsf{v}}\mathsf{T}\otimes\mathsf{S}+\mathsf{T}\otimes\mathcal{L}_{\mathsf{v}}\mathsf{S}$
+\end_inset 
+
+ (propiedad tipo Leibniz).
+\layout Enumerate
+
+
+\begin_inset Formula $\mathcal{L}_{\mathsf{v}}$
+\end_inset 
+
+ conmuta con las contracciones.
+\layout Enumerate
+
+
+\begin_inset Formula $\mathcal{L}_{\mathsf{v}}f=\mathsf{v}\left[f\right]$
+\end_inset 
+
+ con 
+\begin_inset Formula $f\in\mathcal{F}^{\infty}\left[M\right]$
+\end_inset 
+
+.
+\layout Enumerate
+
+
+\begin_inset Formula $d\left[\mathcal{L}_{\mathsf{v}}f\right]=\mathcal{L}_{\mathsf{v}}\left[df\right]$
+\end_inset 
+
+ (derivada exterior, ver 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+ref{sec derivada exterior}
+\end_inset 
+
+).
+ 
+\layout Enumerate
+
+
+\begin_inset Formula $\mathcal{L}_{\mathsf{v}}\mathsf{w}=\left[\mathsf{v},\mathsf{w}\right]$
+\end_inset 
+
+ (
+\begin_inset Formula $\mathsf{w}$
+\end_inset 
+
+ un campo vectorial contravariante 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+).
+\layout Enumerate
+
+
+\begin_inset Formula $\mathcal{L}_{\mathsf{v}+\mathsf{w}}\mathsf{T}=\mathcal{L}_{\mathsf{v}}\mathsf{T}+\mathcal{L}_{\mathsf{w}}\mathsf{T}$
+\end_inset 
+
+ , si 
+\begin_inset Formula $\lambda$
+\end_inset 
+
+ es una constante, 
+\begin_inset Formula $\mathcal{L}_{\lambda\mathsf{v}}\mathsf{T}=\lambda\mathcal{L}_{\mathsf{v}}\mathsf{T}$
+\end_inset 
+
+.
+\layout Enumerate
+
+
+\begin_inset Formula $\mathcal{L}_{\mathsf{v}}\left[\mathcal{L}_{\mathsf{w}}\mathsf{T}\right]-\mathcal{L}_{\mathsf{w}}\left[\mathcal{L}_{\mathsf{v}}\mathsf{T}\right]=\mathcal{L}_{\left[\mathsf{v},\mathsf{w}\right]}\mathsf{T}$
+\end_inset 
+
+.
+\layout Standard
+
+Si 
+\begin_inset Formula $\mathsf{v},\mathsf{w}$
+\end_inset 
+
+ son dos campos--killing y 
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+ es una métrica, 
+\begin_inset Formula $\mathcal{L}_{\mathsf{v}}\mathsf{T}=0$
+\end_inset 
+
+, 
+\begin_inset Formula $\mathcal{L}_{\mathsf{w}}\mathsf{T}=0$
+\end_inset 
+
+ por la propiedad 10 
+\begin_inset Formula $\mathcal{L}_{\left[\mathsf{v},\mathsf{w}\right]}\mathsf{T}=0$
+\end_inset 
+
+.
+ Por lo tanto, como hemos visto en el ejemplo, el conmutador de dos campos
+ de killing es a su vez un campo de killing.
+\layout Description
+
+
+\size small 
+Ejemplo (propiedad 5) Vamos a comprobar para un tensor 
+\begin_inset Formula $\left(1,1\right)$
+\end_inset 
+
+, 
+\begin_inset Formula $\mathsf{T}=T_{v}^{u}$
+\end_inset 
+
+ que la derivada de Lie y la contracción conmuta (podemos hacerlo en cualquier
+ orden), 
+\begin_inset Formula $\left(\mathcal{L}_{\mathsf{v}}\mathsf{T}\right)_{\mu}^{\mu}=\mathcal{L}_{\mathsf{v}}\left(T_{\mu}^{\mu}\right)$
+\end_inset 
+
+, ya que:
+\begin_inset Formula \begin{eqnarray*}
+\mathcal{L}_{\mathsf{v}}T_{\mu}^{\mu} & = & \mathsf{v}\left[T_{\mu}^{\mu}\right]\\
+ & = & T_{\mu,k}^{\mu}v^{k}\\
+\left(\mathcal{L}_{\mathsf{v}}\mathsf{T}\right)_{\nu}^{\mu} & = & T_{\nu,k}^{\mu}v^{k}-T_{\nu}^{k}v_{,k}^{\mu}+T_{k}^{\mu}v_{,\nu}^{k}\\
+\left(\mathcal{L}_{\mathsf{v}}T\right)_{\mu}^{\mu} & = & T_{\mu,k}^{\mu}v^{k}-T_{\mu}^{k}v_{,k}^{\mu}+T_{k}^{\mu}v_{,\mu}^{k}\\
+ & = & \mathcal{L}_{\mathsf{v}}T_{\mu}^{\mu}\end{eqnarray*}
+
+\end_inset 
+
+ El resto de demostraciones se hacen análogamente, con paciencia.
+\layout Section
+
+Por hacer
+\layout Enumerate
+
+
+\size small 
+Completar la introducción.
+\layout Enumerate
+
+
+\size small 
+Experimentar con la notación 
+\begin_inset Formula $\partial_{i}^{i'}\equiv\dpa{x^{i'}}{x^{i}}$
+\end_inset 
+
+, que parece más clara y compacta; es preciso explicarla correctamente e
+ introducirla poco a poco.
+\layout Enumerate
+
+
+\size small 
+Introducir la contracción en notación funcional.
+ ¿Alguna idea?.
+\layout Enumerate
+
+
+\size small 
+En 
+\begin_inset LatexCommand \ref{ssec conexion int intrinseca int clasica}
+
+\end_inset 
+
+ introducir un enlace a la explicación de bases duales del capítulo 1.
+ 
+\layout Enumerate
+
+
+\size small 
+Otra notación compacta:
+\begin_inset Formula \begin{eqnarray*}
+x & \equiv & x^{1}\ldots x^{m}\\
+x' & \equiv & x^{1'}\ldots x^{m'}\end{eqnarray*}
+
+\end_inset 
+
+con
+\begin_inset Formula \[
+x\left[x'\right]\equiv\left\{ x^{1}\left[x^{1'}\ldots x^{m'}\right]\ldots x^{m}\left[x^{1'}\ldots x^{m'}\right]\right\} \]
+
+\end_inset 
+
+ y tal vez
+\begin_inset Formula \[
+\dpa{x}{x'}\equiv\dpa{x^{1}}{x^{1'}}\cdots\dpa{x^{m}}{x^{m'}}\]
+
+\end_inset 
+
+
+\layout Enumerate
+
+
+\size small 
+Introducir notación estándar para 
+\emph on 
+el conjunto de todas las permutaciones de un conjunto de índices
+\emph default 
+ (en el apartado 
+\begin_inset LatexCommand \ref{tx simetrizacion tensor r-0}
+
+\end_inset 
+
+).
+\layout Enumerate
+
+
+\size small 
+Dar una definición correcta del concepto de 
+\emph on 
+signatura
+\emph default 
+.
+\layout Enumerate
+
+
+\size small 
+Resolver dudas sobre la naturaleza de los argumentos del producto antisimetrizad
+o.
+\layout Enumerate
+
+
+\size small 
+Explicar mejor la definición matemática de curva integral.
+ Aclarar.
+\the_end

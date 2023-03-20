@@ -1,0 +1,1474 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass book
+\begin_preamble
+\input{OE-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding latin1
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize a4paper
+\paperpackage a4
+\use_geometry 1
+\use_amsmath 1
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 2
+\papersides 2
+\paperpagestyle default
+
+\layout Chapter
+
+Medios anisótropos
+\begin_inset LatexCommand \label{cap medios anisotropos}
+
+\end_inset 
+
+
+\layout Section
+
+Introducción
+\layout Standard
+
+Éste es el tema más difícil del curso.
+ El libro de la bibliografía que más se aproxima al desarrollo que vamos
+ a hacer aquí es el 
+\begin_inset LatexCommand \cite{Fowles}
+
+\end_inset 
+
+.
+ A continuación vamos a ver por qué es interesante (
+\emph on 
+justificación
+\emph default 
+) y cómo abordar el problema (
+\emph on 
+planteamiento
+\emph default 
+).
+ 
+\layout Subsection
+
+Justificación: anisotropía natural e inducida
+\layout Standard
+
+Para medios isótropos supusimos la existencia de una fuerza recuperadora
+ a nivel molecular proporcional a la separación entre cargas
+\begin_inset Formula \[
+\mathbf{F}_{int}=m\omega_{0}^{2}\mathbf{r}\]
+
+\end_inset 
+
+ Ya dijimos que la linealidad no implicaba que 
+\begin_inset Formula $\omega_{0}$
+\end_inset 
+
+ fuese un escalar.
+ De hecho, sólo será un escalar si la dirección en que produzcamos la separación
+ de cargas es indiferente, esto es, si los efectos de un campo eléctrico
+ aplicado son igualmente eficaces separando cargas independientemente de
+ su dirección.
+ Si ocurre así, según la deducción que hicimos, 
+\begin_inset Formula $\epsilon_{0}\chi_{e}$
+\end_inset 
+
+ será también un escalar en la expresión 
+\begin_inset Formula $\mathbf{P}=\epsilon_{0}\chi_{e}\mathbf{E}$
+\end_inset 
+
+, \SpecialChar ~
+y\SpecialChar ~
+ 
+\begin_inset Formula $\mathbf{F}\parallel\mathbf{r}$
+\end_inset 
+
+ implicará naturalmente 
+\begin_inset Formula $\mathbf{P}\parallel\mathbf{E}$
+\end_inset 
+
+.
+\layout Standard
+
+Imaginemos ahora el caso de una molécula biatómica.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/isotropia-microscopica.eps
+	display monochrome
+	width 6cm
+
+\end_inset 
+
+ 
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig significado microscopico isotropia}
+
+\end_inset 
+
+Significado microscópico de la isotropía.
+ a) la perturbación originada por un campo sobre un átomo es igualmente
+ eficaz en todas las direcciones (isotropía microscópica).
+ b) la perturbación sobre una molécula diatómica es más eficaz en unas direccion
+es que en otras (anisotropía microscópica).
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+creo que o se pone electrones a los dos objetos o a ninguno
+\layout Standard
+
+-rojo.
+\end_inset 
+
+
+\end_inset 
+
+Vemos claramente que hay una dirección intrínsecamente privilegiada en un
+ material cuya estructura microscópica es de este tipo (figura 
+\begin_inset LatexCommand \ref{fig significado microscopico isotropia}
+
+\end_inset 
+
+, b).
+ Un mismo campo será más eficaz deformando la nube electrónica en una dirección
+ que en otra.
+\layout Standard
+
+Ahora se cumplen las siguientes relaciones, donde el gorro denota una matriz
+ (que introduce la dependencia de la dirección).
+ 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{F}_{int} & = & \hat{M}\mathbf{r}\\
+\mathbf{P} & = & \hat{\chi}_{e}\epsilon_{0}\mathbf{E}\\
+\mathbf{D} & = & \epsilon_{0}\left(\hat{1}+\hat{\chi}_{e}\right)\mathbf{E}=\hat{\epsilon}\mathbf{E}\end{eqnarray*}
+
+\end_inset 
+
+ los parámetros 
+\begin_inset Formula $\hat{M},\hat{\chi}_{e}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\hat{\epsilon}$
+\end_inset 
+
+ tienen ahora carácter tensorial
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Omitiremos en lo que sigue la distinción notacional entre la matriz identidad,
+ 
+\begin_inset Formula $\hat{1}$
+\end_inset 
+
+ y el escalar 
+\begin_inset Formula $1$
+\end_inset 
+
+.
+\end_inset 
+
+.
+ Como consecuencia de ello, los índices de refracción dependerán del estado
+ de polarización (dirección del campo).
+ Nos llevará un cierto tiempo (y muchos cálculos) cuantificar esta dependencia.
+\layout Standard
+
+Imaginemos un medio hecho de moléculas anisótropas como las de la figura
+ 
+\begin_inset LatexCommand \ref{fig significado microscopico isotropia}
+
+\end_inset 
+
+, (b).
+ Si están distribuídas de modo aleatorio, los promedios espaciales harán
+ que el medio sea macroscópicamente isótropo (pej, el aire).
+ Para obtener medios 
+\emph on 
+macroscópicamente
+\emph default 
+ anisótropos debemos pensar en configuraciones más rígidas (que mantengan
+ las moléculas orientadas en la misma dirección).
+ Es decir, líquidos, pero, sobre todo, sólidos cristalinos.
+ 
+\layout Standard
+
+La anisotropía de los cristales podríamos llamarla de 
+\emph on 
+origen
+\emph default 
+ 
+\emph on 
+natural
+\emph default 
+.
+ Pero nosotros podemos crear 
+\emph on 
+anisotropías
+\emph default 
+ 
+\emph on 
+inducidas
+\emph default 
+.
+ Por ejemplo, si aplicamos un fuerte campo eléctrico estacionario a ciertos
+ medios, los convertiremos en anisótropos por alineación de momentos dipolares
+ eléctricos.
+ Lo mismo si se trata de un campo magnético estacionario.
+ Pero también podemos causar anisotropía por medios mecánicos, como presiones
+ o estiramientos (figura 
+\begin_inset LatexCommand \ref{fig anisotropia inducida}
+
+\end_inset 
+
+, c).
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/anisotropia-inducida.eps
+	display monochrome
+	width 7cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig anisotropia inducida}
+
+\end_inset 
+
+Diferentes modos de inducir la anisotropía en un material.
+ a) efecto electroóptico b) magnetoóptico c) fotoelástico.
+\end_inset 
+
+En conclusión, la anisotropía se puede controlar a voluntad (siempre que
+ no haya histéresis), por variados medios.
+ 
+\layout Subsection
+
+Planteamiento
+\layout Standard
+
+Vamos a considerar sólo el caso de medio anisótropo más sencillo.
+ Esperamos que el caso más general sea más complejo, pero no más complicado.
+\layout Itemize
+
+medios no magnéticos, 
+\begin_inset Formula $\mu=\mu_{0}$
+\end_inset 
+
+.
+\layout Itemize
+
+medios homogéneos.
+\layout Itemize
+
+medios dieléctricos, 
+\begin_inset Formula $\sigma=0$
+\end_inset 
+
+.
+\layout Itemize
+
+medios transparentes.
+ 
+\layout Standard
+
+Haremos una descripción en oap y caracterizaremos su propagación a partir
+ de las ecMm.
+ Para averiguar en qué se traduce la transparencia, tenemos que investigar
+ el efecto de esta propiedad sobre la matriz dieléctrica.
+\layout Section
+
+Matriz dieléctrica
+\layout Standard
+
+Si a un medio transparente isótropo le corresponde una constante dieléctrica
+ que es un escalar real para caracterizar un medio transparente anisótropo
+ se necesita una matriz hermítica.
+ Veamos por qué.
+\layout Standard
+
+
+\emph on 
+Transparente
+\emph default 
+ significa que toda la energía que entra en un volumen 
+\begin_inset Formula $V$
+\end_inset 
+
+ sale de él.
+ Llamaremos 
+\begin_inset Formula $\Sigma$
+\end_inset 
+
+ a la superficie cerrada que confina 
+\begin_inset Formula $V$
+\end_inset 
+
+.
+ Para formular cuantitativamente que toda la energía que entra sale hacemos
+ la integral de superficie
+\begin_inset Formula \[
+\int_{\Sigma}\mathbf{n}_{\Sigma}\cdot\left\langle \mathbf{S}\right\rangle \, ds=0\]
+
+\end_inset 
+
+ (
+\begin_inset Formula $\mathbf{n}_{\Sigma}$
+\end_inset 
+
+ es el vector normal a al superficie y 
+\begin_inset Formula $ds$
+\end_inset 
+
+ un elemento diferencial de ella).
+ Cualquier superficie debe cumplir esta condición, que por el teorema de
+ 
+\noun on 
+Gauss 
+\noun default 
+se reduce a 
+\noun on 
+
+\begin_inset Formula \[
+\nabla\cdot\left\langle \mathbf{S}\right\rangle =0\]
+
+\end_inset 
+
+ 
+\noun default 
+el promedio del vector de 
+\noun on 
+Poynting
+\noun default 
+ vale, para ondas armónicas
+\begin_inset Formula \[
+\left\langle \mathbf{S}\right\rangle =\frac{1}{2}\Re\left\{ \mathbf{E}\wedge\mathbf{H}^{*}\right\} \]
+
+\end_inset 
+
+ Procedamos por partes.
+ Utilizando una igualdad vectorial
+\begin_inset Formula \[
+\nabla\left(\mathbf{E}\wedge\mathbf{H}^{*}\right)=\mathbf{H}^{*}\nabla\wedge\mathbf{E}-\mathbf{E}\nabla\wedge\mathbf{H}^{*}\]
+
+\end_inset 
+
+ y los rotacionales
+\begin_inset Formula \begin{eqnarray*}
+\nabla\wedge\mathbf{E} & = & i\omega\mu\mathbf{H}\\
+\nabla\wedge\mathbf{H} & = & -i\omega\mathbf{D}\end{eqnarray*}
+
+\end_inset 
+
+ dados por las ecMm obtenemos 
+\begin_inset Formula \[
+\nabla\cdot\left\langle \mathbf{S}\right\rangle =-\frac{i\omega}{4}\sum_{k,l}\left(\epsilon_{kl}^{*}-\epsilon_{lk}\right)E_{k}E_{l}^{*}\]
+
+\end_inset 
+
+ donde 
+\begin_inset Formula $k,l$
+\end_inset 
+
+ recorren las coordenadas 
+\begin_inset Formula $x,y,z$
+\end_inset 
+
+.
+ Esto debe ser cero para toda onda, porque se trata de una propiedad intrínseca
+ del material, lo que conduce a 
+\begin_inset Formula \[
+\epsilon_{kl}^{*}=\epsilon_{lk}\]
+
+\end_inset 
+
+ es decir 
+\begin_inset Formula $\epsilon^{+}=\epsilon$
+\end_inset 
+
+: la matriz dieléctrica es hermítica (puede tener elementos complejos, pero
+ debe cumplir esas relaciones).
+ Lo que sabemos es que por ser hermítica, la matriz se puede diagonalizar
+ a una matriz con elementos sólo reales (autovalores reales) cuyos autovectores
+ son ortogonales.
+\layout Section
+
+Medios anisótropos transparentes.
+ Clasificación
+\layout Itemize
+
+Si algún elemento de la matriz 
+\begin_inset Formula $\epsilon_{kl}$
+\end_inset 
+
+ es complejo se dice que el medio tiene 
+\emph on 
+actividad
+\emph default 
+ 
+\emph on 
+óptica
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+que se traduce en el cambio del acimut de la luz linealmente polarizada
+ que incide sobre él.
+ 
+\end_inset 
+
+
+\emph default 
+.
+ 
+\layout Itemize
+
+Si todos son reales se dice que el medio 
+\emph on 
+no
+\emph default 
+ 
+\emph on 
+tiene
+\emph default 
+ 
+\emph on 
+actividad
+\emph default 
+.
+ 
+\layout Standard
+
+Puede parecer que una propiedad física como es la actividad óptica depende
+ de la base, pero no es así.
+ En efecto, antes hemos dicho que toda matriz dieléctrica, por ser hermítica
+ era diagonalizable a una matriz de elementos reales.
+ Pero no hemos explicado que el cambio de base necesario puede involucrar
+ operaciones que son algo más que un mero cambio de ejes en el espacio geométric
+o.
+ En efecto, si la matriz dieléctrica que tenemos en una cierta base tiene
+ elementos complejos para diagonalizarla será necesario multiplicar por
+ una matriz unitaria, que a su vez tiene elementos complejos, y que representa
+ un cambio de base no en el espacio geométrico, sino en el de las polarizaciones.
+ Si la matriz de que disponemos es en origen real en todos sus elementos,
+ un mero cambio de ejes en el espacio geométrico será suficiente para diagonaliz
+arla.
+\layout Standard
+
+En lo que resta sólo abordaremos el caso de medios sin actividad óptica.
+ Para ellos siempre podemos encontrar un sistema de referencia en que la
+ matriz sea diagonal.
+ Diremos entonces que estamos haciendo la descripción en un 
+\emph on 
+sistema de ejes principales.
+ 
+\emph default 
+Entonces, a los elementos de la diagonal (autovalores) se les llama 
+\emph on 
+constantes
+\emph default 
+ 
+\emph on 
+dieléctricas
+\emph default 
+ 
+\emph on 
+principales
+\emph default 
+: 
+\begin_inset Formula $\epsilon_{x},\epsilon_{y},\epsilon_{z}$
+\end_inset 
+
+.
+ Se definen entonces toda una serie de magnitudes relativas a los ejes principal
+es (
+\begin_inset Formula $\alpha=x,y,z$
+\end_inset 
+
+):
+\layout Itemize
+
+índices de refracción principales: 
+\begin_inset Formula $n_{\alpha}=\sqrt{\frac{\varepsilon_{\alpha}}{\varepsilon_{0}}}$
+\end_inset 
+
+
+\layout Itemize
+
+velocidades de fase principales : 
+\begin_inset Formula $v_{\alpha}=\frac{c}{n_{\alpha}}$
+\end_inset 
+
+
+\layout Standard
+
+Las magnitudes principales no pueden ser las tres iguales (el medio sería
+ isótropo), de modo que se presentan dos casos
+\layout Itemize
+
+medios 
+\emph on 
+biáxicos
+\emph default 
+: las tres diferentes 
+\begin_inset Formula $\epsilon_{x}\neq\epsilon_{y}\neq\epsilon_{z}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\epsilon_{x}\neq\epsilon_{z}$
+\end_inset 
+
+.
+\layout Itemize
+
+medios 
+\emph on 
+uniáxicos
+\emph default 
+: dos iguales.
+\layout Section
+
+Propagación de ondas armónicas planas
+\layout Standard
+
+
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{D} & = & \mathbf{D}_{0}e^{i\fase}\\
+\mathbf{H} & = & \mathbf{H}_{0}e^{i\fase}\\
+\mathbf{E} & = & \mathbf{E}_{0}e^{i\fase}\end{eqnarray*}
+
+\end_inset 
+
+ con 
+\begin_inset Formula $\mathbf{D}_{0},\mathbf{H}_{0},\mathbf{E}_{0}\in\mathcal{C}$
+\end_inset 
+
+ constantes y 
+\begin_inset Formula $\omega,\mathbf{k}\in\Re$
+\end_inset 
+
+ constantes (medios transparentes).
+ Nuestro problema es determinar las relaciones que existen entre estos parámetro
+s (por ejemplo, relación entre vector de ondas y frecuencia, o entre vector
+ de ondas y vectores de intensidad de campo\SpecialChar \ldots{}
+).
+\layout Standard
+
+Como siempre, acudimos a las ecMm y el resultado es
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{k}\cdot\mathbf{D}_{0} & = & 0\\
+\mathbf{k}\cdot\mathbf{H}_{0} & = & 0\\
+\mathbf{k}\wedge\mathbf{E}_{0} & = & \mu\omega\mathbf{H}_{0}\\
+\mathbf{k}\wedge\mathbf{H}_{0} & = & -\omega\mathbf{D}_{0}\end{eqnarray*}
+
+\end_inset 
+
+ Es decir, 
+\begin_inset Formula $\mathbf{D},\mathbf{H},\mathbf{k}$
+\end_inset 
+
+ son mutuamente perpendiculares entre sí.
+ Además, 
+\begin_inset Formula $\mathbf{E}\perp\mathbf{H}$
+\end_inset 
+
+, pero eso no quiere decir 
+\begin_inset Formula $\mathbf{E}\perp\mathbf{k}$
+\end_inset 
+
+, que en general será falso.
+ Esto implica que la energía no irá en la misma dirección que la fase.
+ De modo que 
+\begin_inset Formula \[
+\mathbf{S}=\mathbf{E}\wedge\mathbf{H}\]
+
+\end_inset 
+
+ no lleva la misma dirección que el vector de ondas.
+ En lo que sigue estudiaremos siempre la propagación de la fase, porque
+ luego a partir de 
+\begin_inset Formula $\mathbf{E},\mathbf{H}$
+\end_inset 
+
+ se obtiene de modo sencillo la propagación de la energía.
+\layout Standard
+
+Si reescribimos el segundo rotacional y después sustituímos el valor de
+ 
+\begin_inset Formula $\mathbf{H}_{0}$
+\end_inset 
+
+ que nos da el primero
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{D}_{0} & = & \hat{\epsilon}\mathbf{E}_{0}\\
+ & = & -\frac{1}{\omega}\mathbf{k}\wedge\mathbf{H}_{0}\\
+ & = & -\frac{1}{\mu\omega^{2}}\mathbf{k}\wedge\left(\mathbf{k}\wedge\mathbf{E}_{0}\right)\end{eqnarray*}
+
+\end_inset 
+
+ ejecutando el doble producto vectorial
+\begin_inset Formula \[
+\mathbf{D}_{0}=-\frac{1}{\mu\omega^{2}}\left(\mathbf{k}\left(\mathbf{k}\cdot\mathbf{E}_{0}\right)-\mathbf{E}_{0}\left(\mathbf{k}^{2}\right)\right)\]
+
+\end_inset 
+
+ finalmente el resultado de combinar los dos rotacionales es
+\begin_inset Formula \[
+\left(\mathbf{k}\cdot\mathbf{E}_{0}\right)\mathbf{k}-\mathbf{k}^{2}\mathbf{E}_{0}+\mu\omega^{2}\hat{\epsilon}\mathbf{E}_{0}=0\]
+
+\end_inset 
+
+ ésto es un conjunto de 3 ecuaciones, que queremos resolver para 
+\begin_inset Formula $\mathbf{k}$
+\end_inset 
+
+ y para 
+\begin_inset Formula $\mathbf{E}$
+\end_inset 
+
+.
+ Como son lineales en 
+\begin_inset Formula $\mathbf{E}_{0}$
+\end_inset 
+
+, las podemos reescribir con ayuda de una matriz, 
+\begin_inset Formula $\mathsf{M}\left(\mathbf{k},\hat{\epsilon}\right)$
+\end_inset 
+
+:
+\begin_inset Formula \[
+\mathsf{M}\left(\mathbf{k},\hat{\epsilon}\right)\mathbf{E}_{0}=\ceron\]
+
+\end_inset 
+
+ para escribir la matriz en la forma más sencilla posible hay que utilizar
+ como ejes coordenados los ejes principales 
+\begin_inset Formula $x,y,z$
+\end_inset 
+
+
+\size footnotesize 
+.
+ 
+\size default 
+Entonces 
+\begin_inset Formula $\mathsf{M}$
+\end_inset 
+
+ es:
+\size footnotesize 
+
+\begin_inset Formula \[
+\left(\begin{array}{ccc}
+\left(n_{x}\frac{\omega}{c}\right)^{2}-k_{y}^{2}-k_{z}^{2} & k_{x}k_{y} & k_{x}k_{z}\\
+k_{y}k_{x} & \left(n_{y}\frac{\omega}{c}\right)^{2}-k_{x}^{2}-k_{z}^{2} & k_{y}k_{z}\\
+k_{z}k_{x} & k_{z}k_{y} & \left(n_{z}\frac{\omega}{c}\right)^{2}-k_{x}^{2}-k_{y}^{2}\end{array}\right)\]
+
+\end_inset 
+
+
+\size default 
+ El 
+\begin_inset Formula $\mathbf{E}_{0}$
+\end_inset 
+
+ debe ser autovector de la matriz con autovalor nulo.
+ Se debe producir que 
+\begin_inset Formula $\left|\mathsf{M}\right|=0$
+\end_inset 
+
+, lo que limitará los vectores de onda posibles.
+ 
+\layout Standard
+
+El proceso será obtener dichos vectores de onda y luego llevarlos a la ecuación
+ de autovalores para despejar 
+\begin_inset Formula $\mathbf{E}_{0}$
+\end_inset 
+
+.
+ Eso equivale a la resolución completa del problema que nos habíamos fijado:
+ determinar la propagación de oap en medios anisótropos.
+\layout Section
+
+Medios uniáxicos
+\layout Subsection
+
+Superficie de vectores de onda.
+ Eje óptico
+\layout Standard
+
+A partir de ahora nos vamos a centrar en medios uniáxicos sin actividad
+ óptica en los que, por ejemplo
+\begin_inset Formula \begin{eqnarray*}
+n_{x}=n_{y} & = & n_{o}\\
+n_{z} & = & n_{e}\end{eqnarray*}
+
+\end_inset 
+
+ donde 
+\begin_inset Formula $n_{o}$
+\end_inset 
+
+ se denomina 
+\emph on 
+índice ordinario
+\emph default 
+ y 
+\begin_inset Formula $n_{e}$
+\end_inset 
+
+ 
+\emph on 
+índice extraordinario
+\emph default 
+.
+\begin_inset Formula \[
+\left|\mathsf{M}\right|=\left(\mathbf{k}^{2}-\left(n_{o}\frac{\omega}{c}\right)^{2}\right)\left(\frac{k_{x}^{2}+k_{y}^{2}}{\left(n_{e}\frac{\omega}{c}\right)^{2}}+\frac{k_{z}^{2}}{\left(n_{o}\frac{\omega}{c}\right)^{2}}-1\right)\]
+
+\end_inset 
+
+ Como 
+\begin_inset Formula $\left|\mathsf{M}\right|=0$
+\end_inset 
+
+, se debe anular uno de los dos factores.
+ Si es el primero, el vector de ondas debe estar sobre una esfera de radio
+ 
+\begin_inset Formula $n_{o}\frac{\omega}{c}$
+\end_inset 
+
+; si es el segundo, sobre un elipsoide de revolución de semiejes 
+\begin_inset Formula $n_{e}\frac{\omega}{c},\, n_{e}\frac{\omega}{c},\, n_{o}\frac{\omega}{c}$
+\end_inset 
+
+ (también se pueden anular ambos factores a la vez).
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/esfera-elipsoide-vectores-de-onda.eps
+	display monochrome
+	width 6cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Esfera y elipsoide de vectores de onda.
+ Dependiendo de 
+\begin_inset Formula $n_{e}$
+\end_inset 
+
+ y 
+\begin_inset Formula $n_{o}$
+\end_inset 
+
+ el elipsoide estará dentro o fuera de la esfera.
+\end_inset 
+
+A las superficies dadas por la condición de anulación de 
+\begin_inset Formula $\left|\mathsf{M}\right|$
+\end_inset 
+
+ las llamamos 
+\emph on 
+superficies de vectores de onda
+\emph default 
+.
+ Ambas coinciden (y comparten plano tangente) en el eje 
+\begin_inset Formula $z$
+\end_inset 
+
+.
+ A ese eje se le denomina 
+\emph on 
+eje óptico.
+
+\emph default 
+ Es el eje donde la constante dieléctrica tiene un valor diferente al de
+ los otros dos ejes principales.
+\layout Standard
+
+Imaginemos una onda que se propague en una dirección del espacio.
+ Para dicha onda, en un medio anisótropo uniáxico, tenemos dos vectores
+ de onda distintos: el que está sobre la esfera (
+\emph on 
+onda ordinaria
+\emph default 
+) y el que está sobre el elipsoide (correspondiente
+\emph on 
+ 
+\emph default 
+a
+\emph on 
+ la onda extraordinaria
+\emph default 
+).
+ A partir de ahora todos los problemas se nos desdoblan, puesto que tenemos
+ que caracterizar la propagación de ambas.
+\layout Itemize
+
+Para la onda ordinaria, el módulo del vector de ondas 
+\begin_inset Formula $\left|\mathbf{k}_{o}\right|=n_{o}\frac{\omega}{c}$
+\end_inset 
+
+ siempre será el mismo.
+ Así ocurre, también con la velocidad de fase 
+\begin_inset Formula $v_{o}=\frac{c}{n_{o}}$
+\end_inset 
+
+.
+ 
+\layout Itemize
+
+Para la onda extraordinaria, tomando coordenadas esféricas 
+\begin_inset Formula $r,\varphi,\phi$
+\end_inset 
+
+ (radial, polar, acimutal)
+\begin_inset Formula \[
+\mathbf{k}_{e}=\left|\mathbf{k}_{e}\right|\left(\sin\phi\cos\varphi\mathbf{u}_{x}+\sin\phi\sin\varphi\mathbf{u}_{y}+\cos\phi\mathbf{u}_{z}\right)\]
+
+\end_inset 
+
+ Si llevamos esto a la condición de anulación del factor correspondiente
+ tendremos
+\begin_inset Formula \[
+\left|\mathbf{k}_{e}\right|=\frac{n_{e}n_{o}}{\sqrt{n_{o}^{2}\sin^{2}\phi+n_{e}^{2}\cos^{2}\phi}}\frac{\omega}{c}\]
+
+\end_inset 
+
+ Este módulo tiene simetría de revolución en torno al eje óptico.
+ Igualmente, podemos preguntarnos por la velocidad de fase
+\begin_inset Formula \[
+v_{f}=\frac{\omega}{\left|\mathbf{k}_{e}\right|}\]
+
+\end_inset 
+
+ para la que
+\begin_inset Formula \[
+v_{f}^{2}=v_{e}^{2}\sin^{2}\phi+v_{o}^{2}\cos^{2}\phi\]
+
+\end_inset 
+
+ donde 
+\begin_inset Formula $v_{e}=\frac{c}{n_{e}}$
+\end_inset 
+
+ y 
+\begin_inset Formula $v_{o}=\frac{c}{n_{o}}$
+\end_inset 
+
+.
+\layout Standard
+
+Hay dos vectores de onda en todas las direcciones del espacio salvo en la
+ del eje óptico, donde sólo hay una onda.
+ Para medios biáxicos esto ocurre para dos direcciones del espacio (los
+ dos ejes ópticos); en el resto hay dos vectores de onda.
+\layout Standard
+
+Lo que tenemos que hacer ahora es llevar los dos vectores de onda a la ecuación
+ de autovalores y calcular los 
+\begin_inset Formula $\mathbf{E}_{0}$
+\end_inset 
+
+ correspondientes.
+ Para simplificar el problema (reduciéndolo en una dimensión) vamos a aprovechar
+ la simetría en torno al eje 
+\begin_inset Formula $z$
+\end_inset 
+
+ disponiendo los ejes 
+\begin_inset Formula $x,y$
+\end_inset 
+
+ de modo que 
+\begin_inset Formula $k_{x}=0$
+\end_inset 
+
+.
+ Entonces 
+\begin_inset Formula $\mathsf{M}$
+\end_inset 
+
+ queda
+\layout Standard
+
+
+\size footnotesize 
+
+\begin_inset Formula \[
+\left(\begin{array}{ccc}
+\left(n_{x}\frac{\omega}{c}\right)^{2}-k_{y}^{2}-k_{z}^{2} & 0 & 0\\
+0 & \left(n_{y}\frac{\omega}{c}\right)^{2}-k_{z}^{2} & k_{y}k_{z}\\
+0 & k_{z}k_{y} & \left(n_{z}\frac{\omega}{c}\right)^{2}-k_{y}^{2}\end{array}\right)\]
+
+\end_inset 
+
+
+\layout Subsection
+
+Ondas 
+\emph on 
+o
+\emph default 
+ y 
+\emph on 
+e
+\emph default 
+: fase y polarización
+\layout Subsubsection
+
+Onda ordinaria
+\layout Standard
+
+Si el vector de ondas está sobre la esfera (sobre el círculo) y no coincide
+ con el eje 
+\begin_inset Formula $z$
+\end_inset 
+
+ (
+\begin_inset Formula $k_{y}\neq0$
+\end_inset 
+
+) entonces cumple 
+\begin_inset Formula $k_{y}^{2}+k_{z}^{2}=\left(n_{o}\frac{\omega}{c}\right)^{2}$
+\end_inset 
+
+
+\size scriptsize 
+
+\begin_inset Formula \[
+\left(\begin{array}{ccc}
+\left(n_{o}\frac{\omega}{c}\right)^{2}-k_{y}^{2}-k_{z}^{2} & 0 & 0\\
+0 & \left(n_{o}\frac{\omega}{c}\right)^{2}-k_{z}^{2} & k_{y}k_{z}\\
+0 & k_{z}k_{y} & \left(n_{e}\frac{\omega}{c}\right)^{2}-k_{y}^{2}\end{array}\right)\left(\begin{array}{c}
+E_{0x}\\
+E_{0y}\\
+E_{0z}\end{array}\right)=0\]
+
+\end_inset 
+
+
+\size default 
+por la condición de onda ordinaria 
+\begin_inset Formula $0\times E_{0x}=0$
+\end_inset 
+
+, con lo que nos queda como subsistema
+\size footnotesize 
+
+\begin_inset Formula \[
+\left(\begin{array}{cc}
+\left(n_{o}\frac{\omega}{c}\right)^{2}-k_{z}^{2} & k_{y}k_{z}\\
+k_{z}k_{y} & \left(n_{e}\frac{\omega}{c}\right)^{2}-k_{y}^{2}\end{array}\right)\binom{E_{0y}}{E_{0z}}=0\]
+
+\end_inset 
+
+
+\size default 
+ la condición necesaria para que tenga solución es que esta submatriz tenga
+ determinante nulo, pero eso es contradictorio, porque equivale a decir
+ que el vector de ondas está sobre el elipsoide (y por hipótesis está sobre
+ la esfera).
+ Por lo tanto se tiene que verificar
+\begin_inset Formula \begin{eqnarray*}
+E_{0y}=E_{0z} & = & 0\\
+E_{0x} & \neq & 0\end{eqnarray*}
+
+\end_inset 
+
+ En otras palabras: 
+\layout Itemize
+
+
+\emph on 
+la onda ordinaria está linealmente polarizada, vibrando perpendicularmente
+ al plano que contiene al vector de ondas y al eje óptico.
+
+\series bold 
+ 
+\layout Itemize
+
+
+\emph on 
+Para la onda ordinaria, 
+\begin_inset Formula $\mathbf{E}_{0}$
+\end_inset 
+
+ sí es perpendicular a 
+\begin_inset Formula $\mathbf{k}$
+\end_inset 
+
+: energía y fase se propagan en la misma dirección.
+ 
+\begin_inset Formula $\left\langle \mathbf{S}\right\rangle \propto\mathbf{k}$
+\end_inset 
+
+.
+\layout Standard
+
+Esta onda sólo se distingue de la que atraviesa un medio isótropo en que
+ está obligatoriamente linealmente polarizada del modo descrito.
+\layout Subsubsection
+
+Onda extraordinaria
+\layout Standard
+
+
+\begin_inset Formula \[
+\frac{k_{y}^{2}}{\left(n_{e}\frac{\omega}{c}\right)^{2}}+\frac{k_{z}^{2}}{\left(n_{o}\frac{\omega}{c}\right)^{2}}=1\]
+
+\end_inset 
+
+ es la ecuación que la define.
+ Vamos a apartar para más tarde el estudio de la propagación según el eje
+ óptico, por lo que 
+\begin_inset Formula $k_{y}\neq0$
+\end_inset 
+
+.
+ Si llevamos la condición para 
+\begin_inset Formula $\mathbf{k}_{e}$
+\end_inset 
+
+ a la ecuación de autovalores y aprovechando la simetría de revolución,
+ tenemos dos subsistemas (primera fila y últimas dos, respectivamente, de
+ la matriz)
+\size scriptsize 
+
+\begin_inset Formula \[
+\left(\begin{array}{ccc}
+\left(n_{o}\frac{\omega}{c}\right)^{2}-k_{y}^{2}-k_{z}^{2} & 0 & 0\\
+0 & \left(n_{o}\frac{\omega}{c}\right)^{2}-k_{z}^{2} & k_{y}k_{z}\\
+0 & k_{z}k_{y} & \left(n_{e}\frac{\omega}{c}\right)^{2}-k_{y}^{2}\end{array}\right)\left(\begin{array}{c}
+E_{0x}\\
+E_{0y}\\
+E_{0z}\end{array}\right)=0\]
+
+\end_inset 
+
+
+\size default 
+ se deduce que
+\begin_inset Formula \[
+E_{0x}=0\]
+
+\end_inset 
+
+ el subsistema 
+\size small 
+
+\begin_inset Formula \[
+\left(\begin{array}{cc}
+\left(n_{o}\frac{\omega}{c}\right)^{2}-k_{z}^{2} & k_{y}k_{z}\\
+k_{z}k_{y} & \left(n_{e}\frac{\omega}{c}\right)^{2}-k_{y}^{2}\end{array}\right)\binom{E_{0y}}{E_{0z}}=0\]
+
+\end_inset 
+
+
+\size default 
+tiene solución distinta de la trivial, porque su determinante vale, por
+ hipótesis, 1.
+ Resolviendo:
+\begin_inset Formula \[
+\mathbf{E}_{0}\propto\left(\begin{array}{c}
+0\\
+n_{e}^{2}k_{z}\\
+-n_{o}^{2}k_{y}\end{array}\right)\]
+
+\end_inset 
+
+ Conclusiones:
+\layout Itemize
+
+
+\emph on 
+La luz es linealmente polarizada (campo proporcional a un vector real),
+ y está en el plano determinado por 
+\begin_inset Formula $\mathbf{k}$
+\end_inset 
+
+ y el eje óptico.
+\layout Itemize
+
+
+\emph on 
+En general 
+\begin_inset Formula $\mathbf{E}_{0}\not\perp\mathbf{k}$
+\end_inset 
+
+ ya que 
+\begin_inset Formula \[
+\mathbf{k}\cdot\mathbf{E}_{0}\propto\left(n_{or}^{2}-n_{e}^{2}\right)k_{y}k_{z}\]
+
+\end_inset 
+
+ salvo en el caso 
+\begin_inset Formula $k_{z}=k_{x}=0$
+\end_inset 
+
+ (
+\begin_inset Formula $k_{y}$
+\end_inset 
+
+ lo estamos excluyendo de momento).
+ Dicho de otro modo, siempre que 
+\begin_inset Formula $\mathbf{k}$
+\end_inset 
+
+ sea perpendicular al eje óptico, 
+\begin_inset Formula $\mathbf{k}\perp\mathbf{E}_{0}$
+\end_inset 
+
+, pero sólo en ese caso.
+ La energía y la fase se propagan cada una por su cuenta.
+ 
+\layout Subsubsection
+
+Eje óptico
+\layout Standard
+
+Cuando el vector de ondas está en la dirección del eje óptico, sólo hay
+ una onda (la ordinaria y la extraordinaria coinciden).
+ Se cumple 
+\begin_inset Formula $k_{y}=k_{x}=0$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathbf{k}=n_{o}\frac{\omega}{c}\mathbf{u}_{z}$
+\end_inset 
+
+.
+ Esto en nuestra ecuación de autovalores significa más ceros en la matriz:
+\layout Standard
+
+
+\size small 
+
+\begin_inset Formula \[
+\left(\begin{array}{ccc}
+0 & 0 & 0\\
+0 & 0 & 0\\
+0 & 0 & \left(n_{e}\frac{\omega}{c}\right)^{2}\end{array}\right)\left(\begin{array}{c}
+E_{0x}\\
+E_{0y}\\
+E_{0z}\end{array}\right)=0\]
+
+\end_inset 
+
+
+\size default 
+ de donde 
+\begin_inset Formula $E_{0z}=0$
+\end_inset 
+
+ y 
+\begin_inset Formula $E_{0x},E_{0y}$
+\end_inset 
+
+ son libres.
+\layout Standard
+
+Conclusiones:
+\layout Itemize
+
+
+\emph on 
+Cualquier estado de polarización es posible.
+\layout Itemize
+
+
+\emph on 
+
+\begin_inset Formula $\mathbf{E}\cdot\mathbf{k}=0$
+\end_inset 
+
+ por lo que fase y energía van en la misma dirección.
+\layout Standard
+
+En este caso particular la onda ve un medio isótropo: si nos movemos por
+ el eje 
+\begin_inset Formula $z$
+\end_inset 
+
+ el índice en todas las direcciones laterales es el mismo.
+ Es natural que el resultado sea el mismo que para una oap en un medio isótropo.
+\layout Subsection
+
+Refracción y reflexión: doble refracción
+\layout Standard
+
+Vamos a examinar ahora qué ocurre cuando hay una discontinuidad de índice
+ y uno de los medios es anisótropo.
+ La superficie de separación la supondremos plana.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/doble-refraccion-uniaxico.eps
+	display monochrome
+	width 8cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig doble refrac en uniax}
+
+\end_inset 
+
+Diagrama de la interfase y las ondas que intervienen.
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+poner primas a los angulos para que coicida la notacion
+\layout Standard
+
+con la del texto
+\layout Standard
+
+por otra parte...
+ no tienen que ser elipsoide y esfera
+\layout Standard
+
+(y por tanto sus perfiles) tangentes en el eje z?
+\layout Standard
+
+-ATC
+\layout Standard
+
+correcion: es un diagrama generico, por lo tanto tienen que ser
+\layout Standard
+
+tangentes solo en __un__ punto
+\layout Standard
+
+-ATC.
+\end_inset 
+
+
+\end_inset 
+
+Para saber si hay o no ondas reflejada y transmitida debemos preguntarlo
+ a las ecMm.
+ Si las hubiera les asignaríamos una superposición de oap:
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{E}_{i} & = & \mathbf{A}e^{i\fase}\\
+\mathbf{E}_{r} & = & \mathbf{R}e^{i\left(\mathbf{k}''\cdot\mathbf{r}+\omega''t\right)}+\ldots\\
+\mathbf{E}_{t} & = & \mathbf{T}e^{i\left(\mathbf{k}'\cdot\mathbf{r}-\omega't\right)}+\ldots\end{eqnarray*}
+
+\end_inset 
+
+ Las condiciones de frontera para los campos no varían porque uno de los
+ medios sea anisótropo.
+ Si las aplicamos obtendremos la igualdad 
+\begin_inset Formula \[
+\mathbf{k}\cdot\mathbf{r}=\mathbf{k}'\cdot\mathbf{r}=\mathbf{k}''\cdot\mathbf{r}\]
+
+\end_inset 
+
+ en 
+\begin_inset Formula $z=0$
+\end_inset 
+
+ (la interfase), 
+\begin_inset Formula \begin{eqnarray*}
+k_{x}=k_{x}' & = & k_{x}''=n\frac{\omega}{c}\sin\theta\\
+k_{y}=k_{y}' & = & k_{y}''=0\end{eqnarray*}
+
+\end_inset 
+
+(la segunda componente se anula por elección de ejes).
+ Es decir, todos los vectores de onda están en el plano de incidencia.
+\layout Standard
+
+A partir de aquí comienzan las diferencias.
+ En general el módulo del vector de ondas depende de la dirección en un
+ medio anisótropo.
+ Lo que sí sabemos es que el vector de ondas debe estar
+\layout Enumerate
+
+sobre el plano de incidencia
+\layout Enumerate
+
+sobre la superficie de vectores de onda 
+\layout Standard
+
+En la figura 
+\begin_inset LatexCommand \ref{fig doble refrac en uniax}
+
+\end_inset 
+
+ vemos que el vector de ondas de la onda transmitida puede ser uno de los
+ dos que tienen la misma componente 
+\begin_inset Formula $k_{x}$
+\end_inset 
+
+ y cumplen las dos exigencias planteadas (cortamos las superficies de vectores
+ de onda con el plano de incidencia, obteniendo dos curvas).
+ Utilizando la notación de la figura 
+\begin_inset LatexCommand \ref{fig doble refrac en uniax}
+
+\end_inset 
+
+ 
+\begin_inset Formula \begin{eqnarray*}
+\left|k_{x}'\right|=\left|\mathbf{k}_{1}'\right|\sin\theta_{1}' & = & \left|\mathbf{k}\right|\sin\theta=k_{x}\\
+\left|\mathbf{k}_{2}'\right|\sin\theta_{2}' & = & \left|\mathbf{k}\right|\sin\theta\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Itemize
+
+En general habrá dos ondas refractadas, ya que hay dos vectores de onda
+ que satisfacen las condiciones de frontera
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+En un medio isótropo la superficie de vectores de onda tenía una sola hoja,
+ de modo que sólo había un vector de onda que cumpliese las condiciones
+\end_inset 
+
+.
+ A esta propiedad se la llama doble refracción o 
+\emph on 
+birrefringencia.
+ 
+\emph default 
+Esto significa que al mirar objetos a través de medios anisótropos se ven
+ dobles.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/dos-imagenes-anisotropo.eps
+	display monochrome
+	width 8cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Formación de dos imágenes al atravesar la luz un medio anisótropo.
+ 
+\end_inset 
+
+
+\layout Itemize
+
+Por ser 
+\begin_inset Formula $\left|\mathbf{k}_{1}'\right|$
+\end_inset 
+
+ y 
+\begin_inset Formula $\left|\mathbf{k}_{2}'\right|$
+\end_inset 
+
+ funciones de los respectivos ángulos no hay una ley simple de tipo 
+\noun on 
+Snell
+\noun default 
+.
+ Hay que utilizar las dos últimas ecuaciones que hemos escrito, y las dificultad
+es de cálculo son mucho mayores.
+\layout Itemize
+
+Interpretación microscópica: la frecuencia de resonancia de los osciladores
+ microscópicas ya no es isótropa.
+ Es como si hubiera 2 medios superpuestos.
+\layout Standard
+
+No vamos a abordar la especificación de otros parámetros de la onda (fórmulas
+ de 
+\noun on 
+Fresnel
+\noun default 
+, coeficientes de reflexión, etc.).
+ Solamente vamos a comentar un resultado: si concebimos un medio uniáxico
+ cuyo eje óptico esté en el plano de incidencia o sea perpendicular a él
+ se cumple que 
+\layout Itemize
+
+Una onda incidente polarizada linealmente según la dirección perpendicular
+ da lugar a una onda refractada con polarización también perpendicular 
+\begin_inset Formula $\perp\fld\perp$
+\end_inset 
+
+
+\layout Itemize
+
+
+\begin_inset Formula $\parallel\fld\parallel$
+\end_inset 
+
+.
+\layout Standard
+
+Esta es una circunstancia especial en que ocurre lo mismo que en medios
+ isótropos en cuanto a separación de componentes paralela y perpendicular.
+\the_end

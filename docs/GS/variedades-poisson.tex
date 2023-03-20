@@ -1,0 +1,387 @@
+\documentclass[spanish,a4paper,12pt,draft]{report}
+\usepackage{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{eurosym}
+\input{GS-packages.sty}
+\input{GS-macros.sty}
+\begin{document}
+\chapter{Variedades de Poisson}
+
+
+\section{Definición}
+
+Existe una generalización del concepto de variedad simpléctica, que sirve también como marco para el estudio de los sistemas hamiltonianos.  Este enfoque hace incapié en las propiedades del paréntesis de Poisson.
+
+Hay muchos ejemplos, sobre todo sacados de la física, donde se puede definir de una manera simple un  paréntesis de Poisson, a pesar de no existir ninguna estructura simpléctica.
+
+\begin{defi}
+
+Sea $\V$ una variedad arbitraria de dimensión finita.  Un {\sf pa\-rén\-tesis de Poisson} \index{paréntesis!de Poisson} es una operación
+$$
+\begin{array}{cccc}
+\{\cdot, \cdot \} : & \C^\infty(\V) \times \C^\infty(\V) & \rightarrow & \C^\infty(\V) \\
+   & (f,g) & \rightarrow & \{f,g\}
+\end{array}
+$$
+que cumple:
+
+\begin{itemize}
+
+\item  Es antisimétrico.  $\{f,g\}= - \{g,f\}$
+
+\item  Es bilineal sobre $\R$.  $ \{\lambda f+f',g\}= \lambda\{f,g\}+\{f',g\}$ donde $\lambda \in \R$.
+
+\item {\sf Identidad de Jacobi}.\index{identidad de Jacobi}
+         $\{f,\{g,h\}\}+ \{g,\{h,f\}\}+ \{h,\{f,g\}\}=0$.
+
+\item {\sf Regla de Leibniz}. \index{regla de Leibniz}
+       $\{f,g \cdot h\}= \{f,g\}\cdot h + g\cdot \{f,h\}$.
+
+\end{itemize}
+
+Una variedad donde se ha introducido un paréntesis de Poisson se denomina {\sf variedad de Poisson}.  \index{variedad!de Poisson}
+
+
+
+\end{defi}
+
+Toda variedad de Poisson tiene una estructura de álgebra de Lie en su anillo de funciones.  Este álgebra es de dimensión infinita.  Toda la terminología y resultados referentes a álgebras de Lie se traslada de este modo a las variedades de Poisson.
+
+
+\bigskip
+
+\noindent{\bf Ejemplos.}
+
+\begin{itemize}
+
+\item El ejemplo más evidente de variedad de Poisson es el de variedad simpléc\-tica.  En toda variedad simpléctica se puede definir, de un modo canónico, un paréntesis de Poisson (ver sección \ref{sec:poisson}).
+
+\item  Si definimos $\{f,g\}=0$ para todo par de funciones, tenemos una estructura {\sf trivial} de Poisson.  Evidentemente esta estructura no aporta nada.
+
+\item  En $\R^{2n}$ se puede introducir un paréntesis de Poisson mediante la  fór\-mula
+$$
+\{f,g\} =  \sum \left ( \frac{\partial f}{\partial \xi_i}\frac{\partial g}{\partial x_i}- \frac{\partial f}{\partial x_i}\frac{\partial g}{\partial \xi_i} \right )
+$$
+Este paréntesis es el asociado a la estructura simpléctica estandard de $\R^{2n}$.
+
+
+\item  En $\R^{2n+r}$ dotado de las coordenadas $\{x_1, \cdots x_n,\xi_1, \cdots \xi_n, z_1, \cdots z_r\}$ podemos definir un paréntesis con la fórmula del ejemplo  anterior.  Sin embargo en esta nueva variedad existen funciones no constantes, por ejemplo $z_1$ que cumplen $\{z_1,f\}=0$ para toda función.  En otras palabras, el {\sf centro del álgebra} \index{centro de un álgebra} de Lie no se reduce a las constantes.
+
+\item  El paréntesis de Poisson es una operación de tipo local.  El valor de $\{f,g\}$ en un punto, solo depende de los germenes de $f$ y de $g$.  Esto es así pues el paréntesis es una derivación (en cada argumento).  Todo abierto de una variedad de Poisson es también de Poisson.
+
+
+\end{itemize}
+
+
+\begin{defi}
+
+Llamamos {\sf función de Casimir} a toda función $f$ cuyo parén\-tesis de Poisson con cualquier otra función sea nulo.
+$$
+\{f,g\}=0 \text{ para toda } g \in C^\infty(\V)
+$$
+
+Dos funciones están en {\sf involución} \index{involución} si su paréntesis es nulo.
+
+\end{defi}
+
+
+Las funciones de Casimir son los elementos del centro del álgebra de Lie.  En el caso de la geometría simpléctica las únicas funciones de Casimir son las constantes (si la variedad es conexa).
+
+
+\section{Campos de Hamilton}
+
+Gracias a la regla de Leibniz podremos construir un campo vectorial asociado a una función.  De este modo el formalismo hamiltoniano se introduce en las variedades de Poisson.
+
+
+\begin{defi}
+
+Sea $f$ una función diferenciable en una variedad de Poisson.  Llamamos {\sf campo hamiltoniano} \index{campo!hamiltoniano} de $f$ y denotamos $X_f$ al que cumple
+$$
+X_f(g) = \{f,g\}
+$$
+
+\end{defi}
+
+
+Gracias a la regla de Leibniz, se prueba que $X_f$ es una derivación del anillo de funciones y por  lo tanto un campo diferenciable sobre la variedad.
+
+Si consideramos un álgebra de Lie arbitraria, a cada elemento $f$ del álgebra le corresponde un endomorfismo del álgebra.  Este endomorfismo se denota $\Ad_f$ y está definido como
+$$
+\Ad_f (g) = [f,g]
+$$
+
+Por lo tanto, el campo hamiltoniano de $f$ no es más que el endomorfismo $\Ad_f$ del álgebra de Lie $C^\infty(\V)$.
+
+\begin{propo}
+
+La función
+$$
+\begin{array}{ccc}
+ C^\infty & \rightarrow & \Der(\V) \\
+ f  &\rightarrow          & X_f
+\end{array}
+$$
+es un morfismo de álgebras de Lie.
+
+\end{propo}
+
+\dem
+
+La linealidad es clara.  Demostremos que conserva el paréntesis.
+
+Tenemos por una parte
+$$
+X_{\{f,g\}}(h) = \{\{f,g\},h\}= - \{h,\{f,g\}\}
+$$
+
+Por otra parte tenemos
+\begin{equation*}
+\begin{split}
+[X_f,X_g] (h)& = X_fX_g(h) -X_gX_f(h) \\
+            & = X_f(\{g,h\}) - X_g(\{f,h\})  \\
+            & = \{f,\{g,h\}+ \{g,\{h,f\}\}
+\end{split}
+\end{equation*}
+y concluimos aplicando la identidad de Jacobi en $C^\infty(\V)$. \fin
+
+
+\begin{cor}
+
+El conjunto de campos hamiltonianos forma una subálgebra de Lie.
+
+\end{cor}
+
+
+\section{Tensor de Poisson}
+
+La estructura de Poisson de una variedad viene inducida por un tensor de orden $2$ antisimétrico.  Sin embargo, a diferencia de la estructura simpléctica, este tensor no será covariante sino contravariante.  Dicho de otra forma, este tensor es un producto tensorial de campos vectoriales y no un producto de formas lineales.
+
+
+\begin{teo}
+
+Si $\V$ es una variedad de Poisson, existe un tensor $2$-contrava\-riante $\omega^2$ que verifica que verifica
+$$
+\omega^2 (df,dg) = \{f,g\}
+$$
+El tensor $\omega^2$ recibe el nombre de {\sf tensor de Poisson} \index{tensor!de Poisson} de la variedad $\V$.
+
+\end{teo}
+
+\dem
+
+Veamos primero que el valor de $\{f,g\}$ en el punto $x$ solo depende de los valores de $df$ y $dg$ en ese punto
+$$
+\{f,g\} = X_f(g) = dg(X_f)
+$$
+La parte de $dg$ depende evidentemente solo del valor de $dg$ en el punto $x$.  El campo $X_f$ solo depende de las derivadas parciales de $f$ (trabajando en un abierto coordenado) y por lo tanto solo depende del valor de $df$. Tomando valor en el punto $x$ se concluye.
+
+ Esto prueba su existencia. 
+
+ Su unicidad es clara, pues en coordenadas, $\omega^2$ debe expresarse 
+$$
+\omega^2 = \omega^2(dx_i,dx_j) \frac{\partial }{\partial x_i} \frac{\partial}{\partial x_j}= \{x_i,x_j\} \frac{\partial}{\partial x_i}\frac{\partial}{\partial x_j}
+$$
+
+El tensor $\omega^2$ es antisimétrico por serlo el paréntesis.  \fin
+
+\begin{itemize}
+
+\item  En un dominio coordenado 
+$$
+\{f,g\}= \{x_i,x_j\} \frac{\partial f}{\partial x_i}\frac{\partial g}{\partial x_j}
+$$
+Conociendo los paréntesis de las coordenadas, podemos conocer el pa\-rén\-tesis de cualquier par de funciones.  Esto prueba de nuevo que el valor del paréntesis de dos funciones depende solo de los valores de sus diferenciales.
+
+\item  Dar un tensor $2$-contravariante no  equivale a dar una estructura de Poi\-sson, pues en general el producto definido como
+$\omega^2(df,dg)$ no  cumple la identidad de Jacobi\footnote{Si introducimos el paréntesis de Schouten, \index{paréntesis!de Schouten} que es una generalización de la derivada de Lie, la condición para que un tensor $\omega^2$ defina una estructura de Poisson es que $[\omega^2,\omega^2]=0$, donde los corchetes denotan el paréntesis de Schouten.  Para más referencias véase \cite{linnew}.}.
+
+\item  El tensor $\omega^2$ tiene asociada una polaridad.  Como el tensor es contravariante, la polaridad en este caso tiene como dominio el fibrado cotangente y como imagen el fibrado tangente.  A cada $1$-forma la polaridad le permite asociar un campo.  En general, la polaridad asociada a una estructura de Poisson no será ni inyectiva ni epiyectiva.
+
+\item  A $df$ mediante la polaridad asociada le corresponde el campo $X_f$.
+
+\end{itemize}
+
+\begin{defi}
+
+Sea $\V$ una variedad de Poisson y $\omega^2$ el tensor de Poisson.  Llamamos rango de $\V$ en el punto $x$, al rango del tensor $(\omega^2)_x$.
+Coincide con la dimensión de la imagen del espacio cotangente mediante la polaridad asociada.
+
+\end{defi}
+
+El {\sf rango} \index{rango!de una variedad de Poisson} de una variedad de Poisson es necesariamente un número par por ser el rango de un tensor hemisimétrico, y en principio  puede variar de punto a punto.
+
+\begin{defi}
+
+Llamamos {\sf espacio característico} \index{espacio!característico} en el punto $x$ y denotamos $C_x$, al subconjunto de $T_x(\V)$ que es la imagen de $T^*_x(\V)$ por la polaridad asociada al tensor de Poisson.
+
+\end{defi}
+
+Por la propia definición, el rango coincide con la dimensión del espacio característico.
+
+Si $\V$ es de dimensión par y de rango máximo en todo punto, entonces la polaridad asociada al tensor de Poisson es un isomorfismo.  A traves de este isomorfismo podemos construir sobre $\V$ una $2$-forma (cuya polaridad es la inversa de la polaridad de $\omega^2$).  Se puede comprobar que esta $2$-forma es cerrada.  Entonces tenemos una variedad simpléctica.  La estructura de Poisson asociada a esta estructura simpléctica coincide con la estructura de partida.
+
+Esto nos permite dar una nueva definición de variedad simpléctica.
+
+\begin{defi}
+
+Una {\sf variedad simpléctica} \index{variedad!simpléctica} es una estructura de Poisson cuyo rango es igual a la dimensión de la variedad en todos los puntos.
+
+\end{defi}
+
+\section{Morfismo de Poisson}
+
+
+Como toda estructura que se precie, las variedades de Poisson tienen unos morfismos asociados.  Recordemos que la definición de imagen inversa en el caso de las funciones cumple
+$$
+\varphi^*(f) = f \circ \varphi
+$$
+
+Para no recargar la notación notaremos del mismo modo todos los parén\-tesis de Poisson.  El contexto nos inforamará de cual es el que debemos usar en cada caso.
+
+\begin{defi}
+
+Sea $\V$ y $\V'$ dos variedades de Poisson.  Una función diferenciable
+$$
+\varphi : \V \rightarrow \V'
+$$ 
+es un {\sf morfismo de Poisson} \index{morfismo!de Poisson} si $\varphi^*(\{f,g\}) =\{\varphi^*(f), \varphi^*(g) \}$.
+Si $\varphi$ es un difeomorfismo, lo llamaremos {\sf difeomorfismo de Poisson}. \index{difeomorfismo!de Poisson}
+
+Un campo $X$ es un {\sf morfismo de Poisson infinitesimal} \index{morfismo!de Poisson infinitesimal} si $X^L (\omega^2)=0$.  También lo llamaremos {\sf campo de Poisson}. \index{campo!de Poisson}
+
+\end{defi}
+
+Si $\varphi$ es un difeomorfismo de Poisson, entonces $\varphi^{-1}$ también lo es.  El conjunto de todos los difeomorfismos de Poisson de una variedad $\V$ forma un grupo.  Lo llamaremos {\sf grupo de Poisson} \index{grupo!de Poisson} de la variedad.  Del mismo modo los morfismos infintesimales de Poisson forman un álgebra de Lie.
+
+Si un campo de Poisson genera un grupo uniparamétrico $\{\tau_t\}$, entonces todos los elementos de ese flujo son morfismos de  Poisson.  Ello se deriva de la fórmula
+$$
+\{f,g\}= \omega^2(df,dg)
+$$
+
+
+\begin{propo}
+
+Sea $\V$ una variedad de Poisson.  $X$ es un campo de Poisson si y solo si cumple
+$$
+X(\{f,g\})= \{X(f),g \}+ \{f, X(g)\}
+$$
+
+\end{propo}
+
+\dem
+
+Tenemos la fórmula
+$$
+X^L(\omega^2(df,dg)) = X^L(\omega^2)(df,dg) + \omega^2(X(df),dg)+ \omega^2(df,X(dg))
+$$
+aplicando la regla de derivación de un producto contraido.
+
+En nuestro caso esto da lugar  a
+
+$$
+X(\{f,g\}) = X^L(\omega^2)(df,dg) + \{X(df),dg\}+ \{df,X(dg)\}
+$$
+lo que demuestra la proposición.  \fin
+
+
+\begin{cor}
+
+Todo campo hamiltoniano es un campo de Poisson.
+
+\end{cor}
+
+\section{Teorema de Darboux}
+
+Si la variedad de Poisson tiene rango distinto en cada punto, poco podremos saber sobre su estructura local.  Sin embargo si tiene rango constante su estructura local esta perfectamente determinada.
+
+\begin{teo}[de Darboux] \index{teorema!de Darboux}
+
+Sea $\V$ una variedad de Poisson de rango\linebreak constante $2n$.  Cada punto de la variedad tiene un entorno coordenado, mediante coordenadas locales
+$\{x_1, \cdots x_n,\xi_1, \cdots \xi_n, z_1, \cdots z_r\}$
+de tal forma que en esas coordenadas
+$$
+\{f,g\} =  \sum \left ( \frac{\partial f}{\partial \xi_i}\frac{\partial g}{\partial x_i}- \frac{\partial f}{\partial x_i}\frac{\partial g}{\partial \xi_i} \right )
+$$
+
+\end{teo}
+
+
+
+\section{Álgebras de Poisson}
+
+Sobre  $C^\infty(\V)$ existen dos estructuras de álgebra.  Una asociativa dada por el producto ordinario y otra de Lie, dada por el paréntesis de Poisson.  Estas dos estructuras están relacionadas por la fórmula
+$$
+\{f,g \cdot g'\}= \{f,g\}\cdot g' + g \cdot \{f,g'\}
+$$
+
+Esto nos conduce a la 
+
+\begin{defi}
+
+Sea $k$ un cuerpo.  Un {\sf álgebra de Poisson} \index{algebra de Poisson@álgebra de Poisson} es un conjunto dotado de las estructuras
+
+\begin{itemize}
+
+\item  Una estructura de álgebra asociativa, denotada por un punto.
+
+\item  Una estructura de álgebra de Lie, denotada con un paréntesis de Poisson (o también con un paréntesis de Lie).
+
+\item  Además se cumple
+$$
+\{f,g \cdot g'\}= \{f,g\}\cdot g' + g \cdot \{f,g'\}
+$$
+
+\end{itemize}
+
+\end{defi}
+
+Se debe tener en cuenta el orden, pues en general el álgebra asociativa no tiene por que ser conmutativa.  En el caso de las funciones diferenciables si es conmutativa.
+
+
+\bigskip
+
+\noindent{\bf Ejemplos.}
+
+\begin{itemize}
+
+\item  Sea $(A, \cdot)$ un álgebra asociativa.  Definimos $\{f,g\}= f\cdot g-g \cdot f$.  Tenemos una estructura de Poisson en $A$.  En particular, las matrices cuadradas tienen estructura de álgebra de Poisson.
+
+\item  Los observables de un sistema cuántico también tienen estructura de álge\-bra de Poisson (aunque hay ciertos problemas con los dominios).
+
+\end{itemize}
+
+
+
+
+\section*{Problemas}
+
+\addcontentsline{toc}{section}{Problemas}
+
+\begin{pro}
+
+Una función $f$ es de Casimir si y solo si su campo hamiltoniano $X_f$ es identicamente nulo.
+
+\end{pro}
+
+
+\begin{pro}
+
+Demostrar dada una matriz antisimétrica de orden $n$, se puede construir en $\R^n$ una estructura de Poisson.
+
+\end{pro}
+
+\begin{pro}
+
+Asociando a cada punto $x$  su subespacio característico $C_x$ obtenemos una distribución cuyo rango es el de la estructura simpléctica.  Estudiar la aplicabilidad del {\rm teorema de Frobenius}
+\index{teorema!de Frobenius} a dicha distrubución.
+
+\end{pro}
+
+\begin{pro}
+
+Sea $\varphi :\V \rightarrow \V$ un difeomorfismo de Poisson.  Dado un campo hamiltoniano $X_f$, ver si existe alguna relación entre su imagen directa $\varphi_*(X_f)$ y el campo cuyo hamiltoniano es $\varphi^*(f)$.
+
+\end{pro}
+
+\end{document}

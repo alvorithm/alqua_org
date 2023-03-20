@@ -1,0 +1,1821 @@
+\documentclass[spanish,a4paper,12pt]{book}
+\usepackage{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{eurosym}
+\input{lyxpackages.sty}
+\input{IFC2-packages.sty}
+\input{IFC2-macros.sty}
+\begin{document}
+
+\chapter{Sistemas con pocos electrones}
+
+
+\section{Introducción}
+
+Los electrones son una de las piezas básicas que constituyen casi toda
+la materia conocida. Son parte fundamental de átomos, moléculas y
+sólidos. También forman parte de sistemas poco habituales en la
+naturaleza que nos rodea como son los plasmas, o los aún más exóticos
+átomos y moléculas compuestos parcialmente por antipartículas.
+Existen además estructuras totalmente artificiales como son los
+agregados metálicos y <\,{}<quantum dots>\,{}>.
+
+Si los átomos pueden considerarse como agregados de uno o más
+electrones y un núcleo, las moléculas por su parte son agregados de
+varios núcleos y electrones. Resulta imposible dar una definición de
+las moléculas o de los átomos más exóticos porque existen de muchos
+tipos. Quizá baste con dar como ejemplo el del positronio constituido
+por un electrón y un positrón o el de la molécula \( Ps^{-} \),
+formada por dos electrones y un positrón. Lo que diferencia a estos
+sistemas de los otros que hemos enumerado es que pueden estar formados
+por un número relativamente pequeño de partículas. Los agregados y
+quantum dots contienen normalmente varios miles de electrones mientras
+que plasmas y sólidos son sistemas macroscópicos con un número de
+partículas del orden de \( N_{A} \), el número de \noun{Avogadro. }
+
+La < <física> >  de cada uno de estos sistemas es bastante
+diferente a la de los demás, es decir la forma de sus espectros, las
+escalas de energía involucradas, la forma de interaccionar con sondas
+externas, etc. son muy diferentes en cada caso. Precisamente por esto
+cada uno de ellos merece (o merecería) un tratamiento separado. Sin
+embargo, los métodos teóricos que se utilizan para estudiar átomos y
+moléculas muy ligeros son similares.  Así, en un curso orientado no
+solo a la fenomenología, sino a la forma en que se aplica el
+formalismo de la mecánica cuántica parece razonable que puedan
+encontrarse en un mismo capítulo.
+
+Actualmente existen métodos (numéricos) para atacar frontalmente estos
+sistemas ligéros y que permiten obtener soluciones muy precisas. De
+todas formas utilizaremos otros métodos, menos sofisticados pero más
+intuitivos, que son más adecuados para nosotros. Éstos se basan en la
+teoría de perturbaciones y en el método variacional
+
+
+\section{Átomo de Helio\label{s-athe}}
+
+
+\subsection{Hamiltoniano no relativista para el He}
+
+Un átomo complejo o multielectrónico es un sistema formado por un
+cierto número \( Z>1 \) de electrones y un núcleo con carga positiva
+\( Ze \) que interaccionan entre sí. Para simplificar el problema
+hasta un nivel (casi) aceptable para este curso, supondremos que la
+interacción entre las partículas es puramente electrostática, que el
+núcleo es puntual y sin espín, y despreciaremos las correcciones
+relativistas.  Además, como el núcleo es extraordinariamente pesado
+comparado con los electrones, admitiremos que su posición se confunde
+con la del centro de masas del sistema\footnote{ Es preciso señalar
+que, en el caso de átomos complejos, un tratamiento como el que
+utilizamos en el átomo de hidrógeno, separando la coordenada del
+centro de masas, es más sofisticado y sólo practicable para átomos
+ligeros (\( Z \) pequeño).  }. Esta aproximación es consistente con la
+adoptada previamente ya que sus efectos son como mucho comparables a
+las correcciones de estructura fina.
+
+El He es el átomo multielectrónico más sencillo. Consta de un núcleo,
+formado por dos protones y dos neutrones (partícula \( \alpha \)) y de
+dos electrones. En el sistema de coordenadas asociado al núcleo los
+dos electrones se mueven regidos por el siguiente hamiltoniano
+
+\[H=\frac{\mathbf{p}_{1}^{2}}{2m_{e}}+\frac{\mathbf{p}_{2}^{2}}{2m_{e}}
+-\frac{Ze^{2}}{r_{1}}-\frac{Ze^{2}}{r_{2}}+\frac{e^{2}}{\left|\mathbf{r}_{1}-\mathbf{r}_{2}\right|},\] 
+%
+donde $\mathbf{r}_{i}$ y $\mathbf{p}_{i}$ representan la posición y
+momento lineal del \( i \)-esimo electrón con respecto al sr del
+núcleo, \( r_{i} \) es el módulo de \( \mathbf{r}_{i} \) y \( m_{e} \)
+la masa del electrón. La carga del núcleo es evidentemente \( Z=2 \),
+pero por razones que se harán evidentes al explicar la idea de
+apantallamiento es preferible escribirla de forma genérica como \( Z
+\). De forma más esquemática tenemos
+
+\[H=h\left( 1\right) +h\left( 2\right) +V\left( 12\right), \]
+%
+con 
+
+\[\begin{array}{ccc}
+h\left( i\right)  & = & \dfrac{\mathbf{p}_{i}^{2}}{2m_{e}}-\dfrac{Ze^{2}}{r_{i}},\\
+V\left( 12\right) & = & \dfrac{e^{2}}{\left| \mathbf{r}_{1}-\mathbf{r}_{2}\right|}.
+\end{array}\]
+%
+La ecS asociada a cada operador \( h(i) \) ya ha sido estudiada y
+resuelta en FCI
+
+\[\begin{array}{ccc}
+h\left( i\right) \phi _{a}\left( i\right)  & = & e_{a}\phi _{a}\left( i\right), \\
+e_{a} & = & -\dfrac{\left( Z\alpha \right) ^{2}m_{e}c^{2}}{2n^{2}_{a}},\\
+\phi _{a}\left( i\right)  & = & \varphi _{n_{a}l_{a}m_{a}}\left( \mathbf{r}_{i}\right) \chi _{S_{zi}}^{\left( i\right) },
+\end{array}\]
+%
+donde \( n_{a}\in N^{+} \), las fdo orbitales son \( \varphi_{nlm}
+\left( \mathbf{r}\right) = R_{nl}\left( r\right) Y_{m}^{l}\left(
+\Omega \right) \) y \( \chi _{S_{zi}}^{\left( i\right) } \) es la fdo
+de espín de una partícula. Estas fdo satisfacen las relaciones de
+ortormalización habituales. Además, de acuerdo con la aproximación
+comentada más arriba, tomaremos \( m_{e}=m \) con lo
+cual 
+%
+\[\frac{\left( Z\alpha \right) ^{2}m_{e}c^{2}}{2}=\frac{\left(
+Z\alpha \right) ^{2}mc^{2}}{2}=Z^{2}E_{I} = 13.6Z^{2}eV,\] 
+%
+y por tanto \( e_{a}=-\dfrac{Z^{2}E_{I}}{n_{a}^{2}}.\)
+
+Estas funciones y energías son los pilares básicos a partir de los
+cuales iremos obteniendo autofunciones y autoenergías cada vez más
+exactas para el átomo de He.
+
+
+\subsection{Aproximación de partícula independiente\label{s-athepi}}
+
+Admitiremos en primera aproximación que los electrones no se < <ven> >
+entre sí, es decir, tomamos \( V(1,2)=0 \).  De esta manera
+encontramos inmediatamente soluciones aproximadas que posteriormente
+refinaremos mediante teoría de perturbaciones o el método
+variacional. En esta aproximación
+
+\[H=h\left( 1\right) +h\left( 2\right),\]
+%
+es decir, se trata de un hamiltoniano a un cuerpo y como los
+electrones son fermiones, las autofunciones del mismo serán funciones
+completamente antisimétricas construidas a partir de las fdos de una
+partícula introducidas previamentes. Por su parte las autoenergías
+serán sumas de las energías \(e_{a} \) de una partícula.
+
+
+\[\mathrm{H}\Phi _{ab}^{(A)} = -\left( \frac{1}{n_{a}^{2}}+\frac{1}{n_{b}^{2}}\right) 
+Z^{2}E_{I}\Phi _{ab}^{(A)}=E_{n_{a}n_{b}}\Phi _{ab}^{(A)}.\]
+
+Dado que hemos despreciado el espín del núcleo, el espín total del
+átomo coincide con la suma del espín de los electrones $\mathbf{S} =
+\mathbf{S}_1 + \mathbf{S}_2$.  Además, el espín total es un buen
+número cuántico ya que el hamiltoniano propuesto conmuta con el
+mismo. Por lo tanto sus autofunciones vendrán etiquetadas por $s$, y
+como $s_i = 1/2$ sólo podemos tener niveles con espín $s=0$ y
+$s=1$. Las fdos correspondientes son
+
+\[\Xi _{s=0}^{m_s=0} = \frac{1}{\sqrt{2}}\left( \chi _{\frac{1}{2}}^{\left( 1\right) }\chi ^{\left( 2\right) }_{-\frac{1}{2}}-
+\chi _{-\frac{1}{2}}^{\left( 1\right) }\chi ^{\left( 2\right) }_{\frac{1}{2}}\right), \]
+%
+que es completamente antisimétrica, y
+
+\[\Xi^{s=1}_{m_s} = \left\{\begin{array}{ll}
+\chi _{\frac{1}{2}}^{\left( 1\right) }\chi _{\frac{1}{2}}^{\left( 2\right)} & m_s = 1\\
+\frac{1}{\sqrt{2}}\left( \chi _{\frac{1}{2}}^{\left( 1\right) }\chi _{-\frac{1}{2}}^{\left( 2\right) }+
+\chi _{-\frac{1}{2}}^{\left( 1\right) }\chi _{\frac{1}{2}}^{\left( 2\right) }\right)&m_s=0\\
+\chi _{-\frac{1}{2}}^{\left( 1\right) }\chi _{-\frac{1}{2}}^{\left( 2\right) }&m_s=-1
+\end{array}\right.\]
+%
+que son simétricas bajo el intercambio de etiquetas. 
+
+Las fdos de espín deben combinarse con una parte espacial que tenga
+simetría de intercambio adecuado, de manera que la fdo global sea
+totalmente antisimétrica. El momento angular orbital total también
+coincide con el de los dos electrones \( \mathbf{L} = \mathbf{L}_{1} +
+\mathbf{L}_{2} \), y como antes, el hamiltoniano conmuta con este
+operador. Así, la parte orbital de la fdo vendrá etiquetada por los
+números cuánticos correspondientes $l$ y $m_l$, que pueden tomar los
+siguientes valores: \( l\in \left\{ \left|l_a-l_b \right| \ldots
+l_a+l_b\right\} \) y \( m_l=m_{l_a}+m_{l_b} \). Las fdos orbitales son
+de la forma
+
+\[\Theta^l_{n_al_an_bl_b;m_l}(\mathbf{r}_1,\mathbf{r}_2) = 
+\mathcal{U}\left\{\sum_{m_{l_a},m_{l_b}}\left<l_am_{l_a}l_bm_{l_b}|lm_l\right>
+\varphi _{n_al_a m_{l_a}}(\mathbf{r}_1)\varphi _{n_bl_b m_{l_b}}(\mathbf{r}_s)\right\}.\]
+%
+donde $\mathcal{U}$ es el operador de simetrización o antisimetrización, según convenga
+
+\[\mathcal{U} = \left\{\begin{array}{ccc}
+                \mathcal{S} & = & \dfrac{1+\mathrm{P}_{12}}{\sqrt{2}}, \\
+                \mathcal{A} & = & \dfrac{1-\mathrm{P}_{12}}{\sqrt{2}}. 
+                \end{array}\right.\]
+%
+Cuando \( l_a=0\) resulta que \( l=l_b \) y \( m_l=m_{l_b} \). En este
+caso particular $\left<0 0 l_bm_{l_b}|lm_l\right> = 1$ y por tanto
+
+\[\Theta^l_{n_an_b;m_l}(\mathbf{r}_1,\mathbf{r}_2) = 
+\mathcal{U}\left\{\varphi _{n_a 0 0}(\mathbf{r}_1)\varphi _{n_b l m_l}(\mathbf{r}_s)\right\}
+= \left\{\begin{array}{c}
+  \dfrac{1}{\sqrt{2}}\left(\varphi_{n_a 0 0}\left( \mathbf{r}_{1}\right) 
+  \varphi_{n_b l m_l}\left(\mathbf{r}_{2}\right) +\varphi _{n_a 00}\left( \mathbf{r}_{2}\right)
+  \varphi _{n_b l m_l}\left( \mathbf{r}_{1}\right) \right),\\
+  \dfrac{1}{\sqrt{2}}\left(\varphi_{n_a 0 0}\left( \mathbf{r}_{1}\right) 
+  \varphi_{n_b l m_l}\left(\mathbf{r}_{2}\right) -\varphi _{n_a 00}\left( \mathbf{r}_{2}\right)
+  \varphi _{n_b l m_l}\left( \mathbf{r}_{1}\right) \right).
+  \end{array}\right. \]
+
+Los distintos niveles de energía se obtienen dando valores sucesivos a
+$n_{a}$ y $n_{b}$. El nivel fundamental corresponde a \( n_{a}=n_{b}=1
+\), su energía es \( E_{11}=-2Z^{2}E_{I}=-108.8eV \) y su función de
+onda viene dada por
+
+\[\Phi_{11}^{(A)}=\varphi _{100}\left( \mathbf{r}_{1}\right) \varphi
+_{100}\left( \mathbf{r}_{2}\right) \Xi _{m_{s}=0}^{s=0}.\]
+%
+Dado que \( n_{a}=n_{b} \) la parte espacial es obligatoriamente
+simétrica y en consecuencia la fdo de espín antisimétrica, lo cual
+conduce a que el estado fundamental del He tiene espín \( s=0 \). Por
+lo que al momento orbital se refiere como en este caso \( l_a=l_b=0
+\), resulta que \( l=0 \) y \( m_l=0 \). Así, el nivel fundamental
+contiene un único estado con momento angular orbital \( l=0 \) y espín
+\( s=0 \).
+%
+El siguiente valor permitido de la energía es
+
+\[E_{12}=-5E_{I}=-68.0eV,\]
+%
+corresponde a \( n_{a}=1,\, n_{b}=2 \), para el que podemos construir
+las siguientes fdos
+
+\begin{eqnarray*}
+\Phi ^{(A)}_{12} & = & \frac{1}{\sqrt{2}}\left(\varphi_{100}\left( \mathbf{r}_{1}\right) 
+\varphi_{2l m_l}\left(\mathbf{r}_{2}\right) +\varphi _{100}\left( \mathbf{r}_{2}\right)
+ \varphi _{2l m_l}\left( \mathbf{r}_{1}\right) \right) \Xi _{m_{s}=0}^{s=0},\\
+\Phi ^{(A)'}_{12} & = & \frac{1}{\sqrt{2}}\left( \varphi _{100}\left( \mathbf{r}_{1}\right) 
+\varphi_{2 l m_l}\left( \mathbf{r}_{2}\right)-\varphi _{100}\left( \mathbf{r}_{2}\right) 
+\varphi _{2l m_l}\left( \mathbf{r}_{1}\right) \right)\Xi _{m_{s}=-1,0,1}^{s=1}.
+\end{eqnarray*}
+%
+Es evidente que este nivel sí está degenerado ya que contiene estados
+con \( s=0 \) y \( s=1 \). Además, \(l\in \left\{\left|l_a-l_b\right|
+\ldots l_a+l_b\right\} =\left\{ l_b\right\} \) y \( m=m_a+m_b=m_b \)
+ya que \( l_{1}=0 \). Como en el nivel \( n_b=2 \) de un átomo
+hidrogenoide \( l_b \in \{0,1\} \), el correspondiente nivel del He
+posee subniveles con \( l\in \{0,1\}\) y \(s\in\{0,1\} \).
+
+Para denotar de forma sencilla los niveles del He que vamos
+construyendo, se introduce una generalización de la notación
+espectroscópica utilizada en FCI que consiste en etiquetarlos del
+siguiente modo
+
+\[\left(n_{a}x\left(l_{a}\right)n_{b}x\left(l_{b}\right)\right)^{2s+1}X\left( l\right),\]
+%
+donde \( n_{a} \) y \( n_{b} \) son los niveles de una partícula en
+los que se encuentran los electrones, \( x\left( l_{a}\right) \) es la
+etiqueta correspondiente al momento angular \( l_{a} \) de cada
+electrón y \( X\left( l\right) \) es la etiqueta asociada al momento
+angular total. El paréntesis situado delante de la etiqueta asociada
+al momento orbital total se denomina \emph{configuración electrónica}
+del átomo. Los subniveles\footnote{En la aproximación de partícula
+independiente estos términos se encuentran degenerados y por ello
+hablamos de subniveles. Al introducir la repulsión entre los
+electrones la degeneración se rompe y pasan a ser niveles
+diferenciados energéticamente.} caracterizados por una configuración
+electrónica y valores bien definidos de $l$ y $s$ reciben el nombre de
+{\em términos espectrales}. En esta notación el estado fundamental es
+
+\[\left( 1s1s\right) ^{1}S,\]
+%
+esto es, un estado formado por dos estados \( 1s \) de un átomo
+hidrogenoide acoplados a \( l=0 \) y a \( s=0 \). De forma más
+compacta escribimos \( \left( 1s^{2}\right) ^{1}S \). El segundo nivel
+contiene los siguientes subniveles\footnote{En la nomenclatura típica
+de la física atómica, estos subniveles formados por estados
+degenerados que poseen buen \( l \) y \( s \) (a veces buen \( j) \)
+se llaman términos espectrales.}
+
+\begin{eqnarray*}
+ & \left( 1s2s\right) ^{1,3}S, & \\
+ & \left( 1s2p\right) ^{1,3}P. & 
+\end{eqnarray*}
+% 
+Los siguientes niveles corresponden todos a \( n_{a} =1,
+n_{b}=3,4,\ldots \) Todos ellos forman parte del espectro discreto del
+He. Por ejemplo los subniveles asociados a \( n_{a}=1,n_{b}=3 \) son
+
+\[\begin{array}{c}
+\left( 1s3s\right) ^{1,3}S,\\
+\left( 1s3p\right) ^{1,3}P,\\
+\left( 1s3d\right) ^{1,3}D.
+\end{array}\]
+%
+
+La energía de ionización del He es aquélla que debemos proporcionar al
+sistema de forma que desliguemos uno de los electrones.  Es evidente
+que el estado de menor energía en el que uno de los electrones no se
+encuentra ligado al núcleo corresponde al límite \( n_{a} = 1,
+n_{b}\to \infty \). El electrón se encuentra infinitamente
+alejado del núcleo y con energía cinética nula. Entonces
+\footnote{Nótese que esta energía es correcta salvo por pequeñas 
+modificaciones relativistas aunque no estamos considerando la interacción
+entre electrones.  El efecto de ésta es nulo una vez que hemos alejado
+suficientemente uno de los electrones.}
+
+\[E_{I}(\mathrm{He})= E_{1\infty}-E_{11} = Z^{2}E_{I} = 54.4eV.\]
+%
+Como la energía de excitación de los niveles con $n_a>1$ es superior a
+$E_I(He)$ se trata en todos los casos de resonancias pertencientes al
+espectro contínuo.
+
+Antes de comparar nuestras predicciones vamos a desplazar el cero de
+energías de modo que el nivel en que el átomo ioniza tenga exactamente
+energía cero. Esto equivale a sumar una cantidad \( Z^{2}E_{I} \) a
+todas las energías anteriores, es decir, la energía de un término
+espectral vendrá dada en la aproximación actual por
+
+\[E_{1n;ls} = E_{1n}=-\frac{Z^{2}E_{I}}{n^{2}}.\]
+
+
+\begin{figure}
+\nofig
+\caption{Niveles de energía experimentales del He desglosados según
+momento angular orbital y agrupados en estados de espín $s=0$ (Parahelio)
+y $s=1$ (Ortohelio).}
+\end{figure}
+
+\begin{table}
+{\centering \includegraphics[width=7cm]{fig/Ex-he-th-vs-exp-src.eps}\par}
+
+\caption{\label{tabla}Expectro experimental del He. Comparación con los resultados
+teóricos en la aproximación de partícula independiente.}
+\end{table}
+
+
+En el cuadro \ref{tabla} apreciamos inmediatamente algunas
+coincidencias cualitativas entre teoría y experimento e importantes
+discrepancias. Entre las primeras cabe destacar, por ejemplo
+
+\begin{enumerate}
+\item Sólo aparecen estados con espines $s=0$ y $s=1$, o sea tripletes
+y singletes de espín.
+\item El estado fundamental no está degenerado y posee momento angular
+orbital $l=0$ y espín $s=0$.
+\item Cualitativamente, el orden en que van apareciendo los distintos
+grupos de (sub)niveles es correcto.
+\end{enumerate}
+y entre las segundas citaremos
+
+\begin{enumerate}
+\item La enorme diferencia entre el valor predicho para la energía del
+estado fundamental \( E_{EF} = E_{11;00} = -54.4eV \) y el valor
+experimental \( E_{EF}^{(Exp.)}=-24.58eV \). Para los restantes
+niveles las diferencias se reducen progresivamente, aunque para los
+primeros siguen siendo importantes.
+\item Se predicen degeneraciones que no se observan exactamente. De todas
+formas existen grupos de niveles próximos en energía
+\end{enumerate}
+Dado que los efectos relativistas son siempre muy pequeños y que los
+resultados teóricos se aproximan a los experimentales a medida que los
+dos electrones se alejan, es decir cuando $n_b$ crece, sólo cabe
+asociar las discrepancias que se observan (valor de la energía,
+degeneraciones, etc.)  a la repulsión electrostática entre los
+electrones que ha sido despreciada.
+
+
+\subsection{Efectos de la repulsión electrón-electrón\label{s-athetp}}
+
+Podemos refinar nuestras predicciones incorporando la
+interacción entre los electrones como una perturbación a la
+interacción atractiva de los mismos con el núcleo. Haremos los
+cálculos con mucho detalle para el estado fundamental y de forma
+meramente descriptiva para los estados excitados.
+
+
+\subsubsection{Estado fundamental}
+
+Estimemos primero la magnitud de la interacción entre los electrones
+por comparación a la que existe entre electrón y núcleo. Si suponemos
+que la distancia típica entre los electrones es del orden de la
+distancia electrón-núcleo, \( a_{0}/Z \), tenemos
+
+\[\left\langle \frac{e^{2}}{\left| \mathbf{r}_{1}-\mathbf{r}_{2}\right|}\right\rangle 
+\approx \left\langle \frac{e^{2}}{r_i}\right\rangle = 
+\frac{1}{Z}\left\langle\frac{Ze^{2}}{r_i}\right\rangle=\frac{1}{2}\left\langle \frac{2e^{2}}{r_i}\right\rangle. \]
+% 
+Por tanto la repulsión culombiana entre los dos electrones es del
+orden de la mitad de la interacción electrón--núcleo. A pesar de que
+es del mismo orden de magnitud de la interacción electron-núcleo vamos
+a utilizar teoría de perturbaciones para modificar \( E_{EF} \). A
+primer orden
+
+\[\Delta E_{EF} = \Braket{\Phi^{(A)}_{11}}{V(12)}{\Phi^{(A)}_{11}} = 
+\iint d1d2\,\Phi_{11}^{(A)*}\left(1,2\right)\frac{e^{2}}{\left|\mathbf{r}_{1}-\mathbf{r}_{2}\right|}
+\Phi ^{(A)}_{11}\left( 1,2\right),\]
+%
+y recordando que 
+
+\[\Phi^{(A)}_{11}\left( 1,2\right) = \varphi _{100}\left(\mathbf{r}_{1}\right)
+\varphi _{100}\left( \mathbf{r}_{2}\right)\Xi _{m_{s}=0}^{s=0},\]
+%
+y que \( \braket{\Xi _{m_{s}=0}^{s=0}}{\Xi _{m_{s}=0}^{s=0}}=1 \), se
+tiene
+
+\[\begin{split}
+\Delta E_{EF} & = \iint d\mathbf{r}_{1}d\mathbf{r}_{2}\varphi ^{*}_{100}\left(\mathbf{r}_{1}\right)
+\varphi ^{*}_{100}\left(\mathbf{r}_{2}\right)\frac{e^{2}}{\left|\mathbf{r}_{1}-\mathbf{r}_{2}\right|}
+\varphi _{100}\left( \mathbf{r}_{1}\right) \varphi _{100}\left( \mathbf{r}_{2}\right) \\
+              & = e^{2}\int d\mathbf{r}_{1}d\mathbf{r}_{2}\left|\varphi_{100}\left(\mathbf{r}_{1}\right)\right|^{2}\left|
+\varphi _{100}\left(\mathbf{r}_{2}\right) \right| ^{2}\frac{1}{\left| \mathbf{r}_{1}-\mathbf{r}_{2}\right|},
+\end{split}\]
+%
+integral que representa la interacción electrostática entre las
+densidades de carga asociadas a los electrones. Para avanzar con
+rapidez en la resolución de estas integrales se utiliza habitualmente
+la siguiente expresión
+
+\[\frac{1}{\left|\mathbf{r}_{1}-\mathbf{r}_{2}\right|} = \sum _{k=0}^{\infty }\frac{4\pi }{2k+1}
+\frac{\left(r_{<}\right)^{k}}{\left(r_{>}\right)^{k+1}}\sum _{q=-k}^{k}\left(-1\right)^{q}Y_{-q}^{k}
+\left( \Omega _{1}\right) Y_{q}^{k}\left( \Omega _{2}\right), \]
+%
+donde \(r_{<} = \min\left( r_{1},r_{2}\right)\) y \(r_{>}=\max \left( r_{1},r_{2}\right)\),
+los ángulos sólidos son \( \Omega _{i}=(\theta _{i},\varphi _{i}) \)
+y donde la convergencia en k está \emph{garantizada} por el cociente
+\( \dfrac{\left( r_{<}\right) ^{k}}{\left( r_{>}\right) ^{k+1}} \).
+Este tipo de expresiones reciben el nombre de desarrollos en ondas
+parciales ya que expresamos una función que depende de la diferencia
+\(\mathbf{r}_{1}-\mathbf{r}_{2} \) como una suma de productos de
+funciones de una partícula con buen momento angular. Cada sumando
+corresponde a funciones con momento angular orbital \( k \) y tercera
+componente \( ± q \). Para visualizar mejor esta idea supongamos
+que \( r_{1}>r_{2} \) y reescribamos el desarrollo como
+
+\[\frac{1}{\left| \mathbf{r}_{1}-\mathbf{r}_{2}\right| } = \sum _{k=0}^{\infty }\frac{4\pi }{2k+1}
+\sum_{q=-k}^{k}\left(-1\right)^{q}\left(\frac{1}{r_{1}^{k+1}}Y_{-q}^{k}\left(\Omega_{1}\right)\right)
+\left( r_{2}^{k}Y_{q}^{k}\left( \Omega _{2}\right) \right). \]
+%
+Aunque la serie anterior es infinita sólo contribuye un número finito
+de términos al valor de la integral. En efecto,
+
+\[\begin{split}
+\Delta E_{EF} & = e^{2}\int _{0}^{\infty }dr_{1}\, r_{1}^{2}\int _{0}^{\infty }dr_{2}\, r^{2}_{2}
+\int d\Omega_{1}\int d\Omega _{2}\left|\varphi _{100}\right|^{2}\left| \varphi _{100}\right|^{2} ×\\
+& ×\sum _{k=0}^{\infty }\frac{4\pi }{2k+1}\frac{\left(r_{<}\right)^{k}}{\left( r_{>}\right) ^{k+1}}
+\sum _{q=-k}^{k}\left( -1\right) ^{q}Y_{-q}^{k}\left( \Omega _{1}\right) Y_{q}^{k}\left( \Omega _{2}\right).
+\end{split} \]
+%
+Estas integrales factorizan en partes radial y angular. Así
+
+
+\[\begin{split}
+\Delta E_{EF} & = e^{2}\sum_{k=0}^{\infty }\frac{4\pi }{2k+1}\int _{0}^{\infty }dr_{1}\, r^{2}_{1}R^{2}_{10}\left( r_{1}\right)
+\int _{0}^{\infty }dr_{2}\, r^{2}_{2}R^{2}_{10}\left( r_{2}\right) \frac{\left( r_{<}\right) ^{k}}{\left( r_{>}\right) ^{k+1}}× \\
+& ×\sum_{q=-k}^{k}\left(-1\right)^{q}\int d\Omega _{1}Y_{0}^{0*}\left( \Omega _{1}\right) Y_{-q}^{k}\left( \Omega _{1}\right)
+Y_{0}^{0}\left(\Omega_{1}\right)\int d\Omega_{2}Y_{0}^{0*}\left( \Omega _{2}\right) Y_{-q}^{k}\left( \Omega _{2}\right)
+ Y_{0}^{0}\left( \Omega _{2}\right) 
+\end{split}\]
+%
+Las integrales angulares se resuelven facilmente si tenemos en cuenta que 
+\(Y_{0}^{0}\left(\Omega_{1}\right) = \dfrac{1}{\sqrt{4\pi}}\), de manera que 
+%
+\[\int d\Omega Y_{0}^{0*}Y_{-q}^{k}Y_{0}^{0}=\frac{1}{\sqrt{4\pi }}\int d\Omega Y_{0}^{0*}Y_{-q}^{k} = 
+\frac{\delta _{k0}\delta _{q0}}{\sqrt{4\pi }},\]
+%
+con lo que se llega a
+
+\[\begin{split}
+\Delta E_{EF} & = e^{2}\int _{0}^{\infty }dr_{1}r_{1}^{2}R_{10}^{2}\left( r_{1}\right)
+\int_{0}^{\infty}dr_{2}r_{2}^{2}R_{10}^{2}\left( r_{2}\right) \frac{\left( r_{<}\right)^{0}}{\left( r_{>}\right)^{1}}\\
+ & = e^{2}\left\{\int_{0}^{\infty}dr_{1}r_{1}^{2}R^{2}_{10}\left( r_{1}\right) \int_{0}^{r_{1}}dr_{2}r_{2}^{2}R^{2}_{10}
+\left(r_{2}\right)\frac{1}{r_{1}}+\int _{0}^{\infty }dr_{1}r_{1}^{2}R^{2}_{10}\left( r_{1}\right)
+\int _{r_{1}}^{\infty }dr_{2}r_{2}^{2}R^{2}_{10}\left( r_{2}\right) \frac{1}{r_{2}}\right\}. 
+\end{split}\]
+%
+Ahora, usando que 
+
+\[R_{10}\left( r\right) =2\left( \frac{Z}{a_{0}}\right) ^{\frac{3}{2}}e^{-\dfrac{Zr}{a_{0}}},\]
+%
+y llamando \( \zeta =\dfrac{2Z}{a_{0}} \) tenemos
+
+\[\Delta E_{EF}=16e^{2}\left( \frac{Z}{a_{0}}\right)^{6}\left[\int_{0}^{\infty }dr_{1}r_{1}e^{-\zeta r_{1}}
+\int_{0}^{r_{1}}dr_{2}r_{2}^{2}e^{-\zeta r_{2}}+\int_{0}^{\infty }dr_{1}r_{1}^{2}e^{-\zeta r_{1}}
+\int _{r_{1}}^{\infty }dr_{2}r_{2}e^{-\zeta r_{2}}\right]. \]
+%
+Los dos sumandos que aparecen en el corchete anterior dan lugar al
+mismo resultado \( \dfrac{5}{8\zeta ^{5}} \), y por tanto
+
+\[\Delta E_{EF}=16e^{2}\left( \frac{Z}{a_{0}}\right)^{6}\frac{5}{4\zeta ^{5}}=\frac{5}{4}ZE_{I},\]
+%
+con lo cual
+
+\[E_{11;00} = E_{11}+\Delta_{EF} = - Z^{2}E_{I} + \Delta E_{EF}=-20.4eV.\]
+%
+Este resultado debe compararse con el valor experimental \(
+E_{EF}^{(Exp.)} = -24.58eV \).  Utilizando ordenes superiores de la
+teoría de perturbaciones podemos mejorar la concordancia con el
+resultado experimental, pero el camino a seguir es aplicar el método
+variacional. Volveremos sobre esta cuestión tras estudiar los estados
+excitados.
+
+
+\subsubsection{Estados excitados: regla de \noun{Hund}}
+
+Estudiemos el efecto que la repulsión electrostática entre los
+electrones tiene sobre los niveles excitados.  Lo haremos de forma
+cualitativa sin resolver explícitamente las integrales que
+aparecen\footnote{El problema 5 resuelve de forma aproximada estas
+integrales.}. Cuando \( n_{a}=1 \) y \( n_{b}=n > 1 \) tenemos varios
+subniveles caracterizados por \( l \) y \( s \) y la corrección de la
+energía viene dada por
+
+\[\Delta E_{1n;ls}=\iint d1d2\, \Phi _{1n;ls}^{(A)*}\left( 1,2\right)
+\frac{e^{2}}{\left| \mathbf{r}_{1}-\mathbf{r}_{2}\right| }\Phi ^{(A)}_{1n,ls}\left( 1,2\right), \]
+%
+con 
+
+\[ \Phi ^{(A)}_{1n,ls}=\frac{1}{\sqrt{2}}\left( \varphi _{100}\left( \mathbf{r}_{1}\right) 
+\varphi _{nlm}\left( \mathbf{r}_{2}\right) ± \varphi _{100}\left( \mathbf{r}_{2}\right) 
+\varphi _{nlm}\left( \mathbf{r}_{1}\right) \right) \Xi _{m_{s}}^{s}, \]
+%
+donde el signo \( + \) va asociado con \( s=0 \) (parte espacial simétrica
+y de espín antisimétrica) y el signo \( - \) con \( s=1 \) (función
+espacial antisimétrica y de espín simétrica), de modo que la función
+en su conjunto sea antisimétrica. Desarrollando tenemos
+
+\[\begin{split}
+\Delta E_{1n;ls} & = \iint d1d2\,\Phi _{1n,ls}^{(A)*}\left( 1,2\right)
+\frac{e^{2}}{\left| \mathbf{r}_{1}-\mathbf{r}_{2}\right| }\Phi ^{(A)}_{1n,ls}\left( 1,2\right) \\
+ & = \frac{e^{2}}{2}\iint d\mathbf{r}_{1}d\mathbf{r}_{2}\left( \varphi _{100}\left( \mathbf{r}_{1}\right) 
+\varphi _{nl0}\left( \mathbf{r}_{2}\right) ± \varphi _{100}\left( \mathbf{r}_{2}\right) 
+\varphi _{nl0}\left( \mathbf{r}_{1}\right) \right)^{*}\frac{1}{\left| \mathbf{r}_{1}-\mathbf{r}_{2}\right|}×\\
+ & × \left( \varphi _{100}\left( \mathbf{r}_{1}\right) \varphi _{nl0}\left( \mathbf{r}_{2}\right) ± 
+\varphi _{100}\left( \mathbf{r}_{2}\right) \varphi _{nl0}\left( \mathbf{r}_{1}\right) \right), 
+\end{split}\]
+%
+Para obtener esta expresión hemos utilizado que:
+
+\begin{enumerate}
+\item La interacción no depende del espín de manera que podemos
+reducir la parte de espín y queda sólo la integración en las
+coordenadas espaciales.
+\item El resultado de la integral no depende de \( m \) porque el
+hamiltoniano (en este caso, la perturbación \( \dfrac{1}{\left|
+\mathbf{r}_{1}-\mathbf{r}_{2}\right| } \)) conmuta con todas las
+componentes del momento angular.  Por esa razón hemos elegido como
+valor arbitrario \( m=0 \).
+\end{enumerate}
+%
+Prosiguiendo con el cálculo
+
+\[\begin{split}
+\Delta E_{1n,ls} & = e^{2}\iint d\mathbf{r}_{1}d\mathbf{r}_{2}\left| \varphi _{100}\left( \mathbf{r}_{1}\right) \right|^{2}
+\left| \varphi_{nl0}\left( \mathbf{r}_{2}\right) \right| ^{2}\frac{1}{\left| \mathbf{r}_{1}-\mathbf{r}_{2}\right|} \\
+ & ± e^{2}\iint d\mathbf{r}_{1}d\mathbf{r}_{2}\varphi _{100}^{*}\left( \mathbf{r}_{1}\right) 
+\varphi ^{*}_{nl0}\left( \mathbf{r}_{2}\right) \frac{1}{\left| \mathbf{r}_{1}-\mathbf{r}_{2}\right| }
+\varphi _{100}\left( \mathbf{r}_{2}\right) \varphi _{nl0}\left( \mathbf{r}_{1}\right), 
+\end{split}\]
+%
+expresión que se escribe de forma compacta como como suma
+(\( s=0 \))/diferencia(\( s=1 \)) de dos integrales: 
+
+\[\Delta E_{1n;ls}=J_{nl}+(1-2s)K_{nl},\: s=0,1,\]
+%
+ donde
+
+\[\begin{array}{ccc}
+J_{nl} & = & e^{2}\displaystyle\iint d\mathbf{r}_{1}d\mathbf{r}_{2}\left|\varphi _{100}
+\left( \mathbf{r}_{1}\right)\right|^{2}\left|\varphi _{nl0}\left( \mathbf{r}_{2}\right) \right|^{2}
+\dfrac{1}{\left|\mathbf{r}_{1}-\mathbf{r}_{2}\right|},\\
+K_{nl} & = & e^{2}\displaystyle\iint d\mathbf{r}_{1}d\mathbf{r}_{2}\varphi _{100}^{*}\left( \mathbf{r}_{1}\right) 
+\varphi _{nl0}\left( \mathbf{r}_{1}\right) \dfrac{1}{\left|\mathbf{r}_{1}-\mathbf{r}_{2}\right| }
+\varphi _{100}\left( \mathbf{r}_{2}\right) \varphi ^{*}_{nl0}\left( \mathbf{r}_{2}\right). 
+\end{array}\]
+%
+Por lo tanto la corrección consta de dos términos diferentes:
+
+\begin{enumerate}
+\item El primero representa la repulsión electrostática entre las
+densidades de carga de los electrones. A esta integral se la conoce
+con el nombre de \emph{término directo.}
+\item La segunda integral, denominada término de intercambio, no tiene
+una interpretación clásica sencilla y es consecuencia directa del
+principio de exclusión. El origen de este término se encuentra en la
+simetría de intercambio de la fdo lo cual justifica su nombre. Tal
+como puede observarse en su definición, esta integral depende (además
+de la perturbación) del overlap de las funciones \( \varphi _{100} \)
+y \( \varphi _{nl0} \).
+\end{enumerate}
+%
+
+La energía de todos los estados del átomo de helio se escribe de esta
+forma con la excepción de los casos en que \( n_{a}=n_{b},\) casos en
+los que sólo contribuye la integral directa. Ahora bien, de todos
+estos estados con \( n_{a}=n_{b} \), sólo el fundamental forma parte
+del espectro discreto mientras que los demás corresponden a
+resonancias del continuo.  Así, \( \Delta E_{11,00}=\Delta
+E_{EF}=J_{00} \).
+
+La integral directa \( J_{nl} \) es siempre positiva ya que el
+integrando correspondiente es una cantidad definida positiva. Por lo
+tanto su efecto fundamental es reducir la atracción entre los
+electrones y el núcleo atómico (reduce la energía con la que los
+electrones están ligados al núcleo). Otro hecho (esta vez no obvio) es
+que el valor de la integral directa decrece con el valor del numero
+cuántico principal \( n \), que para $n$ dado crece ligeramente con $l$.
+
+Aunque no se puede deducir directamente sin un cálculo explícito, las
+integrales $K_{nl}$ toman valores positivos, menores que los de \(
+J_{nl} \) y decrecientes con \( n \).  Ahora bien, estas integrales
+intervienen con signo negativo en el caso de niveles con espín \( s=1 \)
+y con signo positivo en el de niveles con espín \( s=0 \).  Así, para
+una configuración y \( l \) dados, los niveles con \( s=1 \) tienen
+menor energía que aquellos con \( s=0 \). Este hecho se conoce en la
+literatura con el nombre de regla de \noun{Hund.} En concreto, la
+diferencia de energía entre estos niveles viene dada por $2K_{nl}$.
+
+
+
+
+\begin{figure}
+{\centering \includegraphics[width=10cm]{fig/efecto-jyk.eps} \par}
+
+\caption{Esquema cualitativo de los efectos de la repulsión
+\protect\( e^{-}-e^{-}\protect \) sobre las energías de los términos
+espectrales $(1s^2)^1 S$, $(1s2s)^{1,3} S$ y $(1s2p)^{1,3} P$
+obtenidas en la aproximación de partícula independiente.}
+\end{figure}
+
+\subsubsection{Justificación cualitativa de los resultados: apantallamiento}
+
+Con el objetivo de obtener una explicación cualitativa de los
+resultados anteriores intentemos describir como son las densidades de
+carga asociadas a los dos electrones. La figura \ref{dens-rad} muestra
+que la densidad de probabilidad (y por tanto de carga) asociada al
+segundo electrón tiende a situarse fuera de la región que ocupa el
+primero a medida que crece el número cuántico \( n \). Es decir, la
+fdo del segundo electrón penetra cada vez menos en la zona donde es
+muy probable encotrar al electron \( 1s \) según crece \( n \), y por
+ello la interacción entre las dos densidades de carga decrece a medida
+que el segundo electrón se situa en niveles superiores.  Además, para
+\( n \) dado la repulsión electrostática entre los dos electrones
+crece ligeramente con \( l \) debido a que la distribución de carga
+del segundo electrón está globalmante más cerca de la del electrón
+$1s$ cuanto mayor es \( l \). Estos hechos permiten explicar porque el
+valor de \( J_{nl} \) se reduce con \( n \), y así las discrepancias
+entre los resultados experimentales y la aproximación de partículas no
+interactuantes se reducen a medida que consideramos niveles
+superiores.  También permite explicar cualitativamente porque dentro
+de cada nivel \( n \) los subniveles están menos ligados cuanto mayor
+es \( l \).
+
+
+\begin{figure}
+{\centering \includegraphics[width=8cm]{fig/radial-dens-src.eps} \par}
+
+\caption{\label{dens-rad}Densidades de probabilidad radial correspondientes a
+los niveles \protect\( 1s,\, 2s,\, 2p\protect \) de un átomo
+hidrogenoide.}
+\end{figure}
+
+La discusión precedente puede expresarse de forma alternativa en
+función de los conceptos de apantallamiento y carga efectiva.  A
+medida que la densidad de carga del electrón externo se aleja del
+núcleo según crece \( n \), el electrón interior apantalla de forma
+más eficaz la carga nuclear.  Podemos pensar que el electrón exterior
+< <viese> > una carga \( Z_{ef} \leq Z=2 \). Entonces la energía
+de ligadura del término espectral sería
+
+\[E_{1n;ls} = E_{1n}=-\frac{\left( Z_{ef}\right) ^{2}E_{I}}{n^{2}}>-\frac{Z^{2}E_{I}}{n^{2}},\]
+%
+De alguna manera hemos incorporado el efecto de los términos directo y
+de intercambio en una carga efectiva $Z_{ef}$. Resulta fácil concluir
+que cuanto más se aleje el segundo electrón más efectivo será el
+apantallamiento, esto es
+
+\[Z_{ef}\longrightarrow 1,\;\; n \longrightarrow \infty, \]
+%
+y por lo tanto las energías de los niveles del He deben tomar valores
+cada vez más similares a las del átomo de hidrógeno según crece
+$n$. Este hecho se aprecia claramente en la figura \ref{fig_athe_h}.
+
+El origen de la regla de \noun{Hund} se encuentra en que las fdos con
+espín \( s=0 \) y \( s=1 \) tienen partes espaciales con simetría de
+intercambio distinta. Dado que las fdo de los niveles con \( s=1 \)
+tienen su parte espacial antisimétrica, los dos electrones se
+encuentran más separados (\ref{sec repulsion efectiva}) que en los
+niveles con \( s=0 \) donde la parte orbital es simétrica bajo
+intercambio. Precisamente por esta razón la repulsión electrostática
+que experimentan los dos electrones es mayor en este segundo caso, y
+por tanto, los niveles con \( s=0 \) (a igual configuración y valor de
+\( l \)) se encuentran menos ligados.
+
+
+
+\begin{figure}
+\nofig
+\caption{{\small Comparación del espectro del átomo de Helio
+(izquierda) desglosado según \protect\( n\protect \) y \protect\(
+l\protect \) con los nivéles del hidrógeno. El cero de energía es
+distinto en los dos casos y corresponde a la energía del átomo
+ionizado. Woodgate pag. 85}}
+\label{fig_athe_h}
+\end{figure}
+
+\subsection{Aplicación del método variacional}
+
+Hemos visto en la sección \ref{s-athetp} que existe una cierta
+discrepancia entre el valor experimental de la energía del estado
+fundamental y la predicción teórica obtenida en un cálculo de teoría
+de perturbaciones a primer orden.  En lugar de utilizar ordenes
+superiores de la teoría de perturbaciones podemos mejorar nuestra
+predicción utilizando el método variacional. La utilización de este
+método implica proponer una familia de fdos de prueba. Para ello
+tendremos en cuenta los siguientes hechos:
+
+\begin{enumerate}
+\item La fdo \( \Phi _{11,00} \) da lugar a una energía aceptable
+cuando se tiene en cuenta la repulsión electrostática entre los
+electrones. 
+\item Dicha repulsión puede explicarse en términos del apantallamiento
+de la carga nuclear inducido por el electrón interno.
+\end{enumerate}
+%
+Por ello proponemos una familia de soluciones de la forma
+
+\[\Phi _{v}(Q;1,2)=\varphi _{100}\left(Q;\,\mathbf{r}_{1}\right)\varphi_{100}\left(Q\,\mathbf{r}_{2}\right)
+ \Xi _{m_{s}=0}^{s=0},\]
+%
+donde
+
+\[\varphi_{100}\left(Q;\,\mathbf{r}\right) = \frac{2}{\sqrt{4\pi }}\left(\frac{Q}{a_{0}}\right)^{3/2}
+\exp\left\{-\frac{Qr}{a_{0}}\right\} ,\]
+%
+es la fdo del estado fundamental de un átomo hidrogenoide con carga \( Q \).
+Si \( Q=Z \) esta fdo coincide con la del único electrón del ion \( He^{+} \)
+y por tanto con la que hemos utilizado en el cálculo perturbativo. Por
+ello $\varphi_{100}\left(Q;\,\mathbf{r}\right)$ satisface que 
+
+\[\left(\frac{p^{2}}{2m}-\frac{Qe^{2}}{r}\right)\varphi _{100}\left( Q;\, \mathbf{r}\right) = 
+-Q^{2}E_{I}\varphi _{100}\left( Q;\, \mathbf{r}\right). \]
+%
+El parámetro que barre la familia de fdos propuestas es la carga efectiva
+\( Q \) y el funcional de la energía se reduce, en realidad, a una
+función de dicho parámetro.
+
+\[E[Q]=\iint d1d2\Phi ^{*}_{v}(Q;1,2)\mathrm{H}\Phi _{v}(Q;1,2).\]
+%
+Como el hamiltoniano no depende del espín la integral anterior puede
+desarrollarse como
+
+\[E[Q]=\iint d\mathbf{r}_{1}d\mathbf{r}_{2}\varphi ^{*}_{100}\left(Q;\,\mathbf{r}_{1}\right)
+\varphi^{*}_{100}\left(Q;\,\mathbf{r}_{2}\right)\left(\frac{\mathrm{p}_{1}^{2}}{2m}-\frac{Ze^{2}}{r_{1}}+
+\frac{\mathrm{p}_{2}^{2}}{2m}-\frac{Ze^{2}}{r_{2}}+\frac{e^{2}}{\left| \mathbf{r}_{1}-\mathbf{r}_{2}\right|}\right)
+ \varphi _{100}\left( Q;\, \mathbf{r}_{1}\right) \varphi _{100}\left( Q;\, \mathbf{r}_{2}\right).\]
+%
+Vamos a separar el cálculo de la integral en tres partes,
+
+\begin{enumerate}
+\item 
+\[\begin{split}
+I_{1} & = \iint d\mathbf{r}_{1}d\mathbf{r}_{2}\varphi ^{*}_{100}\left(Q;\,\mathbf{r}_{1}\right)
+\varphi ^{*}_{100}\left( Q;\, \mathbf{r}_{2}\right)\left(\frac{\mathrm{p}_{1}^{2}}{2m}-\frac{Ze^{2}}{r_{1}}\right)
+ \varphi _{100}\left( Q;\,\mathbf{r}_{1}\right)\varphi_{100}\left(Q;\,\mathbf{r}_{2}\right) \\
+& = \int d\mathbf{r}_{1}\varphi^{*}_{100}\left(Q;\,\mathbf{r}_{1}\right)\left( \frac{\mathrm{p}_{1}^{2}}{2m} - 
+\frac{Ze^{2}}{r_{1}}\right)\varphi _{100}\left( Q;\, \mathbf{r}_{1}\right) \int d\mathbf{r}_{2}
+\varphi^{*}_{100}\left(Q;\,\mathbf{r}_{2}\right)\varphi_{100}\left(Q;\,\mathbf{r}_{2}\right).
+\end{split} \]
+%
+pero
+
+\[\begin{split}
+\left(\dfrac{p^{2}}{2m}-\dfrac{Ze^{2}}{r}\right)\varphi _{100}\left( Q;\, \mathbf{r}\right)  & = 
+\left(\frac{p^{2}}{2m}-\frac{Qe^{2}}{r}\right)\varphi _{100}\left(Q;\,\mathbf{r}\right) +
+\dfrac{\left( Q-Z\right) e^{2}}{r_{1}}\varphi_{100}\left( Q;\,\mathbf{r}\right) \\
+& = -Q^{2}E_{I}\varphi _{100}\left(Q;\,\mathbf{r}\right)+\dfrac{\left(Q-Z\right) e^{2}}{r_{1}}
+\varphi _{100}\left( Q;\, \mathbf{r}\right), 
+\end{split}\]
+%
+y teniendo en cuenta que 
+
+\[\begin{array}{ccc}
+  \displaystyle\int d\mathbf{r}_{2}\varphi ^{*}_{100}\left(Q;\,\mathbf{r}_{2}\right) 
+  \varphi_{100}\left(Q;\,\mathbf{r}_{2}\right) & = & 1,\\ 
+  \displaystyle\int d\mathbf{r}_{2}\varphi ^{*}_{100}\left(Q;\,\mathbf{r}_{2}\right)\dfrac{1}{r_1} 
+  \varphi_{100}\left(Q;\,\mathbf{r}_{2}\right) & = & \dfrac{Q}{a_0},\\ 
+  \end{array}\]
+%
+obtenemos que
+
+\[I_{1} = -Q^{2}E_{I}+e^{2}\left( Q-Z\right)\dfrac{Q}{a_{0}} = -\left( 2QZ-Q^{2}\right) E_{I},\]
+%
+donde hemos utilizado que \( \dfrac{e^{2}}{a_{0}}=2E_{I} \)
+
+\item Análogamente se tiene que \( I_{2} = I_{1}=-\left( 2QZ-Q^{2}\right) E_{I} \)
+
+\item El cálculo de la integral asociada al término repulsivo es idéntico
+al que hicimos en la sección \ref{s-athetp} salvo por la substitución de 
+\( Z \) por \( Q \). Así tenemos
+
+\[I_{3} = \int d\mathbf{r}_{1}d\mathbf{r}_{2}\varphi ^{*}_{100}\left(Q;\,\mathbf{r}_{1}\right) 
+\varphi ^{*}_{100}\left(Q;\,\mathbf{r}_{2}\right)\frac{e^{2}}{\left|\mathbf{r}_{1}-\mathbf{r}_{2}\right| }
+\varphi _{100}\left(Q;\,\mathbf{r}_{1}\right)\varphi _{100}\left(Q;\,\mathbf{r}_{2}\right) =\frac{5}{4}QE_{I}.\]
+\end{enumerate}
+%
+Reuniendo las tres contribuciones tenemos que la energía en función
+de la carga efectica \( Q \) es
+
+\[E[Q]= -\left( 2\left( 2QZ-Q^{2}\right) -\frac{5}{4}Q\right) E_{I},\]
+%
+cuyo mínimo ocurre para \( Q_{0}=Z-\dfrac{5}{16}=1.69 \), y substituyendo
+este resultado en la ecuación anterior obtenemos
+
+\[E[Q_{0}]=-2Q^{2}_{0}E_{I}=-2\left(Z-5/16\right) ^{2}E_{I}=-77.88eV.\]
+%
+Si sumamos \( E_{I}(He) \) para obtener el cero de energías
+habitual nos queda 
+
+\[E^{(Theor.)}_{EF}=-23.08eV.\]
+
+La tabla que se muestra a continuación hace evidente la mejora
+obtenida al emplear el método variacional en vez de teoría de
+perturbaciones a primer orden. Para llegar a un resultado equivalente
+usando teoría de perturbaciones habría que incluir ordenes muy
+superiores al primero. Además, nuestra familia de fdos variacionales
+es la más sencilla posible por lo que con pequeñas extensiones aún
+mejoraríamos notablemente el resultado.
+
+\vspace{0.3cm}
+{\centering \begin{tabular}{|c|c|c|c|}
+\hline 
+&
+T.P.&
+M.V.&
+Exp.\\
+\hline
+\hline 
+\( E(eV) \)&
+\( -20.4 \)&
+\( -23.08 \)&
+\( -24.58 \)\\
+\hline
+\end{tabular}\par}
+\vspace{0.3cm}
+
+Más que en la bondad del acuerdo con el dato experimental conviene
+profundizar en lo que significa la solución variacional que hemos
+obtenido. La fdo \( \Phi _{v}(Q;1,2)=\varphi _{100}\left( Q;\,
+\mathbf{r}_{1}\right) \varphi _{100}\left( Q\, \mathbf{r}_{2}\right)
+\Xi _{m_{s}=0}^{s=0} \) satisface que
+
+\[\left( \frac{\mathrm{p}_{1}^{2}}{2m}-\frac{Q_{0}e^{2}}{r_{1}}+\frac{\mathrm{p}_{2}^{2}}{2m} - 
+\frac{Q_{0}e^{2}}{r_{2}}\right) \Phi _{v}(Q_{0};1,2)=-E[Q_{0}]\Phi_{v}(Q_{0};1,2),\]
+%
+lo cual nos sugiere que (de forma aproximada) todo ocurre como si los
+dos electrones se moviesen independientemente en un potencial
+\noun{Coulombiano} generado por una carga nuclear efectiva $Z_{ef} =
+Q_0 = 1.69$. Se cumple que \( Z_{ef} < Z=2 \) por lo que el efecto
+fundamental de un electrón sobre otro puede verse como un
+apantallamiento de la carga del núcleo. En este caso el
+apantallamiento es pequeño porque los dos electrones están en el mismo
+nivel \( 1s \), y por tanto muy próximos entre sí. Si repitiesemos
+este cálculo para estados excitado, donde $n_a=1$ y $n_b > 1$, la
+carga efectiva resultante sería bastante menor.
+
+En general es posible substituir de forma aproximada el hamiltoniano
+real de una sistema de partículas que interactúan entre sí por otro de
+partícula independiente donde el potencial que < <ve> > cada partícula
+contiene de forma promediada las interacciones que ejercen las demás.
+La forma de obtener este hamiltoniano efectivo es utilizar (como hemos
+hecho en este caso) el método variacional con fdos de prueba que sean
+productos antisimetrizados de fdos de una partícula.
+
+
+\subsection{Reglas de selección: Orto y Parahelio}
+
+La probabilidad de transición por unidad de tiempo entre los estados
+\(\ket{\Phi _i\left( 1,2\right)} \) y \(\ket{\Phi_f\left(
+1,2\right)}\), mediada por la emisión/absorción de un fotón, tiene una
+expresión totalmente análoga a la que hemos visto en el átomo de
+hidrógeno.
+
+\[\frac{dP_{i->f}}{dt}=\frac{8\pi ^{2}e^{2}}{\hbar ^{2}}\left| W_{fi}\right| ^{2},\]
+%
+donde 
+
+\[\begin{split}
+W_{fi} & = \Braket{\Phi _{f}\left( 1,2\right) }{\mathsfbf{r}_{1}+\mathsfbf{r}_2}{\Phi _{i}\left( 1,2\right) }
+ = \Braket{\phi _{f}\left( \mathbf{r}_{1},\mathbf{r}_{2}\right)\chi ^{s_{f}}_{m_{sf}}}
+{\mathsf{r}_{1}+\mathsf{r}_{2}}{\phi _{i}\left( \mathsfbf{r}_{1},\mathsfbf{r}_{2}\right) \chi _{m_{s}}^{s}}\\
+ & =  \Braket{\phi _{f}\left( \mathbf{r}_{1},\mathbf{r}_{2}\right) }{\mathsfbf{r}_{1}+\mathsfbf{r}_{2}}
+{\phi _{i}\left( \mathbf{r}_{1},\mathbf{r}_{2}\right) }\braket{\chi ^{s_{f}}_{m_{sf}}}{\chi _{m_{sf}}^{s_{i}}}
+ = \Braket{\phi _{f}\left( \mathbf{r}_{1},\mathbf{r}_{2}\right) }{\mathsfbf{r}_{1}+\mathsfbf{r}_{2}}
+{\phi _{i}\left( \mathbf{r}_{1},\mathbf{r}_{2}\right) }\delta _{s_{f}s_{i}}\delta _{m_{sf}m_{si}}
+\end{split}\]
+
+Así, además de las reglas de selección asociadas al momento angular
+orbital, que siguen siendo válidas, aparece una nueva regla de
+selección asociada al espín: \( s_{f}=s_{i} \). Por lo tanto no puede
+haber transiciones entre estados que tienen espín distinto. Esta regla
+de selección no es exacta debido a que las correcciones relativistas
+dependen del operador de espín y mezclan fdos con diferente valor de
+\( s \). Sin embargo, como son correcciones extraordinariamente
+pequeñas podemos considerarla a todos los efectos como válida. 
+
+\begin{figure}
+\nofig
+\caption{\label{fig_athe_trans}Transiciones electromagnéticas permitidas en los
+niveles de energía inferiores del He. Con la excepción de la
+transición entre los niveles $(1s2s)^3 S$ y $(1s^2)^1 S$ no existen
+transiciones entre estados de distinto espín. Ámbos conjuntos de
+niveles son esencialmente impermeables, y salvo por el primer nivel
+$s=0$, difieren muy poco entre sí.}
+\end{figure}
+
+Por ello no se señalan transiciones (espontáneas) entre los estados \(
+s=0 \) y \( s=1 \) en la figura \ref{fig_athe_trans}. La probabilidad
+de las mismas es tan pequeña que los estados del He con \( s \) dado,
+decaen siempre a otros con el mismo espín. \emph{Todo ocurre como si
+existiesen dos elementos distintos, uno formado por los estados \( s=0
+\) llamado} \textbf{\emph{parahelio}} \emph{y, otro formado por los
+estados \( s=1 \) denominado} \textbf{\emph{ortohelio}}.  De hecho,
+antes de la introducción de la Física Cuántica, se creyó durante mucho
+tiempo en la existencia real de dos formas de helio.
+
+La única excepción a la regla anterior viene dada por la transición
+del nivel \( (1s2s)^{3}S \) al estado \( (1s^{2})^{1}S \).  Como esta
+transición viola las reglas de selección \( \Delta l=± 1,\Delta s=0
+\) la probabilidad correspondiente es extraordinariamente pequeña y la
+vida media, por el contrario, muy larga. Sin embargo como el nivel \(
+(1s2s)^{3}S \) sólo puede acceder al estado \( (1s^{2})^{1}S \), que
+posee menor energía, la transición finalmente tiene lugar.  El término
+espectral \( (1s2s)^{3}S \) constituye un claro ejemplo de nivel
+metaestable. Se llaman así a niveles (distintos del fundamental) cuya
+vida media es extraordinariamente larga comparada con la de los
+niveles ordinarios.  Otro ejemplo viene dado por el nivel \(
+(1s2s)^{1}S \) que sólo puede acceder al fundamental violando la regla
+\( \Delta l = ± 1 \) y por lo tanto su vida media es muy superior a
+lo habitual.
+
+\section{La molécula de H$_{2}^{+}$}
+
+
+\subsection{Introducción: la aproximación de Born-Oppenheimer}
+
+Si los átomos son agregados formados por un núcleo y varios
+electrones, las moléculas pueden considerarse como agregados de varios
+núcleos y electrones. Las moléculas son estables en su estado de
+energía más bajo. Es decir, es necesario aportar una cierta cantidad
+de energía para producir su disociación. Dado que la disociación en
+átomos es el proceso más común cuando aportamos suficiente energía al
+sistema, podríamos pensar que son estados ligados de varios átomos.
+Sin embargo, esta descripción deja fuera aspectos muy importantes de
+la estructura molecular.
+
+La descripción mecanocuántica de una molécula es mucho más compleja
+que la de un átomo. Las moléculas más simples son aquellas que poseen
+dos núcleos \emph{(moléculas diatómicas)} y entre ellas la más
+sencilla es el ión H$_{2}^{+}$, que sólo contiene un electrón ligado.
+Pero incluso este sistema tan simple posee seis grados de libertad
+espaciales después de haber fijado su CM. Un ataque frontal del
+problema buscando soluciones numéricas de la ecS es posible en esta
+molécula, e incluso en otras más complejas, pero en este tema
+buscaremos soluciones aproximadas que nos permiten profundizar más en
+los aspectos físicos del problema.
+
+Si despreciamos todos los efectos relativistas el hamiltoniano de
+una molécula con \( N_{e} \) electrones y \( N_{n} \) núcleos es
+
+\[H = \sum^{N_{n}}_{a=1}T_{a} + \sum _{i=1}^{N_{e}}T_{i} + 
+\sum_{1\leq a<b\leq N_{n}}\frac{Z_{a}Z_{b}e^{2}}{\left|\mathbf{R}_{a}-\mathbf{R}_{b}\right| } - 
+\sum ^{N_{e}}_{i=1}\sum ^{N_{n}}_{a=1}\frac{Z_{a}e^{2}}{\left|\mathbf{r}_{i}-\mathbf{R}_{a}\right|} + 
+\sum _{1\leq i<j\leq N_{e}}\frac{e^{2}}{\left| \mathbf{r}_{i}-\mathbf{r}_{j}\right| }\]
+%
+donde las energías cinéticas vienen dadas por las expresiones habituales
+
+\[T_{a}=\frac{\mathbf{P}_{\mathbf{a}}^{2}}{2M_{a}},\, \, T_{i}=\frac{\mathbf{p}_{i}^{2}}{2m_{e}}.\]
+%
+En estas ecuaciones los subindices \( \{a,b,\ldots \} \) recorren los
+diversos núcleos que forman la molécula mientras que los subindices \(
+i,j \) numeran los electrones. Las masas de los núcleos las denotamos
+por \( M_{a} \), su carga por \( Z_{a} \) y su posición y momento
+lineal (en el sistema de laboratorio) por \(\mathbf{R}_{a}\) y
+\(\mathbf{P}_{a}\). Análogamente \( \mathbf{r}_{i} \) y \(
+\mathbf{p}_{i} \) son el vector de posición y el momento lineal del
+i-ésimo electrón. En realidad todas las posiciones que aparecen en el
+hamiltoniano son relativas. Por ello introducimos la siguiente
+notación
+
+\[\mathbf{R}_{ab}=\mathbf{R}_{a}-\mathbf{R}_b, \; \;\mathbf{r}_{ia}=\mathbf{r}_{i}-\mathbf{R}_a, \;\; 
+\mathbf{r}_{ij} = \mathbf{r}_{i}-\mathbf{r}_j.\]
+%
+Los módulos de estos vectores los denotamos por
+
+\[R_{ab}=|\mathbf{R}_{ab}|,\; \; r_{ia}=|\mathbf{r}_{ia}|,\; \; r_{ij}=|\mathbf{r}_{ij}|,\]
+%
+y finalmente para simplificar los argumentos de las fdos definimos
+
+\[\mathbf{R}=\left\{ \mathbf{R}_a\right\}, \; \; \mathbf{r} = \left\{\mathbf{r}_i\right\}. \]
+
+
+Los núcleos son mucho más pesados que los electrones lo cual permite
+simplificar notablemente el problema.  Téngase en cuenta que en
+general $\frac{m_e}{M_a} < 10^{-3}$.  Sin embargo, las fuerzas
+electromagnéticas que experimentan núcleos y electrones son de un
+orden de magnitud muy similar por lo que los electrones se mueven muy
+deprisa en comparación con los núcleos. En una primera aproximación
+los electrones < <ven> > a los núcleos prácticamente en reposo y son
+capaces de alcanzar su situación de equilibrio antes de que estos
+varíen apreciablemente su posición. Por otra parte, se admite que los
+núcleos sólo sienten un campo promedio generado por los electrones en
+su rápido movimiento alrededor de ellos. Estas idéas dan lugar a
+\emph{aproximación adiabática molecular o de} \noun{Born-Oppenheimer}.
+
+Las ideas del parrafo anterior sugieren la factorización de la fdo en
+una parte electrónica y otra nuclear
+
+\[\Phi(\mathbf{R},\mathbf{r}) = \Phi_{n}(\mathbf{R})\Phi_{e}(\mathbf{r},\mathbf{R}),\]
+%
+la separación del hamiltoniano \( \mathrm{H} \) en 
+
+\[\mathrm{H} = \mathrm{H}_n + \mathrm{H}_e,\]
+%
+con
+
+\[\mathrm{H}_n= \sum^{N_{n}}_{a=1}T_{a} = -\sum^{N_{n}}_{a=1}\dfrac{\hbar^2}{2M_a}\nabla^2_a,\]
+%
+y 
+
+\[H_{e}=\sum _{i=1}^{N_{e}}T_{i} - \sum _{i}\sum _{a}\frac{Z_{a}e^{2}}{r_{ia}} + 
+\sum _{i<j}\frac{e^{2}}{r_{ij}}+\sum _{a<b}\frac{Z_{a}Z_{b}e^{2}}{R_{ab}} = 
+-\sum^{N_{e}}_{i=1}\dfrac{\hbar^2}{2m_e}\nabla^2_i - \cdots,\]
+%
+donde los operadores diferenciales Nabla anteriores son
+
+\[\nabla_i = \nabla_{\mathbf{r}_i},\;\;\nabla_a = \nabla_{\mathbf{R}_a}. \]
+
+
+Obsérvese que lo que llamamos hamiltoniano nuclear sólo contiene los
+términos de energía cinética mientras que la interacción coulombiana
+entre los núcleos la hemos dejado en \( H_{e} \). Aparentemente se
+trata de una separación absurda pero, que no obstante, tiene su utilidad.
+
+La fdo electrónica depende simultáneamente de las coordenadas electrónicas 
+y de las coordenadas nucleares. Pero los argumentos precedentes sugieren
+que la dependencia en estas últimas debe ser muy suave, en el sentido de que 
+
+\[\left| \nabla_a \Phi _{e}\right| ,\left| \nabla^{2}_a\Phi _{e}\right| 
+\ll \left| \nabla^{2}_a\Phi _{n}\right|, \]
+%
+lo cual implica que la velocidad y energía cinética de los núcleos,
+tal como aparece codificada en la fdo electrónica, son muy pequeñas.
+La ecS asociada al hamiltoniano anterior
+
+\[\mathrm{H}\Phi(\mathbf{R},\mathbf{r}) = E \Phi(\mathbf{R},\mathbf{r}),\]
+%
+puede transformarse profundamente a partir de las hipótesis y
+simplificaciones precedentes. Podemos proceder como sigue.
+
+\[\mathrm{H}\Phi _{n}(\mathbf{R})\Phi _{e}(\mathbf{r},\mathbf{R}) = (\mathrm{H}_n + \mathrm{H}_e)
+\Phi _{n}(\mathbf{R})\Phi _{e}(\mathbf{r},\mathbf{R}) = \mathrm{H}_e\Phi _{n}(\mathbf{R})\Phi _{e}(\mathbf{r},\mathbf{R})
++ \mathrm{H}_n\Phi _{n}(\mathbf{R})\Phi _{e}(\mathbf{r},\mathbf{R}),\]
+%
+y como \( \mathrm{H}_{e} \) no contiene derivadas con respecto a las
+variables \( \mathbf{R} \) podemos escribir
+
+\[\mathrm{H}\Phi _{n}(\mathbf{R})\Phi _{e}(\mathbf{r},\mathbf{R})= \Phi _{n}(\mathbf{R})\mathrm{H}_e\Phi_e(\mathbf{r},\mathbf{R})+
+\mathrm{H}_n\Phi _{n}(\mathbf{R})\Phi _{e}(\mathbf{r},\mathbf{R}).\]
+%
+Ahora bien
+
+\[\begin{split}
+\nabla^2_a\left(\Phi _{n}(\mathbf{R})\Phi _{e}(\mathbf{r},\mathbf{R})\right)  & =  
+\Phi_e(\mathbf{r},\mathbf{R})\nabla^2_a\Phi _{n}(\mathbf{R})+ \Phi _{n}(\mathbf{R})\nabla^2_a\Phi _{e}(\mathbf{r},\mathbf{R})+
+2\left(\nabla_a\Phi _{n}(\mathbf{R})\right) \cdot \left( \nabla_a\Phi _{e}(\mathbf{r},\mathbf{R})\right) \\
+ & \simeq  \Phi _{e}(\mathbf{r},\mathbf{R})\nabla^2_a\Phi _{n}(\mathbf{R}),
+\end{split}\]
+%
+con lo cual
+
+\[\mathrm{H}\Phi _{n}(\mathbf{R})\Phi _{e}(\mathbf{r},\mathbf{R})\simeq \Phi _{n}(\mathbf{R})\mathrm{H}_e
+\Phi_{e}(\mathbf{r},\mathbf{R})+\Phi _{e}(\mathbf{r},\mathbf{R})\mathrm{H}_n\Phi _{n}(\mathbf{R}).\]
+%
+Así, la ecS se escribe de forma aproximada como
+
+\[\Phi _{n}(\mathbf{R})\mathrm{H}_e\Phi _{e}(\mathbf{r},\mathbf{R}) + \Phi _{e}(\mathbf{r},\mathbf{R})
+\mathrm{H}_n\Phi _{n}(\mathbf{R}) = E\Phi _{n}(\mathbf{R})\Phi _{e}(\mathbf{r},\mathbf{R}),\]
+%
+y dividiendo esta ecuación por \( \Phi _{n} \) y reordenando los dos miembros obtenemos
+
+\[\mathrm{H}_e\Phi _{e}(\mathbf{r},\mathbf{R}) = \Phi _{e}(\mathbf{r},\mathbf{R})
+\left( E-\frac{1}{\Phi _{n}(\mathbf{R})}\left( \mathrm{H}_{\mathrm{n}}\Phi _{n}(\mathbf{R})\right) \right) = 
+E_{e}(\mathbf{R})\Phi _{e}(\mathbf{r},\mathbf{R}),\]
+%
+donde el paréntesis del segundo miembro es sólo función de las coordenadas nucleares. Por ello
+podemos escribir que 
+
+\[\mathrm{H}_e\Phi _{e}(\mathbf{r},\mathbf{R}) = E_{e}(\mathbf{R})\Phi _{e}(\mathbf{r},\mathbf{R}).\]
+
+El significado físico de esta ecuación es el siguiente: dado que el
+movimiento de los núcleos es extraordinariamente lento comparado con
+el de los electrones podemos considerar las posiciones de los núcleos
+como parámetros durante la obtención de la fdo electrónica. De esta
+forma, debemos resolver la ecS anterior para todas y cada una de las
+posiciones \( \mathbf{R} \) de los núcleos. Así, no sólo la fdo
+electrónica, sino también las energías correspondientes dependen de
+las coordenadas nucleares. \emph{Las funciones \( E_{e}(\mathbf{R}) \)
+(tenemos más de un autovalor por cada configuración \( \mathbf{R} \))
+reciben el nombre de niveles electrónicos}
+
+Utilizando las dos ecuaciones anteriores y dividiendo la primera por \( \Phi _{e} \) 
+llegamos a
+
+\[\left( \mathrm{H}_{\mathrm{n}}+E_{e}(\mathbf{R})\right) \Phi _{n}(\mathbf{R})=E\Phi _{n}(\mathbf{R}),\]
+%
+ecuación que merece algunos comentarios. i) La energía de los electrones
+para cada configuración \( \mathbf{R} \) se convierte al considerar
+la ecS de los núcleos en un potencial adicional que representa el
+campo medio que generan los electrones en su rápido movimiento alrededor
+de los núcleos. ii) Es la resolución de esta segunda ecuación la que
+nos permite obtener la energía real \( E \) del sistema así como
+la fdo completa. EL sistema formado por las dos ecuaciones 
+
+\[\begin{array}{ccc}
+\mathrm{H}_{\mathrm{e}}\Phi _{e}(\mathbf{r},\mathbf{R}) & = & E_{e}(\mathbf{R})\Phi _{e}(\mathbf{r},\mathbf{R}),\\
+\left( \mathrm{H}_{\mathrm{n}}+E_{e}(\mathbf{R})\right) \Phi _{n}(\mathbf{R}) & = & E\Phi _{n}(\mathbf{R}),
+\end{array}\]
+%
+se conoce como ecS en la aproximación de \noun{Born-Oppenheimer.}
+
+En las siguientes secciones resolveremos la primera ecuación del
+sistema precedente para un sistema especialmente sencillo como es la
+molécula de hidrógeno ionizada H$_2^+$, y estudiaremos con algunas
+simplificaciones el movimiento de los núcleos en móleculas diatómicas.
+
+
+\subsection{Niveles electrónicos de la  molécula ionizada H$_{2}^{+}$.}
+
+\subsubsection*{Resolución de la ecuación electrónica mediante le método variacional}
+
+El ión H$_{2}^{+}$ es la molécula más simple que existe al tratarse
+de un sistema a tres cuerpos. Está formado por dos protones y un único
+electrón ligado a los mismos. En el sr del CM este sistema posee seis
+grados de libertad y una vez fijados los dos núcleos el número de
+grados de libertad se reduce simplemente a tres. En esta sección vamos
+a ocuparnos de los niveles electrónicos de la molécula por lo que
+sólo consideraremos \( H_{e} \). Introducimos la siguiente notación
+
+\[
+\begin{array}{lcllcl}
+\mathbf{q}   & = & \dfrac{\mathbf{r}_{1}}{a_{0}},  & q   & = &\left|\mathbf{q}\right|, \\[4pt]
+\mathbf{q}_1 & = & \dfrac{\mathbf{r}_{11}}{a_{0}}, & q_1 & = &\left|\mathbf{q}_1\right|,\\[4pt]
+\mathbf{q}_2 & = & \dfrac{\mathbf{r}_{12}}{a_{0}}, & q_2 & = &\left|\mathbf{q}_2\right|,\\[4pt]
+\mathbf{Q}   & = & \dfrac{\mathbf{R}_{12}}{a_{0}}, & Q   & = &\left|\mathbf{Q}\right|,
+\end{array}\]
+%
+donde \( a_{0} \) es el radio de la primera órbita de Bohr en el
+hidrógeno. Con esta notación \footnote{ Nótese que \(
+\nabla_{\mathbf{q}} = \nabla_{\mathbf{q}_i} \) ya que \( \mathbf{q} =
+\mathbf{q}_{\mathbf{i}} + \mathbf{R}_{\mathbf{i}}/a_{0} \) y en esta
+parte del problema las posiciones de los protones están fijadas. }
+y teniendo en cuenta que $e/a_0 = 2E_I$ o que $\hbar^2/2m_ea_0^2=E_I$, resulta 
+
+\[\mathrm{H}_e = -E_{I} \left\{\nabla^2_{\mathbf{q}} +\dfrac{2}{\mathrm{q}_{1}}+\dfrac{2}{\mathrm{q}_{2}} - 
+\dfrac{2}{\mathrm{Q}}\right\}. \]
+%
+
+Nuestro objetivo es obtener (al menos) la energía y fdo. del estado
+fundamental de este sistema. Para ello propondremos una familia de
+fdos. de prueba y utilizaremos el método variacional para determinar
+los parámetros que definen dicha familia. Resulta de gran ayuda
+considerar el límite en que el electrón se halla muy próximo a uno de
+los protones y el otro se encuentra extraordinariamente alejado de los
+primeros. En estas circunstancias el sistema esta formado por un átomo
+de hidrógeno más un protón libre, y el hamiltoniano y la fdo del
+sistema en su estado de menor energía verifican que
+
+\[q_2,\; Q \longrightarrow \infty,\,\left\{
+\begin{array}{ccc}
+\mathrm{H}_{\mathrm{e}} & \to  & -E_{I}\left\{ \nabla^{2}_{\mathbf{q}_{1}^{2}}+\frac{2}{\mathrm{q}_{1}}\right\},  \\
+\Phi _{e}               & \to  & \varphi ^{(1)}=\dfrac{1}{\sqrt{\pi a_{0}^{3}}}e^{-q_{1}},  
+\end{array}\right.\]
+%
+donde $\varphi ^{(1)}$ representa el estado fundamental del átomo de
+hidrógeno formado. Ahora bien, ésto sólo es cierto cuando uno de los
+núcleos se encuentra muy alejado.  En condiciones normales, donde los
+dos protones se hallarán a una distancia finita, deberemos tomar una
+fdo variacional que incluya al menos los orbitales de ámbos átomos. La
+forma funcional más sencilla es una combinación lineal de las fdos de
+los dos átomos en sus estados fundamentales, es decir
+
+\[\Phi ^{(var)}_{e}=\alpha _{1}\varphi ^{(1)}+\alpha _{2}\varphi ^{(2)}.\]
+%
+donde
+%
+\[\varphi ^{(i)}=\dfrac{1}{\sqrt{\pi a_{0}^{3}}}e^{-q_{i}},\; i\in \{1,2\}.\]
+
+En este caso el funcional de la energía es simplemente una función
+de los dos coeficientes de mezcla \( \{\alpha _{i}\}_{i=1,2} \).
+
+\[E[\Phi ^{(var)}_{e}] = E[\{\alpha \}] = \frac{\Braket{\Phi ^{(var)}_{e}}{\mathrm{H}_{\mathrm{e}}}{\Phi ^{(var)}_{e}}}
+{\braket{\Phi ^{(var)}_{e}}{\Phi ^{(var)}_{e}}}.\]
+%
+Para facilitar la aplicación del método variacional introducimos,
+una vez más, nueva notación.
+
+\[H_{ij}=\Braket{\varphi ^{(i)}}{H_{e}}{\varphi ^{(j)}} = \int d\mathbf{q}\varphi ^{(i)}\mathrm{H}_{\mathrm{e}}\varphi ^{(j)},\;\;
+S_{ij}=\braket{\varphi ^{(i)}}{\varphi ^{(j)}}=\int d\mathbf{q}\varphi ^{(i)}\varphi ^{(j)},\]
+%
+y en particular\footnote{No aparecen signos de conjugación compleja
+porque todas las fdo son reales }, tenemos
+
+\[H_{11}=H_{22},\;\; H_{12}=H_{21},\; \; S_{11}=S_{22}=1,\; \; S_{12}=S_{21}=S.\]
+%
+Si pasamos la norma de la fdo variacional al primer miembro y expresamos
+todo en términos de estas nuevas cantidades
+
+\[E[\{\alpha \}]\left\{ \alpha ^{2}_{1}+\alpha _{2}^{2}+2\alpha _{1}\alpha _{2}S\right\} = 
+\left\{ \alpha ^{2}_{1}H_{11}+\alpha _{2}^{2}H_{22}+2\alpha _{1}\alpha _{2}H_{12}\right\},\]
+%
+y variando con respecto a los dos coeficientes de mezcla llegamos
+a que en los extremos se cumple
+
+\[\begin{array}{ccc}
+E\left\{ \alpha _{1}+\alpha _{2}S\right\}  & = & \left\{ \alpha _{1}H_{11}+\alpha _{2}H_{12}\right\}, \\
+E\left\{ \alpha _{1}S+\alpha _{2}\right\}  & = & \left\{ \alpha _{1}H_{12}+\alpha _{2}H_{22}\right\}, 
+\end{array}\]
+%
+ecuaciones que reescritas en forma matricial dan lugar a 
+
+\[\left( \begin{array}{cc}
+H_{11} & H_{12}\\
+H_{12} & H_{22}
+\end{array}\right) \left( \begin{array}{c}
+\alpha _{1}\\
+\alpha _{2}
+\end{array}\right) =E\left( \begin{array}{cc}
+1 & S\\
+S & 1
+\end{array}\right) \left( \begin{array}{c}
+\alpha _{1}\\
+\alpha _{2}
+\end{array}\right),\]
+%
+ó pasando todo al primer miembro 
+
+\[\left( \begin{array}{cc}
+H_{11}-E & H_{12}-ES\\
+H_{12}-ES & H_{22}-E
+\end{array}\right) \left( \begin{array}{c}
+\alpha _{1}\\
+\alpha _{2}
+\end{array}\right) =0.\]
+%
+Esta ecuación matricial posee una solución no trivial, distinta de la
+idénticamente nula $\alpha_1=\alpha_2=0$, si y solo si
+
+\[\left| \begin{array}{cc}
+H_{11}-E & H_{12}-ES\\
+H_{12}-ES & H_{11}-E
+\end{array}\right| =0,\]
+%
+y en este caso las dos soluciones posibles son
+
+\[\begin{array}{ccc}
+E_e^{(+)} & = & \dfrac{H_{11}+H_{12}}{1+S},\\
+E_e^{(-)} & = & \dfrac{H_{11}-H_{12}}{1-S},
+\end{array},\]
+%
+que aparecen escritas en función de los elementos de matriz $H_{ij}$ y
+del solape $S$. Al substituir estas dos soluciones en la ecuación
+matricial resultan las siguientes combinaciones de valores de los
+coeficientes \( \alpha _{i} \).
+
+\[
+\begin{array}{lcl}
+E_e^{(+)} & \to  & \alpha _{1}=\alpha _{2},\\
+E_e^{(-)} & \to  & \alpha _{1}=-\alpha _{2},
+\end{array}\]
+%
+y en consecuencia las fdo convenientemente normalizadas son
+
+\[\begin{array}{lcl}
+\Phi_e^{(+)} & = & \dfrac{1}{\sqrt{2(1+S)}}\left\{\varphi^{(1)} + \varphi^{(2)}\right\}, \\
+\Phi_e^{(-)} & = & \dfrac{1}{\sqrt{2(1-S)}}\left\{\varphi^{(1)} - \varphi^{(2)}\right\}. 
+\end{array}\]
+
+Las expresiones explícitas de los elementos de matriz $H_{ij}$ y
+del solape $S$ son
+
+\[S=\int d\mathbf{q}\varphi^{(1)}\varphi ^{(2)} = \frac{1}{\pi a_{0}^{3}}\int d\mathbf{q}e^{-(q_{1}+q_{2})} = 
+e^{-Q}\left\{ 1+Q+\frac{1}{2}Q^{2}\right\},\]
+ 
+
+\[H_{11}=H_{22}=\int d\mathbf{q}\varphi ^{(1)}\mathrm{H}_{\mathrm{e}}\varphi ^{(1)} = 
+-E_{I}\left\{ 1-\frac{2}{Q}e^{-2Q}(1+Q)\right\},\]
+
+
+\[H_{12}=H_{21}=\int d\mathbf{q}\varphi ^{(1)}\mathrm{H}_{\mathrm{e}}\varphi ^{(2)} = 
+-E_{I}\left\{ S+2e^{-Q}(1+Q)-\frac{2}{Q}S\right\},\]
+%
+y substituyendo estos resultados en las expresiones para las energías, tenemos
+
+\[E_e^{(±)}(Q)= -E_{I}\frac{1-\dfrac{2}{Q}(1+Q)e^{-2Q} ± 
+\left\{ (1-\dfrac{2}{Q})(1+Q+Q^{2}/2)e^{-Q}+2(1+Q)e^{-Q}\right\} }{1± (1+Q+Q^{2}/2)e^{-Q}}.\]
+
+ 
+\begin{figure}
+{\centering \includegraphics[width=8cm]{fig/h2elevels-src.eps} \par}
+
+
+\caption{\label{fig_H2+levels}Niveles de energía electrónicos del ión H$^{+}_{2}$ en
+función de la distancia entre núcleos.}
+\end{figure}
+
+
+
+\subsubsection*{Análisis de las soluciones obtenidas}
+
+La figura \ref{fig_H2+levels} presenta los valores de \(E_e^{(+)}\) y
+\(E_e^{(-)}\) en función de la distancia internuclear \( Q \). Los
+valores de la energía se dan en unidades de la energía de ionización
+del hidrógeno. Por ello la línea de puntos con valor constante uno
+representa el estado en que la molécula se ha disociado en un átomo de
+H$_1$ y en un protón.  Como puede observarse, los valores de \(
+E_e^{(+)} \) son siempre mayores que la unidad de manera que, la fdo
+correpondiente, $\Phi_e^{(+)}$ nunca caracteriza un estado ligado del
+ión H$^{+}_{2}$.  Precisamente por ello no resulta extraño que este
+nivel de energía reciba el nombre de {\em antiligante}. Sólo el nivel
+\( E_e^{(+)} \) pasa por debajo del límite de disociación para ciertos
+valores de \( Q \).  Dentro de ese rango de valores de \( Q \) el
+estado de dos protones y un electrón ligados entre sí resulta
+energéticamente favorable.  Por esta razón \( E_e^{(+)} \) recibe el
+nombre de nivel {\em ligante}. El mínimo de este nivel electrónico
+ocurre para $Q_0\simeq 2.5 (R_0\simeq 1.25A)$ y en esta posición la
+energía de ligadura del sistema es de \( \Delta E = E - E_I = -0.13
+E_{I}\simeq -1.76eV. \).  De hecho, si dejamos que el sistema
+evolucione, los dos protones de la molécula tenderán a situarse a una
+distancia aproximadamente igual a $Q_0$, oscilando alrededor de dicha
+posición. Por último conviene resaltar que la simetría de intercambio
+de las dos soluciones obtenidas es completamente diferente. Mientras
+que la fdo del nivel ligante $\Phi_e^{(+)}$ es simétrica bajo el
+intercambio de las coordenadas de los dos protones, $\Phi_e^{(-)}$ es
+antisimétrica.
+
+Los datos experimentales revelan que la distancia internuclear de
+equilibrio es aproximadamente \(Q_0^{Exp.}= 1A \) y que el defecto de
+energía es \(\Delta^{Exp.} E = -2.8eV \); existe por tanto una clara
+discrepancia entre los datos experimentales y los resultados
+teóricos. Habitualmente la fdo que utilizamos en el método variacional
+es sólo una aproximación que nos proporciona una cota superior a la
+verdadera energía. La fdo. que hemos propuesto como solución presenta
+varias limitaciones, entre las cuales podemos citar que su
+comportamiento asintótico cuando la distancia internuclear disminuye
+no es el adecuado. En efecto, si anulásemos la interacción repulsiva entre los dos protones el sistema debería evolucionar
+para formar un átomo de helio. Ahora bien
+
+\[Q\to 0,\; \left\{\begin{array}{ccc}
+\Phi_e^{(+)}               & \to  & \varphi^{(1)} = \dfrac{1}{\sqrt{\pi a_0^3}}e^{-q_1}\\
+E_{1}-\dfrac{e^{2}}{R_{12}} & \to  & -3E_{I}
+\end{array}\right.,\]
+%
+es decir, la fdo tiende a la del estado fundamental de un átomo de
+hidrógeno y la energía de interacción del electrón con los dos
+protones es \( -3E_{I} \).  Sin embargo, la expresión de la fdo del
+estado fundamental del He$^{+}$ es proporcional a \( e^{-2q_{1}} \)
+y la energía del electrón es \( -4E_{I} \).  Para mejorar la familia
+de fdos.  de prueba podemos añadir, como un parámetro variacional más,
+la carga efectiva asociada a cada núcleo de modo que ahora
+
+\[\ket{\Phi ^{(var)}_{e}}=\alpha _{1}\ket{\varphi ^{(1)}(Z)}+\alpha _{2}\ket{\varphi ^{(2)}(Z)},\]
+%
+y  donde 
+
+\[\varphi ^{(i)}(Z)=\sqrt{\frac{Z^{3}}{\pi a_{0}^{3}}}e^{-Zq_{i}}.\]
+%
+Utilizando esta fdo de prueba, que tiene como parámetros variacionales
+\( \alpha _{1},\alpha _{2} \) y \( Z \), obtenemos una distancia de
+equilibrio \( Q_0\simeq 2\,(R_0 = 1A) \) y un defecto de energía \(
+\Delta E\simeq -2.35eV \).
+
+Aunque hemos mejorado notablemente los resultados, aún estamos lejos
+del valor experimental. Para entender mejor lo que pasa realicemos un
+< <experimento de pizarra> > en el que formamos un ión H$^{+}_{2}$
+aproximando lentamente un protón a un átomo de hidrógeno. A medida que
+el protón se acerca su campo eléctrico tiende a deformar débilmente al
+principio, con mayor intensidad cuando su proximidad es grande, la
+distribución de carga del electrón alrededor del otro núcleo. En
+nuestro modelo no hemos tenido en cuenta este fenómeno ya que hemos
+supuesto que el electrón ocupa un orbital \( 1s \) con simetría
+esférica en todo momento. Una forma de superar la limitación anterior
+consiste en utilizar orbitales < <híbridos> >, que consisten en
+superposiciones lineales de orbitales \( 1s \), \( 2p \), etc.  Por
+ejemplo, si utilizamos orbitales de la forma 
+
+\[\varphi ^{(i)}(Z)=\varphi ^{(i)}_{1s}(Z)+\sigma \varphi _{2p}^{(i)}(Z),\]
+%
+el método variacional nos conduce a unos resultados excelentes ya que
+obtenemos \( Q_0\simeq 2 \) y \( \Delta E \simeq -2.73eV \).
+Señalemos que en este cálculo los parámetros varaicionales son cuatro;
+$\alpha _1$, $\alpha _2$, $Z$ y $\sigma$, lo cual complica
+notablemente el cálculo de los elementos de matriz del hamiltoniano y
+la minimización de la energía.
+
+
+\subsection{Enlace covalente vs. enlace iónico}
+
+
+La mecánica cuántica permite obtener una comprensión profunda del
+enlace químico, lo cual requiere un conocimiento previo de la
+estructura atómica. Aunque en este curso no hemos estudiado átomos más
+complejos que el helio, supondremos que el lector posee algunos
+conocimientos cualitativos adquiridos en la asignatura de Química.
+
+Antes de 1925 se habían desarrollado algunas teorías parciales del
+enlace químico que explicaban su existencia en el caso de moléculas
+heteropolares, es decir, formadas por átomos de diferente
+especie. Estas teorías se basan en el concepto de
+electronegatividad. Por ejemplo, los átomos alcalinos (primera columna
+de la tabla periódica) son electropositivos debido a la tendencia que
+tienen a desprenderse de su electrón menos ligado para formar una
+estructura muy estable como la que poseen los gases nobles. Lo
+contrario le sucede a los átomos de la penúltima columna de la tabla
+periódica, como el Cl, para el que capturar un electrón adicional
+supone adquirir una gran estabilidad ya que pasa a tener una
+estructura electrónica como la del Ar. Decimos que estos átomos son
+electronegativos. A partir de estas ideas, el enlace químico en la
+molécula de CLNa se explica porque, bajo ciertas condiciones de
+proximidad, el átomo de Na cede su último electrón al atomo de Cl
+convirtiéndose ámbos en iones. De esta manera, a cambio de una
+atracción electrostática entre ámbos que liga la molécula, cada uno de
+ellos adquiere una estructura electrónica muy estable. Existen muchos
+ejemplos de moléculas iónicas como la de PH$_{3}$ donde el fósforo,
+que es electronegativo, captura los tres electrones de los hidrógenos
+pasando a tener una estructura como la del Ar.  En ocasiones el P
+puede actuar como electropositivo cuando se combina con átomos más
+electronegativos como, por ejemple, el Cl . En la molécula PCl$_{5}$,
+éste átomo cede cinco electrones, uno a cada cloro, pasando a tener
+una estructura electrónica como la del neón.
+
+ A pesar de su éxito, la teoría precuántica del enlace iónico era muy
+cualitativa y sólo con la aparición de la mecánica cuántica se pudo
+obtener resultados cuántitativos.  Por otro lado la teoría precuántica
+era totalmente incapaz de explicar la existencia de moléculas
+homopolares como las de H$_{2}$, N$_{2}$, O$_{2}$, etc. Para entender
+como se forma el enlace químico en estas moléculas revisemos los
+resultados obtenidos en el caso del ión H$^{+}_{2}$. Resulta muy
+instructivo fijarse en la enorme diferencia que existe entre los
+orbitales ligante y antiligante. La figura \ref{fig_H2+e+wf}
+representa los valores de la fdo y de la densidad de probabilidad del
+nivel ligante en el plano $XY$. Se ha elegido un sistema de referencia
+en el que los dos protones se hayan situados simétricamente con
+respecto al plano $XZ$, en los puntos $ y=Q/2$ y $y=-Q/2$ del eje
+$Y$. Análogamente la figura \ref{fig_H2+e-wf} representa los valores
+de la fdo y de la densidad de probabilidad del nivel antiligante en el
+plano $XY$. Este orbital es antisimétrico con respecto al plano de
+simetría $XZ$, lo cual implica que la probabilidad de encontrar al
+electrón entre los dos núcleos es muy pequeña. En realidad, en el
+orbital antiligante la probabilidad de presencia del electrón es
+grande en las proximidades de uno u otro protón y es nula justo en el
+plano de simetría \( XZ \). Por ello podemos pensar que en este caso
+el electrón se halla cerca de uno de los protones y nunca del
+otro. Por el contrario, en el caso del nivel ligante, el orbital es
+simétrico y la densidad de probabilidad toma valores importantes en el
+plano de simetría. Por tanto el electrón pasa un tiempo apreciable
+entre los dos núcleos y apantalla parcialmente la repulsión entre los
+dos núcleos. Es esta tendencia a compartir el electrón entre los dos
+núcleos y el apantallamiento asociado lo que explica la formación de
+este ión, así como la de las moléculas homopolares que hemos
+citado. Este tipo de enlace se llama covalente.
+
+
+\begin{figure*}
+\vskip20pt
+\resizebox*{8cm}{5cm}{\includegraphics{fig/phi-e1-wf-src.eps}} \resizebox*{8cm}{5cm}{\includegraphics{fig/phi-e1-dens-src.eps}} 
+
+
+\caption{(Izda.) Valores de $\Phi_e^{(+)}$ en el plano \protect\(
+xy\protect \) suponiendo que los dos protones estan fijos en el eje
+$Y$ en posiciones dadas por $ y=Q/2$ y $y=-Q/2$. (Dcha.) Valores de la
+densidad asociada a $\Phi_e^{(+)}$ en el plano \protect\( xy\protect
+\).}
+\label{fig_H2+e+wf}
+\end{figure*}
+ 
+\begin{figure*}
+\vskip20pt
+\resizebox*{8cm}{5cm}{\includegraphics{fig/phi-e2-wf-src.eps}} \resizebox*{8cm}{5cm}{\includegraphics{fig/phi-e2-dens-src.eps}} 
+
+
+\caption{Izda.) Valores de $\Phi_e^{(-)}$ en el plano \protect\(
+xy\protect \) suponiendo que los dos protones estan fijos en el eje
+$Y$ en posiciones dadas por $ y=Q/2$ y $y=-Q/2$. (Dcha.) Valores de la
+densidad asociada a $\Phi_e^{(-)}$ en el plano \protect\( xy\protect
+\).}
+\label{fig_H2+e-wf}
+\end{figure*}
+
+\subsection{El movimiento de los núcleos en moléculas diatómicas}
+
+La aproximación de \noun{Born-Oppenheimer} nos permitió separar la ecS
+en un sistema de dos ecuaciones diferenciales. La primera, conocida
+como ecuación electrónica, nos proporciona la energía potencial \(
+E_{e}(\mathbf{R}) \) en la que se mueven los núcleos, y que es debida
+tanto a la interacción electromagnética entre los núcleos como al
+campo generado por los electrones en su rápido movimiento alrededor de
+los núcleos. La segunda ecuación ó ecuación nuclear se escribe como
+
+\[\left\{ \mathrm{H}_n + E_e (\mathbf{R})\right\} \Phi_{n}(\mathbf{R})= E\Phi _{n}(\mathbf{R}).\]
+%
+En el caso de una molécula diatómica el hamiltoniano \( \mathrm{H}_{n}
+\), que solo contiene los términos de energía cinética, viene dado por
+
+\[\mathrm{H}_n = -\frac{\hbar ^{2}}{2M_{1}}\nabla_{\mathbf{R}^{2}_{1}}^{2} - 
+\frac{\hbar ^{2}}{2M_{2}}\partial _{\mathbf{R}^{2}_{2}}^{2},\]
+%
+y puesto que la energía de traslación de la molécula como un todo no
+nos interesa, separamos los grados de libertad relativos de los del
+CM. Para ello definimos el siguiente conjunto de coordenadas
+
+\[\begin{array}{ccc}
+\mathbf{R}_{12} & = & \mathbf{R}_{1}-\mathbf{R}_{2},\\
+\mathbf{R}_{\mathbf{cm}} & = & \frac{M_{1}\mathbf{R}_{1}+M_{2}\mathbf{R}_{2}}{M_{1}+M_{2}}.
+\end{array}\]
+%
+A lo largo de esta sección expresaremos frecuentemente \(
+\mathbf{R}_{12} \) en coordenadas esféricas
+
+\[\mathbf{R}_{12}=(\mathcal{R},\Omega ),\]
+%
+donde $\mathcal{R}$ es es módulo del vector $\mathbf{R}_{12}$ y
+$\Omega =( \theta, \phi)$ son los ángulos directores. Al cambiar al
+nuevo sistema de coordenadas el hamiltoniano se expresa como
+
+\[\mathrm{H}_n = -\frac{\hbar ^{2}}{2(M_{1}+M_{2})}\nabla_{\mathbf{R}^{2}_{cm}}^{2} - 
+\frac{\hbar ^{2}}{2\mu }\partial_{\mathbf{R}^{2,}_{12}}^{2} = -\frac{\hbar ^{2}}{2(M_{1}+M_{2})}
+\nabla_{\mathbf{R}^{2}_{cm}}^{2} - \frac{\hbar ^{2}}{2\mu }\frac{1}{\mathcal{R}}
+\partial_{\mathcal{R}^{2}}^{2}\mathcal{R} + \frac{\hbar^{2}}{2\mu \mathcal{R}^{2}}\mathsfbf{I}^{2},\]
+%
+donde $\mu =\dfrac{M_{1}M_{2}}{M_{1}+M_{2}}$ es la masa reducida
+asociada a los dos núcleos e \( \mathrm{I} \) es el momento angular
+relativo del núcleo \( 1 \) con respecto al núcleo \( 2 \). De esta
+forma si nos situamos en el sr del CM tenemos
+
+\[\mathrm{H}_n = -\frac{\hbar^{2}}{2\mu }\frac{1}{\mathcal{R}}\partial_{\mathcal{R}^{2}}^{2}\mathcal{R} + 
+\frac{\hbar ^{2}}{2\mu \mathcal{R}^{2}}\mathrm{I}^{2},\]
+%
+e introduciendo este resultado en la ecS nuclear, resulta
+
+\[\left\{ -\frac{\hbar ^{2}}{2\mu }\frac{1}{\mathcal{R}}\partial_{\mathcal{R}^{2}}^{2}\mathcal{R}+
+\frac{\hbar ^{2}}{2\mu \mathcal{R}^{2}}\mathrm{I}^{2}+E_{e}(\mathcal{R})\right\} \Phi _{n}(\mathcal{R},\Omega ) = 
+E\Phi _{n}(\mathcal{R},\Omega ).\]
+%
+Una solución de la forma
+
+\[\Phi _{n}(\mathcal{R},\Omega )=\frac{U(\mathcal{R})}{\mathcal{R}}Y_{m}^{i}(\Omega ),\]
+%
+factorizada en una parte radial $U(\mathcal{R})$ y en una parte
+angular $Y_{m}^{i}(\Omega )$, que satisface
+
+\[\begin{array}{ccc}
+\mathsfbf{I}^2 Y_{m}^{i}(\Omega)& = & \hbar^2 i(i+1) Y_{m}^{i}(\Omega ), \\
+\mathsfbf{I}_z Y_{m}^{i}(\Omega)& = & \hbar m Y_{m}^{i}(\Omega ),
+\end{array}\]
+%
+permite, tras substituirla en la ecuación precedente, llegar a la ecuación radial
+
+\[\left\{ -\frac{\hbar ^{2}}{2\mu }\frac{d^{2}}{d\mathcal{R}^{2}} + E_{e}(\mathcal{R}) + 
+\frac{\hbar ^{2}i(i+1)}{2\mu \mathcal{R}^{2}}\right\} U(\mathcal{R})=EU(\mathcal{R}).\]
+
+Recordemos, una vez más, que los niveles electrónicos \( E_{e}
+(\mathcal{R}) \) constituyen el pozo de energía potencial en el que se
+mueven los dos núcleos. Los niveles electrónicos más bajos poseen un
+mínimo local para una cierta distancia internuclear \( \mathcal{R}_0
+\). La existencia de este mínimo garantiza que se produzca el enlace
+químico. Para obtener las primeras soluciones de la ecuación
+precedente suele ser habitual desarrollar en serie de potencias \(
+E_{e}(\mathcal{R}) \) alrededor de \( \mathcal{R}_0 \).  Si procedemos
+de esta forma los niveles electrónicos pueden escribirse de forma
+aproximada como
+
+\[E_{e}(\mathcal{R})= E_{e}(\mathcal{R}_0) + \left(\frac{dE_{e}}{d\mathcal{R}}\right) _{\mathcal{R}_0}
+(\mathcal{R}-\mathcal{R}_0)+\frac{1}{2}\left(\frac{d^{2}E_{e}}{d\mathcal{R}^{2}}\right)_{\mathcal{R}_0}
+(\mathcal{R}-\mathcal{R}_0)^{2}+\cdots,\]
+%
+y teniendo en cuenta que \( E_{e}(\mathcal{R}) \) posee un mínimo en
+\( \mathcal{R}_0 \)  y
+definiendo \( K=\left( \dfrac{d^{2}E_{e}}{d\mathcal{R}^{2}}\right)
+_{\mathcal{R}_0} \) y \( E_{e0}=E_{e}(\mathcal{R}_0) \), resulta que
+el potencial electrónico se confunde de forma bastante aproximada con
+el de un oscilador armónico, es decir
+
+\[E_{e}(\mathcal{R})= E_{e0} + \frac{1}{2}K(\mathcal{R}-\mathcal{R}_{m})^{2}+ \cdots.\]
+%
+Por lo tanto la ecuación radial puede reescribirse de la siguiente
+forma
+
+\[\left\{ -\frac{\hbar ^{2}}{2\mu }\frac{d^{2}}{d\mathcal{R}^{2}} + E_{e0} + \frac{1}{2}K(\mathcal{R}-\mathcal{R}_{m})^{2}+
+\frac{\hbar ^{2}i(i+1)}{2\mu \mathcal{R}^{2}}\right\} U(\mathcal{R})=E U(\mathcal{R}).\]
+%
+En esta aproximación el potencial consta, además de un término
+constante $E_0$, de un término vibracional u oscilatorio
+$\frac{1}{2}K(\mathcal{R}-\mathcal{R}_{m})^{2}$ y de un término
+rotacional $\frac{\hbar^{2}i(i+1)}{2\mu \mathcal{R}^{2}}$, llamado así
+porque coincide con la energía cinética de una partícula que rota a
+una distancia $\mathcal{R}$ del origen de coordenadas con momento
+angular $i$.
+
+Resulta especialmente instructivo realizar una estimación del orden de
+magnitud de estos términos del potencial en la molécula H$_2^+$
+Las energías asociadas al movimiento vibracional son
+
+\[E_{vib} = \hbar \omega \left( n+\frac{1}{2}\right) ,\; \; n\in \mathbb{N}_0,\]
+%
+donde
+
+\[\hbar \omega =\sqrt{\frac{\hbar ^{2}K}{\mu }},\]
+%
+y 
+\[\begin{split}
+  K = \left(\frac{d^{2}E_{e}}{d\mathcal{R}^{2}}\right)_{\mathcal{R}_0} & = \frac{E_{I}}{a^{2}_{0}}\frac{d^{2}}{dQ^{2}}
+\left\{\frac{1-\dfrac{2}{Q}(1+Q)e^{-2Q}±\left\{ (1-\dfrac{2}{Q})(1+Q+Q^{2}/2)e^{-Q}+2(1+Q)e^{-Q}\right\}}
+{1± (1+Q+Q^{2}/2)e^{-Q}} \right\}_{Q_0} \\
+& \simeq \frac{1}{10}\frac{E_{I}}{a^{2}_{0}},
+\end{split} \]
+%
+con lo cual, teniendo en cuenta que \( \dfrac{m_{e}}{\mu }\approx
+10^{-3} \), resulta
+
+\[\hbar \omega \simeq \sqrt{\frac{\hbar ^{2}E_{I}}{10\mu a_{0}^{2}}} \simeq 
+\sqrt{\frac{E_{I}}{10}\frac{m_{e}^{2}e^{4}}{\mu \hbar ^{2}}} = 
+\sqrt{\frac{1}{5}\frac{m_{e}}{\mu }E^{2}_{I}}\approx 10^{-2}E_{I},\]
+%
+En comparación con estos valores las energías asociadas al término 
+rotacional son claramente menores ya que 
+
+\[E_{rot} = \left\langle \frac{\hbar ^{2}}{2\mu \mathcal{R}^{2}}\right\rangle \approx 
+\frac{\hbar ^{2}}{2\mu a^{2}_{0}}\simeq\frac{m_{e}}{\mu }E_{I}\approx 10^{-3}E_{I},\]
+%
+razón por la que podemos efectuar una aproximación adicional que
+afecta exclusivamente al término rotacional y que consiste en
+substituir \( \mathcal{R} \) por \( \mathcal{R}_0 \).  Por otro lado
+la cantidad \( \mu \mathcal{R}^{2}_0 \) es precisamente el valor
+esperado del momento de inercia \( \mathcal{I} \) de la partícula con
+masa relativa con lo cual la ecuación radial de los núcleos y las
+energías moleculares se suelen escribir como
+
+\[\left\{ -\frac{\hbar ^{2}}{2\mu }\frac{d^{2}}{d\mathcal{R}^{2}} + E_{e0} +\frac{1}{2}K(\mathcal{R}-\mathcal{R}_{m})^{2} + 
+\frac{\hbar ^{2}i(i+1)}{2\mathcal{I}}\right\} U(\mathcal{R})=EU(\mathcal{R}),\]
+%
+y
+
+\[E=E_{e0} + E_{vib} + E_{rot} = E_{e0}+ \hbar \omega \left( n+\frac{1}{2}\right) +
+\frac{\hbar ^{2}i(i+1)}{2\mathcal{I}},\;\; n,i\in \mathbb{N}_0.\]
+
+\subsection{Espectros moleculares y tipos básicos de moléculas}
+
+El valor de la energía de un nivel molecular consta siempre de tres
+contribuciones. La más importante es la energía electrónica que viene
+dada por el mínimo del nivel electrónico. En el caso de la molécula \(
+H_{2}^{+} \) sólo existe un nivel electrónico ligante y por lo tanto
+un único valor \( E_{e0} \). En moléculas más complejas podemos tener
+un conjunto formado por varios valores \( E_{e0} \).  Por cada nivel
+electrónico podemos tener una infinidad de niveles vibracionales
+asociados a los distintos valores del número cuántico \( n=0,1,\cdots
+\), y por cada nivel vibracional existe una red más tupida de niveles
+rotacionales etiquetados por $i$. 
+
+\begin{figure}
+\nofig
+\caption{Espectro completo de niveles de energía del ión \protect\( H_{2}^{+}\protect \).}
+\label{fig_h2+_levels}
+\end{figure}
+
+La figura \ref{fig_h2+_levels} muestra el espectro electrónico del ion
+H$_{2}^+$. Además de los niveles predichos en el modelo teórico simple
+utilizado en la sección anterior, se muestran otros niveles muy
+excitados. El cero de energía corresponde a la ionización en un átomo
+de hidrógeno más un protón. Los niveles electrónicos de una molécula
+diatómica se etiquetan indicando el valor absoluto de la proyección
+del momento angular orbital sobre el eje molecular (que es un buen
+número cuántico) mediante letras griegas, a saber: $\sigma (|m_l|=0)$,
+$\pi (|m_l|=1)$ $\delta (|m_l|=2)$, etc. Además se indica el orbital u
+orbitales atómicos a partir de los cuales se construyen los orbitales
+moleculares, y en el caso de moléculas homonucleares se indica
+mediante un subíndice si la fdo es simétrica (g) o antisimétrica (u).
+
+Por su parte la figura \ref{fig_vib-rot} muestra de forma esquemática
+el espectro molecular completo de una molécula genérica. La distancia
+típica entre niveles electrónicos es del orden del \( eV \) mientras
+que dentro de cada nivel electrónico la separación entre niveles
+vibracionales es mucho menor y, aún más pequeña, entre niveles
+rotacionales para cada nivel vibracional.
+
+\begin{figure}
+\nofig
+\caption{\label{fig_vib-rot}Espectro molecular esquemático}
+\end{figure}
+
+
+En la naturaleza encontramos tres tipos de moléculas que se
+diferencian fácilmente a partir de la forma de las curvas
+características de sus niveles electrónicos. La figura
+\ref{fig_tipos-mol} muestra los tres tipos de curvas de potencial
+correspondientes. Las moléculas en sentido estricto son las que tienen
+curvas de potencial tipo (a) y vienen caracterizadas por energías de
+ligadura del orden del \( eV \) y distancias internucleares del orden
+de \( 1A \). En estos casos los núcleos están ligados por verdaderas
+fuerzas de valencia, bien de origen iónico, bien de tipo
+covalente. Las moléculas que presentan curvas de tipo (b) reciben el
+nombre de moléculas de van der Waals, y en ocasiones no se consideran
+como verdaderas moléculas en la literatura científica. Su curva de
+potencial es muy poco profunda lo que da lugar a energías de ligadura
+del orden de \( 0.1eV \) y con su mínimo situado a distancias que
+oscilan entre $3 A$ y $5 A$.  Sus átomos se atraen débilmente debido a
+los pequeños dipolos eléctricos que se forman en cada uno de ellos por
+la presencia de la carga de los átomos próximos. El tercer tipo viene
+caracterizado por curvas de tipo (c). No son en ningún caso verdaderas
+moléculas. Observese que su curva de potencial es siempre positiva y
+decreciente lo que da lugar sólo a fuerzas repulsivas. Se trata en
+realidad de estados de colisión de dos o más atómos que se comportan
+como lo haría una verdadera molécula en un estado muy excitado.
+
+
+\begin{figure}
+\nofig
+\caption{Niveles electrónicos asociados a los tipos básicos de moléculas}
+\label{fig_tipos-mol}
+\end{figure}
+
+
+\section{Problemas}
+
+
+\subsection{Enunciados}
+
+\begin{enumerate}
+\item {[}A{]} Utilize la tabla con las energías del espectro discreto del
+He y 
+
+\begin{enumerate}
+\item obtenga la longitud de onda asociada a la transición \( (1s2p)^{1}P\to (1s^{2})^{1}S \). 
+\item determine la transición correspondiente a la línea roja de \( 6678A \).
+\item encuentre la transición asociada a la línea amarilla de \( 5785A \).
+\end{enumerate}
+\item {[}A{]} Utilizando la aproximación de partícula independiente y el
+concepto de apantallamiento, intente obtener la energía del estado
+fundamental del helio y da el valor de la carga efectiva que {}``ve{}''
+cada electrón. \emph{Dato}: \( E_{EF}\left( He\right) =-24.58eV \).
+Tomamos como cero la energía del helio ionizado: \( E_{EF}\left( He^{+}\right) =-54.4eV \).
+\item {[}A{]} Calcule el momento magnético asociado a los niveles de energía
+más bajos del parahelio y del ortohelio. El momento magnético lo definimos
+como 
+
+\[{\cal M}=\frac{\mu _{B}}{\hbar }\Braket{\Phi _{1n;lm_{l}=l,sm_{s}=s}}{\sum \mathcal{L}_{z_{i}}+g_{s}
+\sum \mathcal{S}_{z_{\mathcal{i}}}}{\Phi _{1n;lm_{l}=l,sm_{s}=s}}\]
+
+\item {[}A{]} Calcule el radio cuadrático medio del estado fundamental del
+He y a partir de él obtenga una estimación del tamaño de este átomo.
+El radio cuadrático medio se define como \( rqm=\left\langle \sum r_{i}^{2}\right\rangle  \).
+\item {[}T{]} Obtenga una estimación de las energías de los niveles \( (1s,nx(l))X(l) \)
+del He, despreciando la integral de intercambio y resolviendo de forma
+semicuantitativa la integral directa.
+\item En la molécula de \( HCl \) se observa un cierto número de líneas
+de absorción cuyas energías (en \( cm^{-1} \)) son: \( 83.03,\, 103.73,\, 124.30,\, 145.03,\, 165.51 \)
+y \( 185.86 \). ¿Se trata de transiciones electromagnéticas asociadas
+al espectro vibracional o al rotacional?. En el primer caso ¿cúal
+es la frecuencia característica?. En el segundo ¿cúal es el momento
+de inercia y qué valores del momento angular les corresponden?.\\
+{\bf nota:} En las transiciones entre niveles moleculares asociados
+al mismo nivel electrónico se cumplen las siguientes reglas de selección:
+\( \Delta n=± 1,\, \Delta i=± 1 \).
+\item Considere la energía de una molécula en la aproximación \\
+\[
+E=E_{0e}+\frac{1}{2}\mu \omega ^{2}(\mathcal{R}-\mathcal{R}_{m})^{2}+\frac{\hbar ^{2}}{2\mu \mathcal{R}^{2}}i(i+1).\]
+\\
+Encuentre la posición en que la energía es mínima y calcule el momento
+de inercia utilizando la nueva posición de equilibrio. Demuestre que
+en estas condiciones la energía rotacional es de la forma\\
+\[
+E_{rot}=Ai(i+1)+B[i(i+1)]^{2}+\cdots \]
+
+\item Un nivel electrónico ligante puede describirse mediante el llamado
+potencial de \noun{Morse} \\
+\[
+E_{e}(\mathcal{R})=A\left\{ \left[ 1-\exp \left( -\frac{\mathcal{R}-\mathcal{R}_{0}}{B}\right) \right] ^{2}-1\right\} \]
+\\
+a) Explique el significado de los parámetros del pozo y haga un dibujo
+aproximado del mismo.\\
+b) Si \( A=10eV \) y \( \mathcal{R}_{0}=1A \) obtenga B a partir
+de la energía vibracional de punto cero que vale \( 0.5eV \).
+\item La figura muestra la energía potencial del nivel ligante de dos moléculas
+diatómicas homonucleares que poseen la misma masa reducida. Se pide
+que determine:\\
+a) ¿Cúal de ellas viene caracterizada por una mayor distancia internuclear?.\\
+b) ¿Cúal de ellas posee mayor energía vibracional de punto cero?.\\
+c) ¿En cúal de ellas es mayor le momento de inercia?.
+\end{enumerate}
+\vspace{0.3cm}
+\nofig
+\vspace{0.3cm}
+
+
+\subsection{Algunas soluciones}
+
+\begin{enumerate}
+\item[2.] Para obtener la energía del fundamental utilizamos \( n_{a}=n_{b}=1 \)
+ya que suponemos los dos electrones en el mismo nivel. La expresión
+de la energía en la aprox. de partícula independiente es\[
+E_{n_{a}n_{b}}=-\left( \frac{1}{n_{a}^{2}}+\frac{1}{n_{b}^{2}}\right) Z^{2}E_{I}+E_{I}\left( He^{+}\right) =-\left( \frac{1}{n_{a}^{2}}+\frac{1}{n_{b}^{2}}\right) Z^{2}E_{I}+54.4eV\]
+ Para el fundamental \\
+\[
+E_{11}=-Z^{2}E_{I}+54.4eV\]
+Aquí no hemos tenido en cuenta el apantallamiento. Para hacerlo substituimos
+\( Z=2 \) por una cierta \( Z_{ef} \) y así: \[
+E_{EF}=-2E_{I}Z_{ef}^{2}+54.4eV=-24.58eV\]
+Despejando la carga efectiva obtenemos\[
+Z_{ef}=1.7\]
+ es decir, que cada uno de los dos electrones {}``ve{}'', por culpa
+de la presencia del otro, no 2 protones, sino \( 1.7 \). Este resultado
+es muy parecido al que obtenemos con el método variacional:\[
+Z_{ef}=Z-\frac{5}{16}\]
+\end{enumerate}
+
+\end{document}

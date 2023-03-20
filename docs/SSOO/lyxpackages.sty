@@ -1,0 +1,52 @@
+\usepackage[squaren]{SIunits}
+\usepackage{longtable}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{verbatim}
+\newcommand{\noun}[1]{\textsc{#1}}
+%Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+\newcommand{\lyxline}[1]{
+  {#1 \vspace{1ex} \hrule width \columnwidth \vspace{1ex}}
+}
+\makeatletter
+\providecommand{\LyX}{L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
+
+%% Special footnote code from the package 'stblftnt.sty'
+%% Author: Robin Fairbairns -- Last revised Dec 13 1996
+\let\SF@@footnote\footnote
+\def\footnote{\ifx\protect\@typeset@protect
+    \expandafter\SF@@footnote
+  \else
+    \expandafter\SF@gobble@opt
+  \fi
+}
+\expandafter\def\csname SF@gobble@opt \endcsname{\@ifnextchar[%]
+  \SF@gobble@twobracket
+  \@gobble
+}
+\edef\SF@gobble@opt{\noexpand\protect
+  \expandafter\noexpand\csname SF@gobble@opt \endcsname}
+\def\SF@gobble@twobracket[#1]#2{}
+
+\floatstyle{ruled}
+\newfloat{algorithm}{tbp}{loa}
+\floatname{algorithm}{Algoritmo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+ \newenvironment{lyxcode}
+   {\begin{list}{}{
+     \setlength{\rightmargin}{\leftmargin}
+     \setlength{\listparindent}{0pt}% needed for AMS classes
+     \raggedright
+     \setlength{\itemsep}{0pt}
+     \setlength{\parsep}{0pt}
+     \normalfont\ttfamily}%
+    \item[]}
+   {\end{list}}
+
+
+\addto\extrasspanish{\bbl@deactivate{~}}
+\makeatother

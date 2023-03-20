@@ -1,0 +1,3036 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass book
+\begin_preamble
+\input{OE-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding latin1
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize a4paper
+\paperpackage a4
+\use_geometry 1
+\use_amsmath 1
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 2
+\papersides 2
+\paperpagestyle default
+
+\layout Chapter
+
+Difracción
+\begin_inset LatexCommand \label{cap difraccion}
+
+\end_inset 
+
+
+\layout Section
+
+Definición
+\layout Description
+
+Difracción Es la desviación de la propagación de la luz de lo predicho por
+ la óptica geométrica.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/comparacion-og-experimento.eps
+	display monochrome
+	width 4cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Comparación entre predicción de la OG y el resultado experimental.
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+hmm
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+La onda, tras su paso por la abertura, no queda cortada como establece la
+ OG, sino que se propaga de otra manera.
+ Vamos a escribir explícitamente la forma de esta propagación
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+se demuestra en la mayoría de los textos utilizando la ecuación de ondas
+ y el teorema de 
+\noun on 
+Green (
+\noun default 
+teoría de 
+\noun on 
+Kirchhoff
+\noun default 
+ o teoría de 
+\noun on 
+Rayleigh
+\noun default 
+-
+\noun on 
+Sommerfeld
+\noun default 
+).
+ Otra forma de resolverlo es considerar que sabemos cómo es la onda en el
+ plano de la abertura y descomponerla en ondas planas, para, seguidamente,
+ propagarlas hasta la pantalla.
+ Este método, quizá más intuitivo, es el que desarrollan 
+\noun on 
+Mandel
+\noun default 
+ y 
+\noun on 
+Wolf
+\noun default 
+ en 
+\emph on 
+Coherence and quantum optics 
+\emph default 
+(sección 3.2).
+\end_inset 
+
+.
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/esquema-solucion-difraccion.eps
+	display monochrome
+	width 5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Esquema de la solución al problema planteado
+\end_inset 
+
+
+\layout Section
+
+Principio de 
+\noun on 
+Huy\SpecialChar \-
+gens-Fres\SpecialChar \-
+nel
+\layout Standard
+
+Los puntos en el interior de la abertura 
+\begin_inset Formula $\Sigma$
+\end_inset 
+
+ se denotan 
+\begin_inset Formula $P\in\Sigma$
+\end_inset 
+
+ y el de la pantalla de observación, 
+\begin_inset Formula $P_{0}$
+\end_inset 
+
+.
+ 
+\begin_inset Formula $\mathbf{r}$
+\end_inset 
+
+ denota el vector que une un punto cualquiera de la abertura con cierto
+ punto de la pantalla, 
+\begin_inset Formula $\left|\mathbf{r}\right|=r$
+\end_inset 
+
+.
+ El principio de 
+\noun on 
+Huygens--Fresnel
+\noun default 
+ es 
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+\hat{u}\left(P_{0}\right)=\frac{1}{i\lambda}\int_{\Sigma}u\left(P\right)\cos\theta\frac{e^{ikr}}{r}\, ds\label{ec ppo Huygens-Fresnel}\end{equation}
+
+\end_inset 
+
+ 
+\begin_inset Quotes eld
+\end_inset 
+
+el campo después de la abertura es una superposición (interferencia) de
+ ondas esféricas (coherentes entre sí) procedentes de cada punto en el interior
+ de la abertura
+\begin_inset Quotes erd
+\end_inset 
+
+
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Nos centraremos en caracterizar las variaciones espaciales del campo y prescindi
+remos de incluir la dependencia temporal pues basta con multiplicar por
+ 
+\begin_inset Formula $e^{-i\omega t}$
+\end_inset 
+
+ en ambos miembros (las onda incidente y difractada tienen ambas la misma
+ frecuencia).
+ 
+\end_inset 
+
+.
+\layout Standard
+
+Estudiar la difracción no es entonces más que investigar cómo es el resultado
+ de esta superposición
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Algunos textos afirman que llamamos interferencia a la suma de un conjunto
+ discreto de ondas y difracción a la superposición de un continuo de ellas.
+\end_inset 
+
+.
+ La solución que hemos escrito es una aproximación porque
+\layout Enumerate
+
+La descripción es escalar.
+ 
+\layout Enumerate
+
+El valor de la onda bajo la integral es el de la onda incidente, como si
+ no fuera perturbado por la abertura.
+ Condiciones de validez:
+\begin_deeper 
+\layout Enumerate
+
+Tamaño: cuanto mayor sea la abertura, mejor funciona la aproximación.
+\layout Enumerate
+
+Observación: no debemos observar muy cerca de la abertura.
+\end_deeper 
+\layout Section
+
+Principio de 
+\noun on 
+Babinet
+\layout Standard
+
+La difracción también se puede observar no haciendo pasar la luz por una
+ abertura, sino interponiendo un obstáculo en su propagación.
+ El ppo de 
+\noun on 
+Babinet
+\noun default 
+ relaciona la onda difractada por una abertura con la onda difractada por
+ un obstáculo de la misma forma (
+\emph on 
+aberturas complementarias).
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/aberturas-complementarias.eps
+	display monochrome
+	width 2cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Aberturas complementarias.
+\end_inset 
+
+
+\emph default 
+Si sabemos cómo es la onda difractada por la abertura sabemos cómo es la
+ onda difractada por el obstáculo.
+ Aplicando la fórmula 
+\begin_inset LatexCommand \ref{ec ppo Huygens-Fresnel}
+
+\end_inset 
+
+ al obstáculo, y llamando a la onda por él difractada 
+\begin_inset Formula $\hat{u}'$
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray*}
+\hat{u}'\left(P_{0}\right) & = & \frac{1}{i\lambda}\int_{\Re^{2}-\Sigma}u\left(P\right)\cos\theta\frac{e^{ikr}}{r}\, ds\\
+ & = & \frac{1}{i\lambda}\int_{\Re^{2}}u\left(P\right)\cos\theta\frac{e^{ikr}}{r}\, ds\\
+ &  & -\frac{1}{i\lambda}\int_{\Sigma}u\left(P\right)\cos\theta\frac{e^{ikr}}{r}\, ds\end{eqnarray*}
+
+\end_inset 
+
+ El campo resultante es la onda incidente (primer término) menos el campo
+ difractado por la abertura, 
+\begin_inset Formula $\hat{u}\left(P_{0}\right)$
+\end_inset 
+
+ .
+ El principio de 
+\noun on 
+Babinet
+\noun default 
+ (que se puede escribir como teorema) es entonces 
+\begin_inset Formula \begin{eqnarray*}
+\hat{u}\left(P_{0}\right)+\hat{u}'\left(P_{0}\right) & = & u\left(P_{0}\right)\\
+\textrm{o}.\textrm{dif}.\textrm{abert}+\textrm{o}.\textrm{dif}.\textrm{obj} & = & \textrm{o}.\textrm{incidente}\end{eqnarray*}
+
+\end_inset 
+
+ Esto nos permite limitarnos a estudiar aberturas y olvidar los obstáculos.
+ 
+\layout Section
+
+Aproximaciones de 
+\noun on 
+Fresnel
+\noun default 
+ y 
+\noun on 
+Fraunhofer
+\layout Standard
+
+La fórmula de la difracción se podría escribir con una integral a todo el
+ espacio si utilizamos 
+\begin_inset Formula $u_{dp}\left(P\right)=t\left(P\right)u\left(P\right)$
+\end_inset 
+
+ (el campo incidente 
+\emph on 
+después
+\emph default 
+ de la pantalla) en lugar de 
+\begin_inset Formula $u\left(P\right)$
+\end_inset 
+
+).
+ Esto nos permite generalizar las aberturas, introduciendo un coeficiente
+ de transmisión, del siguiente modo
+\begin_inset Formula \[
+\hat{u}\left(P_{0}\right)=\frac{1}{i\lambda}\int t\left(P\right)u\left(P\right)\cos\left(\theta\right)\frac{e^{ikr}}{r}\, ds\]
+
+\end_inset 
+
+ el coeficiente 
+\begin_inset Formula $t$
+\end_inset 
+
+ puede ser incluso un número complejo, que además de cambiar la amplitud
+ de la onda modifique su fase.
+ Las aberturas que estábamos tratando antes eran todas del tipo simplificado:
+ 
+\begin_inset Quotes eld
+\end_inset 
+
+coeficiente de transmisión 1 en cierta región y 0 en su complementaria
+\begin_inset Quotes erd
+\end_inset 
+
+.
+\layout Standard
+
+A la hora de calcular el uso de la última fórmula es un poco engorroso.
+ En la mayor parte de los problemas se pueden hacer aproximaciones, como
+ la de 
+\noun on 
+Fresnel
+\noun default 
+ y la de 
+\noun on 
+Fraunhofer
+\noun default 
+.
+\layout Subsection
+
+
+\noun on 
+Fresnel
+\layout Standard
+
+Parametrizamos el plano de la abertura y el de observación por coordenadas
+ cartesianas; respectivamente 
+\begin_inset Formula $\left(\xi,\eta\right)$
+\end_inset 
+
+ y 
+\begin_inset Formula $\left(x,y\right)$
+\end_inset 
+
+.
+ Ambos son paralelos y están separados por una distancia 
+\begin_inset Formula $z$
+\end_inset 
+
+.
+ El primero contiene a 
+\begin_inset Formula $\Sigma$
+\end_inset 
+
+ y el segundo a 
+\begin_inset Formula $P_{0}$
+\end_inset 
+
+.
+ El origen de coordenadas 
+\begin_inset Formula $z$
+\end_inset 
+
+ lo establecemos en el centro de la abertura.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/aproximacion-fresnel.eps
+	display monochrome
+	width 6.5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Aproximación de 
+\noun on 
+Fresnel
+\noun default 
+.
+\end_inset 
+
+ 
+\layout Standard
+
+La difracción en el visible es un fenómeno débil.
+ La luz emergente no será muy diferente de la incidente sobre la abertura.
+ Si iluminamos ésta de forma normal, la luz emergente será aproximadamente
+ normal.
+ Consideraremos aberturas pequeñas (
+\begin_inset Formula $\xi,\eta$
+\end_inset 
+
+ pequeñas) y puntos de observación próximos al eje 
+\begin_inset Formula $z$
+\end_inset 
+
+.
+ Esta 
+\emph on 
+aproximación
+\emph default 
+ 
+\emph on 
+paraxial
+\emph default 
+ se puede concretar en
+\begin_inset Formula \[
+\left|x-\xi\right|,\left|y-\eta\right|\ll z\]
+
+\end_inset 
+
+ (que quiere decir también que observamos lejos de la abertura), y permite
+ aproximar en serie la 
+\begin_inset Formula $r$
+\end_inset 
+
+ que aparece en la fórmula: 
+\begin_inset Formula \[
+r=\sqrt{\left(x-\xi\right)^{2}+\left(y-\eta\right)^{2}+z^{2}}\]
+
+\end_inset 
+
+ Utilizaremos dos niveles de aproximación
+\layout Itemize
+
+Para 
+\begin_inset Formula $\cos\theta=\frac{z}{r}$
+\end_inset 
+
+ y el denominador de 
+\begin_inset Formula $\frac{e^{ikr}}{r}$
+\end_inset 
+
+ utilizaremos 
+\begin_inset Formula $r\simeq z$
+\end_inset 
+
+.
+\layout Itemize
+
+En la fase de 
+\begin_inset Formula $e^{ikr}$
+\end_inset 
+
+ necesitamos algo más fino, pues 
+\begin_inset Formula $r$
+\end_inset 
+
+ va multiplicado por un número enorme, 
+\begin_inset Formula $k$
+\end_inset 
+
+ y el resultado es muy sensible a las variaciones de fase (la amplitud puede
+ ser una o su opuesta sólo por una diferencia de 
+\begin_inset Formula $\pi$
+\end_inset 
+
+).
+ Procediendo como en el interferómetro de 
+\noun on 
+Young:
+\noun default 
+
+\begin_inset Formula \begin{eqnarray*}
+r & = & z\sqrt{1+\frac{\left(x-\xi\right)^{2}+\left(y-\eta\right)^{2}}{z^{2}}}\\
+ & \simeq & z+\frac{\left(x-\xi\right)^{2}+\left(y-\eta\right)^{2}}{2z}\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Standard
+
+Éste es el núcleo de la 
+\begin_inset Quotes eld
+\end_inset 
+
+aproximación paraxial
+\begin_inset Quotes erd
+\end_inset 
+
+ en difracción.
+ La fórmula ahora toma el siguiente aspecto 
+\emph on 
+(aproximación de 
+\noun on 
+Fresnel
+\noun default 
+)
+\emph default 
+
+\begin_inset Formula \[
+\hat{u}\left(P_{0}\right)\simeq\frac{e^{ikz}}{i\lambda z}\int t\left(\xi,\eta\right)u\left(\xi,\eta\right)e^{i\frac{k}{2z}\left(\left(x-\xi\right)^{2}+\left(y-\eta\right)^{2}\right)}\, d\xi d\eta\]
+
+\end_inset 
+
+
+\emph on 
+ 
+\emph default 
+donde las variables aparecen en una exponencial cuadrática, lo que es mucho
+ más manejable que los módulos de la fórmula no aproximada.
+ Salvo en algún problema, tampoco utilizaremos esta fórmula, sino más bien
+ la de 
+\noun on 
+Fraunhofer
+\noun default 
+.
+\layout Subsection
+
+Aproximación de 
+\noun on 
+Fraunhofer
+\layout Subsubsection
+
+Fundamento; Importancia práctica
+\layout Standard
+
+La idea de 
+\noun on 
+Fraunhofer
+\noun default 
+ es desarrollar el exponente así 
+\begin_inset Formula \[
+\frac{k}{2z}\left(\left(x-\xi\right)^{2}+\left(y-\eta\right)^{2}\right)=\frac{k}{2z}\left(x^{2}+\xi^{2}-2\xi x+y^{2}+\eta^{2}-2\eta y\right)\]
+
+\end_inset 
+
+ Es fácil librarse de 
+\begin_inset Formula $x^{2}$
+\end_inset 
+
+ y de 
+\begin_inset Formula $y^{2}$
+\end_inset 
+
+, pues no hay que integrar sobre ellos.
+ Más difícil es librarse de 
+\begin_inset Formula $\xi^{2}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\eta^{2}$
+\end_inset 
+
+, y la aproximación de FF consiste precisamente en decir que su contribución
+ a la integral es pequeña.
+ Dicho de otro modo
+\begin_inset Formula \begin{eqnarray*}
+\frac{k}{2z}\left(\xi^{2}+\eta^{2}\right) & \ll & 1\\
+z & \gg & \frac{\pi}{\lambda}\left(\xi^{2}+\eta^{2}\right)\end{eqnarray*}
+
+\end_inset 
+
+ Básicamente esta aproximación consiste en observar desde un poco más lejos.
+ Obtenemos así la fórmula de 
+\noun on 
+Fraunhofer:
+\begin_inset Formula \[
+\hat{u}\left(P_{0}\right)=\frac{e^{ik\left(z+\frac{x^{2}+y^{2}}{2z}\right)}}{i\lambda z}\int t\left(\xi,\eta\right)u\left(\xi,\eta\right)e^{-i\frac{k}{z}\left(\xi x+\eta y\right)}\, d\xi d\eta\]
+
+\end_inset 
+
+
+\layout Description
+
+Ejemplo ¿Cuán lejos hay que irse si la abertura es de 
+\begin_inset Formula $1mm$
+\end_inset 
+
+, con luz visible para que valga la aproximación?
+\begin_deeper 
+\layout Standard
+
+
+\size small 
+
+\begin_inset Formula $\xi^{2}+\eta^{2}\sim10^{-6}m^{2}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\lambda\sim5\times10^{-7}m$
+\end_inset 
+
+ implica que 
+\begin_inset Formula $z\gg10m$
+\end_inset 
+
+.
+
+\size default 
+ 
+\size small 
+Hay que alejarse bastante; teniendo en cuenta que la energía emitida por
+ un punto se reparte por la superficie de una esfera (que crece con el radio
+ al cuadrado), puede que a esa distancia 
+\emph on 
+haya 
+\emph default 
+difracción pero no podamos 
+\emph on 
+verla
+\emph default 
+.
+\end_deeper 
+\layout Standard
+
+Hay una forma de satisfacer la condición de FF sin alejarse de la abertura.
+ Consiste en irse al infinito utilizando una lente delgada convergente.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/uso-lente-convergente-fraunhofer.eps
+	display monochrome
+	width 4cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Uso de una lente convergente para entrar en la aproximación de FF.
+\end_inset 
+
+Al poner en el camino de la luz una lente de este tipo, la luz que iría
+ a parar a un 
+\begin_inset Formula $P_{0}$
+\end_inset 
+
+ en el infinito va a concurrir, de hecho, sobre un punto cercano en el plano
+ focal imagen de la lente.
+ Ubicaremos la lente, por sencillez, paralela al plano que contiene la abertura.
+\layout Standard
+
+Debemos modificar ligeramente la fórmula, pues las coordenadas de 
+\begin_inset Formula $P_{0}$
+\end_inset 
+
+ cambiarán al moverse de un punto muy lejano al plano focal imagen.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/nuevas-coord-fraunhofer.eps
+	display monochrome
+	width 6cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Nuevo sistema de coordenadas.
+\end_inset 
+
+Ahora a las coordenadas sobre ese plano las llamaremos 
+\begin_inset Formula $x',y'$
+\end_inset 
+
+.
+ Su relación con las anteriores se calcula con un poco de trigonometría
+ 
+\begin_inset Formula \begin{eqnarray*}
+\tan\theta_{x} & = & \frac{x}{z}\\
+ & = & \frac{x'}{f'}\end{eqnarray*}
+
+\end_inset 
+
+ de donde 
+\begin_inset Formula $x'=\frac{x}{z}f'$
+\end_inset 
+
+ e 
+\begin_inset Formula $y'=\frac{y}{z}f'$
+\end_inset 
+
+.
+\layout Standard
+
+Omitiendo la constante de proporcionalidad fuera de la integral, la integral
+ que manejaremos será:
+\begin_inset Formula \[
+\hat{u}\left(x',y'\right)\propto\int t\left(\xi,\eta\right)u\left(\xi,\eta\right)e^{-i\frac{k}{f'}\left(x'\xi+y'\eta\right)}\, d\xi d\eta\]
+
+\end_inset 
+
+ ya sólo tenemos que aplicar la fórmula (válida en aproximación de FF y
+ usando una lente delgada convergente).
+\layout Subsubsection
+
+Principio de 
+\noun on 
+Babinet
+\noun default 
+ en aproximación de FF con iluminación por ondas planas
+\layout Standard
+
+El principio de 
+\noun on 
+Babinet
+\noun default 
+ determina cómo se relacionan figuras de difracción producidas por aberturas
+ complementarias.
+\begin_inset Formula \begin{eqnarray*}
+\hat{u}\left(P_{0}\right)+\hat{u}'\left(P_{0}\right) & = & u\left(P_{0}\right)\\
+\textrm{o}.\textrm{dif}.\textrm{abert}+\textrm{o}.\textrm{dif}.\textrm{obj} & = & \textrm{o}.\textrm{incidente}\end{eqnarray*}
+
+\end_inset 
+
+ Vamos a ver cómo se escribe esta expresión cuando la onda que ilumina la
+ abertura es plana y estamos trabajando en las condiciones de la aproximación
+ de 
+\noun on 
+Fraunhofer
+\noun default 
+.
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+nofig
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig que demonios va aqui}
+
+\end_inset 
+
+
+\begin_inset Formula $P_{0}$
+\end_inset 
+
+ está en el plano focal imagen de una lente convergente.
+\end_inset 
+
+Una onda plana al atravesar una lente converge a un punto del plano focal
+ imagen, que en la figura 
+\begin_inset LatexCommand \ref{fig que demonios va aqui}
+
+\end_inset 
+
+ se ha etiquetado como 
+\begin_inset Formula $P_{k}$
+\end_inset 
+
+.
+ Por lo tanto, en aproximación de 
+\noun on 
+Fraunhofer
+\begin_inset Formula \[
+u\left(P_{0}\right)=0\]
+
+\end_inset 
+
+
+\noun default 
+ en cualquier 
+\begin_inset Formula $P_{0}\neq P_{k}$
+\end_inset 
+
+.
+ El ppo de 
+\noun on 
+Babinet
+\noun default 
+ se escribe entonces 
+\begin_inset Formula $\forall P_{0}\neq P_{k}$
+\end_inset 
+
+ como
+\begin_inset Formula \[
+\hat{u}\left(P_{0}\right)+\hat{u}'\left(P_{0}\right)=0\]
+
+\end_inset 
+
+ de donde
+\begin_inset Formula \begin{eqnarray*}
+\hat{u}\left(P_{0}\right) & = & -\hat{u}'\left(P_{0}\right)\\
+I'\left(P_{0}\right) & = & I\left(P_{0}\right)\end{eqnarray*}
+
+\end_inset 
+
+ Es decir, que para dos aberturas complementarias 
+\layout Enumerate
+
+en régimen 
+\noun on 
+Fraunhofer
+\layout Enumerate
+
+iluminadas por ondas planas
+\layout Standard
+
+las figuras de difracción son iguales salvo en un punto.
+\layout Section
+
+Círculos\SpecialChar \ldots{}
+
+\layout Subsection
+
+Abertura circular
+\layout Standard
+
+La abertura será iluminada por una onda plana.
+ Trabajaremos en aproximación de 
+\noun on 
+Fraunhofer
+\noun default 
+.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/difraccion-por-circulos.eps
+	display monochrome
+	width 6.5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Planteamiento geométrico del problema.
+ Plano del orificio 
+\begin_inset Formula $z=0$
+\end_inset 
+
+, radio de la abertura 
+\begin_inset Formula $R$
+\end_inset 
+
+.
+ 
+\end_inset 
+
+Al enfrentar cualquier problema de este tipo tenemos que especificar
+\layout Enumerate
+
+Cómo es la abertura (función 
+\begin_inset Formula $t\left(\xi,\eta\right)$
+\end_inset 
+
+).
+ En este caso 
+\begin_inset Formula $t\left(P\right)=1\:\forall P\in\Sigma$
+\end_inset 
+
+ y 
+\begin_inset Formula $t\left(P\right)=0\:\forall P\not\in\Sigma$
+\end_inset 
+
+.
+ 
+\layout Enumerate
+
+Cómo es la iluminación (función 
+\begin_inset Formula $u\left(\xi,\eta\right)$
+\end_inset 
+
+).
+ En este caso es una onda plana
+\begin_inset Formula \[
+u\left(\xi,\eta\right)=u_{0}e^{i\left(k_{x}\xi+k_{y}\eta\right)}\]
+
+\end_inset 
+
+ con 
+\begin_inset Formula $u_{0}$
+\end_inset 
+
+ constante (evaluado en 
+\begin_inset Formula $z=0$
+\end_inset 
+
+).
+\layout Standard
+
+Este caso tan sencillo ilustrará el fenómeno de la difracción.
+ Queremos saber cómo será la onda en el plano focal imagen.
+ Recordemos que hemos tirado a la basura el factor temporal 
+\begin_inset Formula $e^{i\omega t}$
+\end_inset 
+
+, suponiendo tácitamente que está en todas partes pero ahorrándonos escribirlo.
+\layout Standard
+
+Para resolver el problema sólo queda abordar la integral encontrando un
+ buen sistema de coordenadas: 
+\begin_inset Formula \begin{eqnarray*}
+\xi & = & \rho\cos\theta\\
+\eta & = & \rho\sin\theta\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Standard
+
+También tomaremos polares (con respecto a un punto que no es el origen)
+ en el plano focal imagen (ver figura 
+\begin_inset LatexCommand \ref{fig coor polares en el plano focal imagen}
+
+\end_inset 
+
+)
+\begin_inset Formula \begin{eqnarray*}
+x' & = & f'\frac{k_{x}}{k}+\rho'\cos\theta'\\
+y' & = & f'\frac{k_{y}}{k}+\rho'\sin\theta'\end{eqnarray*}
+
+\end_inset 
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/coor-polares-plano-focal-imagen.eps
+	display monochrome
+	width 5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig coor polares en el plano focal imagen}
+
+\end_inset 
+
+Coordenadas polares 
+\begin_inset Formula $\rho',\theta'$
+\end_inset 
+
+ en el plano focal imagen.
+ El origen está desplazado 
+\begin_inset Formula $f'\frac{k_{y}}{k}$
+\end_inset 
+
+ en el eje 
+\begin_inset Formula $y$
+\end_inset 
+
+ y 
+\begin_inset Formula $f'\frac{k_{x}}{k}$
+\end_inset 
+
+ en el eje 
+\begin_inset Formula $x$
+\end_inset 
+
+.
+\end_inset 
+
+Tenemos dos exponenciales complejas (la de la iluminación y la del núcleo
+ integral) que se pueden fundir como sigue
+\begin_inset Formula \[
+\hat{u}\left(x',y'\right)\propto\int_{\Sigma}u_{0}e^{i\left(\left(k_{x}-k\frac{x'}{f'}\right)\xi+\left(k_{y}-k\frac{y'}{f'}\right)\eta\right)}\, d\xi d\eta\]
+
+\end_inset 
+
+ la forma del exponente explica la elección de coordenadas para el plano
+ focal imagen 
+\begin_inset Formula \[
+\hat{u}\left(x',y'\right)\propto\int_{0}^{R}\rho d\rho\int_{0}^{2\pi}d\theta\, u_{0}e^{-i\frac{k}{f'}\rho\rho'\left(\cos\theta\cos\theta'+\sin\theta\sin\theta'\right)}\]
+
+\end_inset 
+
+el paréntesis es igual a 
+\begin_inset Formula $\cos\left(\theta-\theta'\right)$
+\end_inset 
+
+, así que
+\begin_inset Formula \[
+\hat{u}\left(x',y'\right)\propto\int_{0}^{R}\rho d\rho\int_{0}^{2\pi}d\theta\, u_{0}e^{-i\frac{k}{f'}\rho\rho'\left(\cos\left(\theta-\theta'\right)\right)}\]
+
+\end_inset 
+
+ esta integral no va a depender de 
+\begin_inset Formula $\theta'$
+\end_inset 
+
+ porque da lo mismo qué límites tenga la integral mientras abarque una circunfer
+encia.
+\begin_inset Formula \[
+\hat{u}\left(x',y'\right)\propto\int_{0}^{R}\rho d\rho\int_{0}^{2\pi}d\theta\, u_{0}e^{-i\frac{k}{f'}\rho\rho'\cos\theta}\]
+
+\end_inset 
+
+ La onda va a depender sólo de la variable 
+\begin_inset Formula $\rho'$
+\end_inset 
+
+.
+ Estas integrales necesitan para su resolución de las funciones de 
+\noun on 
+Bessel
+\noun default 
+.
+\begin_inset Formula \[
+\hat{u}\left(\rho'\right)\propto2\pi\int_{0}^{R}\rho\, d\rho\, J_{0}\left(\frac{k\rho\rho'}{f'}\right)\]
+
+\end_inset 
+
+ para llegar a la forma final tenemos aún que incluir otra función de 
+\noun on 
+Bessel
+\noun default 
+:
+\begin_inset Formula \[
+\hat{u}\left(\rho'\right)\propto\frac{f'}{k\rho'}RJ_{1}\left(\frac{kR\rho'}{f'}\right)\]
+
+\end_inset 
+
+ Normalmente estaremos más interesados en intensidades que en campos,
+\begin_inset Formula \begin{eqnarray*}
+I\left(\rho'\right) & \propto & \left|\hat{u}\left(\rho'\right)\right|^{2}I\left(\rho'\right)\\
+ & = & I_{0}\left(\frac{2J_{1}\left(\frac{kR}{f'}\rho'\right)}{\frac{kR}{f'}\rho'}\right)^{2}\end{eqnarray*}
+
+\end_inset 
+
+ donde 
+\begin_inset Formula $I_{0}$
+\end_inset 
+
+ contiene todas las constantes que han ido apareciendo y algunas más que
+ son necesarias.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+nofig
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset Formula $\frac{I\left(\rho'\right)}{I\left(0\right)}$
+\end_inset 
+
+ en función de 
+\begin_inset Formula $\frac{kR}{f'}\rho'$
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+La magnitud de los máximos decae en picado, por lo que basta con considerar
+ el principal y, como mucho, los dos secundarios.
+ La imagen en el plano focal se muestra en la figura.
+ Centrado en el punto 
+\begin_inset Formula $0$
+\end_inset 
+
+ de las polares especiales veríamos un círculo intenso y una serie de anillos
+ concéntricos progresivamente más tenues en torno a él.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/dif-circular-aspecto.eps
+	display monochrome
+	width 5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Aspecto en el plano focal imagen.
+ 
+\end_inset 
+
+
+\layout Subsubsection
+
+Interpretación
+\layout Enumerate
+
+La distribución de intensidad que aparece en el plano focal imagen es lo
+ que llamamos difracción, puesto que lo que se vería, de ser válida la OG
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+según la cual una abertura iluminada por un haz de rayos paralelos produce
+ una imagen puntual tras pasar por la lente convergente.
+\end_inset 
+
+, sería un punto allí donde realmente vemos una mancha rodeada por anillos.
+ Dicho de otro modo, después de la abertura la OE nos dice que 
+\emph on 
+no tenemos una onda plana
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+tal vez sea una 
+\emph on 
+colección
+\emph default 
+ de ondas planas, pero no 
+\emph on 
+una
+\emph default 
+ única.
+\end_inset 
+
+
+\emph default 
+, pues de ser así obtendríamos una imagen puntual.
+\layout Enumerate
+
+El tamaño de la mancha central se puede calcular obteniendo el radio del
+ máximo central (que concentra el 84% de la luz).
+ El radio del primer cero de la función de la figura es 
+\begin_inset Formula \begin{eqnarray*}
+\frac{2\pi}{\lambda}\frac{R}{f'}r' & = & 1.220\pi\\
+r' & = & 1.22\frac{\lambda}{2R}f'\end{eqnarray*}
+
+\end_inset 
+
+
+\begin_deeper 
+\layout Enumerate
+
+La dependencia con 
+\begin_inset Formula $f'$
+\end_inset 
+
+ es irrelevante (cuanto más lejos esté el plano, proporcionalmente más grande
+ se proyecta la mancha).
+ 
+\layout Enumerate
+
+En cuanto a 
+\begin_inset Formula $R$
+\end_inset 
+
+, la mancha central es inversamente proporcional en tamaño a la abertura
+ de la fuente (tampoco el 
+\begin_inset Formula $R$
+\end_inset 
+
+ puede ser demasiado pequeño si queremos conservar la validez del principio
+ de 
+\noun on 
+Huygens
+\noun default 
+--
+\noun on 
+Fresnel
+\noun default 
+).
+ En la vida ordinaria no vemos los efectos de la difracción
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Las pequeñas manchas coloreadas que vemos al mirar al cielo en los alrededores
+ del sol podrían estar causadas por la difracción de su luz en motas de
+ polvo de las pestañas.
+\end_inset 
+
+ porque la luz raramente encuentra aberturas lo suficientemente pequeñas.
+\layout Enumerate
+
+La mancha crece linealmente en tamaño con la longitud de onda.
+ Si iluminamos con luz blanca, cada componente monocromática da lugar a
+ una figura de difracción.
+ La distribución de intensidad sería coloreada, porque las figuras de diversas
+ 
+\begin_inset Formula $\lambda$
+\end_inset 
+
+ no coinciden entre sí.
+ Algunos textos plantean la óptica geométrica como el límite en que 
+\begin_inset Formula $\lambda\fd0$
+\end_inset 
+
+ (cuando 
+\begin_inset Formula $\lambda$
+\end_inset 
+
+ es tan pequeña que permite descartar la difracción para un orden de magnitud
+ dado de tamaño de rendija).
+\end_deeper 
+\layout Description
+
+Ejemplo Para una onda monocromática de 
+\begin_inset Formula $\lambda=500nm$
+\end_inset 
+
+ ¿cuál es el tamaño de la mancha central de difracción causada por una abertura
+ circular de 
+\begin_inset Formula $R=1mm$
+\end_inset 
+
+ tras pasar por una lente de 
+\begin_inset Formula $f'=10cm$
+\end_inset 
+
+? 
+\begin_deeper 
+\layout Standard
+
+
+\size small 
+La solución es 
+\begin_inset Formula $R=20\mu m$
+\end_inset 
+
+.
+ Se trata de un efecto relativamente pequeño.
+\end_deeper 
+\layout Subsection
+
+Poder resolutivo de los instrumentos ópticos
+\layout Standard
+
+La difracción limita la capacidad de los instrumentos ópticos de formar
+ buenas imágenes.
+ Vamos a tomar un par de puntos que consideraremos muy alejados de un sistema
+ óptico formador de imagen que representaremos por una lente delgada convergente.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/sistema-optico-resolucion.eps
+	display monochrome
+	width 7cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Llamaremos 
+\begin_inset Formula $D$
+\end_inset 
+
+ la distancia mutua de los objetos puntuales, 
+\begin_inset Formula $L$
+\end_inset 
+
+ a su distancia al instrumento, 
+\begin_inset Formula $f'$
+\end_inset 
+
+ a la focal del sistema y 
+\begin_inset Formula $d$
+\end_inset 
+
+ a la distancia entre las dos imágenes formadas.
+\end_inset 
+
+
+\layout Standard
+
+Éste es un problema de difracción de FF en la medida en que cualquier sistema
+ óptico constituye un diafragma (=abertura) para la luz.
+ 
+\layout Standard
+
+La luz proveniente de ambos objetos llegará en forma de onda plana a la
+ abertura (circular), en la que se difractará.
+ En el plano focal se formarán dos manchas de difracción.
+ La imagen pierde calidad.
+ Una forma de medir esta degradación debida a la difracción es usar el parámetro
+ 
+\emph on 
+poder resolutivo.
+\layout Standard
+
+Si las dos manchas--imagen solaparan, habría pérdida de información, pues
+ sólo seríamos capaces de ver una imagen de dos objetos.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+nofig
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Puntos resueltos y no resueltos.
+ Situación intermedia.
+\end_inset 
+
+El criterio es que las imágenes están resueltas si distan entre sí más que
+ el tamaño de la mancha central de difracción.
+\begin_inset Formula \[
+d\geq r'\]
+
+\end_inset 
+
+ y no lo estarán en otro caso.
+ Dicho de otro modo
+\begin_inset Formula \[
+d\geq1.22\frac{\lambda}{2R}f'\]
+
+\end_inset 
+
+ o bien (por trigonometría),
+\begin_inset Formula \begin{eqnarray*}
+\frac{d}{f'} & \geq & 1.22\frac{\lambda}{2R}\\
+\frac{D}{L} & \geq & 1.22\frac{\lambda}{2R}\end{eqnarray*}
+
+\end_inset 
+
+Éste es un criterio de resolución 
+\emph on 
+angular
+\emph default 
+.
+ Sólo depende de la longitud de onda y del tamaño de la abertura.
+ Pero no depende de la focal: no aumentamos el poder resolutivo con un instrumen
+to que aumente más (
+\emph on 
+aumento vacío
+\emph default 
+).
+ Esto significa que para mejorar el poder resolutivo debemos utilizar un
+ telescopio más grande, o un microscopio de menor longitud de onda (por
+ ejemplo, de electrones).
+\layout Standard
+
+El poder resolutivo de un instrumento es pues su capacidad de distinguir
+ objetos próximos.
+ Para un instrumento compuesto hay que considerar esto de modo relativo,
+ pues el primer diafragma destruirá las ondas planas y habrá que hacer cálculos
+ extra para los siguientes.
+\layout Section
+
+Rectángulos\SpecialChar \ldots{}
+
+\layout Standard
+
+Vamos a considerar el problema de una abertura rectangular iluminada por
+ ondas planas en la aproximación de 
+\noun on 
+Fraunhofer
+\noun default 
+ y después particularizaremos para el caso importante de una rendija (una
+ abertura rectangular de anchura despreciable).
+\layout Subsection
+
+Abertura rectangular
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/difraccion-rectangulos.eps
+	display monochrome
+	width 7cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Difracción por una abertura rectangular
+\end_inset 
+
+La función de transmisión en el plano de las aberturas es 
+\begin_inset Formula $t\left(\xi,\eta\right)=1$
+\end_inset 
+
+ si 
+\begin_inset Formula $\xi,\eta\,\in\Sigma$
+\end_inset 
+
+ y 
+\begin_inset Formula $t\left(\xi,\eta\right)=0$
+\end_inset 
+
+ para fuera de la rendija.
+ La iluminación es una oap
+\begin_inset Formula \[
+u=u_{0}e^{i\mathbf{k}\cdot\mathbf{r}}u\left(\xi,\eta\right)=u_{0}e^{i\left(k_{x}\xi+k_{y}\eta\right)}\]
+
+\end_inset 
+
+ Sólo queda hacer la integral
+\size small 
+
+\begin_inset Formula \begin{eqnarray*}
+\hat{u}\left(x',y'\right) & \propto & \int_{-\frac{a}{2}}^{\frac{a}{2}}d\xi\int_{-\frac{b}{2}}^{\frac{b}{2}}u_{0}e^{i\left(k_{x}\xi+k_{y}\eta\right)}e^{-i\frac{k}{f'}\left(x'\xi+y'\eta\right)}\, d\eta\\
+ & \propto & \int_{-\frac{a}{2}}^{\frac{a}{2}}e^{i\xi\left(k_{x}-k\frac{x'}{f'}\right)}\, d\xi\:\int_{-\frac{b}{2}}^{\frac{b}{2}}e^{i\eta\left(k_{y}-k\frac{y'}{f'}\right)}\, d\eta\end{eqnarray*}
+
+\end_inset 
+
+
+\size default 
+ cuyo resultado es
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+recordemos que se define el seno cardinal del ángulo 
+\begin_inset Formula $\phi$
+\end_inset 
+
+ como 
+\begin_inset Formula $\mathrm{sinc}\,\left(\phi\right)=\frac{\sin\phi}{\phi}$
+\end_inset 
+
+.
+\end_inset 
+
+
+\size small 
+
+\begin_inset Formula \[
+\hat{u}\left(x',y'\right)\propto4\,\mathrm{sinc}\,\left[\left(k_{x}-k\frac{x'}{f'}\right)\frac{a}{2}\right]\times\mathrm{sinc}\,\left[\left(k_{y}-k\frac{y'}{f'}\right)\frac{b}{2}\right]\]
+
+\end_inset 
+
+
+\size default 
+ nos interesa la intensidad (proporcional al cuadrado del campo)
+\begin_inset Formula \begin{eqnarray*}
+I\left(x',y'\right) & = & I\left(0,0\right)\mathrm{sinc}^{2}\,\left[\left(k_{x}-k\frac{x'}{f'}\right)\frac{a}{2}\right]\\
+ &  & \times\mathrm{sinc}^{2}\,\left[\left(k_{y}-k\frac{y'}{f'}\right)\frac{b}{2}\right]\end{eqnarray*}
+
+\end_inset 
+
+ donde la constante 
+\begin_inset Formula $I\left(0,0\right)$
+\end_inset 
+
+ lleva todas las constantes omitidas en la integración.
+ Para hacernos una idea de cómo es la distribución de intensidades, podemos
+ ver la figura.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/m-senocardinal-cuadrado.eps
+	display monochrome
+	width 5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Gráfico 
+\begin_inset Formula $\mathrm{sinc}^{2}\,\left(\phi\right)$
+\end_inset 
+
+.
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+creo que hay que aprovechar para tirarse el rollo con un
+\layout Standard
+
+grafico a dos dimensiones: el autentico aspecto de la pantalla
+\layout Standard
+
+rojo
+\end_inset 
+
+
+\end_inset 
+
+ Constatamos lo siguiente
+\layout Itemize
+
+Es similar a la función de 
+\noun on 
+Bessel
+\noun default 
+ 
+\begin_inset Formula $J_{1}$
+\end_inset 
+
+ obtenida para la abertura circular.
+\layout Itemize
+
+Veremos el primer máximo y, a lo mejor, el segundo, pero poco más, ya que
+ la intensidad decrece rápidamente.
+\layout Itemize
+
+La imagen que veremos en el plano focal imagen es como la de la figura.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/dif-rectangulo-aspecto.eps
+	display monochrome
+	width 4cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig difraccion por rectangulo: pantalla}
+
+\end_inset 
+
+Abertura rectangular: aspecto de la pantalla de observación.
+\end_inset 
+
+Podemos estimar el tamaño en función del tamaño del máximo central en cada
+ una de las direcciones.
+\begin_deeper 
+\layout Itemize
+
+En la dirección 
+\begin_inset Formula $x'$
+\end_inset 
+
+ las coordenadas 
+\begin_inset Formula $x'_{1}$
+\end_inset 
+
+ del cero que limita al máximo central por la derecha y 
+\begin_inset Formula $x'_{-1}$
+\end_inset 
+
+ del que lo limita por la izquierda son, respectivamente:
+\begin_inset Formula \begin{eqnarray*}
+\left(k_{x}-k\frac{x'_{1}}{f'}\right)\frac{a}{2} & = & \pi\\
+\left(k_{x}-k\frac{x'_{-1}}{f'}\right)\frac{a}{2} & = & -\pi\end{eqnarray*}
+
+\end_inset 
+
+ por lo que el tamaño del máximo central en la dirección 
+\begin_inset Formula $x'$
+\end_inset 
+
+ resulta ser
+\begin_inset Formula \begin{eqnarray*}
+\Delta x & = & \left|x'_{1}-x'_{-1}\right|\\
+ & = & \frac{2f'\lambda}{a}\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Itemize
+
+En la dirección 
+\begin_inset Formula $y'$
+\end_inset 
+
+ los cálculos son análogos, y su resultado es
+\begin_inset Formula \[
+\Delta y=\frac{2f'\lambda}{b}\]
+
+\end_inset 
+
+
+\end_deeper 
+\layout Itemize
+
+Todo lo que es apartamiento de la óptica geométrica (es decir, de la imagen
+ puntual) es lo que llamamos difracción.
+\layout Itemize
+
+En cuanto al tamaño de la figura de difracción, crece linealmente con 
+\begin_inset Formula $\lambda$
+\end_inset 
+
+ y es inversamente proporcional al tamaño de la abertura, al igual que sucedía
+ para la abertura circular.
+\layout Subsection
+
+Rendija
+\layout Standard
+
+Si una de las dimensiones de la abertura es muy grande comparada con la
+ otra tenemos una rendija.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/rendija.eps
+	display monochrome
+	width 4cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Una rendija: 
+\begin_inset Formula $b\ll a$
+\end_inset 
+
+
+\end_inset 
+
+Seguimos teniendo una abertura rectangular; por lo tanto la solución ya
+ la hemos calculado.
+ Sólo debemos introducir el hecho de que en una dirección es mucho mayor
+ que en otra.
+ Es lo mismo que hacer tender una de ellas a 
+\begin_inset Formula $\infty$
+\end_inset 
+
+: 
+\begin_inset Formula $\beta\fd\infty$
+\end_inset 
+
+.
+ En ese caso
+\layout Itemize
+
+en el eje 
+\begin_inset Formula $x$
+\end_inset 
+
+ la figura de difracción no cambia.
+\layout Itemize
+
+
+\begin_inset Formula $\Delta y\fd0$
+\end_inset 
+
+: en el eje 
+\begin_inset Formula $y$
+\end_inset 
+
+ todo se ve comprimido.
+\layout Standard
+
+Como se puede ver en la figura 
+\begin_inset LatexCommand \ref{fig figura de difrac. rendija vert}
+
+\end_inset 
+
+, la intensidad se distribuye a lo largo del eje 
+\begin_inset Formula $x$
+\end_inset 
+
+ según un patrón de difracción, puesto que la abertura es pequeña.
+ Sin embargo, en el eje 
+\begin_inset Formula $y$
+\end_inset 
+
+ no hay difracción, por lo que vale la óptica geométrica.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/f-figura-dif-rendija.eps
+	display monochrome
+	width 4cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig figura de difrac. rendija vert}
+
+\end_inset 
+
+Figura de difracción de una rendija vertical.
+ Nótese que la intensidad se distribuye 
+\emph on 
+horizontalmente.
+\end_inset 
+
+ 
+\layout Standard
+
+Es un problema unidimensional con
+\begin_inset Formula \begin{eqnarray*}
+I\left(x'\right) & = & I\left(0\right)\left(\frac{\sin\phi}{\phi}\right)^{2}\\
+ & = & I\left(0\right)\,\mathrm{sinc}^{2}\left[\left(k\frac{x'}{f'}-kx\right)\frac{a}{2}\right]\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Section
+
+Doble rendija
+\layout Standard
+
+Esto corresponde a retornar al interferómetro de 
+\noun on 
+Young
+\noun default 
+.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/diag-lateral-doble-rendija.eps
+	display monochrome
+	width 8cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Doble rendija.
+ 
+\begin_inset Formula $\Sigma$
+\end_inset 
+
+ y 
+\begin_inset Formula $\Sigma'$
+\end_inset 
+
+ son las rendijas de altura 
+\begin_inset Formula $a$
+\end_inset 
+
+ (separadas una distancia 
+\begin_inset Formula $d$
+\end_inset 
+
+).
+ Se iluminan por una oap que forma un ángulo 
+\begin_inset Formula $\theta$
+\end_inset 
+
+ con el eje.
+ 
+\begin_inset Formula $\theta'$
+\end_inset 
+
+ es el ángulo que parametriza el punto de observación en el plano focal
+ imagen 
+\begin_inset Formula $\left(x'\right)$
+\end_inset 
+
+.
+ 
+\begin_inset Formula $z=0$
+\end_inset 
+
+ sobre el plano de las rendijas.
+\end_inset 
+
+Por sencillez, vamos a pensar que 
+\begin_inset Formula $\mathbf{k}$
+\end_inset 
+
+ está en el plano 
+\begin_inset Formula $\xi z$
+\end_inset 
+
+ por lo que 
+\begin_inset Formula $k_{y}=0$
+\end_inset 
+
+ y 
+\begin_inset Formula $k_{x}=k\sin\theta$
+\end_inset 
+
+ (quitamos una dimensión al problema).
+ Trabajaremos en la aproximación de 
+\noun on 
+Fraunhofer
+\noun default 
+.
+ 
+\begin_inset Formula \[
+\hat{u}\left(x'\right)\propto\int t\left(\xi\right)u\left(\xi\right)e^{-i\frac{k}{f'}x'\xi}\, d\xi\]
+
+\end_inset 
+
+ la función transmitancia es 
+\begin_inset Formula $t\left(\xi\right)=1$
+\end_inset 
+
+ si 
+\begin_inset Formula $\xi\in\Sigma\cup\Sigma'$
+\end_inset 
+
+ y cero en otro caso.
+ En cuanto a la iluminación (segundo dato necesario para usar las fórmulas
+ de FF): 
+\begin_inset Formula \begin{eqnarray*}
+u\left(\xi\right) & = & u_{0}e^{i\mathbf{k}\cdot\mathbf{r}}\\
+ & = & u_{0}e^{ik_{x}\xi}\\
+ & = & u_{0}e^{ik\sin\theta\xi}\end{eqnarray*}
+
+\end_inset 
+
+ En realidad tenemos dos integrales
+\begin_inset Formula \[
+\hat{u}\left(x'\right)\propto\int_{-\frac{a}{2}}^{\frac{a}{2}}e^{ik\sin\theta\xi}e^{-i\frac{k}{f'}x'\xi}\, d\xi\:+\int_{d-\frac{a}{2}}^{d+\frac{a}{2}}e^{ik\sin\theta\xi}e^{-i\frac{k}{f'}x'\xi}\, d\xi\]
+
+\end_inset 
+
+ se pueden reorganizar los términos para extraer conclusiones interesantes.
+ Para que las dos lleven el mismo dominio de integración cambiamos la variable
+ muda en la segunda integral, de modo que el cálculo de una se reduzca al
+ de otra.
+ En efecto, si 
+\begin_inset Formula $\xi'=\xi+d$
+\end_inset 
+
+ y operamos
+\begin_inset Formula \begin{eqnarray*}
+\hat{u}\left(x'\right) & \propto & \int_{-\frac{a}{2}}^{\frac{a}{2}}e^{ik\sin\theta\xi}e^{-ik\frac{x'}{f'}\xi}\, d\xi\\
+ &  & +\, e^{i\left(k\sin\theta-k\frac{x'}{f'}\right)d}\int_{-\frac{a}{2}}^{\frac{a}{2}}e^{i\left(k\sin\theta-k\frac{x'}{f'}\right)\xi}\, d\xi\end{eqnarray*}
+
+\end_inset 
+
+ (el factor delante de la segunda integral es debido al cambio de variable).
+ Ahora, sacando factor común
+\begin_inset Formula \[
+\hat{u}\left(x'\right)\propto\left(1-e^{-i\varphi}\right)\,\mathrm{sinc}\left(\phi\right)\]
+
+\end_inset 
+
+donde 
+\begin_inset Formula \begin{eqnarray*}
+\varphi & = & \left(k\frac{x'}{f'}-k\sin\theta\right)d\\
+\phi & = & \left(k\frac{x'}{f'}-k\sin\theta\right)\frac{a}{2}\end{eqnarray*}
+
+\end_inset 
+
+ como en todos los problemas anteriores estamos interesados más bien en
+ la distribución de intensidades
+\begin_inset Formula \begin{eqnarray*}
+I\left(x'\right) & \propto & \left|\hat{u}\left(x'\right)\right|^{2}\\
+ & \propto & \left(1+\cos\varphi\right)\,\mathrm{sinc}^{2}\left(\phi\right)\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Enumerate
+
+El primer paréntesis (lo llamamos factor 
+\begin_inset Formula $I_{d}$
+\end_inset 
+
+ porque sólo depende de la separación de las rendijas) se puede identificar
+ como la interferencia de dos ondas con desfase 
+\begin_inset Formula $\varphi$
+\end_inset 
+
+ (era de esperar).
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/doble-rendija-interpretacion-varphi.eps
+	display monochrome
+	width 7cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Doble rendija.
+ Interpretación de 
+\begin_inset Formula $\varphi$
+\end_inset 
+
+ en el factor interferencial.
+\end_inset 
+
+
+\size small 
+
+\newline 
+Como se ve en la figura, los rayos que partiendo de la abertura convergen
+ tras pasar por la lente, deben salir de la abertura paralelos entre sí.
+ Hasta ahora el plano focal imagen lo hemos parametrizado mediante 
+\begin_inset Formula $x'$
+\end_inset 
+
+ .
+ Pero nos va a ser más cómodo hacerlo mediante el ángulo 
+\begin_inset Formula $\theta'$
+\end_inset 
+
+, variable que determina el punto de la pantalla cuya intensidad queremos
+ saber (o, dicho de otro modo, la dirección en la que observamos).
+ Para una onda plana las equifases son planos que forman un ángulo 
+\begin_inset Formula $\theta$
+\end_inset 
+
+ con el plano de las aberturas.
+ Siguiendo el razonamiento del FP, la diferencia de camino óptico es 
+\begin_inset Formula $\Delta_{1}-\Delta_{2}$
+\end_inset 
+
+.
+ Con la trigonometría apropiada, 
+\begin_inset Formula \begin{eqnarray*}
+\sin\theta & = & \frac{\Delta_{1}}{d}\\
+\sin\theta' & = & \frac{\Delta_{2}}{d}\end{eqnarray*}
+
+\end_inset 
+
+ la diferencia de camino se convierte en diferencia de fase multiplicando
+ por 
+\begin_inset Formula $\frac{2\pi}{\lambda}$
+\end_inset 
+
+:
+\begin_inset Formula \begin{eqnarray*}
+\varphi & = & \frac{2\pi}{\lambda}\left(\Delta_{2}-\Delta_{1}\right)\\
+ & = & \frac{2\pi}{\lambda}d\left(\sin\theta'-\sin\theta\right)\end{eqnarray*}
+
+\end_inset 
+
+ el objeto de todos estos cálculos es identificar este 
+\begin_inset Formula $\varphi$
+\end_inset 
+
+ con el que aparece en 
+\begin_inset Formula $1+\cos\varphi$
+\end_inset 
+
+, el factor de interferencia.
+ Comparando las expresiones, concluimos que la igualdad entre ambos cálculos
+ exigiría que 
+\begin_inset Formula $\sin\theta'=\frac{x'}{f'}$
+\end_inset 
+
+, cosa que es falsa en general, ya que vemos en la figura que 
+\begin_inset Formula $\frac{x'}{f'}=\tan\theta'$
+\end_inset 
+
+.
+ Pero hay que recordar que el cálculo lo hemos hecho usando la aproximación
+ de FF, que viene de la aproximación paraxial de 
+\noun on 
+Fresnel
+\noun default 
+.
+ Es decir, que si los ángulos 
+\begin_inset Formula $\theta'$
+\end_inset 
+
+ son pequeños coinciden el cálculo exacto y el aproximado 
+\begin_inset Formula \[
+\sin\theta'\simeq\tan\theta'=\frac{x'}{f'}\]
+
+\end_inset 
+
+ En lo que sigue utilizaremos 
+\begin_inset Formula $\varphi$
+\end_inset 
+
+ en su expresión más exacta (sustituiremos 
+\begin_inset Formula $\frac{x'}{f'}$
+\end_inset 
+
+ por 
+\begin_inset Formula $\sin\theta'$
+\end_inset 
+
+), para ampliar el dominio de validez de los cálculos.
+\layout Enumerate
+
+El segundo factor es la difracción causada por una rendija.
+ Lo llamaremos 
+\begin_inset Formula $I_{a}$
+\end_inset 
+
+, porque sólo depende del tamaño de la rendija.
+ 
+\layout Standard
+
+Como vemos, el problema está diseccionado en un factor de interferencia
+ 
+\begin_inset Formula $I_{d}$
+\end_inset 
+
+ y otro de difracción 
+\begin_inset Formula $I_{a}$
+\end_inset 
+
+.
+ El aspecto de cada factor se muestra en la figura 
+\begin_inset LatexCommand \ref{fig factores Id e Ia por separado}
+
+\end_inset 
+
+.
+ 
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/m-int-dos-rendijas.eps
+	display monochrome
+	width 4cm
+	subcaption
+
+\end_inset 
+
+
+\begin_inset Graphics
+	filename fig/m-dif-dos-rendijas.eps
+	display monochrome
+	width 4cm
+	subcaption
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig factores Id e Ia por separado}
+
+\end_inset 
+
+Doble rendija.
+ Los dos factores por separado.
+ 
+\begin_inset Formula $\varphi=2\pi M$
+\end_inset 
+
+ para los máximos de 
+\begin_inset Formula $I_{d}$
+\end_inset 
+
+, que varía más deprisa (ya que 
+\begin_inset Formula $d>a$
+\end_inset 
+
+) que la 
+\begin_inset Formula $I_{a}$
+\end_inset 
+
+, para la que el máximo central está en 
+\begin_inset Formula $x'=f'\sin\theta$
+\end_inset 
+
+ (y vale 
+\begin_inset Formula $1$
+\end_inset 
+
+, nótese la ampliación de los detalles finos a ambos lados del máximo central
+ que hemos efectuado).
+ Se ha utilizado 
+\begin_inset Formula $\varphi=4\phi$
+\end_inset 
+
+
+\end_inset 
+
+ Como la 
+\begin_inset Formula $I_{d}$
+\end_inset 
+
+ varía más deprisa que la 
+\begin_inset Formula $I_{a}$
+\end_inset 
+
+ podemos considerar que lo que hace esta última es 
+\emph on 
+modular
+\emph default 
+ la 
+\begin_inset Formula $I_{d}$
+\end_inset 
+
+, como se muestra en la figura 
+\begin_inset LatexCommand \ref{fig difraccion rendija: intensidad}
+
+\end_inset 
+
+.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/m-int-dif-dos-rendijas.eps
+	display monochrome
+	width 6cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig difraccion rendija: intensidad}
+
+\end_inset 
+
+Doble rendija.
+ 
+\begin_inset Formula $I\left(x'\right)=I_{d}\times I_{a}$
+\end_inset 
+
+.
+ El máximo central es el 
+\begin_inset Formula $M=0$
+\end_inset 
+
+ de 
+\begin_inset Formula $I_{d}$
+\end_inset 
+
+.
+ De nuevo se han ampliado los detalles finos a los lados del máximo principal.
+ Se ha utilizado 
+\begin_inset Formula $\varphi=8\phi$
+\end_inset 
+
+.
+\end_inset 
+
+El término de difracción lo que hace es limitar el número de máximos de
+ interferencia que podemos ver (prácticamente sólo podremos ver los que
+ estén dentro de la campana central).
+\layout Standard
+
+Mirando las integrales
+\begin_inset Formula \begin{eqnarray*}
+\hat{u}\left(x'\right) & \propto & \int_{-\frac{a}{2}}^{\frac{a}{2}}e^{ik\sin\theta\xi}e^{-i\frac{k}{f'}x'\xi}\, d\xi\\
+ &  & +\int_{d-\frac{a}{2}}^{d+\frac{a}{2}}e^{ik\sin\theta\xi}e^{-i\frac{k}{f'}x'\xi}\, d\xi\end{eqnarray*}
+
+\end_inset 
+
+ podemos identificar el primer término como 
+\begin_inset Formula $\hat{u}_{1}$
+\end_inset 
+
+ y el segundo como 
+\begin_inset Formula $\hat{u}_{2}$
+\end_inset 
+
+, los términos de difracción de cada una de las rendijas.
+ Al considerar la intensidad vemos que aparece el fenómeno de difracción,
+ puesto que una onda no difiere de la otra más que en la exponencial compleja
+ 
+\begin_inset Formula $e^{-i\varphi}$
+\end_inset 
+
+
+\begin_inset Formula \[
+\hat{u}_{2}=e^{-i\varphi}\hat{u}_{1}\]
+
+\end_inset 
+
+ Es decir que se dan las condiciones de interferencia puesto que son ondas
+ iguales salvo diferencia de fase.
+\layout Standard
+
+Si ocultásemos una de las rendijas, se presentaría 
+\begin_inset Formula $I_{1}\propto\left|\hat{u}_{1}\right|^{2}$
+\end_inset 
+
+ o 
+\begin_inset Formula $I_{2}\propto\left|\hat{u}_{2}\right|^{2}$
+\end_inset 
+
+ (en función de cuál tapemos).
+ Pero sabemos que
+\begin_inset Formula \[
+I_{2}\propto\left|\hat{u}_{2}\right|^{2}=\left|\hat{u}_{1}\right|^{2}\]
+
+\end_inset 
+
+ de donde 
+\begin_inset Formula \[
+I_{1}=I_{2}=\mathrm{sinc}^{2}\phi\]
+
+\end_inset 
+
+Las distribuciones de intensidades debidas a las rendijas separadamente
+ son 
+\emph on 
+iguales
+\emph default 
+.
+ Es decir, en FF, la figura de difracción de una rendija no depende de si
+ está más arriba o más abajo en el el plano de las aberturas.
+ Lo único que cambia es la fase que separa a las ondas.
+ Mover la rendija no desplaza la figura de difracción.
+ Ambas ondas comparten el factor de difracción.
+ Se solapan sobre la pantalla, sólo distintas por la fase.
+\layout Standard
+
+Al separar mucho las rendijas se acaba perdiendo la interferencia, ya que
+ desaparece la condición necesaria de coherencia espacial entre las dos
+ ondas.
+ Obsérvese que no por utilizar incidencia normal se pierde la inteferencia,
+ ya que el desfase entre las dos ondas tiene dos términos:
+\layout Enumerate
+
+lo que las ondas llevan de desfase al llegar al plano de las aberturas,
+ que, como depende de 
+\begin_inset Formula $\sin\theta$
+\end_inset 
+
+, se hace cero cuando la incidencia es normal.
+\layout Enumerate
+
+lo que acumulan al llegar desde diferentes puntos del plano de las aberturas
+ al plano de la imagen, que no depende de si la incidencia es normal o no.
+\layout Section
+
+Red de difracción.
+ Poder resolutivo
+\layout Standard
+
+Encontraremos analogías con el problema de interferencia de infinitas ondas
+ representado por un 
+\noun on 
+Fabry
+\noun default 
+--
+\noun on 
+Perot
+\noun default 
+.
+ El objetivo es obtener algo que en su parte de interferencia se comporte
+ como el FP.
+ El montaje se muestra en la figura 
+\begin_inset LatexCommand \ref{fig una red de difraccion}
+
+\end_inset 
+
+.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/red-difraccion.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig una red de difraccion}
+
+\end_inset 
+
+Red de difracción de 
+\begin_inset Formula $N$
+\end_inset 
+
+ rendijas de anchura 
+\begin_inset Formula $a$
+\end_inset 
+
+.
+\end_inset 
+
+Cada rendija la identificaremos por un 
+\begin_inset Formula $\Sigma_{i}$
+\end_inset 
+
+.
+ La distancia entre las rendijas es siempre la misma, 
+\begin_inset Formula $d$
+\end_inset 
+
+.
+ La oap se aproxima formando un ángulo 
+\begin_inset Formula $\theta$
+\end_inset 
+
+ con el eje 
+\begin_inset Formula $z$
+\end_inset 
+
+.
+ Se puede decir que 
+\begin_inset Formula $\mathbf{k}\in\xi z$
+\end_inset 
+
+ 
+\begin_inset Formula $\left(k_{y}=0\right)$
+\end_inset 
+
+, 
+\begin_inset Formula $k_{x}=k\sin\theta$
+\end_inset 
+
+ .
+\layout Standard
+
+Observamos la onda difractada sobre una pantalla que podemos parametrizar
+ por coordenadas lineales (como 
+\begin_inset Formula $x'$
+\end_inset 
+
+) o angulares (como 
+\begin_inset Formula $\theta'$
+\end_inset 
+
+).
+\layout Standard
+
+La integral que aparece en la aproximación de FF la simbolizaremos por 
+\begin_inset Formula $\int$
+\end_inset 
+
+.
+ Esta integral debe estar extendida a 
+\begin_inset Formula $\bigcup_{j}\Sigma_{j}$
+\end_inset 
+
+, es decir
+\begin_inset Formula \[
+\hat{u}\propto\int_{\bigcup_{j=1}^{N}\Sigma_{j}}=\sum_{j=1}^{N}\int_{\Sigma_{j}}\]
+
+\end_inset 
+
+ haciendo las mismas operaciones de cambio de variable que con la doble
+ rendija, lo que obtenemos es una serie de fases que salen de las integrales
+\begin_inset Formula \[
+\hat{u}\propto\int_{\Sigma_{1}}+e^{-i\varphi}\int_{\Sigma_{1}}+e^{-2i\varphi}\int_{\Sigma_{1}}+\ldots+e^{-i\left(N-1\right)\varphi}\int_{\Sigma_{1}}\]
+
+\end_inset 
+
+ (el factor que cambia en el exponente es debido a que vamos pasando de
+ 
+\begin_inset Formula $d$
+\end_inset 
+
+ a 
+\begin_inset Formula $2d$
+\end_inset 
+
+ a 
+\begin_inset Formula $3d$
+\end_inset 
+
+, etc.).
+ En general
+\begin_inset Formula \begin{eqnarray*}
+\hat{u} & \propto & \left(1+e^{-i\varphi}+\ldots+e^{-i\left(N-1\right)\varphi}\right)\int_{\Sigma_{1}}\\
+ & \propto & \left(\mathrm{sinc}\,\left(\phi\right)\right)\times\sum_{j=1}^{N}e^{-i\left(j-1\right)\varphi}\end{eqnarray*}
+
+\end_inset 
+
+ lo que cambia respecto a la doble rendija es que tenemos un primer factor
+ que es interferencia de 
+\begin_inset Formula $N$
+\end_inset 
+
+ ondas, y no de dos.
+ Por otra parte, no es exactamente como el FP, puesto que en este teníamos
+ 
+\begin_inset Formula $\infty$
+\end_inset 
+
+ ondas interfiriendo.
+ Y el otro factor es la difracción de una sola onda, que modula la inteferencia
+ del resto.
+ 
+\layout Standard
+
+Las 
+\begin_inset Formula $\phi$
+\end_inset 
+
+ y 
+\begin_inset Formula $\varphi$
+\end_inset 
+
+ son las mismas variables que en la doble rendija.
+ Sumando la serie geométrica
+\begin_inset Formula \[
+\hat{u}=\frac{1-e^{-iN\varphi}}{1-e^{-i\varphi}}\mathrm{sinc}\,\left(\phi\right)\]
+
+\end_inset 
+
+ haciendo el módulo al cuadrado y sacando factor común
+\begin_inset Formula \[
+I\left(x'\right)\propto\left(\frac{\sin\left(N\frac{\varphi}{2}\right)}{\sin\frac{\varphi}{2}}\right)^{2}\times\mathrm{sinc}^{2}\phi\]
+
+\end_inset 
+
+ tenemos un factor 
+\begin_inset Formula $I_{d}$
+\end_inset 
+
+ de interferencia de 
+\begin_inset Formula $N$
+\end_inset 
+
+ ondas y otro de difracción, ya conocido: 
+\begin_inset Formula $I_{a}$
+\end_inset 
+
+.
+\layout Subsection
+
+Análisis del factor de interferencia
+\layout Standard
+
+Es precisamente este factor, tan diferente de 
+\begin_inset Formula $\left(1+\cos\varphi\right)$
+\end_inset 
+
+, el que permitirá usar la red de difracción para discriminar longitudes
+ con gran precisión.
+ Al depender en el numerador de un seno es sencillo encontrar los ceros
+ de la función: son los del numerador, que son (
+\begin_inset Formula $m\in\mathcal{Z}$
+\end_inset 
+
+) 
+\begin_inset Formula \begin{eqnarray*}
+N\frac{\varphi}{2} & = & m\pi\\
+\varphi & = & \frac{2m}{N}\pi\end{eqnarray*}
+
+\end_inset 
+
+ esto es cierto para todos los valores de 
+\begin_inset Formula $\varphi$
+\end_inset 
+
+ salvo para los valores en que se anule también el denominador, que vamos
+ a numerar con 
+\begin_inset Formula $M$
+\end_inset 
+
+ 
+\begin_inset Formula \[
+\varphi=2M\pi\]
+
+\end_inset 
+
+ Los ceros comunes corresponden a los valores máximos más grandes, y aparecen
+ en 
+\begin_inset Formula $\varphi=0,\pm2\pi,\pm4\pi,\ldots$
+\end_inset 
+
+
+\layout Standard
+
+El aspecto de la función es el que se muestra en la figura.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/m-interf-red-difraccion-10.eps
+	display monochrome
+	width 6cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Red de difracción.
+ La ecuación 
+\begin_inset Formula $\varphi=2\pi M$
+\end_inset 
+
+ da la ubicación de los máximos principales.
+ La figura es para 
+\begin_inset Formula $N=10$
+\end_inset 
+
+, escogiendo 
+\begin_inset Formula $\phi=4\varphi$
+\end_inset 
+
+.
+\end_inset 
+
+ Para justificar el que los máximos principales realmente lo son valgan
+ los siguientes cálculos
+\begin_inset Formula \begin{eqnarray*}
+\lim_{\varphi\fd0}I_{d} & = & \lim_{\varphi\fd0}cte\left(\frac{\sin\left(N\frac{\varphi}{2}\right)}{\sin\frac{\varphi}{2}}\right)\\
+ & = & cte\left(\frac{N\varphi/2}{\varphi/2}\right)\\
+ & = & cte\times N^{2}\end{eqnarray*}
+
+\end_inset 
+
+ Tenemos que comparar con los máximos secundarios.
+ Cuando 
+\begin_inset Formula $N$
+\end_inset 
+
+ es muy grande 
+\begin_inset Formula $\left(N\gg1\right)$
+\end_inset 
+
+, que es el caso interesante
+\begin_inset Formula \begin{eqnarray*}
+I_{d} & = & cte\left(\frac{\sin\left(N\frac{3\pi}{2N}\right)}{\sin\left(\frac{3\pi}{2N}\right)}\right)^{2}\\
+ & \simeq & cte\times\frac{1}{\left(\frac{3\pi}{2N}\right)^{2}}\\
+ & \simeq & cte\times\frac{N^{2}}{25}\end{eqnarray*}
+
+\end_inset 
+
+ de modo que la altura relativa de los máximos, cuando 
+\begin_inset Formula $N$
+\end_inset 
+
+ es muy grande, difiere por un factor de 25 entre los principales y los
+ adyacentes a éstos.
+\layout Subsection
+
+Modulación de la interferencia por la difracción
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/m-interf-y-difrac-red-difraccion-15.eps
+	display monochrome
+	width 6cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset Formula $I\left(\varphi\right)$
+\end_inset 
+
+.
+ Intensidad en la pantalla debida a la interposición de una red de difracción
+ con 
+\begin_inset Formula $N=15$
+\end_inset 
+
+ y 
+\begin_inset Formula $\phi=2\varphi.$
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+Los máximos principales ya no tienen todos la misma altura.
+ El máximo principal es para
+\begin_inset Formula \begin{eqnarray*}
+\varphi & = & \phi=0\\
+x' & = & f'\sin\theta\\
+\theta' & = & \theta\end{eqnarray*}
+
+\end_inset 
+
+ Si queremos ver varios máximos de interferencia tendremos que reducir las
+ rendijas para que la envolvente de difracción se haga más suave.
+ Los máximos se encuentran en la dirección de incidencia, 
+\begin_inset Formula $\theta$
+\end_inset 
+
+.
+\layout Subsubsection
+
+Poder resolutivo
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/comparacion-intens-2-y-n-rendijas.eps
+	display monochrome
+	width 5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig comparacion 2 y N rendijas}
+
+\end_inset 
+
+Figura de dos rendijas y de 
+\begin_inset Formula $N$
+\end_inset 
+
+ 
+\end_inset 
+
+Hay que señalar que los máximos de la doble rendija y los máximos de la
+ red de difracción coinciden.
+ Podemos ver en la figura 
+\begin_inset LatexCommand \ref{fig comparacion 2 y N rendijas}
+
+\end_inset 
+
+ que añadir más rendijas se traduce en que los máximos se contraen (son
+ cada vez más estrechos: su anchura es proporcional a 
+\begin_inset Formula $\frac{1}{N}$
+\end_inset 
+
+).
+ El interferómetro de FP estaba caracterizado por la estrechez de los máximos,
+ y era esto lo que permitía medir magnitudes.
+ La red de difracción es a estos efectos tanto más sensible cuanto más grande
+ sea el número de rendijas.
+\layout Standard
+
+Vamos a construir un parámetro que nos permita evaluar la precisión en la
+ medida de longitudes de onda de este dispositivo.
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/dependencia-imagen-dif-longitud-onda.eps
+	display monochrome
+	width 4cm
+	subcaption
+
+\end_inset 
+
+
+\begin_inset Graphics
+	filename fig/longitudes-onda-resueltas-y-no.eps
+	display monochrome
+	width 4cm
+	subcaption
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+a) La figura varía con la longitud de onda.
+ b) Longitudes de onda resueltas y no resueltas.
+\end_inset 
+
+Un criterio posible es considerar que los máximos están resueltos si la
+ distancia de los máximos es mayor que la mitad de su anchura
+\begin_inset Formula \[
+\left|\Delta\varphi\right|\geq\frac{\delta\varphi}{2}\]
+
+\end_inset 
+
+ en términos de los datos del problema
+\begin_inset Formula \begin{eqnarray*}
+\left|\Delta\varphi\right| & \geq & \frac{2\pi}{N}\\
+\left|\Delta\varphi\right| & = & \frac{2\pi}{\lambda^{2}}\left(\sin\theta'-\sin\theta\right)d\Delta\lambda\\
+\varphi & = & \frac{2\pi}{\lambda}\left(\sin\theta'-\sin\theta\right)d=2\pi M\end{eqnarray*}
+
+\end_inset 
+
+ como 
+\begin_inset Formula \[
+2\pi\left|M\right|\frac{\Delta\lambda}{\lambda}\geq\frac{2\pi}{N}\]
+
+\end_inset 
+
+ se tiene el criterio 
+\begin_inset Formula \[
+\frac{\Delta\lambda}{\lambda}\geq\frac{1}{\left|M\right|N}\]
+
+\end_inset 
+
+ o, más habitualmente
+\begin_inset Formula \[
+\frac{\lambda}{\Delta\lambda}\leq\left|M\right|N\]
+
+\end_inset 
+
+ 
+\emph on 
+Comentario
+\emph default 
+: el poder resolutivo depende de dos factores.
+ Hay un factor que depende del interferómetro (
+\begin_inset Formula $N$
+\end_inset 
+
+) y otro de cómo lo utilicemos (orden de interferencia 
+\begin_inset Formula $M$
+\end_inset 
+
+).
+ Conseguir órdenes grandes es difícil por comparación al 
+\noun on 
+Fabry
+\noun default 
+--
+\noun on 
+Perot
+\noun default 
+.
+\layout Description
+
+Ejemplo Número de rendijas para resolver el doblete amarillo del sodio (
+\begin_inset Formula $\lambda=589.0nm$
+\end_inset 
+
+ y 
+\begin_inset Formula $\lambda'=589.6nm$
+\end_inset 
+
+ ) cuando la anchura de la red es de 
+\begin_inset Formula $10cm$
+\end_inset 
+
+ y 
+\begin_inset Formula $M=1$
+\end_inset 
+
+.
+ Calcular la separación 
+\begin_inset Formula $d$
+\end_inset 
+
+ de las rendijas.
+\begin_deeper 
+\layout Standard
+
+
+\size small 
+Como 
+\begin_inset Formula $\lambda$
+\end_inset 
+
+ podemos tomar una cualquiera de ellas o el valor medio.
+ 
+\begin_inset Formula $\Delta\lambda=0.6nm$
+\end_inset 
+
+.
+ En el orden 
+\begin_inset Formula $1$
+\end_inset 
+
+ tenemos 
+\begin_inset Formula $N\geq\frac{\lambda}{\Delta\lambda}\simeq982$
+\end_inset 
+
+.
+ En cuanto a 
+\begin_inset Formula $d$
+\end_inset 
+
+
+\begin_inset Formula \[
+d\simeq\frac{10cm}{1000}=10^{-4}m\]
+
+\end_inset 
+
+ deben estar a décimas de milímetro de distancia.
+ Tomar una placa más grande no es solución, porque si se pierde la coherencia
+ espacial no hay interferencia.
+\end_deeper 
+\layout Section
+
+Por hacer
+\layout Itemize
+
+Las representaciones gráficas de las funciones de 
+\noun on 
+Bessel
+\layout Itemize
+
+Gráficos 3D de intensidad en función de 
+\begin_inset Formula $x,y$
+\end_inset 
+
+ para sustituir los gráficos de dos dimensiones como 
+\begin_inset LatexCommand \ref{fig difraccion por rectangulo: pantalla}
+
+\end_inset 
+
+.
+ 
+\layout Itemize
+
+Una sección (de lectura opcional) que incida en la conexión de la teoría
+ de la difracción con las transformadas integrales de 
+\noun on 
+Fourier
+\noun default 
+.
+\the_end

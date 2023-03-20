@@ -1,0 +1,1134 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass book
+\begin_preamble
+\input{FdL-packages.sty}
+\input{FdL-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding latin1
+\fontscheme default
+\graphics default
+\paperfontsize 12
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Chapter
+
+Optimización de la salida de un láser
+\layout Section
+
+Introducción
+\layout Standard
+
+En un láser la radiación se amplifica en función de la ganancia del medio
+ amplificador, representado por la ganancia en pequeña señal 
+\shape italic 
+
+\begin_inset Formula $\alpha_{0}$
+\end_inset 
+
+
+\shape default 
+, y de las pérdidas internas distribuidas, representadas por el coeficiente
+ de absorción 
+\shape italic 
+
+\begin_inset Formula $\alpha$
+\end_inset 
+
+
+\shape default 
+
+\begin_inset Formula $_{i}$
+\end_inset 
+
+.
+ Ahora bien, la salida de radiación introduce una pérdida externa adicional
+ que se produce a través de los espejos del resonador y que debe ser cuidadosame
+nte regulada para que se pueda extraer la mayor cantidad posible de radiación.
+ 
+\layout Itemize
+
+Si la reflectividad de los espejos es demasiado baja (aunque 
+\begin_inset Formula $T$
+\end_inset 
+
+ sería muy alta, 
+\begin_inset Formula $T=1-R$
+\end_inset 
+
+) la realimentación es demasiado débil y la intensidad amplificada también,
+ pudiendo en el caso extremo no llegar a superarse el umbral.
+ 
+\layout Itemize
+
+Si por el contrario la reflectividad es demasiado alta, próxima al 
+\begin_inset Formula $100$
+\end_inset 
+
+% la mayor parte de la radiación se disipa en las perdidas internas, y cuanto
+ mayor sea la reflectividad menor cantidad de radiación se transmitirá a
+ través de los espejos.
+\layout Standard
+
+Tiene que existir por lo tanto una reflectividad óptima en que se consiga
+ el mejor balance de extracción de radiación del resonador.
+ Este será el objeto de la aproximación que vamos a estudiar.
+\layout Section
+
+Ecuación de propagación
+\begin_inset LatexCommand \label{sec:optimiz-ec-propag}
+
+\end_inset 
+
+
+\layout Standard
+
+Vamos a suponer que se puede considerar al láser operando en régimen cuasiestaci
+onario.
+ Por lo tanto la inversión de población 
+\begin_inset LatexCommand \ref{eq:ni-inv-pobl}
+
+\end_inset 
+
+ será
+\begin_inset Formula \[
+n_{i}=\frac{1}{1+I/I_{0}}\frac{\alpha_{0}}{\sigma_{21}}\]
+
+\end_inset 
+
+donde 
+\begin_inset Formula $\alpha_{0}=\sigma_{21}\left(\nu_{c}\right)P\tau$
+\end_inset 
+
+ (
+\begin_inset Formula $\tau$
+\end_inset 
+
+ tiempo de vida de la inversión, 
+\begin_inset Formula $\nu_{c}$
+\end_inset 
+
+ frecuencia del modo oscilante) es la ganancia en pequeña señal e 
+\begin_inset Formula $I_{0}$
+\end_inset 
+
+ es la intensidad de saturación, dada por 
+\begin_inset Formula $I_{0}^{\left[3\right]}$
+\end_inset 
+
+ (ec.
+ 
+\begin_inset LatexCommand \ref{eq:I0-tres-niv}
+
+\end_inset 
+
+) para un sistema a tres niveles.
+\layout Standard
+
+Como usualmente los espejos del resonador son de distinta reflectividad
+ consideraremos la intensidad dentro del resonador como la superposición
+ de dos intensidades 
+\begin_inset Formula $I_{+}$
+\end_inset 
+
+ e 
+\begin_inset Formula $I_{-}$
+\end_inset 
+
+ que se propagan en sentidos opuestos (
+\begin_inset Formula $I_{+}$
+\end_inset 
+
+ en sentido de 
+\begin_inset Formula $x$
+\end_inset 
+
+ creciente, 
+\begin_inset Formula $I_{-}$
+\end_inset 
+
+ decreciente, figura 
+\begin_inset LatexCommand \ref{fig:convenio-Imas-Imenos}
+
+\end_inset 
+
+).
+ La intensidad total en el interior es entonces 
+\begin_inset Formula $I=I_{+}+I_{-}$
+\end_inset 
+
+.
+ Las ecuaciones de propagación son
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/convenio-Imas-Imenos-src.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:convenio-Imas-Imenos}
+
+\end_inset 
+
+Convenio de nombres para la intensidad en función del sentido de la propagación.
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Formula \[
+\frac{1}{I_{+}}\dx{I_{+}}=-\frac{1}{I_{-}}\dx{I_{-}}=n_{i}\sigma_{21}-\alpha_{i}\]
+
+\end_inset 
+
+
+\layout Standard
+
+Vamos a introducir las variables adimensionales 
+\begin_inset Formula $\beta_{\pm}\equiv I_{\pm}/I_{0}$
+\end_inset 
+
+, con las cuales
+\begin_inset Formula \[
+n_{i}=\frac{\alpha_{0}}{\sigma_{21}}\frac{1}{1+\beta_{+}+\beta_{-}}\]
+
+\end_inset 
+
+y las ecuaciones de propagación se escriben igual pero sustituyendo 
+\begin_inset Formula $I_{\pm}$
+\end_inset 
+
+ por 
+\begin_inset Formula $\beta_{\pm}$
+\end_inset 
+
+.
+ Operando sobre ellas
+\layout Standard
+
+
+\begin_inset Formula \[
+\beta_{-}\dx{\beta_{+}}+\beta_{+}\dx{\beta_{-}}=0\qquad\Rightarrow\qquad\dx{}\left(\beta_{+}\beta_{-}\right)=0\]
+
+\end_inset 
+
+es decir, 
+\begin_inset Formula $\beta_{+}\beta_{-}=\beta_{0}^{2}$
+\end_inset 
+
+ no es función de 
+\begin_inset Formula $x$
+\end_inset 
+
+ y se pueden escribir las ecuaciones en función de 
+\begin_inset Formula $\beta_{+}$
+\end_inset 
+
+, que designaremos como 
+\begin_inset Formula $y$
+\end_inset 
+
+ para abreviar, y de 
+\begin_inset Formula $\beta_{0}^{2}$
+\end_inset 
+
+.
+ 
+\begin_inset Formula \[
+\beta_{-}=\frac{\beta_{0}^{2}}{\beta_{+}}\]
+
+\end_inset 
+
+
+\layout Standard
+
+Por lo tanto
+\begin_inset Formula \[
+\frac{1}{\beta_{+}}\dx{\beta_{+}}=\frac{\alpha_{0}}{1+\beta_{+}+\beta_{0}^{2}/\beta_{+}}-\alpha_{i}=\frac{\alpha_{0}\beta_{+}}{\beta_{+}^{2}+\beta_{+}+\beta_{0}^{2}}-\alpha_{i}=\frac{-\alpha_{i}\beta_{+}^{2}+(\alpha_{0}-\alpha_{i})\beta_{+}-\alpha_{i}\beta_{0}^{2}}{\beta_{+}^{2}+\beta_{+}+\beta_{0}^{2}}\]
+
+\end_inset 
+
+así, con el cambio de notación, queda la siguiente ecuación diferencial
+ para la propagación con ganancia en el seno del Fabry-Perot
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+\frac{y^{2}+y+\beta_{0}^{2}}{y\left[-\alpha_{i}y^{2}+(\alpha_{0}-\alpha_{i})y-\alpha_{i}\beta_{0}^{2}\right]}\:\mathrm{d}y=\mathrm{d}x\label{eq:ecdif-propag-ganancia-fp}\end{equation}
+
+\end_inset 
+
+Para obtener la intensidad normalizada, 
+\begin_inset Formula $y$
+\end_inset 
+
+, en cada punto en el sentido de las 
+\begin_inset Formula $x$
+\end_inset 
+
+ crecientes hay que integrar.
+ El cálculo explícito se puede encontrar en el apéndice 
+\begin_inset LatexCommand \ref{cha:sol-ed-propag-I-FP}
+
+\end_inset 
+
+, y conduce a la siguiente ecuación implícita en 
+\begin_inset Formula $y\equiv\beta_{+}$
+\end_inset 
+
+ (
+\begin_inset LatexCommand \ref{eq:sol-implicita-ec-propag-fp}
+
+\end_inset 
+
+):
+\layout Standard
+
+
+\begin_inset Formula \[
+\alpha_{i}x+\ln\beta_{+}+\frac{\alpha_{0}}{\sqrt{(\alpha_{0}-\alpha_{i})^{2}-4\alpha_{i}^{2}\beta_{0}^{2}}}\ln F(\beta_{+})=\mathrm{cte}.\]
+
+\end_inset 
+
+
+\layout Standard
+
+La constante ha de ser determinada mediante las condiciones de contorno,
+ que son las intensidades en los espejos (figura 
+\begin_inset LatexCommand \ref{fig:cond-cont-espejos}
+
+\end_inset 
+
+).
+ Llamemos 
+\begin_inset Formula $\beta_{1}\equiv\beta_{+}(0)$
+\end_inset 
+
+ y 
+\begin_inset Formula $\beta_{2}\equiv\beta_{+}(l)$
+\end_inset 
+
+, donde 
+\begin_inset Formula $l$
+\end_inset 
+
+ es la longitud óptica del resonador.
+ 
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/cond-cont-espejos-src.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:cond-cont-espejos}
+
+\end_inset 
+
+Condiciones de contorno en los espejos.
+ La intensidad se va amplificando en cada uno de los trayectos, aunque existe
+ una pequeña transmitividad del espejo 
+\begin_inset Formula $1$
+\end_inset 
+
+ que explica la no coincidencia de las intensidades 
+\begin_inset Formula $\beta_{+}\left(0\right)$
+\end_inset 
+
+ y 
+\begin_inset Formula $\beta_{-}\left(0\right)$
+\end_inset 
+
+.
+\end_inset 
+
+
+\layout Standard
+
+Entonces las ecuaciones en los extremos son
+\begin_inset Formula \begin{eqnarray*}
+\ln\beta_{1}+\frac{\alpha_{0}}{\sqrt{(\alpha_{0}-\alpha_{i})^{2}-4\alpha_{i}^{2}\beta_{0}^{2}}}\ln F(\beta_{1}) & = & \mathrm{cte}\\
+\alpha_{i}l+\ln\beta_{2}+\frac{\alpha_{0}}{\sqrt{(\alpha_{0}-\alpha_{i})^{2}-4\alpha_{i}^{2}\beta_{0}^{2}\;})}\ln F(\beta_{2}) & = & \mathrm{cte}\end{eqnarray*}
+
+\end_inset 
+
+Restando la primera ecuación de la segunda obtenemos
+\layout Standard
+
+
+\begin_inset Formula \[
+\alpha_{i}l-\ln\frac{\beta_{1}}{\beta_{2}}=\frac{\alpha_{0}}{\sqrt{(\alpha_{0}-\alpha_{i})^{2}-4\alpha_{i}^{2}\beta_{0}^{2}}}\ln\frac{F(\beta_{1})}{F(\beta_{2})}\]
+
+\end_inset 
+
+Ahora llega el momento de introducir las condiciones de contorno.
+\layout Standard
+
+Podemos asumir que como es usual en un láser 
+\begin_inset Formula $R_{1}=1$
+\end_inset 
+
+ y el espejo de salida tiene una 
+\begin_inset Formula $R_{2}<1$
+\end_inset 
+
+ que es lo que buscamos optimizar; con esto tendremos
+\layout Standard
+
+
+\begin_inset Formula \[
+\left.\begin{array}{r}
+\beta_{+}(0)=\beta_{-}(0)=\beta_{1}\\
+\beta_{+}(0)\beta_{-}(0)=\beta_{0}^{2}\end{array}\right\} \Rightarrow\beta_{1}=\beta_{0}\]
+
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+\left.\begin{array}{r}
+\beta_{-}(l)=R_{2}\beta_{+}(l)=R_{2}\beta_{2}\\
+\beta_{+}(l)\beta_{-}(l)=\beta_{0}^{2}\end{array}\right\} \Rightarrow\left.\begin{array}{l}
+\beta_{2}^{2}R_{2}=\beta_{0}^{2}\\
+\beta_{2}=\beta_{0}/\sqrt{R_{2}}\end{array}\right\} \label{eq:betados}\end{equation}
+
+\end_inset 
+
+es decir que 
+\begin_inset Formula $\beta_{1}=\beta_{0}=\beta_{2}\sqrt{R_{2}}$
+\end_inset 
+
+.
+ Podemos entonces eliminar 
+\shape italic 
+
+\begin_inset Formula $\beta$
+\end_inset 
+
+
+\shape default 
+
+\begin_inset Formula $_{0}$
+\end_inset 
+
+ y 
+\shape italic 
+
+\begin_inset Formula $\beta$
+\end_inset 
+
+
+\shape default 
+
+\begin_inset Formula $_{1}$
+\end_inset 
+
+ en la ecuación en función de 
+\shape italic 
+
+\begin_inset Formula $\beta$
+\end_inset 
+
+
+\shape default 
+
+\begin_inset Formula $_{2}$
+\end_inset 
+
+, es decir
+\begin_inset Formula \begin{eqnarray*}
+\alpha_{i}l-\ln\sqrt{R_{2}} & = & \frac{\alpha_{0}}{\sqrt{(\alpha_{0}-\alpha_{i})^{2}-4\alpha_{i}^{2}R_{2}\beta_{2}^{2}}}\ln\frac{F\left(\sqrt{R_{2}}\beta_{2}\right)}{F(\beta_{2})}\\
+ & = & \frac{\alpha_{0}l}{\sqrt{(\alpha_{0}l-\alpha_{i}l)^{2}-4(\alpha_{i}l)^{2}R_{2}\beta_{2}^{2}}}\ln\frac{F\left(\sqrt{R_{2}}\beta_{2}\right)}{F(\beta_{2})}\end{eqnarray*}
+
+\end_inset 
+
+En el logaritmo tenemos
+\layout Standard
+
+
+\begin_inset Formula \[
+\frac{F(\sqrt{R_{2}}\beta_{2})}{F(\beta_{2})}=\frac{\frac{\sqrt{(\alpha_{0}l-\alpha_{i}l)^{2}-4(\alpha_{i}l)^{2}R_{2}\beta_{2}^{2}}+(\alpha_{0}l-\alpha_{i}l-2\alpha_{i}l\sqrt{R_{2}}\beta_{2})}{\sqrt{(\alpha_{0}l-\alpha_{i}l)^{2}-4(\alpha_{i}l)^{2}R_{2}\beta_{2}^{2}}-(\alpha_{0}l-\alpha_{i}l-2\alpha_{i}l\sqrt{R_{2}}\beta_{2})}}{\frac{\sqrt{(\alpha_{0}l-\alpha_{i}l)^{2}-4(\alpha_{i}l)^{2}R_{2}\beta_{2}^{2}}+(\alpha_{0}l-\alpha_{i}l-2\alpha_{i}l\beta_{2})}{\sqrt{(\alpha_{0}l-\alpha_{i}l)^{2}-4(\alpha_{i}l)^{2}R_{2}\beta_{2}^{2}}-(\alpha_{0}l-\alpha_{i}l-2\alpha_{i}l\beta_{2})}}\]
+
+\end_inset 
+
+
+\layout Standard
+
+La intensidad de salida es 
+\begin_inset Formula $I_{S}=(1-R_{2})\beta_{+}(l)I_{0}$
+\end_inset 
+
+; o sea 
+\begin_inset Formula $I_{S}=(1-R_{2})\beta_{2}I_{0}$
+\end_inset 
+
+.
+\layout Standard
+
+La optimización de la salida supone hallar el máximo de 
+\begin_inset Formula $I_{S}$
+\end_inset 
+
+ para la variable 
+\begin_inset Formula $R_{2}$
+\end_inset 
+
+ con la ecuación de condición anterior.
+ Este problema resuelto computacionalmente se puede parametrizar en función
+ de los valores de 
+\shape italic 
+
+\begin_inset Formula $\alpha$
+\end_inset 
+
+
+\shape default 
+
+\begin_inset Formula $_{0}l$
+\end_inset 
+
+ y 
+\shape italic 
+
+\begin_inset Formula $\alpha$
+\end_inset 
+
+
+\shape default 
+
+\begin_inset Formula $_{i}l$
+\end_inset 
+
+ en doble entrada.
+ Los valores razonablemente esperables de 
+\shape italic 
+
+\begin_inset Formula $\alpha$
+\end_inset 
+
+
+\shape default 
+
+\begin_inset Formula $_{0}l$
+\end_inset 
+
+ pueden ir desde 1 hasta 10 y los de 
+\shape italic 
+
+\begin_inset Formula $\alpha$
+\end_inset 
+
+
+\shape default 
+
+\begin_inset Formula $_{i}l$
+\end_inset 
+
+ desde 0.001 hasta 1.
+\layout Standard
+
+Las dependencias de la ecuación son notablemente complicadas como se puede
+ apreciar.
+ Es por ello conveniente efectuar un cambio de variable
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+\frac{2\alpha_{i}}{\alpha_{0}-\alpha_{i}}\beta_{0}=\sin2\lambda,\label{eq:betacero-y-lambda}\end{equation}
+
+\end_inset 
+
+que es posible porque en la práctica 
+\begin_inset Formula $2\alpha_{i}$
+\end_inset 
+
+
+\begin_inset Formula $\beta_{0}<\alpha_{0}-\alpha_{i}$
+\end_inset 
+
+.
+\layout Standard
+
+Con esta nueva variable 
+\shape italic 
+
+\begin_inset Formula $\lambda$
+\end_inset 
+
+
+\shape default 
+ podemos escribir (recordemos que 
+\begin_inset Formula $\beta_{1}=\beta_{0}$
+\end_inset 
+
+)
+\begin_inset Formula \begin{eqnarray*}
+F(\beta_{1}) & = & \frac{(\alpha_{0}-\alpha_{i})\sqrt{1-\left(\frac{2\alpha_{i}\beta_{0}}{\alpha_{0}-\alpha_{i}}\right)^{2}}+\left(\alpha_{0}-\alpha_{i}\right)\left(1-\frac{2\alpha_{i}\beta_{0}}{\alpha_{0}-\alpha_{i}}\frac{\beta_{1}}{\beta_{0}}\right)}{(\alpha_{0}-\alpha_{i})\sqrt{1-\left(\frac{2\alpha_{i}\beta_{0}}{\alpha_{0}-\alpha_{i}}\right)^{2}}-\left(\alpha_{0}-\alpha_{i}\right)\left(1-\frac{2\alpha_{i}\beta_{0}}{\alpha_{0}-\alpha_{i}}\frac{\beta_{1}}{\beta_{0}}\right)}\\
+ & = & \frac{\cos2\lambda+1-\sin2\lambda}{\cos2\lambda-1+\sin2\lambda}=\frac{\cos^{2}\lambda-\sin^{2}\lambda+1-2\sin\lambda\cos\lambda}{\cos^{2}\lambda-\sin^{2}\lambda-1+2\sin\lambda\cos\lambda}\\
+ & = & \frac{\cos\lambda-\sin\lambda}{-\sin\lambda+\cos\lambda}\cot\lambda=\cot\lambda\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Standard
+
+Análogamente calculamos 
+\begin_inset Formula $F(\beta_{2})$
+\end_inset 
+
+ teniendo en cuenta que 
+\begin_inset Formula $\beta_{2}=\beta_{0}/\sqrt{R_{2}}$
+\end_inset 
+
+:
+\layout Standard
+
+
+\begin_inset Formula \[
+F(\beta_{2})=\frac{\sqrt{R_{2}}\cos\lambda-\sin\lambda}{\cos\lambda-\sqrt{R_{2}}\sin\lambda}\cot\lambda=\frac{1-\sqrt{R_{2}}\tan\lambda}{\sqrt{R_{2}}-\tan\lambda}\]
+
+\end_inset 
+
+Por lo tanto
+\layout Standard
+
+
+\begin_inset Formula \[
+\frac{F(\beta_{1})}{F(\beta_{2})}=\frac{\cos\lambda-\sqrt{R_{2}}\sin\lambda}{\sqrt{R_{2}}\cos\lambda-\sin\lambda}=\frac{1-\sqrt{R_{2}}\tan\lambda}{\sqrt{R_{2}}-\tan\lambda}\]
+
+\end_inset 
+
+Del mismo modo
+\layout Standard
+
+
+\begin_inset Formula \[
+\frac{\alpha_{0}}{\sqrt{(\alpha_{0}-\alpha_{i})^{2}-(2\alpha_{i}\beta_{0})^{2}}}=\frac{\alpha_{0}}{\alpha_{0}-\alpha_{i}}\frac{1}{\cos2\lambda}\]
+
+\end_inset 
+
+La ecuación es queda entonces
+\layout Standard
+
+
+\begin_inset Formula \[
+\alpha_{i}l-\ln\sqrt{R_{2}}=\frac{\alpha_{0}l}{\alpha_{0}l-\alpha_{i}l}\frac{1}{\cos2\lambda}\ln\frac{1-\sqrt{R_{2}}\tan\lambda}{\sqrt{R_{2}}-\tan\lambda}\]
+
+\end_inset 
+
+
+\layout Standard
+
+La máxima intensidad que se podría obtener sería, teóricamente, la que se
+ produciría si las perdidas se anulasen (
+\begin_inset Formula $\alpha_{i}=0$
+\end_inset 
+
+) en la ecuación de la intensidad total, y en completa saturación (
+\begin_inset Formula $I\gg I_{0}$
+\end_inset 
+
+)
+\begin_inset Formula \[
+\dx{I}=\frac{\alpha_{0}I}{1+I/I_{0}}-\alpha_{i}I\simeq\alpha_{0}\frac{I/I_{0}}{1+I/I_{0}}I_{0}\longrightarrow\alpha_{0}I_{0}\quad\textnormal{(cuando $I/I_{0}\rightarrow\infty$)}\]
+
+\end_inset 
+
+Por lo tanto la máxima intensidad dentro del resonador será
+\begin_inset Formula \begin{eqnarray*}
+I_{\mathrm{max}} & = & \int_{0}^{l}I_{0}\alpha_{0}\,\mathrm{d}x=I_{0}\alpha_{0}l,\qquad\beta_{\mathrm{max}}=I_{\mathrm{max}}/I_{0}=\alpha_{0}l\end{eqnarray*}
+
+\end_inset 
+
+Como la intensidad extraída es 
+\begin_inset Formula $I_{S}=(1-R_{2})\beta_{2}I_{0}$
+\end_inset 
+
+, la 
+\emph on 
+eficiencia de extracción
+\emph default 
+
+\begin_inset LatexCommand \index{eficiencia de extracción}
+
+\end_inset 
+
+, que se define como 
+\begin_inset Formula $\eta\equiv I_{S}/I_{\mathrm{max}}$
+\end_inset 
+
+, es 
+\layout Standard
+
+
+\begin_inset Formula \[
+\eta=\frac{(1-R_{2})\beta_{2}I_{0}}{I_{0}\alpha_{0}l}=\beta_{2}\frac{1-R_{2}}{\alpha_{0}l}\]
+
+\end_inset 
+
+Por 
+\begin_inset LatexCommand \ref{eq:betados}
+
+\end_inset 
+
+ y 
+\begin_inset LatexCommand \ref{eq:betacero-y-lambda}
+
+\end_inset 
+
+ entonces
+\layout Standard
+
+
+\begin_inset Formula \[
+\eta=\frac{1-R_{2}}{\sqrt{R_{2}}}\frac{\left(\alpha_{0}-\alpha_{i}\right)l}{2\alpha_{i}l^{2}}\sin2\lambda\]
+
+\end_inset 
+
+Esta ecuación junto con
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+\frac{\alpha_{0}l}{\alpha_{0}l-\alpha_{i}l}\frac{1}{\cos2\lambda}\ln\frac{1-\sqrt{R_{2}}\tan\lambda}{\sqrt{R_{2}}-\tan\lambda}+\ln\sqrt{R_{2}}-\alpha_{i}l=0\label{eq:implicita-R2}\end{equation}
+
+\end_inset 
+
+han de permitir calcular las condiciones para obtener la máxima eficiencia
+ de extracción.
+ En ellos 
+\shape italic 
+
+\begin_inset Formula $\lambda$
+\end_inset 
+
+
+\shape default 
+ es un parámetro cuyos valores están comprendidos entre 
+\begin_inset Formula $0$
+\end_inset 
+
+ y 
+\begin_inset Formula $\pi/4$
+\end_inset 
+
+.
+ 
+\layout Section
+
+Solución numérica y estimación de las pérdidas
+\layout Standard
+
+El cálculo del máximo condicionado de 
+\shape italic 
+
+\begin_inset Formula $\eta$
+\end_inset 
+
+
+\shape default 
+ correspondiente a la transmitancia óptima 
+\begin_inset Formula $T_{2\,\mathrm{Opt}}=1-R_{2\,\mathrm{Opt}}$
+\end_inset 
+
+ del espejo de salida del resonador es un problema bastante complejo.
+ Observemos que son la ganancia total 
+\shape italic 
+
+\begin_inset Formula $\alpha$
+\end_inset 
+
+
+\shape default 
+
+\begin_inset Formula $_{0}l$
+\end_inset 
+
+ en pequeña señal y las perdidas internas totales 
+\shape italic 
+
+\begin_inset Formula $\alpha$
+\end_inset 
+
+
+\shape default 
+
+\begin_inset Formula $_{i}l$
+\end_inset 
+
+ en el medio amplificador los dos parámetros físicos que determinan físicamente
+ esta optimización.
+ Con ambos valores obtenemos en abscisas la reflectividad óptima y en ordenadas
+ la eficiencia que le corresponde, sobre la figura 
+\begin_inset LatexCommand \ref{fig:disenyo-resonador}
+
+\end_inset 
+
+.
+ Así es como se diseña el resonador de un láser.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/optigrafica-src.eps
+	scale 50
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:disenyo-resonador}
+
+\end_inset 
+
+
+\begin_inset Formula $T_{2,\mathrm{opt}}=1-R_{2,\mathrm{opt}}$
+\end_inset 
+
+ (
+\begin_inset Formula $L$
+\end_inset 
+
+: longitud del medio).
+\end_inset 
+
+
+\layout Standard
+
+Medidos o estimados 
+\shape italic 
+
+\begin_inset Formula $\alpha$
+\end_inset 
+
+
+\shape default 
+
+\begin_inset Formula $_{0}l$
+\end_inset 
+
+ y 
+\shape italic 
+
+\begin_inset Formula $\alpha$
+\end_inset 
+
+
+\shape default 
+
+\begin_inset Formula $_{i}l$
+\end_inset 
+
+ lo más práctico es resolver numéricamente el problema.
+ Así, podemos dividir en 
+\begin_inset Formula $N$
+\end_inset 
+
+ partes iguales el intervalo 
+\begin_inset Formula $\left[0,\pi/4\right]$
+\end_inset 
+
+ de valores de 
+\shape italic 
+
+\begin_inset Formula $\lambda$
+\end_inset 
+
+
+\shape default 
+ haciendo por ejemplo 
+\begin_inset Formula \[
+\lambda_{n}=\frac{n}{N}\,\frac{\pi}{4},\qquad n=0,1\ldots N\]
+
+\end_inset 
+
+ Para cada uno de estos 
+\begin_inset Formula $\lambda_{n}$
+\end_inset 
+
+ se resuelve numéricamente 
+\begin_inset LatexCommand \ref{eq:implicita-R2}
+
+\end_inset 
+
+ obteniéndose 
+\begin_inset Formula $R_{2n}\left(\lambda_{n}\right)$
+\end_inset 
+
+.
+ Con estos valores de 
+\begin_inset Formula $R_{2}$
+\end_inset 
+
+ y de 
+\shape italic 
+
+\begin_inset Formula $\lambda$
+\end_inset 
+
+ 
+\shape default 
+calculamos con la ecuación de 
+\begin_inset Formula $\eta$
+\end_inset 
+
+ los valores 
+\shape italic 
+
+\begin_inset Formula $\eta_{n}\left(R_{2n},\lambda_{n}\right)$
+\end_inset 
+
+,
+\shape default 
+ de los cuales habrá uno que será el mayor de todos y corresponderá a la
+ eficiencia máxima 
+\shape italic 
+
+\begin_inset Formula $\eta_{\mathrm{max}}$
+\end_inset 
+
+
+\shape default 
+ para una transmitancia óptima 
+\begin_inset Formula $T_{2\,\mathrm{Opt}}$
+\end_inset 
+
+ del espejo de salida.
+ 
+\layout Standard
+
+Por este método se puede construir un diagrama (figura 
+\begin_inset LatexCommand \ref{fig:disenyo-resonador}
+
+\end_inset 
+
+) en el que 
+\shape italic 
+
+\begin_inset Formula $\eta_{\mathrm{max}}$
+\end_inset 
+
+
+\shape default 
+ y 
+\begin_inset Formula $T_{2\,\mathrm{Opt}}$
+\end_inset 
+
+ están en ordenadas y abscisas respectivamente, y en el que aparecen dibujadas
+ las curvas 
+\begin_inset Formula $\alpha_{0}l=\mathrm{cte}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\alpha_{i}l=\mathrm{cte}$
+\end_inset 
+
+ para un número significativo de valores estos parámetros.
+ El punto en que se cortan las curvas correspondientes a los valores concretos
+ de 
+\begin_inset Formula $\alpha_{0}l$
+\end_inset 
+
+ y 
+\begin_inset Formula $\alpha_{i}l$
+\end_inset 
+
+ da 
+\shape italic 
+
+\begin_inset Formula $\eta$
+\end_inset 
+
+
+\shape default 
+
+\begin_inset Formula $_{max}$
+\end_inset 
+
+ y 
+\begin_inset Formula $T_{2\,\mathrm{Opt}}$
+\end_inset 
+
+.
+ Para conocer la intensidad máxima de salida, 
+\begin_inset Formula $I_{S\,\mathrm{max}}$
+\end_inset 
+
+ es necesario medir también 
+\begin_inset Formula $I_{0}$
+\end_inset 
+
+, pues
+\layout Standard
+
+
+\begin_inset Formula \[
+I_{S\,\mathrm{max}}=I_{0}\alpha_{0}l\eta_{\mathrm{max}}.\]
+
+\end_inset 
+
+
+\layout Standard
+
+Obtener una estimación de las perdidas internas es en general bastante difícil.
+ Pero como las curvas no son extraordinariamente sensibles a las pérdidas
+ 
+\begin_inset Formula $\alpha_{i}l$
+\end_inset 
+
+, podemos hacer una aproximación.
+ Se puede pensar que la mayoría de las pérdidas son debidas a difracción.
+ Si por ejemplo el láser va a operar en el modo 
+\begin_inset Formula $\mathrm{TEM}_{00}$
+\end_inset 
+
+, en un caso de simetría cilíndrica el modo transverso fundamental es el
+ mismo que para el perfil cuadrado (modo gaussiano) y entonces
+\begin_inset Formula \[
+I=I_{0}\exp\left(-2r/w^{2}\right).\]
+
+\end_inset 
+
+Con este perfil la potencia total en el modo es
+\layout Standard
+
+
+\begin_inset Formula \[
+W=\int_{0}^{2\pi}\int_{0}^{+\infty}I\,\mathrm{d}^{2}S=2\pi\int_{0}^{+\infty}I_{0}\exp\left(-\frac{2r^{2}}{w^{2}}\right)r\,\mathrm{d}r=\frac{I_{0}}{2}\pi w^{2}\]
+
+\end_inset 
+
+ Como la difracción surge de limitar el tamaño del medio, podemos estimar
+ las pérdidas evaluando la energía comprendida en las colas laterales de
+ la distribución transversa, que no pasan.
+ Si el radio del medio es 
+\begin_inset Formula $R$
+\end_inset 
+
+ la potencia que el modo tiene fuera de ese radio es
+\layout Standard
+
+
+\begin_inset Formula \[
+\Delta W=\int_{0}^{2\pi}\int_{R}^{+\infty}I\,\mathrm{d^{2}}S=\frac{I_{0}}{2}\pi w^{2}\exp\left(-\frac{2R^{2}}{w^{2}}\right)\]
+
+\end_inset 
+
+Por lo tanto
+\layout Standard
+
+
+\begin_inset Formula \[
+\alpha_{i}l\simeq\frac{\Delta W}{W}=\exp\left(-\frac{2R^{2}}{w^{2}}\right)\]
+
+\end_inset 
+
+
+\layout Standard
+
+Donde 
+\shape italic 
+
+\begin_inset Formula $w$
+\end_inset 
+
+
+\shape default 
+ es la cintura de haz del modo transverso de la radiación, fijada por la
+ geometría del resonador.
+ Esta estimación suele ser buena.
+ Si el medio es un gas, es transparente.
+ Si es un sólido se busca buena calidad óptica.
+ Como las superficies se recubren de material antirreflectante, tiene sentido
+ pensar que las mayores pérdidas son las atribuíbles a la difracción.
+\layout Standard
+
+Las curvas que hemos estudiado son de amplia validez, aunque en algunos
+ casos toman una forma diferente, como en el resonador de anillo.
+\layout Standard
+
+Es de señalar que si el medio amplificador no rellena completamente el espacio
+ entre los espejos del resonador entonces la longitud 
+\begin_inset Formula $l$
+\end_inset 
+
+ que aparece en cálculos precedentes es la longitud 
+\begin_inset Formula $L$
+\end_inset 
+
+ del medio amplificador pues entre el medio y los espejos asumimos que la
+ radiación no cambia de intensidad (figura 
+\begin_inset LatexCommand \ref{fig:medio-no-rellena}
+
+\end_inset 
+
+).
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/medio-no-rellena-src.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:medio-no-rellena}
+
+\end_inset 
+
+Situación en la que el medio amplificador no ocupa la totalidad de la cavidad.
+\end_inset 
+
+
+\the_end

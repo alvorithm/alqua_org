@@ -1,0 +1,1246 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass book
+\begin_preamble
+\input{FdL-packages.sty}
+\input{FdL-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding auto
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Chapter
+
+Cuantificación de la radiación
+\layout Section
+
+Cuantificación de los operadores
+\layout Standard
+
+Hemos visto que la energía de una configuración arbitraria de radiación
+ electromagnética puede ser obtenida como la suma de las energías de osciladores
+ asociados a modos o configuraciones espaciales del campo.
+ El hamiltoniano de uno de estos osciladores, de frecuencia 
+\begin_inset Formula $\omega$
+\end_inset 
+
+, es 
+\begin_inset Formula \begin{equation}
+H=\frac{1}{2}\left(p^{2}+\omega^{2}q^{2}\right)\label{eq:ham-1-oscilador}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+En él 
+\begin_inset Formula $p$
+\end_inset 
+
+ y 
+\begin_inset Formula $q$
+\end_inset 
+
+ son magnitudes oscilantes con la frecuencia 
+\begin_inset Formula $\omega$
+\end_inset 
+
+ y proporcionales a la amplitud 
+\begin_inset Formula $b$
+\end_inset 
+
+ del campo.
+ Podemos pues interpretar que el oscilador está asociado a la oscilación
+ de la amplitud del campo electromagnético de la onda que constituye el
+ modo.
+\layout Standard
+
+Si los modos de radiación son formalmente osciladores, la cuantificación
+ del campo de radiación se podrá realizar mediante la cuantificación habitual
+ de un oscilador armónico en mecánica cuántica: asociando a los fasores
+ 
+\begin_inset Formula $a$
+\end_inset 
+
+ y 
+\begin_inset Formula $a^{*}$
+\end_inset 
+
+ los 
+\emph on 
+operadores de creación y aniquilación
+\emph default 
+ 
+\begin_inset Formula $a$
+\end_inset 
+
+ y 
+\begin_inset Formula $a^{\dag}$
+\end_inset 
+
+ de cuantos de energía en el oscilador.
+ Estos nuevos operadores se expresan en función de los operadores posición
+ y momento como los fasores 
+\begin_inset Formula $a$
+\end_inset 
+
+ y 
+\begin_inset Formula $a^{*}$
+\end_inset 
+
+ en función de las variables oscilantes canónicamente conjugadas 
+\begin_inset Formula $q$
+\end_inset 
+
+ y 
+\begin_inset Formula $p$
+\end_inset 
+
+ (ecs.
+ 
+\begin_inset LatexCommand \ref{eq:q-funcion-a-adaga}
+
+\end_inset 
+
+, 
+\begin_inset LatexCommand \ref{eq:p-funcion-a-adaga}
+
+\end_inset 
+
+).
+ Por medio de dicha expresión explícita se puede probar la usual relación
+ de conmutación, 
+\begin_inset Formula \[
+\left[a,a^{\dag}\right]=1\]
+
+\end_inset 
+
+y utilizando 
+\begin_inset LatexCommand \ref{eq:ham-1-oscilador}
+
+\end_inset 
+
+ se puede escribir
+\begin_inset Formula \[
+H=\frac{1}{2}\:\hbar\omega\left(a^{\dag}a+aa^{\dag}\right)\]
+
+\end_inset 
+
+En virtud del valor del conmutador, 
+\begin_inset Formula $aa^{\dag}=1-a^{\dag}a$
+\end_inset 
+
+, con lo que se obtiene otra expresión, más habitual, del hamiltoniano:
+\begin_inset Formula \begin{equation}
+H=\hbar\omega\left(a^{\dag}a+1/2\right).\label{eq:ham-un-modo}\end{equation}
+
+\end_inset 
+
+
+\layout Section
+
+Estados Fock
+\layout Subsection
+
+Autoestados del operador hamiltoniano
+\layout Standard
+
+Los autoestados de la energía son las autofunciones 
+\begin_inset Formula $\ket{n}$
+\end_inset 
+
+ que cumplen 
+\begin_inset Formula \[
+\hbar\omega\left(a^{\dag}a+1/2\right)\ket{n}=E_{n}\ket{n}\]
+
+\end_inset 
+
+también son autoestados del 
+\emph on 
+operador número
+\emph default 
+
+\begin_inset LatexCommand \index{operador!número}
+
+\end_inset 
+
+, 
+\begin_inset Formula $N\equiv a^{\dag}a$
+\end_inset 
+
+, aunque con distinto autovalor:
+\begin_inset Formula \begin{equation}
+N|n\rangle=a^{\dag}a\ket{n}=n\ket{n}\label{eq:av-op-numero}\end{equation}
+
+\end_inset 
+
+y están ortonormalizados: 
+\begin_inset Formula $\langle n|m\rangle=\delta_{nm}$
+\end_inset 
+
+.
+ La relación entre 
+\begin_inset Formula $H$
+\end_inset 
+
+ y operadores 
+\begin_inset Formula $a$
+\end_inset 
+
+ y 
+\begin_inset Formula $a^{\dag}$
+\end_inset 
+
+ nos conduce a interesarnos por las propiedades de estos últimos.
+\layout Standard
+
+Del conmutador de 
+\begin_inset Formula $a$
+\end_inset 
+
+ y 
+\begin_inset Formula $a^{\dag}$
+\end_inset 
+
+ podemos obtener fácilmente 
+\begin_inset Formula \begin{eqnarray*}
+\left[a,N\right] & = & a\, a^{\dag}a-a^{\dag}a\, a=(1+a^{\dag}a)a-a^{\dag}a\, a=a\\
+\left[a^{\dag},N\right] & = & a^{\dag}\, a^{\dag}a-a^{\dag}a\, a^{\dag}=a^{\dag}\, a^{\dag}a-a^{\dag}(1+a^{\dag}a)=-a^{\dag}\end{eqnarray*}
+
+\end_inset 
+
+Entonces 
+\begin_inset Formula \[
+\begin{split}Na|n\rangle & =(aN-a)|n\rangle=(n-1)a|n\rangle\\
+Na^{\dag}|n\rangle & =(a^{\dag}N+a^{\dag})|n\rangle=(n+1)a|n\rangle\end{split}
+\]
+
+\end_inset 
+
+
+\layout Standard
+
+Por tanto 
+\begin_inset Formula \[
+\begin{split} & a|n\rangle\,\propto\,|n-1\rangle\,\rightarrow\, a|n\rangle=A|n-1\rangle\\
+ & a^{\dag}|n\rangle\,\propto\,|n+1\rangle\,\rightarrow\, a^{\dag}|n\rangle=B|n+1\rangle\end{split}
+\]
+
+\end_inset 
+
+Si asumimos que 
+\begin_inset Formula $|n-1\rangle$
+\end_inset 
+
+ y 
+\begin_inset Formula $|n+1\rangle$
+\end_inset 
+
+ están normalizados, las normas de 
+\begin_inset Formula $a|n\rangle$
+\end_inset 
+
+ y de 
+\begin_inset Formula $a^{\dag}|n\rangle$
+\end_inset 
+
+ serán 
+\begin_inset Formula \[
+\begin{split}\langle n|\, a^{\dag}a\,|n\rangle= & n=|A|^{2}\,\rightarrow\, A=\sqrt{n}\\
+\langle n|\, aa^{\dag}\,|n\rangle= & \langle n|\,(1+a^{\dag}a)\,|n\rangle=n+1=|B|^{2}\,\rightarrow\, B=\sqrt{n+1}\end{split}
+\]
+
+\end_inset 
+
+
+\layout Standard
+
+Las ecuaciones de autovalores completas para los operadores destrucción
+ y creación son pues:
+\begin_inset Formula \begin{eqnarray}
+a|n\rangle & = & \sqrt{n}|n-1\rangle\label{eq:av-destruccion}\\
+a^{\dag}|n\rangle & = & \sqrt{n+1}|n+1\rangle\label{eq:av-creacion}\end{eqnarray}
+
+\end_inset 
+
+con 
+\begin_inset Formula $a\,\ket{0}=0$
+\end_inset 
+
+ y 
+\begin_inset Formula $n\geq0$
+\end_inset 
+
+, lo cual se justifica por el carácter positivo de la norma al cuadrado
+ de 
+\begin_inset Formula $a\,\ket{n}$
+\end_inset 
+
+, 
+\begin_inset Formula $\left(\bra{n}a^{\dag}\right)\left(a\,\ket{n}\right)$
+\end_inset 
+
+.
+\layout Standard
+
+Para que 
+\begin_inset Formula $n$
+\end_inset 
+
+ sea siempre positivo deberá ser entero, pues en caso contrario podríamos
+ encontrar un número 
+\begin_inset Formula $k$
+\end_inset 
+
+ lo suficientemente grande como para que 
+\begin_inset Formula \[
+a^{k}\,|n\rangle=\sqrt{n(n-1)\cdots(n-k+1)}|n-k\rangle\qquad(n-k<0),\]
+
+\end_inset 
+
+
+\layout Standard
+\noindent 
+sin pasar por el vector 
+\begin_inset Formula $|0\rangle$
+\end_inset 
+
+, y eso sería absurdo.
+ Si 
+\begin_inset Formula $n$
+\end_inset 
+
+ es entero cuando 
+\begin_inset Formula $k=n$
+\end_inset 
+
+ se genera el vector 
+\begin_inset Formula $|0\rangle$
+\end_inset 
+
+ y ya no se puede obtener 
+\begin_inset Formula $n-k<0$
+\end_inset 
+
+ pues 
+\begin_inset Formula $a|0\rangle=0$
+\end_inset 
+
+.
+ Por lo tanto, 
+\begin_inset Formula $n=0,1,2\ldots$
+\end_inset 
+
+ y los autovalores de la energía son
+\layout Standard
+
+
+\begin_inset Formula \[
+E_{n}=\hbar\omega\left(n+\frac{1}{2}\right)\]
+
+\end_inset 
+
+
+\layout Standard
+
+Los estados 
+\begin_inset Formula $|n\rangle$
+\end_inset 
+
+, autoestados de la energía en el modo
+\emph on 
+,
+\emph default 
+ se denominan 
+\emph on 
+estados de Fock
+\emph default 
+
+\begin_inset LatexCommand \index{Fock!estados de}
+
+\end_inset 
+
+
+\begin_inset LatexCommand \index{estados!Fock}
+
+\end_inset 
+
+.
+\layout Standard
+
+Los elementos de matriz de 
+\begin_inset Formula $a$
+\end_inset 
+
+ y 
+\begin_inset Formula $a^{\dag}$
+\end_inset 
+
+ son 
+\begin_inset Formula \begin{eqnarray}
+\langle n'|\, a\,|n\rangle & = & \sqrt{n}\,\delta_{n',n-1}\label{eq:elem-matriz-creacion}\\
+\langle n'|\, a^{\dag}\,|n\rangle & = & \sqrt{n+1}\,\delta_{n',n+1}\label{eq:elem-matriz-destruccion}\end{eqnarray}
+
+\end_inset 
+
+Los autoestados de la base de Fock los podemos representar en su propia
+ base:
+\layout Standard
+
+
+\begin_inset Formula \[
+|0\rangle=\left(\begin{array}{c}
+1\\
+0\\
+.\\
+.\\
+.\\
+.\end{array}\right)\qquad|1\rangle=\left(\begin{array}{c}
+0\\
+1\\
+.\\
+.\\
+.\\
+.\end{array}\right)\quad\ldots\quad|n\rangle=\left(\begin{array}{c}
+0\\
+.\\
+.\\
+1_{n}\\
+0\\
+.\end{array}\right)\ldots\]
+
+\end_inset 
+
+así como los operadores destrucción, creación y número:
+\begin_inset Formula \[
+a=\left(\begin{array}{cccc}
+0 & \sqrt{1} & 0\\
+0 & 0 & \sqrt{2}\\
+0 & 0 & 0\\
+ &  &  & \ddots\end{array}\right)\qquad a^{\dag}=\left(\begin{array}{cccc}
+0 & 0 & 0\\
+\sqrt{1} & 0 & 0\\
+0 & \sqrt{2} & 0\\
+ &  &  & \ddots\end{array}\right)\]
+
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Formula \[
+a^{\dag}a=\left(\begin{array}{cccc}
+0 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 2\\
+ &  &  & \ddots\end{array}\right)\]
+
+\end_inset 
+
+
+\layout Standard
+
+En el conjunto de la radiación los modos son independientes, pues el hamiltonian
+o total 
+\begin_inset Formula $H_{r}$
+\end_inset 
+
+ es la suma de los hamiltonianos de todos los modos y en cada uno de estos
+ hamiltonianos los operadores actúan en el espacio de Hilbert asociado al
+ modo en cuestión.
+\layout Standard
+
+
+\begin_inset Formula \[
+H_{r}=\sum_{l,\sigma}\, H_{l\sigma}=\sum_{l,\sigma}\,\hbar\omega_{l}\left(a_{l\sigma}^{\dag}a_{l\sigma}+\frac{1}{2}\right)\]
+
+\end_inset 
+
+Los autovectores de 
+\begin_inset Formula $H_{r}$
+\end_inset 
+
+ son los vectores 
+\begin_inset Formula $\ket{\phi}$
+\end_inset 
+
+ que cumplen 
+\begin_inset Formula $H_{r}\,|\phi\rangle=E_{\phi}\,|\phi\rangle$
+\end_inset 
+
+, lo que implica
+\begin_inset Formula \begin{eqnarray*}
+|\phi\rangle & \equiv & |n_{l'\sigma'}\rangle\otimes|n_{l''\sigma''}\rangle\otimes\cdots=|n_{l'\sigma'}\; n_{l''\sigma''}\;\cdots\rangle\\
+E_{\phi} & = & E_{n_{l'\sigma'}}+E_{n_{l''\sigma''}}+\cdots=\sum_{l\sigma}\,\hbar\omega_{l}\left(n_{l\sigma}+\frac{1}{2}\right)\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Standard
+
+Es decir el espacio de Hilbert de la radiación será el producto tensorial
+ de los espacios de Hilbert asociados a todos los modos.
+ Entonces 
+\begin_inset Formula \begin{eqnarray*}
+I\otimes\cdots\otimes I\otimes\cdots\otimes a_{l\sigma}^{\dag}\otimes I\cdots\,|\cdots n_{l\sigma}\cdots\rangle & = & \sqrt{n_{l\sigma}+1}\,|\cdots n_{l\sigma}+1\cdots\rangle\\
+I\otimes\cdots\otimes I\otimes\cdots\otimes a_{l\sigma}\otimes I\cdots\,|\cdots n_{l\sigma}\cdots\rangle & = & \sqrt{n_{l\sigma}}\,|\ldots n_{l\sigma}-1\ldots\rangle\\
+I\otimes\cdots\otimes I\otimes\cdots\otimes N_{l\sigma}\otimes I\cdots\,|\cdots n_{l\sigma}\cdots\rangle & = & n_{l\sigma}\,|\ldots n_{l\sigma}\ldots\rangle\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Standard
+
+Éste es entonces el espacio de Fock de la radiación si la base es la formada
+ por los vectores 
+\begin_inset Formula $|n_{l'\sigma'}\, n_{l''\sigma''}\ldots\rangle$
+\end_inset 
+
+.
+ Finalmente y como es lógico se tiene que verificar la relación de cierre
+ en esta base
+\layout Standard
+
+
+\begin_inset Formula \[
+\sum_{l'\sigma'}\,\sum_{l''\sigma''}\cdots\,\left(|n_{l'\sigma'}\; n_{l''\sigma''}\;\cdots\rangle\langle\; n_{l'\sigma'}\; n_{l''\sigma''}\;\cdots|\right)=I.\]
+
+\end_inset 
+
+
+\layout Subsection
+
+Carácter de los estados Fock
+\layout Standard
+
+Hemos comprobado que al cuantificar la radiación de un modo aparecen los
+ autoestados de la energía o estados Fock 
+\begin_inset Formula $|n\rangle$
+\end_inset 
+
+.
+ Pero ¿como sería el campo eléctrico en el modo cuando la radiación que
+ contiene está en uno de estos estados?.
+ Para determinarlo, calculamos el valor esperado del campo 
+\begin_inset Formula $\vec{E}$
+\end_inset 
+
+: 
+\begin_inset Formula \[
+\langle n|\vec{E}(\vec{r},t)|n\rangle=i\sqrt{\frac{\hbar\omega}{2\epsilon_{0}}}\,\left[\langle n|a|n\rangle\,\vec{u}(\vec{r})-\langle n|\, a^{\dag}\,|n\rangle\,\vec{u}^{*}(\vec{r})\right]\]
+
+\end_inset 
+
+En virtud de las propiedades de los operadores creación y destrucción y
+ de la ortonormalidad de la base,
+\begin_inset Formula \[
+\langle n|\,\vec{E}(\vec{r},t)\,|n\rangle=\boldsymbol{0}\]
+
+\end_inset 
+
+
+\layout Standard
+
+Este campo tiene pues un valor esperado nulo y por tanto tiene bien poco
+ que ver con el campo clásico de la radiación que en cada punto y en cada
+ instante es en general distinto de cero.
+ Como el campo oscilante de la onda electromagnética clásica es un buen
+ modelo del campo emitido por los emisores naturales, debemos concluir que
+ los estados Fock no son fáciles de generar y tienen un carácter muy poco
+ clásico.
+ En efecto, en estados Fock el número de fotones está bien determinado (ec.
+ 
+\begin_inset LatexCommand \ref{eq:av-op-numero}
+
+\end_inset 
+
+).
+ Al determinar perfectamente la partícula, perdemos conocimiento de su dimensión
+ ondulatoria.
+\layout Standard
+
+Nótese que hemos cuantificado la energía de una onda extendida a 
+\emph on 
+toda
+\emph default 
+ la cavidad: en esta cuantificación no se puede definir la posición del
+ fotón, porque no la tiene.
+ El fotón no tiene función de onda; es una partícula 
+\emph on 
+no local
+\emph default 
+.
+\layout Section
+
+Estados coherentes
+\layout Subsection
+
+Autoestados del operador destrucción
+\layout Standard
+
+Tratando de encontrar estados de la radiación en el modo que tengan una
+ imagen más próxima a la clásica vamos a estudiar los autoestados del operador
+ 
+\begin_inset Formula $a$
+\end_inset 
+
+, es decir, unos estados 
+\begin_inset Formula $|\alpha\rangle$
+\end_inset 
+
+ tales que 
+\begin_inset Formula \[
+a\ket{\alpha}=\alpha\ket{\alpha},\qquad\alpha\in\mathbb{C}.\]
+
+\end_inset 
+
+
+\layout Standard
+
+Siendo 
+\begin_inset Formula $a$
+\end_inset 
+
+ un operador no hermítico, es de esperar que sus autovalores puedan ser
+ complejos.
+ Como ya conocemos el álgebra que permite calcular con los estados Fock,
+ vamos a tratar de escribir el estado 
+\begin_inset Formula $|\alpha\rangle$
+\end_inset 
+
+ en base Fock utilizando la relación de cierre 
+\begin_inset Formula \[
+\ket{\alpha}=\sum_{n=0}^{\infty}\langle n|\alpha\rangle\ket{n}=\sum_{n=0}^{\infty}\, c_{n}(\alpha)\,|n\rangle\]
+
+\end_inset 
+
+Para conocer este desarrollo debemos calcular explícitamente los coeficientes
+ 
+\begin_inset Formula $c_{n}(\alpha)$
+\end_inset 
+
+:
+\begin_inset Formula \begin{eqnarray*}
+a\ket{\alpha} & = & \sum_{n=0}^{\infty}\, c_{n}(\alpha)\, a\ket{n}=\sum_{\mathbf{n=1}}^{\infty}\, c_{n}(\alpha)\,\sqrt{n}\,\ket{n-1}\\
+ & = & \sum_{n=0}^{\infty}\, c_{n+1}(\alpha)\,\sqrt{n+1}\,\ket{n}\\
+ & = & \sum_{n=0}^{\infty}\,\alpha\, c_{n}(\alpha)\,\ket{n}=\alpha\ket{\alpha}\end{eqnarray*}
+
+\end_inset 
+
+la igualación de los coeficientes entre ambos desarrollos da lugar a una
+ relación de recurrencia
+\begin_inset Formula \[
+c_{n+1}(\alpha)\,\sqrt{n+1}=\alpha\, c_{n}(\alpha)\]
+
+\end_inset 
+
+que se utiliza para calcular todos los coeficientes a partir del primero:
+ 
+\begin_inset Formula \[
+c_{1}=\frac{\alpha}{\sqrt{1}}c_{0},\qquad c_{2}=\frac{\alpha}{\sqrt{2}}c_{1}=\frac{\alpha^{2}}{\sqrt{2\times1}}c_{0},\quad\ldots\quad c_{n}=\frac{\alpha^{n}}{\sqrt{n!}}c_{0}\]
+
+\end_inset 
+
+
+\layout Standard
+
+La expresión de un estado coherente en base de estados Fock es:
+\begin_inset Formula \[
+|\alpha\rangle=\sum_{n=0}^{\infty}\, c_{0}\,\frac{\alpha^{n}}{\sqrt{n!}}\,|n\rangle.\]
+
+\end_inset 
+
+El valor hasta ahora indeterminado del primer coeficiente 
+\begin_inset Formula $c_{0}$
+\end_inset 
+
+ se puede calcular de modo que los estados 
+\begin_inset Formula $|\alpha\rangle$
+\end_inset 
+
+ estén normalizados.
+ Así 
+\begin_inset Formula \[
+1=\langle\alpha|\alpha\rangle=|c_{0}|^{2}\sum_{n=0}^{\infty}\,\sum_{m=0}^{\infty}\,\frac{\alpha^{n}\alpha^{m}}{\sqrt{n!\, m!}}\langle m|n\rangle=|c_{0}|^{2}\sum_{n=0}^{\infty}\,\frac{|\alpha|^{2n}}{n!}=|c_{0}|^{2}e^{|\alpha|^{2}},\]
+
+\end_inset 
+
+es decir,
+\begin_inset Formula \[
+|c_{0}|^{2}=e^{-|\alpha|^{2}}\]
+
+\end_inset 
+
+y con la adecuada elección de la fase inicial:
+\begin_inset Formula \[
+c_{0}=e^{-\frac{1}{2}|\alpha|^{2}}\]
+
+\end_inset 
+
+Por tanto 
+\begin_inset Formula \[
+\ket{\alpha}=\sum_{n=0}^{\infty}\, e^{-\frac{1}{2}|\alpha|^{2}}\,\frac{\alpha^{n}}{\sqrt{n!}}\,\ket{n}.\]
+
+\end_inset 
+
+
+\layout Subsection
+
+Número de fotones 
+\layout Standard
+
+La probabilidad de obtener en una medida de la energía 
+\begin_inset Formula $n$
+\end_inset 
+
+ cuantos 
+\begin_inset Formula $h\nu$
+\end_inset 
+
+ en el modo será
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/distribucion-poisson.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:prob-n-cuantos-coh}
+
+\end_inset 
+
+La distribución de probabilidad sobre el número de cuantos es la distribución
+ de Poisson.
+\end_inset 
+
+
+\begin_inset Formula \[
+|c_{n}(\alpha)|^{2}=\left|\braket{n}{\alpha}\right|^{2}=e^{-|\alpha|^{2}}\,\frac{|\alpha|^{2n}}{n!}.\]
+
+\end_inset 
+
+Vemos pues que en estos estados el número de cuantos de energía 
+\begin_inset Formula $h\nu$
+\end_inset 
+
+ no está determinado.
+ El número medio de cuantos en el modo es:
+\begin_inset Formula \[
+\left\langle n\right\rangle =\langle\alpha|a^{\dag}a|\alpha\rangle=\alpha^{*}\alpha\langle\alpha|\alpha\rangle=|\alpha|^{2}\]
+
+\end_inset 
+
+escribiendo el autovalor en forma módulo-argumental:
+\begin_inset Formula \begin{eqnarray*}
+\alpha & = & |\alpha|\, e^{-i\varphi}=\left\langle n\right\rangle ^{1/2}e^{-i\varphi}\end{eqnarray*}
+
+\end_inset 
+
+ y 
+\begin_inset Formula \[
+\left|c_{n}(\left\langle n\right\rangle )\right|^{2}=e^{-\left\langle n\right\rangle }\frac{\left\langle n\right\rangle ^{n}}{n!}.\]
+
+\end_inset 
+
+
+\layout Subsection
+
+Evolución temporal
+\layout Standard
+
+El operador unitario de evolución temporal para un modo (hamiltoniano 
+\begin_inset LatexCommand \ref{eq:ham-un-modo}
+
+\end_inset 
+
+) es:
+\begin_inset Formula \[
+U(t)=\exp\left(-\frac{i}{\hbar}Ht\right)=\exp\left[-i\omega\left(a^{\dag}a+\frac{1}{2}\right)t\right]\]
+
+\end_inset 
+
+Haciendo evolucionar 
+\begin_inset Formula $\ket{\alpha\left(0\right)}$
+\end_inset 
+
+ mediante 
+\begin_inset Formula $U\left(t\right)$
+\end_inset 
+
+ obtenemos 
+\begin_inset Formula $\ket{\alpha\left(t\right)}$
+\end_inset 
+
+:
+\begin_inset Formula \[
+\begin{split}|\alpha\left(t\right)\rangle & =e^{-\frac{1}{2}|\alpha|^{2}}\sum_{n=0}^{\infty}\frac{\alpha^{n}}{\sqrt{n!}}\, e^{-i\omega\left(a^{\dag}a+\frac{1}{2}\right)t}|n\rangle\\
+ & =e^{-\frac{1}{2}|\alpha|^{2}}\sum_{n=0}^{\infty}\frac{\alpha^{n}}{\sqrt{n!}}\, e^{-i\omega\left(n+\frac{1}{2}\right)t}|n\rangle\end{split}
+\]
+
+\end_inset 
+
+Este estado sigue siendo un estado coherente pues 
+\begin_inset Formula \[
+\begin{split}a|\alpha\left(t\right)\rangle & =e^{-\frac{1}{2}|\alpha|^{2}}\,\sum_{n=0}^{\infty}\frac{\alpha^{n}}{\sqrt{n!}}\, e^{-i\omega\left(n+\frac{1}{2}\right)t}\,\alpha\,|n\rangle\\
+ & =\alpha e^{-\frac{1}{2}|\alpha|^{2}}\,\sum_{\mathbf{n=1}}^{\infty}\frac{\alpha^{n}}{\sqrt{n!}}\, e^{-i\omega\left(n+\frac{1}{2}\right)t}\,\sqrt{n}|n-1\rangle\\
+ & =\alpha e^{-\frac{1}{2}|\alpha|^{2}}e^{-i\omega t}\,\sum_{n=1}^{\infty}\frac{\alpha^{n}}{\sqrt{(n-1)!}}\, e^{-i\omega\left(n+\frac{1}{2}\right)t}\,|n-1\rangle\\
+ & =\alpha e^{-i\omega t}|\alpha\left(t\right)\rangle\end{split}
+\]
+
+\end_inset 
+
+
+\layout Standard
+
+Entonces llamando 
+\begin_inset Formula \[
+\alpha(t)=\alpha\, e^{-i\omega t}=\langle n\rangle^{\frac{1}{2}}e^{-i\left(\omega t+\varphi\right)}\]
+
+\end_inset 
+
+se tiene
+\begin_inset Formula \[
+a|\alpha(t)\rangle=\alpha(t)|\alpha(t)\rangle,\]
+
+\end_inset 
+
+es decir, que en el transcurso del tiempo el estado cambia añadiendo a la
+ fase inicial del autovalor la fase 
+\begin_inset Formula $\omega t$
+\end_inset 
+
+.
+\layout Standard
+
+Es fácil ver que aunque los estados coherentes no son ortogonales, con ellos
+ se tiene un conjunto de generadores del espacio de Hilbert y del modo con
+ una apropiada relación de cierre en el plano complejo de los autovalores
+ 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+.
+\begin_inset Foot
+collapsed false
+
+\layout Standard
+
+La relación de cierre es 
+\begin_inset Formula $\pi^{-1}\int\ket{\alpha}\bra{\alpha}\,\mathrm{d}^{2}\alpha=I$
+\end_inset 
+
+, como se puede comprobar a partir de la expresión explícita para 
+\begin_inset Formula $\ket{\alpha}$
+\end_inset 
+
+ en términos de 
+\begin_inset Formula $\ket{n}$
+\end_inset 
+
+ integrando en polares.
+\end_inset 
+
+ Se dice que es un conjunto de vectores 
+\emph on 
+sobrecompleto
+\emph default 
+, pues no es linealmente independiente.
+ En consecuencia, por ejemplo, la fórmula usual de la traza no es válida
+ para ellos.
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Citar [Ballentine]}
+\end_inset 
+
+
+\layout Standard
+
+Si en un estado 
+\begin_inset Formula $|\alpha(t)\rangle$
+\end_inset 
+
+ calculamos el valor esperado de campo 
+\begin_inset Formula $\vec{E}$
+\end_inset 
+
+, empleando la definición 
+\begin_inset LatexCommand \ref{eq:def-depd-espacial}
+
+\end_inset 
+
+ y 
+\begin_inset Formula $\sin x=\left(e^{ix}-e^{-ix}\right)/2i$
+\end_inset 
+
+,
+\begin_inset Formula \[
+\begin{split}\Braket{\alpha(t)}{\vec{E}}{\alpha(t)} & =i\sqrt{\frac{\hbar\omega}{2\epsilon_{0}}}\,\left[\Braket{\alpha\left(t\right)}{a}{\alpha\left(t\right)}\vec{u}(\vec{r})-\Braket{\alpha\left(t\right)}{a^{\dag}}{\alpha\left(t\right)}\vec{u}^{*}(\vec{r})\right]\\
+ & =i\sqrt{\frac{\hbar\omega}{2\epsilon_{0}}}\,\left[\alpha(t)\,\vec{u}(\vec{r})-\alpha^{*}(t)\,\vec{u}^{*}(\vec{r})\right]\\
+ & =i\sqrt{\frac{\hbar\omega}{2\epsilon_{0}V}}\,\vec{e}\,\langle n\rangle^{\frac{1}{2}}\,\left[e^{i\left(\vec{k}\cdot\vec{r}-\omega t-\varphi\right)}-e^{-i\left(\vec{k}\cdot\vec{r}-\omega t-\varphi\right)}\right]\\
+ & =-\sqrt{\frac{\hbar\omega}{2\epsilon_{0}V}}\,\vec{e}\,\langle n\rangle^{\frac{1}{2}}\,2\sin\left(\vec{k}\cdot\vec{r}-\omega t-\varphi\right)\end{split}
+\]
+
+\end_inset 
+
+Es decir, que en el estado coherente el valor esperado del campo es el de
+ una onda plana clásica; la fase del autovalor 
+\begin_inset Formula $\alpha(t)$
+\end_inset 
+
+ es la fase del campo clásico y su módulo guarda relación con el valor esperado
+ del número de fotones.
+ Éste es indeterminado en los estados coherentes, mientras que la onda queda
+ perfectamente definida, al revés que en los estados Fock.
+\layout Standard
+
+Por tanto, cuando consideramos la radiación producida por fuentes naturales,
+ el estado coherente puede representarla de una forma tan precisa como pueda
+ hacerlo la onda monocromática clásica (aunque la energía tendrá oscilaciones
+ cuánticas alrededor de 
+\begin_inset Formula $\left\langle E\right\rangle $
+\end_inset 
+
+).
+ A este respecto conviene resaltar que el estado del campo es independiente
+ de la geometría de la distribución espacial del modo de la radiación, que
+ esencialmente está determinada por las condiciones de contorno que se le
+ imponen a la ecuación de ondas espacial.
+\layout Section
+
+La radiación isotrópica
+\layout Standard
+
+Imaginemos una configuración del campo de radiación en la que su energía
+ pueda ser considerada uniformemente distribuída en promedio en todos los
+ puntos del volumen 
+\begin_inset Formula $V$
+\end_inset 
+
+ que ocupa.
+ Supongamos además que todas las orientaciones de la polarización y de la
+ dirección de propagación, en cada punto del espacio y en cada instante
+ de tiempo son equiprobables.
+ Dicho de otro modo, que cambian con tal rapidez que sus cambios no pueden
+ ser seguidos por los aparatos de medida, para los cuales todas las orientacione
+s están presentes en cada instante.
+ Teniendo en cuenta la relación entre la frecuencia de la radiación y el
+ momento lineal de sus partículas, 
+\begin_inset Formula $p=h\nu/c$
+\end_inset 
+
+, tendremos que la composición espectral de la radiación implica una distribució
+n de ésta en el espacio de momentos.
+\layout Standard
+
+Seleccionemos ahora los fotones cuyos momentos están orientados dentro de
+ un ángulo sólido 
+\begin_inset Formula $\mathrm{d}^{2}\Omega$
+\end_inset 
+
+ y con su momento entre 
+\begin_inset Formula $p$
+\end_inset 
+
+ y 
+\begin_inset Formula $p+\mathrm{d}p$
+\end_inset 
+
+, como se ilustra en la figura 
+\begin_inset LatexCommand \ref{fig:vol-dp-dOmega-en-p}
+
+\end_inset 
+
+.
+\begin_inset Float figure
+wide false
+collapsed true
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/vol-dp-dOmega-en-p-src.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:vol-dp-dOmega-en-p}
+
+\end_inset 
+
+Pequeño volumen en el espacio de momentos correspondiente a un intervalo
+ de momento 
+\begin_inset Formula $\mathrm{d}p$
+\end_inset 
+
+ y a un intervalo de ángulo sólido 
+\begin_inset Formula $\mathrm{d}^{2}\Omega$
+\end_inset 
+
+.
+\end_inset 
+
+
+\layout Standard
+
+El volumen que estos fotones ocupan en el espacio de fases es, considerando
+ solamente una polarización: 
+\begin_inset Formula \[
+\mathrm{d}^{3}V_{f}=Vp^{2}\,\mathrm{d}p\,\mathrm{d}^{2}\Omega=2V\,\frac{h^{3}\nu^{2}}{c^{3}}\,\mathrm{d}\nu\,\mathrm{d^{2}}\Omega.\]
+
+\end_inset 
+
+En la teoría cuántica, según el principio de incertidumbre de Heisenberg,
+ el volumen que ocupa en el espacio de las fases el estado de una partícula
+ es 
+\begin_inset Formula $\Delta V_{f}=h^{3}$
+\end_inset 
+
+.
+ Así es que el número de distribuciones en posiciones y momentos que caben
+ en el volumen del espacio de fases 
+\begin_inset Formula $\mathrm{d}^{6}V_{f}$
+\end_inset 
+
+ será el número de modos en el volumen 
+\begin_inset Formula $V$
+\end_inset 
+
+ que se propagan dentro de 
+\begin_inset Formula $\mathrm{d}^{2}\Omega$
+\end_inset 
+
+ con sus frecuencias comprendidas entre 
+\begin_inset Formula $\nu$
+\end_inset 
+
+ y 
+\begin_inset Formula $\nu+\mathrm{d}\nu$
+\end_inset 
+
+:
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Precisar la explicación para el volumen por estado en teoría cuántica.}
+\end_inset 
+
+ 
+\begin_inset Formula \[
+\frac{\mathrm{d}^{3}V_{f}}{\Delta V_{f}}=\frac{\nu^{2}}{c^{3}}V\,\mathrm{d}\nu\,\mathrm{d^{2}}\Omega\]
+
+\end_inset 
+
+Pero la partícula por cada distribución espacial puede tener dos polarizaciones,
+ por lo que el número de modos que se propagan en todas las direcciones
+ (
+\begin_inset Formula $\iint\mathrm{d^{2}}\,\Omega=4\pi$
+\end_inset 
+
+) con sus frecuencias entre 
+\begin_inset Formula $\nu$
+\end_inset 
+
+ y 
+\begin_inset Formula $\nu+\mathrm{d}\nu$
+\end_inset 
+
+ es: 
+\begin_inset Formula \[
+\mathrm{d}N=\iint\,\mathrm{d}^{3}N=\frac{8\pi\,\nu^{2}}{c^{3}}V\,\mathrm{d}\nu\]
+
+\end_inset 
+
+Y la densidad de modos por unidad del volumen 
+\begin_inset Formula $V$
+\end_inset 
+
+ y de intervalo de frecuencia es 
+\begin_inset Formula \[
+\rho_{\nu}(\nu)=\frac{\mathrm{d}N}{V\,\mathrm{d}\nu}=\frac{8\pi\nu^{2}}{c^{3}}\]
+
+\end_inset 
+
+
+\layout Standard
+\noindent 
+exactamente la misma que hemos deducido en el caso de la cavidad de simetría
+ cúbica para los modos de onda plana.
+ Este razonamiento confirma la universalidad de esta distribución.
+\layout Standard
+
+Los modos de la radiación obedecen a la dinámica de los osciladores, y en
+ una situación de equilibrio térmico el operador densidad que describe la
+ estadística de un colectivo de sistemas cuyo hamiltoniano individual es
+ 
+\begin_inset Formula $H$
+\end_inset 
+
+ se escribe así
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+La ignorancia que tenemos acerca de colectivos estadísticos es de naturaleza
+ clásica, es decir no es estructural como la incertidumbre cuántica, sino
+ fruto de las limitaciones experimentales y/o de cómputo.
+\end_inset 
+
+:
+\begin_inset Formula \[
+\hat{\rho}=\frac{\exp\left(-H/k_{B}T\right)}{\mathrm{tr}\,\exp\left(-H/k_{B}T\right)}.\]
+
+\end_inset 
+
+ Este operador permite calcular la energía media de un modo: 
+\begin_inset Formula $\left\langle H\right\rangle =\mathrm{tr}\,\hat{\rho}H$
+\end_inset 
+
+, con 
+\begin_inset Formula $H$
+\end_inset 
+
+ dado por 
+\begin_inset LatexCommand \ref{eq:ham-un-modo}
+
+\end_inset 
+
+.
+\layout Standard
+\noindent 
+La energía media de un modo es, pues, en términos de la variable 
+\begin_inset Formula $x=\hbar\omega/k_{B}T$
+\end_inset 
+
+: 
+\begin_inset ERT
+status Open
+
+\layout Standard
+
+\backslash 
+com{Considerar la posibilidad de poner los cocientes en línea (además, no hay que introducir paréntesis, ya que el sumatorio actúa como operador de agrupación).}
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray*}
+\left\langle H\right\rangle  & = & \frac{{\displaystyle \sum_{n=0}^{\infty}\langle n|e^{-x\left(a^{*}a+1/2\right)}\hbar\omega\left(a^{\dag}a+1/2\right)|n\rangle}}{{\displaystyle \sum_{n=0}^{\infty}\langle n|e^{-x\left(a^{\dag}a+1/2\right)}|n\rangle}}\\
+ & = & \frac{{\displaystyle \sum_{n=0}^{\infty}\hbar\omega\left(n+1/2\right)e^{-x\left(n+1/2\right)}}}{{\displaystyle \sum_{n=0}^{\infty}e^{-x\left(n+1/2\right)}}}\\
+ & = & \frac{{\displaystyle \sum_{n=0}^{\infty}\hbar\omega\, n\, e^{-xn}}}{{\displaystyle \sum_{n=0}^{\infty}e^{-xn}}}+\frac{1}{2}\hbar\omega\end{eqnarray*}
+
+\end_inset 
+
+pasando al primer miembro la 
+\emph on 
+energía del punto cero
+\begin_inset LatexCommand \index{energía!del punto cero}
+
+\end_inset 
+
+
+\emph default 
+, que está presente incluso habiendo cero fotones, es decir, en el vacío:
+\begin_inset Formula \begin{eqnarray*}
+\left\langle H\right\rangle -\frac{1}{2}\hbar\,\omega & = & \hbar\omega\frac{{\displaystyle \sum_{n=0}^{\infty}\hbar\,\omega\, n\, e^{-xn}}}{{\displaystyle \sum_{n=0}^{\infty}e^{-x\, n}}}\\
+ & = & -\hbar\omega\frac{{\displaystyle \dx{}\sum_{n=0}^{\infty}e^{-xn}}}{{\displaystyle \sum_{n=0}^{\infty}e^{-xn}}}=\hbar\omega\dx{}\ln\left(\sum_{n=0}^{\infty}e^{-xn}\right)^{-1},\end{eqnarray*}
+
+\end_inset 
+
+pero 
+\begin_inset Formula \[
+\left(\sum_{n=0}^{\infty}e^{-x\, n}\right)^{-1}=\left[\left(1-e^{-x}\right)^{-1}\right]^{-1}=\left(1-e^{-x}\right)\]
+
+\end_inset 
+
+Por tanto, deshaciendo el cambio de variable,
+\begin_inset Formula \[
+\begin{split}\langle H\rangle-\frac{1}{2}\hbar\omega & =\hbar\omega\dx{}\ln\left(1-e^{-x}\right)=\hbar\omega\frac{e^{-x}}{1-e^{-x}}\\
+ & =\frac{\hbar\omega}{\exp\left(\hbar\omega/k_{B}T\right)-1}=\frac{h\nu}{\exp\left(h\nu/k_{B}T\right)-1}\end{split}
+\]
+
+\end_inset 
+
+Si ésta es la energía media de un modo en equilibrio térmico, la densidad
+ 
+\emph on 
+de energía
+\begin_inset LatexCommand \index{densidad!de energía}
+
+\end_inset 
+
+
+\emph default 
+ de la radiación por unidad de volumen e intervalo de frecuencia será el
+ producto de esta magnitud y la densidad frecuencial de modos dada por 
+\begin_inset LatexCommand \ref{eq:dens-modos-cav-vol-freq}
+
+\end_inset 
+
+:
+\begin_inset Formula \begin{equation}
+u_{\nu}\left(\nu\right)=\langle H\rangle\rho_{\nu}\left(\nu\right)=\frac{8\pi h\nu^{3}}{c^{3}}\frac{1}{\exp\left(h\nu/k_{B}T\right)-1}+\frac{1}{2}\, h\nu\,\rho_{\nu}(\nu)\label{eq:distr-Boltzmann-dens-rad}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+El primer término es la distribución de Planck
+\begin_inset LatexCommand \index{Planck}
+
+\end_inset 
+
+ para la radiación
+\begin_inset LatexCommand \index{radiación! de equilibrio térmico}
+
+\end_inset 
+
+ de equilibrio térmico y el segundo la energía electromagnética del vacío.
+ Si hubiésemos utilizado el teorema de equipartición, 
+\begin_inset Formula $\left\langle H\right\rangle =k_{B}T$
+\end_inset 
+
+ habríamos obtenido la ley clásica del cuerpo negro (Rayleigh--Jeans).
+\the_end

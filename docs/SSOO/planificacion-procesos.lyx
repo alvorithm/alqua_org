@@ -1,0 +1,1536 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass scrbook
+\language spanish
+\inputencoding auto
+\fontscheme pslatex
+\graphics default
+\float_placement !hbtp
+\paperfontsize default
+\spacing single 
+\papersize a4paper
+\paperpackage a4wide
+\use_geometry 0
+\use_amsmath 1
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Chapter
+
+Planificación de procesos
+\layout Section
+
+Concepto y criterios de planificación
+\layout Standard
+
+La planificación hace referencia a un conjunto de políticas y mecanismos
+ incorporados al SO que gobiernan el orden en que se ejecutan los trabajos
+ que deben ser completados por el sistema informático.
+ Un planificador
+\begin_inset LatexCommand \index{planificador}
+
+\end_inset 
+
+ es un módulo del SO que selecciona el siguiente trabajo a admitir en el
+ sistema y el siguiente proceso que tomará el control sobre el procesador.
+ El objetivo primario de la planificación es optimizar el rendimiento del
+ sistema de acuerdo con los criterios considerados más importantes por los
+ diseñadores del mismo.
+\layout Standard
+
+Entre las medidas de rendimiento y los criterios de optimización más habituales
+ que los planificadores utilizan para llevar a cabo su labor se encuentran
+ los siguientes:
+\layout Subsection
+
+Utilización del procesador: 
+\layout Standard
+
+La utilización del procesador es la fracción de tiempo promedio durante
+ la cual el procesador está ocupado, es decir, la fracción de tiempo durante
+ la cual el procesador se encuentra activo ejecutando algún proceso, bien
+ de usuario, bien del propio SO.
+ Con esta interpretación, la utilización del procesador puede ser medida
+ con relativa facilidad, por ejemplo mediante un 
+\emph on 
+proceso
+\emph default 
+ 
+\emph on 
+nulo
+\emph default 
+ especial
+\begin_inset Foot
+collapsed false
+
+\layout Standard
+
+en MINIX existe un proceso llamado idle:
+\layout Standard
+
+
+\family typewriter 
+\size small 
+idle(){
+\layout Standard
+
+
+\family typewriter 
+\size small 
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+\SpecialChar ~
+for(;;);
+\layout Standard
+
+
+\family typewriter 
+\size small 
+}
+\end_inset 
+
+ que se ejecute cuando ningún otro proceso pueda hacerlo.
+ Una alternativa es considerar únicamente la operación en modo usuario y,
+ por tanto, excluir el tiempo empleado para el SO
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Podríamos decir que el tiempo de uso real del procesador es el tiempo total
+ de uso menos el tiempo que se estuvo ejecutando la instrucción idle().
+\end_inset 
+
+.
+ 
+\layout Standard
+
+En cualquier caso, el objetivo es mantener al procesador ocupado tanto tiempo
+ como sea posible.
+ De esta forma, se conseguirá que los factores de utilización de los restantes
+ componentes también sean elevados obteniéndose con ello buenas medidas
+ de rendimiento.
+\layout Subsection
+
+Productividad
+\layout Standard
+
+La produtividad
+\begin_inset LatexCommand \index{produtividad}
+
+\end_inset 
+
+ se refiere a la cantidad de trabajo completada por unidad de tiempo.
+ Un modo de expresarla es definiéndola como el número de trabajos de usuario
+ ejecutados por una unidad de tiempo.
+ Cuanto mayor sea este número, más trabajo aparentemente está siendo ejecutado
+ por el sistema.
+\layout Subsection
+
+Tiempo de retorno
+\layout Standard
+
+El tiempo de retorno 
+\begin_inset Formula $T_{R}$
+\end_inset 
+
+ se define como el tiempo que transcurre desde el momento en que un trabajo
+ o programa es remitido al sistema hasta que es totalmente completado por
+ el mismo.
+ Es decir, el tiempo de retorno 
+\begin_inset Formula $T_{R}$
+\end_inset 
+
+ es el tiempo consumido por el proceso dentro del sistema y puede ser expresado
+ como la suma del 
+\emph on 
+tiempo de servicio
+\emph default 
+ o 
+\emph on 
+tiempo de ejecución 
+\emph default 
++ 
+\emph on 
+el tiempo de espera
+\emph default 
+.
+ 
+\begin_inset Formula $T_{R}=T_{S}+T_{E}$
+\end_inset 
+
+.
+\layout Subsection
+
+Tiempo de espera
+\layout Standard
+
+El tiempo de espera 
+\begin_inset Formula $T_{E}$
+\end_inset 
+
+ es el tiempo que un proceso o trabajo consume a la espera de la asignación
+ de algún recurso o de que tenga lugar algún evento.
+ En este tiempo también se incluyen el periodo de espera por la obtención
+ del propio procesador
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+no confundir estos tiempos.
+ El tiempo de espera por el procesador está incluido en el tiempo de espera
+ total 
+\begin_inset Formula $T_{E}$
+\end_inset 
+
+.
+\end_inset 
+
+ debido a la competencia con otros procesos en un sistema con multiprogramación.
+ Este tiempo es la penalización impuesta por compartir recursos con otros
+ procesos y puede expresarse como el tiempo de retorno - el tiempo de ejecución
+ efectivo.
+ El tiempo de espera 
+\begin_inset Formula $T_{E}$
+\end_inset 
+
+ elimina la variabilidad debida a las diferencias en tiempos de ejecución
+ del trabajo.
+\layout Subsection
+
+Tiempo de respuesta
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+examen
+\end_inset 
+
+
+\layout Standard
+
+El tiempo de respuesta en sistemas interactivos se define como el tiempo
+ que transcurre desde el momento en que se introduce el último carácter
+ de una orden que desencadena la ejecución de un programa o transacción
+ hasta que aparece el primer resultado en el terminal.
+ Generalmente también se le denomina tiempo de respuesta de terminal.
+ 
+\layout Standard
+
+En sistemas en tiempo real, el tiempo de respuesta es esencialmente una
+ latencia y se define como el tiempo que transcurre desde el momento en
+ que un suceso interno o externo es señalado hasta que se ejecuta la primera
+ instrucción de su correspondiente rutina de servicio.
+ A este tiempo suele denominársele tiempo de respuesta al proceso.
+\layout Section
+
+Tipos de planificadores
+\layout Standard
+
+En un SO complejo pueden coexistir tres tipos de planificadores: A corto,
+ a medio y a largo plazo.
+\layout Subsection
+
+Planificador a largo plazo (PLP)
+\layout Standard
+
+Su misión consiste en controlar la admisión de procesos nuevos al sistema.
+ Cuando está presente este tipo de planificador, su objetivo principal es
+ proporcionar una mezcla equilibrada de trabajos.
+ El PLP decide cuándo se da entrada al sistema a un nuevo proceso para que
+ éste sea ejecutado.
+ Este proceso puede proceder de la respuesta al envío de un trabajo por
+ lotes o bien a la orden de ejecución realizada por el usuario.
+ En cierto modo, el PLP actúa como una válvula de admisión de primer nivel
+ para mantener la utilización de recursos al nivel deseado.
+ Es importante conseguir una administración equilibrada para saber cómo
+ conjugar procesos interactivos que tienen retardos especiales con procesos
+ por lotes que son una simple de cola de cálculo.
+\layout Standard
+
+Por ejemplo, cuando la utilización del microprocesador puede admitir más
+ trabajos, el planificador puede dar entrada al sistema a nuevos procesos
+ y aumentar con ello la probabilidad de asignación de alguno de estos procesos
+ al procesador.
+ Por el contrario, cuando el tiempo para la utilización del procesador resulte
+ alto y así se refleje en el deterioro en el tiempo de espera, el PLP puede
+ optar por reducir la frecuencia de admisión de procesos a situación de
+ preparado.
+ El PLP es invocado generalmente cada vez que un trabajo completado abandona
+ el sistema
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+importante
+\end_inset 
+
+.
+\layout Standard
+
+La frecuencia de llamada al PLP es, por tanto, dependiente del sistema y
+ de la carga de trabajo pero generalmente es mucho más baja que para los
+ otros dos tipos de planificadores
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+en una unidad de tiempo se utilizará menos veces y ello hará posible que
+ su estructura sea más compleja.
+\end_inset 
+
+.
+\layout Standard
+
+Como resultado de esta no demasiada frecuente ejecución, el PLP puede incorporar
+ algoritmos relativamente complejos y computacionalmente intensivos para
+ admitir trabajos al sistema.
+ En términos del diagrama de transición de estados de procesos, el PLP quedará
+ a cargo de las transiciones del estado nuevo al estado preparado o listo.
+\layout Standard
+
+
+\begin_inset Float figure
+placement htbp
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/SSOO_fig_1_11.eps
+	display color
+	scale 55
+	rotateOrigin center
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{planificadores}
+
+\end_inset 
+
+Esquema de un SO con planificadores
+\end_inset 
+
+
+\layout Subsection
+
+Planificador a corto plazo (PCP)
+\layout Standard
+
+Este planificador decide qué procesos toman el control de la CPU.
+ El PCP asigna el procesador entre el conjunto de procesos preparados residentes
+ en memoria.
+ Su principal objetivo es maximizar el rendimiento del sistema de acuerdo
+ a con el conjunto de criterios elegidos.
+ Al estar a cargo de la transición de estado preparado a ejecución, el PCP
+ deberá ser invocado cuando se realice una operación de conmutación de procesos
+ para seleccionar el siguiente proceso a ejecutar.
+ En la práctica el PCP es llamado cada vez que un suceso interno o externo
+ hace que se modifique alguna de las condiciones que definen el estado actual
+ del sistema.
+ Algunos de los sucesos que provocan una replanificación en virtud de su
+ capacidad de modificar el estado del sistema son:
+\layout Enumerate
+
+Tics de reloj, es decir, interrupciones basadas en el tiempo.
+\layout Enumerate
+
+Interrupciones y terminaciones de operaciones de E/S.
+\layout Enumerate
+
+Llamadas de operación al sistema operativo frente a llamadas de consulta.
+\layout Enumerate
+
+Envío y recepción de señales.
+\layout Enumerate
+
+Activación de programas interactivos.
+\layout Standard
+
+En general, cada vez que ocurre uno de estos sucesos, el SO llama al PCP
+ para determinar si debería planificarse otro proceso para su ejecución.
+\layout Subsection
+
+Planificador a medio plazo (PMP)
+\layout Standard
+
+El PMP tiene por misión traer procesos suspendidos a la memoria principal.
+ Este planificador controla la transición de procesos en situación de suspendido
+s a situación de preparados.
+ El PMP permanecerá inactivo mientras se mantenga la condición que dio lugar
+ a la suspensión del proceso, sin embargo, una vez desaparecida dicha condición
+ el PMP intenta asignar al proceso la cantidad de memoria principal que
+ requiera y volver a dejarlo en situación de preparado.
+ Para funcionar adecuadamente, el PMP debe disponer de información respecto
+ a las necesidades de memoria de los procesos suspendidos, lo cual no es
+ complicado de llevar a la práctica ya que el tamaño real del proceso puede
+ ser calculado en el momento de suspenderlo almacenándose en el BCP.
+ 
+\layout Standard
+
+Este planificador será invocado cuando quede espacio libre en memoria por
+ la terminación de un proceso o cuando el suministro de procesos preparados
+ quede por debajo de un límite especificado.
+\layout Section
+
+Algoritmos de planificación
+\layout Standard
+
+Antes de comenzar a estudiar los distintos tipos de algoritmos de planificación
+ es importante tener en cuenta que hay dos categorías generales de éstos.
+\layout Description
+
+La\SpecialChar ~
+planificación\SpecialChar ~
+no\SpecialChar ~
+apropiativa
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+La apropiatividad está definida en términos del SO, no del proceso.
+\end_inset 
+
+ Se basa en que una vez que el proceso pasa a estado de ejecución no abandona
+ el procesador hasta que termina o hasta que se bloquea en espera de una
+ operación de E/S o al solicitar algún servicio del sistema.
+\layout Description
+
+La\SpecialChar ~
+planificación\SpecialChar ~
+apropiativa Un proceso que está ejecutando puede ser interrumpido
+ por el sistema operativo para otorgar el procesador a un proceso distinto
+ en función de los criterios de planificación utilizados; prioridad, número
+ de usos del procesador, etc.
+\layout Subsection
+
+Algoritmo First Come First Serve (FCFS)
+\layout Standard
+
+La disciplina de planificación más sencilla es el algoritmo FCFS
+\begin_inset LatexCommand \index{FCFS}
+
+\end_inset 
+
+.
+ La carga de trabajo se procesa simplemente en un orden de llegada.
+ Por no tener en consideración el estado del sistema ni las necesidades
+ de recursos de los procesos individuales, la planificación FCFS puede dar
+ lugar a pobres rendimientos.
+ Este algoritmo exhibe un alto tiempo de respuesta a sucesos debido a la
+ falta de expropiación y caracterización con las propiedades de los procesos.
+ La planificaciñon FCFS elimina la noción e importancia de las prioridades
+ de los procesos.
+\layout Description
+
+ejercicio Sean dos procesos 
+\begin_inset Formula $P_{1}$
+\end_inset 
+
+ y 
+\begin_inset Formula $P_{2}$
+\end_inset 
+
+ con tiempos de servicios de 
+\begin_inset Formula $20$
+\end_inset 
+
+ y 
+\begin_inset Formula $2$
+\end_inset 
+
+ unidades de tiempo, respectivamente.
+ Si el primero en llegar es el proceso 
+\begin_inset Formula $P_{1}$
+\end_inset 
+
+, calcular los tiempos de retorno de ambos procesos y el tiempo de retorno
+ medio.
+ Realizar los mismos cálculos si el primero en llegar es el proceso 
+\begin_inset Formula $P_{2}$
+\end_inset 
+
+.
+\layout Itemize
+
+
+\begin_inset Formula $P_{2}P_{1}\longrightarrow$
+\end_inset 
+
+
+\begin_deeper 
+\layout Standard
+
+
+\begin_inset Formula \[
+\left.\begin{array}{ccccc}
+P_{1}: & T_{E}=0 & T_{S}=20 & T_{R}=20\\
+P_{2}: & T_{E}=20 & T_{S}=2 & T_{R}=22\end{array}\right\} \begin{array}{c}
+\bar{T_{R}}=21\\
+\bar{T_{E}}=10\end{array}\]
+
+\end_inset 
+
+
+\end_deeper 
+\layout Itemize
+
+
+\begin_inset Formula $P_{1}P_{2}\longrightarrow$
+\end_inset 
+
+
+\begin_deeper 
+\layout Standard
+
+
+\begin_inset Formula \[
+\left.\begin{array}{ccccc}
+P_{2}: & T_{E}=0 & T_{S}=2 & T_{R}=2\\
+P_{1}: & T_{E}=2 & T_{S}=20 & T_{R}=22\end{array}\right\} \begin{array}{c}
+\bar{T_{R}}=12\\
+\bar{T_{E}}=1\end{array}\]
+
+\end_inset 
+
+
+\end_deeper 
+\layout Subsection
+
+Algoritmo por reparto circular de tiempo (RR
+\begin_inset LatexCommand \index{Round-Robin}
+
+\end_inset 
+
+, Round-Robin)
+\layout Standard
+
+En entornos interactivos tales como sistemas de tiempo compartido, el requisito
+ principal es proporcionar tiempos de espera razonablemente buenos y, en
+ general, compartir los recursos del sistema equitativamente entre todos
+ los usuarios.
+ Solamente las disciplinas de planificación que permiten la expropiación
+ del procesador pueden ser consideradas en tales entornos y una de las más
+ utilizadas es la de 
+\emph on 
+Reparto circular de tiempos o por turnos
+\emph default 
+.
+ Básicamente, el tiempo del procesador se divide en cuotas o cuantos que
+ son asignados a los procesos solicitantes.
+ Ningún proceso puede ejecutarse durante más tiempo que el establecido por
+ ese cuanto si hay más procesos esperando en la cola de preparados.
+ Si un proceso necesita más tiempo para completarse después de agotar su
+ cuota de tiempo, volverá de nuevo a la cola de procesos preparados.
+ Si el proceso termina antes de que expire esta cuota de tiempo, el planificador
+ dará inmediatamente el procesador a otro proceso en situación de preparado.
+ Con esta planificación y en un sistema con 
+\begin_inset Formula $n$
+\end_inset 
+
+ procesos activos, cada proceso recibe aproximadamente 
+\begin_inset Formula $\frac{1}{n}$
+\end_inset 
+
+ del tiempo del procesador.
+\layout Standard
+
+Con este algoritmo de planificación, los procesos cortos pueden ser ejecutados
+ dentro de una única cuota de tiempo y presentarán por tanto buenos tiempos
+ de respuesta.
+ En el caso de procesos más largos, éstos pueden circular unas cuantas veces
+ a través de la cola de preparados antes de terminar.
+ El tiempo de respuesta a estos procesos más largos será siempre proporcional
+ a sus necesidades de recursos.
+\layout Standard
+
+La planificación por reparto de tiempo requiere el soporte de un temporizador
+ de intervalos que se programa generalmente para que interrumpa al SO cada
+ vez que expire una cuota o cuanto de tiempo, forzando así la ejecución
+ del planificador.
+ El rendimiento de este tipo de planificación es muy sensible a la elección
+ de la cuota de tiempo, que suele oscilar entre 1 y 100 milisegundos dependiendo
+ del sistema.
+ Una cuota demasiado corta puede dar lugar a retrasos significativos debido
+ a las frecuentes interrupciones del temporizados y consiguientes conmutaciones
+ de procesos.
+ En el otro extremo, una cuota demasiado larga transformaría a un planificador
+ RR en un planificador FCFS.
+\layout Description
+
+tiempo\SpecialChar ~
+de\SpecialChar ~
+retorno\SpecialChar ~
+normalizado se define como el tiempo de retorno/tiempo de
+ servicio.
+\layout Description
+
+ejercicio Sea una sistema con 5 procesos activos, los tiempos de activación
+ y de servicio de cada uno de ellos son los siguiente 
+\layout Standard
+
+
+\begin_inset Formula \[
+\begin{array}{ccccccc}
+ &  & P_{A}P_{B} & P_{C} & P_{D} & P_{E}\\
+\textrm{tiempo de llegada} & T_{ll} & 0 & 2 & 4 & 6 & 8\\
+\textrm{tiempo de servicio} & T_{S} & 3 & 6 & 4 & 5 & 2\end{array}\]
+
+\end_inset 
+
+
+\layout Enumerate
+
+Obtener el datagrama de ejecución si el algoritmo de planificación utilizado
+ es FCFS.
+\layout Enumerate
+
+Cronograma de ejecución si la planificación es Round-Robin con una cuota
+ de una unidad de tiempo.
+\layout Enumerate
+
+Cronograma de ejecución si la planificación es Round-Robin con una cuota
+ de cuatro unidades de tiempo.
+\layout Standard
+
+
+\begin_inset  Tabular
+<lyxtabular version="3" rows="12" columns="6">
+<features islongtable="true">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" rightline="true" width="0pt">
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $P_{A}$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $P_{B}$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $P_{C}$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $P_{D}$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $P_{E}$
+\end_inset 
+
+
+\end_inset 
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $T_{ll}$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+0
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+2
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+4
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+6
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+8
+\end_inset 
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $T_{S}$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+3
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+6
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+4
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+5
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+2
+\end_inset 
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $T_{R}$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+3
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+7
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+9
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+12
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+12
+\end_inset 
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $T_{E}$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+0
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+5
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+7
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+10
+\end_inset 
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $T_{RN}$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+1.17
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+2.25
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+2.48
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+6.0
+\end_inset 
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $T_{R}$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+4
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+17
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+13
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+14
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+7
+\end_inset 
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $T_{E}$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+11
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+9
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+9
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+5
+\end_inset 
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $T_{RN}$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+1.33
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+2.83
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+3.27
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+2.80
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+3.5
+\end_inset 
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $T_{R}$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+3
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+17
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+7
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+14
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+9
+\end_inset 
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $T_{E}$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+0
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+11
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+3
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+9
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+7
+\end_inset 
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $T_{RN}$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+2.83
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+1.75
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+2.80
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+4.5
+\end_inset 
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Float figure
+placement htbp
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/SSOO_fig_1_12.eps
+	display color
+	scale 90
+	rotateOrigin center
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{solFCFS}
+
+\end_inset 
+
+Solución gráfica al ejercicio propuesto: FCFS
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Float figure
+placement htbp
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/SSOO_fig_1_13.eps
+	display color
+	rotateOrigin center
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{solRR1}
+
+\end_inset 
+
+Solución gráfica al ejercicio propuesto: RR-1
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Float figure
+placement htbp
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/SSOO_fig_1_14.eps
+	display color
+	rotateOrigin center
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{solRR4}
+
+\end_inset 
+
+Solución gráfica al ejercicio propuesto: RR-4
+\end_inset 
+
+
+\layout Subsection
+
+Planificación con expropiación basada en prioridades (ED, Event-Driven
+\begin_inset LatexCommand \index{Event-Driven}
+
+\end_inset 
+
+)
+\layout Standard
+
+Cada proceso del sistema está asignado a un nivel de prioridad y el planificador
+ siempre elige al proceso preparado con prioridad más alta.
+ Estas prioridades pueden ser estáticas o dinámicas.
+ La prioridad estática no variará a lo largo del ciclo de vida del proceso
+ mientras que la prioridad dinámica sí puede hacerlo.
+ En cualquier caso, los valores iniciales de estas prioridades son asignados
+ por el usuario o el SO en el momento de la creación del proceso.
+ Un problema habitual en este tipo de planificación es la posibilidad de
+ que los procesos de prioridad más baja queden siempre relegados en favor
+ de los de prioridad más alta.
+ Así, con este tipo de planificación no puede garantizarse la terminación
+ de un proceso dentro de un tiempo finito.
+ Hay SSOO donde esto no se puede consentir, por ejemplo; los sistemas operativos
+ en tiempo real.
+\layout Standard
+
+En sistemas donde tal situación no puede ser tolerada, el remedio habitual
+ lo proporciona la utilización de una prioridad por envejecimiento, según
+ la cual, la prioridad de un proceso aumenta gradualmente en función de
+ su tiempo de permanencia en el sistema.
+ Los procesos más antiguos conseguirán así una prioridad tal que asegura
+ su terminación en tiempo finito.
+ En un SO de tiempo real estricto, donde cada proceso debe tener garantizada
+ su ejecución antes de la expiración de un plazo, se utiliza una disciplina
+ de planificación por plazo más inmediato.
+ Este tipo de planificación daría entrada al procesador al proceso cuyo
+ plazo esté más próximo a cumplirse.
+\layout Standard
+
+Otro tipo de planificación en este tipo de sistemas es la planificación
+ por mínima laxitud, según la cual se selecciona el proceso con menor diferencia
+ entre el tiempo que tarda en cumplirse el plazo y el tiempo restante de
+ computación.
+ Véase la figura 
+\begin_inset LatexCommand \ref{planificacionED}
+
+\end_inset 
+
+.
+\layout Standard
+
+La prioridad puede subir porque ha transcurrido un tiempo determinado o
+ porque al proceso se le ha expropiado 
+\begin_inset Formula $x$
+\end_inset 
+
+ veces del procesador o por las razones que estén definidas pero siempre
+ premiando de alguna forma el tiempo de vida del proceso en el sistema.
+\layout Standard
+
+
+\begin_inset Float figure
+placement htbp
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/SSOO_fig_1_15.eps
+	display color
+	scale 60
+	rotateOrigin center
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{planificacionED}
+
+\end_inset 
+
+Esquema de un sistema con planificación ED
+\end_inset 
+
+
+\layout Subsection
+
+Planificación MLQ (Multiple level queues
+\begin_inset LatexCommand \index{MLQ}
+
+\end_inset 
+
+)
+\layout Standard
+
+En sistemas mixtos donde coexisten procesos interactivos y procesos por
+ lotes, resulta más conveniente adoptar una planificación compleja que combine
+ a varias disciplinas.
+ Un modo de implementar esta planificación es clasificar la carga de trabajo
+ de acuerdo con sus características y mantener colas de procesos separados
+ servidas por diferentes planificadores.
+ A este método se le denomina Planificación
+\begin_inset LatexCommand \index{Planificación por colas MultiNivel}
+
+\end_inset 
+
+ por colas MultiNivel.
+ Véase la figura 
+\begin_inset LatexCommand \ref{Ejemplo de sistema complejo}
+
+\end_inset 
+
+.
+\layout Standard
+
+
+\begin_inset Float figure
+placement htbp
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/SSOO_fig_1_16.eps
+	display color
+	scale 60
+	rotateOrigin center
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{Ejemplo de sistema complejo}
+
+\end_inset 
+
+Esquema de un sistema complejo.
+\end_inset 
+
+
+\the_end

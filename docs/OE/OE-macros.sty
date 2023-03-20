@@ -1,0 +1,215 @@
+\newcommand{\nofig}{
+\begin{center}
+\hrule
+\texttt{(http://fig.alqua.org)}
+\end{center}
+\vspace{2cm}}
+
+
+%% \newcommand{\collab}[1]{
+%% \setlength{\unitlength}{#1 cm}
+%% \begin{picture}(1,1)
+%% \put(0,0){\framebox(1,1)[t]{\fbox{\tiny{\texttt{\href{http://alqua.org/figuras}{alqua.org/figuras}}}}}}
+%% \end{picture}}
+
+
+%% Este fichero contiene los macros de alqua
+%% clasificados por secciones. Para usarlo hay que
+%% escribir una directiva \input{macros.sty} en el preámbulo.
+
+%% Nota: eso hará que los documentos de LyX compilen correctamente, pero
+%% no que se muestren en el documento-fuente de LyX. Para lograr eso hay que 
+%% cargar un fichero .lyx que contenga los macros antes de acceder al documento
+%% en cuestión, o bien poner los macros en él.
+
+%% General categorized macro file
+
+%% Por Álvaro Tejero Cantero para alqua.com
+%% Versión 0.1 22 11 2001
+
+%% Macros diferenciales
+
+\newcommand{\da}[2]{\frac{\mathrm{d}#1 }{\mathrm{d}#2 }}
+\newcommand{\dda}[2]{\frac{\mathrm{d}^{2}#1 }{\mathrm{d}#2 ^{2}}}
+\newcommand{\dpa}[2]{\frac{\partial #1 }{\partial #2 }}
+\newcommand{\ddpa}[2]{\frac{\partial ^{2}#1 }{\partial #2 ^{2}}}
+\newcommand{\ddpas}[3]{\frac{\partial ^{2}#1 }{\partial #2 \partial #3 }}
+\newcommand{\dt}[1]{\frac{\mathrm{d}#1 }{\mathrm{d}t}}
+\newcommand{\dx}[1]{\da{#1 }{x}}
+\newcommand{\dy}[1]{\da{#1 }{y}}
+\newcommand{\dz}[1]{\da{#1 }{z}}
+\newcommand{\dr}[1]{\frac{\mathrm{d}#1 }{\mathrm{d}r}}
+\newcommand{\ddt}[1]{\dda{#1 }{t}}
+\newcommand{\ddx}[1]{\dda{#1 }{x}}
+\newcommand{\ddy}[1]{\dda{#1 }{y}}
+\newcommand{\ddz}[1]{\dda{#1 }{z}}
+\newcommand{\ddr}[1]{\frac{\mathrm{d}^{2}#1 }{\mathrm{d}r^{2}}}
+\newcommand{\dpt}[1]{\dpa{#1 }{t}}
+\newcommand{\dpx}[1]{\dpa{#1 }{x}}
+\newcommand{\dpy}[1]{\dpa{#1 }{y}}
+\newcommand{\dpz}[1]{\dpa{#1 }{z}}
+\newcommand{\dpr}[1]{\dpa{#1 }{r}}
+\newcommand{\ddpt}[1]{\ddpa{#1 }{t}}
+\newcommand{\ddpx}[1]{\ddpa{#1 }{x}}
+\newcommand{\ddpy}[1]{\ddpa{#1 }{y}}
+\newcommand{\ddpz}[1]{\ddpa{#1 }{z}}
+\newcommand{\ddpr}[1]{\ddpa{#1 }{r}}
+\newcommand{\dpac}[3]{\left( \dpa{#1 }{#2 }\right) _{#3 }}
+
+%% Mecánica teórica (diferenciales)
+\newcommand{\dpqi}[1]{\frac{\partial #1 }{\partial q_{i}}}
+\newcommand{\dpqj}[1]{\frac{\partial #1 }{\partial q_{j}}}
+\newcommand{\dpqn}[1]{\frac{\partial #1 }{\partial q_{n}}}
+\newcommand{\dppi}[1]{\frac{\partial #1 }{\partial p_{i}}}
+\newcommand{\dppj}[1]{\frac{\partial #1 }{\partial p_{j}}}
+\newcommand{\dppn}[1]{\frac{\partial #1 }{\partial p_{n}}}
+
+
+%% Teoría de grupos
+\newcommand{\Gl}{\mathsf{GL}\left( n,\Bbb K\right) }
+\newcommand{\Glr}{\mathsf{GL}\left( n,\Bbb R\right) }
+\newcommand{\Glc}{\mathsf{GL}\left( n,\Bbb C\right) }
+\newcommand{\gl}{\mathsf{gl}\left( n,\Bbb K\right) }
+\newcommand{\glr}{\mathsf{gl}\left( n,\Bbb R\right) }
+\newcommand{\glc}{\mathsf{gl}\left( n,\Bbb C\right) }
+\newcommand{\mat}{\mathrm{Mat}\left( n,\Bbb K\right) }
+\newcommand{\matr}{\mathrm{Mat}\left( n,\Bbb R\right) }
+\newcommand{\matc}{\mathrm{Mat}\left( n,\Bbb C\right) }
+\newcommand{\tq}{\, |\, }
+
+
+%% Mecánica cuántica
+
+\newcommand{\ket}[1]{\left| #1 \right\rangle }
+\newcommand{\bra}[1]{\left\langle #1 \right| }
+\newcommand{\braket}[2]{\left\langle #1 |#2 \right\rangle } 
+\newcommand{\Braket}[3]{\left\langle #1 \left| #2 \right| #3 \right\rangle }
+\newcommand{\BraketH}[2]{\left\langle #1 \left| \mathcal{H}\right| #2 \right\rangle }
+
+
+%% Nombres más cortos para las flechas
+
+\newcommand{\fd}{\rightarrow }
+\newcommand{\fiz}{\leftarrow }
+\newcommand{\fdi}{\leftrightarrow }
+\newcommand{\Fd}{\Rightarrow }
+\newcommand{\Fi}{\Leftarrow }
+\newcommand{\Fdi}{\Leftrightarrow }
+\newcommand{\fld}{\longrightarrow }
+\newcommand{\fli}{\longleftarrow }
+\newcommand{\fldi}{\longleftrightarrow }
+\newcommand{\Fld}{\Longrightarrow }
+\newcommand{\Fli}{\Longleftarrow }
+\newcommand{\Fldi}{\Longleftrightarrow }
+
+
+%% Diversos tipos de matrices (en obsolescencia)
+
+\newcommand{\vfn}[1]{\left( #1 _{1},#1 _{2},\ldots ,#1 _{n}\right) }
+\newcommand{\vf}[3]{\left( #1 ,#2 ,#3 \right) }
+\newcommand{\vc}[3]{\left[ \protect\begin{array}{c}
+#1 \protect\\
+#2 \protect\\
+#3 
+\protect\end{array}\right] }
+\newcommand{\vcdos}[2]{\left[ \protect\begin{array}{c}
+#1 \protect\\
+#2 
+\protect\end{array}\right] }
+\newcommand{\vcn}[1]{\left[ \protect\begin{array}{c}
+#1 ^{1}\protect\\
+#1 ^{2}\protect\\
+\vdots \protect\\
+#1 ^{3}
+\protect\end{array}\right] }
+\newcommand{\idr}[1]{\int #1 \, \mathrm{d}\mathbf{r}}
+\newcommand{\idrp}[1]{\int #1 \, \mathrm{d}\mathbf{r}'}
+\newcommand{\intinf}[2]{\int _{0}^{\infty }#1 \: \mathrm{d}#2 }
+\newcommand{\mdd}[4]{\left[ \protect\begin{array}{cc}
+#1  & #3 \protect\\
+#2  & #4 
+\protect\end{array}\right] }
+\newcommand{\mtt}[9]{\left[ \protect\begin{array}{ccc}
+#1  & #4  & #7 \protect\\
+#2  & #5  & #8 \protect\\
+#3  & #6  & #9 
+\protect\end{array}\right] }
+ 
+
+%% Símbolos en negrita (nombre normal + 'n'
+
+\newcommand{\ceron}{\boldsymbol {0}}
+\newcommand{\alphan}{\boldsymbol {\alpha }}
+\newcommand{\betan}{\boldsymbol {\beta }}
+\newcommand{\gamman}{\boldsymbol {\gamma }}
+\newcommand{\deltan}{\boldsymbol {\delta }}
+\newcommand{\epsilonn}{\boldsymbol {\epsilon }}
+\newcommand{\varepsilonn}{\boldsymbol {\varepsilon }}
+\newcommand{\phin}{\boldsymbol {\phi }}
+\newcommand{\varphin}{\boldsymbol {\varphi }}
+\newcommand{\chin}{\boldsymbol {\chi }}
+\newcommand{\etan}{\boldsymbol {\eta }}
+\newcommand{\iotan}{\boldsymbol {\iota }}
+\newcommand{\kappan}{\boldsymbol {\kappa }}
+\newcommand{\lambdan}{\boldsymbol {\lambda }}
+\newcommand{\mun}{\boldsymbol {\mu }}
+\newcommand{\nun}{\boldsymbol {\nu }}
+\newcommand{\pin}{\boldsymbol {\pi }}
+\newcommand{\thetan}{\boldsymbol {\theta }}
+\newcommand{\omegan}{\boldsymbol {\omega }}
+\newcommand{\rhon}{\boldsymbol {\rho }}
+\newcommand{\sigman}{\boldsymbol {\sigma }}
+\newcommand{\taun}{\boldsymbol {\tau }}
+\newcommand{\xin}{\boldsymbol {\xi }}
+\newcommand{\psin}{\boldsymbol {\psi }}
+\newcommand{\zetan}{\boldsymbol {\zeta }}
+
+
+%% Electromagnetismo
+
+\newcommand{\cpe}{\frac{1}{4\pi \epsilon _{0}}}
+\newcommand{\potC}[2]{\frac{#1 }{\left| \mathbf{r}-\mathbf{r}'\right| ^{#2 }}}
+ 
+
+%% Operadores diferenciales en diversos 
+%% sistemas de coordenadas (en obsolescencia)
+
+\newcommand{\grad}[1]{\mathbf{grad}\left( #1 \right) }
+\newcommand{\divg}[1]{\mathrm{div}\left( #1 \right) }
+\newcommand{\rot}[1]{\mathbf{rot}\left( #1 \right) }
+\newcommand{\gradcar}[1]{\left( \dpx{#1 },\dpy{#1 },\dpz{#1 }\right) }
+\newcommand{\divcar}[3]{\dpx{#1 _{x}}+\dpy{#1 _{y}}+\dpz{#1 _{z}}}
+\newcommand{\rotcar}[3]{\left( \dpy{#1 _{z}}-\dpz{#1 _{y}},\dpz{#1 _{x}}-\dpx{#1 _{z}},\dpx{#1 _{y}}-\dpy{#1 _{z}}\right) }
+\newcommand{\Lapcar}[1]{\ddpx{#1 }+\ddpy{#1 }+\ddpz{#1 }}
+\newcommand{\gradcil}[1]{\left( \dpa{#1 }{r},\frac{1}{r}\dpa{#1 }{\theta },\dpa{#1 }{z}\right) }
+\newcommand{\divcil}[1]{\frac{1}{r}\left( \dpa{\left( r#1 _{r}\right) }{r}+\dpa{#1 _{\theta }}{\theta }+\dpz{\left( r#1 _{z}\right) }\right) }
+\newcommand{\rotcil}[1]{\left( \frac{1}{r}\dpa{#1 _{z}}{\theta }-\dpa{#1 _{\theta }}{z},\dpa{#1 _{r}}{z}-\dpa{#1 _{z}}{r},\frac{1}{r}\dpa{\left( r#1 _{\theta }\right) }{}-\frac{1}{r}\dpa{#1 _{r}}{\theta }\right) }
+\newcommand{\Lapcil}[1]{\ddpa{#1 }{r}+\frac{1}{r}\dpa{#1 }{r}+\frac{1}{r^{2}}\ddpa{#1 }{\theta }+\ddpz{#1 }}
+\newcommand{\gradesf}[1]{\left( \dpa{#1 }{r},\frac{1}{r}\dpa{#1 }{\phi },\frac{1}{r\sin \phi }\dpa{#1 }{\theta }\right) }
+\newcommand{\divesf}[1]{\frac{1}{r^{2}}\dpa{\left( r^{2}#1 _{r}\right) }{r}+\frac{1}{r\sin \phi }\dpa{\left( \sin \phi #1 _{\phi }\right) }{\phi }+\frac{1}{r\sin \phi }\dpa{#1 _{\theta }}{\theta }}
+\newcommand{\rotesf}[1]{\left[ \frac{1}{r\sin \phi }\left( \dpa{\left( \sin \phi #1 _{\theta }\right) }{\phi }-\dpa{#1 _{\phi }}{\theta }\right) ,\frac{1}{r}\left( \frac{1}{\sin \phi }\dpa{#1 _{r}}{\theta }-\dpa{\left( r#1 _{\theta }\right) }{r}\right) ,\frac{1}{r}\left( \dpa{\left( r#1 _{\phi }\right) }{r}-\dpa{#1 _{r}}{\phi }\right) \right] }
+\newcommand{\Lapesf}[1]{\ddpa{#1 }{r}+\frac{2}{r}\dpa{#1 }{r}+\frac{1}{r^{2}\sin ^{2}\phi }\ddpa{#1 }{\theta }+\frac{\cos \phi }{r^{2}\sin \phi }\dpa{#1 }{\phi }+\frac{1}{r^{2}}\ddpa{#1 }{\phi }}
+
+
+%% Óptica
+
+\newcommand{\fase}{\left( \mathbf{k}\cdot \mathbf{r}-\omega t\right) }
+
+
+%% Química 
+
+\newcommand{\reaccion}{\rightleftharpoons }
+
+
+%% Geometría diferencial avanzada
+
+\newcommand{\Cinf}{\mathcal{C}^{\infty }}
+\newcommand{\cR}[1]{\mathbb {R}^{#1 }}
+\newcommand{\dpxi}[1]{\frac{\partial #1 }{\partial x^{i}}}
+\newcommand{\dpxj}[1]{\frac{\partial #1 }{\partial x^{j}}}
+\newcommand{\dpyj}[1]{\frac{\partial #1 }{\partial y^{j}}}
+\newcommand{\dpyi}[1]{\frac{\partial #1 }{\partial y^{i}}}
+\newcommand{\xm}{x^{1}\ldots x^{m}}
+\newcommand{\yn}{y^{1}\ldots y^{n}}
+\newcommand{\pe}{\wedge }
+

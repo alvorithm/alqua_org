@@ -1,0 +1,2664 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass book
+\begin_preamble
+\input{OE-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding latin1
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize a4paper
+\paperpackage a4
+\use_geometry 1
+\use_amsmath 1
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 2
+\papersides 2
+\paperpagestyle default
+
+\layout Chapter
+
+Refracción y reflexión en medios homogéneos e isótropos
+\layout Standard
+
+
+\begin_inset LatexCommand \label{cap refrac_reflec_en_mhi}
+
+\end_inset 
+
+
+\layout Section
+
+Planteamiento del problema
+\layout Standard
+
+¿Qué le ocurre a la luz cuando pasa de un medio homogéneo e isótropo a otro
+ medio homegéneo e isótropo diferente?.
+ Ya sabemos resolver la propagación de la luz 
+\emph on 
+dentro
+\emph default 
+ de estos medios, pero no hemos afrontado la cuestión del paso de unos a
+ otros.
+\layout Subsubsection
+
+Suposiciones
+\layout Itemize
+
+la superficie que separa ambos medios es un plano.
+ Elegiremos los ejes de coordenadas de modo que sea el plano 
+\begin_inset Formula $z=0$
+\end_inset 
+
+.
+\layout Itemize
+
+Para nosotros cambio de medio significa automáticamente cambio de índice
+ de refracción; Si los índices fueran iguales la propagación se produciría
+ como si de un sólo medio se tratase.
+\layout Itemize
+
+La discontinuidad de índice es una buena aproximación porque la interfase
+ es de un tamaño del orden atómico, que es muy pequeño frente a la longitud
+ de onda de la radiación que nos interesa.
+ Un cambio de medio aire--vidrio queda, por ejemplo, bien modelado por esta
+ discontinuidad.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/interfaz-plana-dos-medios.eps
+	display monochrome
+	width 4cm
+	subcaption
+
+\end_inset 
+
+ 
+\begin_inset Graphics
+	filename fig/escalon-de-indice-dos-medios.eps
+	display monochrome
+	width 4cm
+	keepAspectRatio
+	subcaption
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Dos medios ópticamente densos homogéneos e isótropos de índice 
+\begin_inset Formula $n$
+\end_inset 
+
+ y 
+\begin_inset Formula $n'$
+\end_inset 
+
+ respectivamente separados por una interfase plana, 
+\begin_inset Formula $z=0$
+\end_inset 
+
+.
+ En la segunda figura, escalón de índice en 
+\begin_inset Formula $z=0$
+\end_inset 
+
+.
+\end_inset 
+
+
+\layout Standard
+
+Al llegar a la discontinuidad de índice se producirán dos ondas: la transmitida
+ y la reflejada.
+ Nuestro objetivo es en primer lugar demostrar este desdoblamiento de la
+ onda incidente.
+ Los datos son a) 
+\emph on 
+el material
+\emph default 
+ y b) 
+\emph on 
+cómo lo iluminamos
+\emph default 
+ y las incógnitas son las características de la luz reflejada y la luz transmiti
+da y, singularmente, su dirección (ley de
+\noun on 
+ Snell
+\noun default 
+), polarización (fórmulas de 
+\noun on 
+Fresnel
+\noun default 
+) y reparto energético (relaciones energéticas).
+\layout Standard
+
+Insistamos un poco más sobre la interpretación microscópica.
+ El haz de luz incide sobre las cargas del medio, que al ser aceleradas
+ radian oem, que se superpondrán a la luz incidente formando la luz transmitida,
+ por una parte, y retornarán al medio de origen, por otra
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+A pesar de que presentamos todos estos fenómenos en secuencia temporal,
+ se debe saber que, puesto que estamos trabajando con ondas armónicas monocromát
+icas, infinitamente extendidas en el tiempo, todas las ondas han estado
+ y estarán siempre ahí (incidente, reflejada y transmitida).
+ No se puede identificar un momento en el que aparezca la onda incidente
+ y se produzca su escisión en dos: la convivencia de las tres ondas es consustan
+cial a la descripción matemática que hemos dado del problema.
+\end_inset 
+
+.
+ El problema no es fácilmente abordable a esta escala microscópica (véase
+ para ello el 
+\emph on 
+teorema de extinción de la onda incidente
+\emph default 
+ en [Born]); por ello recurriremos de nuevo a las ecMm.
+ Hay que recordar que las ecMm funcionan tanto mejor cuanto más denso sea
+ el empaquetamiento de materia; es decir, cuanto más infrecuentes sean los
+ espacios vacíos entre átomos.
+\layout Standard
+
+Vamos a resolver las ecMm para ambos medios, proponiendo unas soluciones
+ que sean suficientemente generales pero que incorporen las condiciones
+ iniciales (una onda incide sobre una superficie de discontinuidad).
+ Como ambas soluciones no pueden ser independientes, estableceremos unas
+ condiciones de frontera para los campos en la discontinuidad que aseguren
+ el buen 
+\begin_inset Quotes eld
+\end_inset 
+
+contacto
+\begin_inset Quotes erd
+\end_inset 
+
+.
+\layout Standard
+
+Al final del capítulo trataremos brevemente el problema mucho más complicado
+ que se presenta cuando en lugar de hacer el estudio para dos medios transparent
+es permitimos que uno de ellos sea absorbente.
+ En esa sección se darán principalmente resultados; el método general de
+ solución ya habrá sido explicado con ocasión del estudio de los medios
+ transparentes y sólo restará ponerlo en práctica en la nueva situación.
+\layout Section
+
+Dirección y frecuencia de las ondas
+\layout Subsection
+
+Condiciones de frontera
+\layout Standard
+
+Las condiciones de frontera se derivan de modo sencillo a partir de las
+ ecMm; se pueden encontrar en [Born].
+ Las condiciones de frontera nos dicen qué relaciones hay entre 
+\begin_inset Formula $\mathbf{E}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathbf{H}$
+\end_inset 
+
+ a ambos lados de la discontinuidad.
+ A los valores del segundo medio los denotaremos con primas.
+ Nos es suficiente con las siguientes condiciones de frontera
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{E}_{tg} & = & \mathbf{E}'_{tg}\\
+\mathbf{H}_{tg} & = & \mathbf{H}'_{tg}\end{eqnarray*}
+
+\end_inset 
+
+ donde el subíndice 
+\begin_inset Formula $tg$
+\end_inset 
+
+ significa 
+\begin_inset Quotes eld
+\end_inset 
+
+la componente tangencial del vector sobre la superficie
+\begin_inset Quotes erd
+\end_inset 
+
+.
+\layout Subsection
+
+Descripción y nomenclatura
+\layout Standard
+
+Los índices son reales (medios transparentes) y 
+\begin_inset Formula $\mu\simeq\mu_{0}$
+\end_inset 
+
+ (no magnéticos).
+ Una oap de vector de ondas 
+\begin_inset Formula $\mathbf{k}$
+\end_inset 
+
+ y frecuencia 
+\begin_inset Formula $\omega$
+\end_inset 
+
+ incide desde el primer medio sobre la interfase 
+\begin_inset Formula $z=0$
+\end_inset 
+
+, representada por el vector normal 
+\begin_inset Formula $\mathbf{u}_{n}$
+\end_inset 
+
+ (dirigido hacia el primer medio).
+ 
+\begin_inset Formula $\mathbf{k},\mathbf{u}_{n}$
+\end_inset 
+
+ definen (salvo cuando son paralelos) un plano, llamado 
+\emph on 
+plano de incidencia 
+\emph default 
+(lo identificaremos con el plano del papel).
+ El otro eje lo llamamos 
+\begin_inset Formula $x$
+\end_inset 
+
+, de modo que el plano de incidencia es el 
+\begin_inset Formula $xz$
+\end_inset 
+
+.
+ El ángulo que forman 
+\begin_inset Formula $\mathbf{k}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathbf{u}_{n}$
+\end_inset 
+
+ se llamará 
+\emph on 
+ángulo de incidencia.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/incidencia-oblicua-sobre-interfaz.eps
+	display monochrome
+	width 5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Diagrama del problema.
+\end_inset 
+
+
+\emph default 
+Una vez hechas estas precisiones se puede escribir 
+\begin_inset Formula $\mathbf{k}$
+\end_inset 
+
+ por componentes según los ejes 
+\begin_inset Formula $x,y,z$
+\end_inset 
+
+.
+\begin_inset Formula \[
+\mathbf{k}=n\frac{\omega}{c}\left(\sin\theta,0,\cos\theta\right)\]
+
+\end_inset 
+
+ Como se ve, la componente 
+\begin_inset Formula $y$
+\end_inset 
+
+ de 
+\begin_inset Formula $\mathbf{k}$
+\end_inset 
+
+ es nula.
+\layout Subsection
+
+Escritura de las ondas incidente, transmitida y reflejada
+\layout Standard
+
+Vamos a utilizar el hecho de que la onda incidente es una oap, aplicando
+ sobre ella las condiciones de frontera.
+ Denotaremos la onda incidente por
+\layout Standard
+
+
+\begin_inset Formula \[
+\mathbf{E}_{i}=\mathbf{A}e^{i\fase}\]
+
+\end_inset 
+
+ donde 
+\begin_inset Formula $\mathbf{A}$
+\end_inset 
+
+ es un vector complejo constante.
+ Para las ondas transmitida y reflejada lo más general que sabemos escribir
+ es una superposición de oap.
+ En concreto, la onda reflejada es
+\begin_inset Formula \[
+\mathbf{E}_{r}=\mathbf{R}e^{i\left(\mathbf{k}''\cdot\mathbf{r}-\omega''t\right)}+\ldots\]
+
+\end_inset 
+
+ No sabemos nada de esta onda: ni los 
+\begin_inset Formula $\mathbf{k}$
+\end_inset 
+
+ ni los 
+\begin_inset Formula $\omega$
+\end_inset 
+
+ ni los 
+\begin_inset Formula $\mathbf{R}$
+\end_inset 
+
+, ni cuántos términos habrá.
+ Afortunadamente las condiciones de frontera seleccionarán solamente una
+ onda y precisarán los otros datos.
+ Para la transmitida ocurrirá análogamente
+\begin_inset Formula \[
+\mathbf{E}_{t}=\mathbf{T}e^{i\left(\mathbf{k}'\cdot\mathbf{r}-\omega't\right)}+\ldots\]
+
+\end_inset 
+
+ Además hay que escribir los campos 
+\begin_inset Formula $\mathbf{H}$
+\end_inset 
+
+.
+ La expresión general para calcular 
+\begin_inset Formula $\mathbf{H}$
+\end_inset 
+
+ en cada uno de los tres casos es 
+\begin_inset Formula \[
+\mathbf{H}=\frac{1}{\mu\omega}\mathbf{k}\wedge\mathbf{E}\]
+
+\end_inset 
+
+ Las ecMm imponen algunas condiciones sobre los parámetros de las ondas.
+ Aparte de las relaciones de ortogonalidad 
+\begin_inset Formula $\mathbf{k}\cdot\mathbf{A}=\mathbf{k}'\cdot\mathbf{T}=\mathbf{k}''\cdot\mathbf{R}=0$
+\end_inset 
+
+ tenemos
+\begin_inset Formula \begin{eqnarray*}
+\left|\mathbf{k}\right| & = & n\frac{\omega}{c}\\
+\left|\mathbf{k}'\right| & = & n'\frac{\omega'}{c}\\
+\left|\mathbf{k}''\right| & = & n\frac{\omega''}{c}\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Subsection
+
+Ley de 
+\noun on 
+Snell
+\layout Subsubsection
+
+Aplicación de las condiciones de frontera
+\layout Standard
+
+En 
+\begin_inset Formula $z=0$
+\end_inset 
+
+ el campo a la izquierda es el incidente más el reflejado y el campo a la
+ derecha es exclusivamente el transmitido
+\begin_inset Formula \begin{eqnarray}
+E_{ix}+E_{rx} & = & E_{tx}\nonumber \\
+E_{iy}+E_{ry} & = & E_{ty}\nonumber \\
+H_{ix}+H_{rx} & = & H_{tx}\nonumber \\
+H_{iy}+H_{ry} & = & H_{ty}\label{ec condiciones de frontera en z 0}\end{eqnarray}
+
+\end_inset 
+
+ En la interfase 
+\begin_inset Formula $\mathbf{r}=\left(x,y,0\right)$
+\end_inset 
+
+ tenemos pues 4 ecuaciones de la forma
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+en adelante los puntos suspensivos representan los infinitos términos que
+ no hemos escrito de la superposición de ondas planas que identificamos
+ con la onda transmitida y la reflejada.
+\end_inset 
+
+:
+\layout Standard
+
+
+\begin_inset Formula \[
+\left(\right)e^{i\fase}+\left(\right)e^{i\left(\mathbf{k}''\cdot\mathbf{r}-\omega''t\right)}+\ldots=\left(\right)e^{i\left(\mathbf{k}'\cdot\mathbf{r}-\omega't\right)}+\ldots\]
+
+\end_inset 
+
+ Las cuatro ecuaciones responden a este esquema de dependencia en el espacio
+ y el tiempo con valores en los paréntesis que son función de las amplitudes
+ 
+\begin_inset Formula $\mathbf{A},\mathbf{R},\mathbf{T}$
+\end_inset 
+
+ y los vectores de onda 
+\begin_inset Formula $\mathbf{k},\mathbf{k}'.\ldots,\mathbf{k}'',\ldots$
+\end_inset 
+
+.
+\layout Standard
+
+Podemos extraer mucha información acerca de la solución sólo analizando
+ la forma de las ecuaciones que hemos escrito.
+\layout Standard
+
+Obsérvese que las exponenciales complejas son funciones linealmente independient
+es.
+ O todo lo que está entre paréntesis es nulo o los argumentos de las exponencial
+es son todos idénticos.
+ Como lo primero en general no es cierto, sólo queda la posibilidad de que
+ todas las frecuencias sean idénticas (la misma conclusión puede alcanzarse
+ por análisis de 
+\noun on 
+Fourier
+\noun default 
+).
+ 
+\begin_inset Formula \[
+\omega=\omega'=\ldots=\omega''=\ldots\]
+
+\end_inset 
+
+ Lo mismo debe poder decirse de la dependencia espacial.
+ Como no hay dependencia en 
+\begin_inset Formula $z$
+\end_inset 
+
+ y la función en 
+\begin_inset Formula $x$
+\end_inset 
+
+ e 
+\begin_inset Formula $y$
+\end_inset 
+
+ debe ser la misma se puede escribir
+\begin_inset Formula \[
+k_{x}x+k_{y}y=k_{x}''x+k_{y}''y=\ldots=k_{x}'x+k_{y}'y=\ldots\]
+
+\end_inset 
+
+ por un razonamiento análogo, como también 
+\begin_inset Formula $x$
+\end_inset 
+
+ e 
+\begin_inset Formula $y$
+\end_inset 
+
+ son funciones linealmente independientes
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+¿se deberia decir linealmente independientes o funcionalmente
+\layout Standard
+
+independientes? -rojo.
+\end_inset 
+
+ podemos igualar tranquilamente la dependencia en 
+\begin_inset Formula $x$
+\end_inset 
+
+ y la dependencia en 
+\begin_inset Formula $y$
+\end_inset 
+
+ 
+\begin_inset Formula \[
+\begin{array}{ccccccccccc}
+k_{x} & = & k_{x}' & = & \ldots & = & k_{x}'' & = & \ldots\\
+k_{y} & = & k_{y}' & = & \ldots & = & k_{y}'' & = & \ldots & = & 0\end{array}\]
+
+\end_inset 
+
+ en 
+\begin_inset Formula $z$
+\end_inset 
+
+ no podemos decir nada porque no está.
+ Esto se puede leer diciendo que la componente tangencial de 
+\begin_inset Formula $\mathbf{k}$
+\end_inset 
+
+ es la misma para la onda incidente, para la onda transmitida y para la
+ reflejada.
+ En resumen:
+\begin_inset Formula \[
+\begin{array}{ccccccccc}
+\omega & = & \omega & = & \ldots & = & \omega & = & \ldots\\
+\mathbf{k}_{t} & = & \mathbf{k}_{t}' & = & \ldots & = & \mathbf{k}_{t}'' & = & \ldots\end{array}\]
+
+\end_inset 
+
+ Observando la nulidad de la componente 
+\begin_inset Formula $y$
+\end_inset 
+
+ de los vectores de onda podemos afirmar también que 
+\begin_inset Formula $\mathbf{k}',\ldots,\mathbf{k}'',\ldots$
+\end_inset 
+
+ están en el plano de incidencia.
+\layout Standard
+
+Como conocemos dos componentes del vector de ondas y también conocemos su
+ módulo (por el cumplimiento de las ecMm), tenemos completamente determinado
+ el vector de ondas de la onda transmitida.
+ Y la solución es única.
+ Fijada la onda incidente, sólo hay un 
+\begin_inset Formula $\mathbf{k}'$
+\end_inset 
+
+ que verifique las condiciones que han de verificarse.
+\layout Standard
+
+Si volvemos a las superposiciones de oap que hemos escrito para la onda
+ transmitida y reflejada vemos que, teniendo misma fase, sólo hay una oap
+ transmitida y una oap reflejada.
+ Por lo tanto, podemos descartar todos los puntos suspensivos que hemos
+ venido arrastrando hasta ahora y que representaban en principio una suma
+ infinita de oap distintas.
+\layout Subsubsection
+
+Ley de 
+\noun on 
+Snell
+\layout Standard
+
+Tenemos resuelto el problema de la existencia de las ondas reflejadas y
+ transmitidas y de su dirección.
+ Pero ésta se suele expresar de otro modo; Supongamos que el ángulo entre
+ 
+\begin_inset Formula $\mathbf{k}''$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathbf{u}_{n}$
+\end_inset 
+
+ es 
+\begin_inset Formula $\theta''$
+\end_inset 
+
+: sabemos que 
+\begin_inset Formula \begin{eqnarray*}
+k_{x} & = & k''_{x}\\
+n\frac{\omega}{c}\sin\theta & = & n\frac{\omega}{c}\sin\theta''\end{eqnarray*}
+
+\end_inset 
+
+ es decir 
+\begin_inset Formula $\theta=\theta''$
+\end_inset 
+
+, el ángulo de reflexión es igual al ángulo de incidencia.
+ Para la onda transmitida
+\begin_inset Formula \begin{eqnarray*}
+k_{x} & = & k'_{x}\\
+n\frac{\omega}{c}\sin\theta & = & n'\frac{\omega}{c}\sin\theta'\end{eqnarray*}
+
+\end_inset 
+
+ de donde se obtiene la 
+\emph on 
+ley de 
+\noun on 
+Snell
+\emph default 
+
+\begin_inset Formula \[
+n\sin\theta=n'\sin\theta'\]
+
+\end_inset 
+
+
+\noun default 
+Todavía nos queda resolver las condiciones de frontera.
+ Pero podemos hacer ya algunos comentarios:
+\layout Itemize
+
+Desde el punto de vista microscópico lo que acabamos de encontrar es algo
+ sorprendente: la luz generada por los átomos del medio es tan especial
+ que 
+\emph on 
+anula
+\emph default 
+ la oap incidente y la sustituye por otra en distinta dirección.
+\layout Itemize
+
+Una consecuencia de esto sobradamente conocida es que los índices de refracción
+ se pueden medir simplemente cuantificando ángulos de refracción (mediante
+ prismas, etc).
+ 
+\layout Itemize
+
+Los índices de refracción en general dependen de la frecuencia.
+ Tendremos tantas direcciones de propagación como frecuencias contenga el
+ haz incidente.
+ Esto puede servir a varios propósitos:
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/dispersion-segun-frecuencia.eps
+	display monochrome
+	width 5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Dispersión de una onda con tres frecuencias 
+\begin_inset Formula $\omega_{1},\omega_{2},\omega_{3}$
+\end_inset 
+
+.
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+Conviene etiquetar las frecuencias, para ver que
+\layout Standard
+
+onda se dispersa mas en regimen de dispersion normal
+\layout Standard
+
+-rojo.
+\end_inset 
+
+
+\end_inset 
+
+
+\begin_deeper 
+\layout Itemize
+
+Hacer espectroscopía: averiguar qué frecuencias contiene una determinada
+ onda.
+\layout Itemize
+
+Construir ondas monocromáticas a partir de ondas que no lo son.
+ El medio separa espacialmente las frecuencias.
+ El 
+\emph on 
+monocromador
+\emph default 
+ es un instrumento basado en esta idea: a partir de un haz no monocromático
+ genera uno que contiene sólo un pequeño rango de frecuencias.
+\end_deeper 
+\layout Section
+
+Amplitudes de las ondas
+\layout Subsection
+
+Deducción de las fórmulas de 
+\noun on 
+Fresnel
+\layout Standard
+
+Si queremos obtener más información, deberemos explotar a fondo las cuatro
+ ecuaciones de frontera que hemos escrito.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/incidente-transmitida-reflejada.eps
+	display monochrome
+	width 5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Los tres vectores de onda y sus ángulos respectivos con el vector normal
+ 
+\begin_inset Formula $\mathbf{u}_{n}$
+\end_inset 
+
+.
+\end_inset 
+
+Los vectores 
+\begin_inset Formula $\mathbf{A},\mathbf{R},\mathbf{T}$
+\end_inset 
+
+ son perpendiculares a los correspondientes vectores de ondas.
+ Nos interesa descomponer estos vectores en una base en la que tengan sólo
+ dos componentes (ortogonales al vector de ondas), y luego relacionarlas
+ con las componentes 
+\begin_inset Formula $x$
+\end_inset 
+
+ e 
+\begin_inset Formula $y$
+\end_inset 
+
+.
+ A esa base, representada en la figura 
+\begin_inset LatexCommand \ref{fig: base paralela - perpendicular}
+
+\end_inset 
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+nofig
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig: base paralela - perpendicular}
+
+\end_inset 
+
+Base 
+\emph on 
+(paralela, perpendicular)
+\end_inset 
+
+ se la llama 
+\emph on 
+(paralela, perpendicular)
+\emph default 
+.
+ La componente paralela 
+\begin_inset Formula $A_{\parallel}$
+\end_inset 
+
+ está en el plano del papel y la perpendicular 
+\begin_inset Formula $A_{\perp}$
+\end_inset 
+
+ es ortogonal al plano del papel; ambas son ortogonales al vector de ondas.
+ Para relacionar las 
+\begin_inset Formula $A_{\perp},A_{\parallel}$
+\end_inset 
+
+ con las componentes 
+\begin_inset Formula $x,y,z$
+\end_inset 
+
+ podemos valernos de relaciones trigonométricas sobre el diagrama.
+ En 
+\begin_inset Formula $z=0$
+\end_inset 
+
+ las exponenciales son todas iguales, ya que por aplicación de las condiciones
+ de frontera en la interfase, como hemos visto, 
+\begin_inset Formula \[
+e^{i\left(k_{x}x+k_{y}y-\omega t\right)}=e^{i\left(k_{x}'x+k_{y}'y-\omega t\right)}=e^{i\left(k_{x}''x+k_{y}''y-\omega t\right)}\]
+
+\end_inset 
+
+ de modo que escribiremos simplemente 
+\begin_inset Formula $e^{i\left(\right)}$
+\end_inset 
+
+:
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{E}_{i} & = & \left(A_{\parallel}\cos\theta,A_{\perp},-A_{\parallel}\sin\theta\right)e^{i\left(\right)}\\
+\mathbf{E}_{r} & = & \left(-R_{\parallel}\cos\theta,R_{\perp},-R_{\parallel}\sin\theta\right)e^{i\left(\right)}\\
+\mathbf{E}_{t} & = & \left(T_{\parallel}\cos\theta',T_{\perp},-T_{\parallel}\sin\theta'\right)e^{i\left(\right)}\end{eqnarray*}
+
+\end_inset 
+
+ para escribir 
+\begin_inset Formula $\mathbf{H}$
+\end_inset 
+
+ se necesitan los vectores 
+\begin_inset Formula $\mathbf{k}$
+\end_inset 
+
+ involucrados 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{k} & = & n\frac{\omega}{c}\left(\sin\theta,0,\cos\theta\right)\\
+\mathbf{k}' & = & n'\frac{\omega}{c}\left(\sin\theta',0,\cos\theta\right)\\
+\mathbf{k}'' & = & n\frac{\omega}{c}\left(\sin\theta,0,-\cos\theta\right)\end{eqnarray*}
+
+\end_inset 
+
+ haciendo los correspondientes productos vectoriales se encuentra
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{H}_{i} & = & n\frac{1}{\mu c}\left(-\cos\theta A_{\perp},A_{\parallel},\sin\theta A_{\perp}\right)e^{i\left(\right)}\\
+\mathbf{H}_{r} & = & n\frac{1}{\mu c}\left(\cos\theta R_{\perp},R_{\parallel},\sin\theta R_{\perp}\right)e^{i\left(\right)}\\
+\mathbf{H}_{t} & = & n'\frac{1}{\mu c}\left(-\cos\theta'T_{\perp},T_{\parallel},\sin\theta'T_{\perp}\right)e^{i\left(\right)}\end{eqnarray*}
+
+\end_inset 
+
+ 
+\emph on 
+Advertencia
+\emph default 
+: por ser los vectores de onda reales las relaciones trigonométricas 
+\begin_inset Formula $\mathbf{A}\cdot\mathbf{k}=\mathbf{R}\cdot\mathbf{k}''=\mathbf{T}\cdot\mathbf{k}'=0$
+\end_inset 
+
+ implican que tanto la parte real como la imaginaria de 
+\begin_inset Formula $\mathbf{A},\mathbf{R},\mathbf{T}$
+\end_inset 
+
+ son perpendiculares a 
+\begin_inset Formula $\mathbf{k}$
+\end_inset 
+
+.
+\layout Standard
+
+Ya no hay más que llevar todo esto a las condiciones de frontera 
+\begin_inset LatexCommand \ref{ec condiciones de frontera en z 0}
+
+\end_inset 
+
+.Obtenemos un sistema de ecuaciones en las componentes 
+\begin_inset Formula $_{\perp}$
+\end_inset 
+
+ y 
+\begin_inset Formula $_{\parallel}$
+\end_inset 
+
+ de las amplitudes 
+\begin_inset Formula $\mathbf{A},\mathbf{R},\mathbf{T}$
+\end_inset 
+
+:
+\begin_inset Formula \begin{eqnarray*}
+\left(A_{\parallel}-R_{\parallel}\right)\cos\theta & = & T_{\parallel}\cos\theta'\\
+A_{\perp}+R_{\perp} & = & T_{\perp}\\
+n\left(A_{\perp}+R_{\perp}\right)\cos\theta & = & n'T_{\perp}\cos\theta'\\
+n\left(A_{\parallel}+R_{\parallel}\right) & = & n'T_{\parallel}\end{eqnarray*}
+
+\end_inset 
+
+ Son cuatro ecuaciones, dos para las componentes paralelas (la primera y
+ la cuarta) y dos en las que sólo aparece la componente perpendicular (segunda
+ y tercera).
+ La evolución de ambas componentes es independiente.
+\layout Subsection
+
+Fórmulas de 
+\noun on 
+Fresnel
+\layout Standard
+
+El coeficiente de reflexión perpendicular 
+\begin_inset Formula $r_{\perp}$
+\end_inset 
+
+ es la magnitud que liga 
+\begin_inset Formula $R_{\perp}$
+\end_inset 
+
+ con 
+\begin_inset Formula $A_{\perp}$
+\end_inset 
+
+.
+ En concreto,
+\layout Standard
+
+
+\begin_inset Formula \begin{eqnarray*}
+R_{\perp} & = & \frac{n\cos\theta-n'\cos\theta'}{n\cos\theta+n'\cos\theta}A_{\perp}\\
+ & = & \frac{\sin\left(\theta'-\theta\right)}{\sin\left(\theta'+\theta\right)}A_{\perp}\\
+ & = & \frac{k_{z}-k_{z}'}{k_{z}+k_{z}'}A_{\perp}\\
+ & = & r_{\perp}A_{\perp}\end{eqnarray*}
+
+\end_inset 
+
+la definición del 
+\emph on 
+coeficiente de transmisión perpendicular
+\emph default 
+,
+\emph on 
+ 
+\begin_inset Formula $t_{\perp}$
+\end_inset 
+
+
+\emph default 
+, es como sigue 
+\begin_inset Formula \begin{eqnarray*}
+T_{\perp} & = & \frac{2n\cos\theta}{n\cos\theta+n'\cos\theta'}A_{\perp}\\
+ & = & \frac{2\cos\theta\sin\theta'}{\sin\left(\theta+\theta'\right)}A_{\perp}\\
+ & = & \frac{2k_{z}}{k_{z}+k_{z}'}A_{\perp}\\
+ & = & t_{\perp}A_{\perp}\end{eqnarray*}
+
+\end_inset 
+
+
+\emph on 
+ 
+\emph default 
+Para las magnitudes según la dirección paralela
+\begin_inset Formula \begin{eqnarray*}
+R_{\parallel} & = & \frac{n'\cos\theta-n\cos\theta'}{n'\cos\theta+n\cos\theta}A_{\parallel}\\
+ & = & \frac{\tan\left(\theta-\theta'\right)}{\tan\left(\theta+\theta'\right)}A_{\parallel}\\
+ & = & \frac{n'^{2}k_{z}-n^{2}k_{z}'}{n'^{2}k_{z}+n^{2}k_{z}'}A_{\parallel}\\
+ & = & r_{\parallel}A_{\parallel}\end{eqnarray*}
+
+\end_inset 
+
+ y
+\begin_inset Formula \begin{eqnarray*}
+T_{\parallel} & = & \frac{2n\cos\theta}{n'\cos\theta+n\cos\theta'}A_{\parallel}\\
+ & = & \frac{2\sin\theta'\cos\theta}{\sin\left(\theta+\theta'\right)\cos\left(\theta-\theta'\right)}A_{\parallel}\\
+ & = & \frac{2nn'k_{z}}{n'^{2}k_{z}+n^{2}k_{z}'}A_{\parallel}\\
+ & = & t_{\parallel}A_{\parallel}\end{eqnarray*}
+
+\end_inset 
+
+ No hay que memorizar estas relaciones (fórmulas de 
+\noun on 
+Fresnel
+\noun default 
+) pero sí qué o\SpecialChar \-
+pe\SpecialChar \-
+ra\SpecialChar \-
+cio\SpecialChar \-
+nes llevan a ellas y las conclusiones que permiten
+ establecer.
+ Vamos a estudiar los diferentes casos que pueden presentarse.
+\layout Subsubsection
+
+Incidencia normal 
+\layout Standard
+
+En incidencia normal 
+\begin_inset Formula $\theta=0$
+\end_inset 
+
+ y 
+\begin_inset Formula $\theta'=0$
+\end_inset 
+
+ y los coeficientes valen
+\begin_inset Formula \begin{eqnarray*}
+r_{\perp} & = & \frac{n-n'}{n+n'}\\
+r_{\parallel} & = & \frac{n'-n}{n+n'}\\
+t_{\perp} & = & \frac{2n}{n+n'}\\
+t_{\parallel} & = & \frac{2n}{n+n'}\end{eqnarray*}
+
+\end_inset 
+
+ se puede observar que 
+\begin_inset Formula $r_{\parallel}=-r_{\perp}$
+\end_inset 
+
+ y que 
+\begin_inset Formula $t_{\parallel}=t_{\perp}$
+\end_inset 
+
+.
+ En la incidencia normal el plano de incidencia no está definido (el vector
+ de ondas y el normal a la interfase coinciden en dirección) y las ecuaciones
+ responden diciendo que no hay dirección privilegiada, lo que se refleja
+ en los coeficientes de transmisión.
+ El signo negativo de los coeficientes de reflexión depende de la forma
+ de escoger el sistema de referencia (
+\emph on 
+paralelo, perpendicular
+\emph default 
+).
+ Un dato: si 
+\begin_inset Formula $n=1$
+\end_inset 
+
+ y 
+\begin_inset Formula $n'=1.5$
+\end_inset 
+
+ en incidencia normal se tiene
+\begin_inset Formula \begin{eqnarray*}
+r_{\parallel} & = & -r_{\perp}=0.2\\
+t_{\parallel} & = & t_{\perp}=0.8\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Subsubsection
+
+Caso 
+\begin_inset Formula $n'>n$
+\end_inset 
+
+ de la incidencia oblicua, ángulo de 
+\noun on 
+Brewster
+\layout Standard
+
+En este caso los coeficientes de reflexión y transmisión en función del
+ ángulo de incidencia tienen el aspecto de la figura 
+\begin_inset LatexCommand \ref{fig coeficientes(theta) en n'>n}
+
+\end_inset 
+
+.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/m-coeficientes-reflex-trans.eps
+	display monochrome
+	width 6cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig coeficientes(theta) en n'>n}
+
+\end_inset 
+
+De arriba a abajo, 
+\begin_inset Formula $t_{\parallel},t_{\perp},r_{\parallel},r_{\perp}$
+\end_inset 
+
+(
+\family typewriter 
+coef
+\family default 
+\size default 
+)
+\size small 
+ en función de 
+\begin_inset Formula $\theta$
+\end_inset 
+
+ (
+\family typewriter 
+q
+\family default 
+).
+ 
+\begin_inset Formula $\theta=\frac{\pi}{2}$
+\end_inset 
+
+ es la 
+\emph on 
+incidencia
+\emph default 
+ 
+\emph on 
+rasante
+\emph default 
+ (transmisión nula), 
+\begin_inset Formula $\theta=0$
+\end_inset 
+
+ es la 
+\emph on 
+incidencia
+\emph default 
+ 
+\emph on 
+normal
+\emph default 
+.
+ Para el gráfico se ha tomado 
+\begin_inset Formula $\frac{n'}{n}=\frac{3}{2}$
+\end_inset 
+
+.
+\end_inset 
+
+El comportamiento complementario de los coeficientes de reflexión y transmisión
+ es justificable en virtud de la conservación de la energía, y comprobable
+ observando a través de un vidrio un objeto adyacente a nosotros y otro
+ al otro lado, en los dos casos de la figura 
+\begin_inset LatexCommand \ref{fig experimento coeficientes}
+
+\end_inset 
+
+ (incidencia normal y rasante).
+ Dicho de otro modo, un vidrio normal se puede utilizar como un espejo perfecto
+ en incidencias próximas a la rasante (aunque es impráctico).
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/coeficientes-segun-angulo-1.eps
+	display monochrome
+	width 5cm
+	subcaption
+
+\end_inset 
+
+ 
+\begin_inset Graphics
+	filename fig/coeficientes-segun-angulo-2.eps
+	display monochrome
+	width 5cm
+	subcaption
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig experimento coeficientes}
+
+\end_inset 
+
+La intensidad con que un observador percibe las imágenes de 
+\begin_inset Formula $A$
+\end_inset 
+
+ y 
+\begin_inset Formula $B$
+\end_inset 
+
+ depende del ángulo de observación.
+\end_inset 
+
+
+\layout Standard
+
+Hay un coeficiente cuyo valor pasa por cero para cierto ángulo, que denominaremo
+s 
+\emph on 
+ángulo de 
+\noun on 
+Brewster
+\noun default 
+ 
+\emph default 
+y denotaremos 
+\begin_inset Formula $\theta_{B}$
+\end_inset 
+
+.
+ Es el ángulo para el que 
+\begin_inset Formula $r_{\parallel}\left(\theta_{B}\right)=0$
+\end_inset 
+
+.
+ Si retornamos a la expresión de 
+\begin_inset Formula $r_{\parallel}$
+\end_inset 
+
+ obtenemos la siguiente condición para 
+\begin_inset Formula $\theta_{B}$
+\end_inset 
+
+
+\begin_inset Formula \[
+n'\cos\theta_{B}=n\cos\theta_{B}'\]
+
+\end_inset 
+
+ que debe verificarse junto con la ley de 
+\noun on 
+Snell
+\noun default 
+.
+ Si imponemos el cumplimiento de ambas obtenemos
+\begin_inset Formula \[
+\tan\theta_{B}=\frac{n'}{n}\]
+
+\end_inset 
+
+ Si 
+\begin_inset Formula $r_{\parallel}=0$
+\end_inset 
+
+ entonces 
+\begin_inset Formula $R_{\parallel}=0$
+\end_inset 
+
+, de modo que en ángulo de 
+\noun on 
+Brewster
+\noun default 
+ la luz reflejada siempre tiene polarización rectilínea y completamente
+ perpendicular al plano de incidencia, independientemente del estado de
+ polarización de la luz incidente.
+ Tenemos, por lo tanto, un método para construir luz rectilíneamente polarizada
+ incluso a partir de luz natural.
+ Por otra parte, la determinación del ángulo de 
+\noun on 
+Brewster
+\noun default 
+ equivale a la determinación de un índice de refracción conocido el otro.
+\layout Standard
+
+En general, cuando 
+\begin_inset Formula $n'>n$
+\end_inset 
+
+ los coeficientes de reflexión o transmisión son números reales, de modo
+ que el desfase sólo puede ser de 
+\begin_inset Formula $0$
+\end_inset 
+
+ o 
+\begin_inset Formula $\pi$
+\end_inset 
+
+.
+ Como consecuencia, si la luz incide con polarización rectilínea, se transmite
+ o se refleja con polarización rectilínea.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/refraccion-polarizacion.eps
+	display monochrome
+	width 3.5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset Formula $A_{\perp}$
+\end_inset 
+
+ en función de 
+\begin_inset Formula $A_{\parallel}$
+\end_inset 
+
+.
+ El ángulo 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+ se llama 
+\emph on 
+acimut
+\emph default 
+.
+\end_inset 
+
+Pero el acimut de la luz transmitida o reflejada será, en general, distinto
+ del de la luz incidente, en virtud de las relaciones entre coeficientes
+ perpendicular y paralelo.
+ El cambio de acimut depende de los índices de refracción involucrados,
+ por lo que se puede utilizar para diseñar dispositivos para la medida del
+ índice de refracción.
+\layout Subsubsection
+
+Caso 
+\begin_inset Formula $n'<n$
+\end_inset 
+
+ de incidencia oblicua, reflexión total 
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/m-coeficientes-reflex-trans-caso2.eps
+	display monochrome
+	width 6cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+De arriba a abajo, 
+\begin_inset Formula $t_{\parallel},t_{\perp},r_{\perp},r_{\parallel}$
+\end_inset 
+
+.
+ 
+\end_inset 
+
+
+\layout Standard
+
+En este caso los coeficientes de reflexión se hacen 
+\begin_inset Formula $1$
+\end_inset 
+
+ antes de la incidencia rasante (para 
+\begin_inset Formula $\theta=\theta_{C}$
+\end_inset 
+
+).
+ 
+\begin_inset Formula $\theta_{C}$
+\end_inset 
+
+ se llama ángulo crítico y se cumple 
+\begin_inset Formula $n\sin\theta_{C}=n'$
+\end_inset 
+
+ 
+\layout Standard
+
+El problema es que para 
+\begin_inset Formula $\theta>\theta_{C}$
+\end_inset 
+
+ no podemos conocer 
+\begin_inset Formula $\theta'$
+\end_inset 
+
+ y por lo tanto no podemos calcular los coeficientes de reflexión y transmisión
+ con ayuda de las fórmulas de 
+\noun on 
+Fresnel
+\noun default 
+.
+ Ya que se llama 
+\emph on 
+reflexión total
+\emph default 
+ al fenómeno, ¿se cumple 
+\begin_inset Formula $\mathbf{T}=0$
+\end_inset 
+
+?.
+ Las ecM y sus condiciones de frontera dicen que no, puesto que debería
+ ser además de 
+\begin_inset Formula $\mathbf{T}=0$
+\end_inset 
+
+, 
+\begin_inset Formula $\mathbf{R}=\mathbf{A}=0$
+\end_inset 
+
+ y eso significa que no hay ondas por ningún lado.
+ 
+\layout Standard
+
+Debemos retornar al planteamiento matemático del problema.
+ Interpretemos la reflexión total desde el punto de vista de los vectores
+ de onda; para 
+\begin_inset Formula $\theta>\theta_{C}$
+\end_inset 
+
+ 
+\begin_inset Formula \[
+k_{x}'=k_{x}=\frac{\omega}{c}n\sin\theta>n'\frac{\omega}{c}\]
+
+\end_inset 
+
+ es decir, que 
+\emph on 
+una componente del vector de ondas tiene que ser mayor que su módulo
+\emph default 
+.
+ Esto sólo lo podemos abordar incrementando el módulo, es decir, adoptando
+ un vector de ondas complejo.
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{k}_{c}' & = & \mathbf{k}'+i\mathbf{a}'\\
+\mathbf{k}'^{2}-\mathbf{a}'^{2} & = & n'^{2}\frac{\omega^{2}}{c^{2}}\end{eqnarray*}
+
+\end_inset 
+
+ Las ondas transmitidas y reflejadas no son superposición de ondas armónicas
+ con vector de ondas real, sino complejo.
+ Y las condiciones de frontera nos darán los valores de parte real y la
+ imaginaria.
+ Las ondas serán armónicas 
+\begin_inset Quotes eld
+\end_inset 
+
+planas
+\begin_inset Quotes erd
+\end_inset 
+
+, con el sentido de 
+\begin_inset Quotes eld
+\end_inset 
+
+planas
+\begin_inset Quotes erd
+\end_inset 
+
+ que ya ha sido explicado y que aparece cuando el vector de ondas es complejo
+ (ondas planas inhomogéneas).
+ Matemáticamente para la onda transmitida y reflejada respectivamente:
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{E}_{t} & = & \mathbf{T}e^{i\left(\mathbf{k}_{c}'\cdot\mathbf{r}-\omega't\right)}+\ldots\\
+\mathbf{E}_{r} & = & \mathbf{R}e^{i\left(\mathbf{k}_{c}''\cdot\mathbf{r}-\omega''t\right)}+\ldots\end{eqnarray*}
+
+\end_inset 
+
+ Hay que reconstruir toda la solución del problema, para lo que vamos a
+ dar los principales pasos.
+ Se llevan estas dos expresiones a las condiciones de frontera donde el
+ 
+\begin_inset Formula $\mathbf{k}_{c}'$
+\end_inset 
+
+ por ejemplo se determina a partir de la igualdad de las exponenciales sobre
+ la superficie de discontinuidad (como antes).
+ En 
+\begin_inset Formula $z=0$
+\end_inset 
+
+ se tiene 
+\begin_inset Formula \[
+\mathbf{k}_{c}'\cdot\mathbf{r}=\mathbf{k}\cdot\mathbf{r}\]
+
+\end_inset 
+
+ con lo que 
+\begin_inset Formula $k_{x}=k_{cx}'$
+\end_inset 
+
+ y 
+\begin_inset Formula $k_{y}=k_{cy}'$
+\end_inset 
+
+ (componentes tangenciales continuas).
+ El plano de incidencia es 
+\begin_inset Formula $xz$
+\end_inset 
+
+.
+ Por la elección de ejes 
+\begin_inset Formula $k_{cy}=0$
+\end_inset 
+
+ (el vector de ondas está en el plano 
+\begin_inset Formula $xz$
+\end_inset 
+
+).
+\begin_inset Formula \[
+k_{y}'+ia_{y}'=0\]
+
+\end_inset 
+
+ que vale por dos ecuaciones
+\begin_inset Formula \begin{eqnarray*}
+k_{y}' & = & 0\\
+a_{y}' & = & 0\end{eqnarray*}
+
+\end_inset 
+
+ de modo que se puede decir que 
+\begin_inset Formula $k',a'$
+\end_inset 
+
+ están en el plano de incidencia.
+ En lo que toca a 
+\begin_inset Formula $k_{cx}$
+\end_inset 
+
+
+\begin_inset Formula \[
+k_{x}'+ia_{x}'=n\frac{\omega}{c}\sin\theta\]
+
+\end_inset 
+
+ de donde
+\begin_inset Formula \begin{eqnarray*}
+a_{x}' & = & 0\\
+k_{x}' & = & n\frac{\omega}{c}\sin\theta\end{eqnarray*}
+
+\end_inset 
+
+ Ya no podemos obtener más información de las condiciones de frontera.
+ Además de esto sabemos que, por las ecMm, se ha de verificar
+\begin_inset Formula \[
+\mathbf{k}_{c}'^{2}=n_{c}'^{2}\frac{\omega^{2}}{c^{2}}=n'^{2}\frac{\omega^{2}}{c^{2}}\]
+
+\end_inset 
+
+ de donde
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{k}'^{2}-\mathbf{a}'^{2} & = & n'^{2}\frac{\omega^{2}}{c^{2}}\\
+\mathbf{k}'\cdot\mathbf{a}' & = & 0\end{eqnarray*}
+
+\end_inset 
+
+ 
+\begin_inset Formula $\mathbf{a}'=0$
+\end_inset 
+
+ es solución, pero no nos sirve para la reflexión total.
+ Pero 
+\begin_inset Formula $\mathbf{a}'$
+\end_inset 
+
+ sólo puede tener componente 
+\begin_inset Formula $z$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathbf{k}'$
+\end_inset 
+
+ sólo puede tener componente 
+\begin_inset Formula $x$
+\end_inset 
+
+ (se deriva de las condiciones)
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{a}' & = & a_{z}'\mathbf{u}_{z}\\
+\mathbf{k}' & = & k_{x}'=n\frac{\omega}{c}\sin\theta\mathbf{u}_{x}\end{eqnarray*}
+
+\end_inset 
+
+ de donde 
+\begin_inset Formula $a_{z}'=\frac{\omega}{c}\sqrt{n^{2}\sin^{2}\theta-n'^{2}}$
+\end_inset 
+
+.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/reflexion-total.eps
+	display monochrome
+	width 4cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Plano 
+\begin_inset Formula $xz$
+\end_inset 
+
+ y vectores 
+\begin_inset Formula $\mathbf{k},\mathbf{k}'$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathbf{a}'$
+\end_inset 
+
+ en reflexión total.
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+el vector de onda de la onda incidente deberia ser k sub c.
+\layout Standard
+
+-rojo.
+\end_inset 
+
+
+\end_inset 
+
+La expresión para la onda transmitida queda
+\begin_inset Formula \[
+\mathbf{E}_{t}=\mathbf{T}e^{-a_{z}'z}e^{i\left(kx-\omega t\right)}\]
+
+\end_inset 
+
+ Conclusiones de los resultados obtenidos para el caso de reflexión total:
+\layout Itemize
+
+Hay onda transmitida ya que 
+\begin_inset Formula $\mathbf{E}_{t}\neq0$
+\end_inset 
+
+ del otro lado de la discontinuidad de índice: es una onda plana inhomogénea
+ que 
+\emph on 
+vive
+\emph default 
+ 
+\emph on 
+pegada
+\emph default 
+ a la discontinuidad (
+\emph on 
+onda evanescente
+\emph default 
+), porque se atenúa exponencialmente con la distancia y no sobrevive más
+ allá de unas pocas longitudes de onda.
+ Si calculáramos la media del vector de 
+\noun on 
+Poynting
+\noun default 
+ obtendríamos que la fase y la energía se propagan 
+\emph on 
+por
+\emph default 
+ la superficie de discontinuidad.
+ 
+\begin_inset Formula \[
+\left\langle \mathbf{S}'\right\rangle _{z}=0\]
+
+\end_inset 
+
+ (no hay ningún flujo de energía ortogonal a la interfase).
+\layout Itemize
+
+Tenemos la dependencia espaciotemporal de la onda ¿qué hay de la amplitud
+ 
+\begin_inset Formula $\mathbf{T}$
+\end_inset 
+
+?.
+ Ahora tenemos una 
+\begin_inset Quotes eld
+\end_inset 
+
+ortogonalidad
+\begin_inset Quotes erd
+\end_inset 
+
+: se verifica 
+\begin_inset Formula $\mathbf{k}_{c}'\cdot\mathbf{T}=0$
+\end_inset 
+
+, pero no podemos aprovechar esto para decir que 
+\begin_inset Formula $\mathbf{T}\perp\mathbf{k}'$
+\end_inset 
+
+, ya que 
+\begin_inset Formula $\mathbf{T}$
+\end_inset 
+
+ será en general un vector complejo.
+ En general habría que aprovechar la condición expuesta en la forma 
+\begin_inset Formula $\left(\mathbf{k}'+i\mathbf{a}'\right)\cdot\mathbf{T}=0$
+\end_inset 
+
+, pero no lo vamos a hacer.
+ Escribiremos directamente la solución (fórmulas de 
+\noun on 
+Fresnel
+\noun default 
+).
+\begin_inset Formula \begin{eqnarray*}
+r_{\perp} & = & \frac{k_{z}-k_{cz}'}{k_{z}+k_{cz}'}\\
+t_{\perp} & = & \frac{2k_{z}}{k_{z}+k_{cz}'}\\
+r_{\parallel} & = & \frac{k_{z}n'^{2}-k_{cz}'n^{2}}{k_{z}n'^{2}+k_{cz}'n^{2}}\end{eqnarray*}
+
+\end_inset 
+
+ su estructura es similar en los casos 
+\begin_inset Formula $r_{\perp},t_{\perp},r_{\parallel}$
+\end_inset 
+
+, pero poniendo el subíndice 
+\begin_inset Formula $c$
+\end_inset 
+
+ a las componentes de la onda transmitida.
+ Sin embargo 
+\begin_inset Formula $t_{\parallel}$
+\end_inset 
+
+ se escribe en función de los campos magnéticos (a diferencia de los otros
+ 3) y su escritura sí varía: 
+\begin_inset Formula \[
+t_{\parallel}=\frac{H_{\perp t}}{H_{\perp i}}=\frac{2n'^{2}k_{z}}{n'^{2}k_{z}+n^{2}k_{cz}'}\]
+
+\end_inset 
+
+ los detalles de este cálculo se encuentran en [Cabrera].
+ Utilizaremos principalmente las relaciones para los coeficientes de reflexión.
+\layout Itemize
+
+Los coeficientes de reflexión son complejos, ya que 
+\begin_inset Formula $k_{cz}'$
+\end_inset 
+
+ es complejo:
+\begin_inset Formula \[
+k_{z}=n\frac{\omega}{c}\cos\theta\]
+
+\end_inset 
+
+ y 
+\begin_inset Formula \[
+k_{cz}'=i\frac{\omega}{c}\sqrt{n^{2}\sin^{2}\theta-n'^{2}}\]
+
+\end_inset 
+
+ Las cosas quedan
+\begin_inset Formula \[
+r_{\perp}=\frac{n\cos\theta-i\sqrt{n^{2}\sin^{2}\theta-n'^{2}}}{n\cos\theta+i\sqrt{n^{2}\sin^{2}\theta-n'^{2}}}\]
+
+\end_inset 
+
+ como el numerador y el denominador son complejos conjugados se cumple la
+ importante relación
+\begin_inset Formula \[
+\left|r_{\perp}\right|=\left|r_{\parallel}\right|=1\]
+
+\end_inset 
+
+ lo que permite escribirlos como
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+atención en la bibliografía al convenio de signos en la exponencial compleja:
+ las fórmulas posteriores dependen de ese convenio.
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray*}
+r_{\parallel} & = & e^{i\delta_{\parallel}}\\
+r_{\perp} & = & e^{i\delta_{\perp}}\end{eqnarray*}
+
+\end_inset 
+
+ con 
+\begin_inset Formula $\delta_{\parallel}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\delta_{\perp}$
+\end_inset 
+
+ por determinar
+\begin_inset Formula \[
+r_{\perp}=\frac{e^{i\frac{\delta_{\perp}}{2}}}{e^{-i\frac{\delta_{\perp}}{2}}}=\frac{\cos\frac{\delta_{\perp}}{2}+i\sin\frac{\delta_{\perp}}{2}}{\cos\frac{\delta_{\perp}}{2}-i\sin\frac{\delta_{\perp}}{2}}\]
+
+\end_inset 
+
+ lo que nos permite obtener la tangente
+\begin_inset Formula \[
+\tan\frac{\delta_{\perp}}{2}=-\frac{\sqrt{\sin^{2}\theta-\left(\frac{n'}{n}\right)^{2}}}{\cos\theta}\]
+
+\end_inset 
+
+pero lo que verdaderamente nos será útil es 
+\begin_inset Formula \[
+\tan\left(\frac{\delta_{\perp}-\delta_{\parallel}}{2}\right)=\frac{\cos\theta\sqrt{\sin^{2}\theta-\left(\frac{n'}{n}\right)^{2}}}{\sin^{2}\theta}\]
+
+\end_inset 
+
+
+\layout Itemize
+
+Lo importante: números complejos de módulo unidad y cambio del estado de
+ polarización: la luz con polarización rectilínea se convertirá en general
+ en elípticamente polarizada, dependiendo de la diferencia de fases de la
+ fórmula anterior (por eso la hemos deducido).
+\layout Itemize
+
+Ya tenemos modos de obtener las polarizaciones que queramos: la incidencia
+ en ángulo de 
+\noun on 
+Brewster
+\noun default 
+ nos da polarización rectilínea, la reflexión y transmisión normales nos
+ dan cambios de acimut dentro de la polarización rectilínea y la reflexión
+ total nos da polarización elíptica.
+ Sin embargo, encontraremos métodos más cómodos para obtener el estado de
+ polarización que se desee en el desarrollo posterior de la asignatura.
+\layout Section
+
+Relaciones energéticas: reflectancia y transmitancia
+\layout Standard
+
+Esperamos obtener la conservación de la energía.
+ Vamos a estudiar casos de no reflexión total: se cumple o bien 
+\begin_inset Formula $n<n'$
+\end_inset 
+
+ o bien 
+\begin_inset Formula $n>n'$
+\end_inset 
+
+ con 
+\begin_inset Formula $\theta<\theta_{C}$
+\end_inset 
+
+.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/balance-energetico-cambio-medio.eps
+	display monochrome
+	width 5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Paso de un medio caracterizado por 
+\begin_inset Formula $n$
+\end_inset 
+
+ a uno caracterizado por 
+\begin_inset Formula $n'$
+\end_inset 
+
+
+\end_inset 
+
+Si estamos interesados en un balance de energías
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Como consideraremos un estado estacionario, la conservación de la energía
+ debe entenderse como igualdad del flujo que entra en una zona con el que
+ sale de ella, no como igualdad de la energía 
+\begin_inset Quotes eld
+\end_inset 
+
+antes
+\begin_inset Quotes erd
+\end_inset 
+
+ y 
+\begin_inset Quotes eld
+\end_inset 
+
+después
+\begin_inset Quotes erd
+\end_inset 
+
+, sino como balance espacial: caracterización de la distribución de la energía
+ en el espacio -rojo.
+\end_inset 
+
+ debemos calcular promedios temporales del vector de 
+\noun on 
+Poynting
+\noun default 
+ (potencia por unidad de área) y compararlos.
+ Trabajamos con oap 
+\begin_inset Formula $\mathbf{E}=\mathbf{E}_{0}e^{\fase}$
+\end_inset 
+
+ y para ellas hemos calculado ya una expresión de 
+\begin_inset Formula $\left\langle \mathbf{S}\right\rangle $
+\end_inset 
+
+ (en medios homogéneos e isótropos de índice 
+\begin_inset Formula $n$
+\end_inset 
+
+):
+\begin_inset Formula \[
+\left\langle \mathbf{S}\right\rangle =\frac{1}{2}\sqrt{\frac{\epsilon_{0}}{\mu_{0}}}n\left|\mathbf{E}_{0}\right|^{2}\mathbf{u}_{k}\]
+
+\end_inset 
+
+ Un detalle a tener en cuenta es que la variable relevante es sólo la 
+\emph on 
+componente normal 
+\emph default 
+a la interfase
+\emph on 
+ 
+\emph default 
+del vector de 
+\noun on 
+Poynting
+\noun default 
+.
+ La energía que va a ser repartida entre onda transmitida y reflejada es
+ la que incide sobre la superficie, y ésa es la que corresponde a la componente
+ normal a la superficie.
+ Lo que nos interesa es la 
+\emph on 
+irradiancia
+\emph default 
+ sobre la interfase, la potencia que incide sobre ella.
+ Si 
+\begin_inset Formula $\mathbf{N}$
+\end_inset 
+
+ es un vector unitario normal a la interfase:
+\begin_inset Formula \[
+\left\langle \mathbf{S}\right\rangle \cdot\mathbf{N}=\left\langle \mathbf{S}\right\rangle _{z}\]
+
+\end_inset 
+
+ no queda más que calcular.
+ Para las ondas incidente, reflejada y transmitida, respectivamente:
+\begin_inset Formula \begin{eqnarray*}
+\left|\left\langle \mathbf{S}_{i}\right\rangle _{z}\right| & = & \frac{1}{2}\sqrt{\frac{\epsilon_{0}}{\mu_{0}}}n\cos\theta\left|\mathbf{A}\right|^{2}\\
+\left|\left\langle \mathbf{S}_{r}\right\rangle _{z}\right| & = & \frac{1}{2}\sqrt{\frac{\epsilon_{0}}{\mu_{0}}}n\cos\theta\left|\mathbf{R}\right|^{2}\\
+\left|\left\langle \mathbf{S}_{t}\right\rangle _{z}\right| & = & \frac{1}{2}\sqrt{\frac{\epsilon_{0}}{\mu_{0}}}n'\cos\theta'\left|\mathbf{T}\right|^{2}\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Description
+
+Reflectancia 
+\begin_inset Formula \[
+\mathcal{R}=\frac{\left|\mathbf{R}\right|^{2}}{\left|\mathbf{A}\right|^{2}}=\frac{\left|\left\langle \mathbf{S}_{r}\right\rangle _{z}\right|}{\left|\left\langle \mathbf{S}_{i}\right\rangle _{z}\right|}\]
+
+\end_inset 
+
+
+\layout Description
+
+Transmitancia 
+\begin_inset Formula \[
+\mathcal{T}=\frac{n'\cos\theta'}{n\cos\theta}\frac{\left|\mathbf{T}\right|^{2}}{\left|\mathbf{A}\right|^{2}}=\frac{\left|\left\langle \mathbf{S}_{t}\right\rangle _{z}\right|}{\left|\left\langle \mathbf{S}_{i}\right\rangle _{z}\right|}\]
+
+\end_inset 
+
+
+\layout Standard
+
+Tal como están definidas estas magnitudes dependen no sólo de 
+\begin_inset Formula $n,n',\theta,\theta',$
+\end_inset 
+
+ sino también del estado de polarización.
+ Para encontrar magnitudes que sean independientes de él se definen reflectancia
+s y transmitancias paralelas y perpendiculares de modo independiente.
+ Por ejemplo, para la reflectancia, definimos el ángulo 
+\begin_inset Formula $\alpha_{i}$
+\end_inset 
+
+ mediante las siguientes dos ecuaciones (
+\begin_inset Formula $\alpha_{i}$
+\end_inset 
+
+ es un acimut, e indica la relación entre la cantidad de luz paralela y
+ perpendicular que lleva un estado de polarización):
+\begin_inset Formula \begin{eqnarray*}
+\left|A_{\parallel}\right| & = & \left|\mathbf{A}\right|\cos\alpha_{i}\\
+\left|A_{\perp}\right| & = & \left|\mathbf{A}\right|\sin\alpha_{i}\end{eqnarray*}
+
+\end_inset 
+
+ eso nos permite reescribir la reflectancia como
+\begin_inset Formula \[
+\mathcal{R}=\frac{\left|\mathbf{R}\right|^{2}}{\left|\mathbf{A}\right|^{2}}=\frac{\left|R_{\parallel}\right|^{2}}{\frac{\left|A_{\parallel}\right|^{2}}{\cos^{2}\alpha_{i}}}+\frac{\left|R_{\perp}\right|^{2}}{\frac{\left|A_{\perp}\right|^{2}}{\sin^{2}\alpha_{i}}}=\frac{\left|R_{\parallel}\right|^{2}}{\left|A_{\parallel}\right|^{2}}\cos^{2}\alpha_{i}+\frac{\left|R_{\perp}\right|^{2}}{\left|A_{\perp}\right|^{2}}\sin^{2}\alpha_{i}\]
+
+\end_inset 
+
+ pero como la componente paralela reflejada es proporcional a la componente
+ paralela incidente y lo mismo para la perpendicular, cada uno de los términos
+ sólo depende de la discontinuidad de índices.
+ De modo que se definen
+\layout Description
+
+reflectancia\SpecialChar ~
+paralela 
+\begin_inset Formula \[
+\mathcal{R}_{\parallel}=\frac{\left|R_{\parallel}\right|^{2}}{\left|A_{\parallel}\right|^{2}}=\left|r_{\parallel}\right|^{2}\]
+
+\end_inset 
+
+ 
+\layout Description
+
+reflectancia\SpecialChar ~
+perpendicular 
+\begin_inset Formula \[
+\mathcal{R}_{\perp}=\frac{\left|R_{\perp}\right|^{2}}{\left|A_{\perp}\right|^{2}}=\left|r_{\perp}\right|^{2}\]
+
+\end_inset 
+
+ 
+\layout Description
+
+transmitancia\SpecialChar ~
+paralela 
+\begin_inset Formula \[
+\mathcal{T}_{\parallel}=\frac{n'\cos\theta'}{n\cos\theta}\left|t_{\parallel}\right|^{2}\]
+
+\end_inset 
+
+ 
+\layout Description
+
+transmitancia\SpecialChar ~
+perpendicular 
+\begin_inset Formula \[
+\mathcal{T}_{\perp}=\frac{n'\cos\theta'}{n\cos\theta}\left|t_{\perp}\right|^{2}\]
+
+\end_inset 
+
+
+\layout Standard
+
+La generalización a reflexión total depende de que el vector de 
+\noun on 
+Poynting
+\noun default 
+ no tiene componente normal, luego no hay energía que abandone la superficie:
+ 
+\begin_inset Formula \[
+\left\langle \mathbf{S}_{t}\right\rangle _{z}=0\:\Fd\:\mathcal{T}=0\]
+
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathcal{R}_{\parallel}=\mathcal{R}_{\perp}=1$
+\end_inset 
+
+.
+ Toda la luz que incide se refleja
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+La aparente paradoja se resuelve si consideramos por una parte que se trata
+ de una relación entre flujos de energía, y el flujo entrante (transportado
+ por la onda incidente) iguala el flujo reflejado (transportado por la onda
+ reflejada) y por otra, que se trata de un promedio temporal, luego funcionaría
+ aproximadamente para ondas no armónicas, que son aquellas para las que
+ existe verdaderamente un 
+\begin_inset Quotes eld
+\end_inset 
+
+proceso
+\begin_inset Quotes erd
+\end_inset 
+
+ de reflexión transmisión en el sentido de que llega una onda a la interfase
+ y se divide en dos y todo acaba poco tiempo más tarde -rojo.
+\end_inset 
+
+.
+ 
+\layout Standard
+
+Ahora esperamos obtener alguna ligadura entre reflectancias y transmitancias
+ que dé cuenta de la conservación de la energía: por cálculo directo se
+ puede demostrar que se verifican estas dos leyes de conservación
+\begin_inset Formula \begin{eqnarray*}
+\mathcal{R}_{\parallel}+\mathcal{T}_{\parallel} & = & 1\\
+\mathcal{R}_{\perp}+\mathcal{T}_{\perp} & = & 1\end{eqnarray*}
+
+\end_inset 
+
+ que se combinan para dar 
+\begin_inset Formula $\mathcal{R}+\mathcal{T}=1$
+\end_inset 
+
+, dicho de otro modo
+\begin_inset Formula \[
+\left|\left\langle \mathbf{S}_{i}\right\rangle _{z}\right|=\left|\left\langle \mathbf{S}_{t}\right\rangle _{z}\right|+\left|\left\langle \mathbf{S}_{r}\right\rangle _{z}\right|\]
+
+\end_inset 
+
+
+\layout Section
+
+Dirección, frecuencia, amplitudes y energía cuando un medio es absorbente
+\layout Standard
+
+Hasta aquí todo lo que hemos hecho en este capítulo parte de la consideración
+ de que los dos medios en que se propaga la onda son completamente transparentes
+, 
+\begin_inset Formula $\kappa=0$
+\end_inset 
+
+.
+\layout Standard
+
+En esta sección vamos a echar un vistazo a lo que ocurre cuando uno de los
+ medios deja de ser transparente.
+ Veremos que el problema se complica, y, aún así, es de capital importancia,
+ pues sabemos que el proceso de radiación--absorción en los átomos implica
+ pérdidas de energía.
+ Intentaremos, como en las secciones precedentes del capítulo, caracterizar
+ las ondas producidas al a\SpecialChar \-
+tra\SpecialChar \-
+ve\SpecialChar \-
+sar\SpecialChar \-
+se la interfase, para lo cual es necesario
+ conocer su dirección, frecuencia y amplitud.
+ 
+\layout Standard
+
+El primer medio queda caracterizado por un índice 
+\begin_inset Formula $n$
+\end_inset 
+
+ real y el segundo por uno complejo, 
+\begin_inset Formula $n_{c}'$
+\end_inset 
+
+.
+ ¿Cómo se haría?.
+ De modo parecido al caso anterior, pero esta vez no podemos buscar soluciones
+ al problema en el segundo medio como ondas planas con vector de ondas real.
+ Por ejemplo
+\begin_inset Formula \[
+\mathbf{E}_{t}=\mathbf{T}e^{i\left(\mathbf{k}_{\mathbf{c}}'\cdot\mathbf{r}-\omega t\right)}\]
+
+\end_inset 
+
+ Esto lo llevamos a las condiciones de frontera, de donde por independencia
+ lineal
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+de nuevo no se si es mejor "independencia funcional" -rojo.
+\layout Standard
+
+Preguntar a Luis Martinez -rojo.
+\end_inset 
+
+ de las exponenciales se tiene que sobre la superficie de discontinuidad
+ (
+\begin_inset Formula $z=0$
+\end_inset 
+
+) se ha de verificar la igualdad
+\begin_inset Formula \[
+\mathbf{k}_{c}'\cdot\mathbf{r}=\mathbf{k}\cdot\mathbf{r}\]
+
+\end_inset 
+
+ es decir
+\begin_inset Formula \begin{eqnarray*}
+k_{cx}'= & k_{x}'+ia_{x}' & =k_{x}\\
+k_{cy}'= & k_{y}'+ia_{y}' & =k_{y}=0\end{eqnarray*}
+
+\end_inset 
+
+ (sobre el plano de incidencia 
+\begin_inset Formula $k_{y}=0$
+\end_inset 
+
+).
+ Usamos estas dos ecuaciones para precisar valores y obtenemos 
+\begin_inset Formula \[
+k_{y}'=a_{y}'=0\]
+
+\end_inset 
+
+ 
+\begin_inset Formula $k',a'$
+\end_inset 
+
+ están en el plano de incidencia.
+ 
+\begin_inset Formula \[
+k_{x}'=k_{x}=n\frac{\omega}{c}\sin\theta\]
+
+\end_inset 
+
+donde 
+\begin_inset Formula $\theta$
+\end_inset 
+
+ es el ángulo de incidencia.
+ 
+\begin_inset Formula $a_{x}'=0$
+\end_inset 
+
+, y por tanto 
+\begin_inset Formula $\mathbf{a}'=a_{z}'\mathbf{u}_{z}$
+\end_inset 
+
+.
+ En cuanto a 
+\begin_inset Formula $\mathbf{k}'$
+\end_inset 
+
+, tenemos
+\begin_inset Formula \[
+\mathbf{k}'=k_{z}\mathbf{u}_{z}+n\frac{\omega}{c}\sin\theta\,\mathbf{u}_{x}\]
+
+\end_inset 
+
+Las ecMm aportan las relaciones 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{k}'^{2}-\mathbf{a}'^{2} & = & \frac{\omega^{2}}{c^{2}}\left(n'^{2}-\kappa'^{2}\right)\\
+\mathbf{k}'\cdot\mathbf{a}' & = & \frac{\omega^{2}}{c^{2}}n'\kappa'\end{eqnarray*}
+
+\end_inset 
+
+que determinan los factores 
+\begin_inset Formula $k_{z}'$
+\end_inset 
+
+ y 
+\begin_inset Formula $a_{z}'$
+\end_inset 
+
+ (ver [Cabrera]).
+ Lo que es importante es que el vector de ondas de la onda refractada queda
+ especificado por completo y de manera única.
+ Para resolver completamente el problema necesitaríamos calcular las amplitudes
+ de las ondas reflejada y transmitida.
+ Es un cálculo trabajoso del que sólo comentaremos alguna consecuencia:
+\layout Itemize
+
+Las expresiones para los coeficientes de reflexión siguen valiendo, si donde
+ haya 
+\begin_inset Formula $k_{z}'$
+\end_inset 
+
+ ponemos 
+\begin_inset Formula $k_{cz}'$
+\end_inset 
+
+ y donde haya 
+\begin_inset Formula $n'$
+\end_inset 
+
+ ponemos 
+\begin_inset Formula $n_{c}'$
+\end_inset 
+
+.
+ El resultado es 
+\begin_inset Formula \begin{eqnarray*}
+r_{\parallel} & = & \frac{n_{c}'^{2}k_{z}-n^{2}k_{cz}'}{n_{c}'^{2}k_{z}+n^{2}k_{cz}'}\\
+r_{\perp} & = & \frac{k_{z}-k_{cz}'}{k_{z}+k_{cz}'}\end{eqnarray*}
+
+\end_inset 
+
+ estos coeficientes de reflexión son complejos (por culpa del vector de
+ ondas y del índice de refracción).
+ Esto ocurre para cualquier ángulo de incidencia.
+ Lo interesante es que podemos cambiar estados de polarización añadiendo
+ desfases por reflexiones con medios absorbentes.
+ De hecho hay una técnica de medida de índices de refracción que se basa
+ en el estudio de los cambios de polarización en las reflexiones de ondas
+ sobre medios de índice desconocido.
+\layout Itemize
+
+Para las reflectancias (pero no para las transmitancias) también valen las
+ relaciones que ya hemos encontrado para los medios transparentes:
+\begin_inset Formula \begin{eqnarray*}
+\mathcal{R}_{\parallel} & = & \left|r_{\parallel}\right|^{2}\\
+\mathcal{R}_{\perp} & = & \left|r_{\perp}\right|^{2}\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Subsubsection
+
+Caso particular: incidencia normal (
+\begin_inset Formula $\theta=0$
+\end_inset 
+
+)
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+nofig
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Incidencia normal de un medio de índice 
+\begin_inset Formula $n\in\Bbb R$
+\end_inset 
+
+ a otro de 
+\begin_inset Formula $n_{c}'=n'+i\kappa'$
+\end_inset 
+
+.
+\end_inset 
+
+Para la onda incidente 
+\begin_inset Formula $\mathbf{k}=k_{z}\mathbf{u}_{z}=n\frac{\omega}{c}\mathbf{u}_{z}$
+\end_inset 
+
+.
+ Con esta elección de ejes el plano de la discontinuidad es el 
+\begin_inset Formula $xy$
+\end_inset 
+
+.
+ Las componentes 
+\begin_inset Formula $x$
+\end_inset 
+
+ e 
+\begin_inset Formula $y$
+\end_inset 
+
+ se conservan
+\begin_inset Formula \begin{eqnarray*}
+k_{x} & = & k_{cx}'=0\\
+k_{y} & = & k_{cy}'=0\end{eqnarray*}
+
+\end_inset 
+
+ lo que implica 
+\begin_inset Formula $k_{x}'=k_{y}'=a_{x}'=a_{y}'=0$
+\end_inset 
+
+.
+ El vector de ondas de la onda transmitida sólo puede tener componente 
+\begin_inset Formula $z$
+\end_inset 
+
+: 
+\begin_inset Formula $\mathbf{k}_{c}'=\left(k_{z}'+ia_{z}'\right)\mathbf{u}_{z}$
+\end_inset 
+
+.
+ Para obtener las partes 
+\begin_inset Formula $k_{z}'$
+\end_inset 
+
+ y 
+\begin_inset Formula $a_{z}'$
+\end_inset 
+
+ nos valemos de las ecMm, de las cuales se obtiene 
+\begin_inset Formula \[
+\mathbf{k}_{c}'^{2}=n_{c}'^{2}\frac{\omega^{2}}{c^{2}}\]
+
+\end_inset 
+
+ de donde separando en parte real e imaginaria
+\begin_inset Formula \begin{eqnarray*}
+k_{z}' & = & n'\frac{\omega}{c}\\
+a_{z}' & = & \kappa'\frac{\omega}{c}\end{eqnarray*}
+
+\end_inset 
+
+ y
+\begin_inset Formula \begin{eqnarray*}
+r_{\parallel}=-r_{\perp} & = & \frac{n'+i\kappa'-n}{n'+i\kappa'+n}\\
+\mathcal{R}_{\parallel}=\mathcal{R}_{\perp} & = & \frac{\left(n'-n\right)^{2}\kappa'^{2}}{\left(n'+n\right)^{2}+\kappa'^{2}}\end{eqnarray*}
+
+\end_inset 
+
+
+\begin_inset Float table
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset  Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features>
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<row bottomline="true">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $n'$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\begin_inset Formula $\kappa'$
+\end_inset 
+
+
+\end_inset 
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+Al
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+1.44
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+523
+\end_inset 
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+Hg
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+1.60
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+4.80
+\end_inset 
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Un ejemplo con dos conductores (metales) para el doblete amarillo del Na:
+ 
+\begin_inset Formula $\lambda=589.3nm$
+\end_inset 
+
+
+\end_inset 
+
+ Si 
+\begin_inset Formula $n=1$
+\end_inset 
+
+ la reflectancia aire--aluminio es 
+\begin_inset Formula $0.83$
+\end_inset 
+
+ (83 % de energía reflejada) y la aire--mercurio 
+\begin_inset Formula $0.78$
+\end_inset 
+
+.
+\layout Itemize
+
+Hay que observar que incluso en incidencia normal los coeficientes de reflexión
+ son complejos.
+\layout Itemize
+
+Los coeficientes de reflexión son muy altos.
+ A modo de ejemplo valga un vidrio de 
+\begin_inset Formula $n=1.5$
+\end_inset 
+
+, que tiene coeficiente de reflexión de 
+\begin_inset Formula $\sim0.2$
+\end_inset 
+
+, es decir, una reflectancia de en torno al 
+\begin_inset Formula $4\%$
+\end_inset 
+
+.
+\layout Itemize
+
+Las reflectancias crecen con 
+\begin_inset Formula $\kappa'$
+\end_inset 
+
+.
+ Es decir, los medios más absorbentes son también más reflectantes.
+\the_end

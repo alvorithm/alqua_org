@@ -1,0 +1,43 @@
+####################
+## preparatory work: set variables, obtain document metadata
+####################
+
+#TODO: 
+# allow pynd-metadata extraction
+# allow passing of pageranges to dvipdfm through commandline
+
+
+@import os
+@import yaml 	# Parsing the yaml file requires PyYaml 3.04.
+@import codecs  # Loading ISO-8859-15 files with PyYAML requires wrapping
+@from Cheetah.Template import Template  # Filling the metadata requires Cheetah 2.0
+
+#this has to come from commandline, configfile, best guess or else env. var.
+basedir   = /home/dukebody/alqua/edita_nueva
+datadir   = $(basedir)/aux
+edita     = file:/home/dukebody/alqua/edita_nueva
+:python
+	mdfiles = glob('*.yml')
+	mdfiles.sort() 
+	mdfile = mdfiles[-1]  #the most recent metadata file
+	print 'AQ> reading metadata file ' + mdfile
+	md    = yaml.load(codecs.open(mdfile, 'r', 'ISO-8859-15'))
+	ext   = md['sourceformat']['ext']
+	ver   = md['releases'][-1]['number']
+	encver = ver.replace('.','_')
+	short = md['shorttitle']
+	shortv = '-'.join([md['shorttitle'],encver])
+	print 'AQ> working to compile ' +  shortv
+	units = md['bodyunits'] + md['appendixes']
+	basenames =  [unit['basename'] for unit in units]
+	def files(type): return ' '.join([basename + type  for basename in basenames]) 
+	htmlfiles, htmlrawfiles = files('.html'), files('.html-raw')
+	dvifiles, psfiles, pdffiles = files('.dvi'), files('.ps'), files('.pdf')
+	auxfiles, texfiles, texbodies =  files('.aux'), files('.tex'), files('-body.tex')
+	srcfiles = files('.' + ext)
+
+
+#:child fig/main.aap
+
+:include latex.aap {fetch = $edita/latex.aap}
+

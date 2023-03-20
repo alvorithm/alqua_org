@@ -1,0 +1,711 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass book
+\begin_preamble
+\input{FdL-packages.sty}
+\input{FdL-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding auto
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 1
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Chapter
+
+El campo electromagnético
+\layout Section
+
+Descomposición en modos del campo clásico
+\layout Standard
+
+
+\begin_inset LatexCommand \label{sec:Descomposición-en-modos}
+
+\end_inset 
+
+La electrodinámica clásica parte de las ecuaciones de Maxwell, que en ausencia
+ de fuentes (
+\begin_inset Formula $\rho=0,\vec{j}=0$
+\end_inset 
+
+) se escriben del siguiente modo:
+\begin_inset Formula \begin{align*}
+\rot{\vec{E}}+\frac{\partial\vec{B}}{\partial t} & =0 & \dive\vec{B} & =0 & (\vec{B} & =\mu_{0}\vec{H})\\
+\rot{\vec{H}}-\frac{\partial\vec{D}}{\partial t} & =0 & \dive\vec{D} & =0 & (\vec{D} & =\epsilon_{0}\vec{E})\end{align*}
+
+\end_inset 
+
+Las fuerzas del campo derivan de los potenciales vector 
+\begin_inset Formula $\vec{A}$
+\end_inset 
+
+ y escalar 
+\begin_inset Formula $\phi$
+\end_inset 
+
+ a través de
+\begin_inset Formula \begin{eqnarray}
+\vec{B} & = & \rot{\vec{A}}\label{eq:rel-campoB-pot}\\
+\vec{E} & = & -\frac{\partial\vec{A}}{\partial t}-\grad{\phi}.\label{eq:rel-campoE-pot}\end{eqnarray}
+
+\end_inset 
+
+
+\layout Standard
+
+Introduciendo en las ecuaciones de Maxwell estos potenciales, y teniendo
+ en cuenta que en ausencia de fuentes próximas 
+\begin_inset Formula $\phi\simeq\mathrm{cte}$
+\end_inset 
+
+, se obtiene una ecuación de ondas clásica para el potencial vector:
+\begin_inset Formula \[
+\left(\triangle-\frac{1}{c^{2}}\frac{\partial^{2}}{\partial t^{2}}\right)\vec{A}=\boldsymbol{0}\]
+
+\end_inset 
+
+En las manipulaciones se ha usado 
+\begin_inset Formula $\rot{\rot{=}}\grad{\dive}-\triangle$
+\end_inset 
+
+ y que en el vacío 
+\begin_inset Formula $c^{-1}=\sqrt{\epsilon_{0}\mu_{0}}$
+\end_inset 
+
+.
+ Ecuaciones análogas pueden obtenerse para 
+\begin_inset Formula $\vec{E}$
+\end_inset 
+
+ y para 
+\begin_inset Formula $\vec{B}$
+\end_inset 
+
+; todas ellas admiten soluciones de onda plana del tipo 
+\begin_inset Formula \begin{equation}
+\begin{split}\vec{A}(\vec{r},t) & =\sqrt{\frac{\hbar}{2\omega\epsilon_{0}V}}\,\vec{e}\, b\,\cos(\vec{k}\cdot\vec{r}-\omega t-\varphi)\\
+ & =\sqrt{\frac{\hbar}{2\omega\epsilon_{0}V}}\,\vec{e}\,\frac{b}{2}\left(e^{-i\varphi}e^{i(\vec{k}\cdot\vec{r}-\omega t)}+e^{i\varphi}e^{-i(\vec{k}\cdot\vec{r}-\omega t)}\right)\end{split}
+\label{eq:onda-plana-A}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+En estas soluciones, 
+\begin_inset Formula $\vec{e}$
+\end_inset 
+
+ es un vector unitario que es conocido como
+\emph on 
+ vector de polarización
+\emph default 
+
+\begin_inset LatexCommand \index{vector de polarización}
+
+\end_inset 
+
+; la raíz es un factor de la amplitud que se ha expresado en esta forma
+ por razones de notación que permitirán simplificar la interpretación de
+ los resultados.
+ En él aparece la magnitud 
+\begin_inset Formula $V$
+\end_inset 
+
+, que es el volumen en que podemos considerar confinada la energía de la
+ perturbación.
+ El valor inicial de los fasores del campo es el de los números complejos
+ conjugados
+\begin_inset Formula \[
+a(0)=\frac{b}{2}\, e^{-i\varphi},\qquad a^{*}(0)=\frac{b}{2}\, e^{i\varphi}\]
+
+\end_inset 
+
+Así,
+\begin_inset Formula \[
+\vec{A}(\vec{r},t)=\sqrt{\frac{\hbar}{2\omega\epsilon_{0}V}}\;\vec{e}\,\left[a(0)\, e^{i(\vec{k}\cdot\vec{r}-\omega t)}+a^{*}(0)\, e^{-i(\vec{k}\cdot\vec{r}-\omega t)}\right]\]
+
+\end_inset 
+
+
+\layout Standard
+
+Si esta expresión ha de ser solución de la ecuación de ondas se ha de verificar
+ la relación de dispersión 
+\begin_inset Formula $k^{2}=\omega^{2}/c^{2}$
+\end_inset 
+
+.
+ Además, dado que 
+\begin_inset Formula $\dive\vec{D}=0$
+\end_inset 
+
+ y siendo 
+\begin_inset Formula $\phi\simeq\textnormal{cte}$
+\end_inset 
+
+, tenemos que 
+\begin_inset Formula $\vec{E}=-\partial\vec{A}/\partial t$
+\end_inset 
+
+ por lo cual 
+\begin_inset Formula $\dive\partial\vec{A}/\partial t=0$
+\end_inset 
+
+.
+ Esto en la solución de onda plana que estamos considerando obliga a
+\begin_inset Formula \[
+\vec{e}\cdot\vec{k}=0\]
+
+\end_inset 
+
+(condición de transversalidad del campo: los vectores 
+\begin_inset Formula $\vec{A}$
+\end_inset 
+
+, 
+\begin_inset Formula $\vec{E}$
+\end_inset 
+
+ e incluso 
+\begin_inset Formula $\vec{B}$
+\end_inset 
+
+ son ortogonales a la dirección de propagación, que es la del vector 
+\begin_inset Formula $\vec{k}$
+\end_inset 
+
+).
+ 
+\layout Itemize
+
+Con estas soluciones, e imponiendo unas condiciones de contorno en la superficie
+ del volumen 
+\begin_inset Formula $V$
+\end_inset 
+
+ podemos construir una base del espacio funcional para el campo electromagnético.
+ Considerando, para simplificar, un recinto de forma cúbica con lado 
+\begin_inset Formula $L$
+\end_inset 
+
+ (
+\begin_inset Formula $V=L^{3}$
+\end_inset 
+
+) y situando el origen en una esquina del cubo se pueden establecer las
+ siguientes condiciones de contorno periódicas (Von Neumann):
+\begin_inset Formula \[
+\vec{A}(0,t)=\vec{A}(L\vec{u}_{1},t)=\vec{A}(L\vec{u}_{2},t)=\vec{A}(L\vec{u}_{3},t)\]
+
+\end_inset 
+
+En la onda plana se traducen en la siguiente condición sobre 
+\begin_inset Formula $\vec{k}$
+\end_inset 
+
+, 
+\begin_inset Formula \[
+\vec{k}_{l}\equiv\vec{k}_{l_{1}l_{2}l_{3}}=\frac{2\pi}{L}(l_{1}\vec{u}_{1}+l_{2}\vec{u}_{2}+l_{3}\vec{u}_{3})\]
+
+\end_inset 
+
+donde 
+\begin_inset Formula $l$
+\end_inset 
+
+ representa la terna de índices 
+\begin_inset Formula $l_{1},l_{2},l_{3}$
+\end_inset 
+
+, cada uno de los cuales puede asumir cualquier valor entero.
+ A cada una de estas ternas corresponden dos soluciones, con polarizaciones
+ 
+\begin_inset Formula $\vec{e}_{1}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\vec{e}_{2}$
+\end_inset 
+
+ ortogonales.
+ Estas soluciones se denominan 
+\emph on 
+modos libres del campo electromagnético
+\begin_inset LatexCommand \index{modos!del campo en una cavidad}
+
+\end_inset 
+
+
+\emph default 
+ en la cavidad.
+ Para abreviar la notación utilizaremos sólo dos índices: 
+\begin_inset Formula $l$
+\end_inset 
+
+, que es una abreviatura de 
+\begin_inset Formula $l_{1},l_{2},l_{3}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\sigma=1,2$
+\end_inset 
+
+ para la polarización.
+\layout Standard
+
+En el instante 
+\begin_inset Formula $t$
+\end_inset 
+
+ los fasores del campo de un modo son 
+\begin_inset Formula \[
+a_{l\sigma}(t)=a_{l\sigma}(0)e^{-i\omega_{l}t}=\left(a_{l\sigma}^{*}(t)\right)^{*}\]
+
+\end_inset 
+
+ y llamando a la parte espacial
+\begin_inset Formula \begin{equation}
+\vec{u}_{l\sigma}(\vec{r})\equiv\vec{e}_{l\sigma}\frac{e^{i\vec{k}_{l}\cdot\vec{r}}}{\sqrt{V}},\qquad|\vec{e}_{l\sigma}|=1\label{eq:def-depd-espacial}\end{equation}
+
+\end_inset 
+
+el campo del modo se escribirá abreviadamente así
+\begin_inset Formula \begin{equation}
+\vec{A}_{l\sigma}(\vec{r},t)=\sqrt{\frac{\hbar}{2\omega_{l}\epsilon_{0}}}\;\left[a_{l\sigma}(t)\vec{u}_{l\sigma}(\vec{r})+a_{l\sigma}^{*}\vec{u}_{l\sigma}^{*}(\vec{r})\right].\label{eq:campo-un-modo}\end{equation}
+
+\end_inset 
+
+A veces se denomina 
+\emph on 
+parte de frecuencia positiva
+\emph default 
+ al primer término y 
+\emph on 
+parte de frecuencia negativa
+\emph default 
+ al segundo.
+ 
+\layout Standard
+
+Es fácil comprobar que los modos están ortonormalizados,
+\begin_inset Formula \begin{eqnarray*}
+\int_{V}\vec{u}_{l\sigma}^{*}(\vec{r})\cdot\vec{u}_{l'\sigma'}(\vec{r})\,\mathrm{d}^{3}\vec{r} & = & \delta_{ll'}\delta_{\sigma\sigma'}\\
+\int_{V}\vec{u}_{l\sigma}^{*}(\vec{r})\cdot\vec{u}_{l'\sigma'}^{*}(\vec{r})\,\mathrm{d}^{3}\vec{r} & = & 0\\
+\int_{V}\vec{u}_{l\sigma}(\vec{r})\cdot\vec{u}_{l'\sigma'}(\vec{r})\,\mathrm{d}^{3}\vec{r} & = & 0\end{eqnarray*}
+
+\end_inset 
+
+así que un campo electromagnético cualquiera confinado dentro del volumen
+ 
+\begin_inset Formula $V$
+\end_inset 
+
+ se puede expresar mediante una superposición de modos de onda plana en
+ la forma 
+\begin_inset Formula \[
+\vec{A}(\vec{r},t)=\sum_{l,\sigma}\sqrt{\frac{\hbar}{2\omega_{l}\epsilon_{0}}}\;\left[a_{l\sigma}(t)\vec{u}_{l\sigma}(\vec{r})+a_{l\sigma}^{*}\vec{u}_{l\sigma}^{*}(\vec{r})\right]\]
+
+\end_inset 
+
+Empleando las relaciones 
+\begin_inset LatexCommand \ref{eq:rel-campoB-pot}
+
+\end_inset 
+
+ y 
+\begin_inset LatexCommand \ref{eq:rel-campoE-pot}
+
+\end_inset 
+
+ tenemos los campos de fuerza:
+\begin_inset Formula \begin{eqnarray*}
+\vec{E}(\vec{r},t) & = & i\,\sum_{l,\sigma}\sqrt{\frac{\hbar\omega_{l}^{2}}{2\omega_{l}\epsilon_{0}}}\,\left[a_{l\sigma}(t)\vec{u}_{l\sigma}(\vec{r})-a_{l\sigma}^{*}\vec{u}_{l\sigma}^{*}(\vec{r})\right]\\
+\vec{B}(\vec{r},t) & = & \frac{1}{c}\frac{\vec{k}_{l}}{|\vec{k}_{l}|}\wedge\, i\,\sum_{l,\sigma}\sqrt{\frac{\hbar\omega_{l}^{2}}{2\omega_{l}\epsilon_{0}}}\,\left[a_{l\sigma}(t)\vec{u}_{l\sigma}(\vec{r})-a_{l\sigma}^{*}\vec{u}_{l\sigma}^{*}(\vec{r})\right]\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Standard
+
+Podemos ahora formalmente introducir dos variables canónicamente conjugadas,
+ 
+\begin_inset Formula $q_{l}$
+\end_inset 
+
+ y 
+\begin_inset Formula $p_{l}$
+\end_inset 
+
+ como ciertas combinaciones lineales de los fasores:
+\begin_inset Formula \begin{align}
+q_{l\sigma} & \equiv\sqrt{\frac{\hbar}{2\omega_{l}}}\left(a_{l\sigma}^{*}+a_{l\sigma}\right) &  & = & \sqrt{\frac{\hbar}{2\omega_{l}}}\, b_{l\sigma}\,\cos(\omega_{l}t+\varphi_{l\sigma})\label{eq:q-funcion-a-adaga}\\
+p_{l\sigma} & \equiv i\,\sqrt{\frac{\hbar\omega_{l}}{2}}\left(a_{l\sigma}^{*}-a_{l\sigma}\right) &  & = & -\sqrt{\frac{\hbar\omega_{l}}{2}}\, b_{l\sigma}\,\sin(\omega_{l}t+\varphi_{l\sigma})\label{eq:p-funcion-a-adaga}\end{align}
+
+\end_inset 
+
+Nótese que 
+\begin_inset Formula $p_{l\sigma}=\mathrm{d}q_{l\sigma}/\mathrm{d}t$
+\end_inset 
+
+: estas dos variables se comportan respectivamente como la posición y el
+ momento en la solución de la ecuación de un oscilador armónico mecánico
+ de masa unidad.
+ En efecto, puede comprobarse que 
+\begin_inset Formula \[
+\ddt{q_{l\sigma}}+\omega_{l}^{2}q_{l\sigma}=0.\]
+
+\end_inset 
+
+
+\layout Standard
+
+Utilizando las nuevas variables en las expresiones de los campos 
+\begin_inset Formula $\vec{E}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\vec{B}$
+\end_inset 
+
+ así como las condiciones de ortonormalidad de las distribuciones espaciales,
+ la energía total del campo dentro del volumen 
+\begin_inset Formula $V$
+\end_inset 
+
+ tiene la siguiente forma:
+\begin_inset Formula \begin{eqnarray*}
+H & = & \frac{1}{2}\int_{V}\left(\epsilon_{0}E^{2}+\frac{1}{\mu_{0}}B^{2}\right)\,\mathrm{d}V\\
+ & = & \frac{1}{2}\sum_{l,\sigma}\left(p_{l\sigma}^{2}+\omega_{l}^{2}q_{l\sigma}^{2}\right)\end{eqnarray*}
+
+\end_inset 
+
+Vemos pues que cada modo da al campo su energía como un oscilador armónico.
+ Así pues desde el punto de vista energético el campo aparece como una superposi
+ción de osciladores armónicos.
+\layout Standard
+
+En este punto es conveniente apuntar que las condiciones de contorno empleadas
+ para generar la base del espacio funcional pueden ser muy diversas.
+ Pueden utilizarse condiciones que modelan situaciones físicamente realizables
+ o condiciones de naturaleza puramente matemática como las que hemos usado
+ anteriormente.
+ No obstante la densidad de modos de la cavidad en el espacio de fases posición-
+momento 
+\begin_inset Formula $(\vec{r},\hbar\vec{k})$
+\end_inset 
+
+ es independiente de las condiciones de contorno.
+ Esto es importante porque como acabamos de ver el hamiltoniano del campo
+ es la suma de los hamiltonianos asociados a los modos de la base, 
+\begin_inset Formula $H_{l\sigma}=p_{l\sigma}+\omega_{l}^{2}q_{l\sigma}$
+\end_inset 
+
+.
+\layout Section
+
+Densidad de modos
+\layout Standard
+
+Como hemos visto el momento 
+\begin_inset Formula $\hbar\vec{k}_{l}$
+\end_inset 
+
+ de un modo está determinado por los tres números enteros 
+\begin_inset Formula $l_{1},l_{2},l_{3}$
+\end_inset 
+
+ y por su polarización 
+\begin_inset Formula $\sigma=1,2$
+\end_inset 
+
+.
+\layout Standard
+
+Un punto de un espacio tridimensional, cuyo sistema de referencia lo constituyen
+ los ejes 
+\begin_inset Formula $l_{1},l_{2},l_{3}$
+\end_inset 
+
+, con coordenadas enteras representa un valor 
+\begin_inset Formula $\vec{k}_{l}$
+\end_inset 
+
+, es decir, dos modos con las polarizaciones 
+\begin_inset Formula $\sigma=1,2$
+\end_inset 
+
+.
+ Se puede imaginar una malla de cubos de lado unidad centrados en las coordenada
+s enteras 
+\begin_inset Formula $(l_{1},l_{2},l_{3})$
+\end_inset 
+
+ como el de la figura 
+\begin_inset LatexCommand \ref{fig:num-modos-p}
+
+\end_inset 
+
+, con dos modos por cubo, o unidad de volumen.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/num-modos-p-src.eps
+	display monochrome
+	scale 90
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:num-modos-p}
+
+\end_inset 
+
+En el espacio de momentos, asociamos un volumen unidad a cada dos modos
+ (con polarizaciones 
+\begin_inset Formula $\sigma=1,2$
+\end_inset 
+
+).
+\end_inset 
+
+
+\layout Standard
+
+Entonces el número de modos en un volumen 
+\begin_inset Formula $\mathrm{d}l_{1}\mathrm{d}l_{2}\mathrm{d}l_{3}$
+\end_inset 
+
+ será 
+\begin_inset Formula $\mathrm{d}N=2\,\mathrm{d}l_{1}\mathrm{d}l_{2}\mathrm{d}l_{3}$
+\end_inset 
+
+.
+ Cambiando de variables a 
+\begin_inset Formula $k_{i}=2\pi l_{i}/L$
+\end_inset 
+
+ se tiene, en coordenadas cartesianas del espacio de momentos:
+\begin_inset Formula \[
+\mathrm{d}^{3}N=2\,\left(\frac{L}{2\pi}\right)^{3}\mathrm{d}k_{1}\mathrm{d}k_{2}\mathrm{d}k_{3}=2\left(\frac{L}{2\pi}\right)^{3}\,\mathrm{d}^{3}V_{k}\]
+
+\end_inset 
+
+ Empleando coordenadas esféricas 
+\begin_inset Formula $\left(k,\theta,\varphi\right)$
+\end_inset 
+
+: 
+\begin_inset Formula \[
+\begin{split}k_{1} & =k\,\sin\theta\,\cos\varphi\\
+k_{2} & =k\,\sin\theta\,\sin\varphi\\
+k_{3} & =k\,\cos\theta,\end{split}
+\]
+
+\end_inset 
+
+ se obtiene la dependencia del volumen del espacio de momentos en el módulo
+ del vector de ondas, 
+\begin_inset Formula $k$
+\end_inset 
+
+:
+\begin_inset Formula \[
+\mathrm{d}^{3}V_{k}=\mathrm{d}k_{1}\mathrm{d}k_{2}\mathrm{d}k_{3}=\, k^{2}\mathrm{d}k\,\sin\theta\:\mathrm{d}\theta\,\mathrm{d}\varphi=k^{2}\,\mathrm{d}k\,\mathrm{d}^{2}\Omega,\]
+
+\end_inset 
+
+que se puede escribir en términos de la frecuencia utilizando la relación
+ de dispersión.
+ Concretamente, suponiendo la relación lineal 
+\begin_inset Formula $k=\omega/c$
+\end_inset 
+
+, 
+\begin_inset Formula $\mathrm{d}k=\mathrm{d}\omega/c$
+\end_inset 
+
+ se tiene
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{El convenio para la velocidad de la luz y el índice de refracción debería ser explicado de modo más visible, junto con otras notaciones. Quizá un índice de notaciones.}
+\end_inset 
+
+
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+En lo que sigue, 
+\begin_inset Formula $c$
+\end_inset 
+
+ es la velocidad de la luz en el interior del volumen 
+\begin_inset Formula $V$
+\end_inset 
+
+.
+ Sólo cuando el índice de refracción del medio es 
+\begin_inset Formula $\mu=1$
+\end_inset 
+
+ coincide con el valor en el vacío, que denotamos 
+\begin_inset Formula $c_{0}$
+\end_inset 
+
+.
+\end_inset 
+
+
+\begin_inset Formula \[
+\mathrm{d}^{3}V_{k}=\frac{\omega^{2}}{c^{3}}\,\mathrm{d}\omega\,\mathrm{d}^{2}\Omega.\]
+
+\end_inset 
+
+Finalmente, el número de modos cuyas frecuencias angulares están comprendidas
+ entre 
+\begin_inset Formula $\omega$
+\end_inset 
+
+ y 
+\begin_inset Formula $\omega+\mathrm{d}\omega$
+\end_inset 
+
+ en la cavidad que encierra la radiación y cuyas direcciones de propagación
+ están dentro del ángulo sólido 
+\begin_inset Formula $\mathrm{d}^{2}\Omega$
+\end_inset 
+
+ depende cuadráticamente de la frecuencia angular:
+\layout Standard
+
+
+\begin_inset Formula \[
+\mathrm{d}^{3}N=2\left(\frac{L}{2\pi}\right)^{3}\frac{\omega^{2}}{c^{3}}\,\mathrm{d}\omega\,\mathrm{d^{2}}\Omega\]
+
+\end_inset 
+
+
+\layout Standard
+
+Dado que el volumen de la cavidad es 
+\begin_inset Formula $V=L^{3}$
+\end_inset 
+
+ el número de modos con cualquier dirección de propagación será 
+\begin_inset Formula $\left(\omega=2\pi\,\nu\right)$
+\end_inset 
+
+:
+\begin_inset Formula \[
+\mathrm{d}N=\int_{0}^{\pi}\int_{0}^{2\pi}\,\mathrm{d}^{3}N=\frac{V}{\pi^{2}}\frac{\omega^{2}}{c^{3}}\,\mathrm{d}\omega=\frac{8\pi\nu^{2}}{c^{3}}\, V\,\mathrm{d}\nu,\]
+
+\end_inset 
+
+y por lo tanto, la densidad 
+\emph on 
+de modos
+\begin_inset LatexCommand \index{densidad!de modos}
+
+\end_inset 
+
+
+\emph default 
+ en la cavidad por unidad de volumen e intervalo de frecuencia resulta
+\begin_inset Formula \begin{equation}
+\rho_{\nu}(\nu)=\frac{\mathrm{d}N}{V\,\mathrm{d}\nu}=\frac{8\pi\nu^{2}}{c^{3}}\label{eq:dens-modos-cav-vol-freq}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+Nótese que es una densidad válida para el volumen total, pero no necesariamente
+ para subvolúmenes.
+ También es interesante apuntar que aunque esta densidad ha sido deducida
+ para el caso de las soluciones con simetría cúbica en la cavidad, la misma
+ expresión se puede obtener con cualquier otra geometría en la cavidad que
+ encierra a la radiación y con cualquier clase de condiciones de contorno
+ en la superficie de la cavidad siempre que el volumen sea finito.
+\layout Description
+
+Ejemplo Para hacernos una idea de los órdenes de magnitud en la ec.
+ 
+\begin_inset LatexCommand \ref{eq:dens-modos-cav-vol-freq}
+
+\end_inset 
+
+ en el caso de la radiación en frecuencias ópticas, supongamos que la longitud
+ de onda fuese 
+\begin_inset Formula $\lambda=0.6\,\mu\mathrm{m}$
+\end_inset 
+
+, es decir 
+\begin_inset Formula $\nu=c/\lambda=5\times10^{14}\,\mathrm{Hz}$
+\end_inset 
+
+.
+ Entonces 
+\begin_inset Formula $\rho_{\nu}\left(\nu\right)=0.23\,\mathrm{Hz}^{-1}\mathrm{cm}^{-3}$
+\end_inset 
+
+.
+ Así el número de modos que en un intervalo de frecuencias 
+\begin_inset Formula $\Delta\nu=\nu/10^{10}\simeq5\times10^{4}\,\mathrm{Hz}$
+\end_inset 
+
+ (mil veces menor que el mínimo actualmente alcanzado), en un volumen relativame
+nte pequeño de 
+\begin_inset Formula $1\,\mathrm{cm}^{-3}$
+\end_inset 
+
+ sería 
+\begin_inset Formula $N=\rho_{\nu}\left(\nu\right)\Delta\nu\simeq10^{4}\,\mathrm{cm}^{-3}$
+\end_inset 
+
+.
+\layout Standard
+
+Como se puede apreciar en el ejemplo anterior, incluso en cavidades pequeñas
+ y en intervalos de frecuencia reducidos, el número de modos es tan elevado
+ que podemos considerar que forman una distribución contínua, como se ha
+ supuesto al deducir 
+\begin_inset LatexCommand \ref{eq:dens-modos-cav-vol-freq}
+
+\end_inset 
+
+.
+ Sólo en cavidades microscópicas podría no ser aplicable dicha expresión,
+ y entonces deberían considerarse individualizados los modos.
+\the_end

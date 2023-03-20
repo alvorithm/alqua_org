@@ -1,0 +1,708 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass scrbook
+\language spanish
+\inputencoding auto
+\fontscheme pslatex
+\graphics default
+\float_placement !hbtp
+\paperfontsize default
+\spacing single 
+\papersize a4paper
+\paperpackage a4wide
+\use_geometry 0
+\use_amsmath 1
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Chapter
+
+Interbloqueos
+\layout Section
+
+Principios de interbloqueo
+\layout Standard
+
+Una situación de interbloqueo tiene lugar cuando ninguno de los procesos
+ que compiten por los recursos del sistema o interactúan entre sí puede
+ avanzar por carecer de algún recurso o esperar a que se produzca algún
+ tipo de evento.
+\layout Subsection
+
+Recursos reutilizables
+\layout Standard
+
+Un recurso reutilizable es aquel que puede ser utilizado por un proceso
+ y no se agota por hacer uso del mismo, los procesos obtienen unidades de
+ estos recursos y tras utilizarlas las liberan para que puedan ser reutilizadas
+ por otros procesos.
+ Como ejmplos de recursos reutlizables tenemos el procesador, la memoria
+ principal y los dipositivos E/S.
+\layout Subsection
+
+Recursos consumibles
+\layout Standard
+
+Un recurso consumible es aquel que puede ser producido y consumido.
+ Normalmente no hay límite en el número de recursos consumibles de un tipo
+ particular.
+ Así un proceso productor podrá liberar cualquier número de recursos consumibles.
+ Las únicas restricciones en este sentido vendrán impuestas por la capacidad
+ de almacenamiento temporal del sistema.
+ Cuando un proceso consume un recurso de este tipo la parte consumida queda
+ excluida del sistema.
+ Ejemplos típicos son: interrupciones, señales y mensajes.
+\layout Standard
+
+A continuación veremos una secuencia que muestra la posibilidad de interbloqueo
+ entre procesos que utilizan recursos consumibles.
+\layout LyX-Code
+
+P1
+\layout LyX-Code
+
+recibir(P2,M)
+\layout LyX-Code
+
+enviar(P2,M)
+\layout LyX-Code
+
+ 
+\layout LyX-Code
+
+P2
+\layout LyX-Code
+
+recibir(P1,M)
+\layout LyX-Code
+
+enviar(P1,M) 
+\layout LyX-Code
+
+\layout Standard
+
+A continuación veremos otra secuencia que produce interbloqueo entre procesos
+ que utilizan recursos reutilizables.
+\layout LyX-Code
+
+P1
+\layout LyX-Code
+
+solicitar(A)
+\layout LyX-Code
+
+solicitar(B)
+\layout LyX-Code
+
+ 
+\layout LyX-Code
+
+P2
+\layout LyX-Code
+
+solicitar(B)
+\layout LyX-Code
+
+solicitar(A)
+\layout Subsection
+
+Condiciones de interbloqueo
+\layout Standard
+
+Deben darse tres condiciones para que se produzca interbloqueo
+\layout Enumerate
+
+Que exista acceso a algún recurso en exclusión mutua.
+\layout Enumerate
+
+Que un proceso pueda retener los recursos que le han sido asignados mientras
+ espera que se le asignen los que necesitan.
+\layout Enumerate
+
+Que ningún proceso pueda ser obligado a abandonar los recursos que retenga.
+\layout Standard
+
+Estas tres condiciones de interbloqueo son condiciones necesarias pero no
+ suficientes, es decir, pueden producirse tales situaciones y que el sistema
+ no evolucione a un interbloqueo
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+De hecho, estas tres situaciones se dan con mucha frecuencia de forma natural.
+\end_inset 
+
+ .
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+Huele a preguntita de examen!
+\end_inset 
+
+
+\layout Standard
+
+Para que se produzca interbloqueo, debe darse una cuarta condición que consiste
+ en la existencia de una cadena cerrada de procesos donde cada uno de los
+ cuales retiene al menos un recurso de los que necesita el siguiente proceso
+ de la cadena para continuar su ejecución.
+ A esta condición se le denomina 
+\emph on 
+espera circular
+\begin_inset LatexCommand \index{espera circular}
+
+\end_inset 
+
+.
+\layout Section
+
+Prevención de interbloqueos
+\layout Standard
+
+La estrategia de prevención consiste, a grandes rasgos, en diseñar un sistema
+ de manera que esté excluida a priori la posibilidad de interbloqueo.
+ Los métodos para prevenir interbloqueos son de dos tipos:
+\layout Itemize
+
+Métodos indirectos; que consisten en prevenir o impedir la aparición de
+ alguna de las tres condiciones iniciales de interbloqueo.
+\layout Itemize
+
+Métodos directos; que consisten en evitar la aparición del círculo vicioso
+ de espera, es decir, la cuarta condición.
+\layout Standard
+
+A continuación se examinarán las técnicas empledas para impedir cada una
+ de las cuatro condiciones.
+\layout Enumerate
+
+Condición de exclusión mutua: No puede anularse, ya que si el acceso a un
+ recurso requiere exclusión mutua, el SO debe soportarlo.
+\layout Enumerate
+
+Retención y espera: Puede prevenirse exigiendo que todos los procesos soliciten
+ todos los recursos que necesitan a un tiempo y bloqueando al proceso hasta
+ que todos los recursos puedan concedérsele simultáneamente.
+ Esta solución resulta ineficiente por dos factores:
+\begin_deeper 
+\layout Enumerate
+
+En primer lugar, un proceso puede estar bloqueado durante mucho tiempo esperando
+ que se le concedan todas sus solicitudes de recursos cuando, de hecho,
+ podría haber avanzado con sólo alguno de los recursos.
+\layout Enumerate
+
+Los recursos asignados a un proceso pueden permanecer sin usarse durante
+ periodos considerables de tiempo durante los cuales se priva a otros procesos
+ de acceder a estos recursos.
+\end_deeper 
+\layout Enumerate
+
+Condición de No Apropiación: Esta condición puede prevenirse de varias formas:
+\begin_deeper 
+\layout Enumerate
+
+Si a un proceso que retiene ciertos recursos, se le deniega una nueva solicitud,
+ dicho proceso deberá liberar los recursos que poseía y solictarlos de nuevo
+ junto con el recurso que le ha sido denegado
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Ésta parece la más interesante de las dos.
+\end_inset 
+
+.
+\layout Enumerate
+
+Si un proceso solicita un recurso que está retenido por otro proceso, el
+ SO puede expulsar al segundo proceso y exigirle que libere el recurso.
+ Este último esquema evita el interbloqueo sólo si dos procesos no pueden
+ tener la misma prioridad con respecto a la posesión de un recurso.
+\end_deeper 
+\layout Enumerate
+
+Cículo vicioso de espera: Esta condición puede prevenirse definiendo una
+ ordenación lineal en los tipos de recursos.
+ Si a un proceso se le han asignado recursos de tipo 
+\begin_inset Formula $R$
+\end_inset 
+
+ sólo podrá realizar peticiones posteriores sobre los recursos de los tipos
+ siguientes a 
+\begin_inset Formula $R$
+\end_inset 
+
+ en la ordenación.
+ Para implementar esta estrategia se asocia un índice a cada tipo de recurso
+ de forma que si un proceso solicita el recurso 
+\begin_inset Formula $R_{i}$
+\end_inset 
+
+ y a continuación el recurso 
+\begin_inset Formula $R_{j}$
+\end_inset 
+
+ debe cumplirse que 
+\begin_inset Formula $i<j$
+\end_inset 
+
+.
+\layout Section
+
+Detección de interbloqueos
+\layout Standard
+
+Las estrategias de detección de interbloqueos no limitan el acceso a los
+ recursos ni restringen las acciones de los procesos como ocurría con las
+ estrategias de prevención de interbloqueos, mediante las estrategias de
+ detección de interbloqueos se concederán los recursos que los procesos
+ necesitan siempre que sea posible.
+ Periódicamente el SO ejecuta un algoritmo que permite detectar la condición
+ de círculo de espera.
+ Los algoritmos de detección más comunmente utilizados son algoritmos basados
+ en grafos dirigidos.
+ El control del interbloqueo puede llevarse a cabo tan frecuentemente como
+ las solicitudes de los recursos o con una frecuencia menor, dependiendo
+ de la probabilidad de que se produzca interbloqueo.
+\layout Standard
+
+La comprobación en cada solicitud de recurso tiene dos ventajas:
+\layout Itemize
+
+Conduce a una pronta detección.
+\layout Itemize
+
+El algoritmo es relativamente simple puesto que está basado en cambios increment
+ales del estado del sistema.
+\layout Standard
+
+Por otro lado, la frecuencia de comprobación consume un tiempo de CPU considerab
+le.
+\layout Standard
+
+Una vez detectado el interbloqueo alguna estrategia de recuperación, las
+ siguientes técnicas son posibles enfoques enumerados por orden de sofisticación.
+\layout Enumerate
+
+Abandono de todos los procesos bloqueados: esta es la técnica más utilizada
+ por los SSOO.
+\layout Enumerate
+
+Retroceder cada proceso interbloqueado hasta algún punto de control definido
+ previamente y volver a ejecutar todos los procesos.
+ El riesgo de esta solución es que puede volver a producirse el interbloqueo
+ inicial, sin embargo el no determinismo del procesamiento concurrente posibilit
+a que esto no vuelva a ocurrir.
+\layout Enumerate
+
+Abandonar sucesivamente los procesos bloqueados hasta que deje de haber
+ interbloqueo.
+ Para ello, se seguirá un criterio de mínimo coste.
+ Después de abandonar cada proceso se debe ejecutar de nuevo el algoritmo
+ de detección para ver si todavía existe interbloqueo.
+\layout Enumerate
+
+Apropiación sucesiva de recursos hasta que deje de haber interbloqueo por
+ parte de alguno de los procesos.
+ Se debe emplear también una solución basada en el coste y hay que ejecutar
+ de nuevo el algoritmo de detección después de cada apropiación.
+ Un proceso que pierda un recurso porque otro se lo apropie deberá retroceder
+ hasta un momento anterior a la adquisición de este recurso.
+\layout Standard
+
+Para las dos últimas estrategias, el criterio de selección podría ser uno
+ de los siguientes consistentes en escoger el proceso con:
+\layout Enumerate
+
+La menor cantidad de tiempo de procesador consumido hasta el momento.
+ Se aplica el criterio de mínimo coste ya que el proceso hay que repetirlo.
+\layout Enumerate
+
+Menor número de líneas de salida producidas hasta el momento.
+\layout Enumerate
+
+Mayor tiempo restante estimado.
+\layout Enumerate
+
+Menor número de recursos asignados hasta el momento.
+\layout Enumerate
+
+Prioridad más baja.
+\layout Standard
+
+El algoritmo de detección de interbloqueo no se ejecuta cada vez que un
+ proceso solicita un recurso, sino con una frecuencia menor.
+\layout Section
+
+Predicción de interbloqueo.
+ Algoritmo del banquero
+\layout Standard
+
+En la predicción de interbloqueo, se decide dinámicamente si la petición
+ actual de un recurso podría, de concederse, llevar potencialmente a un
+ interbloqueo.
+ La predicción de interbloqueo necesita, por tanto, conocer las peticiones
+ futuras de recursos.
+ A continuación describiremos los dos enfoques para la predicción del interbloqu
+eo.
+\layout Subsection
+
+Negativa de iniciación de procesos
+\layout Standard
+
+Este enfoque consiste en no iniciar un proceso si sus demandas de recursos
+ pueden llevar a un interbloqueo.
+ Consideremos un sistema con 
+\begin_inset Formula $n$
+\end_inset 
+
+ procesos activos y 
+\begin_inset Formula $m$
+\end_inset 
+
+ tipos diferentes de recursos.
+ Definiremos los vectores y matrices siguientes:
+\layout Enumerate
+
+Vector de recursos
+\begin_inset LatexCommand \index{Vector de recursos}
+
+\end_inset 
+
+ : 
+\begin_inset Formula $V_{R}=\left(\begin{array}{c}
+R_{1}\\
+\vdots\\
+R_{m}\end{array}\right)$
+\end_inset 
+
+ denota 
+\begin_inset Formula $R_{i}$
+\end_inset 
+
+ denota la cantidad del recursos 
+\begin_inset Formula $i$
+\end_inset 
+
+ que hay en el sistema.
+\layout Enumerate
+
+Vector de recursos disponibles
+\begin_inset LatexCommand \index{Vector de recursos disponibles}
+
+\end_inset 
+
+: 
+\begin_inset Formula $AV_{R}=\left(\begin{array}{c}
+AV_{1}\\
+\vdots\\
+AV_{m}\end{array}\right)$
+\end_inset 
+
+ donde 
+\begin_inset Formula $AV_{i}$
+\end_inset 
+
+ denota la cantidad de recurso 
+\begin_inset Formula $i$
+\end_inset 
+
+ disponible en un momento dado en el sistema.
+\layout Enumerate
+
+Matriz demanda
+\begin_inset LatexCommand \index{Matriz demanda}
+
+\end_inset 
+
+ 
+\begin_inset Formula $C_{R}=\left(\begin{array}{ccc}
+C_{11} & \cdots & C_{n1}\\
+\vdots & \ddots & \vdots\\
+C_{1m} & \cdots & C_{nm}\end{array}\right)$
+\end_inset 
+
+ donde 
+\begin_inset Formula $C_{ij}$
+\end_inset 
+
+ la exigencia máxima que el proceso 
+\begin_inset Formula $i$
+\end_inset 
+
+ tiene del recursos 
+\begin_inset Formula $j$
+\end_inset 
+
+
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Se lee por columnas: La columna 1 indica las exigencias máximas del recurso1
+ respecto de todos los recursos.
+ Se lee por filas: La fila 1 indica la exigencia de todos los procesos sobre
+ el recurso 1.
+\end_inset 
+
+.
+\layout Enumerate
+
+Matriz de asignación
+\begin_inset LatexCommand \index{Matriz de asignación}
+
+\end_inset 
+
+ 
+\begin_inset Formula $A_{R}=\left(\begin{array}{ccc}
+A_{11} & \cdots & A_{n1}\\
+\vdots & \ddots & \vdots\\
+A_{1m} & \cdots & A_{nm}\end{array}\right)$
+\end_inset 
+
+ donde 
+\begin_inset Formula $A_{ij}$
+\end_inset 
+
+ denota la cantidad de recurso 
+\begin_inset Formula $j$
+\end_inset 
+
+ que tiene el proceso 
+\begin_inset Formula $i$
+\end_inset 
+
+ en un instante determinado.
+ Es decir, el total de recursos que tiene asignado un proceso vendrá dado
+ por el vector 
+\begin_inset Formula $A_{iR}=\left(\begin{array}{c}
+A_{i1}\\
+\vdots\\
+A_{im}\end{array}\right)$
+\end_inset 
+
+ donde 
+\begin_inset Formula $i$
+\end_inset 
+
+ identifica al proceso.
+\layout Standard
+
+Después de definir estas matrices y vectores, deben cumplirse las siguientes
+ condiciones.
+\layout Enumerate
+
+
+\begin_inset Formula $\forall j\in\left[1,m\right]\;\sum_{k=1}^{n}A_{kj}+AV_{j}=R_{j}$
+\end_inset 
+
+.
+ El número de unidades de un recurso es la suma de las unidades utilizadas
+ y las unidades ociosas.
+\layout Enumerate
+
+
+\begin_inset Formula $\forall i\in\left[1,n\right],\forall k\in\left[1,m\right]\; C_{ik}\leq R_{k}$
+\end_inset 
+
+.
+ La demanda de ningún proceso sobre ningún recurso puede superar la cantidad
+ del recurso.
+\layout Enumerate
+
+
+\begin_inset Formula $\forall i\in\left[1,n\right],\forall k\in\left[1,m\right]\; A_{ik}\leq C_{ik}$
+\end_inset 
+
+.
+ Ningún proceso puede tener asignada más cantidad de un recurso que la que
+ especifica su demanda máxima.
+\layout Standard
+
+Teniendo en cuenta estas restricciones, un proceso 
+\begin_inset Formula $n+1$
+\end_inset 
+
+ sólo puede arrancarse si 
+\begin_inset Formula \[
+\forall j\in\left[1,m\right]\,\,\sum_{k=1}^{n+1}C_{kj}\leq R_{j}\]
+
+\end_inset 
+
+
+\layout Standard
+
+en palabras; la suma de las demandas máximas de todos los procesos (incluido
+ el candidato a nuevo) en relación a un recurso no debe superar nunca la
+ cantidad de ese recurso en el sistema.
+ De esta forma, nos aseguramos de que en el peor de los casos (todos piden
+ demanda máxima) todos podrán ser satisfechos.
+\layout Description
+
+ejercicio\SpecialChar ~
+propuesto en un sistema tenemos tres procesos A,B y C.
+ La región crítica de cada proceso consiste simplemente en escribir 
+\begin_inset Quotes eld
+\end_inset 
+
+soy el proceso X
+\begin_inset Quotes erd
+\end_inset 
+
+.
+ Queremos conseguir que el orden de ejecución sea el siguiente: ABC, CAB,
+ ABC, CAB, ABC.
+ (eso es lo que ha de salir por pantalla).
+\layout Standard
+
+
+\begin_inset Float algorithm
+wide false
+collapsed false
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{abc2}
+
+\end_inset 
+
+Algoritmo para el ejercicio propuesto
+\layout Standard
+
+
+\size footnotesize 
+
+\begin_inset Include \verbatiminput{programas/abc2.pas}
+preview false
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Subsection
+
+Negativa de asignación de recursos
+\layout Standard
+
+Esta estrategia también se denomina algoritmo de Banquero
+\begin_inset LatexCommand \index{Algoritmo de Banquero}
+
+\end_inset 
+
+ y fue propuesta por primera vez por Dijkstra.
+ Se comienza definiendo los conceptos de 
+\emph on 
+estado
+\emph default 
+ y 
+\emph on 
+estado seguro
+\emph default 
+.
+ El estado de un sistema en un momento dado es simplemente la asignación
+ actual de recursos a los procesos, así pues, el estado estará formado por
+ los vectores de recursos y de recursos disponibles, y por las matrices
+ de demanda y asignación definidas previamente.
+ Teniendo esto en ecuenta, un estado seguro es un estado en el cual existe
+ al menos un orden en que todos los procesos pueden ejecutar hasta el final
+ sin generar un interbloqueo.
+ Un estado inseguro es, lógicamente, todo estado que no sea seguro.
+\layout Description
+
+Ejemplo Supongamos el siguiente sistema con las matrices y vectores de recursos
+ y procesos que siguen:
+\begin_inset Formula \[
+C_{R}=\begin{array}{ccccc}
+ & P_{1} & P_{2} & P_{3} & P_{4}\\
+R_{1} & 3 & 6 & 3 & 4\\
+R_{2} & 2 & 1 & 1 & 2\\
+R_{3} & 2 & 3 & 4 & 2\end{array};\, A_{R}=\begin{array}{ccccc}
+ & P_{1} & P_{2} & P_{3} & P_{4}\\
+R_{1} & 1 & 6 & 2 & 0\\
+R_{2} & 0 & 1 & 1 & 0\\
+R_{3} & 0 & 2 & 1 & 2\end{array};\, AV_{R}=\begin{array}{cc}
+R_{1} & 0\\
+R_{2} & 1\\
+R_{3} & 1\end{array};\, R=\begin{array}{cc}
+R_{1} & 9\\
+R_{2} & 3\\
+R_{3} & 6\end{array}\]
+
+\end_inset 
+
+Podemos comprobar que las restricciones que se imponían más atrás se cumplen.
+ ¿Es un estado seguro? De momento, vemos que 
+\begin_inset Formula $P_{1}$
+\end_inset 
+
+ no podría continuar ya que requiere 3 unidades del recurso 
+\begin_inset Formula $R_{1}$
+\end_inset 
+
+ y éste no puede ofrecérselas.
+ 
+\begin_inset Formula $P_{2}$
+\end_inset 
+
+ sí puede continuar y cuando termine, liberará sus recursos dejando la matriz
+ de disponibles en 
+\begin_inset Formula $AV_{R}=\begin{array}{cc}
+R_{1} & 6\\
+R_{2} & 2\\
+R_{3} & 3\end{array}$
+\end_inset 
+
+.
+ Ahora 
+\begin_inset Formula $P_{1}$
+\end_inset 
+
+ sí puede ejecutarse sin problemas y al terminar libera sus recursos.
+ Ahora 
+\begin_inset Formula $P_{3}$
+\end_inset 
+
+ también puede ejecutarse y de nuevo, al terminar, libera sus recursos utilizado
+s, permitiendo a 
+\begin_inset Formula $P_{4}$
+\end_inset 
+
+ ejecutarse y terminar.
+ Como hemos encontrado 
+\emph on 
+un
+\emph default 
+ camino por el que todos los procesos se ejecutan al final de un tiempo,
+ estamos ante un estado seguro.
+\layout Standard
+
+La estretegia de predicción de interbloqueo consiste en asegurar que el
+ sistema esté siempre en un estado seguro.
+ Para conseguir esto, cuando un proceso realiza una solicitud de un recurso
+ o de un conjunto de r ecursos, se supone que la solicitud se le concede,
+ a continuación se actualiza el estado del sistema para que refleje la nueva
+ situación y se determina si en esa nueva situación, el sistema se encuentra
+ en un estado seguro.
+ Si el estado es seguro se concede la solicitud, mientras que si no lo es,
+ el proceso solicitante es bloqueado hasta que concederle los recursos lleve
+ a un estado seguro.
+\the_end

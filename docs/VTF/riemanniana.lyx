@@ -1,0 +1,2382 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass scrbook
+\begin_preamble
+\input{macros.sty}
+\usepackage{ae, aecompl}
+\end_preamble
+\language spanish
+\inputencoding auto
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize a4paper
+\paperpackage a4
+\use_geometry 1
+\use_amsmath 1
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+
+\layout Chapter
+
+Geometría riemanniana o pseudo--riemanniana
+\layout Standard
+
+La geometría riemanniana se dedica a estudiar la estructura de la que dota
+ un campo tensorial, denominado 
+\emph on 
+métrica 
+\emph default 
+a una variedad.
+ 
+\layout Standard
+
+La métrica 
+\begin_inset Formula $\mathsf{g}$
+\end_inset 
+
+ es un campo tensorial totalmente simétrico, 
+\begin_inset Formula $\left(0,2\right)$
+\end_inset 
+
+ y 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ tal que la signatura
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Al diagonalizar en cada punto la expresión matricial del tensor y en cada
+ punto de la diagonal encontraremos un 
+\begin_inset Formula $+1$
+\end_inset 
+
+ o un 
+\begin_inset Formula $-1$
+\end_inset 
+
+.
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+Explicar qué es la signatura
+\end_inset 
+
+.
+ La lista de todos estos valores es la signatura del tensor.
+\end_inset 
+
+ de la forma cuadrática 
+\begin_inset Formula $\mathsf{g}\left[\mathsf{u},\mathsf{v}\right]$
+\end_inset 
+
+ permanece constante en todos los puntos de la variedad.
+ En el caso de que la forma sea definida positiva o negativa se dice que
+ es riemanniana o propiamente riemanniana.
+ En caso de que no sea definida, se la llama pseudo--riemanniana (semi--riemanni
+ana entre los matemáticos).
+ Cuando la diagonal sólo tiene un signo distinto a los demás, se dice que
+ la métrica es lorentziana.
+ Además, 
+\begin_inset Formula $\mathsf{g}$
+\end_inset 
+
+ debe ser no degenerada (es decir 
+\begin_inset Formula $\forall\mathsf{u}\neq0,\exists\mathsf{v}:\mathsf{g}\left[\mathsf{u},\mathsf{v}\right]\neq0$
+\end_inset 
+
+).
+ En consecuencia 
+\begin_inset Formula $\det\left[\mathsf{g}\right]\neq0$
+\end_inset 
+
+ y existe un inverso, 
+\begin_inset Formula $\left(g^{-1}\right)^{ij}$
+\end_inset 
+
+, que abreviaremos por 
+\begin_inset Formula $g^{ij}$
+\end_inset 
+
+.
+\layout Standard
+
+La expresión en coordenadas de la métrica es:
+\begin_inset Formula \[
+\mathsf{g}=g_{ij}dx^{i}\otimes_{\mathsf{s}}dx^{j}\]
+
+\end_inset 
+
+ 
+\begin_inset Formula $\mathsf{g}$
+\end_inset 
+
+ es simétrica: 
+\begin_inset Formula $g_{ij}=g_{ji}$
+\end_inset 
+
+.
+ Haciendo uso de la notación para el producto tensorial simétrico, 
+\begin_inset Formula $dx^{i}dx^{j}=\frac{1}{2}\left(dx^{i}\otimes dx^{j}+dx^{j}\otimes dx^{i}\right)$
+\end_inset 
+
+ llegamos a la forma más habitual de escribir su desarrollo en componentes
+ 
+\begin_inset Formula \[
+\mathsf{g}=g_{ij}dx^{i}dx^{j}\]
+
+\end_inset 
+
+ 
+\layout Description
+
+
+\size small 
+Ejemplo (dimensión 2) 
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{g} & = & g_{xx}dx\otimes dx+g_{xy}dx\otimes dy+g_{yx}dy\otimes dx+g_{yy}dy\otimes dy\\
+ & = & g_{xx}dx\otimes dx+g_{xy}\left(dx\otimes dy+dy\otimes dx\right)+g_{yy}dy\otimes dy\\
+ & = & g_{xx}dx^{2}+2g_{xy}dxdy+g_{yy}dy^{2}\\
+ & = & ds^{2}\end{eqnarray*}
+
+\end_inset 
+
+
+\size default 
+ 
+\layout Standard
+
+El que la métrica sea definida positiva nos permite definir la norma y el
+ ángulo sobre el espacio tangente a la variedad en un punto.
+ 
+\layout Description
+
+la\SpecialChar ~
+norma de 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ se define como 
+\begin_inset Formula \[
+\left|\left|\mathsf{v}\right|\right|\equiv\sqrt{\mathsf{g}\left[\mathsf{v},\mathsf{v}\right]}\]
+
+\end_inset 
+
+pero si la métrica no es propiamente riemanniana podemos definir una 
+\begin_inset Quotes eld
+\end_inset 
+
+magnitud
+\begin_inset Quotes erd
+\end_inset 
+
+ similar a la norma: 
+\begin_inset Formula \[
+\left|\left|\mathsf{v}\right|\right|\equiv\sqrt{\left|\mathsf{g}\left[\mathsf{v},\mathsf{v}\right]\right|}\]
+
+\end_inset 
+
+ 
+\layout Description
+
+el\SpecialChar ~
+ángulo entre vectores tangentes es
+\begin_inset Formula \[
+\cos\left[\mathsf{v},\mathsf{w}\right]\equiv\frac{\mathsf{g}\left[\mathsf{v},\mathsf{w}\right]}{\left|\left|\mathsf{v}\right|\right|\left|\left|\mathsf{w}\right|\right|}\]
+
+\end_inset 
+
+ 
+\layout Standard
+
+Por otro lado, la métrica es el único objeto que permite establecer corresponden
+cias entre tensores subiendo y bajando índices.
+\begin_inset Formula \begin{eqnarray*}
+\hat{T}_{ik}^{j} & = & g_{im}T_{k}^{mj}\\
+\hat{\hat{T}}^{ijk} & = & g^{km}T_{m}^{ij}\end{eqnarray*}
+
+\end_inset 
+
+ Se puede mantener el mismo símbolo para denotarlos, aunque son formalmente
+ tensores distintos: actúan sobre distintos espacios, pero sus componentes
+ contienen la misma información.
+ En la práctica la ubicación de los subíndices sirve para distinguirlos.
+  
+\layout Description
+
+
+\size small 
+Ejemplo A un vector del espacio tangente 
+\begin_inset Formula $\mathsf{v}=v^{i}\dpxi{}$
+\end_inset 
+
+ podemos asociarle mediante 
+\begin_inset Formula $\mathsf{g}$
+\end_inset 
+
+ uno del espacio cotangente, 
+\begin_inset Formula $\omega_{j}=g_{ji}v^{i}$
+\end_inset 
+
+ con lo cual 
+\begin_inset Formula $\omega=\omega_{j}dx^{j}$
+\end_inset 
+
+, También podemos pasar del espacio cotangente al espacio tangente, utilizando
+ 
+\begin_inset Formula $v^{i}=g^{ij}\omega_{j}$
+\end_inset 
+
+.
+
+\size default 
+ 
+\layout Section
+
+Conexión afín o lineal
+\layout Standard
+
+Una métrica permite mucho más que estos cálculos algebraicos; nos permite,
+ por ejemplo, dar una definición de transporte paralelo (derivada covariante).
+ Es una manera de trasladar un vector de un punto de la variedad a otro
+ a lo largo de una curva, manteniendo constante el ángulo vector--curva.
+ Esto permite comparar vectores, mediante el proceso de trasladar el punto
+ de aplicación de uno de ambos sobre el del otro a través de la curva.
+ 
+\layout Standard
+
+Hasta aquí no hemos podido definir una noción de paralelismo entre vectores
+ definidos en puntos distintos para una variedad diferenciable.
+ La conexión afín es una regla gracias a la cual podremos definir alguna
+ noción de paralelismo.
+\layout Standard
+
+A este motivo para definir una derivada covariante (permitir el transporte
+ paralelo) se añade la necesidad de encontrar una analogía a la derivada
+ parcial de un tensor cuyo resultado también sea un tensor.
+\layout Standard
+
+La métrica no aporta la única manera de definir una derivada covariante,
+ una conexión.
+ Hay modos no métricos de definir una conexión.
+ Pero hay una sola conexión compatible con la métrica (que mantenga normas
+ y ángulos).
+\layout Paragraph
+
+La derivada parcial de una función (tensor 
+\begin_inset Formula $\left(0,0\right)$
+\end_inset 
+
+) 
+\emph on 
+es 
+\emph default 
+un tensor
+\layout Standard
+
+Supongamos 
+\begin_inset Formula $f\in\mathcal{F}^{\infty}\left[M\right]$
+\end_inset 
+
+.
+ 
+\begin_inset Formula \[
+\nabla_{k}f\equiv\dpa{f}{x^{k}}\]
+
+\end_inset 
+
+ 
+\begin_inset Formula $\alpha_{k}=\nabla_{k}f$
+\end_inset 
+
+ sí se transforma como un tensor:
+\begin_inset Formula \[
+\alpha_{k'}=\dpa{f}{x^{k'}}=\dpa{x^{k}}{x^{k'}}\dpa{f}{x^{k}}=\dpa{x^{k}}{x^{k'}}\alpha_{k}\]
+
+\end_inset 
+
+ A partir de una función (tensor del tipo 
+\begin_inset Formula $\left(0,0\right)$
+\end_inset 
+
+) 
+\begin_inset Formula $f\in\mathcal{F}^{\infty}\left[M\right]$
+\end_inset 
+
+ se obtiene un objeto 
+\begin_inset Formula $\left(0,1\right)$
+\end_inset 
+
+ mediante 
+\begin_inset Formula $\nabla_{k}$
+\end_inset 
+
+.
+\layout Paragraph
+
+Pero la derivada parcial de un tensor 
+\begin_inset Formula $\left(1,0\right)$
+\end_inset 
+
+ 
+\emph on 
+no 
+\emph default 
+es un tensor
+\layout Standard
+
+Consideremos ahora un campo vectorial contravariante, 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+.
+ Denotemos por 
+\begin_inset Formula $T_{j}^{i}=\dpa{v^{i}}{x^{j}}$
+\end_inset 
+
+ las parciales de sus componentes.
+ Veamos que 
+\emph on 
+no
+\emph default 
+ son las componentes de un tensor 
+\begin_inset Formula $\left(1,1\right)$
+\end_inset 
+
+:
+\begin_inset Formula \begin{eqnarray*}
+T_{j'}^{i'} & = & \dpa{v^{i'}}{x^{j'}}=\dpa{x^{j}}{x^{j'}}\dpa{}{x^{j}}\left[\dpa{x^{i'}}{x^{i}}v^{i}\right]\\
+ & = & \dpa{x^{j}}{x^{j'}}\dpa{x^{i'}}{x^{i}}\dpa{v^{i}}{x^{j}}+\dpa{x^{j}}{x^{j'}}\ddpas{x^{i'}}{x^{j}}{x^{i}}v^{i}\end{eqnarray*}
+
+\end_inset 
+
+ el segundo término causa que esto no sea un tensor bajo transformaciones
+ de coordenadas arbitrarias.
+ Nótese que si el jacobiano de la transformación, 
+\begin_inset Formula $\ddpas{x^{i'}}{x^{j}}{x^{i}}$
+\end_inset 
+
+ fuese nulo, el resultado sí sería un tensor (porque se transformaría como
+ dictan las leyes tensoriales).
+ 
+\layout Paragraph
+
+\SpecialChar \ldots{}
+debemos modificar 
+\emph on 
+adecuadamente
+\emph default 
+ la derivada 
+\layout Standard
+
+compensando los términos que impiden que el resultado de la operación sea
+ un tensor, del siguiente modo:
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+\left(\nabla\mathsf{v}\right)_{j}^{i}\equiv\nabla_{j}v^{i}\equiv v_{;j}^{i}\equiv\dpa{v^{i}}{x^{j}}+\Gamma_{kj}^{i}v^{k}\label{eq dcov de un cv contravariante}\end{equation}
+
+\end_inset 
+
+ donde 
+\begin_inset Formula $\Gamma_{kj}^{i}$
+\end_inset 
+
+ son 
+\begin_inset Formula $m^{3}$
+\end_inset 
+
+ funciones 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+.
+ Nótese que seguimos el convenio de contraer en 
+\begin_inset Formula $\Gamma$
+\end_inset 
+
+ con el índice de dentro, 
+\begin_inset Formula $k$
+\end_inset 
+
+, mientras que la dirección de la derivada queda marcada por el índice exterior,
+ 
+\begin_inset Formula $j$
+\end_inset 
+
+.
+ Para que esta definición cobre sentido ha de ser válida en cualquier sistema
+ de coordenadas.
+ ¿Puedo encontrar una transformación para esos 
+\begin_inset Formula $\Gamma$
+\end_inset 
+
+ tal que 
+\begin_inset Formula $v_{;j}^{i}$
+\end_inset 
+
+ sea efectivamente un tensor?.
+\begin_inset Formula \begin{eqnarray*}
+\nabla_{j'}v^{i'} & = & \dpa{v^{i'}}{x^{j'}}+\Gamma_{k'j'}^{i'}v^{k'}\\
+ & = & \dpa{x^{j}}{x^{j'}}\dpa{}{x^{j}}\left[\dpa{x^{i'}}{x^{i}}v^{i}\right]+\Gamma_{k'j'}^{i'}\dpa{x^{k'}}{x^{k}}v^{k}\\
+ & = & \dpa{x^{j}}{x^{j'}}\dpa{x^{i'}}{x^{i}}\dpa{v^{i}}{x^{j}}+\dpa{x^{j}}{x^{j'}}\ddpas{x^{i'}}{x^{j}}{x^{i}}v^{i}+\Gamma_{k'j'}^{i'}\dpa{x^{k'}}{x^{k}}v^{k}\end{eqnarray*}
+
+\end_inset 
+
+ despejando de 
+\begin_inset LatexCommand \ref{eq dcov de un cv contravariante}
+
+\end_inset 
+
+:
+\begin_inset Formula \[
+\dpa{v^{i}}{x^{j}}=\nabla_{j}v^{i}-\Gamma_{kj}^{i}v^{k}\]
+
+\end_inset 
+
+ y sustituyendo
+\begin_inset Formula \begin{equation}
+\nabla_{j'}v^{i'}=\dpa{x^{j}}{x^{j'}}\dpa{x^{i'}}{x^{i}}\nabla_{j}v^{i}-\dpa{x^{j}}{x^{j'}}\dpa{x^{i'}}{x^{i}}\Gamma_{kj}^{i}v^{k}+\Gamma_{k'j'}^{i'}\dpa{x^{k'}}{x^{k}}v^{k}+\dpa{x^{j}}{x^{j'}}\ddpas{x^{i'}}{x^{j}}{x^{i}}v^{i}\label{ec. transform de la dcov de un vector}\end{equation}
+
+\end_inset 
+
+Para que efectivamente se transforme como un tensor todos los términos de
+ 
+\begin_inset LatexCommand \ref{ec. transform de la dcov de un vector}
+
+\end_inset 
+
+ menos el primero deben ser nulos:
+\begin_inset Formula \begin{eqnarray*}
+\Gamma_{k'j'}^{i'}\dpa{x^{k'}}{x^{k}}v^{k}-\dpa{x^{j}}{x^{j'}}\dpa{x^{i'}}{x^{i}}\Gamma_{kj}^{i}v^{k}+\dpa{x^{j}}{x^{j'}}\ddpas{x^{i'}}{x^{j}}{x^{k}}v^{k} & = & 0\\
+\left(\Gamma_{k'j'}^{i'}\dpa{x^{k'}}{x^{k}}-\dpa{x^{j}}{x^{j'}}\dpa{x^{i'}}{x^{i}}\Gamma_{kj}^{i}+\dpa{x^{j}}{x^{j'}}\ddpas{x^{i'}}{x^{j}}{x^{k}}\right)v^{k} & = & 0\end{eqnarray*}
+
+\end_inset 
+
+(nótese que para sacar el factor común 
+\begin_inset Formula $v^{k}$
+\end_inset 
+
+ hemos cambiado en el cuarto término de 
+\begin_inset LatexCommand \ref{ec. transform de la dcov de un vector}
+
+\end_inset 
+
+ el índice mudo 
+\begin_inset Formula $i$
+\end_inset 
+
+ por 
+\begin_inset Formula $k$
+\end_inset 
+
+).
+ Como esto tiene que valer para todo 
+\begin_inset Formula $v^{k}$
+\end_inset 
+
+, el paréntesis debe anularse.
+ Multiplicando la expresión final por la 
+\begin_inset Formula $\dpa{x^{k}}{x^{m'}}$
+\end_inset 
+
+ y teniendo en cuenta que
+\begin_inset Formula \[
+\dpa{x^{k}}{x^{m'}}\dpa{x^{k'}}{x^{k}}=\dpa{x^{k'}}{x^{m'}}=\delta_{m'}^{k'}\]
+
+\end_inset 
+
+ se obtiene
+\begin_inset Formula \[
+0=\Gamma_{k'j'}^{i'}\delta_{m'}^{k'}-\dpa{x^{k}}{x^{m'}}\dpa{x^{j}}{x^{j'}}\dpa{x^{i'}}{x^{i}}\Gamma_{kj}^{i}+\dpa{x^{k}}{x^{m'}}\dpa{x^{j}}{x^{j'}}\ddpas{x^{i'}}{x^{j}}{x^{k}}\]
+
+\end_inset 
+
+ y por tanto
+\begin_inset Formula \begin{equation}
+\Gamma_{m'j'}^{i'}=\dpa{x^{i'}}{x^{i}}\dpa{x^{k}}{x^{m'}}\dpa{x^{j}}{x^{j'}}\Gamma_{kj}^{i}-\dpa{x^{k}}{x^{m'}}\dpa{x^{j}}{x^{j'}}\ddpas{x^{i'}}{x^{j}}{x^{k}}\label{ec transf Christoffel}\end{equation}
+
+\end_inset 
+
+ es la regla de transformación de las 
+\begin_inset Formula $m^{3}$
+\end_inset 
+
+ funciones 
+\begin_inset Formula $\Gamma$
+\end_inset 
+
+ que proporciona la conexión en el sentido clásico.
+ Las componentes de la conexión no forman un tensor, como se deriva de la
+ fórmula.
+ Por ejemplo, podremos tener coordenadas en las que se anulen todas las
+ componentes y coordenadas donde no (algo imposible en los tensores, debido
+ a su definición intrínseca: nulo en un sistema de coordenadas, nulo en
+ todos).
+ Sí se transforman como un tensor en los casos en los que el cambio de coordenad
+as tenga jacobiano constante:
+\begin_inset Formula \[
+\ddpas{x^{i'}}{x^{j}}{x^{k}}=cte\]
+
+\end_inset 
+
+ Observación acerca de la fórmula 
+\begin_inset LatexCommand \ref{ec transf Christoffel}
+
+\end_inset 
+
+: su primer término se corresponde con la transformación que seguiría un
+ tensor, mientras que el segundo hace alusión al cambio de coordenadas (jacobian
+o).
+\layout Paragraph
+
+Derivada covariante de una 1-forma
+\layout Standard
+
+Sea 
+\begin_inset Formula $\alpha=\alpha_{i}dx^{i}$
+\end_inset 
+
+.
+ Queremos buscar la expresión 
+\begin_inset Formula $\nabla_{k}\alpha_{i}$
+\end_inset 
+
+.
+ Imponemos para ello que la derivada covariante conmute con la contracción.
+ Al hacerlo podemos tomar 
+\begin_inset Formula $\mathsf{v}=v^{k}\dpa{}{x^{k}}$
+\end_inset 
+
+ y en consecuencia podemos utilizar 
+\begin_inset Formula $\alpha\left[\mathsf{v}\right]=\alpha_{k}v^{k}=\alpha_{i}v^{i}$
+\end_inset 
+
+:
+\begin_inset Formula \[
+\nabla_{k}\left[\alpha_{i}v^{i}\right]=\dpa{\alpha_{i}}{x^{k}}v^{i}+\alpha_{i}\dpa{v^{i}}{x^{k}}\]
+
+\end_inset 
+
+ donde hemos utilizado que derivada y contracción conmutan.
+\begin_inset Formula \begin{eqnarray*}
+\nabla_{k}\left[\alpha_{i}v^{i}\right] & = & \left(\nabla_{k}\alpha_{i}\right)v^{i}+\alpha_{i}\left(\nabla_{k}v^{i}\right)\\
+ & = & \left(\nabla_{k}\alpha_{i}\right)v^{i}+\alpha_{i}\left(\dpa{v^{i}}{x^{k}}+\Gamma_{mk}^{i}v^{m}\right)\end{eqnarray*}
+
+\end_inset 
+
+igualando las dos expresiones para 
+\begin_inset Formula $\nabla_{k}\left[\alpha_{i}v^{i}\right]$
+\end_inset 
+
+ 
+\begin_inset Formula \begin{eqnarray*}
+\nabla_{k}\left[\alpha_{i}v^{i}\right] & = & \dpa{\alpha_{i}}{x^{k}}v^{i}+\alpha_{i}\dpa{v^{i}}{x^{k}}\\
+ & = & \left(\nabla_{k}\alpha_{i}\right)v^{i}+\alpha_{i}\left(\dpa{v^{i}}{x^{k}}+\Gamma_{mk}^{i}v^{m}\right)\end{eqnarray*}
+
+\end_inset 
+
+ El hecho de que la derivada covariante y la contracción conmuten implica
+ que 
+\begin_inset Formula \begin{equation}
+\nabla_{k}\left[\alpha_{i}v^{i}\right]=\left(\nabla_{k}\alpha_{i}\right)v^{i}+\alpha_{i}\nabla_{k}v^{i}\label{ec dcov y contraccion conmutan}\end{equation}
+
+\end_inset 
+
+ 
+\layout Standard
+
+Para hallar la derivada covariante de una 1-forma operamos,
+\begin_inset Formula \begin{eqnarray*}
+0 & = & \left(\nabla_{k}\alpha_{i}\right)v^{i}-\dpa{\alpha_{i}}{x^{k}}v^{i}+\alpha_{i}\Gamma_{mk}^{i}v^{m}\\
+ & = & \left(\nabla_{k}\alpha_{i}\right)v^{i}-\dpa{\alpha_{i}}{x^{k}}v^{i}+\Gamma_{mk}^{i}\alpha_{i}v^{m}\end{eqnarray*}
+
+\end_inset 
+
+ cambiamos 
+\begin_inset Formula $i$
+\end_inset 
+
+ por 
+\begin_inset Formula $m$
+\end_inset 
+
+ para sacar factor común de 
+\begin_inset Formula $v^{m}$
+\end_inset 
+
+:
+\begin_inset Formula \begin{eqnarray*}
+0 & = & \left(\nabla_{k}\alpha_{m}\right)v^{m}-\dpa{\alpha_{m}}{x^{k}}v^{m}+\Gamma_{mk}^{i}\alpha_{i}v^{m}\\
+ & = & \left(\nabla_{k}\alpha_{m}-\dpa{\alpha_{m}}{x^{k}}+\Gamma_{mk}^{i}\alpha_{i}\right)v^{m}\end{eqnarray*}
+
+\end_inset 
+
+ como la expresión debe ser válida para cualquier 
+\begin_inset Formula $v^{m}$
+\end_inset 
+
+ el paréntesis debe anularse:
+\begin_inset Formula \[
+\nabla_{k}\alpha_{m}-\dpa{\alpha_{m}}{x^{k}}+\Gamma_{mk}^{i}\alpha_{i}=0\]
+
+\end_inset 
+
+ 
+\layout Standard
+
+La derivada covariante de una 1-forma diferencial 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+ es, finalmente,
+\begin_inset Formula \begin{equation}
+\nabla_{k}\alpha_{m}=\dpa{\alpha_{m}}{x^{k}}-\Gamma_{mk}^{i}\alpha_{i}\label{eq dcov de una 1-fd}\end{equation}
+
+\end_inset 
+
+ donde el subíndice 
+\begin_inset Formula $k$
+\end_inset 
+
+ de 
+\begin_inset Formula $\Gamma$
+\end_inset 
+
+ es derivación respecto a 
+\begin_inset Formula $k$
+\end_inset 
+
+ (recordemos que el índice de la derivada va detrás siempre).
+\layout Standard
+
+A partir de la definición de derivada covariante para campos contravariantes
+ e imponiendo la conmutación de la derivada y la contracción hemos calculado
+ la derivada covariante de campos covariantes (entre ellos, las formas diferenci
+ales).
+\layout Paragraph
+
+Derivada covariante de un campo tensorial 
+\begin_inset Formula $\left(1,1\right)$
+\end_inset 
+
+ 
+\layout Standard
+
+El siguiente paso es intentar definir una derivada covariante para campos
+ tensoriales arbitrarios.
+ Lo veremos con un campo tensorial 
+\begin_inset Formula $\left(1,1\right)$
+\end_inset 
+
+ y luego se generalizará.
+\layout Standard
+
+Tenemos que imponer una regla de Leibniz para extender la derivada covariante
+ a cualquier campo tensorial:
+\begin_inset Formula \begin{equation}
+\nabla\left[\mathsf{S}\otimes\mathsf{T}\right]=\nabla\mathsf{S}\otimes\mathsf{T}+\mathsf{S}\otimes\nabla\mathsf{T}\label{ec. regla leibniz para dcov(prod_tensores)}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+La derivada covariante de una 1-forma (tensor 
+\begin_inset Formula $\left(0,1\right)$
+\end_inset 
+
+), 
+\begin_inset Formula $\nabla_{k}\alpha_{m}=\left(\nabla\alpha\right)_{km}$
+\end_inset 
+
+ es un tensor de tipo 
+\begin_inset Formula $\left(0,2\right)$
+\end_inset 
+
+.
+ Al hacer la derivada covariante de un tensor 
+\begin_inset Formula $\left(r,s\right)$
+\end_inset 
+
+ se obtiene un tensor 
+\begin_inset Formula $\left(r,s+1\right)$
+\end_inset 
+
+.
+ Además de la regla de Leibniz, debe observarse la linealidad de la operación:
+ 
+\begin_inset Formula \begin{equation}
+\nabla\left[\mathsf{S}_{1}+\mathsf{S}_{2}\right]=\nabla\mathsf{S}_{1}+\nabla\mathsf{S}_{2}\label{ec. linealidad de dcov(suma_tensores)}\end{equation}
+
+\end_inset 
+
+ Un campo tensorial 
+\begin_inset Formula $\left(1,1\right)$
+\end_inset 
+
+ se puede escribir como combinación lineal de un campo vectorial contravariante
+ (tensor 
+\begin_inset Formula $\left(1,0\right)$
+\end_inset 
+
+) y de una forma diferencial (tensor 
+\begin_inset Formula $\left(0,1\right)$
+\end_inset 
+
+), expresándolo así: 
+\begin_inset Formula $T_{j}^{i}=v^{i}\alpha_{j}$
+\end_inset 
+
+ o 
+\begin_inset Formula $\mathsf{T}=\mathsf{v}\otimes\alpha$
+\end_inset 
+
+, donde 
+\begin_inset Formula $\mathsf{v}=v^{i}\dpa{}{x^{i}},\,\alpha=\alpha_{j}dx^{j}$
+\end_inset 
+
+.
+ Así las cosas, y asumiendo 
+\begin_inset LatexCommand \ref{ec. regla leibniz para dcov(prod_tensores)}
+
+\end_inset 
+
+ y 
+\begin_inset LatexCommand \ref{ec. linealidad de dcov(suma_tensores)}
+
+\end_inset 
+
+,
+\begin_inset Formula \begin{eqnarray*}
+\nabla_{k}T_{j}^{i} & = & \nabla_{k}\left[v^{i}\alpha_{j}\right]\\
+ & = & v^{i}\nabla_{k}\alpha_{j}+\alpha_{j}\nabla_{k}v^{i}\\
+ & = & v^{i}\left(\dpa{\alpha_{j}}{x^{k}}-\Gamma_{jk}^{m}\alpha_{m}\right)+\alpha_{j}\left(\dpa{v^{i}}{x^{k}}+\Gamma_{mk}^{i}v^{m}\right)\end{eqnarray*}
+
+\end_inset 
+
+ aplicando 
+\begin_inset LatexCommand \ref{eq dcov de un cv contravariante}
+
+\end_inset 
+
+ y 
+\begin_inset LatexCommand \ref{eq dcov de una 1-fd}
+
+\end_inset 
+
+.
+ Por lo tanto:
+\begin_inset Formula \begin{eqnarray*}
+\nabla_{k}T_{j}^{i} & = & \dpa{v^{i}}{x^{k}}\alpha_{j}+v^{i}\dpa{\alpha_{j}}{x^{k}}+\Gamma_{mk}^{i}v^{m}\alpha_{j}-\Gamma_{jk}^{m}v^{i}\alpha_{m}\\
+ & = & \dpa{}{x^{k}}\left[v^{i}\alpha_{j}\right]+\Gamma_{mk}^{i}v^{m}\alpha_{j}-\Gamma_{jk}^{m}v^{i}\alpha_{m}\\
+ & = & \dpa{}{x^{k}}T_{j}^{i}+\Gamma_{mk}^{i}T_{j}^{m}-\Gamma_{jk}^{m}T_{m}^{i}\end{eqnarray*}
+
+\end_inset 
+
+ En suma, se obtiene el tensor 
+\begin_inset Formula $\left(1,2\right)$
+\end_inset 
+
+ siguiente
+\begin_inset Formula \begin{equation}
+\left(\nabla T\right)_{jk}^{i}=T_{j;k}^{i}=\nabla_{k}T_{j}^{i}=\dpa{}{x^{k}}T_{j}^{i}+\Gamma_{mk}^{i}T_{j}^{m}-\Gamma_{jk}^{m}T_{m}^{i}\label{eq. dcov de un ctensorial 1,1}\end{equation}
+
+\end_inset 
+
+ tendremos tantos términos con 
+\begin_inset Formula $\Gamma$
+\end_inset 
+
+ como índices haya en el tensor a derivar.
+ En concreto, por cada índice covariante del tensor aparece un término negativo
+ y por cada índice contravariante uno positivo.
+ 
+\layout Standard
+
+Aplicando a un tensor de tipo 
+\begin_inset Formula $\left(r,s\right)$
+\end_inset 
+
+, 
+\begin_inset Formula $T_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{r}}$
+\end_inset 
+
+ la derivada covariante se obtiene un tensor 
+\begin_inset Formula $\left(r,s+1\right)$
+\end_inset 
+
+.
+ Para ello empleamos 
+\begin_inset LatexCommand \ref{ec. regla leibniz para dcov(prod_tensores)}
+
+\end_inset 
+
+, 
+\begin_inset LatexCommand \ref{ec. linealidad de dcov(suma_tensores)}
+
+\end_inset 
+
+ y 
+\begin_inset LatexCommand \ref{ec dcov y contraccion conmutan}
+
+\end_inset 
+
+: 
+\begin_inset Formula \[
+\nabla_{k}T_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{r}}=\dpa{}{x^{k}}T_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{r}}+\Gamma_{\underline{m}k}^{i_{1}}T_{j_{1}\ldots j_{s}}^{\underline{m}i_{2}\ldots i_{r}}+\ldots+\Gamma_{\underline{m}k}^{i_{r}}T_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{r-1}\underline{m}}-\Gamma_{j_{1}k}^{\underline{m}}T_{\underline{{m}}j_{2}\ldots j_{s}}^{i_{1}\ldots i_{r}}-\Gamma_{j_{s}k}^{\underline{m}}T_{j_{1}\ldots j_{s-1}\underline{{m}}}^{i_{1}\ldots i_{r}}\]
+
+\end_inset 
+
+ En los términos debidos a los índices contravariantes, aparece un índice
+ mudo que va sustituyendo a 
+\begin_inset Formula $i_{1},i_{2}\ldots i_{r}$
+\end_inset 
+
+.
+ En los términos debidos a los índices contravariantes ocurre análogamente,
+ sustituyendo a los 
+\begin_inset Formula $j_{1}\ldots j_{s}$
+\end_inset 
+
+.
+ Este índice se ha subrayado para resaltar su presencia.
+ Otras notaciones posibles son
+\begin_inset Formula \[
+\left(\nabla T\right)_{j_{1}\ldots j_{s}k}^{i_{1}\ldots i_{r}}=T_{j_{1}\ldots j_{s};k}^{i_{1}\ldots i_{r}}=\nabla_{k}T_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{r}}\]
+
+\end_inset 
+
+
+\layout Standard
+
+¿Conmutan las derivadas covariantes?.
+ Vamos a ver qué pasa.
+\layout Section
+
+Torsión y curvatura
+\layout Subsection
+
+Tensor de torsión
+\layout Standard
+
+Nos preguntamos ahora cuál es el resultado de 
+\begin_inset Formula $\nabla_{i}\nabla_{k}f-\nabla_{k}\nabla_{i}f=\left(\nabla_{i}\nabla_{k}-\nabla_{k}\nabla_{i}\right)\left[f\right]$
+\end_inset 
+
+.
+ 
+\begin_inset Formula \begin{eqnarray*}
+\nabla_{i}\nabla_{k}f & = & \nabla_{i}\left[\nabla_{k}f\right]\\
+ & = & \dpxi{}\left[\nabla_{k}f\right]-\Gamma_{ki}^{m}\nabla_{m}f\\
+ & = & \ddpas{f}{x^{i}}{x^{k}}-\Gamma_{ki}^{m}\dpa{f}{x^{m}}\\
+\nabla_{k}\nabla_{i}f & = & \ddpas{f}{x^{k}}{x^{i}}-\Gamma_{ik}^{m}\dpa{f}{x^{m}}\end{eqnarray*}
+
+\end_inset 
+
+ de donde, suponiendo que 
+\begin_inset Formula $f\in\Cinf$
+\end_inset 
+
+ y por tanto 
+\begin_inset Formula $\ddpas{f}{x^{i}}{x^{k}}=\ddpas{f}{x^{k}}{x^{i}}$
+\end_inset 
+
+,
+\begin_inset Formula \[
+\left(\nabla_{i}\nabla_{k}-\nabla_{k}\nabla_{i}\right)\left[f\right]=\left(\Gamma_{ik}^{m}-\Gamma_{ki}^{m}\right)\dpa{f}{x^{m}}\]
+
+\end_inset 
+
+
+\layout Standard
+
+Se aprecia que en general la derivada covariante de una función no conmuta,
+ pues el paréntesis no se anula.
+ Para que así ocurra, 
+\begin_inset Formula $\Gamma$
+\end_inset 
+
+ tiene que ser simétrico en los índices covariantes:
+\begin_inset Formula \[
+\Gamma_{ik}^{m}-\Gamma_{ki}^{m}=0\]
+
+\end_inset 
+
+ A 
+\begin_inset Formula $\boldsymbol{\mathsf{T}}$
+\end_inset 
+
+ (
+\begin_inset Formula $\mathbf{T}_{ik}^{m}\equiv\Gamma_{ik}^{m}-\Gamma_{ki}^{m}$
+\end_inset 
+
+) se le denomina 
+\emph on 
+tensor de torsión
+\begin_inset LatexCommand \index{tensor de torsión}
+
+\end_inset 
+
+ 
+\emph default 
+y a los 
+\begin_inset Formula $\Gamma$
+\end_inset 
+
+, 
+\emph on 
+coeficientes de conexión
+\begin_inset LatexCommand \index{coeficientes de conexión}
+
+\end_inset 
+
+.
+ 
+\emph default 
+Cuando 
+\begin_inset Formula $\boldsymbol{\mathsf{T}}$
+\end_inset 
+
+ es nulo, decimos que la conexión es 
+\emph on 
+nula
+\emph default 
+ o 
+\emph on 
+simétrica
+\emph default 
+.
+ Verificaremos que 
+\begin_inset Formula $\boldsymbol{\mathsf{T}}$
+\end_inset 
+
+ es un tensor, sólo hay que hacer los cambios de coordenadas oportunos.
+ En general:
+\begin_inset Formula \[
+\left(\nabla_{i}\nabla_{k}-\nabla_{k}\nabla_{i}\right)\left[f\right]=\mathbf{T}_{ik}^{m}\dpa{f}{x^{m}}\]
+
+\end_inset 
+
+ Veamos cómo funciona el conmutador con campos vectoriales contravariantes.
+ Basta con calcular uno de los dos términos de 
+\begin_inset Formula $\nabla_{i}\nabla_{k}v^{m}-\nabla_{k}\nabla_{i}v^{m}=\left(\nabla_{i}\nabla_{k}-\nabla_{k}\nabla_{i}\right)\left[v^{m}\right]$
+\end_inset 
+
+; ya sabemos que el otro será igual pero con el signo cambiado y los índices
+ 
+\begin_inset Formula $k$
+\end_inset 
+
+ e 
+\begin_inset Formula $i$
+\end_inset 
+
+ permutados: 
+\begin_inset Formula \begin{eqnarray*}
+\nabla_{i}\left[\nabla_{k}v^{m}\right] & = & \dpa{}{x^{i}}\left[\nabla_{k}v^{m}\right]+\Gamma_{li}^{m}\nabla_{k}v^{l}-\Gamma_{ki}^{l}\nabla_{l}v^{m}\\
+ & = & \dpa{}{x^{i}}\left[\dpa{v^{m}}{x^{k}}+\Gamma_{rk}^{m}v^{r}\right]+\Gamma_{li}^{m}\left(\dpa{v^{l}}{x^{k}}+\Gamma_{rk}^{l}v^{r}\right)-\Gamma_{ki}^{l}\nabla_{l}v^{m}\\
+ & = & \ddpas{v^{m}}{x^{i}}{x^{k}}+\dpxi{}\Gamma_{rk}^{m}v^{r}+\Gamma_{rk}^{m}\dpa{v^{r}}{x^{i}}+\Gamma_{li}^{m}\dpa{v^{l}}{x^{k}}+\Gamma_{li}^{m}\Gamma_{rk}^{l}v^{r}-\Gamma_{ki}^{l}\nabla_{l}v^{m}\\
+ & = & \ddpas{v^{m}}{x^{i}}{x^{k}}+\left(\dpxi{}\Gamma_{rk}^{m}+\Gamma_{li}^{m}\Gamma_{rk}^{l}\right)v^{r}+\Gamma_{rk}^{m}\dpxi{v^{r}}+\Gamma_{li}^{m}\dpa{v^{l}}{x^{k}}-\Gamma_{ki}^{l}\nabla_{l}v^{m}\end{eqnarray*}
+
+\end_inset 
+
+ Estamos derivando un tensor 
+\begin_inset Formula $\left(1,1\right)$
+\end_inset 
+
+, 
+\begin_inset Formula $\nabla_{k}v^{m}$
+\end_inset 
+
+.
+ Por lo tanto tenemos un término debido al índice contravariante (con signo
+ 
+\begin_inset Formula $+$
+\end_inset 
+
+) y otro debido al índice covariante (con signo 
+\begin_inset Formula $-$
+\end_inset 
+
+).
+ Este último no lo hemos desarrollado por conveniencia; nos permitirá progresar
+ hacia el tensor de torsión.
+ Nótese cómo en el primer término de la segunda ecuación 
+\begin_inset Formula $\Gamma_{lk}^{m}v^{l}$
+\end_inset 
+
+ se transforma en 
+\begin_inset Formula $\Gamma_{rk}^{m}v^{r}$
+\end_inset 
+
+, siguiendo las normas estudiadas.
+ El paso a la última ecuación consiste simplemente en sacar factor común
+ de 
+\begin_inset Formula $v^{r}$
+\end_inset 
+
+.
+ 
+\layout Description
+
+propiedad 
+\begin_inset Formula $\boldsymbol{\mathsf{T}}$
+\end_inset 
+
+ es antisimétrico en sus índices covariantes: 
+\begin_inset Formula $\mathbf{T}_{ik}^{m}=-\mathbf{T}_{ki}^{m}$
+\end_inset 
+
+.
+\layout Subsection
+
+Tensor de curvatura
+\layout Standard
+
+Ahora podemos escribir el conmutador:
+\begin_inset Formula \begin{eqnarray*}
+\left(\nabla_{i}\nabla_{k}-\nabla_{k}\nabla_{i}\right)\left[v^{m}\right] & = & \left(\ddpas{v^{m}}{x^{i}}{x^{k}}+\left(\dpxi{}\Gamma_{rk}^{m}+\Gamma_{li}^{m}\Gamma_{rk}^{l}\right)v^{r}+\Gamma_{rk}^{m}\dpxi{v^{r}}+\Gamma_{li}^{m}\dpa{v^{l}}{x^{k}}-\Gamma_{ki}^{l}\nabla_{l}v^{m}\right)\\
+ &  & -\left(\ddpas{v^{m}}{x^{k}}{x^{i}}+\left(\dpa{}{x^{k}}\Gamma_{ri}^{m}+\Gamma_{lk}^{m}\Gamma_{ri}^{l}\right)v^{r}+\Gamma_{ri}^{m}\dpa{v^{r}}{x^{k}}+\Gamma_{lk}^{m}\dpa{v^{l}}{x^{i}}-\Gamma_{ik}^{l}\nabla_{l}v^{m}\right)\\
+ & = & \left(\dpa{}{x^{i}}\Gamma_{rk}^{m}-\dpa{}{x^{k}}\Gamma_{ri}^{m}+\Gamma_{li}^{m}\Gamma_{rk}^{l}-\Gamma_{lk}^{m}\Gamma_{ri}^{l}\right)v^{r}+\left(\Gamma_{ik}^{l}-\Gamma_{ki}^{l}\right)\nabla_{l}v^{m}\end{eqnarray*}
+
+\end_inset 
+
+ los únicos términos que no se contrarrestan son los que van multiplicando
+ a 
+\begin_inset Formula $v^{r}$
+\end_inset 
+
+ y los dos finales.
+ El último paréntesis de la última expresión es el conocido tensor de torsión,
+ 
+\begin_inset Formula $\mathbf{T}_{ik}^{l}$
+\end_inset 
+
+.
+ El primer paréntesis se denomina 
+\emph on 
+tensor de curvatura
+\begin_inset LatexCommand \index{tensor de curvatura}
+
+\end_inset 
+
+
+\emph default 
+ (denotado 
+\begin_inset Formula $\boldsymbol{\mathsf{R}}$
+\end_inset 
+
+) y su expresión en componentes es:
+\begin_inset Formula \[
+\mathbf{R}_{rik}^{m}\equiv\Gamma_{rk,i}^{m}-\Gamma_{ri,k}^{m}+\Gamma_{li}^{m}\Gamma_{rk}^{l}-\Gamma_{lk}^{m}\Gamma_{ri}^{l}\]
+
+\end_inset 
+
+ Se puede demostrar sin más que operar que este objeto es en efecto un tensor.
+ También se puede demostrar que
+\layout Description
+
+propiedad 
+\begin_inset Formula $\boldsymbol{\mathsf{R}}$
+\end_inset 
+
+ es antisimétrico en sus últimos índices covariantes: 
+\begin_inset Formula $\mathbf{R}_{rik}^{m}=-\mathbf{R}_{rki}^{m}$
+\end_inset 
+
+ 
+\layout Standard
+
+Con todo esto la expresión del conmutador de un campo vectorial contravariante
+ queda compacta, en lo que se conoce como 
+\emph on 
+identidades de Ricci
+\begin_inset LatexCommand \index{identidades de Ricci}
+
+\end_inset 
+
+
+\emph default 
+:
+\begin_inset Formula \[
+\left(\nabla_{i}\nabla_{k}-\nabla_{k}\nabla_{i}\right)\left[v^{m}\right]=\mathbf{R}_{rik}^{m}v^{r}+\mathbf{T}_{ik}^{l}\nabla_{l}v^{m}\]
+
+\end_inset 
+
+ podemos proceder análogamente para un vector covariante o tensores de orden
+ superior: 
+\begin_inset Formula $\left(1,1\right)$
+\end_inset 
+
+, 
+\begin_inset Formula $\left(2,2\right),\ldots$
+\end_inset 
+
+  La conclusión general es que la derivada covariante de estos objetos no
+ conmuta.
+ Ahora, si se consideran conexiones con 
+\begin_inset Formula $\mathbf{T}_{ik}^{l}=0$
+\end_inset 
+
+ (simétricas) entonces el conmutador sólo es función de la curvatura, como
+ ocurre en la teoría de la relatividad.
+\layout Subsection
+
+Identidades de Bianchi
+\layout Subsubsection*
+
+Torsión nula
+\layout Standard
+
+Supongamos la torsión 
+\begin_inset Formula $\boldsymbol{\mathsf{T}}$
+\end_inset 
+
+ nula, y por lo tanto 
+\begin_inset Formula $\Gamma_{ik}^{m}=\Gamma_{ki}^{m}$
+\end_inset 
+
+.
+ La 
+\emph on 
+primera identidad de Bianchi
+\begin_inset LatexCommand \index{primera identidad de Bianchi}
+
+\end_inset 
+
+
+\emph default 
+ se sigue inmediatamente:
+\begin_inset Formula \begin{equation}
+\mathbf{R}_{jkl}^{i}+\mathbf{R}_{klj}^{i}+\mathbf{R}_{ljk}^{i}=0\label{ec. primera identidad de Bianchi}\end{equation}
+
+\end_inset 
+
+ La 
+\emph on 
+segunda identidad de Bianchi
+\begin_inset LatexCommand \index{segunda identidad de Bianchi}
+
+\end_inset 
+
+
+\emph default 
+ (más importante) es
+\begin_inset Formula \begin{equation}
+\mathbf{R}_{jlm;k}^{i}+\mathbf{R}_{jmk;l}^{i}+\mathbf{R}_{jkl;m}^{i}=0\label{ec. segunda identidad de Bianchi}\end{equation}
+
+\end_inset 
+
+ 
+\layout Standard
+
+Cuando la torsión nula, existe y podemos elegir un sistema de coordenadas
+ tal que sea posible anular todos los coeficientes de la conexión en un
+ punto 
+\begin_inset Formula $P$
+\end_inset 
+
+, es decir, 
+\begin_inset Formula $\Gamma_{ik}^{m}\left[P\right]=0$
+\end_inset 
+
+.
+ Pero atención, la derivada en ese punto 
+\begin_inset Formula $\Gamma_{ik;m}^{m}\left[P\right]\neq0$
+\end_inset 
+
+ no tiene por qué anularse así como 
+\begin_inset Formula $\Gamma_{ik}^{m}$
+\end_inset 
+
+ en cualquier otro punto 
+\begin_inset Formula $P'$
+\end_inset 
+
+, 
+\begin_inset Formula $\Gamma_{ik}^{m}\left[P'\right]\neq0$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+Las identidades de Bianchi son relaciones tensoriales, de manera que basta
+ con encontrar un sistema de coordenadas en donde se cumplan 
+\begin_inset LatexCommand \ref{ec. primera identidad de Bianchi}
+
+\end_inset 
+
+ y 
+\begin_inset LatexCommand \ref{ec. segunda identidad de Bianchi}
+
+\end_inset 
+
+.
+ Escogemos pues un sistema de coordenadas que anule los coeficientes de
+ conexión 
+\begin_inset Formula $\Gamma$
+\end_inset 
+
+ en un determinado punto 
+\begin_inset Formula $P$
+\end_inset 
+
+.
+ Entonces:
+\begin_inset Formula \[
+\mathbf{R}_{jkl}^{i}\triangleq\Gamma_{jl,k}^{i}-\Gamma_{jk,l}^{i}\]
+
+\end_inset 
+
+ donde el triángulo indica que sólo es cierto en un determinado sistema
+ de coordenadas.
+ De aquí,
+\begin_inset Formula \[
+\mathbf{R}_{jkl}^{i}+\mathbf{R}_{klj}^{i}+\mathbf{R}_{ljk}^{i}=\Gamma_{jl,k}^{i}-\Gamma_{jk,l}^{i}+\Gamma_{kj,l}^{i}-\Gamma_{kl,j}^{i}+\Gamma_{lk,j}^{i}-\Gamma_{lj,k}^{i}=0\]
+
+\end_inset 
+
+ se verifica para todo sistema de coordenadas.
+ 
+\layout Subsubsection*
+
+Torsión no nula
+\layout Standard
+
+Desarrollando la primera identidad (
+\begin_inset LatexCommand \ref{ec. primera identidad de Bianchi}
+
+\end_inset 
+
+)
+\begin_inset Formula \[
+\mathbf{R}_{jkl}^{i}+\mathbf{R}_{klj}^{i}+\mathbf{R}_{ljk}^{i}=\nabla_{j}\mathbf{T}_{kl}^{i}+\nabla_{k}\mathbf{T}_{lj}^{i}+\nabla_{l}\mathbf{T}_{jk}^{i}+\mathbf{T}_{jk}^{h}\mathbf{T}_{hl}^{i}+\mathbf{T}_{kl}^{h}\mathbf{T}_{hj}^{i}+\mathbf{T}_{lj}^{h}\mathbf{T}_{hk}^{i}\]
+
+\end_inset 
+
+ y haciendo lo propio con la segunda (
+\begin_inset LatexCommand \ref{ec. segunda identidad de Bianchi}
+
+\end_inset 
+
+)
+\begin_inset Formula \[
+\nabla_{l}\mathbf{R}_{ijk}^{h}+\nabla_{j}\mathbf{R}_{ikl}^{h}+\nabla_{k}\mathbf{R}_{ilj}^{h}+\mathbf{T}_{jk}^{s}\mathbf{R}_{isl}^{h}+\mathbf{T}_{kl}^{s}\mathbf{R}_{isj}^{h}+\mathbf{T}_{lj}^{s}\mathbf{R}_{isk}^{h}=0\]
+
+\end_inset 
+
+
+\layout Section
+
+Derivada covariante a lo largo de una curva
+\layout Standard
+
+Vamos a ver cómo la derivada covariante permite definir el transporte paralelo.
+ De ahí pasaremos a las geodésicas y, por último, a una interpretación geométric
+a de la torsión y la curvatura.
+\layout Standard
+
+Sea 
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+ de componentes 
+\begin_inset Formula $T_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{r}}$
+\end_inset 
+
+.
+ Podemos definir la derivada covariante de 
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+, 
+\begin_inset Formula $\nabla_{k}T_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{r}}$
+\end_inset 
+
+.
+ Si además tenemos un campo vectorial 
+\begin_inset Formula $\mathsf{v}=v^{k}\dpa{}{x^{k}}$
+\end_inset 
+
+ podemos construir la derivada covariante del campo tensorial 
+\begin_inset Formula $\mathsf{T}$
+\end_inset 
+
+ a lo largo del campo vectorial 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ así
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+La notación 
+\begin_inset Formula $\nabla_{k}$
+\end_inset 
+
+ representaba en realidad 
+\begin_inset Formula $\nabla_{\mathsf{e}_{k}}$
+\end_inset 
+
+, un caso particularmente simple de derivada a lo largo de un campo vectorial.
+\end_inset 
+
+:
+\begin_inset Formula \[
+\nabla_{\mathsf{v}}T_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{r}}\equiv v^{k}\nabla_{k}T_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{r}}\]
+
+\end_inset 
+
+ un par de notaciones alternativas son 
+\begin_inset Formula $\left(\nabla_{\mathsf{v}}\mathsf{T}\right)_{j_{1}\ldots j_{s}}^{i_{1}\ldots i_{r}}$
+\end_inset 
+
+ y 
+\begin_inset Formula $T_{j_{1}\ldots j_{s};k}^{i_{1}\ldots i_{r}}v^{k}$
+\end_inset 
+
+.
+  
+\layout Standard
+
+Por ejemplo, la derivada covariante del vector 
+\begin_inset Formula $\mathsf{w}$
+\end_inset 
+
+ en la dirección del campo tensorial 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ es
+\begin_inset Formula \begin{eqnarray*}
+\left(\nabla_{\mathsf{v}}\mathsf{w}\right)^{i} & = & v^{k}\nabla_{k}w^{i}\\
+ & = & v^{k}\left(\dpa{w^{i}}{x^{k}}+\Gamma_{mk}^{i}w^{m}\right)\\
+ & = & v^{k}\dpa{w^{i}}{x^{k}}+\Gamma_{mk}^{i}w^{m}v^{k}\end{eqnarray*}
+
+\end_inset 
+
+
+\begin_inset Formula $v^{k}$
+\end_inset 
+
+ aparece sin derivar: sólo necesitamos evaluarla en el punto en el que calculamo
+s la derivada.
+ En cambio 
+\begin_inset Formula $\dpa{w^{i}}{x^{k}}$
+\end_inset 
+
+ necesitamos evaluarlo en un entorno de 
+\begin_inset Formula $P$
+\end_inset 
+
+.
+ 
+\layout Description
+
+vector\SpecialChar ~
+tangente Sea una curva 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+ que en cierto sistema de coordenadas viene dada por 
+\begin_inset Formula $\gamma=\left\{ x^{i}\left[t\right]:t\in\Bbb R\right\} $
+\end_inset 
+
+.
+ Su vector tangente es
+\begin_inset Formula \[
+\dot{\gamma}=\dt{x^{i}}\dpa{}{x^{i}}\]
+
+\end_inset 
+
+ con componentes 
+\begin_inset Formula $\dot{\gamma}^{i}=\dt{x^{i}}$
+\end_inset 
+
+ en el sistema de coordenadas elegido.
+\layout Description
+
+la\SpecialChar ~
+derivada\SpecialChar ~
+covariante\SpecialChar ~
+de\SpecialChar ~
+
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+\SpecialChar ~
+a\SpecialChar ~
+lo\SpecialChar ~
+largo\SpecialChar ~
+de\SpecialChar ~
+
+\begin_inset Formula $\gamma$
+\end_inset 
+
+ se construye derivando 
+\begin_inset Formula $\mathsf{w}$
+\end_inset 
+
+ en la dirección del vector tangente, 
+\begin_inset Formula $\dot{\gamma}$
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray*}
+\left(\nabla_{\dot{\gamma}}\mathsf{w}\right)^{i} & = & \dot{\gamma}^{k}\nabla_{k}w^{i}\\
+ & = & \dt{x^{k}}\nabla_{k}w^{i}\\
+ & = & \dt{x^{k}}\left(\dpa{w^{i}}{x^{k}}+\Gamma_{mk}^{i}w^{m}\right)\\
+ & = & \dpa{w^{i}}{x^{k}}\dt{x^{k}}+\Gamma_{mk}^{i}w^{m}\dt{x^{k}}\\
+ & = & \dt{w^{i}}+\Gamma_{mk}^{i}w^{m}\dt{x^{k}}\end{eqnarray*}
+
+\end_inset 
+
+ En suma:
+\begin_inset Formula \begin{equation}
+\left(\nabla_{\dot{\gamma}}\mathsf{w}\right)^{i}=\dt{w^{i}}+\Gamma_{mk}^{i}w^{m}\dt{x^{k}}\label{ec. dcov de un cvec ctrvar a lo largo de una curva}\end{equation}
+
+\end_inset 
+
+ Para definir las derivadas de campos tensoriales de orden mayor, se procede
+ análogamente.
+\layout Description
+
+el\SpecialChar ~
+transporte\SpecialChar ~
+paralelo de un campo vectorial 
+\begin_inset Formula $\mathsf{w}$
+\end_inset 
+
+ a lo largo de una curva 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+ es una regla según la cual se puede llevar un vector asociado a un punto
+ de la variedad a otro punto a lo largo de una curva.
+ Se necesita exigir que la derivada covariante del campo vectorial a lo
+ largo de 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+ (en la dirección de 
+\begin_inset Formula $\dot{\gamma}$
+\end_inset 
+
+) se anule:
+\begin_inset Formula \begin{equation}
+\dt{w^{i}}+\Gamma_{mk}^{i}w^{m}\dt{x^{k}}=0\label{ec cond para el transporte paralelo}\end{equation}
+
+\end_inset 
+
+ Esto es un sistema de ecuaciones diferenciales ordinarias para 
+\begin_inset Formula $v^{i}$
+\end_inset 
+
+.
+ Si conocemos el vector inicial en un punto de la curva, 
+\begin_inset Formula $w^{i}\left[0\right]=c^{i}$
+\end_inset 
+
+ entonces es un problema de valor inicial.
+ 
+\layout Description
+
+curva\SpecialChar ~
+geodésica es aquella curva que transporta paralelamente su propio vector
+ tangente, en consecuencia cumpliendo 
+\begin_inset Formula $\left(\nabla_{\dot{\gamma}}\dot{\gamma}\right)^{i}=0$
+\end_inset 
+
+.
+ En 
+\begin_inset LatexCommand \ref{ec cond para el transporte paralelo}
+
+\end_inset 
+
+ basta con sustituir 
+\begin_inset Formula $w^{i}$
+\end_inset 
+
+ por 
+\begin_inset Formula $\dot{\gamma}^{i}=\dt{x^{i}}$
+\end_inset 
+
+.
+ Más precisamente, siendo 
+\begin_inset Formula $t$
+\end_inset 
+
+ el parámetro de la curva:
+\begin_inset Formula \[
+\left(\nabla_{\dot{\gamma}}\dot{\gamma}\right)^{i}=\dt{}\dt{x^{i}}+\Gamma_{mk}^{i}\dt{x^{m}}\dt{x^{k}}=0\]
+
+\end_inset 
+
+ que es un sistema de ecuaciones diferenciales en general no lineales para
+ 
+\begin_inset Formula $x^{i}\left[t\right]$
+\end_inset 
+
+.
+ Dada la condición inicial 
+\begin_inset Formula \begin{eqnarray*}
+x^{i}\left[0\right] & = & c^{i}\\
+\dt{x^{i}}\left[0\right] & = & w^{i}\end{eqnarray*}
+
+\end_inset 
+
+ disponemos de una solución única: una sola geodésica.
+ 
+\layout Section
+
+Interpretación geométrica de la torsión
+\layout Subsection
+
+Ecuación de las geodésicas
+\layout Standard
+
+La ecuación de una curva geodésica 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+ viene dada por 
+\begin_inset Formula $\left(\nabla_{\dot{\gamma}}\dot{\gamma}\right)^{i}=0$
+\end_inset 
+
+.
+ Un caso trivial es una línea recta: al transportar paralelamente su vector
+ tangente, éste se mantiene tangente a la recta.
+\layout Standard
+
+Sea la curva 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+ dada por 
+\begin_inset Formula $\gamma:\left\{ x^{\mu}\left[t\right]:t\in\cR{}\right\} $
+\end_inset 
+
+.
+ La ecuación de la geodésica en coordenadas es:
+\begin_inset Formula \begin{eqnarray*}
+\ddt{x^{\mu}}+\Gamma_{\nu\lambda}^{\mu}\dt{x^{\mu}}\dt{x^{\lambda}} & = & 0\\
+\textrm{con}\quad x^{\mu}\left[0\right] & = & c^{\mu}\\
+\textrm{y }\quad\dt{x^{\mu}}\left[0\right] & = & v^{\mu}\end{eqnarray*}
+
+\end_inset 
+
+ Nótese que sólo la parte simétrica de la conexión contribuye a la ecuación
+ de la geodésica.
+\layout Subsection
+
+Interpretación de la torsión de las geodésicas
+\layout Standard
+
+La figura 
+\begin_inset LatexCommand \ref{fig interpret de la torsión de las geodésicas}
+
+\end_inset 
+
+ ilustra la discusión que sigue.
+ 
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-torsion-geodesicas.eps
+	display monochrome
+	width 9cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig interpret de la torsión de las geodésicas}
+
+\end_inset 
+
+Dos geodésicas paralelas 
+\begin_inset Formula $g_{1}$
+\end_inset 
+
+ y 
+\begin_inset Formula $g_{2}$
+\end_inset 
+
+ y un vector 
+\begin_inset Formula $\chi$
+\end_inset 
+
+ (transportado paralelamente a lo largo de 
+\begin_inset Formula $g_{1}$
+\end_inset 
+
+) que las conecta en la hipersuperficie 
+\begin_inset Formula $R_{P}$
+\end_inset 
+
+.
+\end_inset 
+
+
+\layout Enumerate
+
+Sea 
+\begin_inset Formula $M$
+\end_inset 
+
+ una variedad diferenciable y 
+\begin_inset Formula $P$
+\end_inset 
+
+ un punto perteneciente a ella.
+ 
+\layout Enumerate
+
+Supongamos una geodésica 
+\begin_inset Formula $g_{1}$
+\end_inset 
+
+ que pasa por 
+\begin_inset Formula $P$
+\end_inset 
+
+ y un vector 
+\begin_inset Formula $\mathsf{u}$
+\end_inset 
+
+ tangente a la curva en 
+\begin_inset Formula $P$
+\end_inset 
+
+.
+\layout Enumerate
+
+Tómese una hipersuperficie 
+\begin_inset Formula $R_{P}$
+\end_inset 
+
+ subespacio vectorial de 
+\begin_inset Formula $T_{P}$
+\end_inset 
+
+ (por lo tanto de dimensión 
+\begin_inset Formula $m-1$
+\end_inset 
+
+), con 
+\begin_inset Formula $R_{P}$
+\end_inset 
+
+ perpendicular a 
+\begin_inset Formula $\mathsf{u}$
+\end_inset 
+
+.
+\layout Enumerate
+
+Definimos un vector 
+\begin_inset Formula $\chi$
+\end_inset 
+
+ tangente a esa hipersuperficie en 
+\begin_inset Formula $P$
+\end_inset 
+
+.
+\layout Enumerate
+
+Transportamos paralelamente 
+\begin_inset Formula $\mathsf{u}$
+\end_inset 
+
+ sobre la geodésica que tiene a 
+\begin_inset Formula $\chi$
+\end_inset 
+
+ por vector tangente, con la conexión simétrica, 
+\begin_inset Formula $\Gamma_{\left(s\right)\lambda\nu}^{\mu}$
+\end_inset 
+
+ 
+\begin_inset Formula \[
+\Gamma_{\mathsf{s}\,\lambda\nu}^{\mu}=\frac{1}{2}\left(\Gamma_{\lambda\nu}^{\mu}+\Gamma_{\nu\lambda}^{\mu}\right)\]
+
+\end_inset 
+
+ hasta 
+\begin_inset Formula $\dot{P}$
+\end_inset 
+
+.
+\layout Enumerate
+
+En el punto 
+\begin_inset Formula $\dot{P}$
+\end_inset 
+
+ de llegada tenemos un 
+\series bold 
+
+\begin_inset Formula $\mathsf{u}'$
+\end_inset 
+
+
+\series default 
+ (
+\begin_inset Formula $\mathsf{u}$
+\end_inset 
+
+ transportado) paralelamente que utilizamos como vector tangente para construir
+ una nueva geodésica 
+\begin_inset Formula $g_{2}$
+\end_inset 
+
+.
+ Esta nueva geodésica será aproximadamente paralela a la primera (
+\begin_inset Formula $g_{1}$
+\end_inset 
+
+).
+ El procedimiento puede repetirse y así llenar 
+\begin_inset Formula $M$
+\end_inset 
+
+ de geodésicas formando una 
+\emph on 
+congruencia
+\begin_inset LatexCommand \index{congruencia}
+
+\end_inset 
+
+
+\emph default 
+ (un conjunto de curvas que llenan 
+\begin_inset Formula $M$
+\end_inset 
+
+).
+\layout Enumerate
+
+Transportamos paralelamente 
+\begin_inset Formula $\chi$
+\end_inset 
+
+ por la geodésica 
+\begin_inset Formula $g_{1}$
+\end_inset 
+
+, resultando 
+\begin_inset Formula $\chi'$
+\end_inset 
+
+; el experimento consiste en ver si llegando a 
+\begin_inset Formula $P'$
+\end_inset 
+
+ el vector 
+\begin_inset Formula $\chi'$
+\end_inset 
+
+ sigue uniendo ambas geodésicas.
+ Es decir, comprobar si 
+\begin_inset Formula $\dot{P}'$
+\end_inset 
+
+ está sobre 
+\begin_inset Formula $g_{2}$
+\end_inset 
+
+ o no.
+ 
+\begin_inset Formula $\chi'$
+\end_inset 
+
+ sólo seguirá uniendo geodésicas si 
+\begin_inset Formula $\boldsymbol{\mathsf{T}}=0$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+En suma: 
+\layout Enumerate
+
+Si 
+\begin_inset Formula $\boldsymbol{\mathsf{T}}\neq0$
+\end_inset 
+
+ entonces 
+\begin_inset Formula $\dot{P}'$
+\end_inset 
+
+ está fuera de 
+\begin_inset Formula $g_{2}$
+\end_inset 
+
+: una curva se retuerce (torsiona) respecto a otra.
+\layout Enumerate
+
+Si 
+\begin_inset Formula $\boldsymbol{\mathsf{T}}=0$
+\end_inset 
+
+ las geodésicas se mantienen paralelas.
+\layout Section
+
+Interpretación geométrica de la curvatura 
+\layout Paragraph
+
+En función del transporte paralelo
+\layout Standard
+
+Sean 
+\begin_inset Formula $\mathsf{v},\mathsf{w}$
+\end_inset 
+
+ dos campos vectoriales.
+ 
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{v} & = & \dpa{}{\mu}\\
+\mathsf{w} & = & \dpa{}{\lambda}\end{eqnarray*}
+
+\end_inset 
+
+ Si 
+\begin_inset Formula $\left[\mathsf{v},\mathsf{w}\right]=0$
+\end_inset 
+
+ podemos construir un paralelogramo (conectando 
+\begin_inset Formula $P$
+\end_inset 
+
+ con 
+\begin_inset Formula $\dddot{P}$
+\end_inset 
+
+ por dos caminos diferentes) con las curvas integrales de 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathsf{w}$
+\end_inset 
+
+ (figura 
+\begin_inset LatexCommand \ref{fig paralelogramo de curvas integrales}
+
+\end_inset 
+
+).
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-int-geometrica-curvatura.eps
+	display monochrome
+	width 10cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig paralelogramo de curvas integrales}
+
+\end_inset 
+
+El hecho de que el conmutador de 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathsf{w}$
+\end_inset 
+
+ sea nulo permite construir un paralelogramo cerrado con sus curvas integrales.
+\end_inset 
+
+
+\layout Standard
+
+Sea el vector 
+\begin_inset Formula $x^{i}$
+\end_inset 
+
+ en 
+\begin_inset Formula $P$
+\end_inset 
+
+.
+ Lo transportamos paralelamente hasta 
+\begin_inset Formula $\dddot{P}$
+\end_inset 
+
+ por un camino y otro; el resultado en 
+\begin_inset Formula $\dddot{P}$
+\end_inset 
+
+ es dos vectores distintos (figura 
+\begin_inset LatexCommand \ref{fig transporte por caminos distintos}
+
+\end_inset 
+
+).
+ Se verifica que
+\begin_inset Formula \[
+\delta x^{i}=\left(\mu\lambda\right)\mathbf{R}_{jkl}^{i}x^{j}v^{k}w^{l}\]
+
+\end_inset 
+
+ El tensor de curvatura cuantifica la diferencia entre los dos vectores
+ transportados paralelamente por los dos caminos.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-transporte-por-dos-caminos.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig transporte por caminos distintos}
+
+\end_inset 
+
+El transporte de un vector por dos caminos diferentes da vectores diferentes.
+\end_inset 
+
+
+\layout Paragraph
+
+Interpretación en función de las geodésicas
+\layout Standard
+
+El grado de separación de las geodésicas es proporcional a la curvatura.
+\layout Section
+
+Conexión Levi--Cività
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-transporte-dos-vect-una-curva.eps
+	display monochrome
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig tr paralelo dos vec. a lo largo de una curva}
+
+\end_inset 
+
+Transporte paralelo de dos vectores a lo largo de una curva.
+\end_inset 
+
+
+\layout Standard
+
+Buscamos una conexión tal que el producto escalar de dos vectores definido
+ por la métrica, 
+\begin_inset Formula $g_{ij}v^{i}w^{j}$
+\end_inset 
+
+ se mantenga constante si transportamos los vectores paralelamente 
+\begin_inset Formula $\nabla_{\dot{\gamma}}v^{i}=0,\nabla_{\dot{\gamma}}w^{j}=0$
+\end_inset 
+
+ a lo largo de una curva 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+ (con el transporte paralelo dado por la conexión, figura 
+\begin_inset LatexCommand \ref{fig tr paralelo dos vec. a lo largo de una curva}
+
+\end_inset 
+
+).
+ Esto supone que normas y ángulos quedan conservados tras un transporte
+ por esta conexión, que recibe el nombre de conexión de Levi--Cività
+\begin_inset LatexCommand \label{conexión de Levi--Cività}
+
+\end_inset 
+
+.
+ 
+\layout Standard
+
+Imponiendo que el producto escalar sea constante a lo largo de la curva
+ 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+:
+\begin_inset Formula \[
+0=\nabla_{\dot{\gamma}}\left[g_{ij}v^{i}w^{j}\right]=\left(\nabla_{\dot{\gamma}}g_{ij}\right)v^{i}w^{j}+g_{ij}\left(\nabla_{\dot{\gamma}}v^{i}\right)w^{j}+g_{ij}v^{i}\left(\nabla_{\dot{\gamma}}w^{j}\right)\]
+
+\end_inset 
+
+ (los dos últimos términos se anulan porque las respectivas derivadas covariante
+s son cero: transporte paralelo).
+ Como esto ha de verificarse 
+\begin_inset Formula $\forall\mathsf{v},\mathsf{w}$
+\end_inset 
+
+: 
+\begin_inset Formula \begin{equation}
+\nabla_{\dot{\gamma}}g_{ij}=0\label{eq. geodésica y métrica}\end{equation}
+
+\end_inset 
+
+ es decir, estamos buscando conexiones que mantengan constante el producto
+ escalar a lo largo de 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+En general la derivada covariante de 
+\begin_inset Formula $\mathsf{g}$
+\end_inset 
+
+ en cualquier dirección es nula.
+ Esto no basta para definir la conexión de Levi--Cività: hay que imponer
+ además que la torsión sea nula (es simétrica).
+\begin_inset Formula \begin{eqnarray}
+\nabla_{k}g_{ij} & = & 0\label{ec. dcov de g_ij se anula}\\
+\boldsymbol{\mathsf{T}} & = & 0\label{ec. debo exigir T nulo}\end{eqnarray}
+
+\end_inset 
+
+
+\layout Description
+
+Teorema En una variedad riemanniana o pseudoriemanniana existe una única
+ conexión que satisface 
+\begin_inset LatexCommand \ref{ec. dcov de g_ij se anula}
+
+\end_inset 
+
+ y 
+\begin_inset LatexCommand \ref{ec. debo exigir T nulo}
+
+\end_inset 
+
+.
+ 
+\begin_inset LatexCommand \ref{ec. dcov de g_ij se anula}
+
+\end_inset 
+
+ implica que se conservan los productos escalares por transporte paralelo
+ y 
+\begin_inset LatexCommand \ref{ec. debo exigir T nulo}
+
+\end_inset 
+
+ que 
+\begin_inset Formula $T_{jk}^{i}=0$
+\end_inset 
+
+ y por tanto que 
+\begin_inset Formula $\Gamma_{jk}^{i}=\Gamma_{kj}^{i}$
+\end_inset 
+
+.
+\layout Standard
+
+Vamos a buscar esa conexión única:
+\begin_inset Formula \begin{equation}
+\nabla_{k}g_{ij}=g_{ij,k}-\Gamma_{ik}^{m}g_{mj}-\Gamma_{jk}^{m}g_{im}\label{eq. dcov de g_ij respecto k}\end{equation}
+
+\end_inset 
+
+ y haciendo permutaciones cíclicas para intentar obtener los símbolos 
+\begin_inset Formula $\Gamma$
+\end_inset 
+
+:
+\begin_inset Formula \begin{eqnarray}
+\nabla_{i}g_{jk} & = & g_{jk,i}-\Gamma_{ji}^{m}g_{mk}-\Gamma_{ki}^{m}g_{jm}\label{eq. dcov de g_ij respecto i}\\
+\nabla_{j}g_{ki} & = & g_{ki,j}-\Gamma_{kj}^{m}g_{mi}-\Gamma_{ij}^{m}g_{km}\label{eq. dcov de g_ij respecto j}\end{eqnarray}
+
+\end_inset 
+
+ Tomamos una combinación lineal: 
+\begin_inset LatexCommand \ref{eq. dcov de g_ij respecto k}
+
+\end_inset 
+
+ 
+\begin_inset Formula $+$
+\end_inset 
+
+ 
+\begin_inset LatexCommand \ref{eq. dcov de g_ij respecto i}
+
+\end_inset 
+
+ 
+\begin_inset Formula $-$
+\end_inset 
+
+
+\begin_inset LatexCommand \ref{eq. dcov de g_ij respecto j}
+
+\end_inset 
+
+
+\begin_inset Formula $=\,0$
+\end_inset 
+
+ :
+\begin_inset Formula \[
+g_{ij,k}+g_{jk,i}-g_{ki,j}-\Gamma_{ik}^{m}g_{mj}-\Gamma_{jk}^{m}g_{im}-\Gamma_{ji}^{m}g_{mk}-\Gamma_{ki}^{m}g_{jm}+\Gamma_{kj}^{m}g_{mi}+\Gamma_{ij}^{m}g_{km}\]
+
+\end_inset 
+
+ donde se han usado las propiedades de simetría de los 
+\begin_inset Formula $\Gamma$
+\end_inset 
+
+ y de la 
+\begin_inset Formula $\mathsf{g}$
+\end_inset 
+
+, 
+\begin_inset Formula $g_{mk}=g_{km}\textrm{ y }\Gamma_{ji}^{m}=\Gamma_{ij}^{m}$
+\end_inset 
+
+.
+ Llegamos a
+\begin_inset Formula \[
+g_{ij,k}+g_{jk,i}-g_{ki,j}-2\Gamma_{ik}^{m}g_{mj}=0\]
+
+\end_inset 
+
+ por lo que
+\begin_inset Formula \[
+\Gamma_{ik}^{m}g_{mj}=\frac{1}{2}\left(g_{ij,k}+g_{jk,i}-g_{ki,j}\right)\]
+
+\end_inset 
+
+ 
+\emph on 
+símbolos de Christoffel de primera especie
+\emph default 
+
+\begin_inset LatexCommand \index{símbolos de Christoffel de primera especie}
+
+\end_inset 
+
+, 
+\begin_inset Formula $\Gamma_{jki}=\frac{1}{2}\left(g_{ij,k}+g_{jk,i}-g_{ki,j}\right)$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+Multiplicando por 
+\begin_inset Formula $\mathsf{g}^{-1}$
+\end_inset 
+
+ la expresión anterior y teniendo en cuenta que 
+\begin_inset Formula $g_{mj}g^{jr}=\delta_{m}^{r}$
+\end_inset 
+
+ obtenemos
+\begin_inset Formula \[
+\Gamma_{ik}^{m}\delta_{m}^{r}=g^{jr}\left(\Gamma_{jki}\right)\]
+
+\end_inset 
+
+ finalmente
+\begin_inset Formula \[
+\Gamma_{ik}^{r}=g^{jr}\Gamma_{jki}\]
+
+\end_inset 
+
+ es la conexión única que satisface 1) que se mantenga el producto escalar
+ y 2) que 
+\begin_inset Formula $\boldsymbol{\mathsf{T}}=0$
+\end_inset 
+
+.
+ Es la conexión de Lévi--Civitá.
+ 
+\layout Section
+
+Interpretación métrica de la curvatura
+\layout Standard
+
+Sea 
+\begin_inset Formula $\mathbf{u}$
+\end_inset 
+
+ un campo vectorial sobre una hipersuperficie 
+\begin_inset Formula $R_{P}$
+\end_inset 
+
+.
+ En todos los puntos de la superficie construimos las curvas geodésicas
+ 
+\begin_inset Formula $g_{i}$
+\end_inset 
+
+ cuyo vector tangente es 
+\begin_inset Formula $\mathbf{u}$
+\end_inset 
+
+ (son las trayectorias de las partículas libres que se dejan evolucionar
+ a lo largo del campo).
+ Si construimos un vector 
+\begin_inset Formula $\mathbf{n}$
+\end_inset 
+
+ que une dos geodésicas sobre 
+\begin_inset Formula $R_{P}$
+\end_inset 
+
+ (figura 
+\begin_inset LatexCommand \ref{fig congruencia de geodésicas}
+
+\end_inset 
+
+)y calculamos su derivada covariante dos veces tenemos:
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-congruencia-geodesicas.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig congruencia de geodésicas}
+
+\end_inset 
+
+Congruencia de geodésicas atravesando 
+\begin_inset Formula $R_{P}$
+\end_inset 
+
+.
+\end_inset 
+
+
+\begin_inset Formula \[
+\nabla_{u}\nabla_{u}\mathbf{n}=\boldsymbol{\mathsf{R}}\left[\mathsf{u},\mathsf{u},\mathsf{n}\right]\]
+
+\end_inset 
+
+ en otras palabras
+\begin_inset Formula \[
+\dda{n^{i}}{s}=\mathbf{R}_{jkl}^{i}u^{j}n^{k}u^{l}\]
+
+\end_inset 
+
+ la separación de las geodésicas viene dada por la curvatura.
+\layout Section
+
+Por hacer
+\layout Standard
+
+Este capítulo necesita una revisión profunda; las expresiones matemáticas
+ han sido revisadas pero no así la exposición y su sentido global.
+\layout Enumerate
+
+
+\size small 
+Eliminar redundancias y editar exposición de la derivada de una 1-forma.
+\layout Enumerate
+
+
+\size small 
+Pasar de notación con símbolos griegos (del capítulo de formas) a la notación
+ recta del resto del documento para los covectores.
+ 
+\begin_inset Formula $\alpha\fd\mathsf{a}$
+\end_inset 
+
+.
+\layout Enumerate
+
+
+\size small 
+Ampliar el tratamiento de la conexión de Levi--Cività.
+\the_end

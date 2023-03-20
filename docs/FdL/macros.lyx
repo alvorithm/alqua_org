@@ -1,0 +1,661 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass article
+\begin_preamble
+\usepackage{macros_compat}
+\end_preamble
+\language spanish
+\inputencoding auto
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Standard
+
+
+\begin_inset FormulaMacro 
+\newcommand{\da}[2]{\frac{\mathrm{d}#1 }{\mathrm{d}#2 }}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\dda}[2]{\frac{\mathrm{d}^{2}#1 }{\mathrm{d}#2 ^{2}}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\dpa}[2]{\frac{\partial#1 }{\partial#2 }}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\ddpa}[2]{\frac{\partial^{2}#1 }{\partial#2 ^{2}}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\ddpas}[3]{\frac{\partial^{2}#1 }{\partial#2 \partial#3 }}
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\dt}[1]{\frac{\mathrm{d}#1 }{\mathrm{d}t}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\dx}[1]{\da{#1 }{x}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\dy}[1]{\da{#1 }{y}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\dz}[1]{\da{#1 }{z}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\dr}[1]{\frac{\mathrm{d}#1 }{\mathrm{d}r}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\ddt}[1]{\dda{#1 }{t}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\ddx}[1]{\dda{#1 }{x}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\ddy}[1]{\dda{#1 }{y}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\ddz}[1]{\dda{#1 }{z}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\ddr}[1]{\frac{\mathrm{d}^{2}#1 }{\mathrm{d}r^{2}}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\dpt}[1]{\dpa{#1 }{t}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\dpx}[1]{\dpa{#1 }{x}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\dpy}[1]{\dpa{#1 }{y}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\dpz}[1]{\dpa{#1 }{z}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\dpr}[1]{\dpa{#1 }{r}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\ddpt}[1]{\ddpa{#1 }{t}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\ddpx}[1]{\ddpa{#1 }{x}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\ddpy}[1]{\ddpa{#1 }{y}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\ddpz}[1]{\ddpa{#1 }{z}}
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\ddpr}[1]{\ddpa{#1 }{r}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\dpac}[3]{\left( \dpa{#1 }{#2 }\right) _{#3 }}
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\vfn}[1]{\left( #1 _{1},#1 _{2},\ldots,#1 _{n}\right) }
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\vf}[3]{\left( #1 ,#2 ,#3 \right) }
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\vc}[3]{\left[ \begin{array}{c}
+#1 \\
+#2 \\
+#3 \end{array}\right] }
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\vcdos}[2]{\left[ \begin{array}{c}
+#1 \\
+#2 \end{array}\right] }
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\vcn}[1]{\left[ \begin{array}{c}
+#1 ^{1}\\
+#1 ^{2}\\
+\vdots\\
+#1 ^{3}\end{array}\right] }
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\idr}[1]{\int#1 \, \mathrm{d}\mathbf{r}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\idrp}[1]{\int#1 \, \mathrm{d}\mathbf{r}'}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\intinf}[2]{\int_{0}^{\infty}#1 \: \mathrm{d}#2 }
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\ket}[1]{\left| #1 \right\rangle }
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\bra}[1]{\left\langle #1 \right| }
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\braket}[2]{\left\langle #1 |#2 \right\rangle }
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\Braket}[3]{\left\langle #1 \left| #2 \right| #3 \right\rangle }
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\BraketH}[2]{\left\langle #1 \left| \mathcal{H}\right| #2 \right\rangle }
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\fd}{\rightarrow}
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\fiz}{\leftarrow}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\fdi}{\leftrightarrow}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\Fd}{\Rightarrow}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\Fi}{\Leftarrow}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\Fdi}{\Leftrightarrow}
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\fld}{\longrightarrow}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\fli}{\longleftarrow}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\fldi}{\longleftrightarrow}
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\Fld}{\Longrightarrow}
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\Fli}{\Longleftarrow}
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\Fldi}{\Longleftrightarrow}
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\mdd}[4]{\left[ \begin{array}{cc}
+
+#1  &  #3 \\
+#2  &  #4 
+\end{array}\right] }
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\mtt}[9]{\left[ \begin{array}{ccc}
+
+#1  &  #4  &  #7 \\
+#2  &  #5  &  #8 \\
+#3  &  #6  &  #9 
+\end{array}\right] }
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\ceron}{\boldsymbol{0}}
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\alphan}{\boldsymbol{\alpha}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\betan}{\boldsymbol{\beta}}
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\gamman}{\boldsymbol{\gamma}}
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\deltan}{\boldsymbol{\delta}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\epsilonn}{\boldsymbol{\epsilon}}
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\varepsilonn}{\boldsymbol{\varepsilon}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\phin}{\boldsymbol{\phi}}
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\varphin}{\boldsymbol{\varphi}}
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\chin}{\boldsymbol{\chi}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\etan}{\boldsymbol{\eta}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\iotan}{\boldsymbol{\iota}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\kappan}{\boldsymbol{\kappa}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\lambdan}{\boldsymbol{\lambda}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\mun}{\boldsymbol{\mu}}
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\nun}{\boldsymbol{\nu}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\pin}{\boldsymbol{\pi}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\thetan}{\boldsymbol{\theta}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\omegan}{\boldsymbol{\omega}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\rhon}{\boldsymbol{\rho}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\sigman}{\boldsymbol{\sigma}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\taun}{\boldsymbol{\tau}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\xin}{\boldsymbol{\xi}}
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\psin}{\boldsymbol{\psi}}
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\zetan}{\boldsymbol{\zeta}}
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\cpe}{\frac{1}{4\pi\epsilon_{0}}}
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\potC}[2]{\frac{#1 }{\left| \mathbf{r}-\mathbf{r}'\right| ^{#2 }}}
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\grad}[1]{\mathbf{grad}\left( #1 \right) }
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\divg}[1]{\mathrm{div}\left( #1 \right) }
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\rot}[1]{\mathbf{rot} #1 }
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\gradcar}[1]{\left( \dpx{#1 },\dpy{#1 },\dpz{#1 }\right) }
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\divcar}[3]{\dpx{#1 _{x}}+\dpy{#1 _{y}}+\dpz{#1 _{z}}}
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\rotcar}[3]{\left( \dpy{#1 _{z}}-\dpz{#1 _{y}},\dpz{#1 _{x}}-\dpx{#1 _{z}},\dpx{#1 _{y}}-\dpy{#1 _{z}}\right) }
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\Lapcar}[1]{\ddpx{#1 }+\ddpy{#1 }+\ddpz{#1 }}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\gradcil}[1]{\left( \dpa{#1 }{r},\frac{1}{r}\dpa{#1 }{\theta},\dpa{#1 }{z}\right) }
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\divcil}[1]{\frac{1}{r}\left( \dpa{\left( r#1 _{r}\right) }{r}+\dpa{#1 _{\theta}}{\theta}+\dpz{\left( r#1 _{z}\right) }\right) }
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\rotcil}[1]{\left( \frac{1}{r}\dpa{#1 _{z}}{\theta}-\dpa{#1 _{\theta}}{z},\dpa{#1 _{r}}{z}-\dpa{#1 _{z}}{r},\frac{1}{r}\dpa{\left( r#1 _{\theta}\right) }{}-\frac{1}{r}\dpa{#1 _{r}}{\theta}\right) }
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\Lapcil}[1]{\ddpa{#1 }{r}+\frac{1}{r}\dpa{#1 }{r}+\frac{1}{r^{2}}\ddpa{#1 }{\theta}+\ddpz{#1 }}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\gradesf}[1]{\left( \dpa{#1 }{r},\frac{1}{r}\dpa{#1 }{\phi},\frac{1}{r\sin\phi}\dpa{#1 }{\theta}\right) }
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\divesf}[1]{\frac{1}{r^{2}}\dpa{\left( r^{2}#1 _{r}\right) }{r}+\frac{1}{r\sin\phi}\dpa{\left( \sin\phi#1 _{\phi}\right) }{\phi}+\frac{1}{r\sin\phi}\dpa{#1 _{\theta}}{\theta}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\rotesf}[1]{\left[ \frac{1}{r\sin\phi}\left( \dpa{\left( \sin\phi#1 _{\theta}\right) }{\phi}-\dpa{#1 _{\phi}}{\theta}\right) ,\frac{1}{r}\left( \frac{1}{\sin\phi}\dpa{#1 _{r}}{\theta}-\dpa{\left( r#1 _{\theta}\right) }{r}\right) ,\frac{1}{r}\left( \dpa{\left( r#1 _{\phi}\right) }{r}-\dpa{#1 _{r}}{\phi}\right) \right] }
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\Lapesf}[1]{\ddpa{#1 }{r}+\frac{2}{r}\dpa{#1 }{r}+\frac{1}{r^{2}\sin^{2}\phi}\ddpa{#1 }{\theta}+\frac{\cos\phi}{r^{2}\sin\phi}\dpa{#1 }{\phi}+\frac{1}{r^{2}}\ddpa{#1 }{\phi}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\fase}{\left( \mathbf{k}\cdot\mathbf{r}-\omega t\right) }
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\reaccion}{\rightleftharpoons}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\dpqi}[1]{\frac{\partial#1 }{\partial q_{i}}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\dpqj}[1]{\frac{\partial#1 }{\partial q_{j}}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\dpqn}[1]{\frac{\partial#1 }{\partial q_{n}}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\dppi}[1]{\frac{\partial#1 }{\partial p_{i}}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\dppj}[1]{\frac{\partial#1 }{\partial p_{j}}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\dppn}[1]{\frac{\partial#1 }{\partial p_{n}}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\Cinf}{\mathcal{C}^{\infty}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\cR}[1]{\mathbb{R}^{#1 }}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\dpxi}[1]{\frac{\partial#1 }{\partial x^{i}}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\dpxj}[1]{\frac{\partial#1 }{\partial x^{j}}}
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\dpyj}[1]{\frac{\partial#1 }{\partial y^{j}}}
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\dpyi}[1]{\frac{\partial#1 }{\partial y^{i}}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\xm}{x^{1}\ldots x^{m}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\yn}{y^{1}\ldots y^{n}}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\pe}{\wedge}
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\Gl}{\mathsf{GL}\left( n,\Bbb K\right) }
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\Glr}{\mathsf{GL}\left( n,\Bbb R\right) }
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\Glc}{\mathsf{GL}\left( n,\Bbb C\right) }
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\gl}{\mathsf{gl}\left( n,\Bbb K\right) }
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\glr}{\mathsf{gl}\left( n,\Bbb R\right) }
+\end_inset 
+
+ 
+\begin_inset FormulaMacro 
+\newcommand{\glc}{\mathsf{gl}\left( n,\Bbb C\right) }
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\mat}{\mathrm{Mat}\left( n,\Bbb K\right) }
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\matr}{\mathrm{Mat}\left( n,\Bbb R\right) }
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\matc}{\mathrm{Mat}\left( n,\Bbb C\right) }
+\end_inset 
+
+
+\begin_inset FormulaMacro 
+\newcommand{\tq}{\, |\, }
+\end_inset 
+
+
+\the_end

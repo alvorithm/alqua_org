@@ -1,0 +1,4102 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass scrbook
+\begin_preamble
+\input{macros.sty}
+\end_preamble
+\language spanish
+\inputencoding auto
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize a4paper
+\paperpackage a4
+\use_geometry 1
+\use_amsmath 1
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+
+\layout Chapter
+
+Formas diferenciales
+\layout Standard
+
+En este capítulo trataremos de unos objetos de gran interés para la física:
+ las formas diferenciales.
+ En primer lugar daremos su definición, basada en los conceptos tensoriales
+ que ya conocemos.
+ En segundo lugar, explicaremos el concepto de producto exterior en este
+ contexto, ejemplificando su uso, para después definir la derivada exterior
+ y relacionarla con los operadores familiares del cálculo vectorial.
+\layout Standard
+
+La segunda parte del capítulo está dedicada a describir las aplicaciones
+ de la teoría de formas en la resolución de sistemas de ecuaciones en derivadas
+ parciales (teorema de Fröbenius) así como las nuevas perspectivas que aporta
+ para entender la estructura del espacio de fases de la mecánica hamiltoniana.
+\layout Section
+
+Concepto de forma diferencial
+\layout Description
+
+
+\begin_inset LatexCommand \label{sec concepto de forma diferencial}
+
+\end_inset 
+
+
+\begin_inset Formula $r$
+\end_inset 
+
+-forma\SpecialChar ~
+diferencial la forma diferencial 
+\begin_inset Formula $\omega^{s}$
+\end_inset 
+
+ es un campo tensorial de tipo
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Es importante aclarar un extremo de la notación: cuando quiera que escribamos
+ 
+\begin_inset Formula $\omega^{r}$
+\end_inset 
+
+ debe leerse 
+\begin_inset Quotes eld
+\end_inset 
+
+forma diferencial 
+\begin_inset Formula $\omega$
+\end_inset 
+
+ de grado 
+\begin_inset Formula $r$
+\end_inset 
+
+
+\begin_inset Quotes erd
+\end_inset 
+
+ o 
+\begin_inset Quotes eld
+\end_inset 
+
+
+\begin_inset Formula $r$
+\end_inset 
+
+-forma diferencial 
+\begin_inset Formula $\omega$
+\end_inset 
+
+
+\begin_inset Quotes erd
+\end_inset 
+
+.
+ Habitualmente reservaremos esta notación comprimida a los enunciados de
+ las proposiciones mientras que en los cálculos usaremos simplemente 
+\begin_inset Formula $\omega$
+\end_inset 
+
+; el grado de la forma podrá deducirse de los enunciados precedentes.
+\end_inset 
+
+ 
+\begin_inset Formula $\left(0,s\right)$
+\end_inset 
+
+ (totalmente covariante) y totalmente antisimétrico de clase
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+En este capítulo, salvo indicación en contrario, todas las formas consideradas
+ y las respectivas variedades sobre las que se definan, serán 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+.
+\end_inset 
+
+ 
+\begin_inset Formula $\mathcal{C}^{k}$
+\end_inset 
+
+.
+\layout Standard
+
+Las formas diferenciales son los objetos que aparecen dentro de las integrales.
+ En efecto, la integral de línea de un campo vectorial 
+\begin_inset Formula $\left(P,Q,R\right)$
+\end_inset 
+
+ a lo largo de una curva 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+ es, 
+\begin_inset Formula \[
+I_{1}=\int_{\gamma}Pdx+Qdy+Rdz\]
+
+\end_inset 
+
+ y la forma diferencial correspondiente, 
+\begin_inset Formula $\omega^{1}=Pdx+Qdy+Rdz$
+\end_inset 
+
+.
+ Si se trata de una integral de superficie de un campo vectorial 
+\begin_inset Formula $\left(P,Q,R\right)$
+\end_inset 
+
+,
+\begin_inset Formula \[
+I_{2}=\int_{S}Pdydz+Qdzdx+Rdxdy\]
+
+\end_inset 
+
+ y la forma diferencial es 
+\begin_inset Formula $\omega^{2}=Pdy\wedge dz+Qdz\wedge dx+Rdx\wedge dy$
+\end_inset 
+
+.
+ Para una integral de volumen
+\begin_inset Formula \[
+I_{3}=\int_{\Omega}fdxdydz\]
+
+\end_inset 
+
+ es 
+\begin_inset Formula $\omega^{3}=fdx\wedge dy\wedge dz$
+\end_inset 
+
+ (las tres formas presentadas están definidas sobre 
+\begin_inset Formula $\Bbb R^{3}$
+\end_inset 
+
+).
+ 
+\layout Standard
+
+La regla de transformación de una forma diferencial frente a un cambio de
+ coordenadas se puede deducir a partir de las de un integrando.
+ Para una forma en dos dimensiones,
+\begin_inset Formula \begin{eqnarray*}
+I & = & \int_{S}fdxdy\\
+ & = & \int_{S}f\left[x\left[u,v\right],y\left[u,v\right]\right]\left|\dpa{\left(x,y\right)}{\left(u,v\right)}\right|dudv\\
+ & = & \int_{S}f\left[x\left[u,v\right],y\left[u,v\right]\right]\left(\dpa{x}{u}\dpa{y}{v}-\dpa{x}{v}\dpa{y}{u}\right)dudv\end{eqnarray*}
+
+\end_inset 
+
+ la forma diferencial de esta integral es 
+\begin_inset Formula \begin{eqnarray*}
+\omega^{2} & = & f\left[x,y\right]dx\wedge dy\\
+ & = & f\left[x\left[u,v\right],y\left[u,v\right]\right]\left(\dpa{x}{u}\dpa{y}{v}-\dpa{x}{v}\dpa{y}{u}\right)du\wedge dv\end{eqnarray*}
+
+\end_inset 
+
+ Nos percatamos aquí de la antisimetría de la forma diferencial.
+\layout Standard
+
+Sobre estas formas diferenciales podemos definir diversas operaciones que
+ nos permiten generalizar resultados del cálculo vectorial ya conocidos.
+ En particular, llegaremos hasta el teorema de Stokes:
+\begin_inset Formula \[
+\int_{\partial\Sigma}\omega=\int_{\Sigma}d\omega\]
+
+\end_inset 
+
+ Gracias al teorema de Fröbenius y a la definición de la derivada exterior
+ como una operación que cumple 
+\begin_inset Formula $d\left(d\omega\right)=0$
+\end_inset 
+
+ (condición equivalente a la igualdad de las parciales cruzadas), un sistema
+ de ecuaciones en derivadas parciales podrá reescribirse por medio de la
+ derivación exterior.
+\layout Section
+
+Producto exterior
+\layout Subsection
+
+Definición
+\begin_inset LatexCommand \label{ssec def de producto exterior}
+
+\end_inset 
+
+
+\layout Description
+
+producto\SpecialChar ~
+exterior El producto exterior de 
+\begin_inset Formula $\alpha^{r}$
+\end_inset 
+
+ por 
+\begin_inset Formula $\beta^{s}$
+\end_inset 
+
+, denotado 
+\begin_inset Formula $\alpha\wedge\beta$
+\end_inset 
+
+ es la 
+\begin_inset Formula $\left(r+s\right)$
+\end_inset 
+
+-forma diferencial que tiene la siguiente expresión:
+\begin_inset Formula \begin{equation}
+\alpha^{r}\wedge\beta^{s}\equiv\frac{\left(r+s\right)!}{r!s!}\left(\alpha\otimes\beta\right)_{\mathsf{a}}\label{ec def prod exterior}\end{equation}
+
+\end_inset 
+
+ donde el factor numérico obedece a una convención
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Sean por ejemplo 
+\begin_inset Formula $\alpha=dx$
+\end_inset 
+
+ y 
+\begin_inset Formula $\beta=dy$
+\end_inset 
+
+.
+ Su producto antisimétrico es 
+\begin_inset Formula $\left(\alpha\otimes\beta\right)_{\mathsf{a}}=\frac{1}{2}\left(dx\otimes dy-dy\otimes dx\right)$
+\end_inset 
+
+ , sin embargo, su producto exterior según ha sido definido en 
+\begin_inset LatexCommand \ref{ec def prod exterior}
+
+\end_inset 
+
+ es:
+\begin_inset Formula \begin{eqnarray*}
+\alpha\wedge\beta & = & \frac{\left(1+1\right)!}{1!1!}\left(\alpha\otimes\beta\right)_{\mathsf{a}}\\
+ & = & dx\otimes dy-dy\otimes dx\end{eqnarray*}
+
+\end_inset 
+
+ Esto será relevante cuando la forma actúe sobre dos campos vectoriales,
+ 
+\begin_inset Formula $\dpx{}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\dpy{}$
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray*}
+\left(\alpha\wedge\beta\right)\left[\dpx{},\dpy{}\right] & = & \left(dx\wedge dy\right)\left[\dpx{},\dpy{}\right]\\
+ & = & dx\left[\dpx{}\right]dy\left[\dpy{}\right]-dy\left[\dpx{}\right]dx\left[\dpy{}\right]\\
+ & = & 1\end{eqnarray*}
+
+\end_inset 
+
+ por la dualidad de las bases 
+\begin_inset Formula $\left\{ dx,dy\right\} $
+\end_inset 
+
+ y 
+\begin_inset Formula $\{\dpx{},\dpy{}\}$
+\end_inset 
+
+.
+ Constatamos que la convención que hemos adoptado (que se emplea en gran
+ parte de la literatura) tiene sentido en la medida en que mantiene la propiedad
+ de que al actuar la base covariante sobre la base contravariante el resultado
+ es 1.
+ 
+\end_inset 
+
+.
+\layout Standard
+
+Recordemos cómo se realiza la operación de antisimetrización sobre un tensor
+ de 
+\begin_inset Formula $s$
+\end_inset 
+
+ argumentos (vectores covariantes):
+\begin_inset Formula \[
+\mathsf{T}_{\mathsf{a}}\left[\mathsf{v}_{1}\ldots\mathsf{v}_{s}\right]=\frac{1}{s!}\sum_{\left(1\ldots s\right)}\left(-1\right)^{\sigma}\mathsf{T}\left[\mathsf{v}_{1}\ldots\mathsf{v}_{s}\right]\]
+
+\end_inset 
+
+ La definición de producto exterior como producto tensorial antisimétrico
+ se extiende a un campo tensorial evaluándolo sobre todos los puntos de
+ la variedad.
+\layout Subsection
+
+Propiedades
+\layout Standard
+
+Sean 
+\begin_inset Formula $\alpha^{r},\beta^{r},\gamma^{p},\delta^{q}$
+\end_inset 
+
+ formas diferenciales de los respectivos órdenes.
+ Se verifican las siguientes propiedades
+\layout Enumerate
+
+Asociativa: 
+\begin_inset Formula $\alpha\wedge\left(\gamma\wedge\delta\right)=\left(\alpha\wedge\gamma\right)\wedge\delta$
+\end_inset 
+
+
+\layout Enumerate
+
+Distributiva: 
+\begin_inset Formula $\left(\alpha+\beta\right)\wedge\gamma=\alpha\wedge\gamma+\beta\wedge\gamma$
+\end_inset 
+
+ 
+\layout Enumerate
+
+(Anti)conmutativa: 
+\begin_inset Formula $\alpha\wedge\gamma=\left(-1\right)^{rp}\gamma\wedge\alpha$
+\end_inset 
+
+ 
+\layout Standard
+
+La tercera propiedad simplemente señala que dos formas cualesquiera conmutan
+ salvo si ambas son de grado impar, en cuyo caso anticonmutan.
+ Dos consecuencias destacables de la propiedad 3 son: 
+\begin_inset Formula \begin{eqnarray*}
+dx\wedge dy & = & -dy\wedge dx\\
+dx\wedge dx & = & 0\end{eqnarray*}
+
+\end_inset 
+
+ en efecto, multipliquemos 
+\begin_inset Formula $\alpha^{r}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\beta^{p}$
+\end_inset 
+
+:
+\begin_inset Formula \[
+\left(dx^{i_{1}}\wedge\cdots\wedge dx^{i_{r}}\right)\wedge\left(dx^{j_{1}}\wedge\cdots\wedge dx^{j_{p}}\right)=\left(-1\right)^{rp}\left(dx^{j_{1}}\wedge\cdots\wedge dx^{j_{p}}\right)\wedge\left(dx^{i_{1}}\wedge\cdots\wedge dx^{i_{r}}\right)\]
+
+\end_inset 
+
+ En ciertas referencias se definen axiomáticamente las formas diferenciales
+ precisamente a partir de este comportamiento.
+\layout Description
+
+
+\size small 
+Ejemplo Sea 
+\begin_inset Formula $\dim\left[M\right]=3$
+\end_inset 
+
+, 
+\begin_inset Formula $\omega=\omega_{1}dx^{1}+\omega_{2}dx^{2}+\omega_{3}dx^{3}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\alpha=\alpha_{12}dx^{1}\wedge dx^{2}+\alpha_{13}dx^{1}\wedge dx^{3}+\alpha_{23}dx^{2}\wedge dx^{3}$
+\end_inset 
+
+, entonces: 
+\begin_inset Formula \begin{eqnarray*}
+\omega\wedge\alpha & = & \left(-1\right)^{2}\alpha\wedge\omega=\alpha\wedge\omega\\
+ & = & \left(\omega_{1}dx^{1}+\omega_{2}dx^{2}+\omega_{3}dx^{3}\right)\wedge\left(\alpha_{12}dx^{1}\wedge dx^{2}+\alpha_{13}dx^{1}\wedge dx^{3}+\alpha_{23}dx^{2}\wedge dx^{3}\right)\\
+ & = & \omega_{1}\alpha_{23}dx^{1}\wedge dx^{2}\wedge dx^{3}+\omega_{2}\alpha_{13}dx^{2}\wedge dx^{1}\wedge dx^{3}+\omega_{3}\alpha_{12}dx^{3}\wedge dx^{1}\wedge dx^{2}\\
+ & = & \left(\omega_{1}\alpha_{23}-\omega_{2}\alpha_{13}+\omega_{3}\alpha_{12}\right)dx^{1}\wedge dx^{2}\wedge dx^{3}\end{eqnarray*}
+
+\end_inset 
+
+ porque aplicando la propiedad 3 los términos con factores repetidos se
+ anulan y las permutaciones circulares permiten agrupar los coeficientes
+ de los restantes, introduciendo un signo negativo cuando la permutación
+ es impar.
+ 
+\layout Subsection
+
+Base de formas
+\layout Standard
+
+¿Cómo construimos las bases?.
+ Sea una variedad de dimensión 
+\begin_inset Formula $m$
+\end_inset 
+
+, y un sistema de coordenadas en torno a 
+\begin_inset Formula $P\in M$
+\end_inset 
+
+, 
+\begin_inset Formula $x^{1}\ldots x^{m}$
+\end_inset 
+
+.
+ Para 1-formas diferenciales la base es 
+\begin_inset Formula $\{ dx^{1}\ldots dx^{m}\}$
+\end_inset 
+
+ y la expresión de un elemento cualquiera es 
+\begin_inset Formula $\omega=\omega_{1}\left[x^{1}\ldots x^{m}\right]dx^{1}+\ldots+\omega_{m}\left[x^{1}\ldots x^{m}\right]dx^{m}$
+\end_inset 
+
+.
+ La dimensión del espacio de 1-formas es 
+\begin_inset Formula $\dim\left[\Lambda^{1}\left[M\right]\right]=m$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+La base de las 2-formas es 
+\begin_inset Formula \[
+\left\{ dx^{i}\wedge dx^{j}\right\} _{1\leq i<j\leq m}\]
+
+\end_inset 
+
+con 
+\begin_inset Formula $\binom{m}{2}$
+\end_inset 
+
+ elementos (dimensión del espacio).
+ Las 2-formas se expresan en general así: 
+\begin_inset Formula $\alpha^{2}=\alpha_{ij}dx^{i}\wedge dx^{j}$
+\end_inset 
+
+ asumiendo una ligera modificación para el convenio de índices: no se suma
+ a todos los índices, sino sólo en aquellos que verifican el orden 
+\begin_inset Formula $1\leq i<j\leq m$
+\end_inset 
+
+.
+ Por ejemplo, con 
+\begin_inset Formula $m=3$
+\end_inset 
+
+, 
+\begin_inset Formula $\alpha=\alpha_{12}\pe dx^{1}\pe dx^{2}+\alpha_{23}\pe dx^{2}\pe dx^{3}+\alpha_{13}\pe dx^{1}\wedge dx^{3}$
+\end_inset 
+
+.
+\layout Standard
+
+Para las 
+\begin_inset Formula $3$
+\end_inset 
+
+ -formas se tiene la base 
+\begin_inset Formula \[
+\left\{ dx^{i}\wedge dx^{j}\wedge dx^{k}\right\} _{1\leq i<j<k\leq m}\]
+
+\end_inset 
+
+ y 
+\begin_inset Formula $\Omega=\Omega_{ijk}dx^{i}\wedge dx^{j}\wedge dx^{k}$
+\end_inset 
+
+.
+ Si 
+\begin_inset Formula $m=3$
+\end_inset 
+
+ se tiene en particular 
+\begin_inset Formula \[
+\Omega=\Omega_{123}dx^{1}\wedge dx^{2}\wedge dx^{3}\]
+
+\end_inset 
+
+
+\layout Standard
+
+Nótese que toda forma diferencial de grado mayor que la dimensión de la
+ variedad se anula, porque se repiten factores 
+\begin_inset Formula $dx^{i}$
+\end_inset 
+
+.
+ Es decir, sobre una variedad de 
+\begin_inset Formula $m=3$
+\end_inset 
+
+ no existen 
+\begin_inset Formula $4$
+\end_inset 
+
+-formas.
+\layout Description
+
+base\SpecialChar ~
+de\SpecialChar ~
+una\SpecialChar ~
+
+\begin_inset Formula $r$
+\end_inset 
+
+-forma en el sistema de coordenadas 
+\begin_inset Formula $x^{1}\ldots x^{m}$
+\end_inset 
+
+ para un punto 
+\begin_inset Formula $P$
+\end_inset 
+
+ de la variedad 
+\begin_inset Formula $M$
+\end_inset 
+
+:
+\begin_inset Formula \[
+\left\{ dx^{i_{1}}\wedge\ldots\wedge dx^{i_{r}}\right\} \]
+
+\end_inset 
+
+La expresión de una forma en esta base es (
+\begin_inset Formula $1\leq i_{1}<\ldots<i_{r}\leq m$
+\end_inset 
+
+): 
+\begin_inset Formula \[
+\beta^{r}=\beta_{i_{1}\ldots i_{r}}dx^{i_{1}}\wedge\ldots\wedge dx^{i_{r}}\]
+
+\end_inset 
+
+y su número de componentes algebraicamente independientes (la 
+\emph on 
+dimensión
+\emph default 
+ de la forma) es 
+\begin_inset Formula $\binom{m}{r}=\frac{m!}{r!\left(m-r\right)!}$
+\end_inset 
+
+.
+\begin_deeper 
+\layout Standard
+
+Ya que 
+\begin_inset Formula $\binom{m}{r}=\binom{m}{m-r}$
+\end_inset 
+
+ las 
+\begin_inset Formula $r$
+\end_inset 
+
+-formas y las 
+\begin_inset Formula $\left(m-r\right)$
+\end_inset 
+
+-formas tienen exactamente el mismo número de componentes.
+ Esto es claro en 
+\begin_inset Formula $m=3$
+\end_inset 
+
+: las 1-formas y las 2-formas tienen ambas tres componentes.
+ Esta relación entre formas de distinto grado se conoce como 
+\emph on 
+dualidad de Hodge
+\emph default 
+
+\begin_inset LatexCommand \label{tx dualidad de Hodge}
+
+\end_inset 
+
+
+\begin_inset LatexCommand \index{dualidad de Hodge}
+
+\end_inset 
+
+: se puede establecer una aplicación biyectiva entre 
+\begin_inset Formula $r$
+\end_inset 
+
+-formas y 
+\begin_inset Formula $\left(m-r\right)$
+\end_inset 
+
+-formas.
+ 
+\end_deeper 
+\layout Section
+
+Derivada exterior
+\begin_inset LatexCommand \label{sec derivada exterior}
+
+\end_inset 
+
+
+\layout Standard
+
+La derivada exterior es una operación sobre formas diferenciales que, entre
+ otras aplicaciones, permite recuperar las expresiones en coordenadas correspond
+ientes a los conocidos operadores vectoriales gradiente, divergencia y rotaciona
+l.
+ En primer lugar vamos a definirla a la manera clásica (en términos de coordenad
+as) y después daremos un conjunto (definición axiomática) de propiedades
+ que se demostrará suficiente para volver a la definición en coordenadas.
+\layout Subsection
+
+Definición clásica
+\layout Description
+
+derivada\SpecialChar ~
+exterior sea 
+\begin_inset Formula $\omega^{p}$
+\end_inset 
+
+ tal que en un sistema de coordenadas se puede escribir como 
+\begin_inset Formula $\omega=\omega_{i_{1}\ldots i_{p}}dx^{i_{1}}\wedge\cdots\wedge dx^{i_{p}}$
+\end_inset 
+
+.
+ Se define la derivada exterior de 
+\begin_inset Formula $\omega,$
+\end_inset 
+
+ denotada 
+\begin_inset Formula $d\omega$
+\end_inset 
+
+ como la 
+\begin_inset Formula $\left(p+1\right)$
+\end_inset 
+
+-forma diferencial de clase 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ que tiene la expresión 
+\begin_inset Formula \begin{equation}
+d\omega=d\left[\omega_{i_{1}\ldots i_{p}}\right]\wedge dx^{i_{1}}\wedge\cdots\wedge dx^{i_{p}}\label{ec expr deriv exterior}\end{equation}
+
+\end_inset 
+
+La forma de calcularla es hacer la diferencial total de los coeficientes
+ y multiplicar por la componente correspondiente: 
+\begin_inset Formula \[
+d\left[\omega_{i_{1}\ldots i_{p}}\right]=\omega_{i_{1}\ldots i_{p},\alpha}dx^{\alpha}\]
+
+\end_inset 
+
+ donde 
+\begin_inset Formula \[
+\omega_{i_{1}\ldots i_{p},\alpha}=\dpa{\omega_{i_{1}\ldots i_{p}}}{x^{\alpha}}\]
+
+\end_inset 
+
+así que
+\begin_inset Formula \[
+d\omega=\left(\omega_{i_{1}\ldots i_{p},\alpha}dx^{\alpha}\right)\wedge dx^{i_{1}}\wedge\ldots\wedge dx^{i_{p}}\]
+
+\end_inset 
+
+
+\layout Description
+
+
+\size small 
+Ejemplo sea 
+\begin_inset Formula $f$
+\end_inset 
+
+ una 0-forma.
+ En dimensión 3 su derivada exterior es la 1-forma
+\begin_inset Formula \[
+df=f_{,x^{1}}dx^{1}+f_{,x^{2}}dx^{2}+f_{,x^{3}}dx^{3}\]
+
+\end_inset 
+
+ (la divergencia de la función).
+ Sea 
+\begin_inset Formula $\omega$
+\end_inset 
+
+ una 1-forma:
+\begin_inset Formula \begin{eqnarray*}
+d\omega & = & d\omega_{1}\wedge dx^{1}+d\omega_{2}\wedge dx^{2}+d\omega_{3}\wedge dx^{3}\\
+ & = & \left(\omega_{1,1}dx^{1}+\omega_{1,2}dx^{2}+\omega_{1,3}dx^{3}\right)\wedge dx^{1}+\left(\omega_{2,1}dx^{1}+\omega_{2,2}dx^{2}+\omega_{2,3}dx^{3}\right)\wedge dx^{2}+\left(\omega_{3,1}dx^{1}+\omega_{3,2}dx^{2}+\omega_{3,3}dx^{3}\right)\wedge dx^{3}\\
+ & = & \left(\omega_{2,1}-\omega_{1,2}\right)dx^{1}\wedge dx^{2}+\left(\omega_{3,1}-\omega_{1,3}\right)dx^{1}\wedge dx^{3}+\left(\omega_{3,2}-\omega_{2,3}\right)dx^{2}\wedge dx^{3}\\
+ & = & \left(\omega_{j,i}-\omega_{i,j}\right)dx^{i}\wedge dx^{j}\end{eqnarray*}
+
+\end_inset 
+
+ Esto se asemeja a la expresión del rotacional (con 
+\begin_inset Formula $1\leq i<j\leq3$
+\end_inset 
+
+).
+\layout Description
+
+
+\size small 
+Ejemplo 
+\begin_inset LatexCommand \label{ej ejemplo divergencia}
+
+\end_inset 
+
+Si hacemos la derivada exterior de una 
+\begin_inset Formula $2$
+\end_inset 
+
+-forma 
+\begin_inset Formula $\alpha=\alpha_{12}dx^{1}\wedge dx^{2}+\alpha_{13}dx^{1}\wedge dx^{3}+\alpha_{23}dx^{2}\wedge dx^{3}$
+\end_inset 
+
+ , obtenemos 
+\begin_inset Formula \begin{eqnarray*}
+d\alpha & = & d\alpha_{12}\pe dx^{1}\wedge dx^{2}+d\alpha_{13}\pe dx^{1}\wedge dx^{3}+d\alpha_{23}\pe dx^{2}\wedge dx^{3}\\
+ & = & \left(\alpha_{12,1}dx^{1}+\alpha_{12,2}dx^{2}+\alpha_{12,3}dx^{3}\right)\pe dx^{1}\wedge dx^{2}+\\
+ &  & +\left(\alpha_{13,1}dx^{1}+\alpha_{13,2}dx^{2}+\alpha_{13,3}dx^{3}\right)\pe dx^{1}\wedge dx^{3}+\left(\alpha_{23,1}dx^{1}+\alpha_{23,2}dx^{2}+\alpha_{23,3}dx^{3}\right)\pe dx^{2}\wedge dx^{3}\\
+ & = & \left(\alpha_{12,3}-\alpha_{13,2}+\alpha_{23,1}\right)dx^{1}\pe dx^{2}\pe dx^{3}\end{eqnarray*}
+
+\end_inset 
+
+ El resultado es exactamente la divergencia de un campo vectorial 
+\begin_inset Formula $F$
+\end_inset 
+
+ de componentes 
+\begin_inset Formula $F^{1}=\alpha_{23,1},F^{2}=-\alpha_{13,2},F^{3}=\alpha_{12,3}$
+\end_inset 
+
+: 
+\begin_inset Formula $\nabla\cdot F=\left(\alpha_{23},-\alpha_{13},\alpha_{12}\right)$
+\end_inset 
+
+.
+ En forma integral el resultado obtenido no es más que, de nuevo, un caso
+ particular del teorema de Stokes:
+\begin_inset Formula \begin{eqnarray*}
+\int_{V}\nabla\cdot F\, dv & = & \int_{S}F\cdot ds\\
+\int_{V}d\alpha & = & \int_{\partial V}\alpha\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Subsection
+
+Propiedades (definición axiomática)
+\layout Standard
+
+Sean 
+\begin_inset Formula $\alpha^{p}$
+\end_inset 
+
+, 
+\begin_inset Formula $\beta^{p}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\gamma^{q}$
+\end_inset 
+
+ formas diferenciales.
+ Se verifican las siguientes propiedades: 
+\layout Enumerate
+
+
+\begin_inset Formula $d\left[\alpha+\beta\right]=d\alpha+d\beta$
+\end_inset 
+
+.
+\layout Enumerate
+
+
+\begin_inset Formula $d\left[\alpha\pe\gamma\right]=d\alpha\wedge\gamma+\left(-1\right)^{p}\alpha\wedge d\gamma$
+\end_inset 
+
+.
+ AntiLeibniz
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Cuando la diferencial 
+\begin_inset Formula $\left(d\right)$
+\end_inset 
+
+ 
+\begin_inset Quotes eld
+\end_inset 
+
+pasa por encima
+\begin_inset Quotes erd
+\end_inset 
+
+ de una 
+\begin_inset Formula $1$
+\end_inset 
+
+-forma se multiplica por 
+\begin_inset Formula $-1$
+\end_inset 
+
+.
+ 
+\begin_inset Formula $\left(-1\right)^{p}$
+\end_inset 
+
+ corresponde a las 
+\begin_inset Formula $p$
+\end_inset 
+
+ 
+\begin_inset Formula $1$
+\end_inset 
+
+-formas que 
+\begin_inset Quotes eld
+\end_inset 
+
+salta
+\begin_inset Quotes erd
+\end_inset 
+
+ la diferencial hasta llegar a 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+.
+ 
+\end_inset 
+
+.
+\layout Enumerate
+
+
+\begin_inset Formula \begin{equation}
+df\left[\mathsf{x}\right]=\mathsf{x}\left[f\right]\label{ec. p3 de fdif}\end{equation}
+
+\end_inset 
+
+ para todo campo vectorial 
+\begin_inset Formula $\mathsf{x}$
+\end_inset 
+
+ contravariante 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ y función (0-forma) 
+\begin_inset Formula $f$
+\end_inset 
+
+.
+\layout Enumerate
+
+
+\begin_inset Formula $d\left[d\alpha\right]=0,\forall\alpha$
+\end_inset 
+
+.
+\layout Description
+
+
+\size small 
+Ejemplo Probemos a calcular 
+\begin_inset Formula $d\left[dx\pe dy\pe dz\right]$
+\end_inset 
+
+ (p2, p4): 
+\begin_inset Formula \begin{eqnarray*}
+d\left[dx\pe dy\pe dz\right] & = & d\left[dx\right]\pe dy\pe dz+\left(-1\right)dx\pe d\left[dy\pe dz\right]\\
+ & = & -dx\pe\left(d\left[dy\right]\pe dz-dy\pe d\left[dz\right]\right)\\
+ & = & 0\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Standard
+
+Análogamente podemos entender 
+\begin_inset Formula $d\left[dx^{i_{1}}\pe\ldots\pe dx^{i_{p}}\right]$
+\end_inset 
+
+ como la derivada exterior de un producto 
+\begin_inset Formula $\pe$
+\end_inset 
+
+ de una 1-forma por una 
+\begin_inset Formula $\left(p-1\right)$
+\end_inset 
+
+-forma.
+ Iterando en la aplicación de p2, p4:
+\begin_inset Formula \begin{eqnarray*}
+d\left[dx^{i_{1}}\pe\cdots\pe dx^{i_{p}}\right] & = & d\left[\left(dx^{i_{1}}\right)\pe\left(dx^{i_{2}}\pe\cdots\pe dx^{i_{p}}\right)\right]\\
+ & = & d\left[dx^{i_{1}}\right]\pe dx^{i_{2}}\pe\cdots\pe dx^{i_{p}}-dx^{i_{1}}\pe d\left[dx^{i_{2}}\pe\cdots\pe dx^{i_{p}}\right]\\
+ & = & \ldots\\
+ & = & 0\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Standard
+
+En general, si tenemos 
+\begin_inset Formula $\omega^{p}=\omega_{i_{1}\ldots i_{p}}dx^{i_{1}}\pe\cdots\pe dx^{i_{p}}$
+\end_inset 
+
+ la expresión de su derivada exterior se calcula aplicando este procedimiento,
+ con el siguiente resultado: 
+\begin_inset Formula \begin{eqnarray*}
+d\omega & = & d\omega_{i_{1}\ldots i_{p}}\pe dx^{i_{1}}\pe\cdots\pe dx^{i_{p}}+\left(-1\right)^{0}\omega_{i_{1}\ldots i_{p}}\pe d\left[dx^{i_{1}}\pe\cdots\pe dx^{i_{p}}\right]\\
+ & = & d\omega_{i_{1}\ldots i_{p}}\pe dx^{i_{1}}\pe\cdots\pe dx^{i_{p}}\end{eqnarray*}
+
+\end_inset 
+
+ Constatamos que la definición en coordenadas de la derivada exterior se
+ puede deducir de la axiomática que hemos presentado.
+\layout Standard
+
+La propiedad 3 (p3) implica en coordenadas que 
+\begin_inset Formula \[
+df\left[\mathsf{x}\right]=\mathsf{x}\left[f\right]=x^{i}\dpxi{f}\]
+
+\end_inset 
+
+ es decir, que
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+no se entiende el paso
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+df=\dpxi{f}dx^{i}\label{ec der ext de una 0forma}\end{equation}
+
+\end_inset 
+
+
+\layout Description
+
+Observación La condición 
+\begin_inset Formula $d\left[df\right]=0$
+\end_inset 
+
+ (p4 aplicada a una 0-forma 
+\begin_inset Formula $f$
+\end_inset 
+
+) se puede reescribir teniendo en cuenta que 
+\begin_inset Formula $df=f_{,i}dx^{i}$
+\end_inset 
+
+ (ecuación 
+\begin_inset LatexCommand \ref{ec der ext de una 0forma}
+
+\end_inset 
+
+) y (p2) 
+\begin_inset Formula $d\left[df\right]=\left(f_{,ij}-f_{,ji}\right)dx^{i}\wedge dx^{j}$
+\end_inset 
+
+.
+ Como vemos, p4 sobre 
+\begin_inset Formula $f$
+\end_inset 
+
+ equivale a la igualdad de las parciales cruzadas.
+\layout Subsection
+
+Definición intrínseca
+\layout Standard
+
+Sea una 0-forma diferencial 
+\begin_inset Formula $df$
+\end_inset 
+
+.
+ Su actuación sobre un campo vectorial es 
+\begin_inset Formula $\mathsf{x}\left[f\right]$
+\end_inset 
+
+.
+ Si tenemos una 
+\begin_inset Formula $\omega^{1}$
+\end_inset 
+
+, 
+\begin_inset Formula $d\omega$
+\end_inset 
+
+ será una 2-forma, y para definirla tendremos que especificar cómo actúa
+ sobre 
+\emph on 
+dos
+\emph default 
+ campos vectoriales 
+\begin_inset Formula $\mathsf{x},\mathsf{y}$
+\end_inset 
+
+ cualesquiera, siguiendo el mismo procedimiento que para la definición intrínsec
+a de un tensor cualquiera:
+\begin_inset Formula \begin{equation}
+d\omega\left[\mathsf{x},\mathsf{y}\right]=\mathsf{x}\left[\omega\left[\mathsf{y}\right]\right]-\mathsf{y}\left[\omega\left[\mathsf{x}\right]\right]-\omega\left[\left[\mathsf{x},\mathsf{y}\right]\right]\label{ec dw def intrinseca}\end{equation}
+
+\end_inset 
+
+ En esta fórmula tenemos representadas todas las posibilidades de actuación
+ de una forma sobre los campos vectoriales 
+\begin_inset Formula $\mathsf{x},\mathsf{y}$
+\end_inset 
+
+: sobre uno, sobre otro y sobre su conmutador.
+ Se observa una relación entre la derivada exterior y el conmutador de los
+ campos vectoriales 
+\begin_inset Formula $\mathsf{x},\mathsf{y}$
+\end_inset 
+
+.
+ Hay una cierta dualidad que será de interés al estudiar el teorema de Fröbenius
+ sobre la integrabilidad de sistemas de 1-formas sobre campos vectoriales.
+\layout Standard
+
+Para demostrar 
+\begin_inset LatexCommand \ref{ec dw def intrinseca}
+
+\end_inset 
+
+ en coordenadas, 
+\emph on 
+sólo
+\emph default 
+ hay que aplicar 
+\begin_inset Formula $d\omega=\left(\omega_{i,j}-\omega_{j,i}\right)dx^{j}\pe dx^{i}$
+\end_inset 
+
+ sobre los dos argumentos expresados en coordenadas.
+\layout Section
+
+Producto interior
+\layout Standard
+
+El producto interior de una forma diferencial 
+\begin_inset Formula $\omega^{p}$
+\end_inset 
+
+ por un campo vectorial 
+\begin_inset Formula $\mathsf{x}$
+\end_inset 
+
+ dará como resultado una forma diferencial 
+\begin_inset Formula $\alpha^{p-1}$
+\end_inset 
+
+, de grado uno menor que el de partida.
+\layout Description
+
+producto\SpecialChar ~
+interior sea 
+\begin_inset Formula $\omega^{p}$
+\end_inset 
+
+ una forma y 
+\begin_inset Formula $\mathsf{x}$
+\end_inset 
+
+ un campo vectorial contravariante de clase 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ en una variedad diferenciable 
+\begin_inset Formula $M$
+\end_inset 
+
+.
+ Se define la 
+\begin_inset Formula $\left(p-1\right)$
+\end_inset 
+
+-forma diferencial 
+\emph on 
+producto interior de 
+\begin_inset Formula $\mathsf{x}$
+\end_inset 
+
+ por 
+\begin_inset Formula $\omega$
+\end_inset 
+
+
+\emph default 
+ y se denota 
+\begin_inset Formula $i_{\mathsf{x}}\omega$
+\end_inset 
+
+ o bien 
+\begin_inset Formula $\mathsf{x}\left\rfloor \omega\right.$
+\end_inset 
+
+ mediante la siguiente expresión:
+\begin_inset Formula \[
+\alpha^{p-1}\left[\mathsf{v}_{1},\ldots,\mathsf{v}_{p-1}\right]=i_{\mathsf{x}}\omega\left[\mathsf{v}_{1},\ldots,\mathsf{v}_{p-1}\right]\equiv\omega\left[\mathsf{x},\mathsf{v}_{1},\ldots,\mathsf{v}_{p-1}\right]\]
+
+\end_inset 
+
+para cualesquiera campos vectoriales contravariantes 
+\begin_inset Formula $\mathsf{v}_{1}\ldots\mathsf{v}_{p-1}$
+\end_inset 
+
+.
+ Para 0-formas 
+\begin_inset Formula $i_{\mathsf{x}}f\equiv0$
+\end_inset 
+
+, 
+\begin_inset Formula $\forall$
+\end_inset 
+
+ campo vectorial 
+\begin_inset Formula $\mathsf{x}$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+Esta expresión debe entenderse como que una 
+\begin_inset Formula $p-1$
+\end_inset 
+
+ forma actuando sobre 
+\begin_inset Formula $p-1$
+\end_inset 
+
+ argumentos que se identifica con la actuación de una 
+\begin_inset Formula $p$
+\end_inset 
+
+-forma 
+\begin_inset Formula $\omega$
+\end_inset 
+
+ sobre sus habituales 
+\begin_inset Formula $p$
+\end_inset 
+
+ argumentos, con la particularidad de que el primero de ellos es fijo: el
+ campo vectorial 
+\begin_inset Formula $\mathsf{x}$
+\end_inset 
+
+.
+ El resto de los argumentos de 
+\begin_inset Formula $\omega$
+\end_inset 
+
+ son los mismos que los de la 
+\begin_inset Formula $\left(p-1\right)$
+\end_inset 
+
+-forma.
+ 
+\layout Standard
+
+El producto interior de la forma 
+\begin_inset Formula $\omega$
+\end_inset 
+
+ con el campo vectorial 
+\begin_inset Formula $\mathsf{x}$
+\end_inset 
+
+ es 
+\begin_inset Formula $i_{\mathsf{x}}\omega=\omega\left[\mathsf{x}\right]=\omega_{k}x^{k}$
+\end_inset 
+
+, una generalización del producto escalar ya conocidos: contracción de un
+ campo contravariante con un campo covariante (1-forma 
+\begin_inset Formula $\omega$
+\end_inset 
+
+).
+ También se denota 
+\begin_inset Formula $\braket{\omega}{\mathsf{v}}$
+\end_inset 
+
+.
+ Los 
+\emph on 
+bras
+\begin_inset LatexCommand \index{bras}
+
+\end_inset 
+
+ 
+\emph default 
+en física cuántica son 1-formas, mientras que los 
+\emph on 
+kets
+\begin_inset LatexCommand \index{kets}
+
+\end_inset 
+
+
+\emph default 
+ son vectores.
+\layout Standard
+
+Veamos cómo actúa el producto interior del producto exterior de dos 1-formas
+ 
+\begin_inset Formula $\alpha^{1}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\beta^{1}$
+\end_inset 
+
+ con 
+\begin_inset Formula $\mathsf{x}$
+\end_inset 
+
+:
+\begin_inset Formula \begin{eqnarray*}
+i_{\mathsf{x}}\left[\alpha\pe\beta\right]\left[\mathsf{v}\right] & = & \alpha\pe\beta\left[\mathsf{x},\mathsf{v}\right]\\
+ & = & \left(\alpha\otimes\beta-\beta\otimes\alpha\right)\left[\mathsf{x},\mathsf{v}\right]\\
+ & = & \alpha\left[\mathsf{x}\right]\beta\left[\mathsf{v}\right]-\beta\left[\mathsf{x}\right]\alpha\left[\mathsf{v}\right]\\
+ & = & \left(i_{\mathsf{x}}\alpha\right)\beta\left[\mathsf{v}\right]-i_{\mathsf{x}}\left[\beta\right]\alpha\left[\mathsf{v}\right]\end{eqnarray*}
+
+\end_inset 
+
+ esto nos dice que
+\begin_inset Formula \[
+i_{\mathsf{x}}\left[\alpha\pe\beta\right]=\left(i_{\mathsf{x}}\alpha\right)\beta-\alpha i_{\mathsf{x}}\beta\]
+
+\end_inset 
+
+ Esta operación tiene una propiedad análoga a la regla de Leibniz, es una
+ 
+\emph on 
+antiderivación
+\emph default 
+.
+ Estas consideraciones dan paso a la siguiente propiedad general, para el
+ producto exterior de formas de grado arbitrario.
+ La regla es de gran utilidad práctica.
+\layout Description
+
+propiedad sean 
+\begin_inset Formula $\alpha^{p}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\beta^{q}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathsf{x}$
+\end_inset 
+
+.
+ Entonces se cumple que 
+\begin_inset Formula \begin{equation}
+i_{\mathsf{x}}\left[\alpha\pe\beta\right]=i_{\mathsf{x}}\left[\alpha\right]\pe\beta+\left(-1\right)^{p}\alpha\pe i_{\mathsf{x}}\left[\beta\right]\label{eq. prop. de i_x[a ext b]}\end{equation}
+
+\end_inset 
+
+
+\layout Description
+
+
+\size small 
+Ejemplo sea 
+\begin_inset Formula $\omega^{2}$
+\end_inset 
+
+ sobre 
+\begin_inset Formula $\cR{3}$
+\end_inset 
+
+: 
+\begin_inset Formula $\omega=\omega_{12}dx^{1}\pe dx^{2}+\omega_{13}dx^{1}\pe dx^{3}+\omega_{23}dx^{2}\pe dx^{3}$
+\end_inset 
+
+.
+ El producto interior 
+\begin_inset Formula $i_{\mathsf{v}}\omega$
+\end_inset 
+
+ de 
+\begin_inset Formula $\mathsf{v}=v^{i}\dpa{}{x^{i}},i=1\ldots3$
+\end_inset 
+
+ es una operación lineal:
+\begin_inset Formula \[
+i_{\mathsf{v}}\omega=i_{\mathsf{v}}\left[\omega_{12}dx^{1}\pe dx^{2}\right]+i_{\mathsf{v}}\left[\omega_{13}dx^{1}\pe dx^{3}\right]+i_{\mathsf{v}}\left[\omega_{23}dx^{2}\pe dx^{3}\right]\]
+
+\end_inset 
+
+ Desarrollamos el primer término
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+estamos siguiendo la notación de no escribir explícitamente 
+\begin_inset Formula $\pe$
+\end_inset 
+
+ cuando el producto involucra una 
+\begin_inset Formula $0$
+\end_inset 
+
+-forma, como 
+\begin_inset Formula $\omega_{12}$
+\end_inset 
+
+.
+ Esto es porque 
+\begin_inset Formula $\omega_{12}\pe dx^{1}=dx^{1}\pe\omega_{12}=\omega_{12}dx^{1}$
+\end_inset 
+
+.
+ Pero en este caso puede ser más claro escribir 
+\begin_inset Formula $i_{\mathsf{v}}\left[\omega_{12}\pe\left(dx^{1}\pe dx^{2}\right)\right]$
+\end_inset 
+
+, haciendo el mismo uso de la asociatividad que cuando la derivada exterior.
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+tal vez adelantar esta nota a la primera aparición
+\layout Standard
+
+del producto exterior por una cero-forma
+\end_inset 
+
+
+\end_inset 
+
+:
+\begin_inset Formula \begin{eqnarray*}
+i_{\mathsf{v}}\left[\omega_{12}dx^{1}\pe dx^{2}\right] & = & i_{\mathsf{v}}\omega_{12}\pe dx^{1}\pe dx^{2}+\omega_{12}i_{\mathsf{v}}\left(dx^{1}\pe dx^{2}\right)\\
+ & = & \omega_{12}\left(\left(i_{\mathsf{v}}dx^{1}\right)dx^{2}-dx^{1}i_{\mathsf{v}}dx^{2}\right)\\
+ & = & \omega_{12}\left(v^{1}dx^{2}-v^{2}dx^{1}\right)\end{eqnarray*}
+
+\end_inset 
+
+ donde se ha usado que 
+\begin_inset Formula $i_{\mathsf{v}}\omega_{12}=0$
+\end_inset 
+
+ y que 
+\begin_inset Formula \[
+i_{\mathsf{v}}dx^{1}=dx^{1}\left[\mathsf{v}\right]=dx^{1}\left[v^{1}\dpa{}{x^{1}}+v^{2}\dpa{}{x^{2}}+v^{3}\dpa{}{x^{3}}\right]=v^{1}dx^{1}\left[\dpa{}{x^{1}}\right]+v^{2}dx^{1}\left[\dpa{}{x^{2}}\right]+v^{3}dx^{1}\left[\dpa{}{x^{3}}\right]=v^{1}\]
+
+\end_inset 
+
+ por ser 
+\begin_inset Formula $\{\dpxi{}\}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\{ dx^{i}\}$
+\end_inset 
+
+ bases duales.
+ Análogamente, 
+\begin_inset Formula $i_{\mathsf{v}}dx^{2}=v^{2}$
+\end_inset 
+
+.
+ Extrapolando a los otros términos,
+\begin_inset Formula \begin{eqnarray*}
+i_{\mathsf{v}}\omega & = & \omega_{12}\left(v^{1}dx^{2}-v^{2}dx^{1}\right)+\omega_{13}\left(v^{1}dx^{3}-v^{3}dx^{1}\right)+\omega_{23}\left(v^{2}dx^{3}-v^{3}dx^{2}\right)\\
+ & = & -\left(\omega_{12}v^{2}+\omega_{13}v^{3}\right)dx^{1}+\left(\omega_{12}v^{1}-\omega_{23}v^{3}\right)dx^{2}+\left(\omega_{13}v^{1}+\omega_{23}v^{2}\right)dx^{3}\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Description
+
+
+\size small 
+Ejemplo recordemos que 
+\begin_inset Formula $F$
+\end_inset 
+
+ es un campo vectorial cuyas componentes se pueden relacionar con las de
+ una 2-forma, 
+\begin_inset Formula $d\alpha$
+\end_inset 
+
+ (v.
+\begin_inset LatexCommand \vref{ej ejemplo divergencia}
+
+\end_inset 
+
+).
+ Lo que justifica esto es la utilización del producto interior sobre el
+ elemento de volumen de la variedad.
+ 
+\begin_deeper 
+\layout Description
+
+
+\size small 
+elemento\SpecialChar ~
+de\SpecialChar ~
+volumen
+\begin_inset LatexCommand \index{elemento de volumen}
+
+\end_inset 
+
+ es la forma diferencial 
+\begin_inset Formula $\Omega$
+\end_inset 
+
+ de orden máximo no nula de la variedad (orden 
+\begin_inset Formula $m$
+\end_inset 
+
+) multiplicada cuyo coeficiente es el determinante de la métrica asociada.
+ Es necesario contar con una métrica para garantizar que los elementos de
+ la base 
+\begin_inset Formula $\left\{ dx^{1}\ldots dx^{m}\right\} $
+\end_inset 
+
+ son de norma 1.
+\layout Standard
+
+
+\size small 
+En este caso 
+\begin_inset Formula $F$
+\end_inset 
+
+ es el campo vectorial tal que 
+\begin_inset Formula $i_{F}\Omega=\alpha$
+\end_inset 
+
+.
+ En 
+\begin_inset Formula $\cR{3}$
+\end_inset 
+
+--euclídeo la métrica tiene determinante 
+\begin_inset Formula $1$
+\end_inset 
+
+, así que 
+\begin_inset Formula \[
+\Omega=dx^{1}\pe dx^{2}\pe dx^{3}\]
+
+\end_inset 
+
+tomando 
+\begin_inset Formula $F=F^{1}\dpa{}{x^{1}}+F^{2}\dpa{}{x^{2}}+F^{3}\dpa{}{x^{3}}$
+\end_inset 
+
+ y usando las propiedades 
+\begin_inset LatexCommand \vref{ec. p3 de fdif}
+
+\end_inset 
+
+ y 
+\begin_inset LatexCommand \vref{eq. prop. de i_x[a ext b]}
+
+\end_inset 
+
+ desarrollamos 
+\begin_inset Formula $i_{F}\Omega$
+\end_inset 
+
+: 
+\begin_inset Formula \begin{eqnarray*}
+i_{F}\left[dx^{1}\pe dx^{2}\pe dx^{3}\right] & = & i_{F}\left[dx^{1}\right]dx^{2}\pe dx^{3}-dx^{1}\left(i_{F}\left[dx^{2}\right]dx^{3}-dx^{2}i_{F}dx^{3}\right)\\
+ & = & dx^{1}\left[F\right]dx^{2}\pe dx^{3}-dx^{1}\pe\left(dx^{2}\left[F\right]dx^{3}-dx^{2}dx^{3}\left[F\right]\right)\\
+ & = & F^{1}dx^{2}\pe dx^{3}-F^{2}dx^{1}\pe dx^{3}+F^{3}dx^{1}\pe dx^{2}\\
+ & = & \alpha_{12}dx^{1}\wedge dx^{2}+\alpha_{13}dx^{1}\wedge dx^{3}+\alpha_{23}dx^{2}\wedge dx^{3}\end{eqnarray*}
+
+\end_inset 
+
+ en la última línea hemos impuesto 
+\begin_inset Formula $i_{F}\left[\Omega\right]=\alpha$
+\end_inset 
+
+, con lo que la identificación de coeficientes del ejemplo de 
+\size default 
+
+\begin_inset LatexCommand \vref{ej ejemplo divergencia}
+
+\end_inset 
+
+
+\size small 
+ permite encontrar el 
+\begin_inset Formula $F$
+\end_inset 
+
+ tal que las componentes de 
+\begin_inset Formula $d\alpha$
+\end_inset 
+
+ sean su divergencia.
+\layout Standard
+
+
+\size small 
+Es muy fácil ahora, utilizando la métrica definida sobre la variedad asociar
+ una 1-forma a 
+\begin_inset Formula $F$
+\end_inset 
+
+: 
+\begin_inset Formula $\omega_{j}=g_{ij}F^{i}$
+\end_inset 
+
+.
+ Si recordamos la observación sobre la dualidad de Hodge
+\begin_inset LatexCommand \index{dualidad de Hodge}
+
+\end_inset 
+
+ de la 
+\begin_inset LatexCommand \vref{tx dualidad de Hodge}
+
+\end_inset 
+
+ podemos darnos cuenta de que mediante este proceso hemos llegado a la forma
+ dual (la 1-forma 
+\begin_inset Formula $\omega$
+\end_inset 
+
+) de 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+ (una 2-forma).
+ Este proceso de encontrar la forma dual de grado 
+\begin_inset Formula $m-p$
+\end_inset 
+
+ de una forma de grado 
+\begin_inset Formula $p$
+\end_inset 
+
+ en una variedad de dimensión 
+\begin_inset Formula $m$
+\end_inset 
+
+ se puede resumir del siguiente modo:
+\begin_inset Formula \[
+\begin{array}{ccccc}
+ & i_{F}\Omega &  & \mathsf{g}\\
+\alpha^{p} & \fld & F & \fld & \omega^{m-p}\end{array}\]
+
+\end_inset 
+
+ Se trata de una operación que puede realizarse en sentido contrario, ya
+ que 
+\begin_inset Formula $\mathsf{g}$
+\end_inset 
+
+ por ser una métrica (vg.
+ un tensor no degenerado) tiene inversa 
+\begin_inset Formula $\mathsf{g}^{-1}$
+\end_inset 
+
+.
+\begin_inset Formula \[
+\begin{array}{ccccc}
+ & i_{F}\Omega &  & \mathsf{g}^{-1}\\
+\alpha^{p} & \fli & F & \fli & \omega^{m-p}\end{array}\]
+
+\end_inset 
+
+
+\end_deeper 
+\layout Section
+
+Derivada de Lie a lo largo de un campo vectorial
+\layout Standard
+
+Hay algunas secuencias de derivaciones que podemos hacer con un campo vectorial
+ 
+\begin_inset Formula $\mathsf{x}$
+\end_inset 
+
+ y una forma diferencial 
+\begin_inset Formula $\omega^{p}$
+\end_inset 
+
+ que dejan invariado el grado de ésta última.
+ 
+\layout Itemize
+
+Derivada de Lie de la forma diferencial 
+\begin_inset Formula $\omega$
+\end_inset 
+
+ a lo largo del campo vectorial 
+\begin_inset Formula $\mathsf{x}$
+\end_inset 
+
+: 
+\begin_inset Formula $\mathcal{L}_{\mathsf{x}}\omega$
+\end_inset 
+
+
+\layout Itemize
+
+Producto interior por 
+\begin_inset Formula $\mathsf{x}$
+\end_inset 
+
+ de la derivada exterior de 
+\begin_inset Formula $\omega$
+\end_inset 
+
+: 
+\begin_inset Formula $i_{\mathsf{x}}d\omega$
+\end_inset 
+
+.
+\layout Itemize
+
+Derivada exterior del producto interior por 
+\begin_inset Formula $\mathsf{x}$
+\end_inset 
+
+ de 
+\begin_inset Formula $\omega$
+\end_inset 
+
+: 
+\begin_inset Formula $d\left[i_{\mathsf{x}}\omega\right]$
+\end_inset 
+
+ 
+\layout Standard
+
+¿Existe alguna relación entre estas tres operaciones?.
+ Respuesta: sí.
+ Vamos a enunciar una propiedad que sirve para calcular la derivada de Lie
+ de manera más sencilla.
+\layout Description
+
+propiedad sea 
+\begin_inset Formula $\omega^{p}$
+\end_inset 
+
+ una forma y 
+\begin_inset Formula $\mathsf{x}$
+\end_inset 
+
+ un campo vectorial contravariante ambos 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ definidos sobre 
+\begin_inset Formula $M$
+\end_inset 
+
+.
+ Se cumple que
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Las tres operaciones son lineales.
+ Pero mientras que la derivada de Lie (como la derivada ordinaria) satisface
+ una regla tipo Leibniz (es una operación de 
+\emph on 
+derivación
+\emph default 
+), la derivada exterior y el producto interior son 
+\emph on 
+antiderivaciones
+\emph default 
+.
+ Que las tres operaciones sean (anti)derivaciones
+\begin_inset LatexCommand \index{derivación}
+
+\end_inset 
+
+ implica que dada su actuación sobre 0-formas y 1-formas queda completamente
+ definida su actuación sobre formas de grados superiores.
+ 
+\end_inset 
+
+:
+\begin_inset Formula \begin{equation}
+\mathcal{L}_{\mathsf{x}}\omega=i_{\mathsf{x}}d\omega+d\left[i_{\mathsf{x}}\omega\right]\label{ec rel entre dlie, pint y der ext}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+De esta propiedad de aquí se obtiene una propiedad adicional que verifican
+ la derivada de Lie y la derivada exterior.
+ Bajo las mismas hipótesis de la propiedad se cumple que ambas operaciones
+ conmutan: 
+\begin_inset Formula \[
+d\left[\mathcal{L}_{\mathsf{x}}\omega\right]=\mathcal{L}_{\mathsf{x}}\left[d\omega\right]\]
+
+\end_inset 
+
+ mediante la propiedad 
+\begin_inset LatexCommand \vref{ec rel entre dlie, pint y der ext}
+
+\end_inset 
+
+ probamos el carácter conmutativo 
+\begin_inset Formula \begin{eqnarray*}
+d\left[\mathcal{L}_{\mathsf{x}}\omega\right] & = & d\left[i_{\mathsf{x}}d\omega\right]+d\left[di_{\mathsf{x}}\omega\right]\\
+ & = & d\left[i_{\mathsf{x}}d\omega\right]\end{eqnarray*}
+
+\end_inset 
+
+por otra parte:
+\begin_inset Formula \begin{eqnarray*}
+\mathcal{L}_{\mathsf{x}}\left[d\omega\right] & = & i_{\mathsf{x}}d\left[d\omega\right]+d\left[i_{\mathsf{x}}d\omega\right]\\
+ & = & d\left[i_{\mathsf{x}}d\omega\right]\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Section
+
+Aplicaciones diferenciables entre variedades y formas diferenciales
+\begin_inset LatexCommand \label{sec aplicaciones diferenciables}
+
+\end_inset 
+
+
+\layout Standard
+
+¿Cómo actúan sobre las formas diferenciales las aplicaciones diferenciables
+ entre variedades?, y en particular ¿cómo se transforman las formas bajo
+ cambios de coordenadas?.
+\layout Standard
+
+Consideremos la figura 
+\begin_inset LatexCommand \vref{fig apdif entre variedades M y N y pullback}
+
+\end_inset 
+
+.
+ Dada una forma diferencial sobre 
+\begin_inset Formula $V_{b}$
+\end_inset 
+
+ ¿puedo inducir por medio de 
+\begin_inset Formula $F^{-1}$
+\end_inset 
+
+ una forma diferencial del mismo orden sobre el dominio de 
+\begin_inset Formula $F$
+\end_inset 
+
+ en 
+\begin_inset Formula $M$
+\end_inset 
+
+?.
+ 
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-app-F-de-M-a-N.eps
+	display monochrome
+	width 9cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig apdif entre variedades M y N y pullback}
+
+\end_inset 
+
+
+\begin_inset Formula $\hat{F}\equiv\psi_{b}\circ F\circ\varphi_{a}^{-1}:\cR{m}\fd\cR{n}$
+\end_inset 
+
+ es la expresión en coordenadas de 
+\begin_inset Formula $F:M\fd N$
+\end_inset 
+
+ 
+\end_inset 
+
+La expresión en coordenadas de 
+\begin_inset Formula $F$
+\end_inset 
+
+ (teniendo en cuenta el dominio en que está definida, v.
+ tema 1
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+ref cruzda
+\end_inset 
+
+) es:
+\begin_inset Formula \begin{eqnarray*}
+\hat{F}:\varphi_{b}\circ F\circ\varphi_{a}^{-1}:\mathbb{R}^{m} & \fd & \mathbb{R}^{n}\\
+\left(x^{1}\ldots x^{m}\right) & \mapsto & \left(y^{1}\left[x^{1}\ldots x^{m}\right]\ldots y^{n}\left[x^{1}\ldots x^{m}\right]\right)\end{eqnarray*}
+
+\end_inset 
+
+ 
+\layout Standard
+
+Dada una forma 
+\begin_inset Formula $\omega^{p}$
+\end_inset 
+
+ sobre 
+\begin_inset Formula $N$
+\end_inset 
+
+, 
+\begin_inset Formula $\omega=\omega_{i_{1}\ldots i_{p}}\left[y^{1}\ldots y^{n}\right]dy^{i_{1}}\pe\cdots\pe dy^{i_{p}}$
+\end_inset 
+
+ podemos definir una 
+\begin_inset Formula $p$
+\end_inset 
+
+-forma en 
+\begin_inset Formula $M$
+\end_inset 
+
+, que se denota 
+\begin_inset Formula $F_{\#}\omega$
+\end_inset 
+
+ o 
+\begin_inset Formula $F_{*}\omega$
+\end_inset 
+
+:
+\begin_inset Formula \[
+F_{\#}\omega=\omega_{i_{1}\ldots i_{p}}\left[y^{1}\left[x^{1}\ldots x^{m}\right]\ldots y^{n}\left[x^{1}\ldots x^{m}\right]\right]d\left[y^{i_{1}}\left[x^{1}\ldots x^{m}\right]\right]\pe\cdots\pe d\left[y^{i_{p}}\left[x^{1}\ldots x^{m}\right]\right]\]
+
+\end_inset 
+
+
+\layout Standard
+
+La transformación 
+\begin_inset Formula $F_{\#}$
+\end_inset 
+
+ lleva formas diferenciales de 
+\begin_inset Formula $N$
+\end_inset 
+
+ a 
+\begin_inset Formula $M$
+\end_inset 
+
+ (
+\begin_inset Quotes eld
+\end_inset 
+
+tira para atrás
+\begin_inset Quotes erd
+\end_inset 
+
+) mientras que la aplicación iba de 
+\begin_inset Formula $M$
+\end_inset 
+
+ a 
+\begin_inset Formula $N$
+\end_inset 
+
+, 
+\begin_inset Quotes eld
+\end_inset 
+
+tira para adelante
+\begin_inset Quotes erd
+\end_inset 
+
+.
+ De ahí el nombre en inglés de 
+\begin_inset Formula $F_{\#}$
+\end_inset 
+
+: 
+\emph on 
+pullback.
+\layout Description
+
+
+\size small 
+Ejemplo 
+\begin_inset Formula $\omega=\sin\left[xy\right]dx\pe dy+x^{2}dz\pe dy$
+\end_inset 
+
+.
+ Véase la aplicación 
+\begin_inset Formula $F$
+\end_inset 
+
+ en la figura 
+\begin_inset LatexCommand \vref{fig ejemplo de pullback}
+
+\end_inset 
+
+ 
+\begin_inset Formula \begin{eqnarray*}
+\psi_{b}\circ F\circ\varphi_{a}:M & \fd & N\\
+\left(u,v\right) & \mapsto & \left(u+v,u^{2},v^{3}\right)\end{eqnarray*}
+
+\end_inset 
+
+ si 
+\begin_inset Formula $M\equiv\cR{2}$
+\end_inset 
+
+ y 
+\begin_inset Formula $N\equiv\cR{3}$
+\end_inset 
+
+ entonces las aplicaciones de carta 
+\begin_inset Formula $\varphi,\psi$
+\end_inset 
+
+ son la identidad y la expresión en coordenadas de 
+\begin_inset Formula $F$
+\end_inset 
+
+ es simplemente 
+\begin_inset Formula $F$
+\end_inset 
+
+.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-ejemplo-pullback.eps
+	display monochrome
+	width 7cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig ejemplo de pullback}
+
+\end_inset 
+
+El pullback transporta la forma desde 
+\begin_inset Formula $N$
+\end_inset 
+
+ hasta 
+\begin_inset Formula $M$
+\end_inset 
+
+
+\end_inset 
+
+ Construyamos el 
+\emph on 
+pullback
+\emph default 
+:
+\begin_inset Formula \begin{eqnarray*}
+F_{\#}\omega & = & \sin\left[\left(u+v\right)u^{2}\right]d\left[u+v\right]\pe d\left[u^{2}\right]+\left(u+v\right)^{2}d\left[v^{3}\right]\pe d\left[v^{2}\right]\\
+ & = & \sin\left[\left(u+v\right)u^{2}\right]\left(du+dv\right)\pe2udu+\left(u+v\right)^{2}3v^{2}dv\pe2vdv\\
+ & = & -\left(2u\sin\left[\left(u+v\right)u^{2}\right]+6uv^{2}\left(u+v\right)^{2}\right)du\pe dv\end{eqnarray*}
+
+\end_inset 
+
+ 
+\size default 
+Cómo cambia la forma diferencial bajo una transformación de coordenadas
+ queda dado por el 
+\emph on 
+pullback
+\emph default 
+ entre dos variedades que son la misma.
+ Si 
+\begin_inset Formula $M$
+\end_inset 
+
+ es una subvariedad de 
+\begin_inset Formula $N$
+\end_inset 
+
+, la operación 
+\emph on 
+pullback
+\emph default 
+ consiste en restringir el dominio de la forma diferencial a la subvariedad
+ 
+\begin_inset Formula $M$
+\end_inset 
+
+.
+
+\size small 
+ 
+\layout Description
+
+
+\size small 
+Ejemplo si 
+\begin_inset Formula $x=u,y=v,z=cte$
+\end_inset 
+
+ (
+\begin_inset Formula $M$
+\end_inset 
+
+ es un plano de 
+\begin_inset Formula $N$
+\end_inset 
+
+) se tiene 
+\begin_inset Formula $F_{\#}\omega=\sin\left[uv\right]du\pe dv$
+\end_inset 
+
+ (
+\begin_inset Formula $dz=0$
+\end_inset 
+
+).
+\layout Description
+
+
+\size small 
+Ejemplo sea 
+\begin_inset Formula $\omega=f\left[x,y\right]dx\pe dy$
+\end_inset 
+
+ y 
+\begin_inset Formula $F=\left(x\left[u,v\right],y\left[u,v\right]\right)$
+\end_inset 
+
+.
+ Calcular 
+\begin_inset Formula $F_{\#}\omega$
+\end_inset 
+
+.
+ 
+\begin_inset Formula \begin{eqnarray*}
+F:\cR{2} & \fd & \cR{2}\\
+\left(u,v\right) & \mapsto & \left(x\left[u,v\right],y\left[u,v\right]\right)\end{eqnarray*}
+
+\end_inset 
+
+ 
+\begin_inset Formula \begin{eqnarray*}
+F_{\#}\omega & = & f\left[x\left[u,v\right],y\left[u,v\right]\right]d\left[x\left[u,v\right]\right]\pe d\left[y\left[u,v\right]\right]=\\
+ & = & f\left[x\left[u,v\right],y\left[u,v\right]\right]\left(\dpa{x}{u}du+\dpa{x}{v}dv\right)\pe\left(\dpa{y}{u}du+\dpa{y}{v}dv\right)\\
+ & = & f\left[x\left[u,v\right],y\left[u,v\right]\right]\left|\begin{array}{cc}
+\dpa{x}{u} & \dpa{x}{v}\\
+\dpa{y}{u} & \dpa{y}{v}\end{array}\right|du\pe dv\end{eqnarray*}
+
+\end_inset 
+
+ Como el 
+\emph on 
+pullback 
+\emph default 
+se realiza sobre la misma variedad no es más que un cambio de coordenadas
+ donde aparece el jacobiano.
+ Es la misma transformación que la que afecta al integrando de una integral
+ de superficie en 
+\begin_inset Formula $\cR{2}$
+\end_inset 
+
+al realizar un cambio de coordenadas.
+ 
+\begin_deeper 
+\layout Standard
+
+
+\size small 
+Cambiar el orden de las variables implica cambiar de carta.
+ Por ello hay que asegurarse de que la variedad es orientable
+\begin_inset LatexCommand \index{orientable, variedad}
+
+\end_inset 
+
+, es decir que podemos encontrar un atlas (no necesariamente máximo) tal
+ que los jacobianos de todas las transformaciones de coordenadas tengan
+ el mismo signo.
+ Entonces se define como orientación positiva la correspondiente a un jacobiano
+ positivo, por ejemplo.
+ No todas las variedades son orientables (por ejemplo, la banda de Möbius
+\begin_inset LatexCommand \index{banda de M\"obius}
+
+\end_inset 
+
+ o la botella de Klein
+\begin_inset LatexCommand \index{botella de Klein}
+
+\end_inset 
+
+ no lo son).
+\end_deeper 
+\layout Description
+
+Propiedades Sean 
+\begin_inset Formula $\alpha^{p}$
+\end_inset 
+
+, 
+\begin_inset Formula $\beta^{p}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\gamma^{q}$
+\end_inset 
+
+ formas diferenciales sobre 
+\begin_inset Formula $N$
+\end_inset 
+
+ y sea 
+\begin_inset Formula $F$
+\end_inset 
+
+ una aplicación de clase 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ entre dos variedades diferenciales 
+\begin_inset Formula $M$
+\end_inset 
+
+ y 
+\begin_inset Formula $N$
+\end_inset 
+
+ no necesariamente de la misma dimensión.
+ Entonces el 
+\emph on 
+pullback
+\emph default 
+ cumple las siguientes propiedades: 
+\layout Enumerate
+
+
+\begin_inset Formula $F_{\#}\left[\alpha+\beta\right]=F_{\#}\alpha+F_{\#}\beta$
+\end_inset 
+
+ (linealidad en la suma).
+\layout Enumerate
+
+
+\begin_inset Formula $F_{\#}\left[\alpha\pe\beta\right]=F_{\#}\alpha\pe F_{\#}\beta$
+\end_inset 
+
+ (linealidad en el producto exterior).
+\layout Enumerate
+
+
+\begin_inset Formula $F_{\#}\left[d\alpha\right]=d\left[F_{\#}\alpha\right]$
+\end_inset 
+
+ (conmuta con la derivada exterior).
+\layout Section
+
+Resultados de la teoría de formas
+\layout Standard
+
+Esencialmente explicaremos el lema de Poincaré y el teorema de Fröbenius,
+ útiles en el contexto de la teoría de ecuaciones diferenciales.
+\layout Subsection
+
+Lema de Poincaré
+\layout Standard
+
+Para cualquier 
+\begin_inset Formula $\theta^{p}$
+\end_inset 
+
+ se cumple que 
+\begin_inset Formula $d\left[d\theta\right]=0$
+\end_inset 
+
+.
+ Por lo tanto si se cumple 
+\begin_inset Formula $\omega\equiv d\theta$
+\end_inset 
+
+ para algún 
+\begin_inset Formula $\theta$
+\end_inset 
+
+, se tiene 
+\begin_inset Formula $d\omega=0$
+\end_inset 
+
+.
+ La pregunta es si el recíproco es cierto: ¿existe alguna 
+\begin_inset Formula $\theta$
+\end_inset 
+
+ tal que 
+\begin_inset Formula $\omega=d\theta$
+\end_inset 
+
+ si 
+\begin_inset Formula $d\omega=0$
+\end_inset 
+
+?.
+ La respuesta es que en general no.
+ Si 
+\begin_inset Formula $f\in\mathcal{F}^{\infty}\left[M\right]$
+\end_inset 
+
+ la condición 
+\begin_inset Formula $df=0$
+\end_inset 
+
+ no implica que 
+\begin_inset Formula $f=cte$
+\end_inset 
+
+ (véase la figura 
+\begin_inset LatexCommand \ref{fig fn sobre dom no conexo}
+
+\end_inset 
+
+).
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-dom-no-conexo.eps
+	display monochrome
+	height 3cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig fn sobre dom no conexo}
+
+\end_inset 
+
+Una función sobre un dominio no conexo, 
+\begin_inset Formula $f=k_{1},f=k_{2}$
+\end_inset 
+
+, 
+\begin_inset Formula $df=0$
+\end_inset 
+
+.
+\end_inset 
+
+  En dimensiones bajas lo que nos preguntamos es si 
+\begin_inset Formula $\nabla\pe\mathbf{F}=0\Fd\mathbf{F}=\nabla\phi$
+\end_inset 
+
+.
+ Para poder afirmarlo hay que exigir ciertas condiciones topológicas al
+ dominio.
+\layout Description
+
+Lema\SpecialChar ~
+de\SpecialChar ~
+Poincaré
+\begin_inset LatexCommand \index{lema de Poincaré}
+
+\end_inset 
+
+ Sea 
+\begin_inset Formula $\omega^{p}$
+\end_inset 
+
+ definida en un subconjunto en forma de estrella de la variedad 
+\begin_inset Formula $M$
+\end_inset 
+
+ y tal que 
+\begin_inset Formula $d\omega=0$
+\end_inset 
+
+.
+ Existe una 
+\begin_inset Formula $\left(p-1\right)$
+\end_inset 
+
+-forma diferencial 
+\begin_inset Formula $\theta^{p-1}$
+\end_inset 
+
+ de clase 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ tal que se cumple que
+\begin_inset Formula \[
+\omega=d\theta\]
+
+\end_inset 
+
+
+\layout Standard
+
+Si 
+\begin_inset Formula $\theta$
+\end_inset 
+
+ es una 
+\begin_inset Formula $p-1$
+\end_inset 
+
+ forma diferencial tal que 
+\begin_inset Formula $d\theta=\omega$
+\end_inset 
+
+, cualquier 
+\begin_inset Formula $\tilde{\theta}=\theta+d\beta$
+\end_inset 
+
+ también verifica que 
+\begin_inset Formula $d\tilde{\theta}=d\theta+d\left[d\beta\right]=\omega$
+\end_inset 
+
+, siendo 
+\begin_inset Formula $\beta$
+\end_inset 
+
+ una 
+\begin_inset Formula $p-2$
+\end_inset 
+
+ forma diferencial arbitraria (una suerte de constante de integración).
+ 
+\layout Description
+
+dominio\SpecialChar ~
+en\SpecialChar ~
+forma\SpecialChar ~
+de\SpecialChar ~
+estrella
+\begin_inset LatexCommand \index{dominio en forma de estrella}
+
+\end_inset 
+
+ se dice que un conjunto 
+\begin_inset Formula $H\in M$
+\end_inset 
+
+ tiene forma de estrella si existen un sistema de coordenadas y un punto
+ 
+\begin_inset Formula $P\in H$
+\end_inset 
+
+ tal que para cualquier otro punto 
+\begin_inset Formula $Q\in H$
+\end_inset 
+
+ la recta que une 
+\begin_inset Formula $P$
+\end_inset 
+
+ con 
+\begin_inset Formula $Q$
+\end_inset 
+
+ está completamente contenida en 
+\begin_inset Formula $H$
+\end_inset 
+
+.
+\layout Standard
+
+Lo que esto implica es que deben 
+\emph on 
+existir
+\emph default 
+ unas coordenadas tales que si se dibuja en ellas el conjunto se obtiene
+ una figura tipo estrella alrededor de un cierto punto 
+\begin_inset Formula $P$
+\end_inset 
+
+ dado (figura 
+\begin_inset LatexCommand \ref{fig dominio forma estrella}
+
+\end_inset 
+
+).
+ Pero atención, en cualquier otro sistema de coordenadas la condición no
+ tiene por qué cumplirse ---
+\begin_inset Formula $H$
+\end_inset 
+
+ se deforma.
+ Lo importante es que se cumpla en 
+\emph on 
+algún
+\emph default 
+ sistema de coordenadas: se trata de una condición topológica.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-dom-forma-estrella.eps
+	display monochrome
+	width 7cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig dominio forma estrella}
+
+\end_inset 
+
+Dominio en forma de estrella 
+\begin_inset Formula $P=\left(x_{0}^{1}\ldots x_{0}^{m}\right)$
+\end_inset 
+
+ y 
+\begin_inset Formula $Q=\left(x_{1}^{1}\ldots x_{1}^{m}\right)$
+\end_inset 
+
+, 
+\begin_inset Formula $x^{\mu}=x_{0}^{\mu}+t\left(x_{1}^{\mu}-x_{0}^{\mu}\right)$
+\end_inset 
+
+ con 
+\begin_inset Formula $t\in\left[0,1\right]$
+\end_inset 
+
+
+\end_inset 
+
+Si 
+\begin_inset Formula $\omega=\omega_{i_{1}\ldots i_{p}}\left[x^{1}\ldots x^{m}\right]dx^{i_{1}}\pe\cdots\pe dx^{i_{p}}$
+\end_inset 
+
+ y 
+\begin_inset Formula $d\omega=0$
+\end_inset 
+
+, 
+\begin_inset Formula $\theta$
+\end_inset 
+
+ tal que 
+\begin_inset Formula $d\theta=\omega$
+\end_inset 
+
+ se calcula en coordenadas del siguiente modo: 
+\begin_inset Formula \begin{equation}
+\theta=\left(\int_{t=0}^{t=1}t^{p-1}\omega_{k\, i_{1}\ldots i_{p-1}}\left[tx^{1}\ldots tx^{m}\right]x^{k}dt\right)dx^{i_{1}}\pe\cdots\pe dx^{i_{p-1}}\label{ec. lema poincare}\end{equation}
+
+\end_inset 
+
+El ingrediente fundamental es que cuando 
+\begin_inset Formula $t=0$
+\end_inset 
+
+ el recinto de integración colapsa a un punto.
+ La garantía de independencia del resultado del camino es justamente la
+ condición 
+\begin_inset Formula $d\omega=0$
+\end_inset 
+
+.
+ Una vez que sabemos que es así, escogemos la trayectoria de integración
+ más sencilla: una recta.
+ Esto nos obliga a imponer que el conjunto sea tipo estrella
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+se podría dar una condición tal como que todo punto del dominio se pueda
+ llevar a un mismo punto mediante una homotopía cualquiera (no necesariamente
+ por rectas), pero entonces habría que asegurar esto para todo sistema de
+ coordenadas y no está claro que esta reformulación sea más general que
+ la presentada en términos de 
+\begin_inset Quotes eld
+\end_inset 
+
+dominio estrella
+\begin_inset Quotes erd
+\end_inset 
+
+.
+ 
+\end_inset 
+
+.
+ Para probar que esto es así sólo hay que calcular la derivada exterior
+ de la expresión dada para 
+\begin_inset Formula $\theta$
+\end_inset 
+
+.
+\layout Description
+
+forma\SpecialChar ~
+cerrada\SpecialChar ~
+
+\begin_inset Formula $\omega$
+\end_inset 
+
+ es aquella que verifica 
+\begin_inset Formula $d\omega=0$
+\end_inset 
+
+ .
+\layout Description
+
+forma\SpecialChar ~
+exacta 
+\begin_inset Formula $\omega$
+\end_inset 
+
+ es exacta si podemos expresarla como derivada exterior de otra: 
+\begin_inset Formula $\omega=d\theta$
+\end_inset 
+
+.
+\layout Standard
+
+Nótese que mientras que es evidente que toda forma exacta es cerrada, el
+ recíproco es en general falso.
+ La condición para que una forma cerrada 
+\begin_inset Formula $\left(d\omega=0\right)$
+\end_inset 
+
+ sea también exacta 
+\begin_inset Formula $\left(\omega=d\theta\right)$
+\end_inset 
+
+ es, como se deduce del lema de Poincaré, que su dominio de definición sea
+ de tipo estrella.
+\layout Standard
+
+El ejemplo siguiente muestra cómo realizar el cálculo de 
+\begin_inset Formula $\theta$
+\end_inset 
+
+ de una manera sencilla (evitando la fórmula).
+\layout Description
+
+
+\size small 
+Ejemplo Sea 
+\begin_inset Formula $\omega=-\hat{x}^{2}d\hat{x}\pe d\hat{y}+(\hat{x}^{2}-1)d\hat{y}\pe d\hat{z}+2\hat{x}\hat{y}d\hat{x}\pe d\hat{z}$
+\end_inset 
+
+ una 2-forma en 
+\begin_inset Formula $\cR{3}$
+\end_inset 
+
+.
+ Puesto que 
+\begin_inset Formula $d\omega$
+\end_inset 
+
+ se anula, es cerrada.
+ Puesto que 
+\begin_inset Formula $\cR{3}$
+\end_inset 
+
+ es tipo estrella, 
+\begin_inset Formula $\omega$
+\end_inset 
+
+ es también exacta.
+ Podemos pues buscar una forma 
+\begin_inset Formula $\theta$
+\end_inset 
+
+ tal que 
+\begin_inset Formula $\omega=d\theta$
+\end_inset 
+
+.
+ Definimos la aplicación 
+\begin_inset Formula \begin{eqnarray*}
+\gamma:M\times\left[0,1\right] & \fd & M\\
+\left(x^{\mu},t\right) & \mapsto & \hat{x}^{\mu}=tx^{\mu}\end{eqnarray*}
+
+\end_inset 
+
+para cada valor de
+\size default 
+ 
+\begin_inset Formula $t$
+\end_inset 
+
+, 
+\begin_inset Formula $\gamma_{t}:M\fd M$
+\end_inset 
+
+
+\size small 
+ (alternativamente se puede decir que, para cada 
+\begin_inset Formula $t,$
+\end_inset 
+
+ 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+ es un cambio de coordenadas sobre la variedad).
+ En nuestro dominio, 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+ manda 
+\begin_inset Formula $\left(x,y,z,t\right)\mapsto\left(tx,ty,tz\right)$
+\end_inset 
+
+.
+ La forma está definida en el espacio de llegada, es decir, en términos
+ de las variables 
+\emph on 
+con gorro
+\emph default 
+.
+ Para encontrar 
+\begin_inset Formula $\theta$
+\end_inset 
+
+ es necesario hacer primero el pullback de 
+\begin_inset Formula $\omega$
+\end_inset 
+
+: 
+\begin_inset Formula $\gamma_{t\,\#}\omega$
+\end_inset 
+
+.
+\begin_inset Formula \begin{eqnarray*}
+\gamma_{t\,\#}\omega & = & -tx^{2}d\left[tx\right]\pe d\left[ty\right]+\left(t^{2}x^{2}-1\right)d\left[ty\right]\pe d\left[tz\right]+2t^{2}xyd\left[tx\right]\pe d\left[tz\right]\\
+ & = & -t^{2}x^{2}\left(xdt+tdx\right)\pe\left(ydt+tdy\right)+\left(t^{2}x^{2}-1\right)\left(ydt+tdy\right)\pe\left(zdt+tdz\right)+2t^{2}xy\left(xdt+tdx\right)\pe\left(zdt+tdz\right)\\
+ & = & -t^{2}x^{2}\left(xtdt\pe dy-tydt\pe dx+t^{2}dx\pe dy\right)+\left(t^{2}x^{2}-1\right)\left(ytdt\pe dz-tzdt\pe dy+t^{2}dy\pe dz\right)+\\
+ &  & +2t^{2}xy\left(xtdt\pe dz-tzdt\pe dx+t^{2}dx\pe dz\right)\end{eqnarray*}
+
+\end_inset 
+
+Como para hallar 
+\begin_inset Formula $\theta$
+\end_inset 
+
+ debemos integrar sobre 
+\begin_inset Formula $t$
+\end_inset 
+
+ (ecuación 
+\begin_inset LatexCommand \vref{ec. lema poincare}
+
+\end_inset 
+
+) eliminamos
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Truco mnemotécnico aquí no demostrado pero eficaz.
+\end_inset 
+
+ de la expresión anterior todos los términos que no incluyen 
+\begin_inset Formula $dt$
+\end_inset 
+
+ y factorizamos cada término en 
+\begin_inset Formula $dt$
+\end_inset 
+
+: 
+\begin_inset Formula \[
+\alpha=-t^{3}x^{2}dt\pe\left(xdy-ydx\right)+\left(t^{3}x^{3}-t\right)\pe dt\pe\left(ydz-zdy\right)+2t^{3}xydt\pe\left(xdz-zdx\right)\]
+
+\end_inset 
+
+ Ahora sólo falta integrar entre cero y uno:
+\begin_inset Formula \[
+\theta=-\frac{1}{4}x^{2}\left(xdy-ydx\right)+\left(\frac{1}{4}x^{3}-\frac{1}{2}\right)\left(ydz-zdy\right)+\left(\frac{1}{2}xy\right)\left(xdz-zdx\right)\]
+
+\end_inset 
+
+
+\layout Section
+
+Teorema de Fröbenius
+\begin_inset LatexCommand \label{sec teorema frobenius}
+
+\end_inset 
+
+
+\layout Standard
+
+Este teorema está relacionado con la teoría de integrabilidad de sistemas,
+ y en particular con la integración de sistemas de ecuaciones diferenciales
+ en derivadas parciales de primer orden homogéneas para una función de varias
+ variables.
+ Sea 
+\begin_inset Formula $M$
+\end_inset 
+
+ de clase 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ y dimensión 
+\begin_inset Formula $m$
+\end_inset 
+
+.
+ Sobre ella definimos 
+\begin_inset Formula $r$
+\end_inset 
+
+ 1-formas diferenciales
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Nótese que en esta sección los superíndices numeran las formas y no indican
+ su grado (que siempre es 1).
+\end_inset 
+
+, 
+\begin_inset Formula $\left\{ \theta^{1},\ldots,\theta^{r}\right\} $
+\end_inset 
+
+:
+\begin_inset Formula \begin{eqnarray}
+\theta^{1} & = & \theta_{1}^{1}d\hat{x}^{1}+\ldots+\theta_{r}^{1}d\hat{x}^{r}+\theta_{r+1}^{1}d\hat{x}^{r+1}+\ldots+\theta_{m}^{1}d\hat{x}^{m}\nonumber \\
+ & \vdots\nonumber \\
+\theta^{r} & = & \theta_{1}^{r}d\hat{x}^{1}+\ldots+\theta_{r}^{r}d\hat{x}^{r}+\theta_{r+1}^{r}d\hat{x}^{r+1}+\ldots+\theta_{m}^{r}d\hat{x}^{m}\label{ec r 1-formas frobenius - a}\end{eqnarray}
+
+\end_inset 
+
+donde todos los coeficientes 
+\begin_inset Formula $\theta_{j}^{i}$
+\end_inset 
+
+ son funciones de 
+\begin_inset Formula $x^{1}\ldots x^{m}$
+\end_inset 
+
+.
+ La pregunta es si dada cierta 
+\begin_inset Formula $F:N\fd M$
+\end_inset 
+
+ podemos en torno a un punto 
+\begin_inset Formula $P$
+\end_inset 
+
+ encontrar una subvariedad 
+\begin_inset Formula $N\subset M$
+\end_inset 
+
+ definida por la aplicación 
+\begin_inset Formula $F$
+\end_inset 
+
+ de modo que 
+\begin_inset Formula $F_{\#}\theta^{a}=0$
+\end_inset 
+
+ con 
+\begin_inset Formula $a=1\ldots r$
+\end_inset 
+
+.
+ Si tomamos una subvariedad definida por una serie de ecuaciones, 
+\begin_inset Formula \begin{eqnarray*}
+g^{1}\left[x^{1}\ldots x^{m}\right] & = & K_{1}\\
+ & \vdots\\
+g^{r}\left[x^{1}\ldots x^{m}\right] & = & K_{r}\end{eqnarray*}
+
+\end_inset 
+
+ donde las 
+\begin_inset Formula $K$
+\end_inset 
+
+ son constantes.
+ Bajo ciertas condiciones
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+Th fn implicita? citar.
+\end_inset 
+
+ se pueden despejar:
+\begin_inset Formula \begin{eqnarray}
+\hat{x}^{1} & = & h^{1}\left[x^{r+1}\ldots x^{m}\right]\nonumber \\
+\hat{x}^{r} & = & h^{r}\left[x^{r+1}\ldots x^{m}\right]\nonumber \\
+\hat{x}^{r+1} & = & x^{r+1}\nonumber \\
+\hat{x}^{m} & = & x^{m}\label{ec. explicitas subvar N Frobenius}\end{eqnarray}
+
+\end_inset 
+
+ Las coordenadas en la variedad 
+\begin_inset Formula $M$
+\end_inset 
+
+ son 
+\begin_inset Formula $\left\{ \hat{x}^{1}\ldots\hat{x}^{m}\right\} $
+\end_inset 
+
+.
+ Y las 
+\begin_inset Formula $m-r$
+\end_inset 
+
+ de 
+\begin_inset Formula $N$
+\end_inset 
+
+ vienen dadas por ese cambio explícito.
+ Estas ecuaciones conducen a 
+\begin_inset Formula $N$
+\end_inset 
+
+: 
+\begin_inset Formula \begin{eqnarray*}
+F_{\#}\theta^{1} & = & \theta_{1}^{1}\left[x^{r+1}\ldots x^{m}\right]=0\\
+F_{\#}\theta^{r} & = & \ldots=0\end{eqnarray*}
+
+\end_inset 
+
+ Normalmente se relaja la notación y se dice que se busca 
+\begin_inset Formula $x^{1}\ldots x^{r}$
+\end_inset 
+
+ en función de 
+\begin_inset Formula $x^{r+1}\ldots x^{m}$
+\end_inset 
+
+, sacar unas variables en función de las que quedan libres.
+ 
+\layout Standard
+
+Las 
+\begin_inset Formula $r$
+\end_inset 
+
+ 1-formas de 
+\begin_inset LatexCommand \ref{ec r 1-formas frobenius - a}
+
+\end_inset 
+
+ se pueden reescribir matricialmente como 
+\begin_inset Formula $\Theta=\mathsf{A}\mathbf{dx}^{1\ldots r}+\mathsf{B}\mathbf{dx}^{r+1\ldots m}$
+\end_inset 
+
+
+\begin_inset Formula \[
+\left(\begin{array}{c}
+\theta^{1}\\
+\vdots\\
+\theta^{r}\end{array}\right)=\left(\begin{array}{ccc}
+\theta_{1}^{1} & \ldots & \theta_{r}^{1}\\
+\vdots & \ddots & \vdots\\
+\theta_{1}^{r} & \ldots & \theta_{r}^{r}\end{array}\right)\left(\begin{array}{c}
+dx^{1}\\
+\vdots\\
+dx^{r}\end{array}\right)+\left(\begin{array}{c}
+\theta_{r+1}^{1}dx^{r+1}+\ldots+\theta_{m}^{1}dx^{m}\\
+\vdots\\
+\theta_{r+1}^{r}dx^{r+1}+\ldots+\theta_{m}^{r}dx^{m}\end{array}\right)\]
+
+\end_inset 
+
+Suponiendo que en torno al punto 
+\begin_inset Formula $P$
+\end_inset 
+
+ las 
+\begin_inset Formula $r$
+\end_inset 
+
+ 
+\begin_inset Formula $1$
+\end_inset 
+
+-formas diferenciales son linealmente independientes y por tanto en 
+\begin_inset Formula $\mathsf{A}$
+\end_inset 
+
+ hay un menor de tamaño 
+\begin_inset Formula $r\times r$
+\end_inset 
+
+ no nulo, se cumple que 
+\begin_inset Formula $\det\left[\mathsf{A}\right]\neq0$
+\end_inset 
+
+.
+ Así que puedo multiplicar por la izquierda por 
+\begin_inset Formula $\mathsf{A}^{-1}$
+\end_inset 
+
+ con el siguiente resultado:
+\begin_inset Formula \[
+\left(\begin{array}{c}
+\hat{\theta}^{1}\\
+\vdots\\
+\hat{\theta}^{r}\end{array}\right)=\mathsf{A}^{-1}\left(\begin{array}{c}
+\theta^{1}\\
+\vdots\\
+\theta^{r}\end{array}\right)=\left(\begin{array}{c}
+dx^{1}\\
+\vdots\\
+dx^{r}\end{array}\right)+\left(\begin{array}{c}
+\beta_{r+1}^{1}dx^{r+1}+\ldots+\beta_{m}^{1}dx^{m}\\
+\vdots\\
+\beta_{r+1}^{r}dx^{r+1}+\ldots+\beta_{m}^{r}dx^{m}\end{array}\right)\]
+
+\end_inset 
+
+ lo que he hecho ha sido reducir el problema a la anulación de otras formas
+ diferenciales que es más fácil de tratar.
+ Lo que tengo es que se debe anular:
+\begin_inset Formula \begin{eqnarray}
+\hat{\theta}^{a} & = & dx^{a}+\beta_{\mu}^{a}dx^{\mu}\nonumber \\
+ & = & dz^{a}+\beta_{\mu}^{a}dx^{\mu}\label{ec. de lo que se debe anular}\end{eqnarray}
+
+\end_inset 
+
+ con 
+\begin_inset Formula $a=1\ldots r$
+\end_inset 
+
+, 
+\begin_inset Formula $\mu=r+1\ldots m$
+\end_inset 
+
+.
+ Para distinguir las coordenadas de la subvariedad de las que no lo son,
+ adoptamos la siguiente notación: 
+\begin_inset Formula $\left(dx^{1}\ldots dx^{r},dx^{r+1}\ldots dx^{m}\right)\equiv\left(dz^{1}\ldots dz^{r},dx^{r+1}\ldots dx^{m}\right)\equiv\left(dz^{a},dx^{\mu}\right)$
+\end_inset 
+
+.
+ Recordemos (ecuación 
+\begin_inset LatexCommand \ref{ec. explicitas subvar N Frobenius}
+
+\end_inset 
+
+) que para especificar la subvariedad 
+\begin_inset Formula $N$
+\end_inset 
+
+, debemos hallar la expresión explícita de las 
+\begin_inset Formula $z^{a}$
+\end_inset 
+
+ en función de las 
+\begin_inset Formula $x^{\mu}$
+\end_inset 
+
+.
+\layout Standard
+
+En la figura 
+\begin_inset LatexCommand \ref{fig M,N y curvas de integración}
+
+\end_inset 
+
+ la subvariedad está representada por el plano de las 
+\begin_inset Formula $z^{a}=0$
+\end_inset 
+
+.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+nofig
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig M,N y curvas de integración}
+
+\end_inset 
+
+
+\begin_inset Formula $z^{a}\, vs.\, x^{\mu}$
+\end_inset 
+
+ 
+\end_inset 
+
+Un punto 
+\begin_inset Formula $P_{0}\in M$
+\end_inset 
+
+ se expresa así: 
+\begin_inset Formula $P_{0}=\left(x_{0}^{1}\equiv z_{0}^{1},\ldots,x_{0}^{r}\equiv z_{0}^{r},x_{0}^{r+1}\ldots x_{0}^{m}\right)$
+\end_inset 
+
+.
+ Su proyección sobre 
+\begin_inset Formula $N$
+\end_inset 
+
+ es 
+\begin_inset Formula $\tilde{P}_{0}=\left(x_{0}^{r+1}\ldots x_{0}^{m}\right)$
+\end_inset 
+
+.
+ Podemos construir una curva 
+\begin_inset Formula \[
+\gamma:\left\{ x^{\mu}\left[t\right]:t\in\left[0,1\right]\right\} \]
+
+\end_inset 
+
+desde 
+\begin_inset Formula $\tilde{P}_{0}\fdi x^{\mu}\left[0\right]=x_{0}^{\mu}$
+\end_inset 
+
+ (
+\begin_inset Formula $t=0$
+\end_inset 
+
+) hasta 
+\begin_inset Formula $\tilde{P}_{1}\fdi x^{\mu}\left[1\right]=x_{1}^{\mu}$
+\end_inset 
+
+ (
+\begin_inset Formula $t=1$
+\end_inset 
+
+).
+\layout Standard
+
+Voy a suponer que 
+\begin_inset Formula $z^{a}$
+\end_inset 
+
+ y 
+\begin_inset Formula $x^{\mu}$
+\end_inset 
+
+ dependen únicamente de un parámetro, momento en el cual se hacen necesarias
+ las curvas\SpecialChar \@.
+ Por fin el sistema de ecuaciones diferenciales ordinarias: sustituye
+ndo 
+\begin_inset Formula $x^{\mu}\left[t\right]$
+\end_inset 
+
+ y hallamos 
+\begin_inset Formula $z^{a}\left[t\right]$
+\end_inset 
+
+.
+ Al operar sobre una curva estamos en condiciones de escribir la ecuación
+ 
+\begin_inset LatexCommand \vref{ec. de lo que se debe anular}
+
+\end_inset 
+
+ utilizando que 
+\begin_inset Formula $d\left[z^{a}\left[t\right]\right]=\dt{z^{a}}dt$
+\end_inset 
+
+ y 
+\begin_inset Formula $d\left[x^{\mu}\left[t\right]\right]=\dpt{x^{\mu}}dt$
+\end_inset 
+
+: 
+\begin_inset Formula \begin{eqnarray}
+0 & = & \dt{z^{a}}dt+\beta_{\mu}^{a}\left[z^{a}\left[t\right],x^{\mu}\left[t\right]\right]\dpa{x^{\mu}}{t}dt\nonumber \\
+ & = & \dt{z^{a}}+\beta_{\mu}^{a}\left[z^{a}\left[t\right],x^{\mu}\left[t\right]\right]\dpa{x^{\mu}}{t}\label{ec no lineales}\end{eqnarray}
+
+\end_inset 
+
+ Pero queremos que el punto esté contenido en la curva:
+\begin_inset Formula \[
+z^{a}\left[0\right]=z_{0}^{a}\equiv C^{a}\]
+
+\end_inset 
+
+ donde 
+\begin_inset Formula $C^{a}$
+\end_inset 
+
+ son unas constantes.
+ Tendremos una curva tal que sobre ella las 
+\begin_inset Formula $r$
+\end_inset 
+
+ 1-formas se anulan.
+ En principio uno puede escoger cualquier curva.
+ La condición de integrabilidad es la que me garantiza que el punto final
+ 
+\begin_inset Formula $P_{1}$
+\end_inset 
+
+ se corresponde con el punto final de abajo, 
+\begin_inset Formula $\tilde{P}_{1}$
+\end_inset 
+
+, que no depende de la trayectoria escogida para calcular.
+ Cuando resuelva las ecuaciones 
+\begin_inset LatexCommand \ref{ec no lineales}
+
+\end_inset 
+
+, que en general no son lineales, se obtendrán funciones
+\begin_inset Formula \[
+z_{1}^{a}=h^{a}\left[t,C^{a}\equiv z_{0}^{a},x_{0}^{\mu},x_{1}^{\mu}\right]\]
+
+\end_inset 
+
+ con 
+\begin_inset Formula $a=1\ldots r$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mu=r+1\ldots m$
+\end_inset 
+
+, soluciones dependientes de 
+\begin_inset Formula $t,$
+\end_inset 
+
+ las constantes y los puntos inicial y final.
+ En 
+\begin_inset Formula $t=1$
+\end_inset 
+
+, punto final, tendremos:
+\begin_inset Formula \[
+z^{a}=h^{a}\left[C^{a},x_{0}^{\mu},x^{\mu}\right]\]
+
+\end_inset 
+
+ así que tenemos una serie de relaciones que nos definen la subvariedad
+ sobre la que se anula la forma diferencial inicial, justo lo que buscábamos.
+ Escribimos 
+\begin_inset Formula $x^{\mu}$
+\end_inset 
+
+ como variable y no 
+\begin_inset Formula $x_{1}^{\mu}$
+\end_inset 
+
+ porque el método no depende del punto final; puede tratarse de cualquier
+ punto.
+ 
+\layout Standard
+
+La idea es resolver las ecuaciones en derivadas parciales sobre curvas apoyadas
+ en la superficie, aprovechando que sí sabemos integrar ecuaciones diferenciales
+ ordinarias.
+ Nos movemos por el 
+\begin_inset Quotes eld
+\end_inset 
+
+suelo
+\begin_inset Quotes erd
+\end_inset 
+
+ (figura 
+\begin_inset LatexCommand \vref{fig M,N y curvas de integración}
+
+\end_inset 
+
+) hallando diversas soluciones 
+\begin_inset Formula $\left(z^{a}\right)$
+\end_inset 
+
+, curvas de la variedad 
+\begin_inset Formula $N$
+\end_inset 
+
+ que se busca, por lo cual el punto final 
+\begin_inset Formula $x^{\mu}$
+\end_inset 
+
+ debe ser variable.
+ Pero como es independiente de la curva (como vamos a ver), escojo una recta.
+\layout Standard
+
+Las condiciones de independencia del camino (integrabilidad) son que existan
+ 1-formas 
+\begin_inset Formula $\omega_{b}^{a}$
+\end_inset 
+
+ tales que
+\begin_inset Formula \begin{equation}
+d\theta^{a}=\omega_{b}^{a}\pe\theta^{b}\label{ec cond. integrabilidad Frobenius}\end{equation}
+
+\end_inset 
+
+ Esto es un resultado local.
+ Para un resultado global habrá que imponer alguna condición adicional.
+ Es decir, localmente podemos construir la subvariedad, a menos que añadamos
+ algún tipo de condición topológica.
+\layout Description
+
+Fröbenius (teorema)
+\begin_inset LatexCommand \index{teorema de Frobenius}
+
+\end_inset 
+
+ Sea 
+\begin_inset Formula $M$
+\end_inset 
+
+ una variedad diferenciable de clase 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ y 
+\begin_inset Formula $\left\{ \theta^{1}\ldots\theta^{r}\right\} $
+\end_inset 
+
+ 1-formas diferenciables de clase 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ linealmente independientes en un entorno 
+\begin_inset Formula $U$
+\end_inset 
+
+ de un punto 
+\begin_inset Formula $P\in M$
+\end_inset 
+
+ y tal que se cumple que existen 
+\begin_inset Formula $r\times r$
+\end_inset 
+
+ 1-formas diferenciales 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ 
+\begin_inset Formula $\omega_{b}^{a}$
+\end_inset 
+
+ con 
+\begin_inset Formula $a=1\ldots r,b=1\ldots r$
+\end_inset 
+
+ tales que 
+\begin_inset Formula $d\theta^{a}=\omega_{b}^{a}\pe d\theta^{b}$
+\end_inset 
+
+.
+ Entonces existen 
+\begin_inset Formula $r\times r$
+\end_inset 
+
+ funciones 
+\begin_inset Formula $f_{b}^{a}$
+\end_inset 
+
+ y 
+\begin_inset Formula $r$
+\end_inset 
+
+ funciones 
+\begin_inset Formula $g^{b}$
+\end_inset 
+
+ tales que se verifica que 
+\begin_inset Formula $\theta^{a}=f_{b}^{a}dg^{b}$
+\end_inset 
+
+ en 
+\begin_inset Formula $U$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+Queríamos resolver 
+\begin_inset Formula $\theta^{a}=0$
+\end_inset 
+
+ es decir, 
+\begin_inset Formula $\theta^{a}=f_{b}^{a}dg^{b}=0$
+\end_inset 
+
+.
+ pero recordemos que 
+\begin_inset Formula \begin{eqnarray*}
+0=\theta^{1} & = & f_{1}^{1}dg^{1}+\ldots+f_{r}^{1}dg^{r}\\
+ & \vdots\\
+0=\theta^{r} & = & f_{1}^{r}dg^{1}+\ldots+f_{r}^{r}dg^{r}\end{eqnarray*}
+
+\end_inset 
+
+ para que esto se anule habiendo independencia lineal (es decir, un determinante
+ 
+\begin_inset Formula $\det\left[f_{b}^{a}\right]\neq0$
+\end_inset 
+
+ en 
+\begin_inset Formula $U$
+\end_inset 
+
+ ) necesariamente debe ser: 
+\begin_inset Formula $dg^{1}=\ldots=dg^{r}=0$
+\end_inset 
+
+, lo que a su vez implica que 
+\begin_inset Formula \begin{eqnarray*}
+g^{1}\left[x^{1}\ldots x^{m}\right] & = & cte_{1}\\
+ & \vdots\\
+g^{r}\left[x^{1}\ldots x^{m}\right] & = & cte_{r}\end{eqnarray*}
+
+\end_inset 
+
+ de donde (localmente, por el teorema de la función implícita)
+\begin_inset Formula \begin{eqnarray*}
+x^{1} & = & h^{1}\left[x^{r+1}\ldots x^{m}\right]\\
+ & \vdots\\
+x^{r} & = & h^{r}\left[x^{r+1},\ldots x^{m}\right]\end{eqnarray*}
+
+\end_inset 
+
+ para obtener las 
+\begin_inset Formula $g^{i}$
+\end_inset 
+
+ hay que despejar de las siguientes ecuaciones: 
+\begin_inset Formula \[
+z^{a}=h^{a}\left[C^{a},x_{0}^{\mu},x^{\mu}\right]\]
+
+\end_inset 
+
+las 
+\begin_inset Formula $C^{a}$
+\end_inset 
+
+,
+\begin_inset Formula \[
+C^{a}=g^{a}\left[z^{a},x^{\mu},x_{0}^{\mu}\right]\]
+
+\end_inset 
+
+ Cuando nos den un sistema de 1-formas del tipo del teorema debemos comprobar
+ la independencia lineal en torno al punto y ver si satisface o no la condición
+ de integrabilidad, y después o bien integrar a mano (entonces no sería
+ necesaria la condición de integrabilidad) o pasar a un sistema de ecuaciones
+ ordinarias por el procedimiento explicado.
+\layout Description
+
+
+\size small 
+Ejemplo Decidir si es completamente integrable o no el sistema
+\begin_inset Formula \begin{eqnarray*}
+\left(1-uy\right)dx+\left(1-ux\right)dy+\left(u-v\right)du & = & 0\\
+\left(vy-1\right)dx+\left(vx-1\right)dy+\left(u-v\right)dv & = & 0\end{eqnarray*}
+
+\end_inset 
+
+ Integrar hasta donde sea posible.
+ 
+\begin_deeper 
+\layout Standard
+
+
+\size small 
+Tendríamos que comprobar si es integrable: se hace con la condición 
+\begin_inset LatexCommand \ref{ec cond. integrabilidad Frobenius}
+
+\end_inset 
+
+.
+ Una vez comprobada la integrabilidad, el punto final será independiente
+ de la curva escogida.
+ Así que podemos intentar despejar, por ejemplo, 
+\begin_inset Formula $dx,dy$
+\end_inset 
+
+ en término de 
+\begin_inset Formula $u,v$
+\end_inset 
+
+.
+ Ponemos que 
+\begin_inset Formula $x,y$
+\end_inset 
+
+ dependen de 
+\begin_inset Formula $t$
+\end_inset 
+
+ y una curva de 
+\begin_inset Formula $\left(u_{0},v_{0}\right)$
+\end_inset 
+
+ a 
+\begin_inset Formula $\left(u_{1},v_{1}\right)$
+\end_inset 
+
+, etc .
+ Tendríamos 
+\begin_inset Formula $x,y$
+\end_inset 
+
+ en función de 
+\begin_inset Formula $u,v$
+\end_inset 
+
+: la subvariedad integrada.
+\end_deeper 
+\layout Section
+
+Formulación simpléctica de la mecánica hamiltoniana
+\layout Standard
+
+Vamos a estudiar una formulación geométrica de la mecánica hamiltoniana.
+ Para ello se dota de una estructura simpléctica al espacio de fases: una
+ 2-forma diferencial cerrada sobre él.
+ Se dice entonces que el espacio de fases posee estructura de 
+\emph on 
+variedad simpléctica
+\begin_inset LatexCommand \index{variedad simpléctica}
+
+\end_inset 
+
+.
+\layout Description
+
+forma\SpecialChar ~
+simpléctica
+\begin_inset LatexCommand \index{forma simpléctica}
+
+\end_inset 
+
+ sea 
+\begin_inset Formula $M$
+\end_inset 
+
+ una variedad diferenciable 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+.
+ Se dice que una 2-forma diferencial 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ 
+\begin_inset Formula $\Omega$
+\end_inset 
+
+ es simpléctica si se cumple que
+\begin_deeper 
+\layout Enumerate
+
+es cerrada 
+\begin_inset Formula $\left(d\Omega=0\right)$
+\end_inset 
+
+
+\layout Enumerate
+
+es no degenerada 
+\begin_inset Formula $\left(\forall\mathsf{x}\neq0,\exists\mathsf{y}:\Omega\left[\mathsf{x},\mathsf{y}\right]\neq0\right)$
+\end_inset 
+
+ con campos vectoriales 
+\begin_inset Formula $\xi,\eta$
+\end_inset 
+
+.
+ Es decir, tiene inversa.
+\layout Standard
+
+No podemos utilizar cualquier variedad para definir formas con estas propiedades
+; son pues bastante exigentes.
+ 
+\end_deeper 
+\layout Standard
+
+Construimos el fibrado cotangente de una variedad de dimensión 
+\begin_inset Formula $m$
+\end_inset 
+
+ asociando a cada punto de ésta su espacio cotangente.
+ Pasamos a un espacio de tamaño 
+\begin_inset Formula $2m$
+\end_inset 
+
+.
+ Sobre el espacio cotangente podemos definir de manera natural una estructura
+ simpléctica.
+ 
+\layout Standard
+
+Supongamos una variedad 
+\begin_inset Formula $S$
+\end_inset 
+
+ y sobre ella unas coordenadas 
+\begin_inset Formula $\left\{ q^{1}\ldots q^{m}\right\} $
+\end_inset 
+
+.
+ En el fibrado cotangente de 
+\begin_inset Formula $S$
+\end_inset 
+
+, que llamaremos 
+\begin_inset Formula $M$
+\end_inset 
+
+ (dimensión 
+\begin_inset Formula $2m$
+\end_inset 
+
+) podemos dar unas coordenadas
+\begin_inset Formula \[
+\left\{ q^{1}\ldots q^{m},p^{1}\ldots p^{m}\right\} \]
+
+\end_inset 
+
+ En la analogía del sistema mecánico el espacio de configuración es 
+\begin_inset Formula $S$
+\end_inset 
+
+, el de los grados de libertad 
+\begin_inset Formula $q^{i}$
+\end_inset 
+
+.
+ El cotangente es el de los momentos generalizados, 
+\begin_inset Formula $p^{j}$
+\end_inset 
+
+.
+ El fibrado cotangente, 
+\begin_inset Formula $M$
+\end_inset 
+
+, es lo que conocemos como 
+\begin_inset Quotes eld
+\end_inset 
+
+espacio de las fases
+\begin_inset Quotes erd
+\end_inset 
+
+.
+ La forma simpléctica sobre 
+\begin_inset Formula $M$
+\end_inset 
+
+ se construye así:
+\begin_inset Formula \[
+\Omega=dq^{1}\pe dp^{1}+dq^{2}\pe dp^{2}+\ldots+dq^{m}\pe dp^{m}\]
+
+\end_inset 
+
+ Esta forma es obviamente cerrada, 
+\begin_inset Formula $d\Omega=0$
+\end_inset 
+
+.
+ Además es no degenerada, ya que si tenemos un campo 
+\begin_inset Formula $\xi\neq0$
+\end_inset 
+
+ sobre 
+\begin_inset Formula $M$
+\end_inset 
+
+ 
+\begin_inset Formula \[
+\xi=\xi^{q^{1}}\dpa{}{q^{1}}+\ldots\xi^{q^{m}}\dpa{}{q^{m}}+\xi^{p^{1}}\dpa{}{p^{1}}+\ldots\xi^{p^{m}}\dpa{}{p^{m}}\]
+
+\end_inset 
+
+ entonces alguna es distinta de cero, por ejemplo, 
+\begin_inset Formula $\xi^{q_{1}}\neq0$
+\end_inset 
+
+.
+ Análogamente se puede encontrar 
+\begin_inset Formula $\eta=\eta^{p^{1}}\dpa{}{p^{1}}$
+\end_inset 
+
+.
+ Operando, 
+\begin_inset Formula $\Omega\left[\xi,\eta\right]\neq0$
+\end_inset 
+
+.
+ Se dice que 
+\begin_inset Formula $\Omega$
+\end_inset 
+
+ 
+\emph on 
+dota 
+\emph default 
+de una
+\emph on 
+ estructura simpléctica
+\begin_inset LatexCommand \index{estructura simpléctica}
+
+\end_inset 
+
+
+\emph default 
+ a la variedad.
+ 
+\layout Standard
+
+Esta estructura simpléctica nos permite asociar a cada campo vectorial 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ una 1-forma 
+\begin_inset Formula $\omega$
+\end_inset 
+
+ y a cada 1-forma 
+\begin_inset Formula $\omega$
+\end_inset 
+
+ un campo vectorial 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+:
+\begin_inset Formula \begin{eqnarray*}
+ & \Omega\\
+\mathsf{v} & \fdi & \omega\end{eqnarray*}
+
+\end_inset 
+
+ Se hace así: 
+\begin_inset Formula $i_{\mathsf{v}}\Omega=\omega$
+\end_inset 
+
+.
+ En componentes:
+\begin_inset Formula \begin{eqnarray*}
+\Omega & = & \Omega_{ij}dx^{i}\pe dx^{j}\\
+\mathsf{v} & = & v^{i}\dpa{}{x^{i}}\\
+\omega & = & \omega_{k}dx^{k}\\
+i_{\mathsf{v}}\Omega & = & \Omega_{ij}v^{i}\\
+ & = & \omega_{j}\end{eqnarray*}
+
+\end_inset 
+
+ La no degeneración permite viajar en sentido inverso:
+\begin_inset Formula \[
+v^{i}=\left(\Omega^{-1}\right)^{ij}\omega_{j}\]
+
+\end_inset 
+
+ Consideremos el caso particular de una forma diferencial 
+\begin_inset Formula $\omega=-dH$
+\end_inset 
+
+, igual a la diferencial de una función 
+\begin_inset Formula $H$
+\end_inset 
+
+ (signo por conveniencia) sobre el fibrado cotangente.
+ A esta 1-forma le podemos asociar un 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ mediante la forma simpléctica.
+ En el caso de un sistema dinámico
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Prescindimos de tratar hamiltonianos dependientes del tiempo por simplicidad.
+\end_inset 
+
+ 
+\begin_inset Formula $H=H\left[p,q\right]$
+\end_inset 
+
+:
+\begin_inset Formula \[
+i_{\mathsf{v}}\Omega=-dH\]
+
+\end_inset 
+
+ 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ define un flujo sobre el espacio cotangente, un flujo cuyas curvas integrales
+ serán las trayectorias sobre el espacio de fases del sistema dinámico:
+\begin_inset Formula \begin{eqnarray*}
+H & = & H\left[q^{1}\ldots q^{m},p^{1}\ldots p^{m}\right]\\
+dH & = & \dpa{H}{q^{1}}dq^{1}+\ldots+\dpa{H}{q^{m}}dq^{m}+\ldots+\dpa{H}{p^{1}}dp^{1}+\ldots+\dpa{H}{p^{m}}dp^{m}\end{eqnarray*}
+
+\end_inset 
+
+ las coordenadas de 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ son
+\begin_inset Formula \[
+\mathsf{v}=v^{q^{1}}\dpa{}{q^{1}}+\ldots v^{q^{m}}\dpa{}{q^{m}}+v^{p^{1}}\dpa{}{p^{1}}+v^{p^{m}}\dpa{}{p^{m}}\]
+
+\end_inset 
+
+ y finalmente:
+\begin_inset Formula \begin{eqnarray*}
+i_{\mathsf{v}}\Omega & = & v^{q^{1}}dp^{1}+\ldots+v^{q^{m}}dp^{m}-v^{p^{1}}dq^{1}-\ldots-v^{p^{m}}dq^{m}\\
+ & =- & \dpa{H}{q^{1}}dq^{1}+\ldots-\dpa{H}{p^{m}}dp^{m}\end{eqnarray*}
+
+\end_inset 
+
+ con lo que, identificando coeficientes:
+\begin_inset Formula \begin{eqnarray*}
+v^{q^{1}} & = & -\dpa{H}{p^{1}}\\
+ & \vdots\\
+v^{q^{m}} & = & -\dpa{H}{p^{m}}\\
+v^{p^{1}} & = & \dpa{H}{q^{1}}\\
+ & \vdots\\
+v^{p^{m}} & = & \dpa{H}{q^{m}}\end{eqnarray*}
+
+\end_inset 
+
+¿Cuál es el flujo de este campo vectorial?, ¿cuáles sus curvas integrales?,
+\begin_inset Formula \begin{eqnarray*}
+\dt{q^{1}} & = & -\dpa{H}{p^{1}}\\
+ & \vdots\\
+\dt{q^{m}} & = & -\dpa{H}{p^{m}}\\
+\dt{p^{1}} & = & \dpa{H}{q^{1}}\\
+ & \vdots\\
+\dt{p^{m}} & = & \dpa{H}{q^{m}}\end{eqnarray*}
+
+\end_inset 
+
+ las curvas integrales satisfacen las ecuaciones de Hamilton.
+ Al estar la mecánica hamiltoniana en términos de ecuaciones de primer orden
+ se pueden estudiar las ecuaciones como curvas integrales de un campo vectorial.
+ Se puede comprobar que el hamiltoniano tiene que quedar invariante bajo
+ este flujo, en la evolución del sistema mecánico:
+\begin_inset Formula \[
+\mathsf{v}\left[H\right]=0\]
+
+\end_inset 
+
+ a partir de 
+\begin_inset Formula $dH\left[\mathsf{v}\right]=0$
+\end_inset 
+
+.
+ Se puede deducir también el teorema de Liouville: 
+\begin_inset Formula $\Omega$
+\end_inset 
+
+ queda invariante bajo la derivada de Lie en la dirección de 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+.
+ Y el volumen del espacio de fases es 
+\begin_inset Formula $\Omega^{m}$
+\end_inset 
+
+.
+ 
+\layout Description
+
+Liouville (teorema
+\begin_inset LatexCommand \index{teorema de Liouville}
+
+\end_inset 
+
+) El elemento de volumen del espacio de fases queda invariante bajo la evolución
+ del sistema mecánico.
+ El elemento de volumen es una 
+\begin_inset Formula $2m$
+\end_inset 
+
+-forma diferencial 
+\begin_inset Formula $\Omega\pe\cdots\left(m\, veces\right)\cdots\pe\Omega$
+\end_inset 
+
+.
+ 
+\begin_inset Formula \[
+\mathcal{L}_{\mathsf{v}}\left[\Omega\pe\cdots\pe\Omega\right]=0\]
+
+\end_inset 
+
+ Es una igualdad que puede probarse aplicando las propiedades de la derivada
+ de Lie y la derivada exterior y sabiendo que 
+\begin_inset Formula $\Omega$
+\end_inset 
+
+ es cerrada: 
+\begin_inset Formula $\mathcal{L}_{\mathsf{v}}\Omega=d\left[i_{\mathsf{v}}\Omega\right]+i_{\mathsf{v}}d\Omega=-d\left[dH\right]$
+\end_inset 
+
+.
+ Reformulamos así el teorema de Liouvile: 
+\begin_inset Formula $\mathsf{v}\left[H\right]=0$
+\end_inset 
+
+.
+ 
+\begin_inset Formula $H$
+\end_inset 
+
+ es invariante bajo la evolución del sistema mecánico (
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+): 
+\begin_inset Formula $\mathsf{v}\left[H\right]=dH\left[\mathsf{v}\right]=-\left(i_{\mathsf{v}}\Omega\right)\left[\mathsf{v}\right]=-\Omega\left[\mathsf{v},\mathsf{v}\right]=0$
+\end_inset 
+
+ ya que 
+\begin_inset Formula $\Omega$
+\end_inset 
+
+ es antisimétrica.
+ 
+\layout Standard
+
+Sean 
+\begin_inset Formula $f,g$
+\end_inset 
+
+ dos funciones y 
+\begin_inset Formula $\left\{ f,g\right\} $
+\end_inset 
+
+ su corchete de Poisson.
+ Asociamos a una función 
+\begin_inset Formula $f$
+\end_inset 
+
+ una 
+\begin_inset Formula $1$
+\end_inset 
+
+-forma diferencial 
+\begin_inset Formula $df$
+\end_inset 
+
+ 
+\begin_inset Formula \begin{eqnarray*}
+f\fld df\fld i_{\mathsf{v}_{f}}\Omega=-df & \Fd & \mathsf{v}_{f}\left[g\right]=\left\{ f,g\right\} =0\\
+g\fld dg\fld i_{\mathsf{v}_{g}}\Omega=-dg & \Fd & \mathsf{v}_{g}\left[f\right]=\left\{ f,g\right\} =0\end{eqnarray*}
+
+\end_inset 
+
+ 
+\layout Standard
+
+Se cumple que 
+\begin_inset Formula $\Omega\left[\mathsf{v}_{f},\mathsf{v}_{g}\right]=\left\{ f,g\right\} $
+\end_inset 
+
+.
+ El paréntesis de Poisson indica cómo varía 
+\begin_inset Formula $g$
+\end_inset 
+
+ a lo largo del flujo de 
+\begin_inset Formula $f$
+\end_inset 
+
+, 
+\begin_inset Formula $\mathsf{v}_{f}$
+\end_inset 
+
+.
+ Esta reformulación permite aplicarlo a sistemas más generales.
+\layout Section
+
+Por hacer
+\layout Enumerate
+
+
+\size small 
+Considerar una notación que, como en el capítulo de tensores, distinga entre
+ el objeto y sus coordenadas.
+ Así se podrá indicar el grado de una forma (
+\begin_inset Formula $\omega^{3}$
+\end_inset 
+
+ es una 3-forma) abreviadamente sin que parezca una componente.
+ Por ejemplo: letras griegas 
+\begin_inset Formula $\pmb\omega$
+\end_inset 
+
+ en negrita o con tilde, 
+\begin_inset Formula $\tilde{\omega}$
+\end_inset 
+
+.
+\layout Enumerate
+
+
+\size small 
+Desplazar la parte del contenido más informal de la sección 
+\begin_inset LatexCommand \ref{sec concepto de forma diferencial}
+
+\end_inset 
+
+ a la introducción.
+\layout Enumerate
+
+
+\size small 
+Introducir la relación entre 
+\begin_inset Formula $I_{1}\ldots I_{3}$
+\end_inset 
+
+ en la sección 
+\begin_inset LatexCommand \ref{sec concepto de forma diferencial}
+
+\end_inset 
+
+ y las integrales de línea (circulaciones), superficie (flujos) y volumen.
+\layout Enumerate
+
+
+\size small 
+Insertar en la subsección 
+\begin_inset LatexCommand \ref{ssec def de producto exterior}
+
+\end_inset 
+
+ citas a la sección de simetrización del capítulo 2 y a las bases duales
+ explicadas en el capítulo 1.
+\layout Enumerate
+
+
+\size small 
+Citar en la sección 
+\begin_inset LatexCommand \ref{sec aplicaciones diferenciables}
+
+\end_inset 
+
+ el capítulo 1 para una discusión sobre el dominio de 
+\begin_inset Formula $F$
+\end_inset 
+
+.
+\layout Enumerate
+
+
+\size small 
+Reformar la exposición de la sección 
+\begin_inset LatexCommand \ref{sec teorema frobenius}
+
+\end_inset 
+
+; mucho cuidado al estudiarla en su forma actual, es confusa.
+\layout Enumerate
+
+
+\size small 
+Insertar la figura 
+\begin_inset LatexCommand \ref{fig M,N y curvas de integración}
+
+\end_inset 
+
+.
+\the_end

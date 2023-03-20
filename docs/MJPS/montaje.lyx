@@ -1,0 +1,1075 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass scrbook
+\begin_preamble
+\usepackage{framed} 
+\typearea{10}
+\usepackage{multicol}
+\end_preamble
+\language spanish
+\inputencoding auto
+\fontscheme times
+\graphics default
+\paperfontsize 11
+\spacing single 
+\papersize Default
+\paperpackage widemarginsa4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+
+\layout Chapter
+
+Montaje
+\layout Section
+
+PCB
+\layout Standard
+
+El PCB es a doble cara.
+ En la figura 
+\begin_inset LatexCommand \ref{fig_pcb_cara_arriba}
+
+\end_inset 
+
+ se puede ver la cara de arriba y en la figura 
+\begin_inset LatexCommand \ref{fig_pcb_cara_abajo}
+
+\end_inset 
+
+ la cara de abajo.
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename ps/pcb-cara-arriba.eps
+	display monochrome
+	rotateAngle -90
+
+\end_inset 
+
+
+\layout Caption
+
+PCB, cara de arriba
+\begin_inset LatexCommand \label{fig_pcb_cara_arriba}
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename ps/pcb-cara-abajo.eps
+	display monochrome
+	rotateAngle -90
+
+\end_inset 
+
+
+\layout Caption
+
+PCB, cada de abajo
+\begin_inset LatexCommand \label{fig_pcb_cara_abajo}
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Section
+
+Componentes
+\layout Standard
+
+A continuación se detallan los componentes necesarios para construir la
+ placa JPS-XPC84.
+ En la tabla 
+\begin_inset LatexCommand \ref{tab_componentes_JPS-XPC84}
+
+\end_inset 
+
+ se describe el componente y su correspondencia dentro del esquema de la
+ Figura 
+\begin_inset LatexCommand \ref{fig_esquematico_jps}
+
+\end_inset 
+
+.
+\layout Standard
+
+
+\begin_inset Float table
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset  Tabular
+<lyxtabular version="3" rows="20" columns="4">
+<features>
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="left" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="left" valignment="top" leftline="true" rightline="true" width="0pt">
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+\size footnotesize 
+Cantidad
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+Descripción
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+Ref.
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+Notas
+\end_inset 
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Zócalo PLCC84
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+U1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Para ubicar la FPGA
+\end_inset 
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Zócalo 2x4 (8-lead LAP)
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+U2
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Para ubicar memoria AT17C128
+\end_inset 
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Zócalo 2x8
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+U3
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Para ubicar multiplexor 74HC157
+\end_inset 
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Zócalo 2x7
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+OSC1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Para ubicar un reloj
+\end_inset 
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+10
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Condensadores de desacoplo
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+C1-C10
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Condensadores de desacoplo
+\end_inset 
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Led rojo 3mm
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+D1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Led de programación
+\end_inset 
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Led rojo 3mm
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+D3
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Led de alimentación
+\end_inset 
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Led verde (ó amarillo) 3mm
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+D2
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Led de pruebas
+\end_inset 
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+2
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Pulsadores
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+S1-S2
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Programación y pruebas
+\end_inset 
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+3
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Resistencias 1/4w 680
+\begin_inset Formula $\Omega$
+\end_inset 
+
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+R1,R2,R6
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Polarización leds
+\end_inset 
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+2
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Array resistencias 4+1, 4K7
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+R3-R4
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Resistencias de pull-up
+\end_inset 
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Resistencia de 4K7
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+R5
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Resistencia de pull-down
+\end_inset 
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+7
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Conector acodado macho, 10 vías
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+CT1-CT7
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Puertos de expansión y control
+\end_inset 
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Tira de pines machos, no torneados
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+CT8
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Conector cable JTAG
+\end_inset 
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Jumper
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+JP1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Jumper modo programación 
+\end_inset 
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Clema para circuito impreso, 2 vías
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+CLEMA1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Alimentación
+\end_inset 
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Jack hembra para circuito impreso
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+JACK1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Alimentación
+\end_inset 
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Array de 4 switches
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+S3
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Switch de configuración
+\end_inset 
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+4
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Separadores hembra-hembra + tornillo
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\size footnotesize 
+Soportes para la placa
+\end_inset 
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset 
+
+
+\layout Caption
+
+Listado de componentes de la placa JPS-XPC84
+\begin_inset LatexCommand \label{tab_componentes_JPS-XPC84}
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Section
+
+Disposición de los componentes
+\begin_inset LatexCommand \label{ap_disposicion_componentes}
+
+\end_inset 
+
+
+\layout Standard
+
+En la figura 
+\begin_inset LatexCommand \ref{fig_disposicion_componetes_jps}
+
+\end_inset 
+
+ se muestra una foto de la tarjeta JPS en la que se indican algunos de los
+ componentes, para que sirvan de referencia a la hora de montar la placa
+ a partir del PCB.
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename ps/jps-comp.eps
+	display monochrome
+	width 85col%
+
+\end_inset 
+
+
+\layout Caption
+
+Disposición de componentes en la placa JPS
+\begin_inset LatexCommand \label{fig_disposicion_componetes_jps}
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+A la hora de realizar el montaje hay que tener en cuenta lo siguiente:
+\layout Itemize
+
+Cuidado al colocar los arrays de resistencias R3 y R4.
+ Pata común, marcada con un punto en los arrays, debe situarse sobre el
+ pad cuadrado.
+ Según tenemos la placa como se indica en la figura 
+\begin_inset LatexCommand \ref{fig_disposicion_componetes_jps}
+
+\end_inset 
+
+, la pata común del array R3 debe estar a la derecha y la del array R4 arriba.
+\layout Itemize
+
+La placa está pensada para usarse switches acodados, de manera que si se
+ sitúa otra placa encima, se tenga acceso a ellos sin problemas.
+ Sin embargo, es posible situar switches no acodados, quizás porque el proveedor
+ no tenga otros.
+ En ese caso puede surgir la duda de cómo colocarlos.
+ Se puede colocar en cualquiera de sus posiciones, sin embargo, para que
+ estén acordes a esta documentación, el microswitch que tenga el número
+ 1 deberá estar en el lado derecho, según se mira la placa como se indica
+ en la figura 
+\begin_inset LatexCommand \ref{fig_disposicion_componetes_jps}
+
+\end_inset 
+
+ (aunque el número quede al revés).
+\layout Itemize
+
+¡¡Cuidado con la polaridad de los led!!! Los leds son el único medio para
+ saber rápidamente si la placa está funcionando o no.
+ Prestar atención a la polaridad a la hora de conectarlos.
+\layout Section
+
+Pruebas
+\layout Standard
+
+Una vez montada la placa, se pueden hacer las siguientes pruebas:
+\layout Enumerate
+
+Alimentar la placa a 5 voltios y comprobar si se enciende el led de power-on.
+ Si no es así, puede ser que esté colocado al revés, que no hayamos soldado
+ correctamente los conectores de alimentación o que no estemos alimentando
+ correctamente.
+\layout Enumerate
+
+Con la FPGA colocada (y la eeprom no) el led indicado como 
+\series bold 
+program
+\series default 
+ debe estar 
+\series bold 
+encendido
+\series default 
+.
+ Esto indica que la FPGA NO está cargada.
+ Si no es así conviene revisar si lo hemos colocado con la polaridad adecuada.
+\layout Enumerate
+
+Conseguir una eeprom grabada con algún programa para nuestra FPGA (si no
+ tenemos pasar al siguiente punto).
+ Colocar el jumper Jp1, y poner el switch 1 en posición ON
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+El que haya que colocarlo a ON o a OFF depende del switch que hayamos comprado
+ y de cómo lo hayamos colocado.
+ Lo que hay que garantizar es que NO haya continuidad entre las patas del
+ switch 1.
+ También se puede medir que haya 5v por una de las dos patas, con la placa
+ alimentada.
+\end_inset 
+
+.
+ En esta situación, y si el programa grabado en la eeprom es correcto, al
+ pulsar el botón de Program se encenderá el led de program durante medio
+ segundo aproximadamente.
+ Una vez que está apagado, la FPGA estará cargada correctamente.
+\layout Enumerate
+
+Conectar la placa JPS a través del 
+\begin_inset Quotes eld
+\end_inset 
+
+download
+\begin_inset Quotes erd
+\end_inset 
+
+ cable y comprobar si con el software de Xilinx se pueden descargar los
+ diseños.
+ (Puede ocurrir que no se cargue correctamente aunque la placa esté bien
+ montada.
+ A lo mejor es que no está el software bien configurado)
+\the_end

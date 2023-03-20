@@ -1,0 +1,244 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass article
+\language spanish
+\inputencoding auto
+\fontscheme default
+\graphics default
+\paperfontsize default
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Standard
+
+(\SpecialChar \ldots{}
+)
+\layout Standard
+
+De modo que la intensidad circulando entre los espejos es
+\begin_inset Formula \begin{eqnarray*}
+I\left(t\right) & \sim & E_{0}^{2}\frac{\left(\exp i\left(N+1\right)\frac{\pi c}{l}t-1\right)\left(\exp-i\left(N+1\right)\frac{\pi c}{l}t-1\right)}{\left(\exp i\frac{\pi c}{l}t-1\right)\left(\exp-i\frac{\pi c}{l}t-1\right)}\\
+ & = & E_{0}^{2}\frac{1-\cos\left(N+1\right)\frac{\pi c}{l}t}{1-\cos\frac{\pi c}{l}t}\\
+ & = & E_{0}^{2}\frac{\sin^{2}\left(N+1\right)\frac{\pi c}{2l}t}{\sin^{2}\frac{\pi c}{2l}t}\end{eqnarray*}
+
+\end_inset 
+
+de modo que los máximos (que veremos que son pequeños) ocurren para tiempos
+ tales que
+\begin_inset Formula \begin{equation}
+\left(N+1\right)\frac{\pi c}{2l}t=\left(n+\frac{1}{2}\right)\pi,\qquad n=1,2\ldots\label{eq:max-secundarios}\end{equation}
+
+\end_inset 
+
+es decir, 
+\begin_inset Formula $t_{n}=\frac{n}{N+1}\frac{2l}{c}$
+\end_inset 
+
+ pero al haber un seno en el denominador, ocurre que existen instantes para
+ los que el denominador se anula, aquellos que cumplen
+\begin_inset Formula \[
+\frac{\pi c}{2l}t=m\pi\]
+
+\end_inset 
+
+es decir, 
+\begin_inset Formula $t_{m}=m\frac{2l}{c}$
+\end_inset 
+
+.
+ Podríamos pensar que eso hará infinito el cociente, pero no ocurre así,
+ ya que denominador y numerador se anulan simultáneamente.
+ En efecto cuando 
+\begin_inset Formula \[
+\frac{n}{N+1}=m\]
+
+\end_inset 
+
+ los ceros de uno y otro coinciden.
+ En cada cero del denominador tenemos un cero del numerador.
+ La intensidad sería proporcional en estos casos a
+\begin_inset Formula \begin{eqnarray*}
+I & \sim & E_{0}^{2}\lim_{t\rightarrow2ml/c}\frac{\sin^{2}\left(N+1\right)\frac{\pi c}{2l}t}{\sin^{2}\frac{\pi c}{2l}t}=\left(N+1\right)^{2}E_{0}^{2}\end{eqnarray*}
+
+\end_inset 
+
+como se puede ver, los máximos antes estudiados (
+\begin_inset LatexCommand \ref{eq:max-secundarios}
+
+\end_inset 
+
+) son pequeños frente a estos otros, ya que en su caso
+\begin_inset Formula \[
+I\sim\frac{E_{0}^{2}}{\sin^{2}\frac{\pi c}{2l}t}\]
+
+\end_inset 
+
+ FIGURA máximos principales y máximos secundarios\SpecialChar \ldots{}
+
+\layout Standard
+
+El contraste entre unos y otros máximos lo da el factor 
+\begin_inset Formula $\left(N+1\right)^{2}$
+\end_inset 
+
+.
+ Es decir, cuanto mayor sea el número de modos que tengamos, menos se van
+ a apreciar los máximos secundarios frente a los principales.
+\layout Subsubsection
+
+Anchura de los máximos principales
+\layout Standard
+
+FIGURA con el máximo centrado, señalando el primer mínimo y la anchura 
+\begin_inset Formula $\Delta t$
+\end_inset 
+
+.
+\layout Standard
+
+¿Cuál será la anchura de estos máximos principales?.
+ Una buena aproximación puede ser la mitad de la abscisa del primer mínimo,
+ que corresponde a la anulación del denominador, es decir:
+\begin_inset Formula \[
+\left(N+1\right)\frac{\pi c}{2l}\left(2\Delta t\right)=\pi\]
+
+\end_inset 
+
+de donde 
+\begin_inset Formula \[
+\Delta t\simeq\frac{1}{N+1}\frac{l}{c}\]
+
+\end_inset 
+
+ cuanto mayor sea el número de modos interviniendo, tanto más estrecho es
+ el pulso de luz que se obtiene.
+ Hay que darse cuenta de que el factor 
+\begin_inset Formula $l/c$
+\end_inset 
+
+ con 
+\begin_inset Formula $l=1\,\mathrm{m}$
+\end_inset 
+
+ es del orden de 
+\begin_inset Formula $3\,\mathrm{ns}$
+\end_inset 
+
+.
+ Si se tienen 
+\begin_inset Formula $N=100$
+\end_inset 
+
+ modos, se llega a una anchura de decenas de picosegundos.
+ En un láser de colorantes, con una gran anchura alrededor de la resonancia,
+ coexisten en radiación láser varios miles de modos, lo que permite pulsos
+ del orden del picosegundo o décimas de picosegundo.
+\layout Standard
+
+La técnica para producir el 
+\emph on 
+mode-locking
+\emph default 
+ permite llegar a pulsos de luz muy estrechos.
+ El estado actual de la investigación ha permitido llegar a pulsos del orden
+ del attosegundo, que es menor que el tiempo de revolución del electrón
+ en el átomo de hidrógeno.
+ Ello permite observar cómo cambia el estado del electrón, de un orbital
+ a otro, durante la absorción de un fotón.
+\layout Standard
+
+De hecho, podemos calcular también cuál sería la anchura en frecuencia de
+ estos pulsos.
+ En efecto, la semianchura en frecuencia 
+\begin_inset Formula $\Delta\omega$
+\end_inset 
+
+ (hace referencia a una FIGURA acmpana de modos con umbral, dibujada anteriormen
+te).
+ Multiplico el número de modos por su separación?.
+\begin_inset Formula \[
+\Delta\omega=2\pi\Delta\nu=2\frac{N+1}{2}\frac{c}{2l}\]
+
+\end_inset 
+
+Multiplicando 
+\begin_inset Formula $\Delta t\Delta\omega=\frac{\pi}{2}\simeq1$
+\end_inset 
+
+ (muy próximo a lo que corresponde a magnitudes duales-Fourier, que es lo
+ que cabría esperar -- hay que tener en cuenta que hemos hecho aproximaciones).
+\layout Standard
+
+TRANSPARENCIA con algunos casos experimentales.
+ El detector no tiene resolución suficiente para resolver la anchura de
+ los pulsos, así que los pulsos aparecen ensanchados (los mejores detectores
+ actuales son de 
+\begin_inset Formula $20\,\mathrm{GHz}$
+\end_inset 
+
+, cuando para resolver 
+\begin_inset Formula $1\,\mathrm{ps}$
+\end_inset 
+
+ el inverso del tiempo de subida es el correspondiente a unos 
+\begin_inset Formula $1000\,\mathrm{GHz}$
+\end_inset 
+
+).
+ Los pulsos están separados unos 
+\begin_inset Formula $10\,\mathrm{ns}$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+En la figura de arriba de la TRansparencia nos muestra el equivalente a
+ la figura inferior, pero en lugar de con un bombeo contínuo, con un bombeo
+ pulsado.
+\layout Subsubsection
+
+Obtención del mode-locking
+\layout Standard
+
+Nos queda por ver cómo se obtiene este régimen.
+ Si en el resonador, fuera del medio amplificador ponemos una célula Pockels
+ con el tiempo de separación entre los pulsos, 
+\begin_inset Formula $2l/c$
+\end_inset 
+
+ como tiempo de pulsación que la hace transparente, en los tiempos intermedios
+ no pasa luz, y así obligo a que lo que esté circulando sea un sólo pulso
+ 
+\begin_inset Formula $(2l/c$
+\end_inset 
+
+ es el tiempo de ida y vuelta de un pulso en el resonador).
+ 
+\layout Standard
+
+También se puede lograr haciendo vibrar uno de los espejos mediante un dispositi
+vo piezoeléctrico con frecuencia 
+\begin_inset Formula $2l/c$
+\end_inset 
+
+.
+\layout Standard
+
+También se puede usar un absorbente saturable; un material que satura la
+ transición en un tiempo del orden del de ida y vuelta del pulso.
+\the_end

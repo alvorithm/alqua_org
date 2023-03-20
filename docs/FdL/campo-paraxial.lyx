@@ -1,0 +1,2709 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass book
+\begin_preamble
+\input{FdL-packages.sty}
+\input{FdL-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding latin1
+\fontscheme ae
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize Default
+\paperpackage a4wide
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Chapter
+
+El campo electromagnético paraxial
+\layout Standard
+
+Una de las formas de construir un láser es como un dispositivo formado por
+ un medio amplificador encerrado en un resonador Fabry-Perot.
+ En el seno del medio amplificador se propagan ondas según el eje del resonador.
+ En este capítulo vamos a estudiar con más detalle las características de
+ estas ondas.
+\layout Section
+
+La ecuación de ondas
+\layout Standard
+
+Como vimos al revisar la electrodinámica clásica (sección 
+\begin_inset LatexCommand \ref{sec:Descomposición-en-modos}
+
+\end_inset 
+
+) el potencial vector queda sometido a una ecuación de ondas clásica, al
+ igual que los campos,
+\begin_inset Formula \[
+\left(\triangle-\frac{1}{c^{2}}\frac{\partial^{2}}{\partial t^{2}}\right)\vec{A}=0\]
+
+\end_inset 
+
+Vamos ahora a suponer que, como ocurre en el láser, la onda se propaga básicamen
+te en la dirección del eje 
+\begin_inset Formula $z$
+\end_inset 
+
+ con una frecuencia angular 
+\begin_inset Formula $\omega$
+\end_inset 
+
+ y con una determinada polarización 
+\begin_inset Formula $\vec{e}$
+\end_inset 
+
+.
+ Estas hipótesis permiten una descripción escalar del campo, 
+\begin_inset Formula $\vec{E}=\vec{e}E$
+\end_inset 
+
+.
+ La ecuación de ondas se expresa entonces así:
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+\triangle E-\frac{1}{c^{2}}\frac{\partial^{2}E}{\partial t^{2}}=0\label{eq:ecO campo escalar}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+Las soluciones que nos interesan son ondas planas que tienen una dependencia
+ espacio-temporal rápida en la fase, con el vector de ondas 
+\begin_inset Formula $\vec{k}$
+\end_inset 
+
+ casi paralelo al eje 
+\begin_inset Formula $z$
+\end_inset 
+
+ y frecuencia angular 
+\begin_inset Formula $\omega$
+\end_inset 
+
+, pero con una amplitud 
+\begin_inset Formula $u\left(\vec{r}\right)$
+\end_inset 
+
+ lentamente variable
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Una dependencia temporal lenta en 
+\begin_inset Formula $u$
+\end_inset 
+
+, 
+\begin_inset Formula $u\left(\vec{r},t\right)$
+\end_inset 
+
+ es también en principio posible, pero ésta no cambiaría esencialmente la
+ física de la radiación que nos proponemos estudiar y por ello no la vamos
+ a considerar.
+\end_inset 
+
+, es decir
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+E=u\left(\vec{r}\right)e^{i\left(\omega t-kz\right)}\label{eq:oap}\end{equation}
+
+\end_inset 
+
+con la relación de dispersión usual 
+\begin_inset Formula $k^{2}=\omega^{2}/c^{2}.$
+\end_inset 
+
+
+\layout Standard
+
+Podemos reescribir las ecuación de ondas 
+\begin_inset LatexCommand \ref{eq:ecO campo escalar}
+
+\end_inset 
+
+ para esta onda menos general.
+ En efecto, al sustituir allí las derivadas segundas del campo, 
+\begin_inset Formula \begin{align*}
+\ddpx{E} & =\ddpx{u} & \ddpy{E} & =\ddpy{u}\\
+\ddpz{E} & =\left(\frac{\partial^{2}u}{\partial z^{2}}-2ik\frac{\partial u}{\partial z}-k^{2}u\right)\, e^{i\left(\omega t-kz\right)} & \ddpt{E} & =-\omega^{2}u\, e^{i\left(\omega t-kz\right)},\end{align*}
+
+\end_inset 
+
+obtenemos una ecuación en la amplitud 
+\begin_inset Formula $u\left(\vec{r}\right)$
+\end_inset 
+
+:
+\begin_inset Formula \begin{equation}
+\triangle u-2ik\frac{\partial u}{\partial z}=0.\label{eq:amplitud-onda-plana-lent-var}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+La dependencia que queda en 
+\begin_inset Formula $u$
+\end_inset 
+
+ respecto a las variables espaciales es, esencialmente, de origen difraccional,
+ es decir, de dependencia lenta en las variables transversas 
+\begin_inset Formula $x,y$
+\end_inset 
+
+ y lenta en 
+\begin_inset Formula $z$
+\end_inset 
+
+.
+\layout Section
+
+Introducción a la aproximación paraxial
+\layout Standard
+
+Las dependencias espaciales lentas en 
+\begin_inset Formula $u$
+\end_inset 
+
+ nos llevan a establecer la 
+\emph on 
+aproximación paraxial
+\emph default 
+
+\begin_inset LatexCommand \index{paraxial}
+
+\end_inset 
+
+
+\begin_inset LatexCommand \index{aproximación!paraxial}
+
+\end_inset 
+
+.
+ Podemos considerar que esta ésta es aplicable cuando los cambios de 
+\begin_inset Formula $\partial u/\partial z$
+\end_inset 
+
+ con 
+\begin_inset Formula $z$
+\end_inset 
+
+, representados por la segunda derivada, son tan pequeños que
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+\frac{\partial^{2}u}{\partial z^{2}}\ll\left|2ik\frac{\partial u}{\partial z}\right|\longrightarrow\frac{\lambda}{4\pi}\frac{\partial^{2}u}{\partial z^{2}}\ll\frac{\partial u}{\partial z}\label{eq:condicion-aprox-paraxial}\end{equation}
+
+\end_inset 
+
+Bajo la aproximación paraxial la ecuación de ondas 
+\begin_inset LatexCommand \ref{eq:amplitud-onda-plana-lent-var}
+
+\end_inset 
+
+ se reescribe así (
+\begin_inset Formula $\Delta_{t}$
+\end_inset 
+
+ es el laplaciano transverso):
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+\frac{\partial^{2}u}{\partial x^{2}}+\frac{\partial^{2}u}{\partial y^{2}}-2ik\frac{\partial u}{\partial z}=\triangle_{t}u-2ik\frac{\partial u}{\partial z}\simeq0\label{eq:amplitud-onda-paraxial}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+Para discutir de una forma más diáfana la aplicabilidad de la aproximación
+ paraxial vamos a considerar el siguiente razonamiento (figura 
+\begin_inset LatexCommand \ref{fig:discusion-aprox-paraxial}
+
+\end_inset 
+
+).
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/aprox-paraxial-src.eps
+	scale 60
+	keepAspectRatio
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:discusion-aprox-paraxial}
+
+\end_inset 
+
+La aproximación paraxial es válida cuando el ángulo 
+\begin_inset Formula $\theta$
+\end_inset 
+
+ entre la dirección de propagación (dada por 
+\begin_inset Formula $\vec{k}$
+\end_inset 
+
+) y el eje es pequeño.
+\end_inset 
+
+
+\layout Standard
+
+Supongamos que la onda plana se propaga formando un ángulo 
+\begin_inset Formula $\theta$
+\end_inset 
+
+ con el eje 
+\begin_inset Formula $Z$
+\end_inset 
+
+.
+ En el plano 
+\begin_inset Formula $XZ$
+\end_inset 
+
+ el campo escalar de este frente de ondas viene dado por
+\begin_inset Formula \begin{eqnarray*}
+E & \propto & \exp\left(-i\vec{k}\cdot\vec{r}\right)=\exp\left(-i\left(k_{x}x+k_{z}z\right)\right)=\exp\left(-ik\left(z\cos\theta+x\sin\theta\right)\right)\\
+ & = & \exp\left(-ik\left[z\left(\cos\theta-1\right)+x\sin\theta\right]\right)\exp\left(-ikz\right)\\
+ & = & u\left(x,z\right)e^{-ikz},\end{eqnarray*}
+
+\end_inset 
+
+habiendo llamado 
+\begin_inset Formula $u\left(x,z\right)=\exp\left(-ik\left[z\left(\cos\theta-1\right)+x\sin\theta\right]\right)$
+\end_inset 
+
+ a la dependencia lenta en 
+\begin_inset Formula $z$
+\end_inset 
+
+ debida al ángulo 
+\begin_inset Formula $\theta$
+\end_inset 
+
+.
+ Veamos, pues, si sus derivadas cumplen la aproximación paraxial y en qué
+ condiciones lo hacen.
+ Para ángulos 
+\begin_inset Formula $\theta\ll1$
+\end_inset 
+
+ vale 
+\begin_inset Formula $\cos\theta\simeq1-\theta^{2}/2$
+\end_inset 
+
+, así que
+\begin_inset Formula \begin{eqnarray}
+-2ik\frac{\partial u}{\partial z} & = & 2k^{2}\left(1-\cos\theta\right)\, u\simeq k^{2}\theta^{2}u\nonumber \\
+\frac{\partial^{2}u}{\partial z^{2}} & = & -k^{2}\left(1-\cos\theta\right)^{2}\, u\simeq k^{2}\frac{\theta^{4}}{4}u\label{eq:derivada-2-aprox-par}\\
+\frac{\partial^{2}u}{\partial x^{2}} & = & -k^{2}\sin^{2}\theta\, u\simeq-k^{2}\theta^{2}u\nonumber \end{eqnarray}
+
+\end_inset 
+
+Por tanto, si 
+\begin_inset Formula $\theta<0.5\left(\theta<30^{\circ}\right)$
+\end_inset 
+
+ el término 
+\begin_inset Formula $\partial^{2}u/\partial z^{2}$
+\end_inset 
+
+ es, al menos, un orden de magnitud menor que 
+\begin_inset Formula $2ik\partial u/\partial z$
+\end_inset 
+
+ y que las otras derivadas.
+ Despreciamos pues términos en 
+\begin_inset Formula $\theta^{4}$
+\end_inset 
+
+.
+ Así pues, la aproximación paraxial no es demasiado exigente y resulta fácil
+ de cumplir.
+ Ello permite tratar ondas esféricas dentro de esta aproximación.
+ 
+\layout Section
+
+Ondas esféricas en la aproximación paraxial
+\layout Standard
+
+Consideremos entonces una onda esférica, solución asintótica a larga distancia
+ de la ecuación de ondas 
+\begin_inset LatexCommand \ref{eq:ecO campo escalar}
+
+\end_inset 
+
+.
+ La expresión en el punto 
+\begin_inset Formula $\vec{r}$
+\end_inset 
+
+ (a la distancia 
+\begin_inset Formula $\rho$
+\end_inset 
+
+ del foco) de una onda esférica con centro en 
+\begin_inset Formula $\vec{r}_{F}$
+\end_inset 
+
+ es (ver figura 
+\begin_inset LatexCommand \ref{fig:ondas-esf-aprox-paraxial}
+
+\end_inset 
+
+):
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/o-esf-aprox-paraxial-src.eps
+	scale 60
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:ondas-esf-aprox-paraxial}
+
+\end_inset 
+
+Ondas esféricas en la aproximación paraxial.
+ Atención: el punto de tangencia del frente de ondas con la línea vertical
+ rayada debería producirse a la altura de la línea horizontal rayada.
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray}
+E\left(\vec{r},\vec{r}_{F}\right) & = & \frac{e^{-ik\rho\left(\vec{r},\vec{r}_{F}\right)}}{\rho\left(\vec{r},\vec{r}_{F}\right)}\label{eq:expresion-onda-esferica}\\
+\rho\left(\vec{r},\vec{r}_{F}\right) & = & \sqrt{\left(x-x_{F}\right)^{2}+\left(y-y_{F}\right)^{2}+\left(z-z_{F}\right)^{2}}\nonumber \end{eqnarray}
+
+\end_inset 
+
+
+\layout Standard
+
+Para que el frente de ondas pueda ser tratado dentro de la aproximación
+ paraxial es preciso que las componentes transversales 
+\begin_inset Formula $x_{F},y_{F}$
+\end_inset 
+
+ de 
+\begin_inset Formula $\vec{r}_{F}$
+\end_inset 
+
+ y 
+\begin_inset Formula $x,y$
+\end_inset 
+
+ de 
+\begin_inset Formula $\vec{r}$
+\end_inset 
+
+ sean pequeñas frente a la componente axial de 
+\begin_inset Formula $\vec{r}$
+\end_inset 
+
+, 
+\begin_inset Formula $z$
+\end_inset 
+
+.
+ Entonces podemos desarrollar la raíz en 
+\begin_inset Formula $\rho$
+\end_inset 
+
+:
+\layout Standard
+
+
+\begin_inset Formula \begin{eqnarray}
+\rho(\vec{r},\vec{r}_{F}) & = & \left(z-z_{F}\right)\left[1+\frac{\left(x-x_{F}\right)^{2}+\left(y-y_{F}\right)^{2}}{\left(z-z_{F}\right)^{2}}\right]^{1/2}\nonumber \\
+ & \simeq & \left(z-z_{F}\right)\left(1+\frac{1}{2}\frac{\left(y-y_{F}\right)^{2}+\left(x-x_{F}\right)^{2}}{\left(z-z_{F}\right)^{2}}\right)\nonumber \\
+ & = & z-z_{F}+\frac{1}{2}\frac{\left(y-y_{F}\right)^{2}+\left(x-x_{F}\right)^{2}}{z-z_{F}}\label{eq:desarrollo-paraxial-rho}\end{eqnarray}
+
+\end_inset 
+
+ En el desarrollo de 
+\begin_inset Formula $\rho$
+\end_inset 
+
+ hemos conservado los términos cuadráticos en 
+\begin_inset Formula $\theta$
+\end_inset 
+
+, 
+\begin_inset Formula \[
+\left(\frac{x-x_{F}}{z-z_{F}}\right)^{2}\simeq\theta^{2}\]
+
+\end_inset 
+
+ que son como acabamos de ver los que cuentan en la aproximación paraxial
+ de la fase.
+ En el denominador del campo (ec.
+ 
+\begin_inset LatexCommand \ref{eq:expresion-onda-esferica}
+
+\end_inset 
+
+) podemos tomar una aproximación menor
+\begin_inset Foot
+collapsed false
+
+\layout Standard
+
+En efecto, al ser 
+\begin_inset Formula $\rho$
+\end_inset 
+
+ grande frente a 
+\begin_inset Formula $\lambda$
+\end_inset 
+
+, período espacial de la fase, una pequeña variación 
+\begin_inset Formula $\Delta\rho$
+\end_inset 
+
+ en la fase tiene un gran impacto, ya que allí 
+\begin_inset Formula $\rho$
+\end_inset 
+
+ es argumento de funciones trigonométricas, 
+\begin_inset Formula $\sin$
+\end_inset 
+
+ y 
+\begin_inset Formula $\cos$
+\end_inset 
+
+.
+ Sin embargo este 
+\begin_inset Formula $\Delta\rho$
+\end_inset 
+
+ es pequeño frente a 
+\begin_inset Formula $\rho$
+\end_inset 
+
+, y ésa es la razón por la que no tomamos más que el primer término para
+ el denominador.
+\end_inset 
+
+ para 
+\begin_inset Formula $\rho$
+\end_inset 
+
+, 
+\begin_inset Formula $\rho\simeq z-z_{F}$
+\end_inset 
+
+.
+ De este modo, la onda esférica en la aproximación paraxial queda
+\begin_inset Formula \[
+\vec{E}(\vec{r},\vec{r}_{F})=\frac{1}{z-z_{F}}\,\exp\left[-i\frac{k}{2}\frac{\left(y-y_{F}\right)^{2}+\left(x-x_{F}\right)^{2}}{z-z_{F}}\right]\,\exp\left[-ik(z-z_{F})\right].\]
+
+\end_inset 
+
+
+\layout Description
+
+Ejercicio verificar que la amplitud de este campo, 
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+u(\vec{r},\vec{r}_{F})=\frac{1}{z-z_{F}}\,\exp\left[-i\frac{k}{2}\frac{\left(y-y_{F}\right)^{2}+\left(x-x_{F}\right)^{2}}{z-z_{F}}\right]\label{eq:amplitud-onda-esferica}\end{equation}
+
+\end_inset 
+
+ es una solución exacta de la ecuación paraxial 
+\begin_inset LatexCommand \ref{eq:amplitud-onda-paraxial}
+
+\end_inset 
+
+.
+\layout Standard
+
+Utilizaremos la figura 
+\begin_inset LatexCommand \ref{fig:radio-curv-o-esferica}
+
+\end_inset 
+
+ como punto de referencia.
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Esta aclaración no sería necesaria si hacemos lo que se propone al principio del apartado.}
+\end_inset 
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/radiocurv-o-esferica-src.eps
+	display monochrome
+	scale 60
+	keepAspectRatio
+
+\end_inset 
+
+ 
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:radio-curv-o-esferica}
+
+\end_inset 
+
+Radio de curvatura de la onda esférica.
+\end_inset 
+
+
+\layout Standard
+
+Sea el punto fuente 
+\begin_inset Formula $\vec{r}_{F}$
+\end_inset 
+
+ sobre el eje 
+\begin_inset Formula $z$
+\end_inset 
+
+ 
+\begin_inset Formula $(x_{F}=y_{F}=0)$
+\end_inset 
+
+ en una posición arbitraria y llamemos 
+\begin_inset Formula $R(z)$
+\end_inset 
+
+ al radio de curvatura
+\begin_inset LatexCommand \index{radio de curvatura de la onda}
+
+\end_inset 
+
+ de la onda y 
+\begin_inset Formula $\phi\left(\vec{r}\right)$
+\end_inset 
+
+ a su fase transversa.
+ Podemos escribir, para un punto 
+\begin_inset Formula $z_{0}$
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray}
+u(\vec{r}_{0}) & = & \frac{e^{-i\phi(\vec{r}_{0})}}{R(z_{0})}\label{eq:amplitud-o-esf-en-z0}\\
+\phi(\vec{r}_{0}) & = & \frac{k}{2}\frac{x_{0}^{2}+y_{0}^{2}}{R(z_{0})}\label{eq:fase-transversa-o-esf-en-z0}\end{eqnarray}
+
+\end_inset 
+
+La posición del foco o fuente, 
+\begin_inset Formula $z_{F}=z_{0}-R(z_{0})$
+\end_inset 
+
+ es arbitraria y por tanto si cambiamos esta constante la onda no dejará
+ de ser solución de la ecuación paraxial.
+ Entonces la onda en un punto genérico 
+\begin_inset Formula $z$
+\end_inset 
+
+ tendría amplitud y fase transversa como en 
+\begin_inset LatexCommand \ref{eq:amplitud-o-esf-en-z0}
+
+\end_inset 
+
+ y 
+\begin_inset LatexCommand \ref{eq:fase-transversa-o-esf-en-z0}
+
+\end_inset 
+
+ respectivamente, pero sustituyendo 
+\begin_inset Formula $z_{0}$
+\end_inset 
+
+ por 
+\begin_inset Formula $z$
+\end_inset 
+
+.
+ El radio de curvatura en 
+\begin_inset Formula $z$
+\end_inset 
+
+ es
+\begin_inset Formula \begin{equation}
+R(z)=z-z_{F}=z-[z_{0}-R(z_{0})]\label{eq:radiocurvatura-en-z}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+A lo largo del el razonamiento precedente hemos considerado que la amplitud
+ es la misma en todo el frente de ondas.
+ Como la aproximación paraxial no es válida lejos del eje, nos interesan
+ las ondas que concentran su amplitud en las proximidades de éste.
+ Una forma de introducir un perfil de amplitud transversa en las ecuaciones
+ es hacer 
+\begin_inset Formula $z_{F}$
+\end_inset 
+
+ (y por tanto 
+\begin_inset Formula $\phi$
+\end_inset 
+
+) complejas.
+ En concreto, se trata de cambiar 
+\begin_inset Formula $z_{F}$
+\end_inset 
+
+ por 
+\begin_inset Formula $z_{F}-iq_{0i}$
+\end_inset 
+
+ en las ecuaciones, lo que conduce a sustituir los radios de curvatura también
+ por cantidades complejas:
+\begin_inset Formula \begin{align}
+q_{0r} & \equiv R(z_{0})=z_{0}-z_{F} & \longrightarrow &  & q_{0} & =q_{0r}+iq_{0i}\nonumber \\
+q_{r} & \equiv R(z)=z-z_{F} & \longrightarrow &  & q(z) & =q_{0}+z-z_{0}=q_{0r}+z-z_{0}+iq_{0i}\label{eq:q-imag-de-z}\end{align}
+
+\end_inset 
+
+La fase transversa también cambia: en 
+\begin_inset Formula $\phi\left(\vec{r}\right)$
+\end_inset 
+
+ se cambia 
+\begin_inset Formula $1/R\left(z\right)$
+\end_inset 
+
+ por 
+\begin_inset Formula $1/q\left(z\right)$
+\end_inset 
+
+, que separado en parte real e imaginaria tiene la siguiente expresión:
+\begin_inset Formula \begin{eqnarray}
+\frac{1}{q\left(z\right)} & = & \frac{1}{q_{0r}+z-z_{0}+iq_{0i}}\nonumber \\
+ & = & \frac{q_{0r}+z-z_{0}-iq_{0i}}{(q_{0r}+z-z_{0})^{2}+q_{0i}^{2}}\nonumber \\
+ & = & \frac{1}{R(z)}-i\frac{2}{kw^{2}(z)}\label{eq:relacion-entre-q-y-R}\end{eqnarray}
+
+\end_inset 
+
+así que
+\begin_inset Formula \[
+\phi\left(\vec{r}\right)=\frac{k}{2}\left(x^{2}+y^{2}\right)\left(\frac{1}{R\left(z\right)}-i\frac{2}{kw^{2}\left(z\right)}\right)\]
+
+\end_inset 
+
+donde vemos que la parte real de 
+\begin_inset Formula $\phi$
+\end_inset 
+
+ depende de un parámetro conocido, el radio de curvatura en 
+\begin_inset Formula $z$
+\end_inset 
+
+, y la imaginaria de uno nuevo, la 
+\emph on 
+cintura del haz
+\emph default 
+ en 
+\begin_inset Formula $z$
+\end_inset 
+
+, 
+\begin_inset Formula $w\left(z\right)$
+\end_inset 
+
+.
+ Sus valores respectivos son:
+\begin_inset Formula \begin{eqnarray*}
+R(z) & = & \frac{(q_{0r}+z-z_{0})^{2}+q_{0i}^{2}}{q_{0r}+z-z_{0}}\\
+w^{2}(z) & = & \frac{2}{k}\frac{(q_{0r}+z-z_{0})^{2}+q_{0i}^{2}}{q_{0i}}\end{eqnarray*}
+
+\end_inset 
+
+Como solamente hemos cambiado el valor de 
+\begin_inset Formula $z_{F}$
+\end_inset 
+
+, la onda esférica así construida sigue siendo solución de la ecuación paraxial
+ 
+\begin_inset LatexCommand \ref{eq:amplitud-onda-paraxial}
+
+\end_inset 
+
+ y su amplitud se escribe
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/radio-y-cintura-en-o-esf-src.eps
+	display monochrome
+	scale 60
+	keepAspectRatio
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:radio-y-cintura-o-esf}
+
+\end_inset 
+
+Significado geométrico de los parámetros 
+\begin_inset Formula $R\left(z\right)$
+\end_inset 
+
+ y 
+\begin_inset Formula $w\left(z\right)$
+\end_inset 
+
+ en la solución esférica paraxial.
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray*}
+u(\vec{r}) & = & \frac{1}{q(z)}\,\exp\left(-\frac{x^{2}+y^{2}}{w^{2}(z)}\right)\,\exp\left(-i\frac{k}{2}\frac{x^{2}+y^{2}}{R(z)}\right)\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Standard
+
+Esta onda tiene un perfil transverso de amplitud gaussiana, que la confina
+ en una región de anchura 
+\begin_inset Formula $2w(z)$
+\end_inset 
+
+ alrededor del eje 
+\begin_inset Formula $Z$
+\end_inset 
+
+ en el punto en que el frente de ondas tiene un radio 
+\begin_inset Formula $R\left(z\right)$
+\end_inset 
+
+ (figura 
+\begin_inset LatexCommand \ref{fig:radio-y-cintura-o-esf}
+
+\end_inset 
+
+).
+ Es conocida como la 
+\emph on 
+solución esférica gaussiana de más bajo orden en el dominio paraxial.
+
+\emph default 
+ A continuación inscribiremos esta solución en el contexto de un análisis
+ más general que dará los órdenes superiores.
+\layout Section
+
+Modos gaussianos
+\layout Standard
+
+La solución esférica gaussiana encontrada en el apartado precedente pertenece
+ a un conjunto más general de soluciones de la ecuación paraxial 
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+\frac{\partial^{2}u}{\partial x^{2}}+\frac{\partial^{2}u}{\partial y^{2}}-2ik\frac{\partial u}{\partial z}=0.\label{eq:amplitud-onda-paraxial-2}\end{equation}
+
+\end_inset 
+
+ Estas soluciones tienen las variables transversas rectangulares separadas.
+ 
+\begin_inset Formula \begin{equation}
+u_{nm}(\vec{r})=u_{n}(x,z)u_{m}(y,z)\label{eq:sep-variables-cartesianas}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+Así, al sustituir en la ecuación y dividir por la solución 
+\begin_inset Formula $u_{nm}\left(\vec{r}\right)$
+\end_inset 
+
+,
+\layout Standard
+
+
+\begin_inset Formula \[
+\frac{1}{u_{n}}\left(\frac{\partial^{2}u_{n}}{\partial x^{2}}-2ik\frac{\partial u_{n}}{\partial z}\right)+\frac{1}{u_{m}}\left(\frac{\partial^{2}u_{m}}{\partial y^{2}}-2ik\frac{\partial u_{m}}{\partial z}\right)=0\]
+
+\end_inset 
+
+
+\layout Standard
+
+Como 
+\begin_inset Formula $u_{n}$
+\end_inset 
+
+ sólo depende de 
+\begin_inset Formula $x$
+\end_inset 
+
+ y 
+\begin_inset Formula $u_{m}$
+\end_inset 
+
+ sólo depende de 
+\begin_inset Formula $y$
+\end_inset 
+
+ podemos efectuar la separación de la ecuación anterior en dos ecuaciones
+ del tipo
+\layout Standard
+
+
+\begin_inset Formula \[
+\frac{\partial^{2}u_{n}}{\partial x^{2}}-2ik\frac{\partial u_{n}}{\partial z}=f(z)u_{n}\]
+
+\end_inset 
+
+
+\layout Standard
+
+En esta expresión 
+\begin_inset Formula $f(z)$
+\end_inset 
+
+ es una función de separación arbitraria que para las soluciones que nos
+ interesan tomaremos como idénticamente nula.
+ Es decir
+\begin_inset Formula \begin{eqnarray}
+\frac{\partial^{2}u_{n}}{\partial x^{2}}-2ik\frac{\partial u_{n}}{\partial z} & = & 0\label{eq:amplitud-un}\\
+\frac{\partial^{2}u_{m}}{\partial y^{2}}-2ik\frac{\partial u_{m}}{\partial z} & = & 0\label{eq:amplitud-um}\end{eqnarray}
+
+\end_inset 
+
+
+\layout Standard
+
+Al haber separado las variables transversas rectangulares las soluciones
+ que hallaremos tendrán una simetría transversa rectangular.
+\layout Standard
+
+Como las ecuaciones 
+\begin_inset LatexCommand \ref{eq:amplitud-un}
+
+\end_inset 
+
+ y 
+\begin_inset LatexCommand \ref{eq:amplitud-um}
+
+\end_inset 
+
+ son formalmente idénticas basta con resolver una de ellas.
+ El lector puede aceptar y comprobar la solución 
+\begin_inset LatexCommand \ref{eq:ampli-un-gaussiano}
+
+\end_inset 
+
+ en una primera lectura.
+ Su deducción detallada se ofrece en el apéndice 
+\begin_inset LatexCommand \ref{cha:solución-gauss-hermite}
+
+\end_inset 
+
+.
+ Usando las ecuaciones de dicho apéndice 
+\begin_inset LatexCommand \ref{36}
+
+\end_inset 
+
+, 
+\begin_inset LatexCommand \ref{39}
+
+\end_inset 
+
+ y 
+\begin_inset LatexCommand \ref{40}
+
+\end_inset 
+
+ en 
+\begin_inset LatexCommand \ref{34}
+
+\end_inset 
+
+ obtenemos la siguiente expresión para la amplitud del enésimo modo (el
+ parámetro 
+\begin_inset Formula $\psi$
+\end_inset 
+
+ viene dado por 
+\size small 
+
+\begin_inset LatexCommand \ref{eq:fase-Guoy}
+
+\end_inset 
+
+
+\size default 
+ y se llama fase de Guoy
+\begin_inset LatexCommand \index{Guoy!fase de}
+
+\end_inset 
+
+
+\begin_inset LatexCommand \index{fase de Guoy}
+
+\end_inset 
+
+):
+\begin_inset Formula \begin{equation}
+u_{n}(x,z)=\left(\frac{2}{\pi}\right)^{\frac{1}{4}}\sqrt{\frac{e^{i(2n+1)\left[\psi(z)-\psi(0)\right]}}{2^{n}n!w(z)}}H_{n}\left(\frac{x\sqrt{2}}{w(z)}\right)\,\exp\left(-\frac{x^{2}}{w^{2}(z)}\right)\,\exp\left(-i\frac{kx^{2}}{2R\left(z\right)}\right)\label{eq:ampli-un-gaussiano}\end{equation}
+
+\end_inset 
+
+En esta expresión los polinomios de Hermite se derivan de la fórmula generadora
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+H_{n}(\xi)=(-1)^{n}e^{\xi^{2}}\frac{\partial^{n}}{\partial\xi^{n}}\left[e^{-\xi^{2}}\right]\label{eq:generadora-Hermite}\end{equation}
+
+\end_inset 
+
+ Aunque también conociendo los dos de orden más bajo,
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+H_{0}=1\qquad\mathrm{y}\qquad H_{1}=2\xi\label{eq:H0-y-H1}\end{equation}
+
+\end_inset 
+
+ los demás se pueden obtener por recurrencia de
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+H_{n+1}=2\xi H_{n}-2nH_{n-1}.\label{eq:recurrencia-Hermite}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+Ejercicio: comprobar que el modo gaussiano de orden más bajo que obtuvimos
+ con anterioridad se corresponde con 
+\begin_inset Formula $u_{0}$
+\end_inset 
+
+ calculando su constante de normalización.
+\layout Standard
+
+Exactamente el mismo proceso se puede seguir para la ecuación 
+\size small 
+
+\begin_inset LatexCommand \ref{eq:amplitud-um}
+
+\end_inset 
+
+
+\size default 
+ en la variable 
+\begin_inset Formula $y$
+\end_inset 
+
+, con idénticos resultados, de modo que una geometría arbitraria de campo
+ siempre se puede escribir en función de la base completa 
+\begin_inset Formula $u_{n}u_{m}$
+\end_inset 
+
+ para las soluciones paraxiales así:
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+E(\vec{r})=\left(\sum_{n}\sum_{m}\, C_{nm}(z)\, u_{n}(x,z)u_{m}(y,z)\right)e^{-ikz}\label{eq:campo-gaussiano-1}\end{equation}
+
+\end_inset 
+
+ Donde los coeficientes de la expansión serán
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+C_{nm}(z)=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}u_{n}^{*}(x,z)\, u_{m}^{*}(y,z)\, E(\vec{r})\, e^{ikz}\mathrm{\, d}x\mathrm{d}y\label{eq:coef-campo-gaussiano}\end{equation}
+
+\end_inset 
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/mod-gaussianos-src.eps
+	scale 55
+	keepAspectRatio
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:modos-gaussianos}
+
+\end_inset 
+
+Aspecto según un eje transversal de los diversos modos gaussianos, resultantes
+ del producto entre polinomios de Hermite y una gaussiana de anchura 
+\begin_inset Formula $w$
+\end_inset 
+
+.
+\end_inset 
+
+
+\layout Standard
+
+La geometría de estas soluciones es semejante a la de las funciones de onda
+ del oscilador armónico.
+ En la figura 
+\begin_inset LatexCommand \ref{fig:modos-gaussianos}
+
+\end_inset 
+
+ hemos representado el factor
+\layout Standard
+
+
+\begin_inset Formula \[
+a_{n}=H_{n}\left(\frac{x\sqrt{2}}{w(z)}\right)\exp\left(-\frac{x^{2}}{w^{2}}\right)\]
+
+\end_inset 
+
+Los ceros de estas funciones vienen dados por los del polinomio 
+\begin_inset Formula $H_{n}$
+\end_inset 
+
+, que tiene 
+\begin_inset Formula $n$
+\end_inset 
+
+ ceros.
+ Las distribuciones de la intensidad serán proporcionales al cuadrado del
+ campo, es decir, a 
+\begin_inset Formula $u_{n}^{*}(x,z)u_{n}(x,z)u_{m}^{*}(y,z)u_{m}(y,z)$
+\end_inset 
+
+.
+ La figura 
+\begin_inset LatexCommand \ref{fig:modos-gaussianos}
+
+\end_inset 
+
+ muestra la amplitud de algunos modos según una dirección transversal mientras
+ que en 
+\begin_inset LatexCommand \ref{fig:modos-TEM}
+
+\end_inset 
+
+ se representa la intensidad según ambas direcciones transversales.
+ Las dos figuras son para un 
+\begin_inset Formula $z$
+\end_inset 
+
+ fijo.
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Para esta última figura hay que obtener o bien una representación analítica de las superficies de nivel o bien una placa experimental...}
+\end_inset 
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/modos-TEM-src.eps
+	scale 60
+	keepAspectRatio
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:modos-TEM}
+
+\end_inset 
+
+Aspecto aproximado de los primeros modos TEM (
+\emph on 
+Transverse Electro-Magnetic
+\emph default 
+).
+ Nótese cómo el número de ceros (intensidad nula, aquí representado por
+ blanco) en la dirección 
+\begin_inset Formula $X$
+\end_inset 
+
+ es 
+\begin_inset Formula $n$
+\end_inset 
+
+ y 
+\begin_inset Formula $ $
+\end_inset 
+
+
+\begin_inset Formula $m$
+\end_inset 
+
+ en la 
+\begin_inset Formula $Y$
+\end_inset 
+
+.
+ Las manchas de la periferia son más intensas, por el efecto de los máximos
+ laterales de los 
+\begin_inset Formula $H_{n}$
+\end_inset 
+
+, que no llega a ser totalmente contrarrestado por la cola de la gaussiana.
+\end_inset 
+
+
+\layout Standard
+
+El campo 
+\begin_inset LatexCommand \ref{eq:campo-gaussiano-1}
+
+\end_inset 
+
+ de los modos gaussianos, una vez calculados los coeficientes, será
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+E_{nm}\propto H_{n}\left(\frac{x\sqrt{2}}{w_{x}(z)}\right)H_{m}\left(\frac{y\sqrt{2}}{w_{y}(z)}\right)e^{-\frac{x^{2}}{w_{x}^{2}}}e^{-\frac{y^{2}}{w_{y}^{2}}}e^{-i\frac{kx^{2}}{2R_{x}}}e^{-i\frac{ky^{2}}{2R_{y}}}e^{-ikz}.\label{eq:campo-gaussiano-2}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+La geometría de los modos gaussianos rectangulares (de 
+\emph on 
+Gauss-Hermite
+\emph default 
+) dados por la ecuación anterior genera las distribuciones transversas de
+ intensidad de la figura 
+\begin_inset LatexCommand \ref{fig:modos-TEM}
+
+\end_inset 
+
+, que se denominan 
+\emph on 
+modos 
+\begin_inset Formula $\mathrm{TEM}_{nm}$
+\end_inset 
+
+ 
+\begin_inset LatexCommand \index{modos!TEM}
+
+\end_inset 
+
+.
+\layout Standard
+
+Finalmente es preciso señalar que la expresión 
+\begin_inset LatexCommand \ref{eq:inv-w-q-1}
+
+\end_inset 
+
+ nos indica que en la propagación del frente de ondas permanece invariante
+ la magnitud
+\begin_inset Formula \begin{equation}
+\frac{w(z)}{q(z)}=\frac{w(0)}{q\left(0\right)}.\label{eq:inv-w-q-2}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+La ecuación en derivadas parciales que hemos abordado en esta sección es
+ separable en un total de once sistemas de coordenadas, cada uno adecuado
+ a una determinada configuración geométrica del sistema físico en cuestión.
+ Frecuentemente la simetría del problema es cilíndrica y entonces la ecuación
+ 
+\begin_inset LatexCommand \ref{eq:amplitud-onda-paraxial-2}
+
+\end_inset 
+
+ debe plantearse en coordenadas cilíndricas.
+ En lugar de los modos de Gauss-Hermite
+\begin_inset LatexCommand \index{modos! de Gauss-Hermite}
+
+\end_inset 
+
+ se obtienen los de Gauss-Laguerre.
+ En la práctica cualquier pequeña anomalía geométrica rompe la simetría
+ cilíndrica y se obtienen incluso en este caso los modos de Gauss-Hermite
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Ver 
+\emph on 
+Siegman, A: 
+\emph default 
+Lasers, Oxford University Press.
+\end_inset 
+
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Esta cita se hará posteriormente desde la bibliografía general}
+\end_inset 
+
+.
+\layout Section
+
+Propiedades de los haces gaussianos
+\layout Subsection
+
+Forma del haz
+\layout Standard
+
+Vamos ahora a situar el origen de coordenadas en un punto en el que el frente
+ de ondas del haz gaussiano sea plano 
+\begin_inset Formula $(R(0)=\infty)$
+\end_inset 
+
+.
+ Se cumple por tanto en 
+\begin_inset LatexCommand \ref{eq:q-imag-de-z}
+
+\end_inset 
+
+ con 
+\begin_inset Formula $z_{0}=0,q_{0}=q\left(0\right)$
+\end_inset 
+
+:
+\begin_inset Formula \begin{equation}
+q(z)=q_{0}+z\label{eq:q-de-z-fn-q-sub0}\end{equation}
+
+\end_inset 
+
+ donde por 
+\begin_inset LatexCommand \ref{eq:relacion-entre-q-y-R}
+
+\end_inset 
+
+ tenemos
+\begin_inset Formula \begin{eqnarray}
+q(0) & = & i\frac{\pi w^{2}(0)}{\lambda}=iz_{R}\label{eq:q-sub0-fn-zR}\end{eqnarray}
+
+\end_inset 
+
+ La longitud 
+\begin_inset Formula $z_{R}$
+\end_inset 
+
+ se conoce como 
+\emph on 
+distancia de Rayleigh
+\begin_inset LatexCommand \index{Rayleigh, distancia de}
+
+\end_inset 
+
+
+\begin_inset LatexCommand \index{distancia de Rayleigh}
+
+\end_inset 
+
+
+\emph default 
+ y es un parámetro que junto a 
+\begin_inset Formula $w(0)$
+\end_inset 
+
+ permite caracterizar el haz de longitud de onda 
+\begin_inset Formula $\lambda$
+\end_inset 
+
+:
+\begin_inset Formula \begin{equation}
+w^{2}(0)=\frac{\lambda z_{R}}{\pi}.\label{eq:relacion-w0-zR}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+En efecto, veamos cómo en función de 
+\begin_inset Formula $z_{R}$
+\end_inset 
+
+ se pueden escribir todas las magnitudes que caracterizan el haz.
+ Así la 
+\begin_inset LatexCommand \ref{eq:q-de-z-fn-q-sub0}
+
+\end_inset 
+
+ con 
+\begin_inset LatexCommand \ref{eq:q-sub0-fn-zR}
+
+\end_inset 
+
+ se escribe 
+\begin_inset Formula $q(z)=z+iz_{R}$
+\end_inset 
+
+.
+ Y entonces, con 
+\begin_inset LatexCommand \ref{eq:relacion-entre-q-y-R}
+
+\end_inset 
+
+: 
+\begin_inset Formula \[
+\frac{1}{q(z)}=\frac{1}{R(z)}-i\frac{\lambda}{\pi w^{2}(z)}=\frac{1}{z+iz_{R}}=\frac{z-iz_{R}}{z^{2}+z_{R}^{2}}=\frac{z}{z^{2}+z_{R}^{2}}-i\frac{z_{R}}{z^{2}+z_{R}^{2}}\]
+
+\end_inset 
+
+ Es decir, igualando partes reales e imaginarias, y usando 
+\begin_inset LatexCommand \ref{eq:relacion-w0-zR}
+
+\end_inset 
+
+,
+\begin_inset Formula \begin{eqnarray}
+R(z) & = & z\left[1+\left(\frac{z_{R}}{z}\right)^{2}\right]\label{eq:R-de-z}\\
+w(z) & = & w(0)\left[1+\left(\frac{z}{z_{R}}\right)^{2}\right]^{1/2}\label{eq:w-de-z}\end{eqnarray}
+
+\end_inset 
+
+ Esta última expresión indica que 
+\begin_inset Formula $2w(0)$
+\end_inset 
+
+ es la menor anchura posible del haz, por lo que se le suele llamar a 
+\begin_inset Formula $w\left(0\right)$
+\end_inset 
+
+ 
+\emph on 
+cintura del haz
+\begin_inset LatexCommand \index{cintura del haz}
+
+\end_inset 
+
+,
+\emph default 
+ y denotar 
+\begin_inset Formula $w_{0}=w\left(0\right)$
+\end_inset 
+
+.
+ La distancia de Rayleigh por su parte se interpreta como aquella para la
+ que el tamaño del haz ha aumentado en un factor 
+\begin_inset Formula $\sqrt{2}$
+\end_inset 
+
+: 
+\begin_inset Formula $w\left(\pm z_{R}\right)=\sqrt{2}w_{0}$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+La variación del tamaño transverso del haz con la distancia a la cintura
+ tiene una asíntota (figura 
+\begin_inset LatexCommand \ref{fig:divergencia-haz-gaussiano}
+
+\end_inset 
+
+) cuyo ángulo con el eje del haz está dado por 
+\begin_inset Formula \[
+\tan\alpha=\lim_{z\rightarrow\infty}\frac{w(z)}{z}=\frac{w_{0}}{z_{R}}.\]
+
+\end_inset 
+
+En el 
+\begin_inset Formula $\mathrm{TEM}_{00}$
+\end_inset 
+
+ 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+ da el ángulo de divergencia del haz.
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/divergencia-haz-gaussiano-src.eps
+	display monochrome
+	scale 60
+	keepAspectRatio
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:divergencia-haz-gaussiano}
+
+\end_inset 
+
+Evolución del tamaño transverso del haz gaussiano con la distancia a la
+ cintura del haz: convergencia en el origen, donde el frente de ondas es
+ plano y divergencia con 
+\begin_inset Formula $\left|z\right|$
+\end_inset 
+
+.
+\end_inset 
+
+
+\layout Standard
+
+Sustituyendo en la expresión 
+\begin_inset LatexCommand \ref{eq:fase-Guoy}
+
+\end_inset 
+
+ 
+\begin_inset Formula $w\left(z\right)$
+\end_inset 
+
+ y 
+\begin_inset Formula $R\left(z\right)$
+\end_inset 
+
+ dadas respectivamente por 
+\begin_inset LatexCommand \ref{eq:w-de-z}
+
+\end_inset 
+
+ y 
+\begin_inset LatexCommand \ref{eq:R-de-z}
+
+\end_inset 
+
+ se tiene la variación de la fase de Guoy según progresa el haz:
+\begin_inset Formula \begin{equation}
+\tan\psi=\frac{\pi}{\lambda}\frac{\lambda z_{R}}{\pi z}\frac{1+\left(z/z_{R}\right)^{2}}{1+\left(z_{R}/z\right)^{2}}=\frac{z}{z_{R}}\label{eq:Guoy-de-z}\end{equation}
+
+\end_inset 
+
+con 
+\begin_inset Formula $\tan\psi\left(0\right)=0$
+\end_inset 
+
+.
+\layout Standard
+
+Tenemos que la amplitud del haz gaussiano de orden más bajo 
+\begin_inset Formula $(n=m=0)$
+\end_inset 
+
+ será, según la ecuación 
+\begin_inset LatexCommand \ref{eq:ampli-un-gaussiano}
+
+\end_inset 
+
+ 
+\begin_inset Formula $(\psi(0)=0)$
+\end_inset 
+
+ :
+\begin_inset Formula \begin{equation}
+u_{00}(\vec{r})=\left(\frac{2}{\pi}\right)^{1/2}\frac{e^{i\psi(z)}}{w(z)}\,\exp\left(-\frac{x^{2}+y^{2}}{w^{2}(z)}\right)\,\exp\left(-ik\frac{x^{2}+y^{2}}{2R(z)}\right)\label{eq:gaussiano00}\end{equation}
+
+\end_inset 
+
+ Una vez que se sitúa la posición absoluta de la cintura del haz y la longitud
+ de onda 
+\begin_inset Formula $\lambda$
+\end_inset 
+
+ en el medio está determinada, toda la evolución espacial del campo depende
+ exclusivamente de 
+\begin_inset Formula $w_{0}$
+\end_inset 
+
+ o de 
+\begin_inset Formula $z_{R}$
+\end_inset 
+
+.
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/parametro-confocal-src.eps
+	display monochrome
+	scale 60
+	keepAspectRatio
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:parametro-confocal}
+
+\end_inset 
+
+La cintura del haz 
+\begin_inset Formula $2w_{0}$
+\end_inset 
+
+ y la distancia de Rayleigh 
+\begin_inset Formula $z_{R}$
+\end_inset 
+
+ (o el parámetro confocal, 
+\begin_inset Formula $b$
+\end_inset 
+
+) son las magnitudes características de un haz gaussiano.
+\end_inset 
+
+
+\layout Standard
+
+Por razones que se verán más adelante al doble de 
+\begin_inset Formula $z_{R}$
+\end_inset 
+
+ se le llama 
+\emph on 
+parámetro confocal
+\emph default 
+
+\begin_inset LatexCommand \index{parámetro confocal}
+
+\end_inset 
+
+
+\begin_inset LatexCommand \index{confocal!parámetro}
+
+\end_inset 
+
+ (figura 
+\begin_inset LatexCommand \ref{fig:parametro-confocal}
+
+\end_inset 
+
+); así, por 
+\begin_inset LatexCommand \ref{eq:relacion-w0-zR}
+
+\end_inset 
+
+
+\begin_inset Formula \begin{equation}
+b\equiv2z_{R}=\frac{2\pi w_{0}^{2}}{\lambda}.\label{eq:parametro-confocal}\end{equation}
+
+\end_inset 
+
+ En cierto sentido, puede considerarse 
+\begin_inset Formula $z_{R}$
+\end_inset 
+
+ como el límite en que se pasa del campo próximo de Fresnel al campo lejano
+ de Fraunhofer.
+\begin_inset Float figure
+wide false
+collapsed true
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/radcurv-fdo-de-z-src.eps
+	display monochrome
+	scale 60
+	keepAspectRatio
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:radiocurv-fdo-de-z}
+
+\end_inset 
+
+El radio de curvatura del haz presenta un mínimo (máxima curvatura) para
+ la distancia de Rayleigh 
+\begin_inset Formula $z_{R}$
+\end_inset 
+
+.
+\end_inset 
+
+
+\layout Standard
+
+En el campo de Fraunhofer la cintura 
+\begin_inset LatexCommand \ref{eq:w-de-z}
+
+\end_inset 
+
+ y el radio de curvatura 
+\begin_inset LatexCommand \ref{eq:R-de-z}
+
+\end_inset 
+
+ se pueden aproximar por
+\begin_inset Formula \begin{eqnarray}
+\lim_{z\rightarrow\infty}w(z) & = & w_{0}\frac{z}{z_{R}}=\frac{\lambda}{\pi}\frac{z}{w_{0}}\label{eq:w-de-z-Fraunhoeffer}\\
+\lim_{z\rightarrow\infty}R\left(z\right) & = & z\nonumber \end{eqnarray}
+
+\end_inset 
+
+
+\layout Standard
+
+La distancia 
+\begin_inset Formula $z_{R}$
+\end_inset 
+
+ es también aquella para la que el radio de curvatura del frente de ondas
+ se hace mínimo (figura 
+\begin_inset LatexCommand \ref{fig:radiocurv-fdo-de-z}
+
+\end_inset 
+
+), como se puede comprobar al derivar 
+\begin_inset Formula $R\left(z\right)$
+\end_inset 
+
+ en 
+\begin_inset LatexCommand \ref{eq:R-de-z}
+
+\end_inset 
+
+.
+ Sustituyendo encontramos que 
+\begin_inset Formula $R\left(z_{R}\right)=2z_{R}$
+\end_inset 
+
+: los frentes de ondas en los puntos 
+\begin_inset Formula $z_{R}$
+\end_inset 
+
+ y 
+\begin_inset Formula $-z_{R}$
+\end_inset 
+
+ tienen sus centros de curvatura en los puntos 
+\begin_inset Formula $-z_{R}$
+\end_inset 
+
+ y 
+\begin_inset Formula $z_{R}$
+\end_inset 
+
+ respectivamente.
+ Entonces, si dos espejos esféricos de radio de curvatura 
+\begin_inset Formula $2z_{R}$
+\end_inset 
+
+ se sitúan en 
+\begin_inset Formula $z_{R}$
+\end_inset 
+
+ y 
+\begin_inset Formula $-z_{R}$
+\end_inset 
+
+ sus focos coinciden con la posición de la cintura de haz.
+ Por eso a 
+\begin_inset Formula $b=2z_{R}$
+\end_inset 
+
+ se le llama 
+\emph on 
+parámetro confocal
+\emph default 
+
+\begin_inset LatexCommand \index{confocal!parámetro}
+
+\end_inset 
+
+.
+ En este caso la cintura de haz sería (ecuación 
+\begin_inset LatexCommand \ref{eq:parametro-confocal}
+
+\end_inset 
+
+)
+\begin_inset Formula \begin{equation}
+w_{0}=\sqrt{\frac{\lambda z_{R}}{\pi}}=\sqrt{\frac{\lambda b}{2\pi}}\label{eq:w0-de-b}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+Un haz gaussiano bien colimado, es decir, con los frentes de onda casi planos,
+ puede ser focalizado con una lente de focal 
+\begin_inset Formula $f$
+\end_inset 
+
+ (figura 
+\begin_inset LatexCommand \ref{fig:focal-haz-gauss}
+
+\end_inset 
+
+).
+ Se ubica la lente de modo que la cintura del haz se sitúe en su foco, y
+ si a la entrada de la lente el diámetro del haz es 
+\begin_inset Formula $2w(-f)$
+\end_inset 
+
+, en el régimen de Fraunhofer (ec.
+ 
+\begin_inset LatexCommand \ref{eq:w-de-z-Fraunhoeffer}
+
+\end_inset 
+
+) la cintura de haz será 
+\begin_inset Formula \begin{equation}
+2w_{0}=\frac{\lambda}{\pi}\frac{2f}{w(-f)}\label{eq:w0-de-f}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/focal-haz-gauss-src.eps
+	display monochrome
+	scale 60
+	keepAspectRatio
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:focal-haz-gauss}
+
+\end_inset 
+
+En un haz gaussiano el efecto difractivo impide focalizar la energía en
+ un punto: se genera una mancha cuyo radio depende de 
+\begin_inset Formula $\lambda$
+\end_inset 
+
+ y 
+\begin_inset Formula $f$
+\end_inset 
+
+.
+\end_inset 
+
+
+\layout Standard
+
+Y si estimamos como profundidad de foco 
+\begin_inset Formula $2z_{R}$
+\end_inset 
+
+, por 
+\begin_inset LatexCommand \ref{eq:parametro-confocal}
+
+\end_inset 
+
+
+\begin_inset Formula \begin{equation}
+2z_{R}=\frac{2\pi w_{0}^{2}}{\lambda}=\frac{2\pi}{\lambda}\left(\frac{\lambda}{\pi}\frac{f}{w(-f)}\right)^{2}=\frac{2\lambda}{\pi}\frac{f^{2}}{w^{2}(-f)}.\label{eq:profundidad-foco}\end{equation}
+
+\end_inset 
+
+ 
+\layout Subsection
+
+Distribución transversal de la energía
+\layout Standard
+
+En los modos de orden alto la extensión transversa del haz se puede obtener
+ de la posición del último máximo del polinomio de Hermite 
+\begin_inset Formula $H_{n}\left(x/w\right)$
+\end_inset 
+
+, que puede ser aproximada para valores altos de 
+\begin_inset Formula $n$
+\end_inset 
+
+ por 
+\begin_inset Formula \begin{equation}
+x_{n}\left(z\right)\simeq\sqrt{n}w(z),\label{eq:anchura-haz}\end{equation}
+
+\end_inset 
+
+donde 
+\begin_inset Formula $w$
+\end_inset 
+
+ es el tamaño de mancha en el haz gaussiano de orden cero, dado por 
+\begin_inset LatexCommand \ref{eq:gaussiano00}
+
+\end_inset 
+
+.
+ Por lo tanto la extensión transversal del campo de un modo gaussiano de
+ orden 
+\begin_inset Formula $n$
+\end_inset 
+
+ aumenta en proporción a 
+\begin_inset Formula $\sqrt{n}$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/amplitud-transversa-src.eps
+	display monochrome
+	scale 60
+	keepAspectRatio
+	clip
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:amplitud-transversa}
+
+\end_inset 
+
+Amplitud transversa del haz.
+ Recuérdese que 
+\begin_inset Formula $w$
+\end_inset 
+
+ es la anchura de la gaussiana.
+\end_inset 
+
+
+\layout Standard
+
+Con esto tenemos identificada la zona donde se concentra la energía del
+ haz, tanto en profundidad (a lo largo del eje) como en anchura (en dirección
+ transversa).
+ Conocer la extensión de este área es útil para numerosas aplicaciones;
+ por ejemplo en el corte de metales por sublimación, mediante un laser de
+ 
+\begin_inset Formula $\mathrm{CO}_{2}$
+\end_inset 
+
+
+\begin_inset LatexCommand \index{laser!$\mathrm{CO}_2$}
+
+\end_inset 
+
+.
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Mi intención es introducir en el índice de materias todas las menciones a láseres concretos o aplicaciones, de modo que uno pueda buscar las páginas en las que aparece mencionado uno u otro tipo de láser. -ATC}
+\end_inset 
+
+
+\layout Standard
+
+Si un modo gaussiano tiene que atravesar una abertura de diámetro 
+\begin_inset Formula $2a$
+\end_inset 
+
+ sin que se intercepte una parte significativa de la energía del campo situado
+ en la periferia de su sección transversa, se tiene que verificar 
+\begin_inset Formula $x_{n}\left(z\right)\leq a$
+\end_inset 
+
+ (figura 
+\begin_inset LatexCommand \ref{fig:gaussiano-abertura}
+
+\end_inset 
+
+): 
+\begin_inset Formula $z$
+\end_inset 
+
+ sería la posición de la abertura respecto a la cintura de haz, que es donde
+ hemos ubicado el origen.
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/gaussiano-abertura-src.eps
+	display monochrome
+	scale 60
+	keepAspectRatio
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:gaussiano-abertura}
+
+\end_inset 
+
+Las dimensiones de la abertura permiten controlar la extensión transversa
+ del campo.
+\end_inset 
+
+
+\layout Standard
+
+Por lo tanto el mayor orden 
+\begin_inset Formula $n$
+\end_inset 
+
+ del modo está limitado por el tamaño de la abertura:
+\begin_inset Formula \begin{equation}
+n_{\mathrm{max}}\leq\left(\frac{a}{w(z)}\right)^{2}\label{eq:mayor-orden-abertura}\end{equation}
+
+\end_inset 
+
+ Como vemos, la elección de 
+\begin_inset Formula $a$
+\end_inset 
+
+ nos permite un cierto control sobre la distribución transversa de la energía
+ del campo.
+ Si la abertura está dentro de un resonador confocal en la posición de la
+ cintura de haz (figura 
+\begin_inset LatexCommand \ref{fig:abertura-confocal}
+
+\end_inset 
+
+), usando la ecuación anterior y 
+\begin_inset LatexCommand \ref{eq:w0-de-b}
+
+\end_inset 
+
+ obtenemos
+\begin_inset Formula \begin{eqnarray*}
+n_{\mathrm{max}} & \leq & 2\pi\frac{a^{2}}{\lambda b}=2\pi N_{F}\end{eqnarray*}
+
+\end_inset 
+
+donde hemos introducido una magnitud característica, el 
+\emph on 
+número de Fresnel del resonador
+\begin_inset LatexCommand \index{Fresnel!número de}
+
+\end_inset 
+
+
+\begin_inset LatexCommand \index{número de Fresnel}
+
+\end_inset 
+
+,
+\emph default 
+ 
+\begin_inset Formula $N_{F}=a^{2}/\lambda b$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/abertura-confocal-src.eps
+	display monochrome
+	scale 45
+	keepAspectRatio
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:abertura-confocal}
+
+\end_inset 
+
+Configuración para la selección de modos en un resonador confocal.
+\end_inset 
+
+
+\layout Standard
+
+Los modos 
+\begin_inset Formula $u_{nm}\left(\vec{r}\right)$
+\end_inset 
+
+ que podrán formar parte de la geometría del campo dentro del resonador
+ (las configuraciones del campo que 
+\emph on 
+caben
+\emph default 
+ en una distancia 
+\begin_inset Formula $b$
+\end_inset 
+
+ entre espejos con una abertura intermedia de lado 
+\begin_inset Formula $a$
+\end_inset 
+
+) serán los que cumplan la condición
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Siendo el resonador de perfil cuadrado; si fuese rectangular habría un 
+\begin_inset Formula $n_{\mathrm{max}}$
+\end_inset 
+
+ y un 
+\begin_inset Formula $m_{\mathrm{max}}$
+\end_inset 
+
+.
+\end_inset 
+
+ 
+\begin_inset Formula $n=m\leq n_{\mathrm{max}}$
+\end_inset 
+
+, y su número es
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Esta cantidad se reduce en resonadores activos, porque pasa de ser proporcional
+ al cuadrado de 
+\begin_inset Formula $N_{F}$
+\end_inset 
+
+ a ser 
+\begin_inset Formula $\mathcal{N}\propto N_{F}$
+\end_inset 
+
+: Phys.
+ Rev.
+ A Vol 53 nº 5 (1996) p3490-3496.
+\end_inset 
+
+ 
+\begin_inset Formula \[
+\mathcal{N}=n_{\mathrm{max}}^{2}\leq(2\pi N_{F})^{2}.\]
+
+\end_inset 
+
+
+\layout Standard
+
+El polinomio 
+\begin_inset Formula $H_{n}$
+\end_inset 
+
+ tiene 
+\begin_inset Formula $n$
+\end_inset 
+
+ ceros por lo que la intensidad presentará 
+\begin_inset Formula $n$
+\end_inset 
+
+ máximos en la dirección 
+\begin_inset Formula $x$
+\end_inset 
+
+ transversa (figura 
+\begin_inset LatexCommand \ref{fig:intensidad-transversa}
+
+\end_inset 
+
+).
+ El tamaño medio de estos máximos de intensidad será
+\begin_inset Formula \begin{equation}
+\Lambda_{n}\simeq\frac{x_{n}}{n}\simeq\frac{\sqrt{n}w}{n}=\frac{w}{\sqrt{n}}.\label{eq:tamanyo-max-intensidad}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/intensidad-transversa-src.eps
+	display monochrome
+	scale 50
+	keepAspectRatio
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:intensidad-transversa}
+
+\end_inset 
+
+Amplitud e intensidad transversas.
+ El tamaño de las manchas de luz en una pantalla corresponde con 
+\begin_inset Formula $\Lambda_{n}$
+\end_inset 
+
+.
+\end_inset 
+
+Esta cantidad se interpreta como el tamaño de las estructuras (manchas de
+ luz) que se pueden esperar en el campo transverso de orden 
+\begin_inset Formula $n$
+\end_inset 
+
+.
+ Como la abertura 
+\begin_inset Formula $2a$
+\end_inset 
+
+ fija el valor máximo de 
+\begin_inset Formula $n$
+\end_inset 
+
+ en 
+\begin_inset LatexCommand \ref{eq:mayor-orden-abertura}
+
+\end_inset 
+
+ las estructuras más pequeñas que se podrán observar en la distribución
+ transversa de la intensidad serán de un tamaño 
+\begin_inset Formula \[
+\Lambda_{\mathrm{min}}=\frac{w^{2}\left(z\right)}{a}\]
+
+\end_inset 
+
+ En particular, en la cintura de haz del resonador confocal (usando 
+\begin_inset LatexCommand \ref{eq:w0-de-b}
+
+\end_inset 
+
+ y 
+\begin_inset Formula $N_{F}=a^{2}/2\lambda b$
+\end_inset 
+
+),
+\begin_inset Formula \[
+\Lambda_{\mathrm{min}}=\frac{a}{2\pi N_{F}}.\]
+
+\end_inset 
+
+
+\layout Section
+
+Estabilidad de un resonador
+\layout Standard
+
+Supongamos que tenemos un haz gaussiano y que (como mencionamos en el caso
+ del resonador confocal), situamos dos espejos esféricos de tal manera que
+ ajusten exactamente la curvatura del frente de ondas en la posición en
+ que se encuentran (figura 
+\begin_inset LatexCommand \ref{fig:resonador-confocal}
+
+\end_inset 
+
+).
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/resonador-confocal-src.eps
+	display monochrome
+	scale 50
+	keepAspectRatio
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:resonador-confocal}
+
+\end_inset 
+
+Campo estacionario en el resonador confocal.
+\end_inset 
+
+
+\layout Standard
+
+Si el tamaño de los espejos es bastante mayor que el diámetro del haz, se
+ pueden despreciar las pérdidas en los bordes, y el haz queda atrapado en
+ el resonador como una onda estacionaria.
+\layout Standard
+
+En cada espejo el haz reflejado es exactamente igual al incidente sólo que
+ propagándose en sentido opuesto.
+\layout Standard
+
+En la práctica el planteamiento es justamente el inverso (figura 
+\begin_inset LatexCommand \ref{fig:resonador-general}
+
+\end_inset 
+
+), es decir, que una vez fijado un resonador formado por los espejos de
+ radio de curvatura 
+\begin_inset Formula $R_{1}$
+\end_inset 
+
+ y 
+\begin_inset Formula $R_{2}$
+\end_inset 
+
+ situados a una distancia 
+\begin_inset Formula $l$
+\end_inset 
+
+ se trata de saber si existe una onda gaussiana capaz de resonar establemente
+ entre ellos.
+ Por tanto, de existir este haz gaussiano tanto las posiciones 
+\begin_inset Formula $z_{1}$
+\end_inset 
+
+ y 
+\begin_inset Formula $z_{2}$
+\end_inset 
+
+ de los espejos respecto a la cintura de haz como 
+\begin_inset Formula $z_{R}$
+\end_inset 
+
+ ó 
+\begin_inset Formula $w_{0}$
+\end_inset 
+
+ serían desconocidos en principio.
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/resonador-general-src.eps
+	scale 60
+	keepAspectRatio
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:resonador-general}
+
+\end_inset 
+
+¿Qué modos gaussianos pueden oscilar establemente en un resonador genérico?.
+\end_inset 
+
+
+\layout Standard
+
+Ahora bien, si los radios de los espejos han de coincidir con los de los
+ frentes de onda del haz, por 
+\begin_inset LatexCommand \ref{eq:R-de-z}
+
+\end_inset 
+
+ se tendrá que verificar
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Se toma el signo de 
+\begin_inset Formula $R\left(z\right)$
+\end_inset 
+
+ como positivo si el centro de curvatura está a la izquierda del frente
+ de ondas y vice versa.
+\end_inset 
+
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{La nota al pie debería ir donde se define $R(z)$}
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray*}
+-R_{1} & = & z_{1}\left(1+\frac{z_{R}^{2}}{z_{1}^{2}}\right)\\
+R_{2} & = & z_{2}\left(1+\frac{z_{R}^{2}}{z_{2}^{2}}\right)\end{eqnarray*}
+
+\end_inset 
+
+con la ligadura adicional de que 
+\begin_inset Formula $l=z_{2}-z_{1}$
+\end_inset 
+
+.
+ Estas tres ecuaciones deberán resolverse para obtener 
+\begin_inset Formula $z_{1}$
+\end_inset 
+
+, 
+\begin_inset Formula $z_{2}$
+\end_inset 
+
+ y 
+\begin_inset Formula $z_{R}$
+\end_inset 
+
+.
+ Más significativos que 
+\begin_inset Formula $R_{1}$
+\end_inset 
+
+ y 
+\begin_inset Formula $R_{2}$
+\end_inset 
+
+ son los llamados 
+\emph on 
+parámetros del resonador
+\emph default 
+
+\begin_inset LatexCommand \index{parámetros del resonador}
+
+\end_inset 
+
+
+\begin_inset Formula \begin{equation}
+g_{1}=1-\frac{l}{R_{1}}\qquad g_{2}=1-\frac{l}{R_{2}}\label{eq:def-g1-g2}\end{equation}
+
+\end_inset 
+
+ En términos de estos parámetros se reescribe el sistema de ecuaciones
+\begin_inset Formula \begin{eqnarray}
+g_{1} & = & 1+\frac{l}{z_{1}\left(1+z_{R}^{2}/z_{1}^{2}\right)}\label{eq:g1-de-z1-zR}\\
+g_{2} & = & 1-\frac{l}{z_{2}\left(1+z_{R}^{2}/z_{2}^{2}\right)}\label{eq:g2-de-z2-zR}\end{eqnarray}
+
+\end_inset 
+
+ Para resolverlo se puede eliminar primero 
+\begin_inset Formula $z_{R}^{2}$
+\end_inset 
+
+ entre ambas y usar 
+\begin_inset Formula $l=z_{2}-z_{1}$
+\end_inset 
+
+ para despejar 
+\begin_inset Formula $z_{1}$
+\end_inset 
+
+ o 
+\begin_inset Formula $z_{2}$
+\end_inset 
+
+.
+ Se obtiene así
+\begin_inset Formula \begin{equation}
+z_{1}=-\frac{g_{2}(1-g_{1})}{g_{1}+g_{2}-2g_{1}g_{2}}l;\quad z_{2}=\frac{g_{1}(1-g_{2})}{g_{1}+g_{2}-2g_{1}g_{2}}l;\quad z_{R}^{2}=\frac{g_{1}g_{2}(1-g_{1}g_{2})}{(g_{1}+g_{2}-2g_{1}g_{2})^{2}}l^{2}\label{eq:z1-z2-zR}\end{equation}
+
+\end_inset 
+
+ De 
+\begin_inset Formula $z_{R}\left(w_{0}\right)$
+\end_inset 
+
+ (ec.
+ 
+\begin_inset LatexCommand \ref{eq:relacion-w0-zR}
+
+\end_inset 
+
+) obtenemos entonces la cintura del haz,
+\begin_inset Formula \begin{equation}
+w_{0}^{2}=\frac{l\lambda}{\pi}\sqrt{\frac{g_{1}g_{2}(1-g_{1}g_{2})}{(g_{1}+g_{2}-2g_{1}g_{2})^{2}}}\label{eq:w0-fn-de-g1-g2}\end{equation}
+
+\end_inset 
+
+ Y usando 
+\begin_inset Formula $w\left(z\right)$
+\end_inset 
+
+ (ec.
+ 
+\begin_inset LatexCommand \ref{eq:w-de-z}
+
+\end_inset 
+
+) tendremos los radios del haz en los espejos, 
+\begin_inset Formula $w_{1}=w\left(z_{1}\right)$
+\end_inset 
+
+, 
+\begin_inset Formula $w_{2}=w\left(z_{2}\right)$
+\end_inset 
+
+: 
+\begin_inset Formula \begin{eqnarray}
+w_{1}^{2} & = & \frac{l\lambda}{\pi}\sqrt{\frac{g_{2}}{g_{1}(1-g_{1}g_{2})}}\label{eq:w-de-z1}\\
+w_{2}^{2} & = & \frac{l\lambda}{\pi}\sqrt{\frac{g_{1}}{g_{2}(1-g_{1}g_{2})}}\label{eq:w-de-z2}\end{eqnarray}
+
+\end_inset 
+
+Si existe el haz gaussiano capaz de formar la onda estacionaria, la cintura
+ de haz deberá ser real, es decir que en 
+\begin_inset LatexCommand \ref{eq:w0-fn-de-g1-g2}
+
+\end_inset 
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/diagrama-estabilidad-src.eps
+	display monochrome
+	scale 60
+	keepAspectRatio
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:condiciones-estabilidad}
+
+\end_inset 
+
+Los parámetros 
+\begin_inset Formula $g_{1},g_{2}$
+\end_inset 
+
+ del resonador determinan su estabilidad.
+ Los valores que dan lugar a resonadores estables son los comprendidos en
+ la región rayada.
+ Avanzar por la recta 
+\begin_inset Formula $g_{1}=g_{2}$
+\end_inset 
+
+ en sentido creciente conduce a resonadores con espejos cóncavos (divergentes)
+ mientras que avanzar más allá del resonador concéntrico, en sentido descendente
+ conduce hacia resonadores cuyos centros de curvatura quedan lejos de la
+ zona central.
+\end_inset 
+
+
+\begin_inset Formula \begin{equation}
+1\geq g_{1}g_{2}\geq0\label{eq:cond-estabilidad}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+En el diagrama 
+\begin_inset Formula $g_{1}$
+\end_inset 
+
+, 
+\begin_inset Formula $g_{2}$
+\end_inset 
+
+ de la figura 
+\begin_inset LatexCommand \ref{fig:condiciones-estabilidad}
+
+\end_inset 
+
+ esta condición reduce el área de estabilidad a la zona comprendida entre
+ los ejes y las ramas de la hipérbola 
+\begin_inset Formula $g_{1}g_{2}=1$
+\end_inset 
+
+.
+ Se observa que en los resonadores estables los dos parámetros 
+\begin_inset Formula $g_{1}$
+\end_inset 
+
+ y 
+\begin_inset Formula $g_{2}$
+\end_inset 
+
+ del resonador deben ser del mismo signo.
+ 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Fijarse en las figuras 7.1 y 7.4 del [Yaariv].}
+\end_inset 
+
+
+\the_end

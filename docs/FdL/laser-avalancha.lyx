@@ -1,0 +1,410 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass scrbook
+\begin_preamble
+\input{FdL-packages.sty}
+\input{FdL-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding latin1
+\fontscheme default
+\graphics default
+\paperfontsize 11
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Chapter
+
+Láseres de avalancha
+\layout Section
+
+Fundamento
+\layout Standard
+
+Consideremos ahora el caso en que el ruido cuántico del amplificador lo
+ satura por completo, y por tanto no podemos emplear las ecuaciones del
+ apartado anterior.
+ En régimen de saturación, 
+\begin_inset Formula $I\gg I_{0}$
+\end_inset 
+
+ la fórmula de Rigrod (ec.
+ 
+\begin_inset LatexCommand \ref{eq:alfa-formula-rigrod}
+
+\end_inset 
+
+) se simplifica:
+\begin_inset Formula \[
+\alpha=\frac{I_{0}}{I}\alpha_{0},\qquad\dx{I}=\alpha_{0}I_{0}\]
+
+\end_inset 
+
+de donde con la condición 
+\begin_inset Formula $I\left(0\right)=0$
+\end_inset 
+
+ (sólo se amplifica el ruido del propio amplificador) se obtiene la siguiente
+ relación lineal entre intensidad generada y longitud recorrida por la radiación
+ en el amplificador:
+\begin_inset Formula \[
+I\left(x\right)=\alpha_{0}I_{0}x.\]
+
+\end_inset 
+
+La expresión explícita para 
+\begin_inset Formula $I_{0}$
+\end_inset 
+
+ depende del esquema de niveles del medio amplificador, entre otros factores,
+ según las fórmulas 
+\begin_inset LatexCommand \ref{eq:I0-tres-niv}
+
+\end_inset 
+
+ y 
+\begin_inset LatexCommand \ref{eq:I0-cuatro-niv}
+
+\end_inset 
+
+.
+\layout Standard
+
+En algunos amplificadores se pueden conseguir ganancias extremadamente altas
+ en tiempos muy cortos.
+ Durante el breve tiempo en el que la amplificación alcanza valores muy
+ altos, el ruido cuántico sobresatura el amplificador (A.S.E., 
+\emph on 
+Amplified Spontaneous Emission
+\emph default 
+
+\begin_inset LatexCommand \index{A.S.E.}
+
+\end_inset 
+
+).
+ Son los 
+\emph on 
+láseres de avalancha
+\emph default 
+
+\begin_inset LatexCommand \index{láser!de avalancha}
+
+\end_inset 
+
+
+\emph on 
+.
+\layout Standard
+
+Entre los láseres de avalancha, merecen mención especial los de 
+\emph on 
+onda viajera
+\begin_inset LatexCommand \index{láser!de onda viajera}
+
+\end_inset 
+
+
+\emph default 
+; en éstos, la inversión de población la produce una excitación de bombeo
+ que se desplaza a la velocidad que la luz tiene en el medio amplificador,
+ 
+\begin_inset Formula $c=c_{0}/\mu$
+\end_inset 
+
+.
+ En virtud de las relaciones 
+\begin_inset Formula $n_{i}=P\tau/\left(1+I/I_{0}\right)$
+\end_inset 
+
+ y 
+\begin_inset Formula $\alpha_{0}=n_{i}\sigma_{21}$
+\end_inset 
+
+ la forma de propagación del bombeo se traslada a la amplificación:
+\begin_inset Formula \[
+P=P\left(t-\frac{x}{c}\right)\rightarrow\alpha=\alpha_{0}\left(t-\frac{x}{c}\right)\]
+
+\end_inset 
+
+En este caso en la ecuación de transporte de la radiación (
+\begin_inset LatexCommand \ref{eq:evol-radiacion}
+
+\end_inset 
+
+) existe una dependencia explícita de la intensidad en el tiempo:
+\begin_inset Formula \[
+\frac{1}{c}\dt{I}=\dpx{I}+\frac{1}{c}\dpt{I}=I\alpha=\frac{I\alpha_{0}\left(t-x/c\right)}{1+I/I_{0}}\simeq I_{0}\alpha_{0}\left(t-x/c\right)\]
+
+\end_inset 
+
+con el siguiente cambio de variable nos 
+\emph on 
+montamos
+\emph default 
+ sobre la onda viajera
+\begin_inset Formula \begin{eqnarray*}
+t' & = & t-x/c,\qquad x'=x\end{eqnarray*}
+
+\end_inset 
+
+y teniendo en cuenta que 
+\begin_inset Formula \[
+\dpa{}{t'}=\dpt{},\qquad\dpa{}{x'}=\dpx{}+\frac{1}{c}\dpt{}\]
+
+\end_inset 
+
+volvemos a tener una ecuación con la misma forma que en el caso adiabático
+ 
+\begin_inset LatexCommand \ref{eq:evol-I-con-x-adiabatico}
+
+\end_inset 
+
+
+\begin_inset Formula \[
+\dpa{I}{x'}=I_{0}\alpha_{0}\]
+
+\end_inset 
+
+y por lo tanto, recordando que se amplifica el ruido (
+\begin_inset Formula $I\left(0\right)=0$
+\end_inset 
+
+) y tomando 
+\begin_inset Formula $I_{0}=I_{0}^{\left[3\right]}$
+\end_inset 
+
+:
+\begin_inset Formula \[
+I\left(l\right)=\frac{h\nu_{0}Pl}{1+g_{2}/g_{1}}.\]
+
+\end_inset 
+
+
+\layout Standard
+
+Los sistemas experimentales que se han de emplear para conseguir la onda
+ de bombeo se explican a continuación.
+\layout Section
+
+Generación de la onda de bombeo
+\layout Standard
+
+Los métodos más empleados en el bombeo de gases a baja presión son el de
+ la línea de Blusalein
+\begin_inset LatexCommand \index{Blusalein!método de}
+
+\end_inset 
+
+ y el de las líneas coaxiales formadoras de pulso.
+\layout Standard
+
+La base de ambos reside en la aplicación a dos electrodos alargados entre
+ los que se encuentra el gas de una onda de alta tensión que progresa sobre
+ la longitud del electrodo a la velocidad de la luz.
+\layout Subsection
+
+Línea de Blusalein
+\layout Standard
+
+Para conseguir la onda de alta tensión en este método, ilustrado en la figura
+ 
+\begin_inset LatexCommand \ref{fig:montaje-blusalein}
+
+\end_inset 
+
+, se construye la línea con dos condensadores planos idénticos, que tienen
+ conectada una armadura a cada uno de los electrodos.
+ En la esquina de uno de los condensadores se ubica un disruptor, que al
+ cerrarse descarga este condensador.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/linea-blusalein-src.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:montaje-blusalein}
+
+\end_inset 
+
+Montaje para la generación de la onda de bombeo por el método de la línea
+ de Blusalein.
+ Arriba, alzado exterior (la circunferencia representa el tubo de descarga).
+ En el centro, planta.
+ Abajo, alzado representando la progresión de la onda.
+\end_inset 
+
+
+\layout Standard
+
+Si la conductancia del disruptor es pequeña, una onda de caída de potencial
+ se propaga a partir de éste por la línea que constituyen las armaduras
+ del condensador.
+ Como el otro condensador sigue cargado, cuando la caída de potencial alcanza
+ el extremo del electrodo se genera una descarga que se propaga con la misma
+ velocidad con que marcha el corte del frente de ondas
+\begin_inset Foot
+collapsed false
+
+\layout Standard
+
+Se necesita un disruptor con inductancia muy baja para que la onda sea verdadera
+mente abrupta.
+ 
+\end_inset 
+
+ sobre el electrodo.
+ Esta velocidad es la de propagación de la onda en el dieléctrico del condensado
+r, 
+\begin_inset Formula $v$
+\end_inset 
+
+, dividida por el seno del ángulo (
+\begin_inset Formula $\alpha$
+\end_inset 
+
+) entre el frente de ondas y el electrodo; para que se produzca el bombeo
+ en onda viajera esta velocidad deberá ser igual a la de la luz en el medio
+ amplificador, es decir:
+\begin_inset Formula \[
+\sin\alpha=v/c\]
+
+\end_inset 
+
+Así, la descarga entre los electrodos que produce el bombeo de poblaciones
+ en el gas se desplaza a la misma velocidad que la luz que está amplificando.
+ El parámetro a ajustar es 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+.
+\layout Standard
+
+Se puede conseguir el mismo efecto si los electrodos forman un ángulo 
+\begin_inset Formula $\beta$
+\end_inset 
+
+ en lugar de ser paralelos (figura 
+\begin_inset LatexCommand \ref{fig:blusalein-angulo}
+
+\end_inset 
+
+).
+ Entonces, al descargarse el condensador a través del disruptor, la descarga
+ entre los electrodos se inicia en el extremo en que estos se encuentran
+ más próximos
+\begin_inset Foot
+collapsed false
+
+\layout Standard
+
+Esta geometría permite relajar la exigencia de una inductancia muy pequeña
+ para el disruptor.
+\end_inset 
+
+, y rápidamente se desplaza hacia el otro extremo.
+ Lo interesante es que la velocidad de desplazamiento de la descarga depende,
+ además de la presión del gas entre los electrodos, del ángulo 
+\begin_inset Formula $\beta$
+\end_inset 
+
+ que forman éstos.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/blusalein-angulo-src.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:blusalein-angulo}
+
+\end_inset 
+
+Línea de Blusalein con los electrodos en ángulo.
+ El sistema sigue el mismo principio que se utiliza en las torres de los
+ tendidos eléctricos para conducir fuera de la línea la alta tensión de
+ los rayos, evitando que se propague al siguiente segmento de línea.
+\end_inset 
+
+
+\layout Standard
+
+Cabe señalar que el láser puede funcionar sin efecto de línea.
+ Por ejemplo, si el disruptor no tiene inductancia suficientemente baja
+ el condensador se descarga en todas partes simultáneamente y la potencia
+ es menor, aunque en general es también bastante alta.
+ En algunos casos se usan uno o dos espejos para realimentar.
+\layout Subsection
+
+Líneas coaxiales formadoras de pulso
+\layout Standard
+
+También se puede conseguir el efecto de onda viajera si la descarga se realiza
+ entre una sucesión de electrodos cortos, unidos a un disruptor por líneas
+ de transmisión de longitud variable (como en la figura 
+\begin_inset LatexCommand \ref{fig:lineas-coaxiales}
+
+\end_inset 
+
+) cuyas capacidades se descargan a través del disruptor.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/lineas-coaxiales-src.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:lineas-coaxiales}
+
+\end_inset 
+
+Montaje de líneas coaxiales para la generación de la onda de bombeo.
+ La onda de descarga va llegando en orden de longitud del cable disruptor-conden
+sador.
+\end_inset 
+
+
+\the_end

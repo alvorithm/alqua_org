@@ -1,0 +1,2176 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass book
+\begin_preamble
+\input{FdL-packages.sty}
+\input{FdL-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding latin1
+\fontscheme ae
+\graphics default
+\paperfontsize 11
+\spacing single 
+\papersize a4paper
+\paperpackage widemarginsa4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Chapter
+
+Transiciones no radiativas
+\layout Section
+
+Definición y clasificación
+\layout Standard
+
+Se llama 
+\emph on 
+transición no radiativa
+\begin_inset LatexCommand \index{transición!no radiativa}
+
+\end_inset 
+
+
+\emph default 
+ a la que efectúa un sistema cuántico sin emisión de radiación.
+ Las transiciones no radiativas suelen producirse siempre que el sistema
+ interacciona con el medio en el que está sumergido.
+ La probabilidad de una transición no radiativa depende de su naturaleza
+ particular.
+\layout Standard
+
+En sistemas cuánticos complejos se pueden distinguir diversos tipos de interacci
+ones:
+\layout Itemize
+
+
+\series bold 
+internas
+\series default 
+, como la que tiene lugar entre los niveles electrónicos y vibracionales
+ o rotacionales de dos partes del sistema atómico o molecular.
+\layout Itemize
+
+
+\series bold 
+externas
+\series default 
+, a través de colisiones.
+ Éstas pueden a su vez clasificarse en
+\begin_deeper 
+\layout Itemize
+
+colisiones de primera clase: aquellas en las que la energía cinética de
+ los agregados que chocan se transforma al menos parcialmente en energía
+ de excitación interna a causa de la inducción de una transición no radiativa
+ de absorción.
+\layout Itemize
+
+colisiones de segunda clase: las que tienen lugar cuando en la colisión
+ la energía de excitación de los agregados que chocan se transforma en energía
+ cinética por inducción de una transición no radiativa de emisión.
+\end_deeper 
+\layout Standard
+
+En todo caso, cualquier transición de tipo no radiativo involucra siempre
+ dos subsistemas que intercambian energía.
+ Utilicemos la mecánica cuántica para dar rigor a la descripción que hemos
+ apuntado.
+\layout Section
+
+Probabilidades de transición
+\layout Standard
+
+Sea un sistema formado por dos subsistemas, que llamaremos 
+\begin_inset Formula $A$
+\end_inset 
+
+ y 
+\begin_inset Formula $B$
+\end_inset 
+
+ y cuyos autoestados designaremos, respectivamente como 
+\begin_inset Formula $\left\{ \ket{a_{i}}\right\} _{i=1}^{k}$
+\end_inset 
+
+ con energías 
+\begin_inset Formula $\left\{ E_{a_{i}}\right\} _{i=1}^{k}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\left\{ \ket{b_{j}}\right\} _{j=1}^{l}$
+\end_inset 
+
+ con energías 
+\begin_inset Formula $\left\{ E_{b_{j}}\right\} _{j=1}^{l}$
+\end_inset 
+
+.
+\begin_inset Foot
+collapsed false
+
+\layout Standard
+
+En principio supondremos que los niveles no tienen degeneración, ni en 
+\begin_inset Formula $A$
+\end_inset 
+
+ ni en 
+\begin_inset Formula $B$
+\end_inset 
+
+.
+\end_inset 
+
+
+\layout Standard
+
+En ausencia de interacción, la energía total cuando los subsistemas están
+ en los estados 
+\begin_inset Formula $\ket{a_{i}},\ket{b_{j}}$
+\end_inset 
+
+ será 
+\begin_inset Formula $E_{ij}=E_{a_{i}}+E_{b_{j}}$
+\end_inset 
+
+ y las transiciones no radiativas a otros estados 
+\begin_inset Formula $\ket{a_{n}},\ket{b_{m}}$
+\end_inset 
+
+ sólo serán posibles si se conserva la energía:
+\begin_inset Formula \begin{equation}
+E_{ij}=E_{a_{i}}+E_{b_{j}}=E_{a_{n}}+E_{b_{m}}=E_{nm}\label{eq:conserv-E-tr-no-rad}\end{equation}
+
+\end_inset 
+
+En realidad, sabemos que el proceso se producirá si hay resonancia, y por
+ tanto si hay conservación de energía 
+\emph on 
+en media
+\emph default 
+, es decir, dentro de la anchura de la resonancia.
+\layout Standard
+\align center 
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/conserv-E-tr-no-rad.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:conserv-E-tr-no-rad}
+
+\end_inset 
+
+Diagrama de energías para el sistema conjunto en el estado degenerado caracteriz
+ado por los números cuánticos 
+\begin_inset Formula $i,j$
+\end_inset 
+
+ ó 
+\begin_inset Formula $m,n$
+\end_inset 
+
+.
+ Como se ve, la transición conserva la energía.
+\end_inset 
+
+
+\layout Standard
+
+El conjunto de los dos subsistemas considerado como un sistema único estará
+ caracterizado por los autoestados 
+\begin_inset Formula $\ket{a_{i}}\otimes\ket{b_{j}}$
+\end_inset 
+
+ y las energías 
+\begin_inset Formula $E_{ij}$
+\end_inset 
+
+.
+ Así visto, el sistema es cerrado y para que se conserve la energía sólo
+ serán posibles las transiciones entre los subniveles de un nivel degenerado;
+ Es decir,
+\begin_inset Formula \[
+\ket{ij}=|a_{i}\rangle\otimes|b_{j}\rangle\longrightarrow|a_{n}\rangle\otimes|b_{m}\rangle=\ket{nm}\;\textnormal{ sólo permitida si }\; E_{ij}=E_{nm}.\]
+
+\end_inset 
+
+
+\layout Standard
+
+Si el sistema total no es degenerado no se podrán, por tanto, efectuar transicio
+nes no radiativas.
+ La degeneración se asegura si, como es frecuente, el sistema 
+\begin_inset Formula $B$
+\end_inset 
+
+ tiene un espectro casi contínuo.
+ 
+\layout Standard
+
+Supongamos ahora (figura 
+\begin_inset LatexCommand \ref{fig:conserv-E-tr-no-rad}
+
+\end_inset 
+
+) que el sistema total se encuentra en el estado 
+\begin_inset Formula $|a_{i}\rangle\otimes|b_{j}\rangle$
+\end_inset 
+
+ con energía total 
+\begin_inset Formula $E_{ij}=E_{a_{i}}+E_{b_{j}}$
+\end_inset 
+
+ y sea 
+\begin_inset Formula $|a_{i}\rangle$
+\end_inset 
+
+ un estado excitado del subsistema 
+\begin_inset Formula $A$
+\end_inset 
+
+ tal que 
+\begin_inset Formula $E_{a_{i}}>E_{a_{n}}$
+\end_inset 
+
+.
+ Esa desigualdad implica que en la interacción el subsistema 
+\begin_inset Formula $A$
+\end_inset 
+
+ se desexcita transfiriendo energía a 
+\begin_inset Formula $B$
+\end_inset 
+
+.
+\layout Standard
+
+Una teoría fenomenológica de las transiciones no radiativas, análoga a la
+ de Einstein para las transiciones radiativas, puede basarse en el siguiente
+ enfoque para un conjunto de sistemas formado por subsistemas en interacción:
+\layout Itemize
+
+el paso del estado 
+\begin_inset Formula $|a_{i}\rangle\otimes|b_{j}\rangle$
+\end_inset 
+
+ al estado 
+\begin_inset Formula $|a_{n}\rangle\otimes|b_{m}\rangle$
+\end_inset 
+
+ en un tiempo 
+\begin_inset Formula $\mathrm{d}t$
+\end_inset 
+
+ se efectuará con una probabilidad de transición por unidad de tiempo 
+\begin_inset Formula $P_{ij,nm}$
+\end_inset 
+
+.
+ 
+\layout Itemize
+
+para que el subsistema 
+\begin_inset Formula $A$
+\end_inset 
+
+ situado en el estado 
+\begin_inset Formula $|a_{i}\rangle$
+\end_inset 
+
+ pueda pasar no radiativamente al estado 
+\begin_inset Formula $|a_{n}\rangle$
+\end_inset 
+
+ es preciso que el subsistema 
+\begin_inset Formula $B$
+\end_inset 
+
+ se encuentre 
+\begin_inset Quotes eld
+\end_inset 
+
+preparado
+\begin_inset Quotes erd
+\end_inset 
+
+, es decir en el estado 
+\begin_inset Formula $|b_{j}\rangle$
+\end_inset 
+
+ de energía compatible con la transición 
+\begin_inset Formula $\ket{a_{i}}\rightarrow\ket{a_{n}}$
+\end_inset 
+
+ de 
+\begin_inset Formula $A$
+\end_inset 
+
+.
+ 
+\layout Itemize
+
+la probabilidad de transición no radiativa para la transición desde el estado
+ 
+\begin_inset Formula $|a_{i}\rangle$
+\end_inset 
+
+ al estado 
+\begin_inset Formula $|a_{n}\rangle$
+\end_inset 
+
+ será el producto de la probabilidad de transición 
+\begin_inset Formula $P_{ij,nm}$
+\end_inset 
+
+ desde el estado 
+\begin_inset Formula $|a_{i}\rangle\otimes|b_{j}\rangle$
+\end_inset 
+
+ al estado 
+\begin_inset Formula $|a_{n}\rangle\otimes|b_{m}\rangle$
+\end_inset 
+
+ por la probabilidad 
+\begin_inset Formula $\rho_{b_{j}}$
+\end_inset 
+
+ de que el subsistema 
+\begin_inset Formula $B$
+\end_inset 
+
+ se encuentre en el estado 
+\begin_inset Formula $|b_{j}\rangle$
+\end_inset 
+
+, es decir, la probabilidad de ocupación o población del estado 
+\begin_inset Formula $\ket{b_{j}}$
+\end_inset 
+
+ en el medio que forman los sistemas 
+\begin_inset Formula $B$
+\end_inset 
+
+.
+\layout Standard
+
+Con estas premisas, y denotando por 
+\begin_inset Formula $n$
+\end_inset 
+
+ el número de subsistemas por unidad de volumen, el número de subsistemas
+ 
+\begin_inset Formula $A$
+\end_inset 
+
+ que ejecutan la transición del estado 
+\begin_inset Formula $|a_{i}\rangle$
+\end_inset 
+
+ al 
+\begin_inset Formula $|a_{n}\rangle$
+\end_inset 
+
+ asistida por la transición 
+\begin_inset Formula $|b_{j}\rangle\rightarrow|b_{m}\rangle$
+\end_inset 
+
+ de 
+\begin_inset Formula $B$
+\end_inset 
+
+ será, en el tiempo 
+\begin_inset Formula $\mathrm{d}t$
+\end_inset 
+
+ y por unidad de volumen,
+\begin_inset Formula \[
+\mathrm{d}n_{ij,nm}=P_{ij,nm}\rho_{b_{j}}n_{a_{i}}\,\mathrm{d}t.\]
+
+\end_inset 
+
+
+\layout Standard
+\noindent 
+Análogamente, para la transición no radiativa 
+\begin_inset Formula $\ket{a_{n}}\rightarrow\ket{a_{i}}$
+\end_inset 
+
+ asistida por 
+\begin_inset Formula $\ket{b_{m}}\rightarrow\ket{b_{j}}$
+\end_inset 
+
+ (la opuesta) tendremos:
+\begin_inset Formula \[
+\mathrm{d}n_{nm,ij}=P_{nm,ij}\rho_{b_{m}}n_{a_{n}}\,\mathrm{d}t.\]
+
+\end_inset 
+
+
+\layout Standard
+
+Dado que es posible que la transición 
+\begin_inset Formula $|a_{i}\rangle\rightarrow|a_{n}\rangle$
+\end_inset 
+
+ sea asistida por varias transiciones diferentes de 
+\begin_inset Formula $B$
+\end_inset 
+
+ (cuando existen varios 
+\begin_inset Formula $b_{j}$
+\end_inset 
+
+ con energías muy próximas), todas ellas conservando la energía según 
+\begin_inset LatexCommand \ref{eq:conserv-E-tr-no-rad}
+
+\end_inset 
+
+, se puede escribir
+\begin_inset Formula \[
+\mathrm{d}n_{in}=\sum_{j}P_{ij,nm}\rho_{b_{j}}n_{a_{i}}\,\mathrm{d}t\]
+
+\end_inset 
+
+
+\layout Standard
+
+Podemos entonces llamar 
+\begin_inset Formula $d_{in}$
+\end_inset 
+
+ a la probabilidad de transición no radiativa desde el estado 
+\begin_inset Formula $|a_{i}\rangle$
+\end_inset 
+
+ al estado 
+\begin_inset Formula $|a_{n}\rangle$
+\end_inset 
+
+, y 
+\begin_inset Formula $d_{ni}$
+\end_inset 
+
+ a la del proceso inverso:
+\begin_inset Formula \begin{eqnarray}
+d_{in} & = & \sum_{j}P_{ij,nm}\rho_{b_{j}}\nonumber \\
+d_{ni} & = & \sum_{m}P_{nm,ij}\rho_{b_{m}}.\label{eq:d_ni-prob-no-rad}\end{eqnarray}
+
+\end_inset 
+
+ Se puede observar que sólo dependen de la distribución de poblaciones en
+ el sistema 
+\begin_inset Formula $B$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+Quedan así las siguientes expresiones para el número de transiciones del
+ sistema 
+\begin_inset Formula $A$
+\end_inset 
+
+ que asistidas por el sistema 
+\begin_inset Formula $B$
+\end_inset 
+
+ se efectúan de manera no radiativa:
+\begin_inset Formula \begin{eqnarray}
+\mathrm{d}n_{in} & = & d_{in}n_{a_{i}}\,\mathrm{d}t\qquad\textnormal{(desexcitación)}\nonumber \\
+\mathrm{d}n_{ni} & = & d_{ni}n_{a_{n}}\,\mathrm{d}t\qquad\textnormal{(excitación)}\label{eq:dn_in-y-dn_ni}\end{eqnarray}
+
+\end_inset 
+
+
+\layout Standard
+
+Si el conjunto de subsistemas puede ser considerado en equilibrio térmico,
+ por el principio de 
+\emph on 
+balance detallado
+\emph default 
+ (igualdad del número de transiciones en cada sentido), deberán producirse
+ tantas transiciones 
+\begin_inset Formula $|a_{i}\rangle\otimes|b_{j}\rangle\rightarrow|a_{n}\rangle\otimes|b_{m}\rangle$
+\end_inset 
+
+ como en sentido contrario.
+ Por lo tanto, bajo tal supuesto se verifica 
+\begin_inset Formula $\mathrm{d}n_{ij,mn}=\mathrm{d}n_{nm,ij}$
+\end_inset 
+
+, o
+\begin_inset Formula \[
+P_{ij,nm}\rho_{b_{j}}n_{a_{i}}=P_{nm,ij}\rho_{b_{m}}n_{a_{n}}.\]
+
+\end_inset 
+
+
+\layout Standard
+\noindent 
+En el equilibrio térmico, la distribución de Boltzmann (
+\begin_inset LatexCommand \ref{eq:distr-Boltzmann-dens-rad}
+
+\end_inset 
+
+) fija las probabilidades de ocupación en los sistemas 
+\begin_inset Formula $A$
+\end_inset 
+
+ y 
+\begin_inset Formula $B$
+\end_inset 
+
+:
+\begin_inset Formula \[
+\frac{\rho_{b_{j}}}{\rho_{b_{m}}}=\exp\left(-\frac{E_{b_{j}}-E_{b_{m}}}{k_{B}T}\right)\qquad\frac{n_{a_{i}}}{n_{a_{n}}}=\exp\left(-\frac{E_{a_{i}}-E_{a_{n}}}{k_{B}T}\right)\]
+
+\end_inset 
+
+
+\layout Standard
+\noindent 
+sustituyendo ambas en el balance detallado y recordando 
+\begin_inset LatexCommand \ref{eq:conserv-E-tr-no-rad}
+
+\end_inset 
+
+ tenemos 
+\begin_inset Formula \[
+P_{ij,nm}=P_{nm,ij}\]
+
+\end_inset 
+
+
+\layout Standard
+\noindent 
+donde hemos supuesto que 
+\begin_inset Formula $\rho_{b_{j}},\rho_{b_{m}},n_{a_{i}},n_{a_{n}}$
+\end_inset 
+
+ se refieren a estados, no a niveles.
+ Es el mismo resultado que aparecía para las transiciones radiativas con
+ los coeficientes de Einstein.
+\layout Standard
+
+Observemos que el planteamiento del principio de balance detallado se efectúa
+ con las poblaciones de los distintos 
+\emph on 
+estados
+\emph default 
+ tanto si hay degeneración como si no la hay.
+\layout Standard
+
+Cuando hay degeneración se puede plantear el balance de las poblaciones
+ de los 
+\emph on 
+niveles
+\emph default 
+ de distinta energía.
+ Así, el balance (menos detallado, pero el que nos interesa) de poblaciones
+ de niveles 
+\begin_inset Formula $E_{a_{i}}$
+\end_inset 
+
+ y 
+\begin_inset Formula $E_{a_{n}}$
+\end_inset 
+
+ se escribe como 
+\begin_inset Formula $\mathrm{d}n_{in}=\mathrm{d}n_{ni}$
+\end_inset 
+
+ e implica:
+\begin_inset Formula \[
+\frac{d_{in}}{d_{ni}}=\frac{n_{a_{n}}}{n_{a_{i}}}=\frac{g_{a_{n}}}{g_{a_{i}}}\exp\left(\frac{E_{a_{i}}-E_{a_{n}}}{k_{B}T}\right)\]
+
+\end_inset 
+
+
+\layout Standard
+
+Lo curioso es que esta relación entre 
+\begin_inset Formula $d_{in}$
+\end_inset 
+
+ y 
+\begin_inset Formula $d_{ni}$
+\end_inset 
+
+ es válida aún en los casos en que el sistema 
+\begin_inset Formula $A$
+\end_inset 
+
+ no esté en equilibrio térmico, siempre y cuando el sistema 
+\begin_inset Formula $B$
+\end_inset 
+
+ no vea apreciablemente alterada su estadística por esta circunstancia.
+ Ello es debido a que, como se aprecia en 
+\begin_inset LatexCommand \ref{eq:d_ni-prob-no-rad}
+
+\end_inset 
+
+, las probabilidades 
+\begin_inset Formula $d_{ni}$
+\end_inset 
+
+ y 
+\begin_inset Formula $d_{in}$
+\end_inset 
+
+ sólo dependen de la probabilidad 
+\begin_inset Formula $\rho_{b_{j}}$
+\end_inset 
+
+, que es proporcional a la probabilidad de ocupación en el subsistema 
+\begin_inset Formula $B$
+\end_inset 
+
+ la cual, en equilibrio térmico, está dada por la distribución de Boltzmann:
+\begin_inset Formula \[
+\rho\left(E_{b_{j}}\right)=\frac{g_{j}\exp\left(-E_{b_{j}}/k_{B}T\right)}{\sum_{i}g_{i}\exp\left(-E_{b_{i}}/k_{B}T\right)}.\]
+
+\end_inset 
+
+Esta ampliación del rango de validez de la relación 
+\begin_inset Formula $d_{in}/d_{ni}$
+\end_inset 
+
+ supone por ejemplo poder tratar casos como aquél en el que 
+\begin_inset Formula $A$
+\end_inset 
+
+ es un átomo o molécula fuera del equilibrio (excitado) pero 
+\begin_inset Formula $B$
+\end_inset 
+
+ es un 
+\begin_inset Quotes eld
+\end_inset 
+
+baño
+\begin_inset Quotes erd
+\end_inset 
+
+ térmico.
+ El interés reside en que abundan las situaciones en las que sólo 
+\begin_inset Formula $A$
+\end_inset 
+
+ es lo suficientemente elemental como para hacer cálculos.
+\layout Section
+
+Transiciones no radiativas en gases
+\layout Subsection
+
+Probabilidad de transición
+\layout Standard
+
+Utilizando la teoría cinética se puede obtener una estimación de la probabilidad
+ de transición no radiativa por colisiones en gases escrita en función de
+ magnitudes características de la sustancia gaseosa (como la masa de sus
+ moléculas, 
+\begin_inset Formula $m$
+\end_inset 
+
+ o la sección eficaz efectiva para producir las transiciones, 
+\begin_inset Formula $\sigma$
+\end_inset 
+
+) y de su estado termodinámico (como 
+\begin_inset Formula $P$
+\end_inset 
+
+ o 
+\begin_inset Formula $T$
+\end_inset 
+
+).
+ 
+\layout Standard
+
+Podemos partir de 
+\begin_inset Formula $d\simeq1/\bar{t}$
+\end_inset 
+
+, donde 
+\begin_inset Formula $\bar{t}$
+\end_inset 
+
+ es el tiempo medio entre colisiones y expresarlo en términos de la velocidad
+ cuadrática media 
+\begin_inset Formula $\bar{v}$
+\end_inset 
+
+ y del recorrido libre medio, 
+\begin_inset Formula $\lambda$
+\end_inset 
+
+:
+\begin_inset Formula \[
+d\simeq\frac{1}{\bar{t}}=\frac{\bar{v}}{\lambda}\]
+
+\end_inset 
+
+
+\layout Standard
+\noindent 
+que tienen los siguientes valores (ver apéndice 
+\begin_inset LatexCommand \ref{cha:gas-esferas-duras}
+
+\end_inset 
+
+, ecuación 
+\begin_inset LatexCommand \ref{eq:rec-libremedio-gas-monomolec}
+
+\end_inset 
+
+):
+\begin_inset Formula \[
+\bar{v}=\sqrt{\frac{3kT}{m}},\qquad\lambda=\frac{1}{\sigma n\sqrt{2}}\]
+
+\end_inset 
+
+donde 
+\begin_inset Formula $n=N/V$
+\end_inset 
+
+ es la densidad de moléculas; en un gas perfecto homonuclear vale 
+\begin_inset Formula \[
+n=\frac{P}{k_{B}T}.\]
+
+\end_inset 
+
+
+\layout Standard
+
+Se obtiene así la siguiente expresión:
+\begin_inset Formula \begin{equation}
+d=\sqrt{\frac{6}{k_{B}m}}\,\frac{P}{\sqrt{T}}\,\sigma.\label{eq:pr-tr-teoria-cinetica}\end{equation}
+
+\end_inset 
+
+ Se comprueba experimentalmente que la dependencia predicha en 
+\begin_inset Formula $P$
+\end_inset 
+
+ y 
+\begin_inset Formula $T$
+\end_inset 
+
+ es correcta.
+ Lamentablemente, es difícil obtener buenos valores para 
+\begin_inset Formula $\sigma$
+\end_inset 
+
+.
+\layout Subsection
+
+Ensanchamiento homogéneo.
+ Anchura colisional.
+\layout Standard
+
+Cuando ocurre una colisión la fase del campo emitido pierde la coherencia
+ con la fase anterior porque se provoca un corte del tren de ondas emitido.
+ Éste queda troceado entonces en tramos coherentes de una duración media
+ igual al tiempo medio entre colisiones, 
+\begin_inset Formula $\bar{t}=1/d$
+\end_inset 
+
+ (figura 
+\begin_inset LatexCommand \ref{fig:tren-ondas}
+
+\end_inset 
+
+).
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Lo que se representa en realidad es $
+\backslash 
+Re{E}$... modificar figura. También podrían ponerse el trozo inmediatamente anterior y el posterior desfasados con el central.}
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/tren-ondas-src.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:tren-ondas}
+
+\end_inset 
+
+Si el átomo está emitiendo cuando sufre una colisión, aunque sea elástica,
+ se produce un cambio de fase arbitrario y la radiación emitida pierde la
+ coherencia.
+ 
+\end_inset 
+
+
+\layout Standard
+
+Si, como en efecto ocurre, el tiempo de vida 
+\begin_inset Formula $\tau$
+\end_inset 
+
+ del nivel excitado es mucho más largo que el periodo de la oscilación 
+\begin_inset Formula $\left(\tau\gg\omega_{s's}^{-1}\right)$
+\end_inset 
+
+, podemos aproximar el campo 
+\begin_inset LatexCommand \ref{eq:evol-temporal-campo-amort}
+
+\end_inset 
+
+ en un tramo coherente por un campo sinusoidal, no amortiguado en su tiempo
+ de vida, 
+\begin_inset Formula $\bar{t}_{c}$
+\end_inset 
+
+:
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Se pueden aportar datos comparando tau y omega}
+\end_inset 
+
+
+\begin_inset Formula \[
+E=E_{0}e^{-i\omega_{s's}t},\quad-\bar{t}/2<t<\bar{t}/2\]
+
+\end_inset 
+
+
+\layout Standard
+\noindent 
+Su espectro
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Seguiremos la convención de usar el signo positivo para el argumento de
+ la exponencial en las transformadas de Fourier.
+ Denotaremos a las cantidades transformadas mediante una tilde.
+\end_inset 
+
+ será (figura 
+\begin_inset LatexCommand \ref{fig:espectro-campo}
+
+\end_inset 
+
+):
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Me parece oportuno avisar del convenio para el signo en la transformada de Fourier la primera vez que se haga una operación de este tipo. Quizá sea interesante notar las transformadas del campo y de la intensidad resp. como $
+\backslash 
+tilde{E}(
+\backslash 
+omega),
+\backslash 
+tilde{I}(
+\backslash 
+omega)$, como notación que puede ser aplicada con generalidad. ACEPTADO -> Ahora hay que sincronizar las figuras con el texto.}
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray*}
+\tilde{E}\left(\omega\right) & = & \frac{E_{0}}{\sqrt{2\pi}}\int_{-\bar{t}/2}^{\bar{t}/2}e^{-i\left(\omega_{s's}-\omega\right)t}\,\mathrm{d}t\\
+ & = & \frac{2E_{0}}{\sqrt{2\pi}}\,\frac{\sin\left[\left(\omega_{s's}-\omega\right)\bar{t}/2\right]}{\omega_{s's}-\omega}\end{eqnarray*}
+
+\end_inset 
+
+El cuadrado del módulo de 
+\begin_inset Formula $\tilde{E}\left(\omega\right)$
+\end_inset 
+
+ será el espectro de la intensidad (figura 
+\begin_inset LatexCommand \ref{fig:espectro-intens}
+
+\end_inset 
+
+):
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/espectro-campo-src.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:espectro-campo}
+
+\end_inset 
+
+Espectro de frecuencias del campo.
+ 
+\begin_inset Formula $\Delta\omega_{E}$
+\end_inset 
+
+ es la anchura del campo.
+\end_inset 
+
+ 
+\begin_inset Formula \[
+\left|\tilde{E}\left(\omega\right)\right|^{2}=\frac{2E_{0}^{2}}{\pi}\,\frac{\sin^{2}\left[\left(\omega_{s's}-\omega\right)\bar{t}/2\right]}{\left(\omega_{s's}-\omega\right)^{2}}\]
+
+\end_inset 
+
+
+\layout Standard
+\noindent 
+Cerca de la resonancia el argumento del seno, 
+\begin_inset Formula $\omega_{s's}-\omega\equiv x$
+\end_inset 
+
+ se hace muy pequeño.
+ Como 
+\begin_inset Formula $\sin^{2}x=\tan^{2}x/\left(1+\tan^{2}x\right)$
+\end_inset 
+
+ y para 
+\begin_inset Formula $x$
+\end_inset 
+
+ pequeño 
+\begin_inset Formula $\tan x\simeq x$
+\end_inset 
+
+ el espectro de la intensidad se puede escribir allí como
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/espectro-intens-src.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:espectro-intens}
+
+\end_inset 
+
+Espectro de frecuencias de la intensidad.
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray*}
+\left|\tilde{E}\left(\omega\right)\right|^{2} & = & \frac{2E_{0}^{2}}{\pi}\,\frac{\left(\bar{t}/2\right)^{2}}{1+\left(\omega_{s's}-\omega\right)^{2}\left(\bar{t}/2\right)^{2}}\\
+ & = & \frac{2E_{0}^{2}}{\pi}\,\frac{1}{\left(2/\bar{t}\right)^{2}+\left(\omega_{s's}-\omega\right)^{2}}\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Standard
+
+Así pues, en una primera aproximación y para las frecuencias en las que
+ la intensidad es más elevada, las colisiones desorientadas producen un
+ ensanchamiento con perfil de Lorentz, como en el caso de la emisión espontánea.
+ La anchura a media altura es ahora, usando los cálculos de la teoría cinética
+ (ec.
+ 
+\begin_inset LatexCommand \ref{eq:pr-tr-teoria-cinetica}
+
+\end_inset 
+
+):
+\begin_inset Formula \[
+\Delta\omega_{c}\simeq\frac{4}{\bar{t}}\simeq4\sqrt{\frac{6}{k_{B}m}}\,\frac{P}{\sqrt{T}}\,\sigma\]
+
+\end_inset 
+
+
+\layout Standard
+
+Lo difícil es conocer 
+\begin_inset Formula $\sigma$
+\end_inset 
+
+, pues depende del proceso.
+ Una estimación de valor de este ensanchamiento se puede obtener utilizando
+ 
+\begin_inset Formula $\sigma=\pi r^{2}$
+\end_inset 
+
+ (
+\begin_inset Formula $r$
+\end_inset 
+
+ tamaño de la molécula).
+ 
+\layout Description
+
+Ejemplo 
+\begin_inset LatexCommand \label{ej:ensanchamiento-colisional-O2}
+
+\end_inset 
+
+En
+\size small 
+ el caso del 
+\begin_inset Formula $\mathrm{O_{2}}$
+\end_inset 
+
+ tomando el valor de 
+\begin_inset Formula $r$
+\end_inset 
+
+ del orden de la distancia entre los dos núcleos (
+\begin_inset Formula $r\simeq2.5\textrm{Å}$
+\end_inset 
+
+) y 
+\begin_inset Formula $m=32\times1.66\times10^{-27}\,\mathrm{kg}$
+\end_inset 
+
+ se tiene 
+\begin_inset Formula $\sigma\simeq2\times10^{-19}\;\textrm{m}^{2}$
+\end_inset 
+
+.
+ A 
+\begin_inset Formula $T=300\,\mathrm{K}$
+\end_inset 
+
+ y presión atmosférica (
+\begin_inset Formula $P=1.01\times10^{5}\,\mathrm{Pa}$
+\end_inset 
+
+), y la anchura colisional vale
+\begin_inset Formula \[
+\Delta\omega_{c}\simeq1.3\times10^{10}\,\mathrm{s}^{-1},\qquad\Delta\nu_{c}\simeq2\,\mathrm{GHz}.\]
+
+\end_inset 
+
+Este ensanchamiento es dos órdenes de magnitud superior al de origen natural.
+\layout Standard
+
+Como ilustra el ejemplo, el ensanchamiento colisional es considerablemente
+ mayor que el natural.
+ Dado que depende linealmente de la presión, puede controlarse reduciendo
+ ésta.
+ De hecho, a pesar de que este ensanchamiento siempre está presente, a presiones
+ inferiores a 
+\begin_inset Formula $10\,\mathrm{mm}$
+\end_inset 
+
+ Hg es bastante próximo a la anchura natural.
+ 
+\layout Standard
+
+Por otra parte, el mecanismo que lo genera es el mismo en media para todos
+ los emisores, así que se trata también de un ensanchamiento homogéneo.
+\layout Subsection
+
+Ensanchamiento inhomogéneo.
+ Anchura Doppler.
+\layout Standard
+
+Los ensanchamientos considerados hasta ahora, de tipo natural y colisional,
+ afectan al espectro de emisión o de absorción por igual en todos los centros.
+ Eso implica que se puede considerar que cada uno de ellos emite con este
+ perfil, que suele ser de tipo lorentziano con anchura 
+\begin_inset Formula $\Delta\nu$
+\end_inset 
+
+ (figura 
+\begin_inset LatexCommand \ref{fig:perfil-lorentziano}
+
+\end_inset 
+
+):
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/perfil-lorentziano-src.eps
+	display monochrome
+	scale 85
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:perfil-lorentziano}
+
+\end_inset 
+
+Anchura a media altura 
+\begin_inset Formula $\Delta\nu$
+\end_inset 
+
+ (
+\emph on 
+FWHM
+\emph default 
+
+\begin_inset LatexCommand \index{FWHM}
+
+\end_inset 
+
+) en un perfil lorentziano centrado en la frecuencia 
+\begin_inset Formula $\nu_{0}$
+\end_inset 
+
+.
+\end_inset 
+
+ 
+\begin_inset Formula \begin{equation}
+g_{L}\left(\nu,\nu_{0}\right)=\frac{\Delta\nu}{\pi}\frac{1}{\left(\nu-\nu_{0}\right)^{2}+\left(\Delta\nu\right)^{2}},\qquad\int_{-\infty}^{\infty}g_{L}\left(\nu,\nu_{0}\right)\,\mathrm{d}\nu=1\label{eq:perfil-Lorentz}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+Ahora bien, frecuentemente las moléculas individuales emiten cada una en
+ forma distinta, bien por estar afectadas por un entorno irreproducible
+ de molécula a molécula (caso de los fluidos y otros amorfos) o bien porque
+ el movimiento molecular produce un efecto Doppler en la radiación en el
+ sistema de referencia del observador (caso de los gases).
+ 
+\layout Standard
+
+Vamos ahora a estudiar el caso concreto del efecto Doppler que se aprecia
+ al observar la radiación emitida por un gas de moléculas de masa 
+\begin_inset Formula $m$
+\end_inset 
+
+ a la temperatura 
+\begin_inset Formula $T$
+\end_inset 
+
+.
+ Como sabemos, la distribución de velocidades de un gas es gaussiana y obedece
+ a la estadística de Maxwell-Boltzmann.
+ Es decir, que si 
+\begin_inset Formula $n$
+\end_inset 
+
+ es la densidad de moléculas por unidad de volumen, el número de éstas con
+ su componente de velocidad 
+\begin_inset Formula $v_{x}$
+\end_inset 
+
+ sobre el eje molécula-observador dentro del intervalo 
+\begin_inset Formula $\mathrm{d}v_{x}$
+\end_inset 
+
+ es 
+\begin_inset Formula \[
+\mathrm{d}n=n\sqrt{\frac{m}{2\pi k_{B}T}}\exp\left(-\frac{1}{2}\frac{mv_{x}^{2}}{kT}\right)\,\mathrm{d}v_{x}.\]
+
+\end_inset 
+
+
+\layout Standard
+
+Sea entonces 
+\begin_inset Formula $\nu_{0}$
+\end_inset 
+
+ la frecuencia central de emisión de la molécula en su propio sistema de
+ referencia.
+ En el sistema del observador la frecuencia central de la transición será
+\begin_inset Formula \[
+\nu'_{0}=\nu_{0}\left(1+\frac{v_{x}}{c}\right)\]
+
+\end_inset 
+
+de donde 
+\begin_inset Formula \[
+\mathrm{d}v_{x}=\frac{c}{\nu_{0}}\,\mathrm{d}\nu'_{0}\]
+
+\end_inset 
+
+lo que permite transformar la distribución en velocidades en una distribución
+ en frecuencias:
+\begin_inset Formula \begin{eqnarray*}
+\mathrm{d}n & = & \frac{nc}{\nu_{0}}\,\sqrt{\frac{m}{2\pi kT}}\exp\left[-\left(\frac{1}{\sqrt{2k_{B}T/m}}\frac{\nu'_{0}-\nu_{0}}{\nu_{0}/c}\right)^{2}\right]\,\mathrm{d}\nu'_{0}\\
+ & = & \frac{n}{\delta\sqrt{\pi}}\exp-\left(\frac{\nu'_{0}-\nu_{0}}{\delta}\right)^{2}\,\mathrm{d}\nu'_{0}\\
+ & = & ng_{G}\left(\nu'_{0},\nu_{0}\right)\,\mathrm{d\nu'_{0}}.\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Standard
+\noindent 
+con
+\layout Standard
+
+
+\begin_inset Formula \[
+\delta=\frac{\nu_{0}}{c}\sqrt{\frac{2k_{B}T}{m}}\]
+
+\end_inset 
+
+ y donde 
+\begin_inset Formula $g_{G}$
+\end_inset 
+
+ es el 
+\emph on 
+perfil de Gauss
+\emph default 
+
+\begin_inset LatexCommand \index{Gauss!perfil de}
+
+\end_inset 
+
+
+\begin_inset LatexCommand \index{perfil!de Gauss}
+
+\end_inset 
+
+ (ver 
+\begin_inset LatexCommand \ref{fig:perfil-gauss}
+
+\end_inset 
+
+), dado por:
+\begin_inset Formula \begin{equation}
+g_{G}\left(\nu'_{0},\nu_{0}\right)=\frac{1}{\delta\sqrt{\pi}}\exp\left[-\left(\frac{\nu'_{0}-\nu_{0}}{\delta}\right)^{2}\right],\qquad\int_{-\infty}^{\infty}g_{G}\left(\nu'_{0},\nu_{0}\right)\,\mathrm{d}\nu'_{0}=1.\label{eq:perfil-Gauss}\end{equation}
+
+\end_inset 
+
+Este perfil da el reparto de las frecuencias observadas, que naturalmente
+ tiene que estar centrado en la frecuencia de emisión en reposo, pues la
+ distribución de velocidades es simétrica.
+ Su anchura a media altura es
+\begin_inset Formula \[
+\frac{1}{2\delta\sqrt{\pi}}=\frac{1}{\delta\sqrt{\pi}}\exp\left[-\left(\frac{\Delta\nu'_{0}}{2\delta}\right)^{2}\right]\longrightarrow\Delta\nu'_{0}=2\sqrt{\ln2}\,\delta\]
+
+\end_inset 
+
+es decir, 
+\begin_inset Formula $\Delta\nu_{0}'\simeq1.66\delta$
+\end_inset 
+
+ es el ensanchamiento de Doppler, también denotado 
+\begin_inset Formula $\Delta\nu_{D}$
+\end_inset 
+
+.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+FIGURA POR INCLUIR
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:perfil-gauss}
+
+\end_inset 
+
+Perfil de ensanchamiento inhomogéneo.
+ Nótese que 
+\begin_inset Formula $\Delta\nu_{0}'$
+\end_inset 
+
+ representa la anchura 
+\emph on 
+total
+\emph default 
+ de la gaussiana.
+\end_inset 
+
+
+\layout Standard
+
+Como hemos visto, el ensanchamiento Doppler se produce con un perfil de
+ Gauss que da la distribución de las moléculas sobre las frecuencias centrales
+ de emisión homogénea 
+\begin_inset Formula $\nu'_{0}$
+\end_inset 
+
+, debido en este caso al movimiento de las moléculas, o, de una forma más
+ general, a otras causas.
+\layout Section
+
+Ensanchamiento combinado.
+ Anchura total.
+\layout Standard
+
+En presencia de ambos fenómenos el número de transiciones por unidad de
+ tiempo que se producen espontáneamente con los 
+\begin_inset Formula $\mathrm{d}n$
+\end_inset 
+
+ átomos o moléculas será (
+\begin_inset Formula $\mathrm{d}n\mathrm{d}A$
+\end_inset 
+
+)
+\begin_inset Formula \[
+\mathrm{d}^{2}\left(\dt{n}\right)=A\, g_{L}\left(\nu,\nu'_{0}\right)\, n\, g_{G}\left(\nu'_{0},\nu_{0}\right)\,\mathrm{d}\nu'_{0}\mathrm{d}\nu\]
+
+\end_inset 
+
+
+\layout Standard
+\noindent 
+y, en todas las frecuencias
+\begin_inset Formula \[
+\mathrm{d}\left(\dt{n}\right)=An\left[\int_{-\infty}^{\infty}g_{L}\left(\nu,\nu_{0}'\right)g_{G}\left(\nu_{0}',\nu_{0}\right)\,\mathrm{d\nu_{0}'}\right]\,\mathrm{d}\nu=A\, n\, g_{V}\left(\nu,\nu_{0}\right)\,\mathrm{d}\nu\]
+
+\end_inset 
+
+
+\layout Standard
+\noindent 
+donde la convolución
+\begin_inset LatexCommand \index{convolución!Gauss-Lorentz}
+
+\end_inset 
+
+ del perfil de Gauss con el de Lorentz
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Definición de convolución como nota al pie.}
+\end_inset 
+
+
+\begin_inset Formula \[
+g_{V}\left(\nu,\nu_{0}\right)=\int_{-\infty}^{\infty}g_{L}\left(\nu,\nu'_{0}\right)g_{G}\left(\nu'_{0},\nu_{0}\right)\,\mathrm{d}\nu'_{0},\qquad\int_{-\infty}^{\infty}g_{V}\left(\nu,\nu_{0}\right)\,\mathrm{d}\nu=1\]
+
+\end_inset 
+
+
+\layout Standard
+\noindent 
+es el llamado 
+\emph on 
+perfil de Voight
+\emph default 
+
+\begin_inset LatexCommand \index{perfil!de Voight}
+
+\end_inset 
+
+
+\begin_inset LatexCommand \index{Voight!perfil de}
+
+\end_inset 
+
+.
+\layout Standard
+
+Existen dos casos límite:
+\layout Enumerate
+
+Si el ensanchamiento homogéneo 
+\begin_inset Formula $\Delta\nu_{L}$
+\end_inset 
+
+ es pequeño frente al inhomogéneo 
+\begin_inset Formula $\Delta\nu_{L}\ll\Delta\nu_{D}\longrightarrow g_{L}\left(\nu,\nu'_{0}\right)\simeq\delta\left(\nu-\nu'_{0}\right)$
+\end_inset 
+
+ y entonces 
+\begin_inset Formula $g_{V}\left(\nu,\nu_{0}\right)\simeq g_{G}\left(\nu,\nu_{0}\right)$
+\end_inset 
+
+.
+ 
+\layout Enumerate
+
+Si, por el contrario, 
+\begin_inset Formula $\Delta\nu_{D}\ll\Delta\nu_{L}$
+\end_inset 
+
+ entonces 
+\begin_inset Formula $g_{G}\simeq\delta\left(\nu'_{0}-\nu_{0}\right)$
+\end_inset 
+
+ y 
+\begin_inset Formula $g_{V}\left(\nu,\nu_{0}\right)\simeq g_{L}\left(\nu,\nu_{0}\right)$
+\end_inset 
+
+.
+\layout Standard
+
+En la práctica ambos perfiles suelen estar mezclados y el resultado es parecido
+ a un perfil suma de los dos que se convolucionan.
+\layout Standard
+
+Como se ha visto en el apartado 
+\begin_inset LatexCommand \ref{txt:anchura-natural}
+
+\end_inset 
+
+, la anchura natural de una transición es 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{$
+\backslash 
+gamma$ debe introducirse en la sección sobre anchura natural.}
+\end_inset 
+
+
+\begin_inset Formula \[
+\Delta\omega_{n}=A=\tau^{-1}=\gamma/2\]
+
+\end_inset 
+
+donde 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+ es la constante de pérdidas de la energía por emisión espontánea.
+ Para una transición electrónica, como sabemos, 
+\begin_inset Formula $A\simeq10^{8}\;\textrm{s}^{-1}$
+\end_inset 
+
+, por lo cual, 
+\begin_inset Formula $\Delta\omega_{n}=10^{8}\,\mathrm{s}^{-1}$
+\end_inset 
+
+, un valor mucho menor que el ensanchamiento colisional que, como vimos
+ en el ejemplo 
+\begin_inset LatexCommand \ref{ej:ensanchamiento-colisional-O2}
+
+\end_inset 
+
+, era 
+\begin_inset Formula $\Delta\omega_{c}\simeq1.3\times10^{10}\;\textrm{s}^{-1}$
+\end_inset 
+
+ para el 
+\begin_inset Formula $\mathrm{O}_{2}$
+\end_inset 
+
+ a 
+\begin_inset Formula $1\,\mathrm{atm}$
+\end_inset 
+
+ y 
+\begin_inset Formula $300\,\mathrm{K}.$
+\end_inset 
+
+
+\layout Description
+
+Ejemplo 
+\size small 
+Podemos también estimar la anchura Doppler para la molécula de 
+\begin_inset Formula $\mathrm{O}_{2}$
+\end_inset 
+
+, a la misma temperatura y en la longitud de onda de la luz verde 
+\begin_inset Formula $\left(\lambda\simeq0.5\,\mu\mathrm{m}\right)$
+\end_inset 
+
+, es decir con 
+\begin_inset Formula \[
+\nu_{0}=\frac{c}{\lambda}=6\times10^{14}\,\mathrm{Hz}.\]
+
+\end_inset 
+
+Así tenemos 
+\begin_inset Formula $\delta\simeq0.8\times10^{9}\;\textrm{s}^{-1},\Delta\nu_{0}'\simeq1.3\times10^{9}\;\textrm{Hz},\Delta\omega_{D}\simeq8.4\times10^{9}\;\textrm{s}^{-1}$
+\end_inset 
+
+, iun valor del mismo orden que la anchura colisional y dos órdenes de magnitud
+ por encima de la anchura natural.
+\layout Standard
+
+Ambos mecanismos (colisional y Doppler) producen ensanchamientos mucho mayores
+ que la anchura natural.
+\layout Standard
+
+Al estar la temperatura dentro de una raíz cuadrada, su influencia en el
+ ensanchamiento Doppler está muy amortiguada.
+ Así, incluso para moléculas grandes, habría que reducir la temperatura
+ hasta algunas centésimas de grado Kelvin para que 
+\begin_inset Formula $\Delta\nu_{D}$
+\end_inset 
+
+ fuera del orden de la anchura natural.
+ 
+\layout Standard
+
+Los ensanchamientos reducen la precisión de las medidas espectroscópicas,
+ por lo que se han buscado mejores técnicas para reducirlos.
+ Tratamos un par de ellas en la sección siguiente, después de considerar
+ con más detalle la convolución de perfiles.
+\layout Subsection
+
+Convolución de dos perfiles de Lorentz
+\layout Standard
+
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Falta una ilustración gráfica del proceso.}
+\end_inset 
+
+Hemos estudiado en el apartado precedente que la superposición del ensanchamient
+o homogéneo de la radiación emitida por un emisor material con el inhomogéneo
+ de las frecuencias centrales de emisión del conjunto de emisores daba lugar
+ a un perfil formado como la convolución de los dos perfiles correspondientes.
+ Si el ensanchamiento homogéneo tiene un perfil de Lorentz y el inhomogéneo
+ de Gauss, la convolución de ambos produce el de Voight.
+ El cálculo sólo se puede realizar numéricamente, y por lo tanto sus característ
+icas no aparecen de una manera transparente.
+\layout Standard
+
+Vamos ahora a estudiar un caso en que puede efectuarse el cálculo completo
+ de forma que el resultado se expresa en forma algebraica.
+ Supongamos que 
+\emph on 
+los dos
+\emph default 
+ perfiles son de tipo lorentziano
+\begin_inset LatexCommand \index{convolución!Lorentz-Lorentz}
+
+\end_inset 
+
+.
+ Usaremos la siguiente notación para los dos perfiles homogéneos:
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{¿Por qué los subíndices $i$, $k$?}
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray*}
+g_{k}\left(\omega,\omega_{0}'\right) & = & \frac{\Gamma}{\pi}\frac{1}{\left(\omega-\omega_{0}'\right)^{2}+\Gamma^{2}}\\
+g_{i}\left(\omega_{0}',\omega_{0}\right) & = & \frac{\gamma}{\pi}\frac{1}{\left(\omega_{0}'-\omega_{0}\right)^{2}+\gamma^{2}}\end{eqnarray*}
+
+\end_inset 
+
+la convolución de ambos se calcula en el apéndice 
+\begin_inset LatexCommand \ref{cha:convol-2lorentz}
+
+\end_inset 
+
+, y viene dada por
+\begin_inset Formula \[
+g_{c}\left(\omega,\omega_{0}\right)=\frac{\gamma+\Gamma}{\pi}\frac{1}{\left(\omega-\omega_{0}\right)^{2}+\left(\gamma+\Gamma\right)^{2}}.\]
+
+\end_inset 
+
+
+\layout Standard
+
+Comprobamos que el perfil de convolución en este caso es también un perfil
+ de Lorentz
+\begin_inset LatexCommand \index{Lorentz!perfil}
+
+\end_inset 
+
+
+\begin_inset LatexCommand \index{perfil!deLorentz}
+
+\end_inset 
+
+ cuya anchura es la suma de las anchuras de los dos perfiles, y que aparece
+ centrado en la frecuencia central del perfil que hemos supuesto inhomogéneo,
+ 
+\begin_inset Formula $\omega_{0}$
+\end_inset 
+
+.
+ Este comportamiento es también muy aproximadamente el de la convolución
+ de Voight y el de casi todos los perfiles usuales.
+\layout Section
+
+Técnicas de enfriamiento de átomos
+\layout Subsection
+
+Haces atómicos
+\layout Standard
+
+Se puede conseguir el enfriamiento transversal (baja velocidad transversal
+ 
+\begin_inset Formula $\sim$
+\end_inset 
+
+ baja temperatura transversal) de los átomos de un gas por colimación sucesiva
+ de un haz.
+\layout Standard
+
+Para conseguirlo, se dispone una fuente gaseosa de átomos de la especie
+ elegida de forma que escapen por un pequeño orificio a una cámara de vacío
+ de la que sólo pueden salir por otro pequeño orificio hacia otra cámara
+ de vacío.
+ Y así sucesivamente (figura 
+\begin_inset LatexCommand \ref{fig:enfriamiento-transversal}
+
+\end_inset 
+
+).
+ Todos estos orificios están alineados, de modo que al último sólo llegan
+ los átomos cuya velocidad transversal es lo suficientemente pequeña.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/enfriamiento-transversal-src.eps
+	display monochrome
+	scale 90
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:enfriamiento-transversal}
+
+\end_inset 
+
+Dispositivo para lograr el enfriamiento transversal de un grupo de átomos.
+\end_inset 
+
+
+\layout Standard
+
+Demos una traducción matemática a esta descripción.
+\layout Standard
+
+La velocidad de salida 
+\begin_inset Formula $v$
+\end_inset 
+
+ de los átomos por el primer orificio se obtiene de la temperatura 
+\begin_inset Formula $T$
+\end_inset 
+
+ de la fuente gaseosa 
+\begin_inset Formula \[
+\frac{1}{2}mv^{2}=\frac{3}{2}kT\longrightarrow v=\sqrt{\frac{3kT}{m}}\]
+
+\end_inset 
+
+
+\layout Standard
+
+Si 
+\begin_inset Formula $v_{t}$
+\end_inset 
+
+ es la velocidad transversal con que pueden salir los átomos por el último
+ agujero, de diámetro 
+\begin_inset Formula $d$
+\end_inset 
+
+ y a una distancia 
+\begin_inset Formula $L$
+\end_inset 
+
+ del primero 
+\begin_inset Formula \[
+v_{t}=\frac{d}{L}v\]
+
+\end_inset 
+
+
+\layout Standard
+\noindent 
+y la temperatura transversal a que equivale esta velocidad es 
+\begin_inset Formula \[
+T_{t}=\left(\frac{d}{L}\right)^{2}T\]
+
+\end_inset 
+
+
+\layout Standard
+
+Por lo tanto, si empleamos dos orificios de 
+\begin_inset Formula $d=1\,\mathrm{mm}$
+\end_inset 
+
+ y una longitud de 
+\begin_inset Formula $L=1\,\mathrm{m}$
+\end_inset 
+
+ con 
+\begin_inset Formula $T=300\,\mathrm{K}$
+\end_inset 
+
+, la temperatura transversal resulta 
+\begin_inset Formula $T_{t}\simeq3\times10^{-4}\,\mathrm{K}$
+\end_inset 
+
+ por lo que, en la dirección transversal, los átomos pueden ser considerados
+ prácticamente sin efecto Doppler.
+\layout Standard
+
+El principal inconveniente de este sistema es que el número de átomos que
+ llegan a la cámara de medida es extraordinariamente pequeño, con lo cual
+ resulta difícil realizar experimentos con ellos.
+\layout Subsection
+
+Confinamiento por presión de radiación
+\layout Standard
+
+Recientemente se ha empleado otra técnica basada en la presión de la radiación
+ sobre la materia, el mecanismo detrás de la formación de las colas de los
+ cometas y de las ingeniosas 
+\emph on 
+velas solares
+\emph default 
+.
+\layout Subsubsection
+
+Imagen clásica
+\layout Standard
+
+La fuerza de Lorentz sobre una partícula cargada es 
+\begin_inset Formula $\vec{F}=q\left(\vec{E}+\vec{v}\wedge\vec{B}\right)$
+\end_inset 
+
+ (figura 
+\begin_inset LatexCommand \ref{fig:fuerza-lorentz}
+
+\end_inset 
+
+).
+ El término magnético se puede expresar como 
+\begin_inset Formula \[
+q\frac{\vec{v}}{c}\wedge E\hat{u}_{B}\]
+
+\end_inset 
+
+ de modo que, dado el pequeño valor usual de 
+\begin_inset Formula $\vec{v}/c$
+\end_inset 
+
+, la fuerza magnética es pequeña en comparación con la eléctrica.
+ Así, en una onda 
+\begin_inset Formula $\vec{v}\parallel\vec{E}$
+\end_inset 
+
+ y la fuerza magnética apunta en todo momento en la misma dirección, produciéndo
+se un efecto acumulativo (presión de la radiación) debido al campo magnético
+ sobre la carga.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/fuerza-lorentz-src.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:fuerza-lorentz}
+
+\end_inset 
+
+Acción de una onda electromagnética sobre una carga con velocidad 
+\begin_inset Formula $\vec{v}$
+\end_inset 
+
+.
+\end_inset 
+
+
+\layout Subsubsection
+
+Imagen semiclásica
+\layout Standard
+
+Cada vez que un átomo recibe un fotón, absorbe con él una cantidad de movimiento
+ 
+\begin_inset Formula $\hbar\vec{k}$
+\end_inset 
+
+.
+ Si el fotón es luego reemitido espontáneamente, el átomo devuelve el momento
+ 
+\begin_inset Formula $\hbar\vec{k}$
+\end_inset 
+
+ al medio pero en una dirección arbitraria con respecto a la dirección inicial
+ de propagación del fotón (figura 
+\begin_inset LatexCommand \ref{fig:img-cuantica-confinamiento}
+
+\end_inset 
+
+).
+ Por lo tanto, en promedio espacial, los fotones emitidos espontáneamente
+ se llevan un momento nulo.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/img-cuantica-confinamiento-src.eps
+	display monochrome
+	scale 85
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:img-cuantica-confinamiento}
+
+\end_inset 
+
+Si el átomo recibe varios paquetes de momento como el que se muestra a la
+ izquierda, la emisión espontánea de éstos en direcciones arbitrarias (a
+ la derecha) da lugar a una suma vectorial nula de momento cedido por el
+ átomo.
+\end_inset 
+
+
+\layout Standard
+
+Es decir, que, en promedio, por cada emisión espontánea el átomo gana la
+ cantidad de movimiento 
+\begin_inset Formula $\hbar\vec{k}$
+\end_inset 
+
+ del correspondiente fotón incidente.
+\layout Standard
+
+Los fotones emitidos estimuladamente no cuentan, pues su cantidad de movimiento
+ 
+\begin_inset Formula $\hbar\vec{k}$
+\end_inset 
+
+ está en la misma dirección que la incidente.
+\layout Standard
+
+Para saber la fuerza que este intercambio de cantidades de movimiento produce
+ sobre el átomo es preciso conocer la cantidad de movimiento adquirida en
+ la unidad de tiempo.
+\layout Standard
+
+A fin de efectuar una estimación sencilla podemos considerar el caso en
+ que la radiación es tan intensa que el átomo tiene las probabilidades de
+ emisión y absorción estimuladas mucho mayores que la probabilidad de desexcitac
+ión espontánea.
+ En esta situación se dice que la transición está 
+\emph on 
+saturada
+\begin_inset LatexCommand \index{saturación!de una transición}
+
+\end_inset 
+
+
+\begin_inset LatexCommand \index{transición!saturada}
+
+\end_inset 
+
+
+\emph default 
+ y el átomo está la mitad de tiempo en el nivel excitado, y la otra mitad
+ en el fundamental.
+ Es decir, que en el colectivo, el mismo número de átomos está en cada nivel.
+ Esto es factible sólo si los procesos estimulados dominan, ya que la emisión
+ espontánea tiende a desequilibrar el reparto.
+ Una situación así se puede conseguir utilizando una fuente de radiación
+ láser de unas decenas de 
+\begin_inset Formula $\mathrm{mW}$
+\end_inset 
+
+ de potencia.
+\layout Standard
+
+En el nivel excitado, la probabilidad de desexcitación espontánea por unidad
+ de tiempo es 
+\begin_inset Formula $A$
+\end_inset 
+
+.
+ Entonces, en la situación de saturación, el número de desexcitaciones espontáne
+as de los átomos por unidad de tiempo es 
+\begin_inset Formula $A/2$
+\end_inset 
+
+ y, como por cada emisión espontánea el átomo ha absorbido, en media espacial,
+ la cantidad de movimiento 
+\begin_inset Formula $\hbar\vec{k}$
+\end_inset 
+
+, la fuerza será 
+\begin_inset Formula \[
+\vec{F}=\frac{A}{2}\,\hbar\vec{k}.\]
+
+\end_inset 
+
+
+\layout Standard
+
+Para una longitud de onda de 
+\begin_inset Formula $500\,\mathrm{nm}$
+\end_inset 
+
+ y una probabilidad espontánea típica de 
+\begin_inset Formula $10^{8}\;\textrm{s}^{-1}$
+\end_inset 
+
+, esta fuerza sería la que produciría sobre un electrón un campo eléctrico
+ de 
+\begin_inset Formula $5\times10^{8}\,\mathrm{V/cm}$
+\end_inset 
+
+, unas 
+\begin_inset Formula $40.000$
+\end_inset 
+
+ veces mayor que el peso de un átomo de 
+\begin_inset Formula $100\,\mathrm{u.a.}$
+\end_inset 
+
+ de masa.
+ Harían falta diez mil procesos de absorción-emisión espontánea para detener
+ un átomo con la energía cinética térmica que corresponde a una temperatura
+ 
+\begin_inset Formula $T=300\,\mathrm{K}$
+\end_inset 
+
+.
+\layout Standard
+
+En la práctica, el proceso de enfriamiento de los átomos se realizará mediante
+ la luz de un láser emitiendo en una frecuencia 
+\begin_inset Formula $\nu_{L}$
+\end_inset 
+
+ algo menor que la de absorción atómica 
+\begin_inset Formula $\nu_{a}$
+\end_inset 
+
+ pero dentro de la anchura de línea (figura 
+\begin_inset LatexCommand \ref{fig:laser-enfriamiento}
+
+\end_inset 
+
+).
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/laser-enfriamiento-src.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:laser-enfriamiento}
+
+\end_inset 
+
+La curva de emisión del láser está centrada en una frecuencia 
+\begin_inset Formula $\nu_{L}$
+\end_inset 
+
+ inferior a frecuencia central de la de la curva de absorción atómica.
+\end_inset 
+
+
+\layout Standard
+
+Como el número de absorciones por segundo es mayor cuánto más próxima esté
+ 
+\begin_inset Formula $\nu_{L}$
+\end_inset 
+
+ a 
+\begin_inset Formula $\nu_{a}$
+\end_inset 
+
+, también lo es entonces la presión de radiación.
+\layout Standard
+
+Así, cuando el átomo se mueve en sentido opuesto a la luz recibe la radiación
+ láser desplazada por efecto Doppler hacia frecuencias más próximas a 
+\begin_inset Formula $\nu_{a}$
+\end_inset 
+
+ y es frenado con una fuerza mayor cuanto mayor sea su velocidad.
+ Bajo la acción de la luz los átomos que se mueven contra ella, por lo tanto,
+ se frenarían primero, para avanzar luego en la dirección de la luz.
+\layout Standard
+
+Para evitar esa fase posterior de retroceso se sitúa otro haz de luz de
+ la misma frecuencia e intensidad en sentido opuesto al primero.
+ De esta manera, los átomos son detenidos en cuanto se mueven en cualquiera
+ de los dos sentidos.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/melaza-optica-src.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:melaza-optica}
+
+\end_inset 
+
+Esquema de una melaza óptica.
+\end_inset 
+
+
+\layout Standard
+
+Si según cada uno de los tres ejes se dirigen dos rayos enfrentados, en
+ la intersección de todos ellos los átomos quedarán en reposo (figura 
+\begin_inset LatexCommand \ref{fig:melaza-optica}
+
+\end_inset 
+
+).
+ Es lo que se llama una 
+\emph on 
+melaza óptica
+\emph default 
+
+\begin_inset LatexCommand \index{melaza óptica}
+
+\end_inset 
+
+.
+\layout Standard
+
+Utilizando este tipo de sistemas se ha conseguido establecer en una región
+ temperaturas tan reducidas como 
+\begin_inset Formula $10^{-9}\,\mathrm{K}$
+\end_inset 
+
+, lo que permite la investigación con átomos coherentes en condensados de
+ Bose-Einstein, como si se tratase de luz coherente.
+\the_end

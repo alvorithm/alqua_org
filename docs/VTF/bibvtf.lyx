@@ -1,0 +1,224 @@
+#LyX 1.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 218
+\textclass scrbook
+\begin_preamble
+\input{macros.sty}
+\end_preamble
+\language spanish
+\inputencoding latin1
+\fontscheme ae
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize a4paper
+\paperpackage a4
+\use_geometry 1
+\use_amsmath 1
+\paperorientation portrait
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+
+\layout Bibliography
+\bibitem [Abraham]{Abraham}
+
+Abraham, R., Marsden, J.
+ E., Ratiu, T.: 
+\emph on 
+Manifolds, tensor analysis and applications (2nd edition)
+\emph default 
+.
+ Springer--Verlag.
+ New York, 1988.
+\newline 
+
+\layout Bibliography
+\bibitem [Arnold]{Arnold}
+
+Arnold, V.I.: 
+\emph on 
+Mathematical methods of classical mechanics (2nd edition)
+\emph default 
+.
+ Springer--Verlag.
+ New York, 1989.
+\newline 
+
+\layout Bibliography
+\bibitem [Bishop]{Bishop}
+
+Bishop, R.
+ L., Goldberg, S.
+ I.: 
+\emph on 
+Tensor Analysis on manifolds
+\emph default 
+.
+ Dover.
+ New York, 1980.
+\newline 
+
+\layout Bibliography
+\bibitem [Chavel]{Chavel}
+
+Chavel, I.: 
+\emph on 
+Riemannian geometry: a modern introduction
+\emph default 
+.
+ Cambridge University Press.
+ Cambridge, 1993.
+\newline 
+
+\layout Bibliography
+\bibitem [Choquet--Bruhat]{Choquet--Bruhat}
+
+Choquet--Bruhat, Y., de Witt--Morette, C., Dillard--Bleick, M.: 
+\emph on 
+Analysis, manifolds and physics
+\emph default 
+.
+ North Holland.
+ Amsterdam, 1991.
+\newline 
+
+\layout Bibliography
+\bibitem [Crampin]{Crampin}
+
+Crampin, M., Pirani, F.A.E.: 
+\emph on 
+Applicable differential geometry
+\emph default 
+.
+ London Mathematical Society (Lecture notes series 59).
+ Cambridge University Press.
+ Cambridge, 1986.
+\newline 
+
+\layout Bibliography
+\bibitem [Eisenhart]{Eisenhart}
+
+Eisenhart, L.
+ P.: 
+\emph on 
+Riemannian geometry
+\emph default 
+.
+ Princeton University Press.
+ Princeton, 1997.
+\layout Bibliography
+\bibitem [Flanders]{Flanders}
+
+Flanders, H.:
+\emph on 
+ Differential forms with applications to the physical sciences
+\emph default 
+.
+ Dover.
+ New York, 1990.
+\newline 
+
+\layout Bibliography
+\bibitem [Lovelock]{Lovelock}
+
+Lovelock, D.
+ Rund, H.: 
+\emph on 
+Tensors, differential forms and variational principles
+\emph default 
+.
+ Dover.
+ New York, 1989.
+\newline 
+
+\layout Bibliography
+\bibitem [Misner]{Misner}
+
+Misner, C.W., Thorne, K.S., Wheeler, J.A.: 
+\emph on 
+Gravitation
+\emph default 
+.
+ Freeman.
+ San Francisco, 1973.
+\newline 
+
+\layout Bibliography
+\bibitem [Postnikov]{Postnikov}
+
+Postnikov, M.:
+\emph on 
+ Leçons de géometrie.
+ Varietés différentiables.
+
+\emph default 
+ Ed.
+ Mir (col.
+ traduit du russe).
+ 1990.
+\newline 
+
+\layout Bibliography
+\bibitem [Ruiz-Gamboa]{Ruiz-Gamboa}
+
+Ruiz, J.
+ M., Gamboa, J.: 
+\emph on 
+Introducción a las variedades diferenciables
+\emph default 
+.
+\newline 
+
+\layout Bibliography
+\bibitem [Sattinger]{Sattinger}
+
+Sattinger, D.H., Weaver, O.L.: 
+\emph on 
+Lie groups and algebras with applications to physics, geometry and mechanics
+ (3rd edition)
+\emph default 
+.
+ University of Bangalore Press.
+ New Delhi, 1997.
+\newline 
+
+\layout Bibliography
+\bibitem [Schouten]{Schouten}
+
+Schouten, J.
+ A.: 
+\emph on 
+Ricci calculus (2nd edition)
+\emph default 
+.
+ Springer--Verlag.
+ Berlin, 1954.
+\newline 
+
+\layout Bibliography
+\bibitem [Schutz]{Schutz}
+
+Schutz, B.:
+\emph on 
+ Geometrical methods of mathematical physics
+\emph default 
+, 1997.
+\newline 
+
+\layout Bibliography
+\bibitem [Sternberg]{Sternberg}
+
+Sternberg, S.: 
+\emph on 
+Lectures on differential geometry (2nd edition)
+\emph default 
+.
+ Chelsea.
+ New York, 1982.
+\the_end

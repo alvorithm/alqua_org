@@ -1,0 +1,970 @@
+\documentclass[spanish,a4paper,12pt]{book}
+\usepackage{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{eurosym}
+\input{lyxpackages.sty}
+\input{IFC2-packages.sty}
+\input{IFC2-macros.sty}
+\begin{document}
+\chapter{Transiciones electromagnéticas}
+
+Lo que se pretende en este capítulo es obtener la expresión general
+para las probabilidades de transición y saber cuál es el origen de
+las reglas de selección. 
+
+El estudio riguroso de las transiciones, que se dividen en inducidas
+y espontáneas, no lo vamos a hacer. La utilidad de la teoría fenomenológica
+de \noun{Einstein} para las transiciones electromagnéticas deriva
+de que proporciona una expresión para la probabilidad de las transiciones
+espontáneas en función de la probabilidad de las transiciones inducidas.
+Como utilizando la mecánica cuántica no relativista no se puede determinar
+más que esta última, la teoría de \noun{Einstein} se erige en complemento
+imprescindible para una teoría completa de las transiciones electromagnéticas
+a un nivel elemental.
+
+En cuanto a las reglas de selección, son un conjunto de condiciones
+que permiten asignar probabilidad cero a las transiciones entre estados
+que no las satisfacen, es decir, acotan los estados accesibles a partir
+de uno dado, identificando las transiciones imposibles.
+
+\section[Teoría fenomenológica de transiciones]{Teoría fenomenológica de las transiciones de \noun{Einstein}}
+
+
+\subsection{Planteamiento}
+
+Para simplificar al máximo, vamos a considerar dos niveles de energía
+no degenerados, $E_{1}<E_{2}$. Si entre estos dos niveles se produce
+una transición, escribiremos la energía intercambiada con el campo
+como\[
+\hbar\omega=E_{2}-E_{1}\]
+ Como hemos dicho, $g_{1}=g_{2}$, de modo que a cada energía le asociamos
+un único estado y no una colección de ellos. Supondremos que tenemos
+un número enorme, $N\approx N_{A}$ por unidad de volumen de estos
+sistemas ficticios (átomos generalmente) con dos niveles. $N_{1}$
+y $N_{2}$ son las poblaciones respectivas por unidad de volumen de
+los $N$ sistemas con niveles de energía $E_{1}$ y $E_{2}$, de modo
+que $N=N_{1}+N_{2}$.
+
+
+\subsection{Transiciones espontáneas e inducidas}
+
+Se postula la existencia de tres tipos de transiciones. 
+
+\begin{enumerate}
+\item \textbf{\emph{Emisión}} \textbf{\emph{espontánea}}. Experimentalmente
+se observa que siempre ocurre del estado de mayor energía al de menor
+energía. El sistema pasa del nivel 2 al nivel 1 sin que nosotros hayamos
+hecho nada para provocarlo. La velocidad con que ocurren estas transiciones
+la vamos a escribir como \[
+\left(\da{N_{2}}{t}\right)_{e\fd}=-A_{21}N_{2}=-AN_{2}\]
+ Lo que \noun{Einstein} postula es que la velocidad de disminución
+de la población es proporcional a la población restante. Entonces
+el coeficiente $A$ se puede interpretar como una probabilidad por
+unidad de tiempo de que \emph{uno} en concreto sufra una transición
+de 2 a 1.
+\item \textbf{\emph{Emisión}} \textbf{\emph{inducida}}. Uno de los sistemas
+pasa de 2 a 1 en presencia de un campo de radiación externo, que será
+caracterizado por una densidad de energía por unidad de volumen e
+intervalo de frecuencia $\rho\left(\omega\right)$. \noun{Einstein}
+postula que la velocidad con la cual disminuye por este proceso particular
+la población del estado 2 es:\[
+\left(\da{N_{2}}{t}\right)_{i\fd}=-B_{21}\rho\left(\omega\right)N_{2}\]
+ El producto $B_{21}\rho$ se interpreta análogamente a la cantidad
+$A$ como la probabilidad de transición por unidad de tiempo de que
+un sistema concreto pase del estado 2 al estado 1.
+\item \textbf{\emph{Absorción}} \textbf{\emph{inducida}}. Se postula que
+\[
+\left(\dt{N_{2}}\right)_{i\gets}=B_{12}\rho\left(\omega\right)N_{1}\]
+ de nuevo $B_{12}\rho$ tiene el significado probabilista, y por tanto
+dimensiones $\left[B_{21}\rho\left(\omega\right)\right]=t^{-1}$ .
+\end{enumerate}
+
+\subsection{Transiciones en presencia de un campo de radiación}
+
+En presencia de radiación, se producen los tres tipos de transición
+simultáneamente. Tenemos que la población de sistemas en el estado
+2 varía del siguiente modo: \[
+\frac{dN_{2}}{dt}=-AN_{2}-B_{21}\rho\left(\omega\right)N_{2}+B_{12}\rho\left(\omega\right)N_{1}\]
+ además $N=N_{1}+N_{2}$ permite obtener inmediatamente\[
+\dt{N_{1}}=-\dt{N_{2}}\]
+ Reescribimos nuestro resultado\[
+\dt{N_{2}}=-P_{em}N_{2}+P_{ab}N_{1}\]
+ utilizando las probabilidades por unidad de tiempo de emisión y de
+absorción, respectivamente $P_{em}$ y $P_{ab}$\begin{eqnarray*}
+P_{em} & = & A+B_{21}\rho\left(\omega\right)\\
+P_{ab} & = & B_{12}\rho\left(\omega\right)\end{eqnarray*}
+Vamos a intentar obtener relaciones entre los diversos coeficientes,
+$A,B_{12},B_{21}$. Para ello vamos a utilizar argumentos de Física
+Estadística.
+
+Dejamos que el sistema evolucione durante un tiempo suficientemente
+largo hasta que alcance el equilibrio caracterizado por\[
+\dt{N_{1}}=\dt{N_{2}}=0\]
+ Sobra decir que es un equilibrio dinámico (transiciones compensadas):\[
+P_{em}N_{2}=P_{ab}N_{1}\]
+ de donde \[
+\frac{P_{ab}}{P_{em}}=\frac{N_{2}}{N_{1}}=\frac{B_{12}\rho\left(\omega\right)}{A+B_{21}\rho\left(\omega\right)}\]
+ La estadística de \noun{Maxwell}-\noun{Boltzmann} (esMB) establece
+que en el equilibrio el número de partículas que ocupa un nivel de
+energía cualquiera del sistema es \[
+N_{i}\propto g_{i}e^{\frac{E_{i}}{kT}}\]
+ donde $g_{i}$ es la degeneración y $k=1.3805×10^{-16}erg× K^{-1}=8.6178×10^{-5}eV× K^{-1}$
+es la constante de \noun{Boltzmann}. Aplicando esto a nuestro caso,
+en el que las degeneraciones son 1\[
+\frac{N_{2}}{N_{1}}=\frac{e^{-\frac{E_{2}}{kT}}}{e^{-\frac{E_{1}}{kT}}}=e^{-\frac{E_{2}-E_{1}}{kT}}=e^{-\frac{\hbar\omega}{kT}}\]
+ hemos expresado el cociente entre las poblaciones en función de magnitudes
+que conocemos: frecuencia de la transición y temperatura a la que
+estamos trabajando. Vamos a introducir una hipótesis adicional, que
+es válida muchas veces: el campo de radiación es equivalente al producido
+por un cuerpo negro. Gracias a la hipótesis podemos precisar el valor
+de la densidad espectral de energía\[
+\rho\left(\omega\right)=\frac{\omega^{2}}{\pi^{2}c^{3}}\bar{n}\left(\omega\right)\hbar\omega\]
+ La densidad espectral de energía en función de la temperatura y la
+frecuencia se muestra en la figura \ref{fig densidad_espectral}.%
+\begin{figure}
+{\centering\subfigure[]{\includegraphics[width=7cm]{fig/densidad-espectral-1-src.eps}} \par}
+
+{\centering \subfigure[]{\includegraphics[width=7cm]{fig/densidad-espectral-2-src.eps}} \par }
+
+
+\caption{{\small \label{fig densidad_espectral}$\rho\left(\omega,T\right)$.
+En a) se muestra la función para frecuencias en el visible ($\omega\simeq3×10^{14}Hz$).
+En b) se muestra para temperaturas del orden de $10^{2}K$. El grueso
+de la emisión se produce en el infrarrojo. (Nótese la diferencia tres
+órdenes de magnitud para $\rho$ entre una figura y otra). }}
+\end{figure}
+ donde \[
+\overline{n}\left(\omega\right)=\frac{1}{e^{\frac{\hbar\omega}{kT}}-1}\]
+ es el número medio de fotones por unidad de volumen, modo de vibración
+y unidad de frecuencia a la temperatura $T$. \[
+\frac{P_{ab}}{P_{em}}=e^{-\frac{\hbar\omega}{kT}}=\frac{B_{12}\frac{\omega^{2}}{\pi^{2}c^{3}}\frac{\hbar\omega}{e^{\frac{\hbar\omega}{kT}}-1}}{A+B_{21}\frac{\omega^{2}}{\pi^{2}c^{3}}\frac{\hbar\omega}{e^{\frac{\hbar\omega}{kT}-1}}}\]
+ para que esto sea cierto para toda frecuencia y toda temperatura
+se debe cumplir que \begin{eqnarray*}
+B_{12} & = & B_{21}\\
+A & = & \frac{\hbar\omega^{3}}{\pi^{2}c^{3}}B_{12}\end{eqnarray*}
+ si los $g_{i}\geq1$ la relación que se obtiene es\begin{eqnarray*}
+g_{1}B_{12} & = & g_{2}B_{21}\\
+A & = & \frac{\hbar\omega^{3}}{\pi^{2}c^{3}}\frac{g_{1}}{g_{2}}B_{12}\end{eqnarray*}
+ Este resultado es interesante en la medida en que con la mecánica
+cuántica no relativista no podemos acceder a la determinación de $A$,
+pero sí a la de los coeficientes $B_{12}\textrm{ y }B_{21}$ de la
+absorción y emisión inducida. Veamos cuál es la relación entre la
+probabilidad de emisisón por unidad de tiempo y la probabilidad de
+absorción,\begin{eqnarray*}
+P_{em} & = & A+B_{12}\rho=\frac{\hbar\omega^{3}}{\pi^{2}c^{3}}\left(1+\bar{n}\right)B_{21}\\
+P_{ab} & = & \frac{\hbar\omega^{3}}{\pi^{2}c^{3}}\bar{n}B_{12}\\
+\frac{P_{em}}{P_{ab}} & = & \frac{1+\bar{n}}{\bar{n}}\end{eqnarray*}
+%
+\begin{figure}
+{\centering \includegraphics[width=5cm]{fig/probemision-probabsorcion-densidad-src.eps} \par }
+
+
+\caption{{\small \label{fig comparacion_prob_emision_absorcion}$\frac{P_{em}}{P_{ab}}\left(\bar{n}\right)$ }}
+\end{figure}
+En la figura \ref{fig comparacion_prob_emision_absorcion} se puede
+apreciar que la probabilidad de emisión es muy superior a la de absorción
+para intensidades del campo de radiación suficientemente bajas y que
+ambas tienden a igualarse según aumenta la intensidad del campo de
+radiación. La probabilidad de emisión es suma de las probabilidades
+correspondientes a las emisiones espotáneas e inducidas. Para que
+las emisiones espontáneas sean despreciables frente a las inducidas
+se debe verificar $\bar{n}\gg1$. Esto implica que el denominador
+de \[
+\bar{n}=\frac{1}{e^{\frac{\hbar\omega}{kT}}-1}\gg1\]
+ sea muy pequeño, es decir, que la energía de los fotones en el campo
+de radiación sea mucho menor que su \emph{energía} \emph{térmica}%
+\footnote{Esta terminología encontrará una justificación cuando se cuente con
+las herramientas de la Física Estadística, más adelante en el curso.%
+}\emph{,} $kT$\[
+\frac{\hbar\omega}{kT}\ll1\]
+ Las transiciones del óptico que nos interesan se producen entre los
+primeros niveles del átomo de H, con energías y frecuencias del orden
+de \begin{eqnarray*}
+\hbar\omega & \approx & 1eV\\
+\omega & \approx & 10^{15}Hz\end{eqnarray*}
+ Sabiendo el valor de $k$ en eV y utilizando una temperatura del
+orden de la ambiente, $T=10^{2}K$ se tiene\[
+\left.\frac{\hbar\omega}{kT}\right|_{T\approx10^{2}K}\approx10^{2}\]
+ Para una temperatura mucho más grande $\left(10^{4}K\right)$ se
+tiene\[
+\left.\frac{\hbar\omega}{kT}\right|_{T\approx10^{4}K}\approx1\]
+ Para un rango de temperaturas razonable y frecuencias en el óptico
+las transiciones espontáneas predominan sobre las inducidas. Dentro
+del marco de la Física Cuántica no relativista no podemos calcular
+emisiones espontáneas, pero sí las probabilidades de las inducidas,
+con lo cual la fórmula fenomenológica de \noun{Einstein} nos interesa
+mucho.
+
+
+\section{Análisis cuántico de los fenómenos de transición}
+
+
+\subsection{Expresión de la probabilidad de transición}
+
+Veamos hasta dónde podemos llegar combinando la ecuación de \noun{Schrödinger,}
+un método perturbativo y ciertas aproximaciones más o menos razonables. 
+
+Vamos a suponer que el átomo sólo tiene dos niveles, $i,f$ con $E_{f}>E_{i}$.
+$\omega_{fi}=\frac{E_{f}-E_{i}}{\hbar}$. Los niveles son no degenerados,
+por lo que podemos hablar directamente de estados.\begin{eqnarray*}
+\mathcal{H}\ket{i} & = & E_{i}\ket{i}\\
+\mathcal{H}\ket{f} & = & E_{f}\ket{f}\end{eqnarray*}
+ escogemos $\ket{i},\ket{f}$ de modo que formen base ortonormal:\begin{eqnarray*}
+\braket{i}{f} & = & 0\\
+\braket{i}{i} & = & 1\\
+\braket{f}{f} & = & 1\end{eqnarray*}
+ Vamos a admitir que sabemos que en $t=0$ el estado del sistema es
+$\ket{i}$. La evolución en el tiempo es\[
+\ket{\psi\left(t\right)}=e^{-i\frac{E_{i}}{\hbar}t}\ket{i},\:\:\forall t\geq0\]
+ La probabilidad de transición es\[
+P_{i\fd f}=\left|\braket{f}{\psi\left(t\right)}\right|^{2}=\left|e^{-i\frac{E_{i}}{\hbar}t}\braket{f}{i}\right|^{2}=\left|\braket{f}{i}\right|^{2}=0\]
+ No hay manera de que el sistema pase por sí solo de un autoestado
+a otro. Para que la probabilidad de transición sea distinta de cero
+nos vemos obligados a introducir una perturbación $W\left(t\right)$.
+Es decir, no habrá transición si no la \emph{inducimos.} Cuando se
+introduce esta perturbación el hamiltoniano cambia:\[
+H\,\fd\, H'=H+W\left(t\right)\]
+ vamos a suponer que es a partir de $t=0$ cuando comienza a actuar
+la perturbación: $\forall t\leq0,\: W\left(t\right)=0$. Para obtener
+$\psi\left(t\right)$ debemos resolver la ecS de­pen­dien­te
+del tiempo (ya que en general la perturbación depende del tiempo):\[
+i\hbar\dpt{\ket{\psi\left(t\right)}}=\mathcal{H}'\ket{\psi\left(t\right)}\]
+ y aunque desconocemos quién es $\psi$, podemos desarrollarlo en
+la base de autoestados%
+\footnote{En este caso los estados $\ket{i}$ y $\ket{f}$ no son autoestados
+del operador hamiltoniano ($\mathcal{H}'$), pero forman una base
+del espacio (obtenida como autoestados del operador sin perturbar,
+$\mathcal{H}$).%
+} de \emph{$\mathcal{H}$}:\[
+\ket{\psi\left(t\right)}=c_{i}\left(t\right)e^{-i\frac{E_{i}}{\hbar}t}\ket{i}+c_{f}\left(t\right)e^{-i\frac{E}{\hbar}t}\ket{f}\]
+ Para imponer la condición de que el sistema está en $\ket{i}$ para
+$t=0$ debe observarse que \begin{eqnarray*}
+c_{i}\left(0\right) & = & 1\\
+c_{f}\left(0\right) & = & 0\end{eqnarray*}
+ de donde\[
+\ket{\psi\left(0\right)}=e^{-i\frac{E_{i}}{\hbar}0}\ket{i}=\ket{i}\]
+ los autoestados $\ket{i}$ y $\ket{f}$ no tienen dependencia temporal,
+de modo que al introducir $\psi$ en la ecS se obtiene\[
+i\hbar\dpt{\ket{\psi\left(t\right)}}=\left(i\hbar\dot{c}_{i}e^{-i\frac{E_{i}}{\hbar}t}+E_{i}c_{i}e^{-i\frac{E_{i}}{\hbar}t}\right)\ket{i}+\left(i\hbar\dot{c}_{f}e^{-i\frac{E_{f}}{\hbar}t}+c_{f}E_{f}e^{-i\frac{E_{f}}{\hbar}t}\right)\ket{f}\]
+El lado derecho de la ecS vale\begin{eqnarray*}
+\mathcal{H}'\ket{\psi\left(t\right)} & = & \mathcal{H}\ket{\psi\left(t\right)}+\mathcal{W}\left(t\right)\ket{\psi\left(t\right)}\\
+ & = & c_{i}e^{-i\frac{E_{i}}{\hbar}t}\left(E_{i}+\mathcal{W}\right)\ket{i}+c_{f}e^{-i\frac{E_{f}}{\hbar}t}\left(E_{f}+\mathcal{W}\right)\ket{f}\end{eqnarray*}
+Utilizando los dos últimos resultados en la ecS (igualándolos) se
+tiene\[
+i\hbar\left(\dot{c}_{i}e^{-i\frac{E_{i}}{\hbar}t}\ket{i}+\dot{c}_{f}e^{-i\frac{E_{f}}{\hbar}t}\ket{f}\right)=c_{i}e^{-i\frac{E_{i}}{\hbar}t}\mathcal{W}\ket{i}+c_{f}e^{-i\frac{E_{f}}{\hbar}t}\mathcal{W}\ket{f}\]
+ Esto se resuelve proyectando sobre $\bra{i}$ y sobre $\bra{f}$.
+Las dos ecuaciones que se obtienen gracias a las relaciones de or­to­nor­ma­li­za­ción
+son:\begin{eqnarray*}
+i\hbar\dot{c}_{i}e^{-i\frac{E_{i}}{\hbar}t} & = & c_{i}e^{-i\frac{E_{i}}{\hbar}t}\bra{i}\mathcal{W}\ket{i}+c_{f}e^{-i\frac{E_{f}}{\hbar}t}\bra{i}\mathcal{W}\ket{f}\\
+i\hbar\dot{c}_{f}e^{-i\frac{E_{f}}{\hbar}t} & = & c_{i}e^{-i\frac{E_{i}}{\hbar}t}\bra{f}\mathcal{W}\ket{i}+c_{f}e^{-i\frac{E_{f}}{\hbar}t}\bra{f}\mathcal{W}\ket{f}\end{eqnarray*}
+ sistema de edos de orden 1 en el tiempo. Buscamos los coeficientes
+$c_{i}\left(t\right),\, c_{f}\left(t\right)$. Al elemento de matriz
+$\Braket{a}{\mathcal{W}}{b}$ lo llamaremos $W_{ab}$. Aunque es posible
+resolver de forma exacta este tipo de sistemas si la dimensión es
+finita y relativamente pequeña, vamos a introducir un método de aproximación
+que se utiliza habitualmente cuando tenemos un sistema infinito-dimensional%
+\footnote{Este método aproximado resultará también apropiado para tratar casos
+de dimensión finita, aunque estos puedan resolverse exactamente. Veremos
+más adelante que es una aproximación razonable.%
+}: si suponemos que la perturbación que actúa sobre el sistema es muy
+débil, durante un tiempo razonable se cumplirá que $c_{i}\left(t\right)\simeq1$
+y $c_{f}\left(t\right)\simeq0$ (ver figura \ref{fig valores coeficientes transicion}). 
+
+%
+\begin{figure}
+{\centering\includegraphics[%
+  width=5cm]{fig/coeficientes-estados-1-y-2-src.eps} \par}
+
+
+\caption{{\small \label{fig valores coeficientes transicion}Valores de $c_{i}\left(t\right)\simeq1$
+y $c_{f}\left(t\right)\simeq0$.} }
+\end{figure}
+ Cuando tenemos un sistema de edos o de ecuaciones integrales podemos
+sustituir en la derecha la primera aproximación con lo que obtenemos
+una nueva aproximación, mejor. Al proceder así, por iteración de aproximaciones
+sucesivas, las ecuaciones quedan \begin{eqnarray*}
+i\hbar\dot{c}_{i}e^{-i\frac{E_{i}}{\hbar}t} & = & e^{-i\frac{E_{i}}{\hbar}t}W_{ii}\\
+i\hbar\dot{c}_{f}e^{-i\frac{E_{f}}{\hbar}t} & = & e^{-i\frac{E_{f}}{\hbar}t}W_{fi}\end{eqnarray*}
+ En realidad sólo nos interesa conocer $c_{f}$. Despejamos $\dot{c}_{f}$
+e integramos para obtener\[
+c_{f}\left(t\right)=\frac{1}{i\hbar}\int_{0}^{t}e^{i\omega_{fi}t'}W_{fi}\left(t'\right)\, dt'+cte\]
+ pero como $c_{f}\left(0\right)=0$, $cte=0$. Esta primera aproximación%
+\footnote{para convencernos de la bondad de la aproximación realizada sobre
+los coeficientes verdaderos, examinemos una ecuación del tipo $\dt{f}=kf,\: f(0)=1$.
+Resolvámosla utilizando aproximaciones sucesivas. Como aproximación
+de orden cero tomamos $f^{\left(0\right)}\left(t\right)=1$ y hacemos
+\[
+\dt{f^{\left(1\right)}}=kf^{\left(0\right)}=k\]
+ para llegar a la siguiente aproximación de orden 1, $f^{\left(1\right)}\left(t\right)=kt+cte=1+kt$.
+En la aproximación de orden 2 tomamos \[
+\frac{df^{\left(2\right)}\left(t\right)}{dt}=kf^{\left(1\right)}\]
+ y obtenemos $f^{\left(2\right)}=1+kt+\frac{1}{2}kt^{2}$. Procediendo
+de esta forma mediante aproximaciones sucesivas se va llegando al
+de­sa­rro­llo de la exponencial. Lo que hemos hecho nosotros
+antes es quedarnos en primera aproximación.%
+} (válida en muchos casos) me da la probabilidad de transición como:\[
+P_{if}=\left|c_{f}\left(t\right)\right|^{2}=\frac{1}{\hbar^{2}}\left|\int_{0}^{t}e^{i\omega_{fi}t'}W_{fi}\left(t'\right)dt'\right|^{2}\]
+Las aproximaciones utilizadas anteriormente para resolver la ecS dependiente
+del tiempo reciben el nombre de \emph{teoría de perturbaciones dependiente
+del tiempo a primer orden}. Así, hemos obtenido en teoría de perturbaciones
+a primer orden la expresión de la probabilidad de transición $P_{if}$
+inducida por cualquier perturbación $W(t)$ que nos den. Pero la que
+nos interesa es la causada por un campo electromagnético incidente
+sobre el sistema.
+
+
+\subsection{Llega la perturbación: radiación electromagnética}
+
+Vamos a ver qué sucede cuando hacemos interaccionar al átomo con un
+campo electromagnético. El hamiltoniano es%
+\footnote{El signo $+$ se debe a que la carga del electrón es $-e$.%
+} \[
+H'=\frac{1}{2m}\left(\mathbf{P}+\frac{e}{c}\mathbf{A}\right)^{2}-e\phi+V^{c}\]
+ (el superíndice $c$ identifica el potencial de \noun{Coulomb}).
+Este hamiltoniano ha sido obtenido por el \emph{principio de sustitución
+mínima} \begin{eqnarray*}
+H & \fd & H'=H-e\phi\\
+\mathbf{p}=m\mathbf{v} & \fd & \mathbf{P}=\dpa{L}{\dot{\mathbf{r}}}=m\mathbf{v}-\frac{e}{c}\mathbf{A}=\mathbf{p}-\frac{e}{c}\mathbf{A}\end{eqnarray*}
+ $H'$ es el hamiltoniano más sencillo cuya extensión relativista
+es invariante frente a transformaciones de \noun{Lorentz} (es un
+postulado sólo justificado por la concordancia con el experimento).
+$\mathbf{p}$ es la cantidad de movimiento $m\mathbf{v}$, la cual
+coincide con el momento lineal antes de introducir el campo electromagnético
+externo. Pero en presencia de éste, el momento lineal%
+\footnote{La cantidad de movimiento ($\mathbf{p}=m\mathbf{v}$) coincide con
+el momento lineal $\left(\dpa{L}{\dot{\mathbf{r}}}\right)$ siempre
+que no existan fuerzas dependientes de la velocidad (como la fuerza
+magnética\ldots{}). El momento lineal es el momento conjugado de
+$\mathbf{r}$.%
+} es \textbf{$\mathbf{P}=m\mathbf{v}-\frac{e}{c}\mathbf{A}$} y no
+$\mathbf{p}=m\mathbf{v}$. La magnitud a la que asociamos un operador
+(en concreto $-i\hbar\nabla$) es el momento lineal, \textbf{$\mathbf{P}=m\mathbf{v}-\frac{e}{c}\mathbf{A}$}
+y no la cantidad de movimiento $\mathbf{p}=m\mathbf{v}$. \[
+H'=\frac{1}{2m}\left(\mathbf{P}+\frac{e}{c}\mathbf{A}\right)^{2}-e\phi+V^{c}\]
+ $\phi$, $\mathbf{A}$ son los potenciales del campo externo, $V^{c}$
+es el del campo \emph{interno} en el sistema (\noun{Coulomb,} por
+ejemplo) y $m$ puede ser la masa del electrón o la masa reducida
+en el problema de dos cuerpos. En el sistema \emph{cgs}, que es el
+que estamos usando\begin{eqnarray*}
+\mathbf{E} & = & -\nabla\phi-\frac{1}{c}\dpa{\mathbf{A}}{t}\\
+\mathbf{B} & = & \nabla\land\mathbf{A}\end{eqnarray*}
+ Podemos romper el hamiltoniano en suma de dos términos: normal y
+perturbativo\begin{eqnarray*}
+H' & = & \frac{\mathbf{P}^{2}}{2m}+V^{c}+\frac{e}{2mc}\left(\mathbf{P}\cdot\mathbf{A}+\mathbf{A}\cdot\mathbf{P}\right)+\frac{e^{2}}{2mc^{2}}\left|\mathbf{A}\right|^{2}-e\phi\\
+H' & = & T+V^{c}+\left(\frac{e}{2mc}\left(\mathbf{P}\cdot\mathbf{A}+\mathbf{A}\cdot\mathbf{P}\right)+\frac{e^{2}}{2mc^{2}}\left|\mathbf{A}\right|^{2}-e\phi\right)\\
+H' & = & H+W\end{eqnarray*}
+ donde vemos que la perturbación tiene la forma (inmanejable):\[
+W=\frac{e}{2m_{e}}\left(\mathbf{P}\cdot\mathbf{A}+\mathbf{A}\cdot\mathbf{P}\right)+\frac{e^{2}}{2mc^{2}}\left|\mathbf{A}\right|^{2}-e\phi\]
+ El campo que vamos a aplicar sobre la partícula no es uno cualquiera,
+sino el representado por una superposición de ondas planas, por lo
+que\begin{eqnarray*}
+\phi & = & 0\\
+\mathbf{A}\left(\mathbf{r},t\right) & = & \int_{\omega_{1}}^{\omega_{2}}d\omega\mathbf{A}_{0}\left(\omega\right)\left(e^{i\fase}+e^{-i\fase}\right)\end{eqnarray*}
+ Vamos a seguir trabajando utilizando el $\mathbf{A}\left(\mathbf{r},t\right)$
+de una onda monocromática: prescindimos de la suma en frecuencias
+y nos quedamos, de momento, con la función subintegral. Luego sumaremos
+sobre todas las frecuencias del campo incidente. 
+
+Aun así, el asunto es complicado y necesitamos hacer aproximaciones
+que nos permitan tener una fórmula final para $W$ que sea manejable
+
+\begin{enumerate}
+\item Vamos a trabajar en el \emph{gauge de} \emph{\noun{Coulomb}}%
+\footnote{En español \emph{gauge} a veces recibe el nombre de {}``invariancia
+de contraste''.\begin{eqnarray*}
+\mathbf{B} & = & \nabla\land\mathbf{A}\\
+\mathbf{E} & = & -\nabla\phi-\frac{1}{c}\dpt{\mathbf{A}}\end{eqnarray*}
+ Los potenciales $\phi,\,\mathbf{A}$ no quedan unívocamente determinados
+por estas relaciones. Se puede hacer el cambio\begin{eqnarray*}
+\mathbf{A} & \fd & \mathbf{A}+\nabla f\\
+\phi & \fd & \phi-\frac{1}{c}\dpt{f}\end{eqnarray*}
+se pueden hacer elecciones astutas de $f$ para que $\nabla\cdot\mathbf{A}=0$.
+A una elección de una pareja de potenciales se le llama \emph{gauge}
+o \emph{invariancia de contraste}.%
+}\noun{\[
+\nabla\cdot\mathbf{A}=0\]
+} lo que implica\begin{eqnarray*}
+\mathbf{k}\cdot\mathbf{A} & = & 0,\,\mathbf{k}\perp\mathbf{A}\\
+\mathbf{P}\cdot\mathbf{A} & = & \mathbf{A}\cdot\mathbf{P}\end{eqnarray*}
+ La utilización de este gauge no implica que los campos sean estacionarios;
+de hecho, no lo serán.
+\item La energía que transporta una onda es proporcional a $\left|\mathbf{A}\right|^{2}$.
+Vamos a admitir que \emph{la perturbación es pequeña}, con lo que
+$\left|\mathbf{A}_{0}\right|\ll1$ lo que nos permite desechar el
+término cuadrático en $\mathbf{A}$. Con lo que llevamos dicho el
+hamiltoniano perturbativo vale\[
+W=\frac{e}{mc}\mathbf{A}\cdot\mathbf{P}\]
+
+
+
+Lo que queremos calcular es la probabilidad de transición de $i$
+a $f$,\[
+P_{if}=\left|c_{f}\left(t\right)\right|^{2}=\frac{1}{\hbar^{2}}\left|\int_{0}^{t}e^{i\omega_{fi}t'}W_{fi}\left(t'\right)dt'\right|^{2}\]
+ para lo que necesitamos $W_{fi}$. Como tenemos ya el hamiltoniano
+de la perturbación, podemos empezar a calcular\begin{eqnarray*}
+e^{i\omega_{fi}t}W_{fi}\left(t\right) & = & e^{i\omega_{fi}t}\bra{f}\frac{e}{mc}\mathbf{A}_{0}\left(\omega\right)\cdot\mathsf{P}\left(e^{i\left(\mathbf{k}\cdot\mathsf{R}-\omega t\right)}+e^{-i\left(\mathbf{k}\cdot\mathsf{R}-\omega t\right)}\right)\ket{i}\\
+ & = & \bra{f}\frac{e}{mc}\mathbf{A}_{0}\cdot\mathsf{P}e^{-i\mathbf{k}\cdot\mathsf{R}}\ket{i}e^{i\left(\omega+\omega_{fi}\right)t}+\bra{f}\frac{e}{mc}\mathbf{A}_{0}\cdot\mathsf{P}e^{i\mathbf{k}\cdot\mathsf{R}}\ket{i}e^{i\left(\omega_{fi}-\omega\right)t}\end{eqnarray*}
+ acabamos de separar la dependencia temporal de la espacial (una dentro
+del sandwich y la otra fuera). Ahora tenemos que hacer la integral
+en $t$\begin{eqnarray*}
+\int_{0}^{t}e^{i\omega_{fi}t'}W_{fi}\left(t'\right)dt' & = & \bra{f}\frac{e}{mc}\mathbf{A}_{0}\cdot\mathsf{P}e^{-i\mathbf{k}\cdot\mathsf{R}}\ket{i}\frac{1-e^{i\left(\omega_{fi}+\omega\right)t}}{\omega+\omega_{fi}}\\
+ &  & +\bra{f}\frac{e}{mc}\mathbf{A}_{0}\cdot\mathsf{P}e^{i\mathbf{k}\cdot\mathsf{R}}\ket{i}\frac{1-e^{i\left(\omega_{fi}-\omega\right)t}}{\omega_{fi}-\omega}\end{eqnarray*}
+
+
+\item Simplificación (que no tendrá validez universal): estamos interesados
+en las transiciones entre aquellos niveles del átomo de H, donde se
+verifica\begin{eqnarray*}
+\hbar\omega_{fi} & \approx & 1eV\\
+\omega_{fi} & \approx & 10^{15}Hz\end{eqnarray*}
+ y dado que para provocar una transición entre dos estados o niveles
+cuya diferencia de energía es $\hbar\omega_{fi}$, parece razonable%
+\footnote{Por ejemplo, apoyándonos en el éxito experimental de la teoría clásica
+de la radiación (asignatura OII), que establece que la potencia emitida
+es máxima cuando la frecuencia natural de los osciladores atómicos
+y la frecuencia del campo son muy próximas (el fenómeno tiene carácter
+de resonancia).%
+} utilizar frecuencias $\omega$ del campo similares a $\omega_{fi}$,
+resulta\begin{eqnarray*}
+\omega & \simeq & \omega_{fi}\\
+\left|\frac{1}{\omega_{fi}-\omega}\right| & \gg & \left|\frac{1}{\omega+\omega_{fi}}\right|\end{eqnarray*}
+ con lo cual podemos \emph{despreciar el término que va en la suma
+de frecuencias,} y así\begin{eqnarray}
+\int_{0}^{t}e^{i\omega_{fi}t'}W_{fi}\left(t'\right)dt' & = & i\bra{f}\frac{e}{mc}\mathbf{A}_{0}\cdot\mathsf{P}\mathbf{e}^{i\mathbf{k}\cdot\mathsf{R}}\ket{i}\frac{1-e^{i\left(\omega_{fi}-\omega\right)t}}{\omega_{fi}-\omega}\nonumber \\
+P_{if} & = & \frac{1}{\hbar^{2}}\left|\bra{f}\frac{e}{mc}\mathbf{A}_{0}\cdot\mathsf{P}e^{i\mathbf{k}\cdot\mathsf{R}}\ket{i}\right|^{2}\left|\frac{1-e^{i\left(\omega_{fi}-\omega\right)t}}{\omega_{fi}-\omega}\right|^{2}\nonumber \\
+ & = & \frac{1}{\hbar^{2}}\left|\bra{f}\frac{e}{mc}\mathbf{A}_{0}\cdot\mathsf{P}e^{i\mathbf{k}\cdot\mathsf{R}}\ket{i}\right|^{2}\frac{\sin^{2}\left[\frac{\omega_{fi}-\omega}{2}t\right]}{\frac{\omega_{fi}-\omega}{2}}\label{ec_probabilidad_de_transicion_onda_mono}\end{eqnarray}
+
+\item Hasta ahora se trataba de una onda monocromática. En general, cuando
+tengamos una superposición de ondas planas\[
+P_{if}=\frac{1}{\hbar^{2}}\left|\bra{f}\frac{e}{mc}\mathsf{P}\cdot\mathbf{u}e^{i\mathbf{k}\cdot\mathsf{R}}\ket{i}\right|^{2}\int_{\omega_{1}}^{\omega_{2}}\left|\mathbf{A}_{0}\left(\omega\right)\right|^{2}\frac{\sin^{2}\left[\frac{\omega_{fi}-\omega}{2}t\right]}{\frac{\omega_{fi}-\omega}{2}}d\omega\]
+ donde $\mathbf{A}_{0}=\left|\mathbf{A}_{0}\right|\mathbf{u}$. Vamos
+a buscar una muy buena aproximación para la integral (todavía es muy
+fea la expresión). El cambio de variable es\begin{eqnarray*}
+u & = & \frac{\omega-\omega_{fi}}{2}t\\
+du & = & \frac{d\omega}{2}t\end{eqnarray*}
+con lo que tenemos\[
+P_{i\fd f}=\frac{2}{\hbar^{2}}\left|\bra{f}\frac{e}{mc}\mathsf{P}\cdot\mathbf{u}e^{-i\mathbf{k}\cdot\mathsf{R}}\ket{i}\right|^{2}t\,\int_{u_{1}}^{u_{2}}\left|\mathbf{A}_{0}\left(u\right)\right|^{2}\frac{\sin^{2}u}{u^{2}}du\]
+%
+\begin{figure}
+{\centering \includegraphics[width=5cm]{fig/prob-transicion-src.eps}\par }
+
+
+\caption{{\small \label{fig Transici=B4on seno}La función $\frac{\sin^{2}u}{u^{2}}\left(u\right)$}}
+\end{figure}
+ aceptaremos que \[
+\int_{u_{1}}^{u_{2}}\frac{\sin^{2}u}{u^{2}}du\simeq\int_{-\infty}^{\infty}\frac{\sin^{2}u}{u^{2}}du=\pi\]
+ Algunos valores para convencerse de lo acertado de esta aproximación
+se dan en la tabla \ref{tbl aproximacion de una integral}.%
+\begin{table}
+\begin{center}\begin{tabular}{cl}
+$k$&
+$I\left(k\right)$\tabularnewline
+\hline 
+{\small 1}&
+{\small 2.84}\tabularnewline
+{\small 2}&
+{\small 2.98}\tabularnewline
+{\small 3}&
+{\small 3.04}\tabularnewline
+{\small $\infty$}&
+{\small $\pi$}\tabularnewline
+\hline
+\end{tabular}\end{center}
+
+
+\caption{{\small \label{tbl aproximacion de una integral}Valores de $I\left(k\right)=\int_{-k\pi}^{k\pi}\frac{\sin^{2}u}{u^{2}}du$}}
+\end{table}
+ Si $u$ es suficientemente grande (frente a 1) la aproximación de
+la integral a toda la recta es buena.\\
+Tomemos, por ejemplo\[
+\begin{array}{ccccccc}
+\omega_{1} & = & 0.1\omega_{fi} & \fld & u_{1} & = & -0.45\omega_{fi}t\\
+\omega_{2} & = & 10\omega_{fi} & \fld & u_{2} & = & 4.5\omega_{fi}t\end{array}\]
+ para que $u_{1}$ y $u_{2}$ sean lo suficientemente grandes hace
+falta que \[
+\omega_{fi}t\gg1\]
+
+\item Considerar (y es generalmente cierto) que en el rango en el que $\frac{\sin^{2}u}{u^{2}}$
+toma valores importantes $\mathbf{A}_{0}\left(u\right)$ toma valores
+constantes $\mathbf{A}_{0}\left(u\right)\simeq\mathbf{A}_{0}\left(0\right)$,
+o lo que es lo mismo $A_{0}\left(\omega\right)\approx A_{0}\left(\omega_{fi}\right)$.
+\end{enumerate}
+Después de esta colección de simplificaciones la probabilidad de transición
+es \[
+P_{if}=\frac{2\pi}{\hbar^{2}}\left|\mathbf{A}_{0}\left(0\right)\right|^{2}\left|\bra{f}\frac{e}{mc}\mathsf{P}\cdot\mathbf{u}e^{i\mathbf{k}\cdot\mathsf{R}}\ket{i}\right|^{2}t\]
+ Habitualmente, se trabaja con $\rho$ y no con $\mathbf{A}$. Como
+para una onda plana monocromática $\left|\mathbf{E}_{0}(\omega)\right|=\frac{\omega}{c}\left|\mathbf{A}_{0}(\omega)\right|$,
+\begin{eqnarray*}
+\rho\left(\omega\right) & = & \frac{\left|\mathbf{E}_{0}(\omega)\right|^{2}}{4\pi}\\
+ & = & \frac{\omega^{2}\left|\mathbf{A}_{0}(\omega)\right|^{2}}{4\pi c^{2}}\end{eqnarray*}
+así\[
+\left|\mathbf{A}_{0}(\omega)\right|^{2}=\frac{4\pi c^{2}}{\omega^{2}}\rho(\omega)\]
+y dado que $\left.\mathbf{A}_{0}\left(u\right)\right|_{u=0}=\mathbf{A}_{0}\left(\omega_{fi}\right)$
+se llega a la siguiente expresión 
+
+\[
+P_{if}=\frac{8\pi^{2}}{m^{2}\hbar^{2}}\frac{\rho(\omega_{if})}{\omega_{if}^{2}}\left|\bra{f}e\mathsf{P}\cdot\mathbf{u}e^{i\mathbf{k}\cdot\mathsf{R}}\ket{i}\right|^{2}t\]
+Finalmente la probabilidad por unidad de tiempo de que el sistema
+haya transitado es\[
+\frac{dP_{if}}{dt}=\frac{8\pi^{2}}{\hbar^{2}m^{2}}\frac{\rho\left(\omega_{fi}\right)}{\omega_{fi}^{2}}\left|\bra{f}e\mathsf{P}\cdot\mathbf{u}e^{i\mathbf{k}\cdot\mathsf{R}}\ket{i}\right|^{2}\]
+
+
+
+\subsubsection{Revisión de las aproximaciones tomadas}
+
+\begin{enumerate}
+\item (teoría de perturbaciones a primer orden). Pasamos de $\dot{c}_{f}=F\left(c_{i},c_{f}\right)$
+a $\dot{c}_{f}=F\left(c_{i}^{\left(0\right)},c_{f}^{\left(0\right)}\right)$,
+con $c_{i}^{\left(0\right)}=1$ y $c_{f}^{\left(0\right)}=0$.
+\item (perturbación débil) $\left|\mathbf{A}\right|^{2}\ll1$ 
+\item (dos)
+
+\begin{enumerate}
+\item transiciones en el óptico: $\omega_{fi}\gg1$.
+\item heurística de la teoría clásica de la radiación: $\omega\simeq\omega_{fi}$.
+\end{enumerate}
+\item $\omega_{fi}t\gg1$
+\item $\left|A_{0}\left(\omega\right)\right|$ varía lentamente y vale en
+nuestro área de interés $A\left(\omega_{fi}\right)$
+\end{enumerate}
+Dado que la probabilidad $P_{if}$ crece linealmente con $t$, $\da{P_{if}}{t}$
+es una constante tal como se postula en la teoría de \noun{Einstein}.
+Por ello podemos escribir que\begin{eqnarray*}
+B_{if} & = & \frac{1}{\rho(\omega_{if})}\frac{dP_{if}}{dt}\\
+ & = & \frac{8\pi^{2}}{\hbar^{2}m^{2}}\frac{\rho\left(\omega_{fi}\right)}{\omega_{fi}^{2}}\left|\bra{f}e\mathsf{P}\cdot\mathbf{u}e^{i\mathbf{k}\cdot\mathsf{R}}\ket{i}\right|^{2}\end{eqnarray*}
+ La variación de las probabilidades de transición tiene siempre la
+forma\[
+\da{P_{if}}{t}=\left|\Braket{f}{\mathcal{O}}{i}\right|^{2}\]
+ donde $\mathcal{O}$ es un operador de transición que varía según
+la transición sea electromagnética, débil\ldots{}
+
+
+\subsubsection{¿Hay conservación de la energía?}
+
+Hasta ahora hemos supuesto que en una transición electromagnética
+la energía del fotón es\[
+\hbar\omega_{fi}=E_{f}-E_{i}\]
+Sin embargo de la ecuación \ref{ec_probabilidad_de_transicion_onda_mono}
+se deduce que la frecuencia del fotón puede ser distinta de $\omega_{fi}$,
+lo cual parece estar en contra del principio de conservación de la
+energía, puesto que en ese caso la energía que aporta el campo y la
+que se absorbe son diferentes\[
+\hbar\omega\neq\hbar\omega_{fi}=E_{f}-E_{i}\]
+Puesto que no se puede medir la energía de un estado con precisión
+arbitraria (en un tiempo finito de medida), sino que la precisión
+depende de la relación de incertidumbre\[
+\Delta Et\approx\hbar\]
+la diferencia entre niveles de energía es un tanto borrosa.%
+\begin{figure}
+
+
+
+\caption{{\small Figura comparativa entre niveles de energía bien definida,
+que emiten un fotón de frecuencia definida y niveles que forman una
+banda borrosa, que dan lugar a una indeterminación en la frecuencia
+del fotón emitido.}}
+\end{figure}
+Se puede ver en la figura \ref{fig Transici=B4on seno} que la probabilidad
+de transición es razonable para frecuencias del campo (o de los fotones
+que lo componen) tales que su diferencia $\Delta\omega$ con $\omega_{if}$
+verifica\[
+\Delta\omega t\leq\pi\]
+ Si multiplicamos esta expresión por $\hbar$,\[
+\hbar\Delta\omega t\leq\hbar\pi\]
+y tenemos en cuenta que a $\Delta\omega$ le corresponde una diferencia
+de energía (entre $E_{f}-E_{i}$ y la energía de los fotones que componen
+el campo) $\Delta E=\hbar\Delta\omega$, se obtiene que\[
+\Delta Et<\hbar\pi\approx\hbar\]
+La relación es compatible con la obtenida anteriormente, por lo que
+no se viola el principio de conservación de la energía. La vida media
+típica de un nivel atómico puede ser del orden del nanosegundo, o
+sea, $t\approx10^{-9}s$, con lo cual la incertidumbre en la caracterización
+de los niveles atómicos es muy pequeña\[
+\Delta E\approx\frac{\hbar}{t}\approx10^{-7}eV\]
+ Después de haber hecho estos comentarios será más fácil comprender
+el carácter resonante que tienen los procesos de transición. El intervalo
+de frecuencias del campo alrededor del valor de $\omega_{if}\approx10^{15}Hz$
+para el cual la probabilidad toma valores apreciables es $\Delta\omega\approx\pi/t\approx10^{9}$.
+Aparentemente es un valor enorme pero, en realidad, se trata de una
+cantidad ridícula comparada con el valor de $\omega_{if}$, típicamente
+una millonésima de su valor. Dicho con otras palabras, a la escala
+natural de frecuencias asociadas a las transiciones en el óptico,
+la probabilidad de transición se comporta casi como la distribución
+$\delta(\omega-\omega_{if})$.
+
+
+\subsection{La aproximación dipolar eléctrica\label{sec aproximacion dipolar electrica}}
+
+Empezaremos con una aproximación grosera que justificará el cálculo
+posterior.\begin{eqnarray*}
+\left\langle e^{i\mathbf{k}\cdot\mathbf{r}}\right\rangle  & = & \left\langle 1+i\mathbf{k}\cdot\mathbf{r}+\ldots\right\rangle \\
+ & \approx & 1+\frac{2\pi}{\lambda}a_{0}+\ldots\\
+ & = & 1+\mathrm{o}\left(10^{-3}-10^{-4}\right)\end{eqnarray*}
+como $a_{0}\approx0.5\mathrm{A}$ y $\lambda$ es una longitud de
+onda del espectro visible (del orden de $10^{3}-10^{4}\mathrm{A}$),
+se puede despreciar el término $\frac{a_{0}}{\lambda}$. 
+
+Supondremos además que la luz incidente está polarizada en la dirección
+del eje $z$, con lo que $\mathbf{u}=\left(0,0,1\right)$. Se puede
+obtener el coeficiente de \noun{Einstein} \[
+B_{if}=\frac{8\pi^{2}}{\hbar^{2}m^{2}\omega_{fi}^{2}}\left|\bra{f}e\mathcal{P}_{z}\ket{i}\right|^{2}\]
+ El operador $\mathcal{P}_{z}$ puede escribirse\[
+\mathcal{P}_{z}=\frac{im}{\hbar}\left[\mathcal{H},\mathcal{Z}\right]\]
+con lo que\begin{eqnarray*}
+\Braket{f}{\mathcal{P}_{z}}{i} & = & \frac{im}{\hbar}\Braket{f}{\left[\mathcal{H},\mathcal{Z}\right]}{i}\\
+ & = & \frac{im}{\hbar}\Braket{f}{\mathcal{HZ}-\mathcal{ZH}}{i}\\
+ & = & \frac{im}{\hbar}\left(E_{f}-E_{i}\right)\Braket{f}{\mathcal{Z}}{i}\\
+ & = & im\omega_{fi}\Braket{f}{\mathcal{Z}}{i}\end{eqnarray*}
+de lo que se obtiene \[
+B_{if}=\frac{8\pi^{2}}{\hbar^{2}}\left|\Braket{f}{e\mathcal{Z}}{i}\right|^{2}\]
+Gracias a la teoría fenomenológica de \noun{Einstein} se puede dar
+la siguiente expresión para el coeficiente de la emisión espontánea:\[
+A=A_{fi}=\frac{\hbar\omega_{fi}^{3}}{\pi^{2}c^{3}}B_{fi}=\frac{8\omega_{fi}^{3}}{\hbar c^{3}}\left|\Braket{f}{e\mathcal{Z}}{i}\right|^{2}\]
+Ahora podemos apreciar lo apropiado del calificativo {}``aproximación
+dipolar eléctrica'', puesto que el operador que gobierna la probabilidad
+de transición es $e\mathcal{Z}$, el dipolo eléctrico. Vamos a estimar
+el valor de los coeficientes para energías del orden de $\left(1\fdi10\right)eV$
+(el espectro óptico o regiones próximas a él)\begin{eqnarray*}
+A & \approx & \frac{8\omega^{3}}{\hbar c^{3}}e^{2}a_{0}^{2}\\
+ & = & \frac{8\omega^{3}}{\hbar c^{3}}e^{2}\frac{\hbar^{4}}{m^{2}e^{4}}\\
+ & = & \frac{8\left(\hbar\omega\right)^{3}}{m^{2}c^{3}}\frac{1}{e^{2}}\\
+ & = & \frac{8\left(\hbar\omega\right)^{3}}{\left(mc^{2}\right)^{2}}\frac{\hbar c}{e^{2}}\frac{1}{\hbar}\\
+ & = & \frac{8\left(\hbar\omega\right)^{3}}{\alpha\left(mc^{2}\right)^{2}}\frac{1}{\hbar}\\
+ & \approx & \left(10^{7}\fdi10^{9}\right)s^{-1}\end{eqnarray*}
+Donde se ha preferido transformar las expresiones a evaluarlas directamente,
+utilizando, entre otros datos, el valor de la constante de estructura
+fina $\alpha=\frac{e^{2}}{\hbar c}=\frac{1}{137}$(ver problemas),
+la energía en reposo del electrón $mc^{2}=0.5×10^{6}eV$ y $\hbar=6×10^{-16}eV× erg^{-1}$.
+Como se puede demostrar fácilmente, si la probabilidad de transición
+por unidad de tiempo es $A$, la vida media es del orden de $\frac{1}{A}$(ver
+problemas). Por lo tanto estas transiciones espontáneas se producen
+en tiempos de entre $10^{-7}$ y $10^{-9}$ segundos. 
+
+
+\subsection{Relación entre las prediciones cuánticas y las clásicas}
+
+Consideremos un conjunto muy grande de sistemas aislados que experimentan
+transiciones espontáneas. En la unidad de tiempo el número total de
+sistemas que sufre transición de $f$ a $i$ (espontánea) es $N_{f}A$.
+y como la energía que pierde cada uno es $\hbar\omega_{fi}$, resulta
+que la potencia emitida por el conjunto es \[
+-\dt{W}=N_{f}A\hbar\omega_{fi}\]
+y rescatando la expresión del coeficiente $A$\[
+-\dt{W}=\frac{8\omega_{fi}^{4}}{c^{5}}\left|\Braket{f}{e\mathcal{Z}}{i}\right|^{2}\]
+ Por otra parte, la radiación que emite un oscilador clásico de frecuencia
+$\omega_{0}$ y amplitud $x_{0}$ es porporcional a \[
+\omega_{0}^{4}\left(ex_{0}\right)^{2}\]
+ con lo que hay una coincidencia en la dependencia funcional de la
+potencia emitida en la frecuencia de radiación (en el modelo clásico
+la radiación emitida tiene la frecuencia de oscilación del oscilador
+$\omega_{0}$).
+
+
+\section{Reglas de selección}
+
+Son conjuntos de relaciones que deben satisfacer los números cuánticos
+de los estados involucrados en una transición para que ésta tenga
+una probabilidad no nula de suceder. Dicho de otro modo, cuando los
+números cuánticos asociados a los estados $i,f$ no satisfacen estas
+relaciones, $P_{if}$ es cero.
+
+Recordemos que $P_{if}\propto\left|\Braket{f}{e\mathcal{Z}}{i}\right|^{2}$
+en la aproximación en la que hemos trabajado. Por lo tanto, para que
+$P_{if}$ sea cero,\begin{eqnarray*}
+\left|\Braket{f}{e\mathcal{Z}}{i}\right|^{2} & = & 0\\
+e\int d\mathbf{r}\,\phi_{f}^{*}z\phi_{i} & = & 0\end{eqnarray*}
+ La función de onda del estado $a$ para el átomo de H se puede descomponer
+como ya sabemos: \[
+\phi_{a}\left(\mathbf{r}\right)=R_{n_{a}l_{a}}\left(r\right)Y_{m_{a}}^{l_{a}}\left(\Omega\right)\]
+ Vamos a evaluar la integral para ver en qué condiciones la probabilidad
+es cero. Tenemos en cuenta que $z=r\cos\theta$ y\[
+e\int dr\, r^{3}R_{n_{f}l_{f}}\left(r\right)R_{n_{i}l_{i}}\left(r\right)\int d\Omega\,\left(Y_{m_{f}}^{l_{f}}\right)^{*}\cos\theta Y_{m_{i}}^{l_{i}}=eI_{rad}× I_{ang}\]
+ De las dos integrales la única que se anula de forma sistemática,
+cuando se dan ciertas condiciones, es la angular por lo que vamos
+a centrar nuestra atención en ella. Como $\cos\theta$ no nos gusta,
+escribimos $\cos\theta\propto Y_{0}^{1}\left(\Omega\right)$ y entonces\[
+I_{ang}\propto\int d\Omega\,\left(Y_{m_{f}}^{l_{f}}\right)^{*}Y_{0}^{1}Y_{m_{i}}^{l_{i}}\]
+ Tenemos una integral que contiene el producto de tres armónicos esféricos
+(autofunciones del momento angular). \label{tx truco producto2armonicos a cl2armonicos}Para
+evaluarla es inteligente valerse de los CG para poner el producto
+de dos de ellos como una combinación lineal de armónicos esféricos.
+\begin{eqnarray*}
+Y_{0}^{1}\left(\Omega\right)Y_{m_{i}}^{l_{i}}\left(\Omega\right) & = & \sum_{L=\left|1-l_{i}\right|}^{1+l_{i}}C\left(1,0,l_{i},m_{i}|L,m_{i}\right)Y_{m_{i}}^{L}\\
+ & = & C\left(1,0,l_{i},m_{i}|l_{i}-1,m_{i}\right)Y_{m_{i}}^{l_{i}-1}+\\
+ &  & C\left(1,0,l_{i},m_{i}|l_{i},m_{i}\right)Y_{m_{i}}^{l_{i}}+\\
+ &  & C\left(1,0,l_{i},m_{i}|l_{i}+1,m_{i}\right)Y_{m_{i}}^{l_{i}+1}\\
+ & = & \alpha Y_{m_{i}}^{l_{i}-1}+\beta Y_{m_{i}}^{l_{i}+1}\end{eqnarray*}
+ La última igualdad se obtiene porque el CG intermedio es nulo (ver
+tablas). Hemos puesto un producto de armónicos como combinación lineal
+de otros armónicos donde los coeficientes constantes $\alpha,\beta$
+son CG. Ahora ya podemos afrontar el cálculo de la integral angular
+$I_{ang}$\begin{eqnarray*}
+I_{ang}\propto\int d\Omega\,\left(Y_{m_{f}}^{l_{f}}\right)^{*}Y_{0}^{1}Y_{m_{i}}^{l_{i}} & = & \alpha\int d\Omega\,\left(Y_{m_{f}}^{l_{f}}\right)^{*}Y_{m_{i}}^{l_{i}-1}+\beta\int d\Omega\,\left(Y_{m_{f}}^{l_{f}}\right)^{*}Y_{m_{i}}^{l_{i}+1}\\
+ & = & \alpha\delta_{l_{f}l_{i-1}}\delta_{m_{f}m_{i}}+\beta\delta_{l_{f}l_{i+1}}\delta_{m_{f}m_{i}}\end{eqnarray*}
+ En consecuencia, para que haya una probabilidad no nula de transición
+debe cumplirse\begin{eqnarray*}
+l_{f} & \in & \left\{ l_{i}±1\right\} \\
+m_{f} & = & m_{i}\end{eqnarray*}
+ condiciones que conforman las reglas de selección para el operador
+$e\mathcal{Z}$. Si levantamos la restricción de que sea luz polarizada
+según el eje $z$, las reglas son, en la aproximación dipolar eléctrica
+(que es buena para transiciones en el óptico): \begin{eqnarray*}
+l_{f} & \in & \left\{ l_{i}±1\right\} \\
+m_{f} & \in & \left\{ m_{i},m_{i}±1\right\} \end{eqnarray*}
+En realidad, estas reglas de selección no son exactas. Recordemos
+que la expresión de $P_{if}$ de la que se obtienen, aunque válida
+para las transiciones en la región del óptico, es aproximada. Por
+ello cuando partiendo de un estado no hay ningún otro accesible por
+medio de una transición dipolar eléctrica, resulta posible observar
+transiciones a estados que no satisfacen las reglas anteriores. Por
+supuesto $P_{if}$ es extraordinariamente pequeña lo que se traduce
+en una vida media extraordinariamente larga. Observemos el ejemplo
+de la figura
+
+\begin{figure}
+{\centering \includegraphics[width=4cm]{fig/transiciones.eps} \par }
+\caption{a) Transición de $l=2$ a $l=0$. b) La transición de $l=2$
+a $l=1$ tapa totalmente la transición de $l=2$ a $l=0$ (la probabilidad
+de la segunda es tan pequeña que raramente se observa).}
+\end{figure}
+
+La transición de $l=2$ a $l=0$ no es dipolar eléctrica porque los
+saltos de $l$ para este tipo de transiciones son de $1$. Sin embargo
+la transición acaba ocurriendo porque es la única posible.
+
+Cuando estamos en el rango de energías de los rayos $X$ ($\hbar\omega=1KeV$)
+no se puede dejar el desarrollo de la exponencial en los elementos
+de matriz en el primer término (v. apartado \ref{sec aproximacion dipolar electrica}).
+Se observan otras transiciones tales como las \emph{dipolares} \emph{magnéticas}
+o las \emph{cuadrupolares} \emph{eléctricas} (las cuales llevan asociados
+operadores de transición distintos al dipolar eléctrico $e\mathcal{Z}$).
+Esto también ocurre en las transiciones entre estados nucleares. Allí,
+las energías involucradas son del orden del $MeV=10^{6}eV$ lo cual
+produce longitudes de onda típicas del orden de $\lambda=100fm=10^{-3}\mathrm{A}$
+%
+\footnote{El \emph{fermi} (fm) es la unidad de longitud habitual en física nuclear.
+$1fm=10^{-5}\mathrm{A}$.%
+}, siendo el tamaño de los núcleos de unos pocos $fm$. Por lo tanto
+la razón $\left\langle \frac{r}{\lambda}\right\rangle $ no es despreciable. 
+
+Insistamos, para finalizar, que estas reglas de selección, aunque
+aproximadas, son válidas para transiciones en las que la energía intercambiada
+con el campo es del orden de magnitud del $eV$. Han sido obtenidas
+sin tener en cuenta que el electrón es una partícula con espín. En
+el próximo capítulo daremos (sin demostración) las reglas de selección
+para funciones de onda con buen momento angular total en las que se
+incluye el espín .
+
+
+\section{Problemas y ejercicios}
+
+
+\subsection{Enunciados}
+
+\begin{enumerate}
+\item {[}TS{*}{]} Justifique que el hamiltoniano asociado a una partícula
+de masa $m$ y carga $e$, en interacción con un campo electromagnético
+externo, viene dado por \[
+H=\frac{1}{2m}\left(\mathbf{P}-\frac{e}{c}\mathbf{A}\right)^{2}+e\phi\]
+
+\item {[}T{]} Demuestre que en el \emph{gauge de radiación} $\left(\nabla\cdot\mathbf{A}=0\right)$
+se verifica la siguiente ecuación entre operadores. \[
+\mathbf{P}\cdot\mathbf{A}=\mathbf{A}\cdot\mathbf{P}\]
+
+\item {[}A{]} Sea\[
+W=\frac{e}{mc}\mathbf{A}\cdot\mathbf{p}+\frac{e^{2}}{2mc^{2}}\left|\mathbf{A}\right|^{2}\]
+Demuestre que 
+
+\begin{enumerate}
+\item el orden de magnitud del primer término es el del dipolo eléctrico
+del átomo veces el campo aplicado $\left|\mathbf{E}\right|$. 
+\item la razón entre los dos términos de la perturbación $W$ es del orden
+de $a_{0}^{2}\frac{\left|\mathbf{E}\right|}{Ze}$. 
+\end{enumerate}
+\item {[}T{]} Demuestre que \[
+\mathcal{P}_{\alpha}=\frac{im}{\hbar}\left[H_{0},\mathcal{X}_{\alpha}\right]\]
+con $\mathcal{H}_{0}=\frac{\mathbf{P}^{2}}{2m}+V(\mathbf{x})$ y $\mathcal{X}_{\alpha}=\mathcal{X},\mathcal{Y},\mathcal{Z}.$
+\item {[}T{]} Sea $A$ la probabilidad de desexcitación espontánea de un
+cierto nivel. Si en $t=0$ la población de dicho nivel es $N_{0}$, 
+
+\begin{enumerate}
+\item determine la poblaci\'{o}n $N(t)$ para cualquier tiempo $t$ posterior 
+\item encuentre el tiempo $t_{1/2}$ para el que la población se reduce
+a la mitad. 
+\item obtenga el tiempo medio durante el que un átomo se encuentra en el
+nivel antes de decaer. 
+\end{enumerate}
+\item {[}A{]} Calcule el coeficiente de \noun{Einstein} asociado a la
+transición inducida entre los niveles $n=1$, $l=0$, $m=0$y $n=2$,
+$l=1$, $m=0$. Suponga que la radiación externa está polarizada seg\'{u}n
+el eje $z$. 
+\item {[}A{]} Deduzca del resultado anterior obtener el coeficiente de \noun{Einstein}
+$A$. 
+\item {[}A{]} Consideremos de nuevo la transición del problema 6 inducida
+por una radiación externa cuya densidad de energía por unidad de volumen
+e intervalo unidad de frecuencias es $\rho=10^{-14}erg× seg/cm^{3}$.
+¿Qué tiempos de observación son adecuados para la aplicación de las
+expresiones obtenidas en la teoría?. 
+\item {[}A{]} Utilice las reglas de selección para determinar qué transiciones
+espontáneas son posibles entre los tres primeros niveles de energía
+del átomo de hidrógeno. 
+\item {[}A{]} Una partícula de masa $m$ y carga $q$ se mueve a lo largo
+del eje de las $x$ sometida a un potencial armónico de frecuencia
+$\omega$. Obtenga las reglas de selección para transiciones inducidas
+por radiación polarizada según el eje $x$ y cuya longitud de onda
+es suficientemente grande (de modo que podemos aplicar la aproximación
+dipolar eléctrica). 
+\end{enumerate}
+
+\subsection{Algunas soluciones}
+
+
+\subsubsection{Problema 4}
+
+Hace falta saber las relaciones de conmutación $\left[\mathcal{X}_{\alpha},\mathcal{P}_{\beta}\right]=i\hbar\delta_{\alpha\beta}$
+y $\left[\mathcal{X}_{\alpha},\mathcal{X}_{\beta}\right]=0$
+
+\begin{eqnarray*}
+\frac{im}{\hbar}\left[\mathcal{H}_{0},\mathcal{X}_{\alpha}\right] & = & \frac{im}{\hbar}\left[\frac{\mathcal{P}^{2}}{2m}+\mathcal{V}\left(\mathcal{X}\right),\mathcal{X}_{\alpha}\right]\\
+ & = & \frac{im}{\hbar}\left(\left[\frac{\mathcal{P}^{2}}{2m},\mathcal{X}_{\alpha}\right]+\left[\mathcal{V}\left(\mathcal{X}\right),\mathcal{X}_{\alpha}\right]\right)=\\
+ & = & \frac{im}{\hbar}\frac{1}{2m}\left[\mathcal{P}^{2},\mathcal{X}_{\alpha}\right]\\
+ & = & \frac{i}{2\hbar}\left[\sum_{\beta=x,y,z}\mathcal{P}_{\beta}^{2},\mathcal{X}_{\alpha}\right]\\
+ & = & \frac{i}{2\hbar}\left[\mathcal{P}_{\alpha}^{2},\mathcal{X}_{\alpha}\right]\\
+ & = & \frac{i}{2\hbar}\left(\mathcal{P}_{\alpha}^{2}\mathcal{X}_{\alpha}-\mathcal{X}_{\alpha}\mathcal{P}_{\alpha}^{2}\right)\\
+ & = & \frac{i}{2\hbar}\left(\mathcal{P}_{\alpha}\left(\mathcal{P}_{\alpha}\mathcal{X}_{\alpha}-\mathcal{X}_{\alpha}\mathcal{P}_{\alpha}\right)+\left(\mathcal{P}_{\alpha}\mathcal{X}_{\alpha}-\mathcal{X}_{\alpha}\mathcal{P}_{\alpha}\right)\mathcal{P}_{\alpha}\right)\\
+ & = & \mathcal{P}_{\alpha}\end{eqnarray*}
+ La componente $\alpha$ del momento lineal viene dada por la expresión
+\[
+\mathcal{P}_{\alpha}=-i\hbar\dpa{}{\alpha}\]
+ Si el momento lineal coincide con la cantidad de movimiento $m\dot{\mathbf{x}}$
+podemos demostrar esta relación como sigue utilizando que la derivada
+temporal de un operador $\mathcal{O}$ es\[
+\dt{\mathcal{O}}=\frac{1}{i\hbar}\left[\mathcal{O},\mathcal{H}\right]\]
+ de aquí se tiene que \[
+\mathcal{DX}_{\alpha}=\frac{1}{i\hbar}\left[\mathcal{X}_{\alpha},\mathcal{H}\right]\]
+ (donde \emph{$\mathcal{D}$} es el operador derivada) y ya que $\mathcal{P}_{\alpha}=m\mathcal{DX}_{\alpha}$
+se tiene\[
+\mathcal{P}_{\alpha}=-\frac{im}{\hbar}\left[\mathcal{X}_{\alpha},\mathcal{H}\right]=\frac{i\hbar}{m}\left[\mathcal{H},\mathcal{X}_{\alpha}\right]\]
+
+
+
+\subsubsection{Problema 5}
+
+\begin{enumerate}
+\item Lo que hay que hacer es resolver la ecuación diferencial de \noun{Einstein}
+para transiciones espontáneas\[
+\dt{N}=-AN\]
+ con la condición inicial $N\left(0\right)=N_{0}$. La solución es
+\[
+N\left(t\right)=N_{0}e^{-At}\]
+
+\item Para el tiempo $t_{\frac{1}{2}}$ se obtiene trivialmente\[
+N\left(t_{\frac{1}{2}}\right)=N_{0}e^{-At_{\frac{1}{2}}}=\frac{N_{0}}{2}\]
+ de donde \begin{eqnarray*}
+e^{-At_{\frac{1}{2}}} & = & \frac{1}{2}\\
+t_{\frac{1}{2}} & = & \frac{\log2}{A}\end{eqnarray*}
+ 
+\item Para hallar $\tau$ tenemos que calcula la siguiente integral\[
+\left\langle t\right\rangle =\tau=\int_{0}^{\infty}tP_{D}\left(t\right)dt\]
+ siendo $P_{D}\left(t\right)$ la probabilidad de que un átomo se
+desintegre en el intervalo de tiempo $t$, $t+dt$. Podemos escribir\[
+P_{D}\left(t\right)=\textrm{prob de que no desintegre hasta }t\textrm{ }×\textrm{prob de que desintegre en }t,t+dt\]
+ De acuerdo con la teoría que hemos estudiado, la probabilidad de
+que un átomo se desintegre en un segundo (cualquiera) es $A$. Por
+lo tanto la probabilidad de que se desintegre en el intervalo un intervalo
+de tiempo $dt$ será $Adt$. La probabilidad de que un átomo no se
+haya desintegrado hasta el instante $t$ la obtenemos como el cociente
+del número de átomos que pueblan el nivel inicial en ese instante,
+$N_{0}e^{-At}$ y los $N_{0}$ iniciales. Luego\[
+\frac{N_{0}e^{-At}}{N_{0}}=e^{-At}\]
+ es la probabilidad de que no se haya desintegrado hasta $t$.\begin{eqnarray*}
+\tau & = & \int_{0}^{\infty}tP_{D}\left(t\right)dt=\int_{0}^{\infty}te^{-At}Adt\\
+ & = & \frac{1}{A}\int_{0}^{\infty}\left(At\right)e^{-At}d\left(At\right)\\
+ & = & \frac{1}{A}\int_{0}^{\infty}ue^{-u}du\\
+ & = & \frac{\Gamma\left(2\right)}{A}=\frac{1!}{A}=\frac{1}{A}\end{eqnarray*}
+%
+\begin{table}
+\begin{center}\begin{tabular}{ccc}
+\hline 
+\textbf{\small Símbolo}&
+\textbf{\small Nombre} {\small }\textbf{\small español}&
+\textbf{\small Nombre} {\small }\textbf{\small inglés}\tabularnewline
+\hline
+{\small $\tau$}&
+{\small vida media}&
+\emph{\small (average) lifetime}\tabularnewline
+{\small $t_{\frac{1}{2}}$}&
+{\small semivida}&
+\emph{\small half-life}\tabularnewline
+\hline
+\end{tabular}\end{center}
+
+
+\caption{{\small Nomenclatura}}
+\end{table}
+
+\end{enumerate}
+
+\subsubsection{Problema 6 }
+
+Calcule el coeficiente de \noun{Einstein} asociado a la transición
+inducida entre los niveles $n=1$, $l=0$, $m=0$y $n=2$, $l=1$,
+$m=0$. Suponga que la radiación externa está polarizada seg\'{u}n
+el eje $z$. 
+
+Acudamos a la expresión de la teoría\[
+B_{100;210}=\frac{8\pi^{2}}{\hbar^{2}}\left|\Braket{210}{e\mathcal{Z}}{100}\right|^{2}\]
+ Hay que calcular el elemento de matriz
+
+\begin{eqnarray*}
+\Braket{210}{\mathcal{Z}}{100} & = & \int d\mathbf{r}\,\phi_{210}^{*}\left(\mathbf{r}\right)z\phi_{100}\left(\mathbf{r}\right)=\left\{ z=r\cos\theta\right\} \\
+ & = & \int_{0}^{\infty}dr\, r^{3}R_{21}\left(r\right)R_{10}\left(r\right)\int d\Omega\,\left(Y_{0}^{1}\right)^{*}\left(\Omega\right)\cos\theta Y_{0}^{0}\left(\Omega\right)\end{eqnarray*}
+ si usamos las expresiones de los armónicos esféricos que aparecen,
+\begin{eqnarray*}
+Y_{0}^{1}\left(\Omega\right) & = & \sqrt{\frac{3}{4\pi}}\cos\theta\\
+Y_{0}^{0}\left(\Omega\right) & = & \sqrt{\frac{1}{4\pi}}\end{eqnarray*}
+y la expresión de diferencial de ángulo sólido\[
+d\Omega=\sin\theta d\theta d\varphi\]
+ obtendremos\begin{eqnarray*}
+\Braket{210}{\mathcal{Z}}{100} & = & \frac{\sqrt{3}}{4\pi}\int_{0}^{\infty}dr\, r^{3}R_{21}R_{10}\int_{0}^{2\pi}d\varphi\int_{0}^{\pi}d\theta\sin\theta\cos^{2}\theta\\
+ & = & \frac{\sqrt{3}}{4\pi}I_{rad}× I_{ang}\\
+ & = & \frac{1}{\sqrt{3}}I_{rad}\end{eqnarray*}
+ para hacer la integral radial hace falta buscar en una tabla las
+funciones $R$.\begin{eqnarray*}
+R_{10} & = & 2a_{0}^{-\frac{3}{2}}e^{-\frac{r}{a_{0}}}\\
+R_{21} & = & \frac{1}{2\sqrt{6}}a_{0}^{-\frac{5}{2}}re^{-\frac{r}{a_{0}}}\end{eqnarray*}
+ Sustituyéndolas \begin{eqnarray*}
+\Braket{210}{\mathcal{Z}}{100} & = & \frac{1}{\sqrt{3}}\frac{a_{0}^{-3}}{\sqrt{6}}\int_{0}^{\infty}dr\, r^{3}\left(\frac{r}{a_{0}}\right)e^{-\frac{3}{2}\left(\frac{r}{a_{0}}\right)}\\
+ & = & \frac{1}{\sqrt{3}}\frac{a_{0}}{\sqrt{6}}\int_{0}^{\infty}d\rho\,\rho^{4}e^{-\frac{3}{2}\rho}\end{eqnarray*}
+ (con el cambio $\rho=\frac{r}{a_{0}}$ en la segunda ecuación). Ahora
+hacemos $u=\frac{3}{2}\rho$ \[
+\Braket{210}{\mathcal{Z}}{100}=\frac{a_{0}}{\sqrt{18}}\left(\frac{2}{3}\right)^{5}\int_{0}^{\infty}du\, u^{4}e^{-u}\]
+ en los exámenes estas integrales son comunes, y se nos dará el dato
+final, en este caso\[
+\int_{0}^{\infty}du\, u^{4}e^{-u}=\Gamma\left(5\right)=4!\]
+ Sustituyendo el elemento de matriz recién hallado en la expresión
+del coeficiente\[
+B_{if}=\frac{2^{18}\pi^{2}}{3^{10}}\frac{e^{2}a_{0}^{2}}{\hbar^{2}}\]
+ Una vez que tenemos esto podemos hallar la $A$ fácilmente (problema
+7).
+
+
+\subsubsection{Problema 7}
+
+\[
+A_{fi}=\frac{\hbar\omega_{fi}^{3}}{\pi^{2}c^{3}}=\frac{2^{18}}{3^{10}}\frac{e^{2}a_{0}^{2}}{\hbar^{2}c}\frac{\left(\hbar\omega_{fi}\right)^{2}}{\left(\hbar c\right)^{2}}\]
+ utilizamos que $a_{0}=\frac{\hbar^{2}}{me^{2}}$ \[
+A_{fi}=\frac{2^{18}}{3^{10}}\frac{1}{\alpha}\frac{\left(\hbar\omega_{fi}\right)^{2}}{\left(\hbar c\right)\left(mc^{2}\right)^{2}}c\]
+ \[
+\hbar\omega_{fi}=E_{2}-E_{1}=-\frac{E_{I}}{4}-\left(-E_{I}\right)=\frac{3}{4}E_{I}\simeq10.2eV\]
+ usando los datos (que deberían empezar a sernos familiares)\begin{eqnarray*}
+\hbar c & = & 1973eVA\\
+mc^{2} & = & 0.5×10^{6}eV\\
+c & = & 3×10^{10}cms^{-1}=3×10^{18}As^{-1}\\
+\alpha & = & \frac{1}{137}\end{eqnarray*}
+ luego $A_{1s\fd2p}\simeq4×10^{9}s^{-1}$ y la vida media es
+$\tau\simeq0,25ns$ .
+
+El tiempo que tarda en decaer de un estado excitado al fundamental
+de forma espontánea, como vemos, es bastante corto.
+\end{document}

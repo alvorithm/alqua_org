@@ -1,0 +1,1064 @@
+\documentclass[spanish,a4paper,12pt]{book}
+\usepackage{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{eurosym}
+\input{lyxpackages.sty}
+\input{IFC2-packages.sty}
+\input{IFC2-macros.sty}
+\begin{document}
+
+\chapter{Estadísticas Cuánticas\label{cap estadisticas cuanticas}}
+
+
+\section{Indistinguibilidad y estadística}
+
+La indistinguibilidad de las partículas idénticas es una propiedad
+de los objetos cuánticos difícilmente comprensible desde el punto
+de vista clásico. Conduce de forma natural al principio o postulado
+de (anti)simetrización de la fdo y al principio de exclusión de \noun{Pauli}
+en el caso de los fermiones. Todo ello afecta de manera radical a
+la dependencia de la función de volumen \( \Omega  \) en las ocupaciones.
+Para empezar no podemos etiquetar las partículas, lo que conduce a
+que solo podamos seleccionar de una forma distinguible una pequeña
+cantidad \( n \) de partículas del total \( N \). Recordemos que
+en el caso de partículas distinguibles tenemos \( \left( \begin{array}{c}
+N\\
+n
+\end{array}\right)  \) formas diferentes de hacerlo. También se ve enormemente afectado
+el proceso de distribución de esa pequeña fracción de partículas en
+los \( g \) estados que forman un nivel degenerado. A este respecto
+será de utilidad recordar que aunque las partículas sean indistinguibles,
+los estados son perfectamente diferenciables por medio de sus números
+cuánticos (la proyección del momento angular pej) Además cuando se
+trata de fermiones, la ocupación de un nivel no puede exceder su degeneración.
+En caso contrario tendríamos al menos dos partículas en un mismo estado,
+lo cual violaría el principio de exclusión. 
+
+
+\section{Distribución de \noun{Fermi}-\noun{Dirac}}
+
+Consideremos un sistema de \( N \) fermiones idénticos (electrones,
+protones, ...) en el interior de una cavidad de volumen \( V \) que
+impide cualquier intercambio de energía o partículas con el entorno.
+Admitiremos que los fermiones del sistema no interaccionan entre sí
+y que, en caso contrario, cada partícula siente una interacción promedio
+que depende de sus coordenadas y no de las coordenadas de las restantes
+partículas. Bajo estas hipótesis cada partícula puede ocupar unos
+niveles de energía \( \left\{ \varepsilon _{a},\, g_{a}\right\} ,\, a\in \{0,1,2,\cdots \} \).
+Las ocupaciones de los mismos deben cumplir que \( n_{a}\leq g_{a} \). 
+
+Sea \( \{n_{a}\} \)una distribución de partículas sujeta a las dos
+ligaduras 
+
+\[
+\begin{array}{ccc}
+N & = & \sum _{a}n_{a}\\
+E & = & \sum _{a}\varepsilon _{a}
+\end{array}\]
+que garantizan el aislamiento del sistema. Tal como se afirma en la
+introducción sólo existe una manera distinguible de esgoger \( n_{a}\leq g_{a} \)
+fermiones de los \( N \) que forman el sistema. El reparto de esos
+fermiones en los estados del nivel i-ésimo (uno por estado a lo sumo)
+se efectua seleccionando \( n_{a} \) estados de los \( g_{a} \)
+que forman el nivel. Esta selección pueda hacerse de 
+
+\[
+\binom{g_{a}}{n_{a}}\]
+ formas distintas. Cuando consideramos todo el espectro, tenemos\begin{eqnarray*}
+\Omega \left( \left\{ n_{a}\right\} \right)  & = & \prod _{a}\binom{g_{a}}{n_{a}}\\
+ & = & \prod _{a}\frac{g_{a}!}{n_{a}!\left( g_{a}-n_{a}\right) !}
+\end{eqnarray*}
+ Un hecho interesante es que si \( n_{a}\ll g_{a} \) (límite de densidades
+bajas), entonces \( \Omega \simeq \prod _{a}\frac{g_{a}^{n_{a}}}{n_{a}!}=\frac{1}{N!}\sigma ^{MB} \).
+Es decir, la estadística de FD se confunde con la de MB.
+
+El equilibrio viene caracterizado por aquella distribución que maximiza
+la función precedente. Utilizaremos el método de los multiplicadores
+de Lagrange para garantizar que se satisfagan las dos restricciones.
+Para ello introducimos la función auxiliar\begin{eqnarray*}
+\Phi \left( \left\{ n_{a}\right\} ,\alpha ,\beta \right)  & = & \log \Omega +\alpha \left( N-\sum _{a}n_{a}\right) +\beta \left( E-\sum _{a}n_{a}\varepsilon _{a}\right) \\
+\log \sigma  & = & \log \left( \prod _{a}\frac{g_{a}!}{n_{a}!\left( g_{a}-n_{a}\right) !}\right) \\
+ & = & \sum _{a}\left( \log \left( g_{a}!\right) -\log \left( n_{a}!\right) -\log \left( \left( g_{a}-n_{a}\right) !\right) \right) 
+\end{eqnarray*}
+ donde hemos utilizado la función \( log(\Omega ) \) en vez de \( \Omega  \)
+por simplicidad. Como en un sistema macroscópico las ocupaciones satisfacen
+que \( n_{a}\gg 1 \), podemos usar la aproximación de Stirling de
+manera que\[
+\log \Omega =\sum _{a}\left( g_{a}\log g_{a}-n_{a}\log n_{a}-\left( g_{a}-n_{a}\right) \log \left( g_{a}-n_{a}\right) \right) \]
+ y tratar los números de ocupación como variables continuas. En el
+máximo de \( \Phi  \) obtendremos\begin{eqnarray*}
+\dpa{\Phi }{\alpha } & = & 0\\
+\dpa{\Phi }{\beta } & = & 0
+\end{eqnarray*}
+ que conducen respectivamente a la conservación del número total de
+partículas y de la energía. Por último\[
+\dpa{\Phi }{n_{b}}=0\]
+ conduce a las ocupaciones en el equilibrio. Se cumple que\begin{eqnarray*}
+-\log n^{eq}_{b}-1+\log \left( g_{b}-n_{b}^{eq}\right) +1-\alpha -\beta \varepsilon _{b} & = & 0\\
+\log \frac{g_{b}-n_{b}^{eq}}{n_{b}^{eq}} & = & \alpha +\beta \varepsilon _{b}
+\end{eqnarray*}
+ de donde\[
+n_{b}^{eq}=\frac{g_{b}}{e^{\alpha +\beta \varepsilon _{b}}+1}\]
+ Esta ley para las ocupaciones en el equilibrio \( \{n_{a}^{eq}\} \)
+se conoce como distribución (estadística) de \noun{Fermi-}Dirac
+\noun{(esFD).} De forma análoga a la esMB, los valores de \( \alpha  \)
+y \( \beta  \) se obtienen a partir de los valores de la energía
+total y del número de partículas. En esta estadística \( \alpha  \)
+tiene una gran importancia, especialmente a temperatura cero. Normalmente
+se escribe en función de un nuevo parámetro \( \mu  \) (llamado \emph{potencial}
+\emph{químico} y con dimensiones de energía), como \( \alpha =-\beta \mu  \).
+Así:\[
+n_{a}^{eq}=\frac{g_{a}}{e^{\beta \left( \varepsilon _{a}-\mu \right) }+1}\]
+A partir de la conservación del número total de fermiones \[
+N=\sum _{a}\frac{g_{a}}{e^{\beta \left( \varepsilon _{a}-\mu \right) }+1}\]
+ podemos relacionar \( \mu  \) con \( \beta ,N \) y \( V \) \footnote{%
+La dependencia en el volumen de la vasija se encuentra en los niveles
+de energía
+}, aunque al ser constantes los dos últimos, no se suele considerar
+la dependencia en los mismos. Por lo tanto escribimos simplemente
+\( \mu =\mu \left( \beta \right)  \). La forma concreta de esta función
+es compleja, y salvo en ciertos límites no se puede obtener de manera
+analítica. De la relación\[
+E=\sum _{a}\frac{\varepsilon _{a}g_{a}}{e^{\beta \left( \varepsilon _{a}-\mu \right) }+1}\]
+ se obtiene \( \beta =\beta \left( E\right)  \). No es muy complicado
+demostrar que \( \beta =\frac{1}{kT} \)( de hecho lo haremos en los
+problemas). 
+
+
+\subsection{Distribución de FD a \protect\( T=0\protect \) }
+
+Debido a la dependencia en el potencial químico es difícil trabajar
+con esta distribución. A temperatura cero, sin embargo, la situación
+se simplifica bastante. Estudiemos el límite cuando \( T\fd 0 \). 
+
+\begin{itemize}
+\item Cuando \( \varepsilon _{a}<\mu \left( 0\right)  \) el exponente es
+una cantidad negativa por lo que \( e^{\left( \ldots \right) }\fd 0\, T\fd 0 \)
+y en consecuencia \( \lim _{T\fd 0}n_{a}^{eq}=g_{a} \). 
+\item Cuando \( \varepsilon _{a}>\mu \left( 0\right)  \) tenemos \( \lim _{T\fd 0}n_{a}^{eq}=0 \). 
+\item Si existiese un nivel \( \varepsilon _{a}=\mu (0) \), entonces \( \lim _{T\fd 0}n_{a}^{eq}=g_{a}/2. \)
+\end{itemize}
+Por tanto
+
+\[
+\lim _{T\fd 0}n_{a}^{eq}=\lim _{T\fd 0}\frac{g_{a}}{e^{\left( \varepsilon _{a}-\mu \left( 0\right) \right) /kT}+1}=\left\{ \begin{array}{cc}
+g_{a} & \varepsilon _{a}<\mu (0)\\
+0 & \varepsilon _{a}>\mu (0)
+\end{array}\right. \]
+ 
+
+Constatamos que hay una energía umbral \( \varepsilon _{F}=\mu \left( 0\right)  \),
+llamada energía de \noun{Fermi}, que marca una diferencia de comportamiento
+notable de las ocupaciones de los niveles del sistema. Si la energía
+es inferior a \( \varepsilon _{F} \) la ocupación coincide con la
+degeneración \( g_{a} \). A energías por encima del nivel de \noun{Fermi},
+las ocupaciones son estrictamente cero. Por lo tanto, todas las partículas
+que forman el sistema se encuentran ocupando los niveles que se encuentran
+por debajo del nivel de \noun{Fermi.} En estas circunstancias se
+dice que el sistema está degenerado. A temperatura \( T=0 \) la representación
+gráfica de la (esFD) es la de la función escalón, mientras que a temperaturas
+ligeramente superiores se produce un suavizamiento de la misma. 
+\begin{figure}
+\nofig
+\caption{{\small Aspecto de la distribución de equilibrio \protect\( \frac{n_{a}^{eq}}{g_{a}}\protect \)
+en función de \protect\( \varepsilon _{a}\protect \). El escalón
+corresponde a \protect\( T=0\protect \), y la curva a trazos a \protect\( T\ll 1\protect \).}}
+\end{figure}
+
+
+
+\section{El gas ideal en la esFD}
+
+Esta sección esta dedicada a obtener algunas de las expresiones generales
+que caracterizan un gas ideal de fermiones, esencialmente a \( T=0 \),
+sin especificar el tipo de partícula o cúal es el sistema. Puede tratarse
+del gas de (cuasi)libres en un sólido o que forma parte del plasma
+de una enana blanca, etc. 
+
+La degeneración de un nivel de energía \( \varepsilon  \) de la partícula
+en la caja cúbica de volumen \( V \) será la misma que en la esMB:\[
+g\left( \varepsilon \right) d\varepsilon =g_{s}V\left( \frac{m^{3}}{2\pi ^{4}\hbar ^{6}}\right) ^{\frac{1}{2}}\varepsilon ^{\frac{1}{2}}d\varepsilon \]
+ donde hemos añadido la degeneración de espín, \( g_{s}=2s+1 \).
+Como los fermiones son partículas de espín semientero, \( g_{s}=impar \).
+En concreto, para los electrones tenemos dos proyecciones de espín
+posibles con lo cual \( g_{s}=2 \). El número de partículas en el
+nivel en cuestión es en general\[
+dn\left( \varepsilon \right) =g_{s}V\left( \frac{m^{3}}{2\pi ^{4}\hbar ^{6}}\right) ^{\frac{1}{2}}\frac{\varepsilon ^{\frac{1}{2}}d\varepsilon }{e^{\left( \varepsilon _{a}-\mu \right) /kT}+1}\]
+y a \( T=0 \) donde el denominador es la unidad para \( \varepsilon <\varepsilon _{F} \)\[
+dn\left( \varepsilon \right) =\begin{array}{c}
+g_{s}V\left( \frac{m^{3}}{2\pi ^{4}\hbar ^{6}}\right) ^{\frac{1}{2}}\varepsilon ^{\frac{1}{2}}d\varepsilon ,\, \, \varepsilon <\varepsilon _{F}\\
+0,\, \, \varepsilon >\varepsilon _{F}
+\end{array}\]
+
+
+La representación gráfica del número de partículas por intervalo unidad
+de energía es la que se muestra en la figura \ref{fig6.2}
+\begin{figure}
+{\centering \includegraphics[width=6cm]{fig/dn-de-frente-e.eps} \par}
+\caption{\protect\( \frac{dn}{d\varepsilon }\protect \)en función
+de \protect\( \varepsilon \protect \).\label{fig6.2}}
+\end{figure}
+Partiendo de la siguiente expresión para \( N \) es posible calcular
+\( \varepsilon _{F} \)\begin{eqnarray*}
+N & = & \int _{0}^{\infty }dn\left( \varepsilon \right) ,\\
+ & = & g_{s}V\left( \frac{m^{3}}{2\pi ^{4}\hbar ^{6}}\right) ^{\frac{1}{2}}\int _{0}^{\varepsilon _{F}}\varepsilon ^{\frac{1}{2}}d\varepsilon ,\\
+ & = & \frac{2}{3}g_{s}V\left( \frac{m^{3}}{2\pi ^{4}\hbar ^{6}}\right) ^{\frac{1}{2}}\varepsilon _{F}^{\frac{3}{2}},
+\end{eqnarray*}
+ y despejando \( \varepsilon _{F} \)\begin{eqnarray*}
+\varepsilon _{F} & = & \left( \frac{3}{2}\frac{N}{g_{s}V}\left( \frac{m^{3}}{2\pi ^{4}\hbar ^{6}}\right) ^{-\frac{1}{2}}\right) ^{\frac{2}{3}}\\
+ & = & \frac{\hbar ^{2}}{2m}\left( \frac{6\pi ^{2}}{g_{s}}\frac{N}{V}\right) ^{\frac{2}{3}}
+\end{eqnarray*}
+El nivel de \noun{Fermi} es inversamente proporcional a la masa
+de la partícula. A medida que la partícula se hace más masiva se mueve
+más lentamente y su energía cinética se reduce. Por el contrario,
+crece con la densidad \( n=N/V \) a la potencia \( 2/3 \) lo cual
+es consecuencia directa del ppo de exclusión. Como los fermiones no
+pueden apilarse en un mismo estado a medida que añadimos más partículas,
+éstas deben ocupar niveles de mayor energía. La energía interna es\begin{eqnarray*}
+E & = & \int _{0}^{\infty }\varepsilon dn\left( \varepsilon \right) \\
+ & = & g_{s}V\left( \frac{m^{3}}{2\pi ^{4}\hbar ^{6}}\right) ^{\frac{1}{2}}\int _{0}^{\varepsilon _{F}}\varepsilon \varepsilon ^{\frac{1}{2}}d\varepsilon \\
+ & = & \frac{2g_{s}V}{5}\left( \frac{m^{3}}{2\pi ^{4}\hbar ^{6}}\right) ^{\frac{1}{2}}\varepsilon _{F}^{\frac{5}{2}}\\
+ & = & \frac{3}{5}\left( \frac{2}{3}g_{s}V\left( \frac{m^{3}}{2\pi ^{4}\hbar ^{6}}\right) ^{\frac{1}{2}}\varepsilon _{F}^{\frac{3}{2}}\right) \varepsilon _{F}
+\end{eqnarray*}
+ Dicho de otro modo (y siempre a \( T=0 \))\[
+E=\frac{3}{5}N\varepsilon _{F}\to \varepsilon =\frac{3}{5}\varepsilon _{F}\]
+
+
+
+\subsubsection{Temperatura pequeña pero no nula}
+
+Cuando \( T\ll 1 \) puede demostrarse que las correciones a las expresiones
+obtenidas más arriba son\begin{eqnarray*}
+\mu \left( T\right)  & = & \varepsilon _{F}\left( 1-\frac{\pi ^{2}}{12}\left( \frac{kT}{\varepsilon _{F}}\right) ^{2}+\ldots \right) \\
+E & = & \frac{3}{5}N\varepsilon _{F}\left( 1+\frac{5\pi ^{2}}{12}\left( \frac{kT}{\varepsilon _{F}}\right) ^{2}+\ldots \right) 
+\end{eqnarray*}
+Las expresiones anteriores forman parte de un desarrollo en serie
+y para poder guardar solo los dos primeros términos, debe cumplirse
+que \( \left( \frac{kT}{\varepsilon _{F}}\right) \ll 1 \). En un
+gas de electrones libres en un metal, \( \varepsilon _{F}\sim 1eV \)
+lo que implica que para poder utilizar dichas fórmulas \( kT\ll 1eV \),
+y dado que \( k\sim 10^{-4}eVK^{-1} \) concluimos que \( T\ll 10^{4}K \).
+Como la temperatura ambiente es del orden de \( 10^{2}K, \) podemos
+utilizar estas expresiones para estudiar un gas ideal a temperatura
+ambiente. En particular el calor específico a volumen constante viene
+dado por\begin{eqnarray*}
+C_{V} & = & \dpac{E}{T}{V}\\
+ & = & \frac{\pi ^{2}}{2}kN\left( \frac{kT}{\varepsilon _{F}}\right) 
+\end{eqnarray*}
+ De acuerdo con la ley de \noun{Dulong y Petit} el calor específico
+molar, de practicamente cualquier sólido, se aproxima a un valor constante
+\( 3R \) para temperaturas superiores a la llamada temperatura de
+Debye\noun{.} Ésta es una propiedad característica de cada substancia
+y, en general, es del orden de \( 10^{2}K \). Según el resultado
+anterior 
+
+\[
+\frac{C_{V}}{mol\, R}=\frac{C_{V}}{kN_{A}}=\frac{\pi ^{2}}{2}\left( \frac{kT}{\epsilon _{F}}\right) \ll 3\]
+Esto significa que la contribución de los electrones (cuasi)libres
+al calor específico de un metal es practicamente nula y que éste se
+debe casi completamente a las oscilaciones colectivas de los iones
+de la red cristalina. 
+
+
+\subsection{El núcleo como un gas ideal de \noun{Fermi}}
+
+Vamos a introducir el núcleo como un sistema formado por \( Z \)
+protones y \( N \) neutrones (\( Z+N=A \) nucleones\footnote{%
+Hoy el número másico \( A \) está comprendido entre \( 1 \) y aproximadamente
+\( 280 \).
+}) en interacción fuerte. Como consecuencia del balance entre su energía
+cinética y la potencial, un núcleo ocupa una región cuyo tamaño es
+del orden del fermi \( \left( 10^{-6}nm\right)  \). Protones y neutrones
+son fermiones de espín \( s=\frac{1}{2} \), masa muy similar\footnote{%
+Su masa no es idéntica porque su estructura interna formada por quarks
+no es la misma.
+} y aproximadamente igual a \( 1GeV \). La carga del protón es \( q_{p}=+e \)
+y la del neutrón es \( q_{n}=0 \). Las fuerzas que ligan los nucleones
+son extraordinariamente fuertes y violentas. Su forma es bastante
+compleja y no se conoce con gran exactitud\footnote{%
+la fuerza entre nucleones es a la fuerza entre quarks y gluones lo
+que la de VdW entre dos átomos es a la electromagnética entre núcleos
+y electrones. Se sabe relativamente poco de la interacción nuclear
+a baja energía, aúnque existen modelos fenomenológicos, que establecen
+que la interacción es de corto alcance y depende de 
+
+\begin{itemize}
+\item la distancia
+\item el espín ya que existen términos como el espín--órbita y el tensor
+que depende la orientación relativa de los espines respecto a la línea
+que une los nucleones. 
+\end{itemize}
+Por otro lado no depende de la carga (para una misma configuración
+orbital y de espín la interacción entre los dos nucleones no depende
+de su carga). 
+}.
+\begin{figure}
+{\centering \includegraphics[width=5cm]{fig/componente-radial.eps} \par}
+\caption{Comportamiento radial de las fuerzas fuertes para una parte
+radial simétrica y una parte de espín simétrica (pueden tenerlo simétrico
+porque no son partículas idénticas). Observamos su variación violenta,
+pasando de ser atractiva a pocos \protect\( fm\protect \) a muy repulsiva
+para distancias inferiores a \protect\( 1fm\protect \). }
+\end{figure}
+\emph{A priori,} debido a la extraordinaria intensidad y variación
+violenta de las fuerzas nucleares esperamos que las propiedades más
+importantes del núcleo sean muy distintas a las de un gas ideal de
+fermiones. Sin embargo, este modelo permite explicar, aunque sea cualitativamente,
+algunas de dichas propiedades. La razón de esta coincidencia se debe
+de nuevo al ppo de exclusión de \noun{Pauli}. 
+
+Vamos pues a considerar el núcleo como un sistema formado por dos
+gases de Fermi, uno de protones y otro de neutrones, en un recipiente
+de volumen \( V \) en cuyo interior cada partícula siente un potencial
+\( V_{0}<0 \) (homogéneo, estacionario y atractivo). Este potencial
+simula de forma promediada la interacción entre los nucleones. En
+los límites de la región que ocupa el núcleo el potencial se hace
+infinito, lo que simula el efecto de las paredes. 
+
+Más adelante necesitaremos la relación que existe entre el \emph{}tamaño
+del núcleo y el número de nucleones que lo forman. Si admitimos que
+tiene forma esférica, \emph{}lo cual es cierto para el estado fundamental
+de buena parte de los núcleos, su volumen es 
+
+\[
+\mathsf{V}=\frac{4\pi }{3}R^{3},\]
+y empíricamente se sabe que \[
+R=r_{0}A^{\frac{1}{3}}\]
+ con \( r_{0}\simeq 1.2fm \). Se observa que el tamaño del núcleo
+crece de forma rápida con el número de partículas\footnote{%
+Por el contrario el átomo es un sistema que a medida que se le añaden
+partículas crece hacia adentro. Es decir el radio de los distintos
+niveles \( nl \) disminuye con \( Z \).
+}
+
+A \( T=0 \) los fermiones de un gas ideal se encuentran apilados
+en los niveles de menor energía, por lo que esta imagen sirve efectivamente
+para describir el estado fundamental. La energía del estado fundamental
+se denomina energía de ligadura \( E_{b} \) ya que es exactamente
+la cantidad de energía que hay que proporcionar al núcleo para descomponerlo
+en \( A \) partículas libres. En nuestro modelo dicha energía es
+suma de la de los gases de protones y neutrones. Teniendo en cuenta
+que \begin{eqnarray*}
+\varepsilon ^{p}_{F} & = & \frac{\hbar ^{2}}{2m}\left( 3\pi ^{2}\frac{Z}{V}\right) ^{\frac{2}{3}}\\
+\varepsilon ^{n}_{F} & = & \frac{\hbar ^{2}}{2m}\left( 3\pi ^{2}\frac{N}{V}\right) ^{\frac{2}{3}}
+\end{eqnarray*}
+ podemos escribir\begin{eqnarray*}
+E_{b} & = & E_{p}+E_{n}\\
+ & = & \frac{3}{5}Z\varepsilon _{F}^{p}+\frac{3}{5}N\varepsilon _{F}^{n}+AV_{0}\\
+ & = & AV_{0}+\frac{3\hbar ^{2}}{10m}\left( \frac{3\pi ^{2}}{V}\right) ^{\frac{2}{3}}\left( Z^{\frac{5}{3}}+N^{\frac{5}{3}}\right) \\
+ & = & AV_{0}+\frac{3\hbar ^{2}}{10m}\left( \frac{9\pi }{4}\right) ^{\frac{2}{3}}\frac{1}{r_{0}^{2}}\frac{Z^{\frac{5}{3}}+N^{\frac{5}{3}}}{A^{\frac{2}{3}}}\\
+ & = & AV_{0}+\xi \frac{Z^{\frac{5}{3}}+N^{\frac{5}{3}}}{A^{\frac{2}{3}}}
+\end{eqnarray*}
+ Introduciendo la variable \( D=N-Z \) tenemos que\begin{eqnarray*}
+N & = & \frac{A}{2}\left( 1+\frac{D}{A}\right) \\
+Z & = & \frac{A}{2}\left( 1-\frac{D}{A}\right) 
+\end{eqnarray*}
+ de manera que la energía total es \[
+E_{b}=AV_{0}+\xi 2^{-\frac{5}{3}}A\left( \left( 1+\frac{D}{A}\right) ^{\frac{5}{3}}+\left( 1-\frac{D}{A}\right) ^{\frac{5}{3}}\right) \]
+ Ahora bien, para buena parte de los núcleos que se conocen se sabe
+que \( \left| \frac{D}{A}\right| \ll 1 \). Podemos pues intentar
+un desarrollo en serie\footnote{%
+\( \left( 1+x\right) ^{n}=1+nx+\frac{1}{2}n(n-1)x^{2}+\ldots  \) 
+}\[
+\left( 1± \frac{D}{A}\right) ^{\frac{5}{3}}=1± \frac{5}{3}\frac{D}{A}+\frac{5}{9}\left( \frac{D}{A}\right) ^{2}+\ldots \]
+Así\[
+E_{b}=\left( V_{0}+2^{-\frac{2}{3}}\xi \right) A+2^{-\frac{2}{3}}\frac{5}{9}\xi \frac{\left( N-Z\right) ^{2}}{A}\]
+
+
+\begin{description}
+\item [Ejercicio]Calcular \( \xi  \). 
+
+
+{\small Solución: \( \xi \simeq 30MeV \). Hay que utilizar que\begin{eqnarray*}
+r_{0} & = & 1.2fm\\
+\hbar c & = & 197\, fm\, MeV\\
+mc^{2} & = & 10^{3}MeV
+\end{eqnarray*}
+}{\small \par}
+
+\end{description}
+Comparemos ahora este resultado con el experimento. Hacia 1935 C.V.
+\noun{Weiszäcker} propuso una fórmula empírica que da la energía
+del estado fundamental del núcleo. \[
+E_{b}=-a_{1}A+a_{2}A^{\frac{2}{3}}+a_{3}Z^{2}A^{-\frac{1}{3}}+a_{4}\left( N-Z\right) ^{2}A^{-1}+\delta \]
+ con \( \delta =-a_{5}A^{-\frac{3}{4}} \) para \( N,Z \) pares,
+\( \delta =0 \) para \( N \) par y \( Z \) impar (o al revés) y
+\( \delta =a_{5}A^{-\frac{3}{4}} \) para \( N,Z \) impar. Los coeficientes
+toman los valores \( a_{1}=16MeV \), \( a_{2}=18MeV \), \( a_{3}=1MeV \),
+\( a_{4}=24MeV \) y \( a_{5}=34MeV \). 
+
+Utilizando el modelo del gas ideal hemos sido capaces de deducir la
+forma de dos de los cinco términos de la fórmula. Para entender las
+razones de este éxito parcial es necesario comprender el significado
+de los mismos.
+
+\begin{enumerate}
+\item \emph{Término de volumen}. Pensemos en un pedazo de materia nuclear
+(un objeto infinito en el que no hay interacción de \noun{Coulomb};
+sólo fuerte). Por homogeneidad del espacio e isotropía de las fuerzas
+nucleares sabemos que si esto existiera debería tener densidad constante.
+\begin{figure}
+{\centering \includegraphics[width=3cm]{fig/m-nuclear.eps} \par}
+\caption{Materia nuclear.}
+\end{figure}
+Como la interacción nuclear es de corto alcance, cada nucleón sólo
+ve la influencia de sus primeros vecinos, y no interacciona con los
+que se encuentran más lejos. Eso viene representado por una circunferencia
+en la figura. Cada nucleón sentirá una energía de interacción debido
+a los \( n_{pv} \) primeros vecinos\[
+\left( \overline{T}+\overline{V}\right) n_{pv}\]
+ La energía de un pedazo con \( A \) nucleones es \[
+\left( \overline{T}+\overline{V}\right) n_{pv}A\]
+es decir, es proporcional al número de partículas \( A \).
+\item \emph{Término de superficie}. Ahora bien: materia nuclear es un sistema
+ficticio ya que hasta una estrella de neutrones es finita y posee
+una superficie. Los nucleones situados en o cerca de la superficie
+poseen un número de vecinos inferior que el que poseen los del interior.
+Utilizando el argumento del punto 1 vemos que la energía con la que
+están ligados al núcleo debe ser menor. Por ello debemos añadir un
+término positivo (que disminuye la energía del núcleo) y proporcional
+a a la superficie del núcleo. Ésta depende de \( R^{2} \), que a
+su vez es (experimentalmente) proporcional a \( A^{\frac{2}{3}} \).
+En el modelo propuesto supusimos que cualquier nucleón, bien en el
+interior, bien en la superficie del núcleo está sometido a un potencial
+constante \( V_{0} \). Para simular este efecto de superficie deberemos
+usar un potencial como el de la figura (aunque es posible que al ser
+más complicado se pierda la analiticidad). Un ejemplo típico es el
+del oscilador armónico.
+
+\begin{figure}
+{\centering \includegraphics[width=5cm]{fig/potencial.eps} \par}
+\caption{Potencial corrector para encontrar el término de superficie.}
+\end{figure}
+
+\item Es la energía de \noun{Coulomb} de una esfera uniformemente cargada.
+Obviamente, nuestro modelo no consigue reproducirlo, ya que no hemos
+considerado en ningún momento la interacción electrostática entre
+los protones.
+\item \emph{Término de simetría}. En el modelo del gas ideal de \noun{Fermi}
+este término está asociado exclusivamente al principio de exclusión de \noun{Pauli}.
+
+\begin{figure}
+{\centering \includegraphics[width=4.5cm]{fig/cruces.eps} \par}
+\caption{Representación esquemática de los niveles de energía de neutrones
+y protones en una caja. Las partículas se representan por aspas y
+las energías de los niveles de la caja vienen dadas por \protect\( \varepsilon =\frac{\hbar \pi ^{2}}{mL^{2}}\left( n_{x}^{2}+n_{y}^{2}+n_{z}^{2}\right) \protect \).
+En la parte superior \protect\( D=0\protect \) mientras que en la
+parte inferior tenemos \protect\( D>0\protect \) para \protect\( A\protect \)
+constante.}
+\end{figure}
+
+De una figura a otra perdemos energía de ligadura (el núcleo se hace
+menos ligado) que podemos cuantificar como, \begin{eqnarray*}
+\Delta E & = & -n_{p}^{F}\varepsilon _{F}+n_{p}^{F}\left( \varepsilon _{F}+\delta \varepsilon \right) \\
+ & = & n_{p}^{F}\delta \varepsilon >0
+\end{eqnarray*}
+ La conclusión es que que el ppo de exclusión favorece, dentro de
+los núcleos con un mismo número másico \( A, \) a aquel con \( D=0 \).
+Esto es debido a que si pasamos de un núcleo con \( N=Z \) a otro
+vecino transformando protones en neutrones, estos deberán situarse
+en niveles de energía más altos, ya que los inferiores se encuentran
+todos ocupados.
+\item \emph{Término de apareamiento}. Proviene de la peculiar forma que
+tiene la parte de corto alcance de la interacción nuclear y, claro
+está, no puede surgir de un potencial estacionario y homogéneo \( V_{0} \).
+\end{enumerate}
+
+\begin{table}
+{\centering \begin{tabular}{ccc}
+\hline 
+&
+experimento&
+modelo\\
+\hline
+\( a_{1} \)&
+16MeV&
+\( V_{0}+2^{-\frac{2}{3}}\xi  \)\\
+\( a_{4} \)&
+24MeV&
+\( \simeq  \) 10.5MeV\\
+\hline
+\end{tabular}\par}
+
+
+\caption{{\small Valores predichos y experimentales}}
+\end{table}
+Por comparación con el valor experimental de \( a_{1} \), nuestro
+modelo predice que la energía promedio de un nucleón es \( V_{0}\simeq -35MeV \),
+lo que es aproximadamente correcto. Por lo que al segundo coeficiente
+se refiere, tenemos 
+
+\[
+a^{(Teor.)}_{4}=2^{-\frac{2}{3}}\frac{5}{9}\xi \simeq 10.5MeV,\, \, a^{(Exp.)}_{4}\simeq 24MeV\]
+Existe una fuerte discrepancia entre la teoría y el experimento, lo
+cual se debe a que no sólo el ppo de exclusión de Pauli, sino también
+la propia interacción fuerte favorecen que \( N=Z \). La discrepancia
+se justifica porque nosostros sólo hemos incluido la interacción de
+forma indirecta a través del potencial constante \( V_{0} \). 
+
+El diagrama de Segré es una representación de los núcleos conocidos
+en el plano \( N,Z \). Los núcleos ligéros (\( A \) pequeño) tienden
+a concentrarse sobre la recta \( N=Z \), lo cual está de acuerdo
+con nuestras predicciones. Por el contrario, los núcleos más pesados
+se desvían hacia la zona con \( N>Z \) para contrarestar el efecto
+de la interacción coulombiana que crece rapidamente con el número
+de protones. 
+
+\begin{figure}
+\nofig
+\caption{Diagrama de Segré.}
+\end{figure}
+
+\begin{figure}
+\nofig
+\caption{Parábolas de masa.}
+\end{figure}
+
+
+
+\section{Sistema de bosones: BE}
+
+Sea un conjunto enorme de \( N\gg 1 \) bosones idénticos que no interaccionan
+entre sí o, cuyas interacciones pueden aproximarse por un potencial
+promedio que, cada partícula siente debido a todas las demás. Además
+se encuentran contenidas en una vasija de volumen \( V \) que no
+permite intercambios de energía o materia con el entorno. 
+
+El postulado de simetrización no impone restricción alguna sobre los
+números de ocupación cuando trabajamos con bosones lo cual influye
+notablemente en la determinación de \( \Omega \left( \left\{ n_{a}\right\} \right)  \).
+Al igual que en el caso de los fermiones, solo podemos seleccionar
+de una forma distinguible \( n \) de los \( N \) bosones. Sin embargo,
+la distribución de estos \( n \) bosones en un nivel de energía resulta
+más complicada que en el caso de que fueran fermiones. Un razonamiento
+directo da lugar a una expresión muy complicada\[
+g_{a}+g_{a}\left( g_{a}-1\right) +g_{a}\left( g_{a}-1\right) +g_{a}\binom{g_{a}-1}{2}+\ldots \]
+ donde \( g_{a} \) es la degeneración del nivel en que distribuimos
+los bosones.
+
+\begin{figure}
+{\centering \includegraphics[width=8cm]{fig/bolitas.eps} \par}
+\caption{Diagrama de bolitas. \cite{Sanchez}}
+\end{figure}
+
+Como la suma anterior es muy complicada procedemos de forma radicalmente
+distinta. La separación entre dos estados de un mismo nivel se caracteriza
+por una barra vertical, y las partículas, por puntos. En total debemos
+tener \( g_{a}-1 \) separadores y \( n_{a} \) partículas. Cambiar
+las ocupaciones corresponde a permutar barras y puntos simultáneamente.
+Todas las formas distinguibles de reparto las podemos conseguir construyendo
+todas permutaciones posibles de puntos y paredes. Pero al hacer esto
+estamos incluyendo las permutas de dos o más paredes entre sí o, de
+partículas entre sí, lo que no corresponde a cambiar las ocupaciones..
+De modo que las formas de reparto diferentes son\[
+\frac{\left( n_{a}+g_{a}-1\right) !}{n_{a}!\left( g_{a}-1\right) !}=\binom{n_{a}+g_{a}-1}{n_{a}}\]
+Y para el conjunto de niveles se tiene\[
+\Omega \left( \left\{ n_{a}\right\} \right) =\prod _{a}\binom{n_{a}+g_{a}-1}{n_{a}}\]
+
+
+Los pasos a seguir para encontrar la distribución de ocupaciones en
+el equilibrio son los habituales. Calculamos el logaritmo de la función
+anterior\[
+\log \Omega \left( \left\{ n_{a}\right\} \right) =\sum _{a}\left( \log \left( n_{a}+g_{a}-1\right) !-\log n_{a}!-\log \left( g_{a}-1\right) !\right) \]
+ y admitiremos que \( n_{a},g_{a}\gg 1 \) lo que nos autoriza a usar
+\( n_{a} \) como variable continua y aplicar la fórmula de \noun{Stirling,
+\( \log x!=x\log x-x \)} para \( x\gg 1 \). Así\[
+\log \Omega \left( \left\{ n_{a}\right\} \right) \simeq \sum \left( n_{a}+g_{a}-1\right) \log \left( n_{a}+g_{a}-1\right) -n_{a}\log n_{a}-\left( g_{a}-1\right) \log \left( g_{a}-1\right) \]
+ Hallamos el máximo por el método de \noun{Lagrange.} Introducimos
+la función auxiliar \noun{\[
+\Phi \left( \left\{ n_{a}\right\} ,\alpha ,\beta \right) =\log \Omega +\alpha \left( N-\sum _{a}n_{a}\right) +\beta \left( E-\sum _{a}n_{a}\varepsilon _{a}\right) \]
+}y derivamos. Las dos ecuaciones\begin{eqnarray*}
+\dpa{\Phi }{\alpha } & = & 0\\
+\dpa{\Phi }{\beta } & = & 0.
+\end{eqnarray*}
+ garantizan la conservación del número de partículas y de la energía
+respectivamente. De la tercera\[
+\dpa{\Phi }{n_{b}}=0,\]
+ deducimos la expresión de las \( n_{b}^{eq} \). En efecto,\begin{eqnarray*}
+\log \left( n_{b}^{eq}+g_{b}-1\right) -\log n_{b}^{eq}-\alpha -\beta \varepsilon _{b} & = & 0,\\
+\frac{n_{b}^{eq}+g_{b}-1}{n_{b}^{eq}} & = & e^{\alpha +\beta \varepsilon _{b}},
+\end{eqnarray*}
+ y por tanto\[
+n_{b}^{eq}=\frac{g_{b}-1}{e^{\alpha +\beta \varepsilon _{b}}-1}\]
+ Como las degeneraciones \( g_{b} \) son muy grandes se suele aproximar
+\( g_{b}-1\simeq g_{b} \)
+
+Los dos parámetros de la distribución tienen valores en el equilibrio
+que se relacionan con las cantidades conservadas. Procediendo como
+siempre encontramos\begin{eqnarray*}
+\beta  & = & \frac{1}{kT}\\
+\alpha  & = & \alpha \left( T,N,V\right) 
+\end{eqnarray*}
+ Para \( \alpha  \) sólo existen expresiones analíticas sencillas
+en los límites de temperaturas muy altas o muy bajas. En cualquier
+caso, para que las ocupaciones de todos los niveles sean números positivos,
+el parámetro \( \alpha  \) debe satisfacer que 
+
+\[
+\alpha >min(\beta \varepsilon _{a}).\]
+Si el nivel más bajo posee energía cero entonces \( \alpha  \) debe
+ser una cantidad positiva, hecho que, por ejemplo, no es necesariamente
+cierto en la esFD.
+
+\begin{figure}
+{\centering \includegraphics[width=5cm]{fig/na-ga-vs-epsilon.eps} \par}
+\caption{\protect\( \frac{n_{a}}{g_{a}}\protect \) vs. \protect\( \varepsilon \protect \):
+distribución de BE para dos temperaturas \protect\( T\ll 1\protect \)
+y \protect\( T\gg 1\protect \). }
+\end{figure}
+
+Las ocupaciones de los niveles de mayor energía crecen con la temperatura.
+Como puede observarse, el comportamiento es cualitativamente parecido
+al de la esMB. La pequeña diferencia es que la esBE favorece ligeramente
+las ocupaciones de niveles de menor energía. En efecto para \( \alpha  \)
+y \( \beta  \) iguales en las dos estadísticas\[
+\frac{n_{a}^{MB}}{n_{a}^{BE}}=1-e^{-\alpha -\beta \varepsilon _{a}}<1,\]
+ y para energías altas \( \left( \beta \varepsilon _{a}\gg 1\right)  \)
+la exponencial se hace casi cero y por tanto \( n^{MB}_{a}\simeq n^{BE}_{a} \). 
+
+
+\section{El cuerpo negro}
+
+Como ejemplo de aplicación de la esBE estudiaremos el cuerpo negro.
+Se trata de un sistema ideal capaz de absorber toda la energía que
+incide sobre él. No existe ningún cuerpo negro real en la naturaleza,
+aúnque una buena aproximación sería una cavidad con un pequeño orificio
+en su pared. La posibilidad de que parte de la radiación que entra
+por el orificio vuelva a salir por él es muy pequeña si se satisfacen
+ciertas condiciones. La más importante es que las paredes interiores
+de la cavidad tengan un poder absorbente grande. Estas paredes además
+de absorber y reflejar la radiación incidente, \emph{emiten} radiación.
+Los átomos de las mismas forma una red cristalina que oscila de modo
+colectivo. La red puede intercambiar energía con el campo electromagnético
+y también cada átomo individual mediante transiciones entre sus niveles
+atómicos.\footnote{%
+Como ya sabemos los niveles de energía atómicos están cuantizados
+y, por tanto, el intercambio de energía con el campo se realizan de
+manera discreta. Los cuántos de energía del campo se llaman \emph{fotones}.
+También las oscilaciones de la red se hallan cuantizadas. Los cuántos
+de energía asociados a dichas oscilaciones se llaman \emph{fonones}.
+} 
+
+Trataremos el campo electromagnético en el interior de la cavidad
+como un gas de fotones. Es un gas ideal ya que no hay interacción
+entre los fotones. Los intercambios de energía entre el campo y la
+pared se producen mediante creación o destrucción de fotones. Por
+ello, y a diferencia de otros gase ideales, no impodremos ligadura
+alguna sobre el número de partículas. Veremos más adelante que en
+el equilibrio el número de fotones depende de \( T \). La energía
+electromagnética en la cavidad, sin embargo, es una cantidad conservada.
+Como se sabe desde \( 1889 \), la potencia radiada, por unidad de
+superficie, por el orificio es \[
+R\left( T\right) =\sigma T^{4}\]
+ lo que permite deducir la densidad de energía electromagnética a
+esa temperatura dentro de la cavidad como\[
+\rho \left( T\right) =\frac{4\sigma }{c}T^{4}\]
+ Los fotones son bosones \( \left( s=1\right)  \) y obedecen la esBE.
+Las ocupaciones en el equilibrio son\[
+n_{a}^{eq}=\frac{g_{a}}{e^{\frac{\varepsilon _{a}}{kT}}-1}\]
+ ya que cuando el número de partículas no se conserva \( \alpha =0 \). 
+
+Dado que la cavidad tiene un tamño macroscópico los niveles de energía
+que pueden ocupar los fotones forman casi un continuo. Por ello procedemos
+a transformar las expresiones de la esBe para un espectro continuo.
+La fdo que caracteriza a un fotón dentro de la cavidad\footnote{%
+Por simplicidad suponemos una caja cúbica de lado \( L \).
+} es radicalmente diferente a la de una partícula no relativista con
+masa. Ahora bien, su función de onda debe anularse en las paredes,
+lo que sí da lugar a la cuantización del momento\[
+\mathbf{k}=\frac{\pi }{L}\left( n_{x},n_{y},n_{z}\right) ,\, \, n_{\alpha }\in \mathcal{N},\, \, \alpha =x,y,z\]
+ Lo que cambia radicalmente con respecto a casos anteriores es la
+relación entre la energía de la partícula y su momento. Si \( k=\sqrt{\sum k_{\alpha }^{2}} \)
+\begin{eqnarray*}
+\varepsilon  & = & c\left| \mathbf{p}\right| \\
+ & = & c\hbar \left| \mathbf{k}\right| \\
+ & = & c\hbar k
+\end{eqnarray*}
+ de donde \( k=\frac{\varepsilon }{\hbar c} \), lo que contrasta
+con el gas de MB (partículas no relativistas de masa \( m \)), que
+tiene una relación \( \varepsilon =\frac{\hbar ^{2}k^{2}}{2m} \). 
+
+Nos preguntamos cuántos estados tienen energía entre \( \varepsilon  \)
+y \( d\varepsilon  \) (o bien, momento entre \( k \) y \( k+dk \)):
+\( g\left( \varepsilon \right) d\varepsilon  \). \begin{eqnarray*}
+g\left( \varepsilon \right) d\varepsilon  & = & g_{s}\frac{d\Omega \left( E\right) }{\left( \frac{\pi }{L}\right) ^{3}}\\
+ & = & g_{s}\frac{\frac{1}{8}4\pi k^{2}dk}{\left( \frac{\pi }{L}\right) ^{3}}\\
+ & = & g_{s}V\frac{\varepsilon ^{2}d\varepsilon }{2\pi ^{2}\hbar ^{3}c^{3}}
+\end{eqnarray*}
+ Una segunda diferencia con el gas de partículas no relativistas es
+la degeneración de espín. En principio, dado que el fotón posee espín
+\( s=1 \) sería \( g_{s}=2s+1=3 \). Pero esto no es verdad debido
+a la forma que tiene la ecO relativista que satisface la fdo del fotón.
+La fdo con proyección de espín \( 0 \) no satisface dicha ecuación
+, por lo que sólo puede tener proyección \( ± 1 \).\footnote{%
+El neutrino es una partícula de espín \( s=\frac{1}{2} \) que solo
+aparece en la naturaleza con proyección \( -\frac{1}{2} \). Y su
+antipartícula solo existe con proyección \( \frac{1}{2} \).
+} Este hecho está relacionado con las dos polarizaciones transversales
+independientes de una onda plana. Por estas consideraciones obtenemos:\[
+g\left( \varepsilon \right) d\varepsilon =V\frac{\varepsilon ^{2}d\varepsilon }{\pi ^{2}\hbar ^{3}c^{3}}\]
+ Y así las ocupaciones serán \begin{eqnarray*}
+dn\left( \varepsilon \right)  & = & \frac{g\left( \varepsilon \right) d\varepsilon }{e^{\frac{\varepsilon }{kT}}-1}\\
+ & = & \frac{V}{\pi ^{2}\hbar ^{3}c^{3}}\frac{\varepsilon ^{2}d\varepsilon }{e^{\frac{\varepsilon }{kT}}-1}
+\end{eqnarray*}
+ Para relacionar esta expresión con la obtenida en FCI reescribimos
+todo en términos de la frecuencia. Como \( \varepsilon =h\nu  \)
+tenemos\[
+dn\left( \nu \right) =\frac{8\pi V}{c^{3}}\frac{\nu ^{2}d\nu }{e^{\frac{h\nu }{kT}}-1},\]
+ resultado a partir del cual podemos obtener la densidad espectral
+de la radiación en la cavidad \begin{eqnarray*}
+\rho \left( \nu ,T\right)  & = & \frac{h\nu \, dn\left( \nu \right) }{V\, d\nu },\\
+ & = & \frac{8\pi h}{c^{3}}\frac{\nu ^{3}}{e^{\frac{h\nu }{kT}}-1},
+\end{eqnarray*}
+expresión conocida como la ley de \noun{Planck} para la radiación
+del cuerpo negro. La densidad de energía electromagnética se deduce
+de la fórmula anterior como\begin{eqnarray*}
+\rho \left( T\right)  & = & \int _{0}^{\infty }\rho \left( \nu ,T\right) d\nu \\
+ & = & \frac{\pi ^{2}}{15}\frac{\left( kT\right) ^{4}}{\left( \hbar c\right) ^{3}}\\
+ & = & aT^{4}
+\end{eqnarray*}
+ En cuanto al número de partículas por unidad de volumen\begin{eqnarray*}
+n & = & \frac{N}{V}\\
+ & = & \frac{1}{V}\int _{0}^{\infty }dn\left( \nu \right) \\
+ & = & \frac{8\pi }{c^{3}}\int _{0}^{\infty }\frac{\nu ^{2}d\nu }{e^{\frac{h\nu }{kT}}-1}\\
+ & = & \frac{1}{3}\frac{\left( kT\right) ^{3}}{\left( \hbar c\right) ^{3}}\\
+ & = & bT^{3}
+\end{eqnarray*}
+ Dado que no hemos impuesto la conservación del número de partículas
+en la cavidad tenemos que interpretar este resultado como el número
+promedio de fotones que el sistema posee en equilibrio a la temperatura
+\( T. \) Además podemos calcular la energía media que porta cada
+fotón\begin{eqnarray*}
+\overline{\varepsilon } & = & \frac{\rho \left( T\right) }{n}\\
+ & = & \frac{\pi ^{2}}{5}kT\\
+ & \simeq  & 2kT
+\end{eqnarray*}
+ El principio de equipartición de la energía establece que la energía
+media por grado de libertad del sistema es \( \frac{1}{2}kT \), menos
+los osciladores unidimensionales que llevan una energía \( kT \).
+Los dos grados de libertad que posee cada fotón son las dos proyecciones
+del espín o las dos polarizaciones independientes de una onda plana.
+Cada fotón no lleva en media una energía \( \frac{3}{2}kT \) como
+las partículas puntuales no relativistas, sino una cantidad próxima
+a \( 2kT \). 
+
+
+\subsubsection{Límite de frecuencia baja\protect\( \frac{h\nu }{kT}\, \fd \, 0\protect \) }
+
+En este caso, desarrollando en serie la exponencial tenemos la siguiente
+fórmula\[
+\rho \left( \nu ,T\right) \simeq \frac{8\pi }{c^{3}}kT\nu ^{2}\]
+ a la que también se llega en la teoría clásica suponiendo que cada
+modo de oscilación a cada frecuencia \( \nu  \) lleva una energía
+de \( kT \). Es así como \noun{Rayleigh} y \noun{Jeans} obtuvieron
+una solución errónea para el conjunto del problema. 
+
+
+\subsubsection{Límite de frecuencias alta \protect\( \frac{h\nu }{kT}\, \fd \, \infty \protect \) }
+
+En este caso\[
+\rho \left( \nu ,T\right) \simeq =\frac{8\pi h}{c^{3}}\nu ^{3}e^{-\frac{h\nu }{kT}}\]
+ expresión que se denomina ley de \noun{Wien} y que fue obtenida
+admitiendo que las ocupaciones de los modos de oscilación del campo
+electromagnético en la cavidad seguían la esMB.
+
+\begin{figure}
+{\centering \includegraphics[width=5cm]{fig/planck.eps} \par}
+\caption{Ley de \noun{Planck}  y las aproximaciones
+de \noun{Rayleigh} y de \noun{Wien}.}
+\end{figure}
+
+
+\section{El límite clásico de las estadísticas cuánticas}
+
+Aquí haremos una comparación de las tres estadísticas. En orden de
+aparición:\begin{eqnarray*}
+n_{a}^{eq} & = & g_{a}e^{-\alpha -\beta \varepsilon _{b}}\\
+n_{a}^{eq} & = & \frac{g_{a}}{e^{\alpha +\beta \varepsilon _{a}}+1}\\
+n_{a}^{eq} & = & \frac{g_{a}-1}{e^{\alpha +\beta \varepsilon _{a}}-1}
+\end{eqnarray*}
+ y de forma unificada podemos escribirlas así\[
+\frac{g_{a}}{n_{a}}+\delta =e^{\alpha +\frac{\varepsilon _{b}}{kT}}\]
+ con \( \delta  \) valiendo \( 0 \) para MB, \( -1 \) para FD y
+\( 1 \) para BE. Si se cumple que \( \forall \varepsilon _{a} \)
+\( \frac{g_{a}}{n_{a}}\gg 1 \), es decir, las ocupaciones de los
+diferentes niveles son muy bajas, entonces\[
+\frac{g_{a}}{n_{a}}+\delta \simeq \frac{g_{a}}{n_{a}}=e^{\alpha +\beta \varepsilon _{a}},\]
+ de manera que las dos estadísticas cuánticas se confunden con la
+esMB. Que las ocupaciones sean pequeñas cualquiera que sea el nivel
+sólo se puede conseguir si el número total de partículas es muy pequeño,
+o si la temperatura es muy elevada de manera que las partículas se
+distribuyen en un número enorme de niveles. 
+
+Desde un punto de vista formal la única posibilidad de que se de la
+condición expuesta \( \forall \varepsilon _{a} \) es que \( e^{\alpha } \)
+sea un número muy grande.\[
+e^{\alpha }\gg 1\]
+ Se trata de un resultado muy interesante ya que nos permite predecir,
+por ejemplo, que las propiedades del gas de fotones no tienden bajo
+ninguna circunstancia a las de un gas clásico. Para un gas de partículas
+no relativistas con masa \( m \) a utilizamos la expresión hallada
+en MB (puesto que es el único caso en que hemos deducido \( \alpha  \)).\[
+e^{\alpha }=\frac{Z}{N}=\frac{V}{N}\left( \frac{mkT}{2\pi \hbar ^{2}}\right) ^{\frac{3}{2}}=\frac{1}{n}\left( \frac{mkT}{2\pi \hbar ^{2}}\right) ^{\frac{3}{2}}\]
+Reuslta obvio que la condición \( e^{\alpha }\gg 1 \) sólo se alcanza
+cuando la densidad de partículas es muy pequeña o la temperatura es
+muy elevada.\[
+n\ll 1\, \, o\, \, T\gg 1,\]
+ con lo cual hemos deducido las condiciones en que se alcanza el límite
+clásico de las dos estadísticas cuánticas. 
+
+Ahora bien, podemos preguntarnos por qué son precisamente esas. Debemos
+recordar que la diferencia primordial entre la esMB y las esCU radica
+en la distinguibilidad de las partículas idénticas. En la primera
+hemos tratado éstas como distinguibles, lo que es falso en general.
+Existen, sin embargo, unos pocos casos en los que este principio no
+se aplica y, el más importante, es cuando las partícuals se encuentran,
+en media, suficientemente alejadas de manera que sus fdo no solapan
+(apreciablemente). 
+
+Si llamamos \( \lambda  \) a la longitud de onda del paquete de ondas
+asociado a una partícula, dos partículas estarán suficientemente alejadas
+si la razón del volumen del paquete de ondas y el volumen medio atribuído
+a cada partícula es muy pequeña.\[
+\frac{\lambda ^{3}}{(V/N)}=\lambda ^{3}n\ll 1\]
+ Utilizando la fórmula de \noun{De} \noun{Broglie}:\begin{eqnarray*}
+\lambda  & \sim  & \frac{2\pi \hbar }{\left| \mathbf{p}\right| }\\
+ & = & \frac{2\pi \hbar }{\sqrt{2mE}}\\
+ & = & \sqrt{\frac{2\pi ^{2}\hbar ^{2}}{m\varepsilon }}
+\end{eqnarray*}
+ y substituyendo en la ecuación \( \varepsilon  \) por \( \overline{\varepsilon }\sim kT \)
+llegamos a la condición\[
+n\left( \frac{2\pi ^{2}\hbar ^{2}}{mkT}\right) \ll 1\]
+es decir\[
+n\ll 1\, \, o\, \, T\gg 1\]
+ Cuando se da alguna de estas condiciones el solapamiento de las fdo
+es muy pequeño y en consecuencia podemos tratar las partículas como
+distinguibles. En efecto, cuando crece la temperatura, el tamaño del
+paquete de ondas asociado a cada partícula se reduce y finalmente
+se hace muy pequeño comparado con el volumen medio por partícula.
+Si la densidad es muy baja, éste es tan grande, que las fdo tampoco
+solapan. 
+
+
+\section{Problemas}
+
+
+\subsection{Enunciados}
+
+\begin{enumerate}
+\item ~
+
+\begin{enumerate}
+\item Deduzca la distribuci\'{o}n de velocidades para un sistema de fermiones
+a temperatura \( T \) muy baja, de forma que podamos aproximar \( \mu (T)\simeq \epsilon _{f} \). 
+\item Calcule la velocidad media y la velocidad cuadr\'{a}tica media.
+\end{enumerate}
+\item Obtenga la velocidad media de los electrones de un gas ideal cuya
+densidad es \( n=\frac{N}{V}=10^{22}cm^{-3} \).
+\item ~ 
+
+\begin{enumerate}
+\item Demuestre que la entrop\'{\i}a de un sistema aislado, en equilibrio
+y, formado por un \( N \) fermiones que no interaccionan entre s\'{\i}
+es\[
+S=k\sum _{a}g_{a}ln\left[ 1+e^{-\alpha -\beta \epsilon _{a}}\right] +\alpha kN+\beta kE\]
+Verifique que en un proceso reversible el cambio de entrop\'{\i}a
+es \[
+dS=k\beta \left( dE+dW\right) \]
+
+\item \noindent Demuestre que \( \beta =\frac{1}{kT} \).
+\end{enumerate}
+\item \noindent Repita el problema anterior para un sistema de part\'{\i}culas
+que obedece la estad\'{\i}stica de BE.
+\item ~
+
+\begin{enumerate}
+\item Utilice la relaci\'{o}n termodin\'{a}mica \( P=-\left( \frac{\partial E}{\partial V}\right) _{S} \)
+para demostrar que la presi\'{o}n que ejerce un gas ideal es\[
+P=\frac{2E}{3V}\]
+
+\item \noindent Deduzca nuevamente la ecuación de estado de un gas ideal
+cl\'{a}sico. 
+\item \noindent Determine la presi\'{o}n que ejerce un gas ideal de FD
+a \( T=0 \).
+\end{enumerate}
+\item Obtenga de forma breve y razonada las expresiones de las dos estad\'{\i}sticas
+cu\'{a}nticas para sistemas en los que el n\'{u}mero de part\'{\i}culas
+no es constante (gas de fotones). 
+
+
+\noindent \emph{Nota}\textbf{:} En los problemas siguientes utilizaremos
+densidades de niveles, \( g(\epsilon ) \), por unidad de volumen.
+
+\noindent \emph{Datos}\textbf{:} \( \Gamma (n)=(n-1),\, \, \zeta (3)=\frac{\pi ^{2}}{6},\, \, \zeta (4)=\frac{\pi ^{4}}{90} \)
+
+\item El neutrino \( \nu  \) y su antipart\'{\i}cula \( \tilde{\nu } \)
+tienen masa nula (por tanto se mueven a la velocidad de la luz) y
+esp\'{\i}n \( s=1/2 \). En la explosi\'{o}n de una supernova se
+producen, en un corto periodo de tiempo, numerosas reacciones en las
+que se generan y destruyen este tipo de part\'{\i}culas. Podemos
+asimilar la poblaci\'{o}n de neutrinos a la radiaci\'{o}n del cuerpo
+negro con la salvedad de su esp\'{\i}n. 
+
+\begin{enumerate}
+\item Obtenga la densidad de neutrinos en funci\'{o}n de la temperatura.
+\item Encuentre la densidad de energ\'{\i}a por unidad de volumen.
+\item Suponga que 
+
+\begin{enumerate}
+\item la supernova se encuentra a \( 10^{15} \) Km (1000 a\~{n}os luz)
+\item el radio y temperatura efectivos de la explosi\'{o}n son 1000 Km
+y \( 10^{6} \)K y que
+\item todos los neutrinos se dispersan de manera is\'{o}tropa. ¿Cu\'{a}ntos
+de ellos llegar\'{a}n a la Tierra?.
+\end{enumerate}
+\end{enumerate}
+\noindent \emph{Datos}: \[
+g(\epsilon )d\epsilon =\frac{\epsilon ^{2}d\epsilon }{\pi ^{2}(\hbar c)^{3}},\, \, \, \, \int _{0}^{\infty }\frac{x^{s-1}dx}{e^{x}+1}=\left[ 1-\frac{1}{2^{s-1}}\right] \Gamma (s)\zeta (s)\]
+ \[
+k=8\, 10^{-5}eVK,\, \, R_{Tierra}=6\, 10^{3}Km\]
+
+
+\item Deduzca la llamada \emph{ley del desplazamiento de} \noun{Wien}.
+\[
+\lambda _{m}T=cte\]
+
+\item ~
+
+\begin{enumerate}
+\item Obtenga la densidad media de fotones por unidad de volumen que componen
+la radiaci\'{o}n del cuerpo negro a una cierta temperatura.
+\item Determine la densidad media de energ\'{\i}a por unidad de volumen
+a la misma temperatura.
+\end{enumerate}
+\noindent Utilice \[
+\int _{0}^{\infty }\frac{x^{s-1}dx}{e^{x}-1}=\Gamma (s)\zeta (s)\]
+
+
+\item Determine la ley que obedece la potencia total radiada, por unidad
+de \'{a}rea, por un cuerpo negro.
+\end{enumerate}
+
+\subsection{Algunas soluciones}
+
+
+\subsubsection{Ejercicio 8}
+
+\[
+\lambda _{m}T=0.3cmK\]
+ Vamos a introducir una densidad espectral no en términos de \( \nu  \)
+sino de \( \lambda  \).\[
+\rho \left( \lambda ,T\right) d\lambda =-\rho \left( \nu ,T\right) d\nu \]
+ el signo \( - \) aparece porque \( \nu =\frac{c}{\lambda } \) de
+manera que \( \da{\nu }{\lambda }=-\frac{c}{\lambda ^{2}} \). Como
+las densidades se definen siempre sobre un intervalo positivo conviene
+hacer esto.\begin{eqnarray*}
+\rho \left( \lambda ,T\right)  & = & -\rho \left( \nu \left( \lambda \right) ,T\right) \da{\nu }{\lambda }\\
+ & = & \frac{8\pi h}{c^{3}}\frac{\nu ^{3}}{e^{\frac{h\nu }{kT}}-1}\\
+ & = & \frac{8\pi h}{c^{3}}\frac{\left( \frac{c}{\lambda }\right) ^{3}}{e^{\frac{hc}{\lambda kT}}-1}\frac{c}{\lambda ^{2}}
+\end{eqnarray*}
+ simplificando\[
+\rho \left( \lambda ,T\right) =\frac{8\pi hc}{\lambda ^{5}}\frac{1}{e^{\frac{hc}{\lambda kT}}}\]
+ definimos una nueva variable \( x=\frac{hc}{\lambda kT} \) (como
+\( \lambda \in \Re ^{*} \) se tiene que \( x\in \Re ^{*} \)) \begin{eqnarray*}
+\rho \left( x,T\right)  & = & 8\pi \left( \frac{hc}{\lambda kT}\right) ^{5}\frac{\left( kT\right) ^{5}}{\left( hc\right) ^{4}}\frac{1}{e^{x}-1}\\
+ & = & 8\pi \frac{\left( kT\right) ^{5}}{\left( hc\right) ^{4}}\frac{x^{5}}{e^{x}-1}\\
+ & = & a\left( T\right) \frac{x^{5}}{e^{x}-1}
+\end{eqnarray*}
+ tenemos que derivar para encontrar el máximo\begin{eqnarray*}
+\dx{}\left( x^{5}\left( e^{x}-1\right) ^{-1}\right)  & = & 5x^{4}\left( e^{x}-1\right) ^{-1}-x^{5}\left( e^{x}-1\right) ^{-2}e^{x}\\
+ & = & 5x^{4}\left( e^{x}-1\right) ^{-2}\left( e^{x}-1-\frac{xe^{x}}{5}\right) \\
+ & = & 0
+\end{eqnarray*}
+ para que esto se anule la única posibilidad razonable es que lo haga
+el último factor, lo que da pie a una ecuación trascendente que hay
+que resolver numéricamente\[
+1-e^{-x}-\frac{x}{5}=0\]
+ de aquí obtenemos un \( x_{m}\simeq 5 \). Deshaciendo el cambio\begin{eqnarray*}
+\lambda _{m}T & = & \frac{hc}{kx_{m}}\\
+ & \simeq  & 0.3\mathrm{A}× \mathrm{K}
+\end{eqnarray*}
+
+
+
+\subsubsection{Ejercicio 10}
+
+\( \varepsilon  \) es la energía 
+\begin{figure}
+\nofig
+\caption{Dentro de una caja, \protect\( \rho \left( T\right) \protect \).
+La energía por unidad de tiempo y unidad de área emitida en cualquier
+dirección por un orificio es \protect\( R\left( T\right) \protect \).}
+\end{figure}
+
+\[
+dn\left( \varepsilon \right) =\int _{\Omega }dn\left( \varepsilon ,\Omega \right) \]
+ Como no hay ninguna dirección privilegiada, debemos suponer que\[
+dn\left( \varepsilon ,\Omega \right) =a\left( \varepsilon \right) d\Omega \]
+ la integral es entonces\[
+dn\left( \varepsilon \right) =a\left( \varepsilon \right) \int _{\Omega }d\Omega =4\pi a\left( \varepsilon \right) \]
+ de donde \( a\left( \varepsilon \right) =\frac{dn\left( \varepsilon \right) }{4\pi } \)
+y\[
+dn\left( \varepsilon ,\Omega \right) =\frac{dn\left( \varepsilon \right) }{4\pi }d\Omega \]
+ vamos a introducir otra densidad de energía, ya que la total \[
+\rho \left( T\right) =\frac{1}{V}\int _{0}^{\infty }\varepsilon dn\left( \varepsilon \right) \]
+ no nos sirve: necesitamos una nueva densidad: la de los que tienen
+por dirección \( \Omega  \) \[
+\rho \left( \Omega ,T\right) =\frac{1}{T}\int _{0}^{\infty }\varepsilon dn\left( \varepsilon ,\Omega \right) =\frac{1}{4\pi V}\int _{0}^{\infty }\varepsilon dn\left( \varepsilon \right) =\frac{d\Omega }{4\pi }\rho \left( T\right) \]
+ Supongamos ahora un cilindro orientado según \( \Omega  \), con
+normal \( \mathbf{n}\left( \Omega \right)  \), área transversal \( A=1 \)
+y longitud \( c× 1s \).¿Cuántas partículas hay dentro?
+
+\begin{figure}
+\nofig
+\caption{Planteamiento geométrico.}
+\end{figure}
+
+\[
+\rho \left( \Omega ,T\right) × V_{cilindro}=c\rho \left( \Omega ,T\right) \]
+ todas estas partículas en esta dirección transportan la misma energía.
+Definimos una densidad de flujo de energía\[
+\mathbf{S}\left( \Omega \right) =c\rho \left( \Omega ,T\right) \mathbf{n}\left( \Omega \right) \]
+ Ahora queremos ver cuántas partículas atraviesan un \( A \), pero
+no con dirección estrictamente perpendicular, sino en cualquiera.
+La diferencia con antes es que tenemos un cilindro no recto, y su
+altura es ahora \( c\, \cos \alpha =c\, \mathbf{n}\cdot \mathbf{A} \).
+Entonces la energía total por unidad de tiempo que atraviesa \( A \)
+es\[
+\int _{\Omega }\mathbf{S}\left( \Omega \right) \cdot \mathbf{A}\, d\Omega \]
+ no me interesa esa superficie, sino el orificio de nuestra caja (ver
+sistema de referencia en la figura), donde \( \mathbf{n}\left( \Omega \right)  \)
+viene caracterizado por un par \( \theta ,\phi  \). El orificio tiene
+por normal \( \mathbf{j} \). Entonces\[
+R\left( T\right) =\int _{\Omega ^{*}}\mathbf{S}\left( \Omega \right) \cdot \mathbf{j}\, d\Omega =\int _{\Omega ^{*}}c\rho \left( \Omega ,T\right) \mathbf{n}\left( \Omega \right) \cdot \mathbf{j}\, d\Omega \]
+ (hemos puesto \( \Omega ^{*} \) porque los ángulos ahora, para que
+las partículas sean salientes, no son todos, sino \( \theta \in \left( 0,\pi \right)  \)
+y \( \phi \in \left( 0,\pi \right)  \)) en esféricas, \[
+\mathbf{n}=\frac{\mathbf{r}}{\left| \mathbf{r}\right| }=\left( \sin \theta \cos \phi ,\sin \theta \sin \phi ,\cos \theta \right) \]
+ de esto\[
+\mathbf{n}\cdot \mathbf{j}=\sin \theta \sin \phi \]
+ con lo que\[
+R\left( T\right) =\frac{c\rho \left( T\right) }{4\pi }\int _{0}^{\pi }d\phi \int _{0}^{\pi }d\theta \, \sin \theta \, \sin \theta \sin \phi =\frac{c}{4}\rho \left( T\right) \]
+ como \[
+\rho \left( T\right) =\frac{c}{4}\frac{\pi ^{2}}{15}\left( \frac{kT}{\hbar c}\right) ^{3}kT=\frac{c}{4}aT^{4}=\sigma T^{4}\]
+ 
+
+
+\subsubsection{Ejercicio 9}
+
+La energía total es la suma del número de partículas con una energía
+dada multiplicado por esa energía
+
+\[
+\int _{0}^{\infty }\varepsilon dn\left( \varepsilon \right) =E_{T}\]
+ Como\begin{eqnarray*}
+\frac{E}{V}=\rho \left( T\right)  & = & \frac{1}{V}\int _{0}^{\infty }\varepsilon dn\left( \varepsilon \right) \\
+ & = & \frac{1}{\pi ^{2}\left( \hbar c\right) ^{3}}\int _{0}^{\infty }\frac{\varepsilon ^{3}d\varepsilon }{e^{\frac{\varepsilon }{kT}}-1}\\
+ & = & \frac{1}{\pi ^{2}}\frac{\left( kT\right) ^{4}}{\left( \hbar c\right) ^{3}}\int _{0}^{\infty }\frac{x^{3}dx}{e^{x}-1}\\
+ & = & \frac{1}{\pi ^{2}}\frac{\left( kT\right) ^{4}}{\left( \hbar c\right) ^{3}}\Gamma \left( 4\right) \xi \left( 4\right) \\
+ & = & \frac{\pi ^{2}}{15}\left( \frac{kT}{\hbar c}\right) ^{3}kT\\
+\frac{N}{V}=n & =\frac{1}{V}\int _{0}^{\infty }dn\left( \varepsilon \right) = & \frac{1}{3}\left( \frac{kT}{\hbar c}\right) ^{3}
+\end{eqnarray*}
+ con el cambio \( x=\frac{\varepsilon }{kT} \)
+\end{document}

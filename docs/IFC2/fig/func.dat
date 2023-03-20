@@ -1,0 +1,28 @@
+#!/usr/bin/gnuplot -persist
+#
+#    
+#    	G N U P L O T
+#    	Linux version 3.7
+#    	patchlevel 0
+#    	last modified Thu Jan 14 19:34:53 BST 1999
+#    
+#    	Copyright(C) 1986 - 1993, 1998, 1999
+#    	Thomas Williams, Colin Kelley and many others
+#    
+#    	Type `help` to access the on-line reference manual
+#    	The gnuplot FAQ is available from
+#    		<http://www.uni-karlsruhe.de/~ig25/gnuplot-faq/>
+#    
+#    	Send comments and requests for help to <info-gnuplot@dartmouth.edu>
+#    	Send bugs, suggestions and mods to <bug-gnuplot@dartmouth.edu>
+#    
+S(x) = exp(-x)*(1+x+(x**2)/3)
+A(x) = -(1-2/x*exp(-2*x)*(1+x))
+B(x) = -(S(x)*(1-2/x)+2*exp(-x)*(1+x))
+E(x) = (A(x)+B(x))/(1+S(x))
+E1(x) = (A(x)+B(x))/(1+S(x))
+E2(x) = (A(x)-B(x))/(1-S(x))
+#    EOF
+
+
+

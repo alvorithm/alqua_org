@@ -1,0 +1,142 @@
+---
+alquafeatures:
+    - manifiesto
+    - pub
+    - librosabiertos
+authors:
+    -
+        email: alvaro@alqua.org
+        name: Álvaro Tejero Cantero
+        url: 'http://alqua.org/people/alvaro'
+base_url: 'http://alqua.org/libredoc/'
+bodyunits:
+    -
+        basename: oem-vacio
+        name: Ondas electromagnéticas en el vacío
+    -
+        basename: interaccion-materia
+        name: Materia y su interacción con la radiación
+    -
+        basename: ecMaxwell-macroscopicas
+        name: Ecuaciones de Maxwell macroscópicas
+    -
+        basename: homogeneos-isotropos
+        name: Medios homogéneos e isótropos
+    -
+        basename: refraccion-mhi
+        name: Refracción y reflexión en medios homogéneos e isótropos
+    -
+        basename: o-geometrica
+        name: Óptica geométrica
+    -
+        basename: anisotropos
+        name: Medios anisótropos
+    -
+        basename: aplicaciones-anisotropos
+        name: Aplicaciones de los medios anisótropos
+    -
+        basename: interferencia
+        name: Interferencia
+    -
+        basename: difraccion
+        name: Difracción
+    -
+        basename: problemas
+        name: Problemas
+
+appendixes:
+    - 
+        basename: biboe
+        name: Bibliografía
+
+classification:
+    area: óptica
+    doctype: libro
+    series: apuntes
+    udc: '535.13'
+coverimage: fig/divisor-medio-haz.eps
+dedication: []
+description: Un primer curso de óptica electromagnética que cubre los fenómenos de polarización, interferencia y difracción, así como la propagación en medios materiales, isótropos y anisótropos. Se explican las hipótesis simplificadoras que conducen a la óptica geométrica. Contiene problemas y numerosas figuras.
+editors:
+    -
+        email: alvaro@alqua.org
+        name: Álvaro Tejero Cantero
+        url: 'http://alqua.org/people/alvaro'
+features:
+    - toc
+    - lic
+#    - bib  puzzling
+keywords:
+    - polarización
+    - ondas electromagnéticas
+    - interferencia
+    - radiación
+    - difracción
+    - medios anisótropos
+    - índice de refracción
+    - coherencia
+    - ondas planas
+    - medios materiales
+language: es
+license:
+    backcover: 'Aprende en comunidad - http://alqua.org'
+    frontcover: 'Un libro libre de Alqua'
+    invariant:
+        - Manifiesto de alqua
+    name: CC-by_nc_sa
+    version: '1.0'
+    restrictions:
+     - by
+     - nc
+     - sa
+note: ''
+publisher:
+    email: alqua@alqua.org
+    name: alqua
+    url: 'http://alqua.org'
+releases:
+    -
+        date: '2000-06-06'
+        description:
+            - Primera versión del documento, con la estructura del curso de Óptica II impartido por Alfredo Luis Aína en la facultad de Física de la UCM entre febrero y junio de 2000.
+            - Revisión de todo el documento y la confección de casi todas las figuras a mano --Almudena Arcones Segovia.
+        number: '0.1.0'
+    -
+        date: '2002-05-13'
+        description:
+            - Revisión completa del documento con corrección de erratas y reescritura de pasajes poco claros --ATC.
+            - Introducción de entradas de índice alfabético, redacción de una introducción y revisión general (capítulo de ondas electromagnéticas en el vacío) --Marta Balbás Gambra.
+            - Pasadas las figuras a tamaños absolutos, lo que optimiza portabilidad entre plantillas (formas de presentación) --ATC.
+        number: '1.0.0'
+    -
+        date: '2004-04-10'
+        description:
+            - Cambio de licencia a la Creative Commons Attribution Share Alike Non Commercial.
+            - Actualización de plantilla a book-latex-es-b y metadatos al esquema 1.1 --ATC
+            - Incorporación de la versión más actual del manifiesto (2.0), así como de una descripción del proyecto LibrosAbiertos --ATC
+            - Pequeñas correcciones ortográficas y de estilo en texto y fórmulas--ATC
+        number: '1.1.0'
+requisites:
+    - Álgebra y cálculo de primero de carrera.
+    - Conveniente familiaridad con las ecuaciones de Maxwell y la notación exponencial compleja.
+shorttitle: OE
+sourceformat:
+    ext: lyx
+    macros:
+        - OE-macros.sty
+    name: LyX
+    packages:
+        - lyxpackages.sty
+    ver: '1.3'
+subtitle: ''
+title: Óptica electromagnética
+todo:
+    - Completar las figuras.
+    - Completar el trabajo de Marta Balbás Gambra con el índice alfabético, extendiéndolo a todos los capítulos.
+    - Comentar la bibliografía.
+    - Mejorar el tratamiento tipográfico de las unidades.
+    - Arreglar el problema con bibtex.
+    
+contributors:
+    - Marta Balbás Gambra <marta@antalia.com> 2002.
+    - Almudena Arcones Segovia <aarcones@alqua.org> 2000.

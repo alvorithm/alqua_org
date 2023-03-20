@@ -1,0 +1,1054 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass book
+\begin_preamble
+\input{FdL-packages.sty}
+\input{FdL-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding latin1
+\fontscheme ae
+\graphics default
+\paperfontsize 11
+\spacing single 
+\papersize a4paper
+\paperpackage widemarginsa4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Chapter
+
+Amplificadores de propagación de radiación
+\layout Section
+
+Ecuación de transporte de los fotones
+\layout Standard
+
+Para completar la descripción del problema en términos de ecuaciones de
+ balance hay que describir el comportamiento de la densidad de radiación.
+ Es lo que nos proponemos en este apartado.
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Introducir referencia al cap. de las ec. de balance.}
+\end_inset 
+
+
+\layout Standard
+
+La densidad de radiación viene caracterizada por una función de distribución
+ del colectivo estadístico de fotones o, en caso de necesitar información
+ de fase, por un operador densidad de estados.
+ La radiación está distribuida en el espacio de fases de posiciones, momentos
+ (direcciones de propagación) y polarizaciones.
+\layout Standard
+
+Hemos visto que los fotones, descritos en estados Fock o en estados coherentes,
+ tienen su energía distribuida de manera uniforme en la cavidad.
+ El campo en la realidad no obedece ni a una ni a otra clase de imagen,
+ y los fotones se encuentran en paquetes.
+ Si podemos asimilar aquellos a partículas frente a la distancia en la que
+ la densidad de partículas cambia (varía la distribución instantánea de
+ energía del campo), podemos permitirnos una descripción clásica en términos
+ de una densidad en el espacio de fases.
+ Asumiendo por tanto una cierta localizabilidad de los fotones podemos definir
+ la siguiente función de distribución, 
+\begin_inset Formula $f^{\sigma}$
+\end_inset 
+
+ (mantenemos las coordenadas cartesianas para la descripción espacial, con
+ la notación 
+\begin_inset Formula $\mathrm{d}^{3}V=\mathrm{d}x\mathrm{d}y\mathrm{d}z$
+\end_inset 
+
+):
+\begin_inset Formula \[
+\mathrm{d}^{6}N_{f}^{\sigma}=\frac{1}{h^{3}}f^{\sigma}\left(\vec{r},\vec{p},t\right)\,\mathrm{d}x\mathrm{d}y\mathrm{d}z\,\mathrm{d}p_{x}\mathrm{d}p_{y}\mathrm{d}p_{z}\]
+
+\end_inset 
+
+ Al dividir el elemento de volumen 
+\begin_inset Formula $\mathrm{d}^{3}V\,\mathrm{d}p_{x}\mathrm{d}p_{y}\mathrm{d}p_{z}$
+\end_inset 
+
+ por 
+\begin_inset Formula $h^{3}$
+\end_inset 
+
+ (el volumen que ocupa un estado cuántico), obtenemos el número de estados
+ en el elemento de volumen y por lo tanto 
+\begin_inset Formula $f^{\sigma}$
+\end_inset 
+
+ representa el número de fotones por estado 
+\begin_inset Formula $\vec{r}\left(t\right),\vec{p}\left(t\right)$
+\end_inset 
+
+ con polarización 
+\begin_inset Formula $\sigma$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+Nos interesa escribir esta magnitud en coordenadas esféricas para el vector
+ de ondas.
+ Teniendo en cuenta que 
+\begin_inset Formula $\vec{p}=\hbar\vec{k}$
+\end_inset 
+
+, 
+\begin_inset Formula $k=2\pi\lambda^{-1}=2\pi\nu c^{-1}$
+\end_inset 
+
+, donde 
+\begin_inset Formula $c$
+\end_inset 
+
+ representa la velocidad de la luz en el medio (es decir, si 
+\begin_inset Formula $c_{0}$
+\end_inset 
+
+ es la velocidad en el vacío y 
+\begin_inset Formula $\mu$
+\end_inset 
+
+ el índice de refracción, 
+\begin_inset Formula $c=c_{0}/\mu$
+\end_inset 
+
+) el diferencial de volumen en el espacio de momentos se transforma con
+ el jacobiano:
+\begin_inset Formula \[
+\mathrm{d}p_{x}\mathrm{d}p_{y}\mathrm{d}p_{z}\rightarrow\hbar^{3}\,\mathrm{d}k_{x}\mathrm{d}k_{y}\mathrm{d}k_{z}\rightarrow\hbar^{3}k^{2}\,\mathrm{d}k\sin\theta\mathrm{d}\theta\mathrm{d}\varphi=\hbar^{3}k^{2}\,\mathrm{d}k\mathrm{d^{2}\Omega}=\left(\frac{h}{c}\right)^{3}\nu^{2}\,\mathrm{d}\nu\mathrm{d}^{2}\Omega\]
+
+\end_inset 
+
+Por lo tanto,
+\begin_inset Formula \[
+\mathrm{d}^{6}N_{f}^{\sigma}=\frac{1}{c^{3}}f^{\sigma}\left(\vec{r},\nu,\theta,\varphi,t\right)\nu^{2}\,\mathrm{d}\nu\mathrm{d}^{2}\Omega\mathrm{d^{3}V}\]
+
+\end_inset 
+
+
+\layout Standard
+
+Si no nos importan las direcciones de los fotones podemos consolidar todas
+ ellas integrando y si no queremos distinguir las polarizaciones podemos
+ consolidarlas a su vez sumándolas:
+\begin_inset Formula \[
+\mathrm{d}^{4}N_{f}=\sum_{\sigma=1}^{2}\frac{1}{c^{3}}\left(\int_{\Delta\Omega}f^{\sigma}\left(\nu,\theta,\varphi,\vec{r},t\right)\mathrm{d}^{2}\Omega\right)\,\nu^{2}\,\mathrm{d}\nu\mathrm{d}^{3}V=n_{f}\left(t\right)\,\mathrm{d}\nu\,\mathrm{d}^{3}V\]
+
+\end_inset 
+
+En la expresión precedente hemos etiquetado por 
+\begin_inset Formula $n_{f}\left(t\right)$
+\end_inset 
+
+ la densidad de fotones de cualquier polarización cuyas direcciones de propagaci
+ón están dentro de un pequeño ángulo sólido 
+\begin_inset Formula $\Delta\Omega$
+\end_inset 
+
+.
+\begin_inset Formula \[
+n_{f}\left(t\right)=\frac{\mathrm{d}^{4}N_{f}}{\mathrm{d}\nu\mathrm{d}^{3}V}\]
+
+\end_inset 
+
+
+\layout Standard
+
+Habitualmente la radiación no cambia de frecuencia en su trayectoria por
+ el espacio de fases.
+ A frecuencia constante el cambio en el número de fotones por unidad de
+ volumen y de intervalo de frecuencia a lo largo de la trayectoria viene
+ dado por 
+\begin_inset Formula \begin{equation}
+\frac{\mathrm{d}n_{f}}{\mathrm{d}t}=\dpx{n_{f}}\dt{x}+\dpt{n_{f}}.\label{eq:evol-num-fotones}\end{equation}
+
+\end_inset 
+
+En esta expresión 
+\begin_inset Formula $x$
+\end_inset 
+
+ es la dirección de propagación, y por lo tanto 
+\begin_inset Formula \[
+\dt{x}=\frac{c_{0}}{\mu}=c.\]
+
+\end_inset 
+
+
+\layout Standard
+
+El cambio en el número de fotones durante la propagación se produce por
+ la interacción con el medio, que puede absorber, emitir o esparcir fotones.
+ Si suponemos despreciables los procesos de esparcimiento, sólo quedan los
+ de absorción y emisión.
+ La emisión se puede hacer a su vez por el mecanismo estimulado (simplemente
+ incrementa la energía del haz) o espontáneo (salen en cualquier dirección).
+ Si el haz está colimado en 
+\begin_inset Formula $\Delta\Omega$
+\end_inset 
+
+ la contribución al haz en la dirección de interés debida a procesos espontáneos
+ será despreciable en virtud de la pequeña fracción del ángulo sólido total
+ afectada.
+\layout Standard
+
+Los átomos, por otra parte, suelen tener en sus niveles ciertos perfiles,
+ y las transiciones se hacen, como hemos visto, con los correspondientes
+ perfiles de emisión.
+ Vamos a suponer que los átomos resuenan con los fotones entre dos niveles
+ 
+\begin_inset Formula $1$
+\end_inset 
+
+ y 
+\begin_inset Formula $2$
+\end_inset 
+
+ (figura 
+\begin_inset LatexCommand \ref{fig:niv-atomicos-que-resuenan-con-rad}
+
+\end_inset 
+
+) dotados de uno de estos perfiles, que denotaremos por 
+\begin_inset Formula $g\left(\nu_{0}',\nu\right)$
+\end_inset 
+
+, donde 
+\begin_inset Formula $\nu'_{0}$
+\end_inset 
+
+ es la frecuencia del centro del perfil.
+ Si ambos niveles están ensanchados, el perfil 
+\begin_inset Formula $g\left(\nu'_{0},\nu\right)$
+\end_inset 
+
+ se forma convolucionando los perfiles individuales, lo cual para el caso
+ de perfiles lorentzianos origina la formación de otro perfil lorentziano
+ de anchura la suma de las individuales.
+\layout Standard
+
+La frecuencia central de emisión, 
+\begin_inset Formula $\nu'_{0}$
+\end_inset 
+
+ no tiene por qué ser igual para todos los átomos; en el caso de que no
+ todos interactúen con la radiación en la misma frecuencia central 
+\begin_inset Formula $\nu_{0}'$
+\end_inset 
+
+ puede haber un ensanchamiento inhomogéneo.
+ Así ocurre en razón del efecto Doppler en los gases, consecuencia de las
+ diferentes velocidades térmicas de las moléculas.
+ También aparece un ensanchamiento inhomogéneo para sistemas moleculares
+ que forman parte de una masa desordenada como un líquido o un vidrio (amorfo).
+ Las poblaciones de los niveles están así repartidas sobre las frecuencias
+ centrales 
+\begin_inset Formula $\nu'_{0}$
+\end_inset 
+
+ con unas densidades por unidad de volumen e intervalo de frecuencia 
+\begin_inset Formula $n_{1}\left(\nu'_{0}\right)$
+\end_inset 
+
+ y 
+\begin_inset Formula $n_{2}\left(\nu'_{0}\right)$
+\end_inset 
+
+.
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/niv-resonancia.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:niv-atomicos-que-resuenan-con-rad}
+
+\end_inset 
+
+Distribución de los átomos según niveles.
+ Para el nivel superior tenemos 
+\begin_inset Formula $\mathrm{d}n_{1}=n_{1}\left(\nu_{0},\nu'_{0}\right)\mathrm{d}\nu'_{0}$
+\end_inset 
+
+ y para el inferior 
+\begin_inset Formula $\mathrm{d}n_{2}=n_{2}\left(\nu_{0},\nu'_{0}\right)\mathrm{d}\nu'_{0}$
+\end_inset 
+
+.
+\end_inset 
+
+ El cambio en la densidad de fotones por interacción estimulada con los
+ átomos o moléculas cuyas frecuencias centrales de emisión están en 
+\begin_inset Formula $\mathrm{d}\nu'_{0}$
+\end_inset 
+
+ será
+\begin_inset Formula \[
+\mathrm{d}\left(\dt{n_{f}}\right)=\left[n_{2}\left(\nu'_{0}\right)B_{21}-n_{1}\left(\nu'_{0}\right)B_{12}\right]g\left(\nu'_{0},\nu\right)n_{f}h\nu\,\mathrm{d}\nu'_{0}\]
+
+\end_inset 
+
+El ensanchamiento homogéneo está considerado en la 
+\begin_inset Formula $g$
+\end_inset 
+
+ y el inhomogéneo está tenido en cuenta en los perfiles 
+\begin_inset Formula $n_{1}$
+\end_inset 
+
+ y 
+\begin_inset Formula $n_{2}$
+\end_inset 
+
+.
+ La expresión anterior constituye un balance, y cada término es el producto
+ de una probabilidad de transición (coeficiente de Einstein por densidad
+ de energía de radiación por unidad de volumen e intervalo de frecuencia,
+ 
+\begin_inset Formula $u_{\nu}\left(\nu\right)=n_{f}h\nu$
+\end_inset 
+
+) y el correspondiente número de niveles atómicos disponibles para la transición
+ (
+\begin_inset Formula $\mathrm{d}n_{1},\mathrm{d}n_{2}$
+\end_inset 
+
+).
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Revisar uso de $u_
+\backslash 
+nu$ en este capítulo. Con la convención del subíndice para magnitudes espectrales podemos prescindir, por concisión de explicitar el argumento -ATC. Así es, pero quizá es más claro dejarlo explícito -JGP.}
+\end_inset 
+
+
+\layout Standard
+
+Si ahora consideramos un medio en el que no hay ensanchamiento inhomogéneo,
+ todos los átomos o moléculas tienen la misma frecuencia central de emisión,
+ y entonces
+\begin_inset Formula \[
+n_{i}\left(\nu'_{0}\right)=\delta\left(\nu_{0}-\nu'_{0}\right)n_{i}\qquad i=1,2\]
+
+\end_inset 
+
+En este caso podemos integrar sobre las frecuencias centrales 
+\begin_inset Formula $\nu'_{0}$
+\end_inset 
+
+ y multiplicar por la energía de un fotón, 
+\begin_inset Formula $h\nu$
+\end_inset 
+
+ para obtener una ecuación de propagación de la radiación a lo largo de
+ una línea de corriente.
+\begin_inset Formula \begin{eqnarray}
+\dt{u_{\nu}} & = & \left(n_{2}B_{21}-n_{1}B_{12}\right)g\left(\nu_{0},\nu\right)u_{\nu}\left(\nu\right)h\nu\nonumber \\
+ & = & c\dpx{u_{\nu}}+\dpt{u_{\nu}}\qquad\textnormal{(por \ref{eq:evol-num-fotones})}.\label{eq:evol-radiacion}\end{eqnarray}
+
+\end_inset 
+
+Se trata de una ecuación tipo Boltzmann en la cual los términos de colisión
+ están representados por las probabilidades de absorción y emisión.
+ Esta ecuación sería en principio la que habría que acoplar a las ecuaciones
+ de balance de la materia que ya hemos estudiado, para tener el sistema
+ completo descrito a un nivel que prescinde de la fase.
+\layout Standard
+
+Veamos cómo escribimos esta ecuación en términos de la intensidad 
+\begin_inset Formula $I_{\nu}\left(\nu\right)=cu_{\nu}\left(\nu\right)$
+\end_inset 
+
+.
+ Recoredemos que en este tratamiento la radiación no es considerada como
+ una onda, de manera que su frecuencia es la energía 
+\begin_inset Formula $h\nu$
+\end_inset 
+
+ de sus partículas, y a todos los efectos es como si fuera un fluido.
+\layout Itemize
+
+Si en la trayectoria en el espacio de fases la densidad de radiación no
+ depende explícitamente del tiempo (aplicamos un campo de radiación constante
+ en el tiempo), o lo hace adiabáticamente, se puede efectuar la aproximación
+ 
+\begin_inset Formula \[
+\dt{u_{\nu}}=c\dpx{u_{\nu}}.\]
+
+\end_inset 
+
+
+\layout Itemize
+
+Los coeficientes de Einstein cumplen (
+\begin_inset Formula $g_{1},g_{2}$
+\end_inset 
+
+ degeneraciones de los niveles) 
+\begin_inset Formula \[
+B_{12}=\frac{g_{2}}{g_{1}}B_{21},\qquad B_{21}=\frac{c^{3}}{8\pi h\nu^{3}}A_{21}\]
+
+\end_inset 
+
+Donde 
+\begin_inset Formula $B_{21}$
+\end_inset 
+
+ quedaba acotado entre estos valores, según la polarización del campo:
+\begin_inset Formula \[
+\frac{\left|\vec{D}_{21}\right|^{2}}{2\hbar^{2}\epsilon_{0}}\geq B_{21}\geq\frac{\left|\vec{D}_{21}\right|^{2}}{6\hbar^{2}\epsilon_{0}}\]
+
+\end_inset 
+
+Para evitar/encapsular este tipo de ambigüedad se suele introducir la 
+\emph on 
+sección eficaz de interacción
+\begin_inset LatexCommand \index{sección eficaz de interacción}
+
+\end_inset 
+
+
+\emph default 
+ (emisión).
+ Se trata de una función de la frecuencia relacionada con el perfil de emisión
+ y el coeficiente de Einstein
+\begin_inset Formula \[
+\sigma_{21}\left(\nu\right)=\frac{1}{c}g\left(\nu_{0},\nu\right)B_{21}\left(\nu\right)h\nu\]
+
+\end_inset 
+
+que se puede medir para cada caso de interés.
+ 
+\layout Itemize
+
+Por último, se define el 
+\emph on 
+número de inversión
+\emph default 
+
+\begin_inset LatexCommand \index{número de inversión}
+
+\end_inset 
+
+ 
+\begin_inset Formula $n_{i}$
+\end_inset 
+
+ en función de 
+\begin_inset Formula $n_{j}/g_{j}$
+\end_inset 
+
+ (las poblaciones por estado 
+\begin_inset Formula $j$
+\end_inset 
+
+) del siguiente modo:
+\begin_inset Formula \begin{equation}
+n_{i}\equiv n_{2}-\frac{g_{2}}{g_{1}}n_{1}=g_{2}\left(\frac{n_{2}}{g_{2}}-\frac{n_{1}}{g_{1}}\right)\label{eq:num-inversion}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+En estas condiciones podemos escribir la ecuación que buscábamos para la
+ intensidad,
+\begin_inset Formula \[
+\dpx{I_{\nu}}=\left(n_{2}-n_{1}\frac{g_{2}}{g_{1}}\right)\,\frac{c^{3}}{8\pi\nu^{2}}\frac{g\left(\nu_{0},\nu\right)}{c}A_{21}\, I_{\nu}=n_{i}\sigma_{21}I_{\nu}\]
+
+\end_inset 
+
+o 
+\begin_inset Formula \begin{equation}
+\dx{I_{\nu}}=n_{i}\sigma_{21}I_{\nu}.\label{eq:evol-I-con-x-adiabatico}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+Observamos que a lo largo de la trayectoria 
+\begin_inset Formula $(\Delta x>0)$
+\end_inset 
+
+ el cambio en la intensidad, 
+\begin_inset Formula $\Delta I_{\nu}$
+\end_inset 
+
+ es positivo si
+\begin_inset Formula \[
+\frac{n_{2}}{g_{2}}>\frac{n_{1}}{g_{1}}\]
+
+\end_inset 
+
+ y negativo en el caso opuesto.
+ Dependiendo de la relación precedente entre poblaciones por estado en los
+ niveles, la intensidad se amplifica o se atenúa en la propagación (figura
+ 
+\begin_inset LatexCommand \ref{fig:I-de-x-propagacion}
+
+\end_inset 
+
+).
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/evol-intens-propag.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:I-de-x-propagacion}
+
+\end_inset 
+
+Variación de la intensidad espectral a lo largo de la propagación con y
+ sin inversión de población.
+\end_inset 
+
+
+\layout Standard
+
+Cuando el sistema está en equilibrio térmico ambas poblaciones por estado
+ están relacionadas por la distribución de Maxwell-Boltzmann.
+\begin_inset Formula \[
+\frac{n_{2}}{g_{2}}=\frac{n_{1}}{g_{1}}\exp\left(-\frac{E_{2}-E_{1}}{k_{B}T}\right)<\frac{n_{1}}{g_{1}}\]
+
+\end_inset 
+
+eso supone 
+\begin_inset Formula $n_{i}<0$
+\end_inset 
+
+ y por lo tanto en el equilibrio térmico hay atenuación.
+\layout Standard
+
+Con objeto de obtener amplificación necesitamos establecer las condiciones
+ para que las poblaciones por estado estén invertidas de modo continuo.
+ Si tenemos más población en los estados superiores hay más transiciones
+ estimuladas de emisión y domina la emisión estimulada.
+ Por lo tanto el mecanismo para obtener amplificación es provocar una 
+\emph on 
+inversión de poblaciones
+\emph default 
+
+\begin_inset LatexCommand \index{inversión de población}
+
+\end_inset 
+
+ que es lo que da lugar al efecto LASER
+\begin_inset LatexCommand \index{efecto LASER}
+
+\end_inset 
+
+ (l
+\emph on 
+ight 
+\emph default 
+a
+\emph on 
+mplification by 
+\emph default 
+s
+\emph on 
+timulated 
+\emph default 
+e
+\emph on 
+mission of 
+\emph default 
+r
+\emph on 
+adiation
+\emph default 
+).
+\layout Standard
+
+El fenómeno fue observado inicialmente en el rango de las microondas, durante
+ los años 50.
+ A este dominio de frecuencia se aplica el término MASER
+\begin_inset LatexCommand \index{MASER}
+
+\end_inset 
+
+ (m
+\emph on 
+icrowave
+\emph default 
+\SpecialChar \ldots{}
+).
+ Originalmente el interés de esta técnica de amplificación residía en la
+ exploración del espectro de microondas proveniente del espacio.
+ La realización de un experimento en el régimen visible tuvo que esperar,
+ por su mayor dificultad, al final de la década.
+\layout Standard
+
+Se define el 
+\emph on 
+coeficiente de amplificación incremental por unidad de longitud
+\begin_inset LatexCommand \index{amplificación!incremental}
+
+\end_inset 
+
+
+\emph default 
+ de la intensidad como
+\begin_inset Formula \[
+\alpha\left(\nu\right)\equiv\frac{1}{I_{\nu}\left(\nu\right)}\dx{I_{\nu}\left(\nu\right)}=n_{i}\sigma_{21}\left(\nu\right)\]
+
+\end_inset 
+
+ Como se ve, depende de la frecuencia esencialmente en función de cómo es
+ el perfil de emisión de luminiscencia entre los dos niveles, 
+\begin_inset Formula $g\left(\nu_{0},\nu\right)$
+\end_inset 
+
+ y es positivo sólo en caso de inversión (amplificación).
+ Si la inversión de población 
+\begin_inset Formula $n_{i}$
+\end_inset 
+
+ está distribuida homogéneamente a lo largo de la trayectoria podemos integrar
+ inmediatamente
+\begin_inset Formula \begin{equation}
+I_{\nu}\left(\nu,x\right)=I_{\nu}\left(\nu,0\right)e^{\alpha\left(\nu\right)x}\label{eq:I-de-nu-y-x}\end{equation}
+
+\end_inset 
+
+La ley se reduce para valores negativos de 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+ (situación de no inversión) a la ley de atenuación de Lambert--Wien.
+\layout Standard
+
+Podemos definir la 
+\emph on 
+amplificación total incremental
+\begin_inset LatexCommand \index{amplificación!total incremental}
+
+\end_inset 
+
+ 
+\begin_inset Formula $\alpha_{T}$
+\end_inset 
+
+
+\emph default 
+ como
+\begin_inset Formula \[
+\alpha_{T}\left(\nu\right)=\frac{I_{\nu}\left(\nu,x\right)-I_{\nu}\left(\nu,0\right)}{I_{\nu}\left(\nu,0\right)}=\frac{I_{\nu}\left(\nu,x\right)}{I_{\nu}\left(\nu,0\right)}-1=e^{\alpha\left(\nu\right)x}-1\]
+
+\end_inset 
+
+ Hay que tener en cuenta que 
+\begin_inset Formula $g\left(\nu_{0},\nu\right)$
+\end_inset 
+
+ ocupa ahora el exponente, lo que provoca que el aspecto de 
+\begin_inset Formula $\alpha_{T}$
+\end_inset 
+
+ sea más apuntado que el de 
+\begin_inset Formula $g\left(\nu_{0},\nu\right)$
+\end_inset 
+
+.
+ Por lo tanto la radiación se amplifica esencialmente en un rango de frecuencias
+ exponencialmente más estrecho que el del perfil de luminiscencia original
+ (figura 
+\begin_inset LatexCommand \ref{fig:reduccion-perfil-amplificacion}
+
+\end_inset 
+
+).
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/reduccion-perfil-ampli.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:reduccion-perfil-amplificacion}
+
+\end_inset 
+
+Reducción de la anchura espectral de la radiación en virtud del mecanismo
+ de amplificación estimulada.
+ Denotamos por 
+\begin_inset Formula $\Delta\nu$
+\end_inset 
+
+ la anchura a media altura de 
+\begin_inset Formula $g\left(\nu_{0},\nu\right)$
+\end_inset 
+
+ y por 
+\begin_inset Formula $\delta\nu$
+\end_inset 
+
+ la de 
+\begin_inset Formula $\alpha_{T}\left(\nu\right)$
+\end_inset 
+
+.
+ Obsérvese la escala vertical para una y otra magnitud.
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+Se pueden consultar los parámetros con los que se ha realizado en el fichero
+ fuente.
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+La anchura de amplificación 
+\begin_inset Formula $\delta\nu$
+\end_inset 
+
+ se obtendrá de la condición
+\begin_inset Formula \[
+\alpha_{T}\left(\nu_{0}+\delta\nu/2\right)=\frac{1}{2}\alpha_{T}\left(\nu_{0}\right)\]
+
+\end_inset 
+
+ En el caso de un ensanchamiento homogéneo con perfil de Lorentz y anchura
+ 
+\begin_inset Formula $\Delta\nu$
+\end_inset 
+
+, 
+\begin_inset Formula \begin{equation}
+g\left(\nu_{0},\nu\right)=\frac{2}{\pi\Delta\nu}\frac{1}{1+\left(\frac{\nu-\nu_{0}}{\Delta\nu/2}\right)^{2}},\label{eq:ensanchaLorentz}\end{equation}
+
+\end_inset 
+
+la anchura de amplificación es 
+\begin_inset Formula \[
+\delta\nu=\Delta\nu\sqrt{\frac{\ln\left[\alpha_{T}\left(\nu_{0}\right)+1\right]}{\ln\left[\alpha_{T}\left(\nu_{0}\right)+2\right]-\ln2}-1}\]
+
+\end_inset 
+
+ El cociente entre 
+\begin_inset Formula $\delta\nu$
+\end_inset 
+
+ y 
+\begin_inset Formula $\Delta\nu$
+\end_inset 
+
+ da la relación de anchuras homogénea y observada según la radiación se
+ va propagando (figura 
+\begin_inset LatexCommand \ref{fig:rel-anchura-rad-anchura-ampli}
+
+\end_inset 
+
+).
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/rel-anchuras-ampli.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:rel-anchura-rad-anchura-ampli}
+
+\end_inset 
+
+Relación de anchura natural y anchura de amplificación según avanza la radiación
+ en el medio.
+ Nótese que las abscisas son 
+\begin_inset Formula $\alpha\left(\nu_{0}\right)x$
+\end_inset 
+
+: la curva presentará un descenso más pronunciado cuanto mayor sea 
+\begin_inset Formula $\alpha\left(\nu_{0}\right)$
+\end_inset 
+
+.
+ 
+\end_inset 
+
+
+\layout Standard
+
+Es importante subrayar que mientras ocurre la amplificación se produce un
+ estrechamiento del perfil de línea de la radiación.
+ Así, el cambio de la intensidad total (todas las frecuencias juntas, 
+\begin_inset Formula $I=\int_{\Delta\nu}I_{\nu}\left(\nu\right)\mathrm{d}\nu$
+\end_inset 
+
+) es
+\begin_inset Formula \[
+\dx{I}=n_{i}\int_{\Delta\nu}\sigma_{21}\left(\nu\right)I_{\nu}\left(\nu\right)\mathrm{d}\nu\]
+
+\end_inset 
+
+ al cabo de un cierto tiempo 
+\begin_inset Formula $I\left(\nu\right)$
+\end_inset 
+
+, que tiene el perfil en la exponencial, se ha hecho mucho más estrecho
+ que 
+\begin_inset Formula $\sigma_{21}\left(\nu\right)$
+\end_inset 
+
+.
+ La variación más lenta de este factor autoriza la aproximación
+\begin_inset Formula \[
+\dx{I}\simeq n_{i}\sigma_{21}\left(\nu_{0}\right)\int_{\Delta\nu}I_{\nu}\left(\nu\right)\mathrm{d}\nu=n_{i}\sigma_{21}\left(\nu_{0}\right)I,\]
+
+\end_inset 
+
+que nos permite trabajar con la intensidad total y escribir en términos
+ sencillos el coeficiente de amplificación
+\begin_inset Formula \begin{eqnarray*}
+\alpha\left(\nu_{0}\right) & = & n_{i}\sigma_{21}\left(\nu_{0}\right)=n_{i}\,\frac{1}{c}\, g\left(\nu_{0},\nu_{0}\right)B_{21}h\nu_{0}\\
+ & = & n_{i}\frac{c^{2}}{8\pi\nu_{0}^{2}}\frac{g\left(\nu_{0},\nu_{0}\right)}{\tau_{21}}.\end{eqnarray*}
+
+\end_inset 
+
+ donde la última expresión surge de explicitar la dependencia de 
+\begin_inset Formula $B_{21}$
+\end_inset 
+
+ del tiempo de vida del nivel, 
+\begin_inset Formula $\tau_{21}=A_{21}^{-1}$
+\end_inset 
+
+.
+ En un perfil lorentziano (ec.
+ 
+\begin_inset LatexCommand \ref{eq:ensanchaLorentz}
+
+\end_inset 
+
+) 
+\begin_inset Formula $g\left(\nu_{0},\nu_{0}\right)=2/\left(\pi\Delta\nu_{21}\right)$
+\end_inset 
+
+, que se puede aproximar en primera instancia como 
+\begin_inset Formula $g\left(\nu_{0},\nu_{0}\right)\simeq\Delta\nu_{21}^{-1}$
+\end_inset 
+
+.
+ 
+\layout Description
+
+Ejercicio 
+\size small 
+calcular 
+\begin_inset Formula $g\left(\nu_{0},\nu_{0}\right)$
+\end_inset 
+
+ para un perfil gaussiano (dado por la ec.
+ 
+\begin_inset LatexCommand \ref{eq:perfil-Gauss}
+
+\end_inset 
+
+).
+\layout Standard
+
+Llamando 
+\begin_inset Formula $\lambda_{0}$
+\end_inset 
+
+ a la longitud de onda en el vacío, que es la que conocemos,
+\begin_inset Formula \begin{equation}
+\alpha\left(\nu_{0}\right)\simeq n_{i}\frac{\lambda_{0}^{2}}{8\pi\mu^{2}\left(\nu_{0}\right)\tau_{21}\Delta\nu_{21}}\label{eq:alfa-detallada}\end{equation}
+
+\end_inset 
+
+ constatamos que aparece un producto en el denominador: el tiempo de vida
+ del nivel y la anchura de la luminiscencia.
+ En los medios en los que solemos trabajar ese producto está alterado por
+ interacciones con los átomos circundantes y no es del orden de 
+\begin_inset Formula $h$
+\end_inset 
+
+, cota inferior que establece el principio de incertidumbre.
+ Cuanto más próxima a ésta esté el producto mejor será la calidad de la
+ amplificación para la transición concreta.
+\layout Subsection
+
+Pérdidas en la propagación
+\layout Standard
+
+La radiación sufre pérdidas en su propagación por la materia; por ejemplo
+ es absorbida por las colas de otras transiciones que no son la de nuestro
+ interés.
+ Además está el esparcimiento, un fenómeno inevitable cuyas consecuencias
+ podemos observar en el color del cielo
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+El esparcimiento de Rayleigh depende de la frecuencia a la cuarta potencia;
+ el cielo es azul durante el día, pero cuando al atardecer o al amanecer
+ el espesor óptico de la capa atmosférica interpuesta entre la luz solar
+ y el observador es sensiblemente mayor, se observa un tono anaranjado debido
+ a la pérdida de las componentes cromáticas de mayor frecuencia a lo largo
+ del trayecto.
+\end_inset 
+
+.
+ En la ecuación de transporte de fotones no hemos tenido en cuenta estos
+ efectos.
+\layout Standard
+
+Todos estos fenómenos de rozamiento podemos englobarlos en un coeficiente
+ 
+\begin_inset Formula $\alpha_{i}$
+\end_inset 
+
+ de absorción interna del medio, el 
+\emph on 
+coeficiente de absorbancia de Lambert
+\emph default 
+
+\begin_inset LatexCommand \index{Lambert!coeficiente de absorbancia}
+
+\end_inset 
+
+
+\begin_inset LatexCommand \index{coeficiente!de absorbancia de Lambert}
+
+\end_inset 
+
+, que de cuenta de los fotones perdidos por mecanismos distintos de las
+ transiciones radiativas entre los niveles 
+\begin_inset Formula $1$
+\end_inset 
+
+ y 
+\begin_inset Formula $2$
+\end_inset 
+
+.
+ Entonces
+\begin_inset Formula \begin{eqnarray}
+\dx{I} & = & \left(n_{i}\sigma_{21}-\alpha_{i}\right)I\label{eq:evol-I-con-x-perdidas}\end{eqnarray}
+
+\end_inset 
+
+La ecuación 
+\begin_inset LatexCommand \ref{eq:I-de-nu-y-x}
+
+\end_inset 
+
+ queda modificada; podemos escribir el efecto de 
+\begin_inset Formula $\alpha_{i}$
+\end_inset 
+
+ sobre la intensidad mediante un factor multiplicativo, el coeficiente de
+ transmisión interna
+\begin_inset LatexCommand \index{coeficiente!de transmisión interna}
+
+\end_inset 
+
+ 
+\begin_inset Formula $T_{i}\equiv\exp\left(-\alpha_{i}x\right)$
+\end_inset 
+
+:
+\begin_inset Formula \[
+I=I_{0}\exp\left(\alpha-\alpha_{i}\right)x=I_{0}T_{i}\exp\alpha x.\]
+
+\end_inset 
+
+
+\layout Standard
+
+Usualmente esta ecuación no puede ser integrada de una forma tan simple,
+ debido a que el intercambio de fotones entre la radiación y la materia
+ se produce transfiriendo población entre los dos niveles a los que está
+ acoplada la radiación: cambiando 
+\begin_inset Formula $n_{i}$
+\end_inset 
+
+.
+ Hemos pues de responder a la pregunta de cómo varía 
+\begin_inset Formula $n_{i}$
+\end_inset 
+
+; para ello necesitamos suplementar el modelo con las ecuaciones de balance
+ de poblaciones.
+\the_end

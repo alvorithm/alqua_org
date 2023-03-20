@@ -1,0 +1,249 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass scrbook
+\begin_preamble
+\usepackage{framed} 
+\typearea{10}
+\usepackage{multicol}
+\end_preamble
+\language spanish
+\inputencoding auto
+\fontscheme times
+\graphics default
+\paperfontsize 11
+\spacing single 
+\papersize Default
+\paperpackage widemarginsa4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+
+\layout Chapter
+
+Diagrama de bloques
+\layout Standard
+
+El componente central de la tarjeta JPS-XPC84 es la FPGA utilizada.
+ El resto de los módulos interactuan con la FPGA aportando distintas funcionalid
+ades.
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename ps/diagrama.eps
+	display monochrome
+	width 80text%
+
+\end_inset 
+
+
+\layout Caption
+
+Diagrama de bloques de la tarjeta JPS-XPC84, versión PRO
+\begin_inset LatexCommand \label{fig_diagrama_bloques}
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Itemize
+
+
+\series bold 
+Circuito de reloj
+\series default 
+: La FPGA se puede configurar tanto con diseños combinacionales como secuenciale
+s.
+ Para estos últimos diseños la placa provee de un 
+\series bold 
+circuito de reloj externo
+\series default 
+.
+ Además 
+\emph on 
+en cada uno puertos de expansión existe un pin que se puede utilizar como
+ entrada de reloj
+\emph default 
+, permitiendo tener más de un circuito de reloj.
+ En el apartado 
+\begin_inset LatexCommand \ref{ap_temp_diseños}
+
+\end_inset 
+
+ se detallan todas las posibilidades de temporización.
+\layout Itemize
+
+
+\series bold 
+Circuito de prueba
+\series default 
+: El circuito de prueba se compone de un 
+\series bold 
+led
+\series default 
+ y un 
+\series bold 
+pulsador
+\series default 
+ conectados cada uno a un pin fijo de la FPGA.
+ Estos dos componentes permiten probar fácil y rápidamente el correcto funcionam
+iento de la placa.
+ Los componentes del circuito de prueba se describe en el apartado 
+\begin_inset LatexCommand \ref{ap_pulsador_prueba}
+
+\end_inset 
+
+ y 
+\begin_inset LatexCommand \ref{ap_led_pruebas}
+
+\end_inset 
+
+.
+\layout Itemize
+
+
+\series bold 
+Conmutadores genéricos
+\series default 
+: El diseñador dispone de tres conmutadores genéricos de forma que sus prototipo
+s pueden tener hasta ocho modos de configuración distintos.
+ Para más información ver el apartado 
+\begin_inset LatexCommand \ref{ap_switches}
+
+\end_inset 
+
+.
+\layout Itemize
+
+
+\series bold 
+Puertos de expansión
+\series default 
+: La placa cuenta con seis puertos de expansión genéricos.
+ Cada uno tiene 
+\series bold 
+ocho pines de datos
+\series default 
+ que se pueden configurar tanto de entrada como de salida.
+ Además se proveen de 
+\series bold 
+dos pines más de alimentación
+\series default 
+, de forma que los sistemas externos pueden obtener la alimentación a través
+ del puerto al que esté conectado.
+ Los puertos de expansión se detallan en el apartado 
+\begin_inset LatexCommand \ref{ap_puertos_expansion}
+
+\end_inset 
+
+.
+\layout Itemize
+
+
+\series bold 
+Alimentación
+\series default 
+: Para la alimentación de la tarjeta se disponen de dos tipos de conectores
+ distintos: 
+\series bold 
+jack
+\series default 
+ y 
+\series bold 
+clema
+\series default 
+.
+ Es importante reseñar que NO se pueden utilizar los dos conectores al mismo
+ tiempo.
+ 
+\series bold 
+La alimentación de la placa es de 5 V
+\series default 
+.
+ Para más detalles consultar el apartado 
+\begin_inset LatexCommand \ref{ap_alimentación}
+
+\end_inset 
+
+.
+\layout Itemize
+
+
+\series bold 
+Circuito de programación interna
+\series default 
+: Se utiliza para programar la FPGA desde una 
+\series bold 
+EEPROM serie integrada
+\series default 
+ en la placa.
+ La FPGA actúa en modo maestro y toma el 
+\emph on 
+bitstream
+\emph default 
+ de la memoria.
+ Este modo de configuración se describe en el apartado 
+\begin_inset LatexCommand \ref{ap_modo_maestro}
+
+\end_inset 
+
+.
+ 
+\layout Itemize
+
+
+\series bold 
+Circuito de programación externa
+\series default 
+: En este caso la FPGA se utiliza en modo esclavo.
+ Un sistema externo, habitualmente un PC, se encarga de suministrar el 
+\emph on 
+bitstream
+\emph default 
+ mediante un conector y un cable propietario.
+ Los detalles de este modo de configuración se describen en el apartado
+ 
+\begin_inset LatexCommand \ref{ap_modo_esclavo}
+
+\end_inset 
+
+.
+ 
+\layout Itemize
+
+
+\series bold 
+Configuración
+\series default 
+: Las posibilidades de configuración de la placa versan sobre las distintas
+ formas que se disponen de programar la FPGA.
+ Mediante un 
+\emph on 
+jumper
+\emph default 
+ se elige que la programación sea desde un sistema externo o mediante los
+ circuitos internos.
+ Mediante un conmutador se permite que la EEPROM serie se pueda programar
+ desde un sistema externo sin necesidad de extraerla del zócalo.
+ 
+\the_end

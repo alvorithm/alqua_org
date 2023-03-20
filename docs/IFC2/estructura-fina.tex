@@ -1,0 +1,1740 @@
+\documentclass[spanish,a4paper,12pt]{book}
+\usepackage{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{eurosym}
+\input{lyxpackages.sty}
+\input{IFC2-packages.sty}
+\input{IFC2-macros.sty}
+\begin{document}
+\chapter{Estructura fina del átomo de hidrógeno}
+
+En FCI se introdujo un modelo no relativista para estudiar el átomo de
+hidrógeno.  Suponiendo (i) que el electrón es una partícula sin espín,
+(ii) que su velocidad es despreciable frente a la de la luz y (iii)
+que interacciona electrostáticamente con el núcleo, pudimos utilizar
+la ecS para obtener las autoenergías y autofunciones del problema.
+Sin embargo, (i) es incorrecta y (ii) sólo es una aproximación por lo
+que cabe esperar la existencia de efectos relativistas apreciables.
+Como veremos más adelante, el espín juega un papel importante en este
+problema y por ello empezaremos repasando parte de la fenomenología
+que dió lugar al descubrimiento del mismo.
+
+\section{Experimentos que condujeron al espín}
+
+Fueron de dos tipos esencialmente
+
+\begin{itemize}
+\item Interacción del átomo con un campo magnético \( \mathbf{B} \)
+estacionario y homogéneo (efectos \noun{Zeeman} y \noun{Paschen-Back,}
+que se diferencian en la intensidad de campo aplicado y de los que
+estudiaremos sólo el primero).
+\item Interacción con un campo \( \mathbf{B} \) estacionario pero con
+un gradiente espacial relativamente débil (experimento de
+\noun{Stern}-\noun{Gerlach}).
+\end{itemize}
+
+\subsection{Interacción con el campo magnético: el hamiltoniano}
+
+
+\subsubsection{El hamiltoniano de una partícula en un campo magnético estacionario}
+\label{ssec interaccion con el campo magnetico}
+
+Como siempre, la clave para abordar el problema es identificar el
+hamiltoniano que gobierna el sistema. Empecemos por considerar la
+expresión de \( H \) para una partícula de masa \( m \) y carga \( q
+\) sumergida en un campo magnético estacionario \( \mathbf{B} \) (no
+hay campo eléctrico). En el cgs
+\[
+H=\dfrac{1}{2m}\left( \mathbf{p}-\dfrac{q}{c}\mathbf{A}\right) ^{2}\]
+Si \( \mathbf{B} \) es homogéneo se puede escribir el potencial
+vector como
+
+\[
+\mathbf{A}=-\dfrac{1}{2}\mathbf{r}\land \mathbf{B}\]
+%
+mientras que si existe un pequeño gradiente la expresión precedente
+será válida sólo de forma aproximada, es decir
+
+\[\mathbf{A}\simeq -\dfrac{1}{2}\mathbf{r}\land \mathbf{B}\]
+En estas condiciones 
+
+\begin{eqnarray*}
+H & = & \dfrac{1}{2m}\left( \mathbf{p}+\dfrac{q}{2c}\mathbf{r}\land \mathbf{B}\right) ^{2}\\
+ & = & \dfrac{\mathbf{p}^{2}}{2m}+\dfrac{q}{4mc}\left[ \mathbf{p}\cdot \left( \mathbf{r}\land \mathbf{B}\right) +\left( \mathbf{r}\land \mathbf{B}\right) \cdot \mathbf{p}\right] +\dfrac{q^{2}}{8mc^{2}}\left| \mathbf{r}\land \mathbf{B}\right| ^{2}
+\end{eqnarray*}
+
+Aplicando las relaciones del producto mixto y teniendo en cuenta que
+conviene mantener el orden de los productos, dado que cuando
+cuanticemos \( H \) los operadores \( \mathsfbf{p} \) y \textsf{\(
+\mathsfbf{r} \)} no conmutan, resulta
+
+\[
+\mathbf{p}\cdot \left( \mathbf{r}\land \mathbf{B}\right) =\mathbf{B}\cdot \left( \mathbf{p}\land \mathbf{r}\right) \]
+Como el momento angular es\footnote{%
+A la cantidad \( \mathbf{r}\land m\mathbf{v} \) se le llama \emph{momento
+de la cantidad de movimiento}, mientras que al momento del momento
+lineal \( \mathbf{L}=\mathbf{r}\land \mathbf{p} \) se le llama \emph{momento
+angular}. 
+
+\begin{description}
+\item [Ejercicio]Demuestre que \( \mathbf{p}\land \mathbf{r}=-\mathbf{r}\land \mathbf{p}=-\mathbf{L} \)\end{description}
+} \( \mathbf{L}=\mathbf{r}\land \mathbf{p} \). 
+
+
+
+\begin{eqnarray*}
+H & = & \dfrac{\mathbf{p}^{2}}{2m}-\dfrac{q}{2mc}\mathbf{B}\cdot \mathbf{L}+\dfrac{q^{2}}{8mc^{2}}B^{2}r^{2}_{\perp }\\
+ & = & T+W_{1}+W_{2}
+\end{eqnarray*}
+donde \( \left| \mathbf{r}\land \mathbf{B}\right| =Br\sin \theta =Br_{\perp } \).
+
+\emph{Interpretación}: el primer término es proporcional a \(
+\mathbf{B}\cdot \mathbf{L} \) y se le llama \emph{paramagnético}
+porque \emph{orienta} el momento angular del sistema (favorece que \(
+\mathbf{L} \) sea paralelo/antiparalelo a \( \mathbf{B} \) según el
+signo de \( q \)). El otro, mucho más débil, es proporcional a \(
+B^{2}r_{\perp }^{2} \) y se le llama \emph{diamagnético} (no tiene
+influencia sobre \( \mathbf{L} \)).
+
+
+\subsubsection{Simplificación del hamiltoniano}
+
+La estimación de los órdenes de magnitud de los términos \( W_{1} \) y
+\( W_{2} \) nos permitirá despreciar el segundo con cierta
+tranquilidad.  Utilizando que \( \left| \mathbf{L}\right| \approx
+\hbar \), se tiene que para una partícula de carga y masa las del
+electrón, \( \left| q\right| =e \) y \( m=m_{e} \),
+
+\[
+\left| \left\langle \mathrm{W}_{1}\right\rangle \right| \propto \dfrac{e}{2m_{e}c}B\hbar =\dfrac{e\hbar }{2m_{e}c}B =\mu _{B}B\]
+%
+donde \( \mu _{B} \) se conoce con el nombre de \emph{magnetón de}
+\noun{Bohr} y su valor en unidades cgs es \( \mu _{B}=9.273×
+10^{-21}ergG^{-1}=5.792× 10^{-9}eVG^{-1} \).  El orden de
+magnitud del campo magnético \( B \) implicado en un experimento tipo
+\noun{Zeeman} es aproximadamente\footnote{En realidad se pueden
+aplicar campos mucho más intensos, que dan lugar al llamado efecto
+Paschen-Back} \( B \lessapprox 10^{4}G=1T \). Con estos datos \( \left|
+\left\langle \mathrm{W}_{1}\right\rangle \right| \lessapprox 10^{-4}eV \)
+El segundo término de la perturbación vale
+
+
+\begin{eqnarray*}
+\left| \left\langle \mathrm{W}_{2}\right\rangle \right|  & \approx  & \dfrac{e^{2}B^{2}}{8m_{e}c^{2}}a_{0}^{2}\\
+\dfrac{e^{2}B^{2}}{8m_{e}c^{2}}a_{0}^{2} & = & \dfrac{1}{2}\left( \dfrac{e\hbar }{2m_{e}c}\right) ^{2}
+\dfrac{m_{e}a_{0}^{2}}{\hbar ^{2}}B^{2}\\
+ &  & \\
+ & = & \dfrac{1}{2}\dfrac{\left( \mu _{B}B\right) ^{2}}{\dfrac{m_{e}e^{4}}{\hbar ^{2}}} = 
+\dfrac{1}{2}\dfrac{\left( \mu _{B}B\right) ^{2}}{E_I} \\
+\left| \left\langle \mathrm{W}_{2}\right\rangle \right|  & \lessapprox  & 10^{-9}eV
+\end{eqnarray*}
+
+\begin{figure}
+{\centering \includegraphics[width=5cm]{fig/stern-gerlach.eps} \par}
+\caption{Un átomo penetra en la región entre dos imanes cuyo perfil
+se ve en la figura: es el experimento \noun{Stern-Gerlach}
+(v. \cite[p 141]{Alonso}).}
+\end{figure}
+
+\subsubsection{Hamiltoniano del átomo de H$_1$ en presencia del campo \protect\( \mathbf{B}\protect \)
+externo}
+
+El hamiltoniano de un átomo de hidrógeno (o de un átomo hidrogenoide) en presencia de un campo
+magnético es
+
+\[H=T_{n }+T_{e}+V_{n -e}^{c}+\dfrac{e}{2m_{e}c}\mathbf{B}\cdot \mathbf{L}_{e}-\dfrac{e}{2m_{n }c}\mathbf{B}\cdot \mathbf{L}_{n }\]
+%
+donde los dos primeros términos representan la energía cinética del
+electrón y del núcleo respectivamente, \( V^{c}_{n -e} \) es la
+interacción culombiana entre dichas partículas y los dos sumandos
+restantes representan la interacción con el campo magnético externo si
+despreciamos el término diamagnético,.
+
+
+\subsection{Efecto \noun{Zeeman}}
+
+¿Qué efecto tiene el campo externo sobre los niveles del átomo de
+H$_1$?. Para responder a esta pregunta, el movimiento del átomo en
+conjunto es irrelevante, de modo que es adecuado pasar al sistema del
+centro de masas (CM). Conviene reescribir el hamiltoniano en función
+de las coordenadas relativa y del CM tal como hicimos en FCI. Ahora la
+situación es algo más complicada porque también hay que transformar
+los momentos \( \mathbf{L}_{e} \) y \( \mathbf{L}_{n } \). Para
+satisfacer este objetivo es importante recordar algunas de las
+relaciones básicas entre ámbos sistemas de coordenadas.
+
+\[
+\begin{array}{ccc}
+\mathbf{r}_{\mathbf{e}} & = & \dfrac{m_{n }}{M}\mathbf{r}+\mathbf{R}\\[5pt]
+\mathbf{r}_{n } & = & -\dfrac{m_{e}}{M}\mathbf{r}+\mathbf{R}\\[5pt]
+\mathbf{P} & = & \mathbf{p}_{\mathbf{e}}+\mathbf{p}_{n }\\[5pt]
+\mathbf{p} & = & \dfrac{m_{n }}{M}\mathbf{p}_{\mathbf{e}}-\dfrac{m_{e}}{M}\mathbf{p}_{n }\\[5pt]
+\mathbf{L}+\mathbf{L}_{\mathbf{cm}} & = & \mathbf{L}_{\mathbf{e}}+\mathbf{L}_{n }
+\end{array}\]
+donde
+
+\[
+\mathbf{L}=\mathbf{r}\land \mathbf{p},\, \, \,
+\mathbf{L}_{\mathbf{cm}}=\mathbf{R}\land \mathbf{P}\] 
+%
+Estas relaciones tienen validez general, tanto si el momento lineal coicide
+con la cantidad de movimiento, como si existe un campo magnético y el momento
+lineal tiene una expresión más complicada. Empleando estas relaciones tenemos
+%
+\[
+\dfrac{e}{2m_{e}c}\mathbf{B}\cdot \mathbf{L}_{e}-\dfrac{e}{2m_{N
+}c}\mathbf{B}\cdot \mathbf{L}_{n }=\dfrac{e}{2m_{e}c}\mathbf{B}\cdot
+(\mathbf{L}+\mathbf{L}_{\mathbf{cm}})-\dfrac{e}{2c}\left(
+\dfrac{1}{m_{e}}+\dfrac{1}{m_{n }}\right) \mathbf{B}\cdot
+\mathbf{L}_{n }\]
+%
+En el sistema del CM se verifica que
+%
+\[
+\begin{array}{ccc}
+\mathbf{L}_{\mathbf{cm}}=0 &  & \\[5pt]
+\mathbf{P}=0 & \to  & \mathbf{p}=\mathbf{p}_{\mathbf{e}}=-\mathbf{p}_{n }\\[5pt]
+\mathbf{R}=0 & \to  & \mathbf{r}_{n }=-\dfrac{m_{e}}{M}\mathbf{r}
+\end{array}\]
+y en consecuencia la relación que existe entre los momentos angulares relativo  y del núcleo es
+
+\[\mathbf{L}_{n }=\left( \dfrac{m_{e}}{M}\right) \mathbf{L}\]
+%
+lo que nos demuestra que el segundo es despreciable frente al primero,
+y por tanto la interacción del protón con el campo magnético externo
+es muy inferior a la que experimenta el electrón. Este hecho tiene una
+interpretación sencilla debido a que el protón es tan pesado que
+practicamente se confunde con el CM, y por tanto es este sistema de
+referencia está casi en reposo. Por tanto
+
+\begin{eqnarray*}
+H & = & \dfrac{\mathbf{p}^{2}}{2m}-\dfrac{Ze^{2}}{r}+\dfrac{\mu _{B}}{\hbar }\mathbf{B}\cdot \mathbf{L}\\
+  & = & H_{0}+\dfrac{\mu _{B}}{\hbar }\mathbf{B}\cdot \mathbf{L}
+\end{eqnarray*}
+%
+Señalemos que la expresión anterior es válida en el sr del CM y
+aproximada porque (i) hemos despreciado la interacción del protón con
+el campo magnético y (ii) porque sólo hemos tenido en cuenta el
+término paramagnético.
+
+\subsubsection{El espectro en presencia del campo externo \protect\( \mathbf{B}\protect \)}
+
+Aplicamos nuestro hamiltoniano \( \mathrm{H} \) sobre un estado \( \ket{nlm} \)
+que es autoestado del hamiltoniano no perturbado \( \mathrm{H}_{0} \),
+ya que verifica \( \mathrm{H}_{0}\ket{nlm}=\left( -\dfrac{Z^2E_I}{n^{2}}\right) \ket{nlm} \),
+y además supondremos que el campo magnético aplicado solo tiene componente
+\( z \) con lo cual 
+%
+\begin{eqnarray*}
+\mathrm{H}\ket{nlm} & = & \left( \mathrm{H}_{0}+\dfrac{\mu _{B}}{\hbar }B\cdot \mathsfbf{L}\right) \ket{nlm}\\
+ & = & \left( \mathrm{H}_{0}+\dfrac{\mu _{B}}{\hbar }B\mathsfbf{L}_{z}\right) \ket{nlm}\\
+ & = & \left( -\dfrac{Z^2E_I}{n^{2}}+\mu _{B}Bm\right) \ket{nlm}
+\end{eqnarray*}
+%
+Observamos algo muy interesante:\emph{los} \emph{autoestados de \(
+\mathrm{H}_{0} \) lo son también de \( \mathrm{H} \) pero con
+autovalores modificados} (las energías han cambiado). El campo
+magnético origina un desdoblamiento de forma que los estados de un
+mismo nivel \( n \) tienen ahora energías diferentes según el valor
+del número cuántico \( m \), esto es, de la proyección del momento
+angular orbital.
+
+\[E_{nm}=-\dfrac{Z^2E_I}{n^{2}}+\mu _{B}Bm\]
+%
+Si tenemos un nivel caracterizado por \( n=2 \) y lo sumergimos
+en un campo magnético pasaremos de un nivel a tres caracterizados
+por \( n=2,m=-1,0,1 \). Como puede observarse en la figura uno de
+estos niveles esta formado, en realidad por dos estados degenerados,
+mientras que los otros dos son  estados no degenerados. 
+El salto de energía
+entre niveles con valores de \( m \) consecutivos es \( \mu _{B}B \). 
+
+En realidad lo que el experimental detecta son los fotones emitidos o
+absorbidos en las transiciones entre dichos niveles y el fundamental
+con \( n=1 \). Y para ser más precisos, lo que se mide es la longitud
+de onda del fotón asociado a cada transición. En ausencia de campo
+magnético se observan sólo fotones de una única longitud de onda, que
+llamaremos \( \lambda _{0} \), pero cuando activamos el campo
+magnético detectamos fotones con tres longitudes de onda diferentes:
+\( \lambda _{0} \), que coincide con la original, \( \lambda _{1} \) y
+\( \lambda _{-1} \).
+
+\begin{figure}
+{\centering \includegraphics[width=5cm]{fig/con-B.eps} \par}
+\caption{Gráfico de niveles para explicar las medidas antes y después
+de la aplicación del campo magnético.}
+\end{figure}
+
+Pasamos ahora a cuantificar la diferencia entre las longitudes de
+onda de los tres fotones emitidos. Cuando \( B=0 \) la energía de los
+fotones es 
+
+\[\Delta E=E_{2}-E_{1}=-\dfrac{Z^2E_I}{2^{2}}-\left( -\dfrac{Z^2E_I}{1^{2}}\right) =\dfrac{3}{4}Z^2E_I\]
+%
+pero cuando se aplica un campo dicha energía  depende del número cuántico \( m \):
+
+\[\Delta E_{m}=E_{2,m}-E_{1}=-\dfrac{Z^2E_I}{4}+\mu _{B}Bm+Z^2E_I=\dfrac{3}{4}Z^2E_I+\mu _{B}Bm\]
+%
+En ausencia de campo 
+
+\begin{eqnarray*}
+\Delta E & = & h\nu _{0}=\dfrac{hc}{\lambda _{0}}=2\pi \dfrac{\hbar c}{\lambda _{0}}\\
+\lambda _{0} & = & 2\pi \dfrac{\hbar c}{\Delta E}=\dfrac{8\pi }{3}\dfrac{\hbar c}{Z^2E_I}\\
+ & \simeq  & \dfrac{1216}{Z^2}\mathrm{A}
+\end{eqnarray*}
+%
+Y tras activar el campo magnético se tiene (en términos de la longitud
+de onda del único fotón original) 
+
+\begin{eqnarray*}
+\lambda _{m} & = & 2\pi \dfrac{\hbar c}{\dfrac{3}{4}Z^2E_I+\mu _{B}Bm}\\
+ & = & \lambda _{0}\left( 1-\dfrac{4\mu _{B}Bm}{3Z^2E_I}\right) \\
+ & = & \lambda _{0}\left( 1± O\left(\dfrac{10^{-5}}{Z^2}\right) \right) 
+\end{eqnarray*}
+
+La longitud de onda del fotón original y la de los nuevos apenas
+difieren en una cienmilésima de su valor original. En la tabla \ref{tbl efecto_zeeman: energia y londa}
+se encuentra un resumen de los resultados.
+\begin{table}
+\vspace{0.3cm}
+{\centering \begin{tabular}{ccc}
+\hline 
+{\small dato}&
+{\small \( \mathbf{B}=0 \)}&
+{\small \( \mathbf{B}\neq 0 \)}\\
+\hline
+{\small energía fotones} &
+{\small \( \Delta E=\dfrac{3}{4}Z^2E_I \)}&
+{\small \( \Delta E_{m}=\Delta E+\mu _{B}Bm \)}\\
+ {\small longitudes onda}&
+{\small \( \lambda _{0}=\dfrac{8\pi }{3}\dfrac{\hbar c}{Z^2E_I} \)}&
+{\small \( \lambda _{m}=\lambda _{0}\left( 1-\dfrac{4\mu _{B}Bm}{3Z^2E_I}\right)  \)}\\
+\hline
+\end{tabular}\par}
+\vspace{0.3cm}
+
+
+\caption{{\small \label{tbl efecto_zeeman: energia y londa}Salto energético
+en una transición \protect\( \ket{21m}\, \fd \, \ket{100}\protect \)
+y su traducción en longitud de onda de los fotones de transición antes
+y después de la aplicación de un campo magnético.}}
+\end{table}
+
+\subsubsection{Efectos \noun{Zeeman} normal y anómalo}
+
+En definitiva, al aplicar un campo \( \mathbf{B} \) estacionario y
+homogéneo se rompe la degeneración de los niveles del átomo de
+hidrógeno, caracterizados por el número cuántico principal $n$, ya que
+las energías del sistema pasan a depender también del número cuántico
+\( m \). Sabemos que
+
+\[ m\in \left\{ -l,-l+1,\ldots ,l-1,l\right\} \]
+%
+y que \( l \) toma valores enteros desde \( 0 \) a \( n-1 \) de manera
+que cada nivel se desdobla en \( 2l_{max}+1=2n-1 \) subniveles.  Por
+tanto deben aparecer un número impar de subniveles. Además la
+separación en energía entre niveles consecutivos es siempre \( \mu
+_{B}B \).
+
+Esto es un hecho que se observa experimentalmente de manera frecuenta
+pero que no tiene caracter universal. En efecto, en ocasiones se observa
+un número par de subniveles, lo cual es inexplicable según la teoría
+cuántica que ha sido introducida hasta ahora. Un caso típico es el
+del estado fundamental del átomo de hidrógeno que se desdobla en dos
+subniveles separados entre sí \( 2\mu _{B}B \). Para distinguir entre
+los dos tipos de comportamiento se habla de \emph{efecto} \noun{Zeeman}
+\emph{normal} y \noun{Zeeman} \emph{anómalo} según que el desdoblamiento
+dé lugar a un número impar o par de subniveles.
+
+\emph{Advertencia}: el campo magnético\( \mathbf{B} \) es responsable
+del desdoblamiento de los niveles de energía pero no de las
+transiciones que se observan entre los distintos (sub)niveles. Un
+campo estacionario no puede producir transiciones entre niveles
+atómicos.
+
+
+\subsection{Experimento \noun{Stern}-\noun{Gerlach}}
+
+A diferencia de los experimentos tipo \noun{Zeeman} en los que el
+átomo se sumerge en un campo \( \mathbf{B} \) homogéneo y
+estacionario, en los experimetos tipo \noun{Stern}-\noun{Gerlach} se
+hace pasar un haz de átomos por un campo magnético \(
+\mathbf{B}=B\mathbf{k} \) estacionario pero \emph{no homogéneo}. En
+estos casos el campo aplicado posee un gradiente \( \partial _{z}B \)
+relativamente débil y homogéneo.
+
+Consideremos un haz de átomos que escapan a través de un pequeño
+orificio practicado en la pared de un horno a alta
+temperatura. Posteriormente el haz es colimado mediante una serie de
+rendijas e introducido en el imán que genera un campo magnético
+estacionario e inhomogéneo. Dicho campo divide el haz original en
+varios subhaces que impactan sobre una placa fotográfica emplazada al
+final del imán.
+
+\begin{figure}
+{\centering \includegraphics[width=6cm]{fig/s-gerlach.eps} \par}
+\caption{Experimento \noun{Stern} - \noun{Gerlach}.
+v. \cite[p 141]{Alonso}.}
+\end{figure}
+
+Nuestro objetivo consiste en la caracterización del movimiento del haz
+de átomos en el sr del laboratorio. Para poder determinar la
+desviación que sufre el haz debemos calcular la fuerza total que actua
+sobre cada átomo. Tenemos que
+
+\begin{eqnarray*} 
+\mathbf{F} & = & \mathbf{F}_{e}+\mathbf{F}_{n }\\ 
+\mathbf{F}_{\mathbf{z}} & = & -\partial _{z_{e}}\left( V^{tot}\right) -\partial _{z_{n }}\left(V^{tot}\right)
+\end{eqnarray*}
+%
+donde
+
+\[V^{tot}=V^{c}_{n -e}+\dfrac{e}{2m_{e}c}\mathbf{B}\left( \mathbf{r}_{e}\right) \cdot \mathbf{L}_{e}
+-\dfrac{e}{2m_{n }c}\mathbf{B}\left( \mathbf{r}_{n }\right) \cdot \mathbf{L}_{n }\]
+%
+y como el campo sólo tiene componente \( z \)
+
+\[V^{tot}=V^{c}_{n -e}+\dfrac{e}{2m_{e}c}B\left( \mathbf{r}_{e}\right) L_{ez}
+-\dfrac{e}{2m_{n }c}B\left( \mathbf{r}_{n }\right) L_{n z}\]
+%
+
+Resulta cómodo substituir el sr inercial del laboratorio por una
+sucesión de sistemas inerciales cada uno de los cuales se mueve con la
+velocidad del CM en un instante dado y su origen de coordenadas
+coincide con la posición del CM en dicho instante. En cada instante de
+tiempo, en el sistema correspondiente, se cumple que
+
+\[
+\begin{array}{ccccc}
+\mathbf{r}_{\mathbf{e}} & = & \dfrac{m_{n }}{M}\mathbf{r}+\mathbf{R} & = & \dfrac{m_{n }}{M}\mathbf{r}\\[5pt]
+\mathbf{r}_{n } & = & -\dfrac{m_{e}}{M}\mathbf{r}+\mathbf{R} & = & -\dfrac{m_{e}}{M}\mathbf{r}
+\end{array}\]
+ya que en el sr propio \( \mathbf{R}=0 \). Como tambien se verifica
+que \( \mathbf{P}=0 \)\[
+\begin{array}{ccccc}
+\mathbf{p}_{\mathbf{e}} & = & \dfrac{m_{e}}{M}\mathbf{P}+\mathbf{p} & = & \mathbf{p}\\[5pt]
+\mathbf{p}_{n } & = & \dfrac{m_{n }}{M}\mathbf{P}-\mathbf{p} & = & -\mathbf{p}
+\end{array}\]
+y de aquí concluimos que 
+
+\[
+\begin{array}{ccc}
+\mathbf{L}_{\mathbf{e}} & = & \dfrac{m_{n }}{M}\mathbf{L}\\[5pt]
+\mathbf{L}_{n } & = & -\dfrac{m_{e}}{M}\mathbf{L}
+\end{array}\]
+de manera que en el sr propio
+
+\[
+V^{tot}=V^{c}_{n -e}+\dfrac{e}{2m_{e}c}\dfrac{m_{n }}{M}B\left( \mathbf{r}_{\mathbf{e}}\right) L_{z}+\dfrac{e}{2m_{n }c}\dfrac{m_{e}}{M}B\left( \mathbf{r}_{n }\right) L_{z}\]
+Si tenemos en cuenta que \( m_{n }\simeq M \) y que \( m_{e}\ll M \),
+el segundo sumando es despreciable frente al primero con lo cual\[
+V^{tot}=V^{c}_{n -e}+\dfrac{e}{2m_{e}c}B\left( \mathbf{r}_{\mathbf{e}}\right) L_{z}\]
+La fuerza que experimenta el sistema es la misma en cualquier sr inercial
+por lo que podemos realizar su cálculo en el sistema que localmente
+coincide con el CM. Además dicha fuerza deriva del potencial que acabamos
+de calcular\begin{eqnarray*}
+\mathbf{F}_{z} & = & \mathbf{F}_{\mathbf{e}_{z}}+\mathbf{F}_{n _{z}}=-\partial _{z_{e}}\left( V^{tot}\right) +-\partial _{z_{n }}\left( V^{tot}\right) \\
+\mathbf{F}_{\mathbf{e}_{\mathbf{z}}}=-\partial _{z_{e}}\left( V^{tot}\right)  & = & -\partial _{z_{e}}\left( V^{c}_{n -e}\right) +\dfrac{e}{2m_{e}c}\partial _{z_{e}}(B(\mathbf{r}_{\mathbf{e}})L_{z})\\
+ & = & \mathbf{F}^{c}_{e_{z}}-\dfrac{e}{2m_{e}c}\partial _{z_{e}}(B(\mathbf{r}_{e})L_{z})\\
+\mathbf{F}_{n _{z}}=-\partial _{z_{n }}\left( V^{tot}\right)  & = & \mathbf{F}^{c}_{n _{z}}
+\end{eqnarray*}
+Teniendo en cuenta que las fuerzas internas debidas a \noun{coulomb}
+se anulan entre si, nos queda\emph{\[
+\mathbf{F}_{z}=-\dfrac{e}{2m_{e}c}\partial _{z_{e}}(B(\mathbf{r}_{\mathbf{e}})L_{z})\]
+y} si admitimos que el estado interno del átomo no cambia al atravesar
+el imán, \( L_{z} \) es una constante con lo cual llegamos a la expresión
+final simplicada para la fuerza.
+
+\[
+\mathbf{F}_{\mathbf{z}}=-\dfrac{\mu _{B}}{\hbar }\partial _{z}(B)L_{z}=-\mu _{B}\left( \partial _{z}B\right) m\]
+ 
+
+Un átomo que penetre en el imán y cuyo nivel esté caracterizado por \(
+n \), sufrirá una desviación vertical proporcional al valor del número
+cuántico \( m \). Puesto que en dicho nivel de energía $m$ puede tomar
+$2n-1$ valores distintos debería aparecer un número igual de impactos
+en la placa fotográfica colocada tras el imán.
+
+El experimento original se hizo en 1922 con átomos de plata, pero dado
+que su estructura es más compleja que la del átomo de hidrógeno, fue
+repetido por \noun{Phipps} y \noun{Taylor} con este gas. Empleando una
+temperatura del orden de \( 1000K \), garantizamos que la velocidad de
+los átomos es suficientemente alta y que la mayoría de ellos está en
+el estado fundamental (\( 1s \)). En efecto, la energía cinética media
+de los átomos a \( 1000K \) es del orden de \( kT\approx 0.1eV \) y
+por lo tanto la probabilidad de que un choque entre dos átomos uno de
+ellos sea excitado desde el nivel fundamental a otro nivel de energía
+superior es muy pequeña.
+
+\begin{figure}
+{\centering \includegraphics[width=3.5cm]{fig/impactos.eps} \par}
+\caption{Aspecto de los impactos.}
+\end{figure}
+
+ En estas condiciones, según la teoría que hemos descrito, el campo no
+debería producir ningún efecto sobre el haz. Sin embargo, el
+experimento muestra una división del haz en dos partes que se separan
+verticalmente y que dan lugar a dos impactos simétricamente dispuestos
+respecto del punto de desviación nula\footnote{en realidad no se
+encuentran puntos bien definidos, sino manchas.}. Aunque la teoría
+predice con caracter general un numero impar de impactos, en ocasiones
+se observa un número par. Estamos ante una nueva indicación de que la
+teoría cuántica que hemos ido introduciendo a lo largo de este curso
+es incorrecta, o al menos incompleta.
+
+\section{Introducción del espín}
+
+
+\subsection{Propiedades del espín}
+
+\begin{enumerate}
+\item Para poder explicar las contradicciones entre teoría y
+experimento que hemos citado a lo largo del capítulo introducimos la
+noción de espín como momento intrínseco\footnote{A pesar de que la
+noción de espín se descubió intentando asociar un tamaño no nulo al
+electrón y suponiéndo un movimiento de rotación alrededor de un eje de
+simetría, las contradicciones asociadas a un tamaño finito del
+electrón (si el electrón poseyera un radio razonablemente pequeño su
+energía electromagnética superaría a su energía en reposo; por el
+contrario si su energía electromagnética fuese razonablemente pequeña,
+su radio debería superar al del átomo), hicieron que sólo perviviera
+la idea de un momento intrínseco asociado a una partícula puntual e
+independiente del movimiento del electrón.  Por todo lo que se sabe
+hasta hoy el electrón no tiene estructura interna.}. El electrón,
+además de su momento orbital \( \mathbf{L}=\mathbf{r}\land \mathbf{p}
+\), tiene un momento angular de espín, \( \mathbf{S}=\left(
+S_{x},S_{y},S_{z}\right) \).
+\item Dado que es un momento angular, los operadores asociados a sus
+componentes deben respetar las siguientes reglas de conmutación
+\begin{eqnarray*}
+\left[ \mathsfbf{S}_{x},\mathsfbf{S}_{y}\right]  & = & i\hbar \mathsfbf{S}_{z}\\
+\left[ \mathsfbf{S}_{z},\mathsfbf{S}_{x}\right]  & = & i\hbar \mathsfbf{S}_{y}\\
+\left[ \mathsfbf{S}_{y},\mathsfbf{S}_{z}\right]  & = & i\hbar \mathsfbf{S}_{x}
+\end{eqnarray*}
+%
+Como vemos, no se pueden medir simultáneamente y con precisión
+arbitraria todas las componentes del espín. Sólo podremos medir
+simultáneamente una de las componentes, habitualmente \( S_{z} \), y
+el módulo al cuadrado \( S^{2}=S_{x}^{2}+S_{y}^{2}+S_{z}^{2} \), ya
+que
+
+\[\left[ \mathsfbf{S}_{z},\mathsfbf{S}^{2}\right] =0\]
+
+\item Ecuaciones de autovalores\begin{eqnarray*}
+\mathsfbf{S}_{z}\ket{sm_{s}} & = & \hbar m_{s}\ket{sm_{s}}\\
+\mathsfbf{S}^{2}\ket{sm_{s}} & = & \hbar ^{2}s\left( s+1\right) \ket{sm_{s}}
+\end{eqnarray*}
+Dado \( s \), \( m_{s}\in \left\{ -s,-s+1,\ldots ,s-1,s\right\} \).
+En la siguiente sección determinaremos a partir del experimento
+los valores que puede tomar el número cuántico $s$.
+
+\item El espín no depende de los grados de libertad espaciales; es independiente
+de la posición y del momento lineal de la partícula. Este hecho se expresa 
+imponiendo que
+
+\begin{eqnarray*}
+\left[ \mathsfbf{S}_{\alpha },\mathsfbf{r}_{\beta }\right]  & = & 0\\
+\left[ \mathsfbf{S}_{\alpha },\mathsfbf{p}_{\beta }\right]  & = & 0\\
+\left[ \mathsfbf{S}_{\alpha },\mathsfbf{L}_{\beta }\right]  & = & 0
+\end{eqnarray*}
+
+\item El momento angular total es 
+\[\mathbf{J}=\mathbf{L}+\mathbf{S}\]
+%
+y dado que \( \mathbf{S} \) y \( \mathbf{L} \) son momentos angulares,
+\( \mathbf{J} \) cumple las relaciones de conmutación propias
+de un momento angular (podeis comprobarlo como ejercicio).
+
+\item Además, se cumple que 
+
+\begin{eqnarray*}
+\left[ \mathsfbf{L}^2,\mathsfbf{J}^2 \right]  & = & 0\\
+\left[ \mathsfbf{L}^2,\mathsfbf{J}_z \right]  & = & 0\\
+\left[ \mathsfbf{S}^2,\mathsfbf{J}^2 \right]  & = & 0\\
+\left[ \mathsfbf{S}^2,\mathsfbf{J}_z \right]  & = & 0
+\end{eqnarray*}
+
+\item Utilizando los dos apartados anteriores podemos distinguir dos tipos de estados
+\begin{enumerate}
+\item Aquéllos en los que están bien definidos \( \left\{ \mathbf{L}^{2},L_{z},\mathbf{S}^{2},S_{z}\right\}  \)
+y que denotaremos como\[
+\left| lm_{l}sm_{s}\right\rangle \]
+ con \( m_{l}\in \left\{ -l,-l+1,\ldots ,l-1,l\right\}  \) y \( m_{s}\in \left\{ -s,-s+1,\ldots ,s-1,s\right\}  \).
+A esta descripción la llamaremos descripción con {}``buen \( \mathbf{L},\mathbf{S} \){}''.
+\item Aquellos en los que están bien definidos \( \left\{ \mathbf{L}^{2},\mathbf{S}^{2},\mathbf{J}^{2},J_{z}\right\}  \)\[
+\ket{lsjm}\]
+donde \( j\in \left\{ \left| l-s\right| ,\left| l-s\right| +1,\ldots ,l+s-1,l+s\right\}  \)
+y \( m\in \left\{ -j,-j+1,...,j\right\}  \). A esta descripción la
+llamaremos {}``con buen \( \mathbf{J} \){}''.
+\end{enumerate}
+La relación entre unos y otros viene dada por los coeficientes de CG
+
+\[
+\ket{lsjm}=\sum _{m_{l}=-l}^{l}\sum _{m_{s}=-s}^{s}\braket{lm_{l}sm_{s}}{jm}\left| lm_{l}sm_{s}\right\rangle \]
+ Los estados de ambas bases satisfacen las propiedades que ya vimos
+en el capítulo anterior, entre otras tenemos:
+
+\begin{enumerate}
+\item \( \mathsfbf{J}_{z}\left| lsjm\right\rangle =\hbar m\left| lsjm\right\rangle  \){\small .}
+La demostración de esta propiedad es bastante sencilla
+\item \( \mathsfbf{J}^{2}\ket{lsjm}=\hbar ^{2}j\left( j+1\right) \ket{lsjm} \)
+\item \( \mathsfbf{L}^{2}\ket{lsjm}=\hbar ^{2}l\left( l+1\right) \ket{lsjm},\mathsfbf{S}^{2}\ket{lsjm}=\hbar ^{2}s(s+1)\ket{lsjm} \)
+\item \( \braket{l's'j'm'}{lsjm}=\delta _{ll'}\delta _{ss'}\delta _{jj'}\delta _{mm} \) 
+\end{enumerate}
+\item \noun{Pauli} postula que la energía de interacción de una
+partícula cargada con el campo magnético es:
+
+\[H=\dfrac{1}{2m}\left(\mathbf{p}-\dfrac{q}{c}\mathbf{A}\right) ^{2}+g_{s}\dfrac{\mu
+_{B}}{\hbar }\mathbf{B}\cdot \mathbf{S}\] 
+%
+donde \( g_{s} \) es una
+nueva constante característica de cada partícula y se denomina
+\emph{factor giromagnético.} Si \( \mathbf{B}=B\mathbf{k} \) y
+seguimos los mismos pasos que en \ref{ssec interaccion con el campo
+magnetico} el hamiltoniano de \noun{Pauli} queda reducido a \[
+H=H_{0}+\dfrac{\mu _{B}}{\hbar }B\left( L_{z+}g_{s}S_{z}\right) \]
+
+\end{enumerate}
+
+\subsection{Determinación de \protect\( g_{s}\protect \) y \protect\( s\protect \) }
+
+En esta sección determinaremos el valor de la constante \( g_{s} \) y
+del número cuántico \( s \) asociados al electrón. Para ello
+estudiaremos el efecto del campo magnético sobre el estado fundamental
+de un átomo hidrogenoide.  Supondremos que además de los números
+cúanticos habituales \( n,l,m_l \) existen otros dos asociados al
+espín del electrón, es decir que el estado fundamental del átomo de
+hidrógeno es \( \left| n=1,l=0,m_{l}=0;s,m_{s}\right\rangle \).
+Apliquemos el hamiltoniano anterior sobre dicho estado
+
+\[\mathrm{H}\ket{100}\ket{sm_{s}}=\left( \mathrm{H}_{0}+\dfrac{\mu _{B}}{\hbar }
+B\left( \mathsfbf{L}_{z}+g_{s}\mathsfbf{S}_{z}\right) \right) \ket{100}\ket{sm_{s}}\]
+%
+Es conveniente recordar que \( \mathrm{H}_{0} \) , al igual que \( \mathsfbf{L}_{z} \)
+solo actúan sobre la parte orbital (puesto que solo dependen de \( \mathbf{r} \)
+y sus derivadas). Tenemos 
+
+\[\mathrm{H}_{0}\ket{100}=-Z^2E_I\ket{100}\]
+%
+y además
+%
+\[\dfrac{\mu _{B}}{\hbar }B\mathrm{L}_{z}\ket{100}=Bm_{l}\ket{100}=0\]
+%
+porque el estado que estamos considerando posee \( m_{l}=0 \). Sin
+embargo
+
+\begin{eqnarray*}
+g_{s}\dfrac{\mu _{B}}{\hbar }B\mathsfbf{S}_{z}\ket{100}\ket{sm_{s}} & = & 
+g_{s}\dfrac{\mu _{B}}{\hbar }B\ket{100}\mathsfbf{S}_{z}\ket{sm_{s}}\\
+ & = & g_{s}\dfrac{\mu _{B}}{\hbar }B\ket{100}\hbar m_{s}\ket{sm_{s}}\\
+ & = & g_{s}\mu _{B}Bm_{s}\ket{100}\ket{sm_{s}}
+\end{eqnarray*}
+%
+y, finalmente 
+
+\[\mathrm{H}\left| 100sm_{s}\right\rangle =\left( -Z^2E_I+0+g_{s}\mu _{B}Bm_{s}\right) \left| 100sm_{s}\right\rangle \]
+%
+con lo que llegamos al resultado de que la energía de un átomo en
+el estado fundamental \( \left| 100sm_{s}\right\rangle  \), y sumergido
+en un campo magnético homogéneo y estacionario es
+
+\[E_{100sm_{s}}=-Z^2E_I+g_{s}\mu _{B}Bm_{s}\]
+%
+con \( m_{s}\in \left\{ -s,-s+1,\ldots ,s\right\}  \). 
+
+\begin{figure}
+{\centering \includegraphics[width=5cm]{fig/desdoblamiento-con-B.eps} \par}
+\caption{\small \protect\( B=0\protect \) y \protect\( B\neq 0\protect \)
+desde el punto de vista del cazador de fotones}
+\end{figure}
+
+Experimentalmente se observa que al introducir el átomo en el campo
+externo, el nivel de energía fundamental se desdobla en dos subniveles
+con una diferencia de energía dada por \( \Delta E=2.003192\mu _{B}B
+\).  Para reproducir este resultado es necesario que \( m_{s} \)
+solamente pueda tomar dos valores distintos. Dado que \( m_{s}\in
+\left\{ -s,-s+1,\ldots ,s\right\} \), llegamos a la conclusión de que
+\( s=\dfrac{1}{2} \). Así los posibles valores de \( m_{s} \) son $
+-\dfrac{1}{2}$ y $\dfrac{1}{2}$.  Calculando las energías para los dos
+valores de \( m_{s} \), tenemos
+
+\begin{eqnarray*} 
+E & = & -Z^2E_I+\dfrac{g_{s}}{2}\mu_{B}B\\ 
+E' & = & -Z^2E_I-\dfrac{g_{s}}{2}\mu _{B}B
+\end{eqnarray*}
+%
+con lo cual \( \Delta E=E-E'=g_{s}\mu _{B}B \). Si comparamos esta
+expresión con el resultado experimental se obtiene evidentemente que
+\( g_{s}=2.003192 \). El cálculo del factor giromagnético puede
+repetirse utilizando estados excitados y aunque en estos casos el
+desdoblamiento energético da lugar a un espectro más complicado,
+también se obtiene el mismo valor de \( g_{s}\). En la práctica
+utilizaremos como valor del factor giromagnético, \( g_{s}=2\).
+
+Con todas estas consideraciones, la fuerza que actúa sobre un átomo
+hidrogenoide en su estado fundamental (\( l=0 \)) cuando penetra en
+el imán de un exSG, es de la forma
+
+\[ F_{z}=-g_{s}\mu_{B}\dpz{B}m_{s}\] 
+%
+Dependiendo de que \( m_{s}=\dfrac{1}{2} \) o \( m_{s}=-\dfrac{1}{2}
+\) se obtienen dos valores de la fuerza que son iguales en módulo pero
+con signos opuestos.  Estas dos fuerzas producen un desdoblamiente del
+haz de átomos en dos subhaces.  Si el experimental mide la distancia
+(\( D \)) entre los impactos de los dos subhaces en la placa
+fotográfica, puedrá determinar la constante giromagnética que fija la
+intensidad de la fuerza. Nuevamente los resultados son compatibles con
+\( g_{s}=2 \).
+
+Es conveniente cerrar esta sección recordando que los factores
+giromagnéticos son constantes características de cada partícula. Así
+mientras para el electrón es esencialmente \( g_{s}^e=2 \), el protón
+posee un factor giromagnético \( g_{s}^{\pi }=5.58 \) o y el neutrón
+\( g_{s}^{\nu }=-3.81 \).
+
+
+\subsection{La base \protect\( \left\{ E,\mathbf{L}^{2},\mathbf{S}^{2},\mathbf{J}^{2},J_{z}\right\} \protect \)}
+
+Construyamos ahora una base ortonormal cuyos elementos sean
+simultáneamente autoestados del hamiltoniano \( \mathrm{H}_{0} \) de
+\( \mathsfbf{J}^{2} \) y de \( \mathsfbf{J}_{z.} \).  La razón para
+introducir esta nueva base no es gratuita sino que, como veremos más
+adelante, resulta la más adecuada para calcular los efectos
+relativistas asociados a la interacción espín-órbita (sección
+\ref{ssec Int s-o}).  Tal base se puede obtener utilizando los
+antiguos estados propios \( \ket{nlm_{l},\frac{1}{2}m_{s}} \) y los
+coeficientes CG.
+
+\[\ket{nl\frac{1}{2}jm}=\sum _{m_{l}=-l}^{l}\sum _{m_{s}=-\frac{1}{2}}^{\frac{1}{2}}\braket{lm_{l}\frac{1}{2}m_{s}}{jm}\ket{nlm_{l},\frac{1}{2}m_{s}}\]
+Verifiquemos que estos estados son efectivamente estados propios de
+\( \mathrm{H}_{0} \)
+\begin{eqnarray*}
+\mathrm{H}_{0}\ket{nl\frac{1}{2}jm} & = & \mathrm{H}_{0}\sum _{m_{l}=-l}^{l}\sum _{m_{s}=
+-\frac{1}{2}}^{\frac{1}{2}}\braket{lm_{l}\frac{1}{2}m_{s}}{jm}\ket{nlm_{l},\frac{1}{2}m_{s}}\\
+ & = & \sum _{m_{l}=-l}^{l}\sum _{m_{s}=-\frac{1}{2}}^{\frac{1}{2}}\braket{lm_{l}\frac{1}{2}m_{s}}{jm}\mathrm{H}_{0}
+\ket{nlm_{l},\frac{1}{2}m_{s}}
+\end{eqnarray*}
+%
+y dado que 
+
+\[\mathrm{H}_{0}\ket{nlm_{l}}=-\dfrac{Z^2E_I}{n^{2}}\ket{nlm_{l}}\]
+Se cumple  
+\[
+\mathrm{H}_{0}\ket{nl\frac{1}{2}jm}=-\dfrac{Z^2E_I}{n^{2}}\ket{nl\frac{1}{2}jm}\]
+%
+con lo cual hemos construído una base de estados propios de
+$\mathrm{H}_o$ que tienen ``\( \mathbf{J} \)''.
+
+
+\subsubsection{Números cuánticos en ambas bases: algunos ejemplos}
+
+Vamos a introducir una pequeña variación sobre la notación
+espectroscópica; añadiremos un subíndice \( j \) a las etiquetas que
+representan los distintos valores de \( l \), \( \left\{ s,p,d,\ldots
+\right\} \), lo que hará que encontremos etiquetas de la forma \(
+p_{\frac{1}{2}} \) o \( p_{\frac{3}{2}} \), por ejemplo. En general,
+$j=l± \frac{1}{2}$ por lo que a cada etiqueta $x$ le corresponderán
+dos nuevas etiquetas $x_{l+1/2}$ y $x_{l-1/2}$. En la tabla
+\ref{tabla2} se muestran algunos ejemplos
+\begin{table}
+{\centering \begin{tabular}{l|p{5cm}p{1cm}}\hline 
+&              &                     \\[-5pt]
+\multicolumn{1}{c}{\( \ket{nlm_{l},sm_{s}} \) (deg)}&
+\multicolumn{1}{|c}{\( \ket{nlsjm} \) (deg) } & Notación \\
+\hline
+{\small \( \ket{100,\frac{1}{2},\left\{ \frac{1}{2},-\frac{1}{2}\right\} } \)
+(2)}&
+{\small \( \ket{10\frac{1}{2}\frac{1}{2},\left\{ \frac{1}{2},-\frac{1}{2}\right\} } \)
+(2)}&
+{\small \( 1s_{\frac{1}{2}} \)}\\
+&              &                     \\[-5pt]
+{\small \( \ket{200,\frac{1}{2},\left\{ \frac{1}{2},-\frac{1}{2}\right\} } \)
+(2)}&
+{\small \( \ket{20\frac{1}{2}\frac{1}{2},\left\{ \frac{1}{2},-\frac{1}{2}\right\} } \)
+(2)}&
+{\small \( 2s_{\frac{1}{2}} \)}\\
+&              &                     \\[-5pt]
+{\small \( \ket{21,\left\{ 1,0,-1\right\} ,\frac{1}{2},\left\{ \frac{1}{2},-\frac{1}{2}\right\} } \)(6)} &
+{\small \( \ket{21\frac{1}{2}\frac{1}{2},\left\{ \frac{1}{2},-\frac{1}{2}\right\} } \)
+(2)}&
+{\small \( 2p_{\frac{1}{2}} \)}\\
+&              &                     \\[-5pt]
+&
+{\small \( \ket{21\frac{1}{2}\frac{3}{2},\left\{ \frac{3}{2},\frac{1}{2},-\frac{1}{2},-\frac{3}{2}\right\} } \)
+(4)}&
+{\small \( 2p_{\frac{3}{2}} \)}\\
+&              &                     \\[-5pt]
+\hline
+\end{tabular}\par}
+
+
+\caption{{\small \label{tabla2}Comparación entre los estados habituales y
+los de buen \protect\( \mathbf{J}\protect \).}}
+\end{table}
+
+\begin{figure}
+{\centering \includegraphics[width=8cm]{fig/niveles-buen-J.eps} \par}
+\caption{Comparación entre los niveles de energía habituales y los
+niveles de energía con \protect\( \mathbf{J}\protect \) bien definido.}
+\end{figure}
+
+
+\section{Estructura fina}
+
+El modelo introducido en FCI para describir átomos hidrogenoides
+conllevaba una serie de suposiciones básicas, a saber:
+
+\begin{enumerate}
+\item el electrón y el núcleo son partículas puntuales y sin espín
+\item se mueven con velocidades despreciables frente a la de la luz \(
+c \), de manera que podemos emplear la ecS
+\item la interacción entre sus constituyentes viene dada por el
+potencial de \noun{Coulomb}.
+\end{enumerate}
+Sin embargo, el electrón es una partícula con espín \( s=1/2 \), y su
+velocidad relativa al núcleo es pequeña pero no despreciable frente a \( c
+\). Comprobemos hasta qué punto la suposición de velocidades pequeñas
+es adecuada para el estado fundamental\footnote{Para ello utilizaremos
+la aproximación no relativista. Si obtuviesemos una velocidad
+característica del electrón comparable a c, tendríamos una indicación
+de que la aproximación no relativista es incorrecta.}. Sabemos que la
+energía cinética del electrón en el estado fundamental vale
+
+\begin{eqnarray*} \left\langle
+\mathrm{T}\right\rangle _{n=1} & = & Z^2E_I\\ & = &
+\dfrac{1}{2}mc^{2}(Z\alpha )^{2}
+\end{eqnarray*}
+%
+Usando este resultado podemos estimar la velocidad como sigue
+
+\[
+\begin{array}{ccc}
+\left\langle \mathsfbf{p}^{2}\right\rangle  & = & m^{2}c^{2}(Z\alpha )^{2}\\
+\left\langle \left| \mathsfbf{p}\right| \right\rangle  & \approx  & \sqrt{\left\langle \mathsfbf{p}^{2}\right\rangle }=mc(Z\alpha )
+\end{array}\]
+y asi, 
+\[\left| \mathbf{v}\right| \approx Z\alpha c\approx \left( 10^{-2}Z\right) × c\]
+La velocidad es del orden de \( Z \) centésimos de la velocidad
+de la luz. Es decir, pequeña pero no despreciable, y lo que es más
+importante su valor crece con el número atómico. Por ello esperamos que 
+los efectos relativistas sean más importantes en átomos pesados. 
+
+Para hacer un estudio del hidrógeno en un marco puramente relativista
+tendríamos que utilizar la ecuación de \noun{Dirac}, que describe la
+evolución de partículas relativistas con espín \( \dfrac{1}{2} \). Se
+conocen de forma analítica sus soluciones para una partícula en el
+seno del potencial coulombiano. Sin embargo, nosotros no seguiremos
+esta vía, sino que añadiremos términos correctores al potencial de
+\noun{Coulomb} para tener en cuenta los efectos relativistas, siempre
+manteniendo la ecuación de \noun{Schrödinger} para la función de
+onda. Los efectos observados en los espectros atómicos relacionados
+con estos nuevos términos se denominan \emph{estructura fina} del
+átomo. Los pasos que tenemos que dar para resolver el problema son los
+siguientes:
+
+\begin{enumerate}
+\item Escribir la ecuación de \noun{Dirac} (ecD) para \( \pi -e \)
+en interacción culombiana.
+\item Desarrollar la ecD en serie de potencias hasta orden \[
+\left( \dfrac{p}{mc}\right) ^{2}\textrm{ }\acute{\textrm{o}}\textrm{ }\left( \dfrac{v}{c}\right) ^{2}\]
+para llegar a una ecS con un potencial modificado \begin{eqnarray*}
+\left( \mathrm{T}+\mathrm{V}^{c}+\mathrm{V}^{T}+\mathrm{V}^{s-o}+\mathrm{V}^{D}\right) \psi  & = & E\psi \\
+\left( \mathrm{H}_{0}+\mathrm{V}^{T}+\mathrm{V}^{s-o}+\mathrm{V}^{D}\right) \psi  & = & E\psi 
+\end{eqnarray*}
+donde \( \mathrm{H}_{0} \) es el hamiltoniano no relativista asociado
+al potencial de \noun{Coulomb} y cumple que \( \mathrm{H}_{0}\ket{\psi
+}=E_{n}^{0}\ket{\psi } \) con \( E_{n}^{0}=-\dfrac{Z^{2}E_{I}}{n^{2}}
+\). Los términos adicionales son la corrección a la energía cinética
+$V^T$, el potencial espín-órbita $V^{s-o}$ y el potencial de
+\noun{Darwin} $V^D$.
+\item Obtener valores aproximados de la energía y expresiones
+aproximadas de las funciones de onda mediante teoría de
+perturbaciones.
+\end{enumerate}
+En este curso nos limitaremos a enumerar los nuevos ``pedazos'' del
+potencial y a calcular, de forma aproximada, las modificaciones que
+inducen en las autoenergías del átomo. En la siguiente sección daremos
+las expresiones concretas de los nuevos potenciales, interpretaremos
+el significado físico de los mismos y calcularemos mediante teoría de
+perturbaciones a primer orden las correcciones a la energía.
+
+
+\subsection{Corrección relativista a la energía cinética: \protect\( V^{T}\protect \)}
+
+El origen del potencial corrector de la energía cinética,
+\[
+V^{T}=-\dfrac{1}{8}\dfrac{\mathbf{p}^{4}}{m_{e}^{3}c^{2}}\]
+es el siguiente. La energía cinética relativista es 
+\begin{eqnarray*}
+T & = & T_{e}+T_{n }\\
+ & = & \sqrt{\left( \mathbf{p}_{e}c\right) ^{2}+\left( m_{e}c^{2}\right) ^{2}}-m_{e}c^{2}+
+\sqrt{\left( \mathbf{p}_{n }c\right) ^{2}+\left( m_{n }c^{2}\right) ^{2}}-m_{n }c^{2}
+\end{eqnarray*}
+%
+y dado que la velocidad orbital del electrón es del orden de $Z\alpha
+c$, y la del núcleo mucho menor, se cumple que \( p^{2}\ll m^{2}c^{4}
+\), y por tanto podemos desarrollar las raíces en serie de potencias
+\[
+T=\dfrac{\mathbf{p}_{e}^{2}}{2m_{e}}+\dfrac{\mathbf{p}_{n }^{2}}{2m_{n }}-\dfrac{1}{8c^{2}}\left( \dfrac{\mathbf{p}_{e}^{4}}{m_{e}^{3}}+\dfrac{\mathbf{p}_{n }^{4}}{m_{n }^{3}}\right) +\ldots \]
+%
+En el sr del CM la suma de los momentos de las partículas es cero
+\[
+\mathbf{P}=\mathbf{p}_{\mathbf{e}}+\mathbf{p}_{n }=0\]
+%
+y el momento de la coordenada relativa es
+ \[
+\mathbf{p}=\dfrac{m_{n }}{M}\mathbf{p}_{\mathbf{e}}-\dfrac{m_{e}}{M}\mathbf{p}_{n }=\mathbf{p}_{\mathbf{e}}\]
+%
+En consecuencia
+\begin{eqnarray*}
+T & = & \dfrac{\mathbf{p}^{2}}{2}\left( \dfrac{1}{m_{e}}+\dfrac{1}{m_{n }}\right) -\dfrac{\mathbf{p}^{4}}{8c^{2}}\left( \left( \dfrac{1}{m_{e}}\right) ^{3}+\left( \dfrac{1}{m_{n }}\right) ^{3}\right) +\ldots \\
+ & \simeq  & \dfrac{\mathbf{p}^{2}}{2}\left( \dfrac{1}{m_{e}}+\dfrac{1}{m_{n }}\right) -\dfrac{\mathbf{p}^{4}}{8c^{2}}\dfrac{1}{m_{e}^{3}}\\
+ & = & \dfrac{\mathbf{p}^{2}}{2m}-\dfrac{1}{8}\dfrac{\mathbf{p}^{4}}{m_{e}^{3}c^{2}}
+\end{eqnarray*}
+donde sí hemos retenido la masa del protón en el primer sumando (lo
+que hace aparecer la masa reducida en el denominador), puesto que el
+error cometido en caso contrario supera a la propia corrección
+relativista de la energía cinética. En efecto, la razón entre energías
+de ionización utilizando uno u otro valor de la masa es
+
+\[
+\dfrac{E_{I}\left( m\right) }{E_{I}\left( m_{e}\right) }=\dfrac{\dfrac{1}{2}\dfrac{me^{4}}{\hbar^{2}}}
+{\dfrac{1}{2}\dfrac{m_{e}e^{4}}{\hbar ^{2}}}=\dfrac{m}{m_{e}}=
+\dfrac{1}{m_{e}}\dfrac{m_{e}m_{n }}{m_{e}+m_{n}}=\dfrac{1}{1+\dfrac{m_{e}}{m_{n }}}\]
+%
+y teniendo en cuenta que $m_n = O\left(Zm_{\pi}\right) = O\left(2.0\, 10^3 Zm_e\right)$, concluimos que
+
+\[\dfrac{E_{I}\left( m\right) }{E_{I}\left( m_{e}\right) } \simeq 1-\dfrac{m_{e}}{Zm_{\pi }}=1-5× 10^{-4}Z^{-1}\]
+%
+La  contribución del término relativista se puede estimar como
+
+
+\begin{eqnarray*}
+\left| \dfrac{\left\langle \mathrm{V}^{T}\right\rangle }{\left\langle \mathrm{H}_{0}\right\rangle }\right|  & = & \dfrac{1}{8}\dfrac{\left\langle \dfrac{\mathsfbf{p}^{4}}{m_{e}^{3}c^{2}}\right\rangle }{\dfrac{1}{2}mc^{2}(Z\alpha )^{2}}\\
+ &  & \\
+ & \approx & \left(Z\alpha\right)^{2}\left( \dfrac{m}{m_{e}}\right) ^{3}\\
+ &  & \\
+ & \simeq  & \left( Z\alpha \right) ^{2}
+\end{eqnarray*}
+%
+de modo que numéricamente
+
+\[
+\left| \dfrac{\left\langle \mathrm{V}^{T}\right\rangle }{\left\langle
+ \mathrm{H}_{0}\right\rangle }\right| \approx 0.5× 10^{-4}Z^{2}\]
+%
+Así, la utilización de la masa del electrón (en vez de la masa
+reducida) puede introducir un error en $E_I$ similar a la contribución
+de $V^T$. Es importante ver cómo cambia el orden de magnitud de las
+dos contribuciones según varía \( Z \). Para \( Z=1 \) el efecto
+asociado a que el núcleo no es infinitamente pesado es \( 10 \) veces
+superior a la corrección relativista de la energía cinética. Para \(
+Z=2 \) (He) ambos efectos ya son comparables, y a medida que \( Z \)
+crece los efectos relativistas se hacen más importantes mientras que
+el efecto de la masa reducida se diluye (por lo que en átomos pesados
+se puede utilizar directamente $m_e$). El cálculo en teoría de
+perturbaciones de las correcciones inducidas por \( V^{T} \)se deja
+para los problemas.
+
+
+\subsection{Interacción espín-órbita: \protect\( V^{s-o}\protect \)}
+\label{ssec Int s-o}
+
+El potencial espín-órbita viene dado por
+
+\begin{equation}
+\label{ec V^SO}
+V^{s-o}=\dfrac{1}{2}\dfrac{Ze^{2}}{m_{e}^{2}c^{2}}\dfrac{1}{r^{3}}\mathbf{L}\cdot \mathbf{S}
+\end{equation}
+%
+expresión que podemos reescribir como
+\[ V^{s-o}=2\dfrac{\mu _{B}}{\hbar }\left( \dfrac{1}{2}\dfrac{Ze}{m_{e}c}\dfrac{1}{r^{3}}\mathbf{L}\right) \cdot \mathbf{S}\]
+%
+la cual recuerda enormemente al segundo término en el hamiltoniano de
+\noun{Pauli}, es decir
+\[ 2\dfrac{\mu _{B}}{\hbar }\mathbf{B}\cdot \mathbf{S}\]
+%
+Para ello tendríamos que interpretar el factor entre paréntesis, que
+depende del momento orbital, como un campo magnético. Puesto que no
+hemos aplicado campo externo alguno tiene que ser un campo magnético
+interno, pero la pregunta es cúal es su origen. En el sr donde el
+protón está (esencialmente) en reposo admitimos que ambas partículas
+interaccionan solo mediante un campo eléctrostático \(\mathbf{E}\).
+Ahora bien, si pasamos al sr \emph{propio} del electrón, el campo
+electromagnético consta de una componente electrica \(
+\mathbf{E}^{'}\) y otra magnética \(\mathbf{B}^{'}\). La relación que
+existe entre el campo magnético que aparece en el sistema de
+referencia en que el electrón está en reposo y el campo eléctrico
+coulombiano en el sistema original viene dada por las transformaciones
+de \noun{Lorentz} para el campo electromagnético. Se cumple que
+
+
+\[\mathbf{B}'=-\dfrac{\mathbf{v}\land \mathbf{E}}{c}\]
+%
+y por tanto 
+
+\[\mathbf{B}'=-\dfrac{1}{m_{e}c}\mathbf{p}\land \mathbf{E}=
+\dfrac{1}{m_{e}c}\mathbf{p}\land \nabla \phi \]
+%
+donde \( \phi =Ze/r \) es el potencial coulombiano generado por el
+protón en reposo en la posición del electrón. Teniendo en cuenta que 
+
+\[\nabla \phi =\dfrac{1}{r}\left( \dfrac{d\phi }{dr}\right) \mathbf{r}=
+-\dfrac{Ze}{r^{3}}\mathbf{r}\]
+llegamos a la siguiente fórmula para el campo magnético \( \mathbf{B}^{'} \)\[
+\mathbf{B}^{'}=-\dfrac{Ze}{m_{e}c}\dfrac{1}{r^{3}}\mathbf{p}\land \mathbf{r}=
+\dfrac{Ze}{m_{e}c}\dfrac{1}{r^{3}}\mathbf{L}\]
+%
+La expresión que hemos obtenido para el campo magnético en el sr
+propio del electrón coincide, a falta de un factor \( 1/2 \) con la
+dada más arriba en la ecuación para \( V^{s-o} \). La razón de esta
+discrepancia se encuentra en que no hemos hecho las cosas
+correctamente al considerar el sr del electrón como un sistema
+inercial. En realidad, el sr propio del \( e^{-} \) está acelerado y
+por lo tanto las transformaciones de \noun{Lorentz} no son adecuadas.
+Cuando se repiten los cálculos teniendo en cuenta este hecho se
+obtiene la expresión correcta.
+
+\begin{figure}
+{\centering \includegraphics[width=5cm]{fig/sr-atomo.eps}  \par}
+\caption{a) Sistema de referencia propio del protón. b) Sistema de
+referencia propio del electrón, en el que éste aparece en reposo.}
+\end{figure}
+
+
+Así el término \( V^{s-o} \) da cuenta de la interacción entre el
+espín del electrón y el campo magnético interno del átomo, originado
+por el movimiento del protón o núcleo alrededor del electrón. Sabiendo
+que $r=a_0/Z$ y que \( a_{0}=\dfrac{\hbar ^{2}}{me^{2}} \) tenemos
+
+\begin{eqnarray*}
+\left| \left\langle \mathrm{V}^{s-o}\right\rangle \right| & \approx &
+ \dfrac{Ze^{2}}{2m_{e}^{2}c^{2}}\left( \dfrac{1}{\dfrac{a_{0}}{Z}}\right)
+ ^{3}\hbar ^{2}\\ & = & \dfrac{Z^{4}e^{8}}{2\hbar ^{4}c^{2}}\left(
+ \dfrac{m}{m_{e}}\right) ^{2}m\\ 
+& \simeq & \dfrac{Z^{4}}{2}\left( \dfrac{e^{2}}{\hbar c}\right) ^{4}mc^{2}\\ 
+& \simeq & \left( Z\alpha  \right) ^{2}\dfrac{\left( Z\alpha \right) ^{2}mc^{2}}{2}\\ 
+& = &  \left( Z\alpha \right) ^{2}Z^2E_I
+\end{eqnarray*}
+%
+donde durante el cálculo he aproximado la fracción \( m/m_{e}=1 \). Si consideramos
+que 
+\begin{equation}
+2\dfrac{\mu_B}{\hbar}S \approx 10^{-8}eV G^{-1} = 10^{-4}eV Teslas^{-1}
+\end{equation}
+%
+es fácil darse cuenta que el campo magnético interno del átomo crece como
+\( B_{int}\approx 10Z^4\, Teslas \). Es decir, los valores que puede
+alcanzar este campo magnético interno son extraordinariamente altos.
+%
+La razón entre la corrección asociada a este término y la energía
+original del átomo es
+
+\[\left| \dfrac{\left\langle \mathrm{V}^{s-o}\right\rangle }{\left\langle \mathrm{H}_{0}\right\rangle }\right|
+\approx \left( Z\alpha \right) ^{2}\approx 0.5× 10^{-4}Z^{2}\]
+
+Este resultado es simplemente una estimación relativamente grosera de
+la corrección asociada a la interacción espín--órbita. Ahora vamos a
+calcularla utilizando teoría de perturbaciones a primer orden
+
+\[ \Delta E^{s-o}=\Braket{\phi }{\mathrm{V}^{s-o}}{\phi }\] 
+%
+Las correcciones a la energía en primer orden de teoría de
+perturbaciones se obtienen como el valor esperado de la perturbación
+(\( \mathrm{V}^{s-o} \) en este caso) en los estados del hamiltoniano
+no perturbado, \( \mathrm{H}_{0} \).  Ahora bien, en este caso tenemos
+dos familias de estados propios asociados a éste último y es lícito
+preguntarse cuál de ellas es la más adecuada.  Recordemos que los
+estados propios del sistema deben venir etiquetados no sólo por la
+energía sino también por las constantes del movimiento, es decir, por
+los autovalores de aquellos operadores que conmutan con \( \mathrm{H}
+\). En nuestro caso el hamiltoniano puede escribirse de forma un poco
+esquemática como 
+
+\[ \mathrm{H}=\mathrm{H}_{0}+f(r)\mathsfbf{L}\cdot\mathsfbf{S}\] 
+%
+donde \( \mathrm{H}_{0} \) y \( f(r) \) conmutan con todas las
+componentes de \( \mathsfbf{L} \) y \( \mathsfbf{S} \), y por tanto con \(
+\left\{\mathsfbf{L}^{2},\mathrm{L}_{\mathsfbf{z}},\mathsfbf{S}^{2},
+\mathrm{S}_{\mathsfbf{z}}\right\} \).  No es muy difícil darse cuenta de
+que el producto \( \mathsfbf{L}\cdot \mathsfbf{S} \) no conmuta con
+ninguna componente de \( \mathsfbf{L} \) y \( \mathsfbf{S} \).  Por el
+contrario sí que conmuta con sus longitudes al cuadrado, con \(
+\mathsfbf{J}^{2} \) y con \( \mathsfbf{J}_{\mathsfbf{z}} \). En efecto,
+
+\begin{eqnarray*}
+\mathbf{J}^{2} & = & \mathbf{J}\cdot \mathbf{J}=\left( \mathbf{L}+\mathbf{S}\right) \left( \mathbf{L}+\mathbf{S}\right) \\
+ & = & \mathbf{L}^{2}+\mathbf{S}^{2}+\mathbf{L}\cdot \mathbf{S}+\mathbf{S}\cdot \mathbf{L}\\
+ & = & \mathbf{L}^{2}+\mathbf{S}^{2}+2\mathbf{L}\cdot \mathbf{S}
+\end{eqnarray*}
+con lo cual
+
+\[ \mathbf{L}\cdot \mathbf{S}=\dfrac{1}{2}\left( \mathbf{J}^{2}-\mathbf{L}^{2}-\mathbf{S}^{2}\right) \]
+%
+En definitiva, el nuevo hamiltoniano conmuta con 
+\( \left\{ \mathsfbf{L}^{2},\mathsfbf{S}^{2},\mathsfbf{J}^{2},\mathrm{J}_{\mathsfbf{z}}\right\}  \).
+%
+Por esta razón utilizaremos como funciones de orden cero aquellas que
+son autofunciones de estos operadores. Además la utilización de la
+base \( \ket{nl\dfrac{1}{2}jm} \) facilita el cálculo de los elementos
+\( \Braket{\phi }{\mathrm{V}^{s-o}}{\phi } \). 
+
+\[\mathsfbf{L}\cdot \mathsfbf{S}\ket{nl\dfrac{1}{2}jm}=\dfrac{1}{2}
+\left(\mathsfbf{J}^{2}-\mathsfbf{L}^{2}-\mathsfbf{S}^{2}\right) \ket{nl\dfrac{1}{2}jm}\]
+%
+y teniendo en cuenta que \( s=\frac{1}{2} \) 
+
+\[\mathsfbf{L}\cdot \mathsfbf{S}\ket{nl\dfrac{1}{2}jm}=
+\dfrac{\hbar ^{2}}{2}\left( j\left( j+1\right) -l\left( l+1\right) -\dfrac{3}{4}\right) \ket{nl\dfrac{1}{2}jm}\]
+%
+Consideremos por separado esta expresión según sean los posibles
+valores de \( l \) y de \( j \). Cuando \( l=0 \), \( j=\frac{1}{2} \)
+
+\begin{eqnarray*}
+\mathsfbf{L}\cdot \mathsfbf{S}\ket{nl\dfrac{1}{2}jm} & = & \dfrac{\hbar ^{2}}{2}\left( \dfrac{1}{2}
+\left( \dfrac{1}{2}+1\right) -0-\dfrac{3}{4}\right) \ket{nl\dfrac{1}{2}jm}\\
+ & = & 0
+\end{eqnarray*}
+%
+Análogamente cuando \( l\neq 0 \) distinguimos los dos casos \( j=l± \dfrac{1}{2} \).
+Respectivamente
+
+\begin{eqnarray*}
+\mathsfbf{L}\cdot \mathsfbf{S}\ket{nl\frac{1}{2}jm} & = & \hbar ^{2}\dfrac{l}{2}\ket{nl\frac{1}{2}jm},\, \, \, j=l+\dfrac{1}{2}\\
+\mathsfbf{L}\cdot \mathsfbf{S}\ket{nl\frac{1}{2}jm} & = & -\hbar ^{2}\dfrac{l+1}{2}\ket{nl\frac{1}{2}jm},\, \, \, j=l-\dfrac{1}{2}
+\end{eqnarray*}
+%
+Ahora ya estamos en disposición de calcular el elemento de matriz
+
+\[\Delta E^{s-o}=\Braket{nl\frac{1}{2}jm}{\mathrm{V}^{s-o}}{nl\frac{1}{2}jm}\]
+%
+que  puede tomar tres valores:
+
+\begin{equation}
+\Delta E^{s-o}= \left\{
+\begin{array}{cl}
+0, & l=0,\;j=\frac{1}{2}\\[5pt]
+\dfrac{Ze^{2}}{2m_{e}^{2}c^{2}}\dfrac{\hbar ^{2}l}{2}\Braket{nl\frac{1}{2}jm}{\dfrac{1}{\mathrm{r}^{3}}}{nl\frac{1}{2}jm}, &
+ j=l+\frac{1}{2}\\[5pt]
+ -\dfrac{Ze^{2}}{2m_{e}^{2}c^{2}}\hbar ^{2}\dfrac{l+1}{2}\Braket{nl\frac{1}{2}jm}{\dfrac{1}{\mathrm{r}^{3}}}{nl\frac{1}{2}jm}, &
+j=l-\frac{1}{2}
+\end{array}
+\right.
+\nonumber
+\end{equation}
+%
+según sean los valores de $l$ y $j$. El elemento de matriz del
+operador \( 1/\mathrm{r}^{3} \) puede calcularse a partir de las
+propiedades de los CG, las de ortonormalización de los estados y la
+forma de las funciones radiales.
+%
+\[
+\Braket{nl\frac{1}{2}jm}{\frac{1}{\mathrm{r}^{3}}}{nl\frac{1}{2}jm}=
+\left( \dfrac{Z}{a_{0}}\right) ^{3}\dfrac{1}{n^{3}l\left( l+1\right) \left( l+\dfrac{1}{2}\right) }\]
+%
+Utilizando estos resultados, las expresiones habituales para \( a_{0}
+\), \( E_{I} \) y \( \alpha \), y tomamos \( m=m_{e} \), tenemos
+
+\begin{equation}
+\Delta E^{s-o}= \left\{
+\begin{array}{cccl}
+  0, & & & l=0,\;j=\frac{1}{2}\\[5pt]
+\dfrac{1}{2}\left( Z\alpha \right) ^{2}\dfrac{E_{I}}{n^{3}\left( l+1\right) \left( l+\dfrac{1}{2}\right) } & = &
+ -\dfrac{\left( Z\alpha \right) ^{2}}{2}\dfrac{1}{n\left( l+1\right) \left( l+\dfrac{1}{2}\right) }E^{0}_{n},& j=l+\dfrac{1}{2}\\[5pt]
+-\dfrac{1}{2}\left( Z\alpha \right) ^{2}\dfrac{E_{I}}{n^{3}l\left( l+\dfrac{1}{2}\right) } & = & 
+\dfrac{1}{2}\left( Z\alpha \right) ^{2}\dfrac{1}{nl\left( l+\dfrac{1}{2}\right) }E^{0}_{n}, &j=l-\dfrac{1}{2}
+\end{array}
+\right.
+\nonumber
+\end{equation}
+
+
+\subsection{Término de \noun{Darwin}: \protect\( V^{D}\protect \)}
+
+Éste término del potencial se escribe como
+
+\[V^{D}=\dfrac{\hbar ^{2}}{8m_{e}^{2}c^{2}}\nabla ^{2}V^{c}\]
+y no tiene análogo clásico por lo que es muy difícil de interpretar
+\footnote{En la ecD la interacción entre el electrón y el campo
+culombiano del núcleo es local; el campo sólo interviene mediante su
+valor en el punto $\mathbf{r}$ donde se encuentra el electrón. Sin
+embargo, cuando desarrollamos la ecD en serie de potencias en $v/c$,
+parte del potencial que aparece en la ecuación para el espinor de dos
+componentes que caracteriza el estado del electrón, es no
+local.}. Utilizando que
+
+\begin{eqnarray*}
+\nabla ^{2}V^{c} & = & \nabla ^{2}\left( -\dfrac{Ze^{2}}{r}\right) \\
+ & = & -Ze^{2}\nabla ^{2}\left( \dfrac{1}{r}\right) \\
+ & = & -Ze^{2}\left( -4\pi \delta \left( \mathbf{r}\right) \right) \\
+ & = & 4\pi Ze^{2}\delta \left( \mathbf{r}\right) 
+\end{eqnarray*}
+%
+se tiene 
+
+\[ V^{D}=\dfrac{\pi Ze^{2}\hbar ^{2}}{2m_{e}^{2}c^{2}}\delta \left( \mathbf{r}\right) \]
+%
+Lo que nos interesa es el valor aproximado de \( \Delta E^{D} \), obtenido
+mediante teoría de perturbaciones estacionarias a primer orden. Para ello
+hay que calcular el siguiente elemento de matriz
+
+\begin{eqnarray*}
+\Delta E^{D} & = & \Braket{nl\frac{1}{2}jm}{\mathrm{V}^{D}}{nl\frac{1}{2}jm}\\
+ & = & \dfrac{\pi Ze^{2}\hbar ^{2}}{2m_{e}^{2}c^{2}}\Braket{nl\frac{1}{2}jm}{\delta \left( \mathrm{r}\right) }{nl\frac{1}{2}jm}\\
+ & = & \dfrac{\pi Ze^{2}\hbar ^{2}}{2m_{e}^{2}c^{2}}\left| \phi _{n,0,0}\left( 0\right) \right| ^{2}\delta _{l,0}
+\end{eqnarray*}
+%
+La parte espacial de la función de onda del electrón es de la forma
+
+\[\phi _{nlm}=R_{nl}\left( r\right) Y^{l}_{m}\left( \Omega \right)\]
+esto es, producto de una parte radial y una parte angular. La parte radial se comporta como
+
+\[R_{nl}\fld r^{l}\, \, r\fld 0,\]
+%
+y por tanto se anula siempre en \( r=0 \), excepto si \( l=0 \). Utilizando que
+\( \phi _{n,0,0}(0)=\dfrac{1}{\sqrt{\pi }}\left( \dfrac{Z}{na_{0}}\right) ^{3/2} \), obtenemos
+
+\[\Delta E^{D}=\dfrac{1}{2}\dfrac{Z^{4}e^{2}\hbar ^{2}}{m_{e}^{2}c^{2}a_{0}^{3}n^{3}}\delta _{l,0}=
+-\dfrac{\left( Z\alpha \right) ^{2}}{n}E^{0}_{n}\delta _{l,0}\]
+
+\subsection{Correción total a la energía}
+
+La corrección total a la energía es 
+
+\[\Delta E=\Delta E^{T}+\Delta E^{s-o}+\Delta E^{D}\]
+%
+que queda reducida a dos sumandos distintos según sea el valor de \( l \):
+
+\begin{enumerate}
+\item si \( l=0 \) (calcularemos explícitamente este caso en los problemas)\[
+\Delta E=\Delta E^{T}+\Delta E^{D}\]
+
+\item si \( l\neq 0 \)\[
+\Delta E=\Delta E^{T}+\Delta E^{s-o}\]
+
+\end{enumerate}
+Sin embargo, la corrección final a la energía no depende del valor de
+\( l \), a pesar de que las diferentes contribuciones dependían de
+dicho número cuántico. Un cálculo largo y sencillo conduce a
+
+\begin{eqnarray*}
+\Delta E_{nj} & = & -\dfrac{\left( Z\alpha \right) ^{2}}{n^{2}}\left( \dfrac{3}{4}-\dfrac{n}{j+\dfrac{1}{2}}\right) E^{0}_{n}\\
+ & = & \dfrac{mc^{2}\left( Z\alpha \right) ^{4}}{2n^{4}}\left( \dfrac{3}{4}-\dfrac{n}{j+\dfrac{1}{2}}\right) 
+\end{eqnarray*}
+%
+con lo que finalmente los niveles de un átomo hidrogenóide son 
+
+\[E_{nj}=E_{n}^{0}\left( 1-\dfrac{\left( Z\alpha \right)^{2}}{n^{2}}\left( \dfrac{3}{4}-\dfrac{n}{j+\dfrac{1}{2}}\right)\right)\]
+ 
+\begin{figure}
+\nofig
+\caption{\label{fig H con estructurafina}Espectro del H$_1$ teniendo
+en cuenta la estructura fina. v. Woodgate p. 64. También Alonso p.
+147}
+\end{figure}
+
+Algunos hechos importantes cocernientes a la estructura fina son:
+
+\begin{enumerate}
+\item Las energías sólo dependen de \( n \) y de \( j \). Por ejemplo,
+para \( n=2 \) se tiene que los niveles de energía de \(
+2s_{\frac{1}{2}} \) y \( 2p_{\frac{1}{2}} \) están degenerados
+(tienen distinto \( l \) pero el mismo \( j \)).
+
+\item Las correcciones decrecen rápidamente como \( \dfrac{1}{n^{3}} \).
+
+\item En átomos hidrogenoides \( V^{s-o},V^{D} \) y \( V^{T} \) son
+del mismo orden de magnitud. Sin embargo, en átomos multielectrónicos
+la interacción espín--órbita adquiere una mayor importancia relativa
+por lo que \( V^{T} \) y \( V^{D} \) se suelen despreciar.
+
+\item El aspecto del espectro predicho para el H$_1$ cuando se
+introducen estas correcciones es el que se muestra en la figura
+\ref{fig H con estructurafina}.  La separación de energía que producen
+estos términos es minúscula, pues es del orden de \( 0.1cm^{-1} \) y
+recordemos que \( 1eV\simeq 8066cm^{-1} \).  Éste es el espectro que
+predice esencialmente la ecD, aunque el espectro experimental muestra
+algunas discrepancias (ver figura \ref{fig espectro H con efecto
+Lamb}). Se observa una separación entre los niveles \(
+2s_{\frac{1}{2}} \)y \( 2p_{\frac{1}{2}} \) del orden de \(
+0.03cm^{-1} \), descubierta por \noun{Lamb} y \noun{Retherford} en
+1947. En \( n=3 \) hay una separación más pequeña entre \(
+3s_{\frac{1}{2}} \) y \( 3p_{\frac{1}{2}} \), y finalmente otra ya
+casi imperceptible entre \( 3p_{\frac{3}{2}} \) y \( 3d_{\frac{3}{2}}
+\).  El efecto \noun{Lamb} ---así se llama--- es explicado en el
+contexto de la teoría cuántica de campos, y decrece con \( n \) y con
+\( l \).
+
+\item Existen efectos aún más pequeños, términos adicionales que dan
+cuenta de la denominada \emph{estructura hiperfina}\footnote{las
+consecuencias derivadas de alguno de estos efectos se utilizan con
+éxito para determinar la concentración de Hidrógeno interestelar.}
+que en lugar de ser del orden de \( \left( Z\alpha \right)
+^{2}E^{0}_{n}\simeq 10^{-4}eV \) son del orden de \( \left( Z\alpha
+^{2}\right) \dfrac{m_{e}}{m_{n }}E_{n}^{0}\simeq 10^{-8}eV \).  Su
+origen se encuentra en el hecho de que el núcleo es extenso y tiene un
+momento angular intrínseco (un protón tiene un radio de unos \( 0.5fm
+\) y un espín \( s_{n }=\frac{1}{2} \).
+
+\end{enumerate}
+
+
+ 
+\begin{figure}
+\caption{\label{fig espectro H con efecto Lamb}Espectro del H$_1$ incluyendo
+estructura fina y efecto \noun{\small Lamb}. v. Woodgate
+p.70}
+\end{figure}
+
+
+\section{El átomo de Hidrógeno en un campo externo}
+
+En esta sección nos interesamos brevemente por la interacción del
+átomo de Hidrógeno (o con más generalidad de un átomo hidrogenoide)
+con un campo electromagnético externo.
+
+\subsection{El efecto \noun{Zeeman} anómalo}
+
+Consideremos nuevamente el problema de un átomo hidrogenoide sumergido
+en un campo magnético externo estacionario y homogéneo. Admitiremos que el
+hamiltoniano que caracteriza al átomo aislado es 
+
+\[ H_{0}=\dfrac{\mathbf{p}^{2}}{2m}-\dfrac{Ze^{2}}{r}+V^{T}+V^{s-o}+V^{D},\]
+%
+Utilizando teoría de perturbaciones a primer orden hemos calculado los
+autoestados y autoenergías de este hamiltoniano en la sección
+anterior.  Dado que en esta aproximación los autoestados no se
+modifican, seguiremos denotando a los autoestados de $H_0$ por \(
+\ket{nl\dfrac{1}{2}jm}\).  Al sumergir el átomo en un campo magnético
+según el eje \( z \), \( \mathbf{B}=B\mathbf{k} \), el hamiltoniano
+del sistema átomo + campo es
+
+\[ H=H_{0}+\dfrac{\mu _{B}}{\hbar }\left( \mathbf{L}+2\mathbf{S}\right) \cdot \mathbf{B}=H_{0}+
+\dfrac{\mu _{B}}{\hbar }\left( L_{z}+2S_{z}\right) B=H_{0}+W,\]
+%
+y la corrección a la energía en primer orden de teoría de
+perturbaciones es
+
+\begin{eqnarray*}
+\Delta E & = & \Braket{nljm}{\mathrm{W}}{nljm}\\
+ & = & \dfrac{\mu _{B}}{\hbar }B\Braket{nljm}{\mathsfbf{L}_{z}+2\mathsfbf{S}_{z}}{nljm}\\
+ & = & \dfrac{\mu _{B}}{\hbar }B\Braket{nljm}{\mathsfbf{J}_{z}+\mathsfbf{S}_{z}}{nljm}\\
+ & = & \mu _{B}Bm+\dfrac{\mu _{B}}{\hbar }B\Braket{nljm}{\mathsfbf{S}_{z}}{nljm}
+\end{eqnarray*}
+
+El cálculo del segundo elemento de matriz requiere la utilización de
+la fórmula de \noun{Landé} que relaciona los elementos de matriz de un
+operador vectorial (como \( \mathsfbf{S} \)\noun{)} y los del momento
+angular total \( \mathsfbf{J} \)\noun{.} Si \( \mathsfbf{V} \) es un
+operador vectorial sus elementos de matriz verifican
+
+\[
+\Braket{nljm}{\mathsfbf{V}_{\alpha }}{nljm}=\dfrac{\Braket{nljm}{\mathsfbf{V}\cdot \mathsfbf{J}}{nljm}}
+{\Braket{nljm}{\mathsfbf{J}^{2}}{nljm}}\Braket{nljm}{\mathsfbf{J}_{\alpha }}{nljm}\]
+%
+En el caso que nos ocupa tenemos 
+
+\[\Braket{nljm}{\mathsfbf{S}_{z}}{nljm}=\dfrac{\Braket{nljm}{\mathsfbf{S}\cdot \mathsfbf{J}}{nljm}}{\hbar j(j+1)}m\]
+%
+con lo cual el problema se ha transformado en el de calcular los elementos
+del operador \( \mathsfbf{S}\cdot \mathsfbf{J} \). Pero
+
+\[
+\mathbf{S}\cdot \mathbf{J}=\mathbf{S}\cdot (\mathbf{L}+\mathbf{S})=\mathbf{S}^{2}+\mathbf{L}\cdot \mathbf{S}=
+\mathbf{S}^{2}+\dfrac{1}{2}\left( \mathbf{J}^{2}-\mathbf{L}^{2}-\mathbf{S}^{2}\right) = 
+\dfrac{1}{2}\left( \mathbf{J}^{2}-\mathbf{L}^{2}+\mathbf{S}^{2}\right) \]
+%
+y por tanto
+
+\[\Braket{nljm}{\mathsfbf{S}_{z}}{nljm}=\dfrac{\hbar}{2}\dfrac{j(j+1)-l(l+1)+s(s+1)}{j(j+1)}m\]
+%
+o
+
+\[\Braket{nljm}{\mathsfbf{S}_{z}}{nljm}=
+\left\{\begin{array}{cc}
+\dfrac{\hbar m}{2l+1} & j=l+\dfrac{1}{2}\\
+-\dfrac{\hbar m}{2l+1} & j=l-\dfrac{1}{2}
+\end{array}\right. \]
+
+
+Así, las correcciones a la energía debidas a la inmersión en un
+campo magnético homogéneo y estacionario son 
+
+\[ \Delta E=\mu _{B}Bm\left( 1± \dfrac{1}{2l+1}\right) = g_{L}\left(l,j\right) \mu _{B}B ,\, \, \, j=l± 1/2\]
+%
+donde \( g_{L} \) se denomina factor de \noun{Landé}. Este resultado
+es muy interesante porque nos indica que la separación entre dos
+estados con números cuánticos \(n, j, m \) y \(n, j, m+1 \) no es
+simplemente \( \mu _{B}B \), sino
+
+\[\Delta E_{m,m+1} = E_{njm+1}-E_{njm}= g_{L}\left(l,j\right) \mu _{B}B\]
+
+A mode de ejemplo damos a continuación algunos de los valores 
+del factor de \noun{Landé} y las correspondientes separaciones
+en energía
+
+\[
+\begin{array}{llll}
+l=0 & j=\dfrac{1}{2} & g_{L}=2           & \Delta E_{m,m+1} = 2\mu _{B}B \\[5pt]
+l=1 & j=\dfrac{1}{2} & g_{L}=\dfrac{2}{3}& \Delta E_{m,m+1} = \dfrac{2}{3}\mu _{B}B\\[5pt]
+l=1 & j=\dfrac{3}{2} & g_{L}=\dfrac{4}{3}& \Delta E_{m,m+1} = \dfrac{4}{3}\mu _{B}B
+\end{array}\]
+
+\begin{figure}
+\nofig
+\caption{Niveles considerando el efecto} \noun{\small Zeeman} {\small anómalo.
+v. \cite[p. 286]{Gasiorowicz}.}
+\end{figure}
+
+\subsection{Reglas de selección en transiciones electromagnéticas.}
+
+Resulta posible inducir cambios en el estado del sistema aplicando un
+campo electromagnético externo dependiente del tiempo. Si en el
+instante \( t=0 \) en el que aplicamos el campo, el sistema se
+encuentra en uno de sus autoestados, que denotaré como \( \ket{i} \),
+la probabilidad por unidad de tiempo de que el sistema sufra una
+transición al autoestado \( \ket{f} \) es
+
+\[\dfrac{dP_{i->f}}{dt}=\dfrac{8\pi ^{2}e^{2}}{\hbar ^{2}}\left| \Braket{f}{\mathsfbf{r}}{i}\right| ^{2}\]
+%
+Para llegar a esta expresión hemos realizado algunas aproximaciones
+entre las cuales podemos citar dos:
+
+\begin{itemize}
+\item El campo aplicado es muy débil de manera que podemos aplicar teoría
+de perturbaciones (dependientes del tiempo o no estacionarias).
+\item Las longitudes de onda involucradas son muy grandes comparadas con
+el tamaño del sistema.
+\end{itemize}
+
+En ausencia de campo externo, el sistema también puede experimentar
+transiciones espontáneas en las que el estado inicial tiene mayor
+energía que el final. Este tipo de transiciones son debidas a las
+fluctuaciones del vacio del campo electromagnético y sólo pueden
+explicarse de forma natural dentro del marco de la teoría cuántica de
+campos. La probabilidad por unidad de tiempo asociada a este tipo de
+transiciones es
+
+\[ \dfrac{dP_{i->f}}{dt}=\dfrac{8\omega^{3}_{fi}e^{2}}{\hbar c^{3}}\left| \Braket{f}{\mathsfbf{r}}{i}\right|^{2}\] 
+%
+donde \( \omega _{fi}=\dfrac{E_{i}-E_{f}}{\hbar } \). En cualquiera de
+los dos casos la probabilidad de transición por unidad de tiempo es
+proporcional al módulo cuadrado del elemento de matriz del vector \(
+\mathsfbf{r} \). Si este elemento se anula la probabilidad de que
+ocurra la transición entre dichos estados es cero.
+
+El cálculo explícito de estos elementos de matriz entre los estados \(
+nljm \) del átomo de hidrógeno es bastante largo, pero se concluye que
+son necesariamente cero si no se cumplen simultáneamente las
+siguientes condiciones
+
+\[l_{f}\in \left\{ l_{i}± 1\right\},\, \, \, j_{f}\in \left\{ j_{i},j_{i}± 1\right\},
+\, \, \, m_{f}\in \left\{ m_{i},m_{i}± 1\right\} \]
+%
+Podemos convencernos de que las reglas que afectan a los números cuánticos
+\( j \) y \( m \) son verdad utilizando otra vez la fórmula de \noun{Landé}.
+
+\[\Braket{n_{f}l_{f}j_{f}m_{f}}{\mathsfbf{r}}{n_{i}l_{i}j_{i}m_{i}}\propto 
+\Braket{n_{f}l_{f}j_{f}m_{f}}{\mathsfbf{J}}{n_{i}l_{i}j_{i}m_{i}}\]
+%
+Ahora bien las componentes del operador \( \mathsfbf{J} \) solo pueden
+conectar estados que tengan el mismo número cúantico \( j \) ó \( j±
+1 \) y donde los números cuánticos \( m \) asociados a los estados
+inicial y final sólo pueden diferir a lo sumo en una unidad. No
+obstante, hay que tener en cuenta que el el factor de proporcionalidad
+también podría ser cero, y es precisamente esto lo que justifica la
+regla que afecta al número cuántico $l$.
+
+En definitiva, tenemos un conjunto de condiciones, llamadas
+\emph{reglas de selección.} que deben satisfacer los numeros cuánticos
+de los estados involucrados en la transición.  Cuando alguna de estas
+reglas no se cumple la probabilidad de ocurra la transición es
+cero. En otras palabras, estas reglas fijan las condiciones necesarias
+(pero no suficientes) para que la probabilidad de transición sea no
+nula.
+
+\section{Problemas y ejercicios}
+
+
+\subsection{Enunciados}
+
+\begin{enumerate}
+\item {[}A{]} Estudie el efecto que tiene la aplicación de un campo magnético
+estacionario y homogéneo \( \mathbf{B}=B\mathbf{k} \) sobre las líneas
+de emisión asociadas a la transición \( n=2\, \to \, n=1 \).
+Suponga que el electrón no posee espín. 
+\item {[}A{]} Considere los subniveles 4f y 3d del átomo de hidrógeno en
+presencia de un campo magnético estacionario y homogéneo. Demuestre
+que en la transición de una subcapa a otra tan sólo se observan tres
+líneas espectrales. Si el campo aplicado es de 0.5 T, ¿podremos resolverlas
+en un espectrómetro con resolución \( 10^{-11}m \)? 
+\item {[}A{]} Un haz bien colimado de átomos de hidrógeno emerge de un horno
+en cuyo interior los átomos se encuentran en equilibrio a la temperatura
+\textbf{\( T \)}. Ésta es lo suficientemente baja, de modo que todos
+se encuentran en el estado fundamental. El haz entra en un imán de
+longitud \( l \) que genera un campo \( \mathbf{B}=B\mathbf{k} \)
+con gradiente \( \partial _{z}B \) ortogonal al haz. Cuando sale
+del imán aún recorre una distancia horizontal \( l' \) hasta llegar
+a la placa fotográfica. Demuestre que la distancia entre marcas en
+la placa es \[
+D=\dfrac{\mu _{B}}{2kT}\partial _{z}B(l^{2}+2ll^{'})\]
+
+\item {[}A{]} Se hace pasar un haz de átomos de hidrógeno, provenientes
+de un horno que trabaja a una temperatura \( T=400K \), por un gran
+imán de longitud \( X=1m \). El gradiente característico del imán
+es de 10 Tesla/m. Calcule la deflexión transversal de un átomo del
+haz justo en el momento en que abandona el imán. 
+\item {[}A{]} Determine el gradiente de campo del imán de un \noun{Stern}-\noun{-Gerlach}
+de unos 50cm de longitud, que es capaz de producir 1mm de separación
+entre las dos componentes de una haz de hidrógeno proveniente de un
+horno a 960\ensuremath{º}C. 
+\item {[}A{]} Verifique la relaci\'{o}n \( \mathbf{A}=-\dfrac{1}{2}\mathbf{r}\land \mathbf{B} \)
+en el caso de un campo \( \mathbf{B}=(0,0,B) \). 
+\item {[}T{*}{]} Supongamos que una partícula de carga \( q \) y masa \( m \)
+se mueve en una órbita circular de radio \( r \). Su desplazamiento
+sobre la órbita es equivalente a una corriente eléctrica. Determine
+la relación que existe entre el momento magnético asociado a dicha
+corriente y el momento angular de la partícula. 
+\item {[}T{]} Demuestre que los estados \( \ket{lsjm} \) son autoestados
+de \( \mathsfbf{L}^{2} \) y \( \mathsfbf{S}^{2} \). 
+\item {[}T{*}{]} Demuestre que la corrección a la energía causada por \( V^{T} \)
+es, a primer orden de teoría de perturbaciones:\[
+\Delta E^{T}=-\dfrac{\left( Z\alpha \right) ^{2}}{n^{2}}E^{0}_{n}\left( \dfrac{3}{4}-\dfrac{n}{l+\dfrac{1}{2}}\right) \]
+
+\item {[}T{]} Verifique para \( l=0 \) que la suma de las tres correciones
+\( \Delta E^{T}+\Delta E^{s-o}+\Delta E^{D} \) da lugar a la expresión
+dada en la teoría. 
+\item Estudie el efecto de los términos de estructura fina en la transición
+\( n=2\, \to \, n=1 \). 
+\item {[}T{*}{]} Justifique que el hamiltoniano asociado a una partícula
+de masa \( m \) y carga \( q \), en interacción con un campo electromagnético
+externo, viene dado por \[
+H=\dfrac{1}{2m}\left( \mathbf{P}-\dfrac{q}{c}\mathbf{A}\right) ^{2}+q\phi \]
+
+\end{enumerate}
+
+\subsection{Algunas soluciones}
+
+
+\subsubsection{Problema 2}
+
+Al aplicar el campo la situación será aproximadamente la que se muestra
+en la figura \ref{fig:diag-3d-4f}
+
+\begin{figure}
+{\centering \includegraphics[width=6cm]{fig/3d-4f.eps} \par}
+\caption{\label{fig:diag-3d-4f}Diagrama de niveles de 3d y 4f sin considerar el espín del
+electrón.}
+\end{figure}
+
+
+Vemos en el diagrama cuales son las transiciones permitidas en virtud
+de las reglas de selección. Como mucho, de uno de los estados de \( n=4 \)
+puede haber 3 transiciones a estados del nivel \( n=3 \). En efecto,
+desde un estado puedo acceder\[
+\ket{43m}\fld \ket{32m+\Delta m}\]
+ con \( \Delta m=0,± 1 \). Como en presencia de un campo \( \mathbf{B} \)
+los estados anteriores poseen energías diferentes los fotones emitidos
+están caracterizados por diferentes longitudes de onda. Las energías
+de los fotones emitidos son\begin{eqnarray*}
+\Delta E_{m,\Delta m} & = & \left( -\dfrac{E_{I}}{4^{2}}+\mu _{B}Bm\right) -\left( -\dfrac{E_{I}}{3^{2}}+\mu _{B}B\left( m+\Delta m\right) \right) \\
+ & = & \dfrac{7}{144}E_{I}-\mu _{B}B\Delta m
+\end{eqnarray*}
+ Las energías de los fotones son una constante más un término que
+depende de la diferencia del número \( m \) entre el estado inicial
+y el final. Puesto que \( \Delta m \) puede tomar a lo sumo, 3 valores,
+observaremos, a lo sumo, 3 fotones diferentes.
+
+Como las energías dependen de \( \Delta m \) vamos a etiquetar las
+longitudes de onda de los fotones correspondientes como \( \lambda _{\Delta m} \).\[
+\lambda _{\Delta m}=\pi \dfrac{hc}{\Delta E_{\Delta m}}=2\pi \dfrac{\hbar c}{\dfrac{7}{144}E_{I}-\mu _{B}B\Delta m}\]
+el término en \( \Delta m \) en el denominador es muy pequeño así
+que está justificado hacer un desarrollo en serie:\[
+\lambda _{\Delta m}=\dfrac{2\pi \hbar }{\dfrac{7}{144}E_{I}}\dfrac{1}{1-\dfrac{\mu _{B}Bm}{\dfrac{7E_{I}}{144}}}\approx \dfrac{288}{7}\dfrac{\hbar c}{E_{I}}\left( 1+\dfrac{144\mu _{B}B\Delta m}{7E_{I}}\right) \]
+ Calculamos la diferencia entre las longitudes de onda de un fotón
+y otro en valor absoluto (porque no sabemos cuál es mayor). \begin{eqnarray*}
+\left| \lambda _{1}-\lambda _{0}\right|  & = & \dfrac{288\pi }{7}\dfrac{\hbar c}{E_{I}}\left( \dfrac{144\mu _{B}B}{7E_{I}}\right) \\
+ & = & 2\pi \hbar c\left( \dfrac{144}{7E_{I}}\right) ^{2}\mu _{B}B
+\end{eqnarray*}
+ haciendo números\[
+\left| \lambda _{1}-\lambda _{0}\right| =0.82A>0.1A\]
+ por lo tanto la diferencia entre las longitudes de onda de uno y
+otro es claramente detectable usando el espectrómetro a nuestra disposición.
+
+
+\subsubsection{Problema 3 }
+
+
+\begin{figure}
+{\centering \includegraphics[width=6cm]{fig/prob-3.eps} \par}
+\caption{Al eje a lo largo del cual se monta
+el experimento lo llamaremos \protect\( y\protect \). El vertical
+es \protect\( z\protect \) y hacia fuera del papel viene \protect\( x\protect \).}
+\end{figure}
+
+Velocidad de salida de los átomos
+
+\[
+\mathbf{v}=v_{y}\mathbf{j}\]
+ fuerza que actúa sobre ellos\[
+F_{z}=-g_{s}\mu _{B}\partial _{z}Bm_{s}\]
+ puede tomar dos valores, según sea \( m_{s}=± \dfrac{1}{2} \).
+A esa fuerza pueden corresponder las aceleraciones\[
+a_{z}=\dfrac{F_{z}}{M}=\dfrac{F_{z}}{m_{\pi }+m_{e}}=± \dfrac{\mu _{B}}{2M}\partial _{z}B\]
+ el desplazamiento respecto a la horizontal, a la salida del imán,
+es\[
+d_{± }=\dfrac{1}{2}a_{z}t^{2}=± \dfrac{\mu _{B}\partial _{z}B}{4M}t^{2}\]
+ el tiempo de vuelo dentro del imán es \( t=\dfrac{l}{v_{y}} \) \[
+d_{± }=± \dfrac{\mu _{B}\partial _{z}B}{4M}\dfrac{l^{2}}{v_{y}^{2}}\]
+ fuera del imán el movimiento será rectilíneo, con \( v_{z}=a_{z}t=\dfrac{\mu _{B}\partial _{z}B}{M}\dfrac{l}{v_{y}} \).
+La separación vertical del punto de salida del imán, en el punto de
+impacto, será\[
+d_{± }'=v_{z}t'=\dfrac{\mu _{B}\partial _{z}B}{M}\dfrac{ll'}{v_{y}^{2}}\]
+ finalmente, \( D_{+}=d_{+}+d_{+}' \) y \( D_{-}=d_{-}+d_{-}' \)
+y \( D=D_{+}-D_{-} \).
+
+Lo que distingue este problema de uno de primer curso es que
+
+\begin{enumerate}
+\item Hay que saber la expresión para la fuerza cuantizada
+\item Para estimar la \( v_{y} \) hay que conocer la distribución de velocidades
+de MB.
+
+\begin{figure}
+{\centering \includegraphics[width=3.5cm]{fig/n-vs-vy.eps} \par}
+\caption{\protect\( \da{n}{v_{y}}\left[ v_{y}\right] \protect \)}
+\end{figure}
+
+La velocidad más probable (\emph{mp}) dentro del horno es \[
+\left. v_{y}\right| _{mp}=\sqrt{\dfrac{2kT}{M}}\]
+ de ahí que\[
+D=\dfrac{\mu _{B}\partial _{z}B}{2kT}\left( l^{2}+2ll'\right) \]
+ corresponda a la mancha más intensa, aunque es verdad que estará
+rodeada de manchas que se deben a la dispersión de velocidades de
+los átomos en el horno. Sabemos que en el experimento de verdad hay
+una extensión según el eje \( x \) de la mancha, debido al pequeño
+\( \partial _{x}B \) que es inevitable.
+\end{enumerate}
+
+\subsubsection{Problema 4}
+
+Utilizamos la expresión obtenida en el problema anterior\begin{eqnarray*}
+\partial _{z}B & = & 10\dfrac{T}{m}\\
+kT & = & 3.452× 10^{-2}eV\\
+D & = & 0.84cm
+\end{eqnarray*}
+ El exSG cabe en una mesa de escritorio, puesto que con una longitud
+de \( 1m \) la separación entre impactos es ya apreciable.
+
+
+\subsubsection{Problema 5}
+
+\begin{eqnarray*}
+D & = & \dfrac{\mu _{B}}{2kT}\partial _{z}Bl^{2}\\
+\partial _{z}B & = & \dfrac{2kTD}{\mu _{B}l^{2}}\\
+ & \simeq  & 1463\dfrac{G}{cm}
+\end{eqnarray*}
+
+
+
+\subsubsection{Problema 7}
+
+Sea la situación que se muestra en la figura \ref{fig:espira-momento-mag}.
+
+\begin{figure}
+{\centering \includegraphics[width=3.5cm]{fig/espira.eps} \par}
+\caption{\label{fig:espira-momento-mag}La espira está en el plano \protect\( xy\protect \); el
+momento de la cantidad de movimiento y el momento magnético son colineales
+con el vector \protect\( \mathbf{k}\protect \).}
+\end{figure}
+
+El momento magnético asociado a la espira es \[
+\mathbf{M}=\dfrac{iS}{c}\mathbf{k}\]
+ donde \( i \) es la intensidad de corriente y \( S \) es el área
+de la superficie encerrada por la espira\begin{eqnarray*}
+i & = & q\dfrac{v}{2\pi r}\\
+S & = & \pi r^{2}
+\end{eqnarray*}
+ de donde \( \mathbf{M}=\dfrac{q}{2c}rv\mathbf{k} \). Por otro lado,
+\textbf{\( \mathbf{r}\land m\mathbf{v}=mrv\mathbf{k} \)} con lo
+que se llega al resultado que se buscaba:\[
+\mathbf{M}=\dfrac{q}{2mc}\mathbf{l}\]
+
+
+Este resultado es completamente general (es decir, vale en la Física
+Cuántica). El momento magnético de una partícula sin espín es directamente
+proporcional al momento de la cantidad de movimiento. En los casos
+simples en los que el momento lineal coincide con la cantidad de movimiento
+(ausencia de campo externo), el momento magnético es proporcional
+al momento angular. Si \[
+\mathbf{p}=m\mathbf{v}\]
+ entonces \( \mathbf{L}=\mathbf{r}\land m\mathbf{v}=\mathbf{r}\land \mathbf{p} \)
+y \( \mathbf{M}=\dfrac{q}{2mc}\mathbf{L} \). Pero si sumergimos la
+partícula en un campo externo, entonces \[
+\mathbf{p}=m\mathbf{v}+\dfrac{q}{c}\mathbf{A}\]
+ y en particular para un cem estacionario y razonablemente homogéneo\[
+\mathbf{p}=m\mathbf{v}-\dfrac{q}{2c}\mathbf{r}\land \mathbf{B}\]
+ y entonces \( \mathbf{L}=\mathbf{r}\land \mathbf{P}=\mathbf{r}\land m\mathbf{v}-\dfrac{q}{2c}\mathbf{r}\land \left( \mathbf{r}\land \mathbf{B}\right)  \).
+El momento de la cantidad de movimiento (a no confundir con el momento
+lineal) es \[
+\mathbf{r}\land m\mathbf{v}=\mathbf{L}+\dfrac{q}{2c}\mathbf{r}\land \left( \mathbf{r}\land \mathbf{B}\right) \]
+ de donde se extrae la siguiente expresión para el momento magnético
+en presencia de un cem externo (estacionario y homogéneo)\begin{eqnarray*}
+\mathbf{M} & = & \dfrac{q}{2mc}\mathbf{r}\land m\mathbf{v}\\
+ & = & \dfrac{q}{2mc}\left( \mathbf{L}+\dfrac{q}{2c}\mathbf{r}\land \left( \mathbf{r}\land \mathbf{B}\right) \right) \\
+ & = & \dfrac{q}{2mc}\mathbf{L}+\dfrac{q^{2}}{4mc^{2}}\mathbf{r}\land \left( \mathbf{r}\land \mathbf{B}\right) \\
+ & = & \dfrac{q}{2mc}\mathbf{L}+\dfrac{q^{2}}{4mc^{2}}\left( \left( \mathbf{r}\cdot \mathbf{B}\right) \mathbf{r}-r^{2}\mathbf{B}\right) 
+\end{eqnarray*}
+ el segundo término es muy pequeño, pero no conviene perder de vista
+la diferencia entre \( \mathbf{l} \) y \( \mathbf{L} \) y que \( \mathbf{M} \)
+es proporcional a la primera de estas cantidades.
+
+La energía de interacción entre el campo externo y el momento \textbf{\( \mathbf{M} \)}
+se escribe como la integral curvilínea\[
+W=-\int _{\ceron }^{\mathbf{B}}\mathbf{M}\left( \mathbf{B}'\right) \cdot \mathbf{dB}'=-\dfrac{q}{2mc}\mathbf{B}\cdot \mathbf{L}-\dfrac{q^{2}}{8mc^{2}}\left( \left( \mathbf{r}\cdot \mathbf{B}\right) ^{2}-\mathbf{r}^{2}\mathbf{B}^{2}\right) \]
+
+
+
+\subsubsection{Problema 9}
+
+Reexpresamos el potencial:\[
+V^{T}=-\dfrac{1}{8}\dfrac{\mathbf{P}^{4}}{m_{e}^{3}c^{2}}=-\dfrac{1}{2}\left( \dfrac{m}{m_{e}}\right) ^{2}\dfrac{1}{m_{e}c^{2}}\left( \dfrac{\mathbf{P}^{2}}{2m}\right) ^{2}\]
+El hamiltoniano no perturbado es \[
+H_{0}=T+V^{c}=\dfrac{\mathbf{P}^{2}}{2m}+V^{c}\: \fd \: \dfrac{\mathbf{P}^{2}}{2m}=\left( H_{0}-V^{c}\right) \: \fd \: \left( \dfrac{\mathbf{P}^{2}}{2m}\right) ^{2}=\left( H_{0}-V^{c}\right) ^{2}\]
+ entonces, y adoptando la notación \( \ket{nl\dfrac{1}{2}jm}=\ket{\xi } \)
+para aligerar las expresiones:\begin{eqnarray*}
+\Delta E^{T} & = & \Braket{\xi }{\mathrm{V}^{T}}{\xi }\\
+ & = & -\dfrac{1}{2}\left( \dfrac{m}{m_{e}}\right) ^{2}\dfrac{1}{m_{e}c^{2}}\Braket{\xi }{\left( \mathrm{H}_{0}-\mathrm{V}^{c}\right) ^{2}}{\xi }\\
+ & = & -\dfrac{1}{2}\left( \dfrac{m}{m_{e}}\right) ^{2}\dfrac{1}{m_{e}c^{2}}\Braket{\xi }{\mathrm{H}_{0}^{2}+\left( \mathrm{V}^{c}\right) ^{2}-\mathrm{H}_{0}\mathrm{V}^{c}-\mathrm{V}^{c}\mathrm{H}_{0}}{\xi }
+\end{eqnarray*}
+ como \( \Braket{\xi }{\mathrm{H}_{0}\mathrm{V}^{c}}{\xi }=E_{n}^{0}\Braket{\xi }{\mathrm{V}^{c}}{\xi } \)
+se tiene \begin{eqnarray*}
+\Delta E_{T} & = & -\dfrac{1}{2}\left( \dfrac{m}{m_{e}}\right) ^{2}\dfrac{1}{m_{e}c^{2}}\Braket{\xi }{\left( E_{n}^{0}\right) ^{2}+\left( \mathrm{V}^{c}\right) ^{2}-2\mathrm{V}^{c}E_{n}^{0}}{\xi }\\
+ & = & -\dfrac{1}{2}\left( \dfrac{m}{m_{e}}\right) ^{2}\dfrac{1}{m_{e}c^{2}}\left( \left( E_{n}^{0}\right) ^{2}-2E_{n}^{0}\Braket{\xi }{\mathrm{V}^{c}}{\xi }+\Braket{\xi }{\left( \mathrm{V}^{c}\right) ^{2}}{\xi }\right) 
+\end{eqnarray*}
+ que depende de dos elementos de matriz que calculamos a continuación:\begin{eqnarray*}
+\Braket{\xi }{\mathrm{V}^{c}}{\xi } & = & -Ze^{2}\Braket{\xi }{\dfrac{1}{\mathrm{r}}}{\xi }\\
+ & = & -Ze^{2}\int dr\, r^{2}R_{nl}^{2}\left( r\right) \dfrac{1}{r}\\
+ & = & -\dfrac{Z^{2}e^{2}}{n^{2}a_{0}}\\
+\Braket{\xi }{\left( \mathrm{V}^{c}\right) ^{2}}{\xi } & = & \left( Ze^{2}\right) ^{2}\int dr\, r^{2}R_{nl}^{2}\left( r\right) \dfrac{1}{r^{2}}\\
+ & = & \dfrac{\left( Ze\right) ^{4}}{n^{3}\left( l+\dfrac{1}{2}\right) a_{0}^{2}}
+\end{eqnarray*}
+ teniendo en cuenta que \[
+\dfrac{\left( Ze\right) ^{2}}{a_{0}}=\dfrac{\left( Ze\right) ^{2}}{\dfrac{\hbar ^{2}}{m_e^{2}}}=\left( Z\alpha \right) ^{2}m_ec^{2}=2E_{I}=-2n^{2}E_{n}^{0}\]
+ y como \( E_{n}^{0}=-\dfrac{Z^{2}E_{I}}{n^{2}}=-\dfrac{\left( Z\alpha \right) ^{2}m_wc^{2}}{2n} \)
+reescribimos los productos escalares:\begin{eqnarray*}
+\Braket{\xi }{\mathrm{V}^{c}}{\xi } & = & 2E_{n}^{0}\\
+\Braket{\xi }{\left( \mathrm{V}^{c}\right) ^{2}}{\xi } & = & \dfrac{4n\left( E_{n}^{0}\right) ^{2}}{\left( l+\dfrac{1}{2}\right) }
+\end{eqnarray*}
+ y, por fin\begin{eqnarray*}
+\Delta E^{T} & = & -\dfrac{1}{2}\left( \dfrac{m}{m_{e}}\right) ^{2}\dfrac{1}{m_{e}c^{2}}\left( \left( E_{n}^{0}\right) ^{2}-4\left( E_{n}^{0}\right) ^{2}+\dfrac{4n\left( E_{n}^{0}\right) ^{2}}{l+\dfrac{1}{2}}\right) \\
+ & = & -\dfrac{1}{2}\left( \dfrac{m}{m_{e}}\right) ^{2}\dfrac{1}{m_{e}c^{2}}E_{n}^{0}\left( -3+\dfrac{4n}{l+\dfrac{1}{2}}\right) E_{n}^{0}\\
+ & = & -\dfrac{1}{2}\left( \dfrac{m}{m_{e}}\right) ^{2}\dfrac{1}{m_{e}c^{2}}\left( -\dfrac{\left( Z\alpha \right) ^{2}m_e c^{2}}{2n^{2}}\right) \left( -3+\dfrac{4n}{l+\dfrac{1}{2}}\right) E_{n}^{0}\\
+ & = & -\left( \dfrac{m}{m_{e}}\right) ^{2}\dfrac{\left( Z\alpha \right) ^{2}}{n^{2}}\left( \dfrac{3}{4}-\dfrac{n}{l+\dfrac{1}{2}}\right) E_{n}^{0}
+\end{eqnarray*}
+ si consideramos \( \dfrac{m}{m_{e}}\simeq 1-5× 10^{-4}Z^{-1}\simeq 1 \)
+podemos dejarlo en \[
+\Delta E^{T}\simeq -\dfrac{\left( Z\alpha \right) ^{2}}{n^{2}}\left( \dfrac{3}{4}-\dfrac{n}{l+\dfrac{1}{2}}\right) E_{n}^{0}\]
+ estamos listos para afrontar el problema 10.
+\end{document}

@@ -1,0 +1,1397 @@
+\documentclass[spanish,a4paper,12pt]{book}
+\usepackage{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{eurosym}
+\input{lyxpackages.sty}
+\input{IFC2-packages.sty}
+\input{IFC2-macros.sty}
+\begin{document}
+\chapter{Preámbulo teórico}
+
+
+\section{Postulados }
+
+
+\subsubsection{Primer postulado}
+
+El estado de un sistema físico viene caracterizado por una fdo \( \psi
+(\mathbf{r}) \)\footnote{% Para simplificar el formalismo admitiremos
+que el sistema consta de una sola partícula }, definida en el espacio
+de posiciones, que es de cuadrado sumable.  Es decir, su norma al
+cuadrado
+
+\[
+{\cal N}^{2}(\psi )=\int d\mathbf{r}\left| \psi (\mathbf{r})\right|^{2},\]
+es una cantidad positiva y finita. La interpretación de Born de la
+mecánica cuántica asocia a la cantidad
+
+\[
+\dfrac{\left| \psi (\mathbf{r})\right|^2 }{{\cal N}^{2}(\psi )}\]
+la interpretación de una densidad de probabilidad de la partícula
+en la posición dada por \( \mathbf{r} \). Podríamos restringir el
+espacio de funciones de manera que la norma \( {\cal N}=1 \), o de
+forma que sólo contuviese funciones tipo \( C^{\alpha } \). Sin embargo
+desde el punto de vista del desarrollo del formalismo no suponen una
+gran simplificación de modo que leventaremos estas restricciones.
+
+Si introducimos el producto escalar de dos funciones \( \phi  \)
+y \( \psi  \) como
+
+\[
+\braket{\phi }{\psi }=\int d\mathbf{r}\phi ^{*}(\mathbf{r})\psi (\mathbf{r}),\]
+el espacio funcional anterior es un espacio de Hilbert \( {\cal F} \)
+que satisface las siguientes propiedades:
+
+\begin{enumerate}
+\item Todas las propiedades de un espacio lineal de dimensión finita con
+producto escalar en él.
+\item Completitud y Separabilidad.
+\end{enumerate}
+Definimos un conjunto ortonormal y completo de funciones \( \{\phi _{1},\phi _{2},\cdots \phi _{i},\cdots \} \)\footnote{%
+Considero que se trata de un conjunto numerable para poder simplifcar
+el formalismo
+} , que no pertenece necesariamente al espacio de Hilbert, y que verifica
+
+\begin{enumerate}
+\item \( \braket{\phi _{i}}{\phi _{j}}=\int d\mathbf{r}\phi
+_{i}^{*}(\mathbf{r})\phi _{j}(\mathbf{r})=\delta _{ij} \)
+\item \( \sum \phi _{i}(\mathbf{r})\phi _{i}^{*}(\mathbf{r}')=\sum
+\phi ^{*}_{i}(\mathbf{r})\phi _{i}(\mathbf{r}')=\delta
+(\mathbf{r}-\mathbf{r}') \)
+\end{enumerate}
+Cualquier fdo puede escribirse entonces como
+
+\[
+\psi (\mathbf{r})=\int d\mathbf{r}'\delta (\mathbf{r}-\mathbf{r}')\psi (\mathbf{r}')=\sum \phi _{i}(\mathbf{r})\int d\mathbf{r}'\phi _{i}^{*}(\mathbf{r}')\psi (\mathbf{r}')=\sum \braket{\phi _{i}}{\psi }\phi _{i}(\mathbf{r})=\sum c_{i}\phi _{i}(\mathbf{r}),\]
+y su norma es
+
+\[
+{\cal N}^{2}(\psi )=\int d\mathbf{r}\left| \sum c_{i}\phi _{i}\right|
+^{2}=\sum _i\sum_j c_{i}c_{j}\braket{\phi _{i}}{\phi _{j}}=\sum \left|
+c_{i}\right| ^{2}\] 
+Estos resultados tienen un gran valor ya que nos
+indican que cualquier fdo de nuestro espacio \( {\cal F} \) puede
+caracterizarse por un conjunto de valores (en este caso los
+coeficientes \( c_{i} \)) diferentes a los valores de la fdo en los
+distintos puntos \( \mathbf{r} \) del espacio. No es de extrañar que
+se piense en los elementos del espacio \( {\cal F} \) más como
+vectores abstractos que como funciones.  Por ello, en los sucesivo
+llamaremos a \( {\cal F} \) espacio de estados y representaré a sus
+elementos en numerosas ocasiones con la notación de \noun{Dirac} \(
+\ket{\psi } \).
+
+
+\subsubsection*{Segundo postulado}
+
+A toda magnitud física medible \( O \) le corresponde un cierto operador
+\( \mathrm{O} \) que actúa sobre los estados del espacio \( {\cal F} \).
+El operador asociado \( \mathrm{O} \) debe satisfacer dos propiedades
+esencialmente:
+
+\begin{enumerate}
+\item Es autoadjunto
+\item Sus vectores propios constituyen un sistema ortonormal completo que
+permite desarrollar cualquier fdo.
+\end{enumerate}
+Un operador que satisface estas propiedades se dice que es un \emph{observable.}
+
+
+\subsubsection{Tercer postulado}
+
+El resultado de cualquier operación de medida de la magnitud \( O \)
+es uno de los valores propios del operador \( \mathrm{O} \) correspondiente.
+
+
+\subsubsection{Cuarto postulado (principio de descomposición espectral)}
+
+Supongamos que \emph{}el observable \emph{\( \mathrm{O} \)} tiene
+un espectro discreto y no degenerado. Si denotamos los autovalores
+y autovectores de \( \mathrm{O} \) por \( O_{i} \) y \( \ket{v_{i}} \)
+respectivamente tenemos \begin{eqnarray*}
+\mathrm{O}\ket{v_{i}} & = & O_{i}\ket{v_{i}}\, \fli \, \textrm{discreto}\\
+O_{i} & \neq  & O_{j}\, \, i\neq j\, \fli \, \textrm{no degenerado}
+\end{eqnarray*}
+ Los autovectores \( \ket{v_{i}} \) constituyen una base ortonormal
+en la que podemos desarrollar cualquier estado\[
+\ket{\psi }=\sum _{i=1}^{\infty }c_{i}\ket{v_{i}}\]
+ Entonces, la probabilidad de que una medida de la magnitud \( O \)
+dé como resultado el autovalor \( O_{i} \) es 
+
+\[
+P\left( O_{i}\right) =\dfrac{\left| c_{i}\right| ^{2}}{\braket{\psi }{\psi }}=\dfrac{\left| \braket{v_{i}}{\psi }\right| ^{2}}{\braket{\psi }{\psi }}\]
+ Si la norma \( \braket{\psi }{\psi }=1 \) entonces la expresión
+toma la forma particular 
+
+\[
+P\left( O_{i}\right) =\left| c_{i}\right| ^{2}=\left| \braket{v_{i}}{\psi }\right| ^{2}\]
+
+
+Un hecho de extraordinaria importancia es que toda medida sobre un
+sistema tiene carácter destructivo y altera profundamente la estructura
+del estado que caracteriza al sistema. Se produce la llamada \emph{reducción
+del paquete de ondas}: independientemente de cuál fuera el estado
+previo, a partir del momento inmediatamente posterior a una medida
+con resultado \( O_{i} \) el estado del sistema es \( \ket{v_{i}} \),
+el autovector correspondiente al autovalor medido. 
+
+
+\begin{description}
+\item [Ejemplo]~
+\end{description}
+\( \ket{\mathbf{r}} \) caracteriza a una partícula que se encuentra
+en la posición dada por el vector \textbf{\( \mathbf{r} \)}, es decir
+son autoestados del operador posición
+
+\[
+\mathsfbf{r}\ket{\mathbf{r}}=\mathbf{r}\ket{\mathbf{r}},\]
+ y constituyen una base ortonormal generalizada, esto es
+
+\[
+\begin{array}{ccc}
+\braket{\mathbf{r}}{\mathbf{r}'} & = & \delta (\mathbf{r}-\mathbf{r}')\\
+\int d\mathbf{r}\ket{\mathbf{r}}\bra{\mathbf{r}} & = & 1
+\end{array}\]
+
+
+Si el sistema se encuentra en un estado normalizado \( \ket{\psi } \),
+la amplitud de probabilidad de encontrar la partícula en la posición
+\( \mathbf{r} \), es decir la fdo \( \psi (\mathbf{r}) \), vendrá
+dada por\[
+\psi (\mathbf{r})=\braket{\mathbf{r}}{\psi },\]
+ y podremos escribir 
+
+\[
+\ket{\psi }=\int d\mathbf{r}\ket{\mathbf{r}}\braket{\mathbf{r}}{\psi }=\int d\mathbf{r}\psi (\mathbf{r})\ket{\mathbf{r}}.\]
+ expresion en la que se observa que las componentes del vector de
+estado en la base \( \ket{\mathbf{r}} \) son precisamente los valores
+de la función de onda en los distintos puntos del espacio. 
+
+Analogamente \( \ket{\mathbf{p}} \) representa el estado de una partícula
+con momento bien definido, o formalmente 
+
+\[
+\mathsfbf{p}\ket{\mathbf{p}}=\mathbf{p}\ket{\mathbf{p}}.\]
+ Estos estados también constituyen una base ortonormal y por tanto
+tenemos que 
+
+\[
+\begin{array}{ccc}
+\braket{\mathbf{p}}{\mathbf{p}'} & = & \delta (\mathbf{p}-\mathbf{p}')\\
+\int d\mathbf{p}\ket{\mathbf{p}}\bra{\mathbf{p}} & = & 1
+\end{array}\]
+ La amplitud de probabilidad de encontrar la partícula con momento
+\( \mathbf{p} \) si el estado normalizado del sistema es \( \ket{\psi } \)
+viene dada por
+
+\[
+\phi (\mathbf{p})=\braket{\mathbf{p}}{\psi },\]
+es decir, la fdo en el espacio de momentos es la proyección del estado
+del sistema sobre el bra \( \bra{\mathbf{p}} \). También podemos
+escribir
+
+\[
+\ket{\psi }=\int d\mathbf{p}\ket{\mathbf{p}}\braket{\mathbf{p}}{\psi }=\int d\mathbf{p}\phi (\mathbf{p})\ket{\mathbf{p}}.\]
+
+\subsubsection{Quinto postulado (evolución en el tiempo)}
+
+La evolución del estado del sistema esta gobernada por la ecuación
+de \noun{Schrödinger}\[
+\mathrm{H}\ket{\psi (t)}=i\hbar \dpt{\ket{\psi (t)}}\]
+ Consideremos, a modo de ejemplo, dos casos particulares en los que
+la evolución temporal es muy distinta. 
+
+\begin{enumerate}
+\item Si el estado del sistema, \( \ket{\psi (t)} \), posee energía bien
+definida (es autoestado de \( \mathrm{H} \)) entonces \[
+\mathrm{H}\ket{\psi (t)}=E\ket{\psi (t)}\]
+ y la solución a la ecuación de \noun{Schrödinger} viene trivialmente
+dada por \[
+\ket{\psi (t)}=e^{-i\dfrac{E}{\hbar }t}\ket{\phi }\]
+ donde \( \ket{\phi } \) es independiente del tiempo y al igual que
+\( \ket{\psi (t)} \) satisface\[
+\mathrm{H}\ket{\phi }=E\ket{\phi }\]
+que es la denominada Ecuación de \noun{schrödinger} independiente
+del tiempo.
+
+
+Por tanto la evolución temporal de un estado de energía bien definida
+es trivial, ya que toma la forma de una fase. 
+
+\item Vamos a considerar ahora un caso distinto. Para simplificar, admitiremos
+que el espacio de estados tiene dimension 2 y que una base del mismo
+está formada por los estados independientes del tiempo \( \ket{\phi _{1}},\ket{\phi _{2}} \).
+Podría (solo \emph{podría}) tratarse de los autoestados de un cierto
+\( \mathrm{H} \). Entonces el vector \( \ket{\psi \left( t\right) } \)
+que define el estado del sistema siempre puede descomponerse como\[
+\ket{\psi \left( t\right) }=c_{1}\left( t\right) \ket{\phi _{1}}+c_{2}\left( t\right) \ket{\phi _{2}}\]
+donde \( \left| c_{1}\left( t\right) \right| ^{2}+\left| c_{2}\left( t\right) \right| ^{2}=1 \)
+si el estado está convenientemente normalizado. Supongamos que en
+el instante inicial \( t=0 \) \( \ket{\psi \left( 0\right) }=\ket{\phi _{1}} \);
+entonces para \( t=0 \) se tiene \( c_{1}\left( 0\right) =1 \) y
+\( c_{2}\left( 0\right) =0 \). A medida que \( t \) crece los valores
+de los coeficientes evolucionaran (más o menos) como se muestra en
+la figura \ref{fig coeficientes en fn del tiempo}.
+
+\begin{figure}
+{\centering \includegraphics[width=6cm]{fig/coeficientes-estados-1-y-2-src.eps} \par}
+\caption{{\small \label{fig coeficientes en fn del tiempo}Valor de los coeficientes
+en función del tiempo}}
+\end{figure}
+
+La probabilidad de que al efectuar una medida en un instante posterior
+\( t \) se encuentre en el el estado \( 2 \) viene dada por \[
+P_{1\to 2}(t)=\left| c_{2}\left( t\right) \right| ^{2}=\left| \braket{\phi _{2}}{\psi (t)}\right| ^{2}\]
+en donde simplemente hemos utilizado el postulado 4. 
+
+
+Ya que el sistema se \emph{encontraba} inicialmente en el estado \( 1 \),
+esta expresión también se conoce como \emph{probabilidad de transición
+del estado 1 al 2 en el intervalo de tiempo} \( t \). 
+
+\end{enumerate}
+Consideremos un número enorme \( N \) de sistemas que sólo poseen
+dos estados que denotaremos como \( 1 \) y \( 2 \), tales que \( E_{1}>E_{2} \).
+Supongamos que realizamos un experimento en el que en el instante
+\( t=0 \) de tiempo los \( N \) sistemas se hallan en el estado
+\( 1 \). A medida que el tiempo transcurre algunos sistemas transicionan
+al segundo estado. Llamemos \( n(t) \) al número de sistemas que
+se encuentran en \( 2 \) justo en el instante de tiempo \( t \).
+Normalmente los dispositivos experimentales que se diseñan para medir
+\( n(t) \) lo que hacen es detectar y contar las partículas que se
+emiten en las transiciones desde \( 1 \) a \( 2 \) (si \( E_{1}<E_{2} \)
+se absorberían partículas). Habitualmente por cada sistema que transiciona
+se emite una sóla partícula. Por ejemplo si se trata de transiciones
+de tipo electromagnético dichas partículas son fotones. Desde tiempos
+históricos se sabe que la función \( n(t) \) satisface
+
+\[
+n(t)=N \lambda t,\]
+ y por tanto
+
+\[
+P_{1\to 2}(t)=\dfrac{n(t)}{N}=\lambda t\,
+ \fld \, \dfrac{dP_{1\to 2}(t)}{dt}=\lambda ,\]
+es decir, que la probabilidad de transición por unidad de tiempo es
+una constante.
+
+
+\subsubsection{Reglas de correspondencia}
+
+Al actuar sobre la función de ondas en el espacio de posiciones asociamos
+a los vectores \( \mathbf{r},\: \mathbf{p} \), dados en coordenadas
+cartesianas, los siguientes operadores \begin{eqnarray*}
+\mathbf{r} & \Fld  & \mathsfbf{r}\\
+\mathbf{p} & \Fld  & \mathsfbf{p}=-i\hbar \nabla 
+\end{eqnarray*}
+ 
+
+Es conveniente recordar ahora la definición exacta de momento lineal.
+Si \( L \) es el lagrangiano del sistema, el \emph{momento} \emph{lineal}
+de la partícula viene dado por\[
+\mathbf{p}=\dfrac{\partial L}{\partial \mathbf{v}}\]
+ En sistemas sencillos donde el potencial no depende de las velocidades,
+momento lineal \( \mathbf{p} \) y \emph{cantidad} \emph{de} \emph{movimiento}
+\( m\mathbf{v} \) coinciden. Sin embargo pueden existir diferencias
+apreciables en sistemas más complejos
+
+\textbf{Ejemplo:} Cuando la partícula interacciona con un campo electromagnético
+externo caracterizado por sus potenciales escalar y vector, el momento
+lineal no coincide con \( m\mathbf{v} \), y viene dado por \[
+\mathbf{p}=m\mathbf{v}+\dfrac{q}{c}\mathbf{A}\]
+ya que el lagrangiano de este sistema es de la forma\[
+L=\dfrac{1}{2}mv^{2}+\dfrac{q}{c}\mathbf{v}\cdot \mathbf{A}-q\phi \]
+donde \( \phi  \) y \( \mathbf{A} \) son el potencial escalar y
+vector respectivamente. El hamiltoniano correspondiente a \( L \)
+es 
+
+\[
+H=\mathbf{p}\cdot \mathbf{v}-L=\dfrac{1}{2}mv^{2}+q\phi =\dfrac{\left( m\mathbf{v}\right) ^{2}}{2m}+q\phi ,\]
+y teniendo en cuenta que \( m\mathbf{v}=\mathbf{p}-\dfrac{q}{c}\mathbf{A} \)
+toma la forma\[
+H=\dfrac{1}{2m}\left( \mathbf{p}-\dfrac{q}{c}\mathbf{A}\right) ^{2}+q\phi \]
+
+
+Queremos insistir finalmente en que es el momento lineal el que lleva
+asociado el operador\( -i\hbar \nabla  \) y no la cantidad de movimiento,
+salvo que ambos coincidan. Por el contrario es la cantidad de movimiento
+\( m\mathbf{v}=\mathbf{p}-\dfrac{q}{c}\mathbf{A} \) la que aparece
+en el hamiltoniano\footnote{%
+Para el resto del curso conviene fijarse muy bien en el signo entre
+\textbf{\( \mathbf{p} \)} y \( \dfrac{q}{c}\mathbf{A} \), porque
+a veces se producen confusiones derivadas del hecho de que la carga
+del electrón es \( q=-e \). 
+}. Aplicando las reglas de correspondencia tenemos
+
+\[
+H\to \mathrm{H}=\dfrac{1}{2m}\left( \mathsfbf{p}-\dfrac{q}{c}\mathsfbf{A}\right) ^{2}+q\phi =\dfrac{1}{2m}\left( -i\hbar \nabla -\dfrac{q}{c}\mathbf{A}(\mathsfbf{r},t)\right) ^{2}+q\phi (\mathsfbf{r},t)\]
+
+
+
+\section{Teoría de perturbaciones estacionarias}
+
+En esta sección, así como en la siguiente, vamos a introducir métodos
+para obtener de forma aproximada los estados propios y autoenergías
+de la ecuación de \noun{Schrödinger} independiente del tiempo. Este
+tipo de desarrollos son muy importantes porque, en general, no resulta
+posible resolver de forma \emph{exacta} la ecuación de \noun{Schrödinger.} 
+
+Supongamos que el hamiltoniano del sistema puede escribirse como\[
+\mathrm{H}=\mathrm{H}_{0}+\lambda \mathrm{W}\]
+donde \( \mathrm{H}_{0} \) es el hamiltoniano no perturbado cuyas
+autoenergías y vectores propios son bien conocidos\[
+\mathrm{H}_{0}\ket{n}=\varepsilon _{n}\ket{n}\]
+Puesto que \( \mathrm{H}_{0} \) es un observable sus vectores propios
+forman un conjunto ortonormal completo, esto es
+
+\[
+\begin{array}{ccc}
+\braket{n}{m} & = & \delta _{nm}\\
+\sum \ket{n}\bra{n} & = & 1
+\end{array}\]
+El segundo término del hamiltoniano es lo que llamamos la perturbación
+(de \( \mathrm{H}_{0} \)). En un problema físico concreto el parámetro
+\( \lambda  \) toma un valor determinado en ciertas unidades. Ahora,
+para desarrollar el método, admitiremos que es un parámetro libre. 
+
+El problema que queremos resolver es la ecS independiente del tiempo
+correspondiente a \( \mathrm{H} \),
+
+\begin{equation}
+\label{ecS independiente del tiempo}
+\mathrm{H}\ket{\psi _{n}}=E_{n}\ket{\psi _{n}}
+\end{equation}
+
+
+Proponemos una solución en forma de serie de potencias del parámetro
+\( \lambda  \)\begin{equation}
+\label{Ta de Perturb desarrollo en serie del estado}
+\begin{array}{c}
+\ket{\psi _{n}}=\ket{\psi _{n}^{\left( 0\right) }}+\lambda \ket{\psi _{n}^{\left( 1\right) }}+\lambda ^{2}\ket{\psi ^{\left( 2\right) }_{n}}+\ldots \\
+E_{n}=E^{\left( 0\right) }_{n}+\lambda E^{\left( 1\right) }_{n}+\lambda ^{2}E^{\left( 2\right) }_{n}+\ldots
+\end{array}
+\end{equation}
+La idea que subyace en este método es que, en aquellos problemas concretos
+donde \( \lambda  \) toma un valor muy pequeño, podremos truncar el
+desarrollo y quedarnos sólo con sus primeros términos. Desde un punto
+de vista más amplio, aunque los primeros términos del desarrollo nos
+proporcionen valores razanables, no está garantizado que las series
+anteriores converjan.
+
+Introduciendo las soluciones \ref{Ta de Perturb desarrollo en serie del estado}
+en nuestra ecuación de partida tenemos\[
+\left( \mathrm{H}_{0}+\lambda \mathrm{W}\right) \left[ \ket{\psi ^{\left( 0\right) }_{n}}+\lambda \ket{\psi ^{\left( 1\right) }_{n}}+\lambda ^{2}\ket{\psi ^{\left( 2\right) }_{n}}+\ldots \right] =\left[ E^{\left( 0\right) }_{n}+\lambda E^{\left( 1\right) }_{n}+\lambda ^{2}E^{\left( 2\right) }_{n}+\ldots \right] \left[ \ket{\psi ^{\left( 0\right) }_{n}}+\ldots \right] ,\]
+e identificando en esta igualdad los términos de igual orden en \( \lambda  \)
+obtenemos\[
+\left( \mathrm{H}_{0}-E^{\left( 0\right) }_{n}\right) \ket{\psi ^{\left( k\right) }_{n}}=\left( E^{\left( 1\right) }_{n}-\mathrm{W}\right) \ket{\psi ^{\left( k-1\right) }_{n}}+E^{\left( 2\right) }_{n}\ket{\psi ^{\left( k-2\right) }_{n}}+E^{\left( 3\right) }_{n}\ket{\psi ^{\left( k-3\right) }_{n}}+\ldots \]
+
+
+Así, para los valores de \( k \) mas pequeños resultan las siguientes
+igualdades
+
+\begin{itemize}
+\item \( k=0 \)\begin{equation}
+\label{teoria de perturbaciones expresion para k=0}
+\left( \mathrm{H}_{0}-E^{\left( 0\right) }_{n}\right) \ket{\psi ^{\left( 0\right) }_{n}}=0
+\end{equation}
+
+\item \( k=1 \)\begin{equation}
+\label{teoria de perturbaciones expresion para k=1}
+\left( \mathrm{H}_{0}-E^{\left( 0\right) }_{n}\right) \ket{\psi ^{\left( 1\right) }_{n}}=\left( E^{\left( 1\right) }_{n}-\mathrm{W}\right) \ket{\psi ^{\left( 0\right) }_{n}}
+\end{equation}
+
+\item \( k=2 \)\begin{equation}
+\label{teoria de perturbaciones expresion para k=2}
+\left( \mathrm{H}_{0}-E^{\left( 0\right) }_{n}\right) \ket{\psi ^{\left( 2\right) }_{n}}=\left( E^{\left( 1\right) }_{n}-\mathrm{W}\right) \ket{\psi ^{\left( 1\right) }_{n}}+E^{\left( 2\right) }_{n}\ket{\psi ^{\left( 0\right) }_{n}}
+\end{equation}
+
+\end{itemize}
+Vamos a introducir ahora el c\emph{onvenio de la normalización intermedia\index{normalización intermedia}}
+que se utiliza bastante en teoría de perturbaciones y consiste en
+imponer
+
+\[
+\begin{array}{ccc}
+\braket{\psi ^{\left( 0\right) }_{n}}{\psi ^{\left( 0\right) }_{n}} & = & 1\\
+\braket{\psi ^{\left( 0\right) }_{n}}{\psi _{n}} & = & 1
+\end{array}\]
+A partir del desarrollo previo (véase \ref{Ta de Perturb desarrollo en serie del estado})
+tendremos\[
+\braket{\psi ^{\left( 0\right) }_{n}}{\psi _{n}}=1\Fld \braket{\psi ^{\left( 0\right) }_{n}}{\psi ^{\left( 0\right) }_{n}}+\lambda \braket{\psi ^{\left( 0\right) }_{n}}{\psi ^{m(1)}_{n}}+\lambda ^{2}\braket{\psi ^{\left( 0\right) }_{n}}{\psi ^{\left( 2\right) }_{n}}+\ldots =1,\]
+y como \( \braket{\psi ^{\left( 0\right) }_{n}}{\psi ^{\left( 0\right) }_{n}}=1 \),
+entonces \[
+\lambda \braket{\psi ^{\left( 0\right) }_{n}}{\psi ^{m(1)}_{n}}+\lambda ^{2}\braket{\psi ^{\left( 0\right) }_{n}}{\psi ^{\left( 2\right) }_{n}}+\ldots =0\]
+con \( \lambda  \) libre lo que nos deja el siguiente conjunto de
+igualdades\[
+\braket{\psi ^{\left( 0\right) }_{n}}{\psi ^{\left( k\right) }_{n}}=0\, \, \, \, k\geq 1\]
+Éstas nos indican que las sucesivas correcciones \( \ket{\psi ^{(k)}},k\geq 1 \),
+que vamos añadiendo a la fdo de orden cero \( \psi ^{(0)} \), son
+ortogonales (independientes) a la misma.
+
+
+\subsection{Teoría de perturbaciones: caso no degenerado}
+
+En este caso tenemos que \begin{eqnarray*}
+\varepsilon _{n} & \neq  & \varepsilon _{m}\, \, n\neq m
+\end{eqnarray*}
+y por lo tanto a cada autovalor le corresponde un único autovector.
+
+Volviendo a \ref{teoria de perturbaciones expresion para k=0} concluimos
+que \( E_{n}^{\left( 0\right) } \) es autovalor de \( \mathrm{H}_{0} \)
+y que \( \psi _{n}^{\left( 0\right) } \) es el autoestado correspondiente.
+Por lo tanto \begin{eqnarray*}
+E_{n}^{\left( 0\right) } & = & \varepsilon _{n}\\
+\ket{\psi _{n}^{\left( 0\right) }} & = & \ket{n}
+\end{eqnarray*}
+Si el espectro fuese degenerado \( \ket{\psi _{n}^{\left( 0\right) }} \)
+sería en general una combinación lineal de todos los autoestados \( \ket{n} \)
+asociados al mismo autovalor. 
+
+Dado que los autoestados de \( \mathrm{H}_{0} \) forman una base
+del espacio de estados siempre podemos expresar \( \ket{\psi _{n}^{\left( 1\right) }} \)
+como\[
+\ket{\psi _{n}^{\left( 1\right) }}=\sum _{m}a_{m}\ket{m},\]
+y usando la normalización intermedia\[
+\braket{n}{\psi _{n}^{\left( 1\right) }}=\braket{\psi ^{(0)}_{n}}{\psi _{n}^{\left( 1\right) }}=0\Fld a_{n}=0\]
+con lo que \[
+\ket{\psi _{n}^{\left( 1\right) }}=\sum _{m\neq n}a_{m}\ket{m}\]
+Vamos ahora a proyectar \ref{teoria de perturbaciones expresion para k=1}
+sobre un bra \( \bra{k} \) lo que da\[
+\begin{array}{ccc}
+\sum _{m\neq n}\Braket{k}{\left( \mathrm{H}_{0}-E_{n}^{\left( 0\right) }\right) }{m}a_{m} & = & \Braket{k}{E_{n}^{\left( 1\right) }-\mathrm{W}}{n}
+\end{array}=E_{n}^{\left( 1\right) }\delta _{kn}-\Braket{k}{\mathrm{W}}{n},\]
+y en consecuencia 
+
+\[
+\left( \varepsilon _{k}-\varepsilon _{n}\right) a_{k}=E_{n}^{\left( 1\right) }\delta _{kn}-\Braket{k}{\mathrm{W}}{n}\, \, \forall k,n\]
+Es conveniente distinguir los dos casos siguientes
+
+\begin{itemize}
+\item \( k=n \)\[
+\begin{array}{ccc}
+0= & E_{n}^{\left( 1\right) }-\Braket{n}{\mathrm{W}}{n}\Fld  & E_{n}^{\left( 1\right) }=\Braket{n}{\mathrm{W}}{n}
+\end{array}\]
+
+\item \( k\neq n \)\begin{eqnarray*}
+\left( \varepsilon _{k}-\varepsilon _{n}\right) a_{k} & = & -\Braket{k}{\mathrm{W}}{n}\Fld \\
+\Fld a_{k}=-\dfrac{\Braket{k}{\mathrm{W}}{n}}{\varepsilon _{k}-\varepsilon _{n}} & = & \dfrac{\Braket{k}{\mathrm{W}}{n}}{\varepsilon _{n}-\varepsilon _{k}}\Fld \\
+\Fld \ket{\psi _{n}^{\left( 1\right) }}=\sum _{k\neq n}a_{k}\ket{k} & = & \sum _{k\neq n}\dfrac{\Braket{k}{\mathrm{W}}{n}}{\varepsilon _{n}-\varepsilon _{k}}\ket{k}
+\end{eqnarray*}
+
+\end{itemize}
+Por lo tanto el caso \( k=n \) nos proporciona la corrección de orden
+\( 1 \) (en \( \lambda  \)) a la energía y el segundo caso nos da
+la expresión de la fdo hasta primer orden \[
+\ket{\psi _{n}}=\ket{n}+\lambda \sum _{k\neq n}\dfrac{\Braket{k}{\mathrm{W}}{n}}{\varepsilon _{n}-\varepsilon _{k}}\ket{k}+\cdots \]
+Nuestro siguiente paso consistirá en obtener la corrección de orden
+\( 2 \) a la energía del estado. Para ello consideramos la ecuación
+\ref{teoria de perturbaciones expresion para k=2} y la proyectamos
+sobre \( \bra{n} \)\[
+\Braket{n}{\mathrm{H}_{0}-E_{n}^{\left( 0\right) }}{\psi _{n}^{\left( 2\right) }}=
+E_{n}^{\left( 1\right) }\braket{n}{\psi _{n}^{\left( 1\right) }}-
+\Braket{n}{\mathrm{W}}{\psi ^{\left( 1\right) }}+E_{n}^{\left( 2\right) }\braket{n}{\psi _{n}^{\left( 0\right) }},\]
+y como
+
+\[
+\begin{array}{ccc}
+\Braket{n}{\mathrm{H}_{0}-E_{n}^{\left( 0\right) }}{\psi _{n}^{\left( 2\right) }}= & \left( \varepsilon _{n}-\mathrm{E}_{n}^{\left( 0\right) }\right) \braket{n}{\psi _{n}^{\left( 2\right) }} & =0\\
+E_{n}^{\left( 1\right) }\braket{n}{\psi _{n}^{\left( 1\right) }} & = & 0
+\end{array}\]
+ podemos despejar trivialmente
+\begin{eqnarray*}
+E_{n}^{\left( 2\right) } & = & \Braket{n}{\mathrm{W}}{\psi _{n}^{\left( 1\right) }}=\\
+=\sum _{k\neq n}\dfrac{\Braket{n}{\mathrm{W}}{k}
+\Braket{k}{\mathrm{W}}{n}}{\varepsilon _{n}-\varepsilon _{k}} & = & 
+\sum _{k\neq n}\dfrac{\left| \Braket{k}{\mathrm{W}}{n}\right| ^{2}}
+{\varepsilon _{n}-\varepsilon _{k}}
+\end{eqnarray*}
+
+
+En resumen, las expresiones aproximadas que hemos obtenido para la
+energía y la fdo son \begin{eqnarray*}
+E_{n} & = & \varepsilon _{n}+\Braket{n}{\lambda \mathrm{W}}{n}+\sum _{k\neq n}\dfrac{\left| \Braket{k}{\lambda \mathrm{W}}{n}\right| ^{2}}{\varepsilon _{n}-\varepsilon _{k}}+\ldots \\
+\ket{\psi _{n}} & = & \ket{n}+\sum _{k\neq n}\dfrac{\Braket{k}{\lambda W}{n}}{\varepsilon _{n}-\varepsilon _{k}}\ket{k}+\ldots 
+\end{eqnarray*}
+Si las correcciones que vamos obteniendo son pequeñas puede tener
+sentido retener sólo los primeros términos. Para ello será necesario
+que\begin{eqnarray*}
+\left| \Braket{n}{\lambda \mathrm{W}}{n}\right|  & \ll  & \varepsilon _{n}\\
+\left| \Braket{k}{\lambda \mathrm{W}}{n}\right|  & \ll  & \left| \varepsilon _{n}-\varepsilon _{k}\right| 
+\end{eqnarray*}
+
+
+
+\subsection{Teoría de perturbaciones: caso degenerado}
+
+Tal y como puede observarse, las ecuaciones anteriores no son válidas
+cuando \( \varepsilon _{n}=\varepsilon _{m} \), \( n\neq m \). Incluso
+cuando \( \varepsilon _{n}\simeq \varepsilon _{m} \) el desarrollo
+puede tener problemas de convergencia. Sin embargo, el sistema de
+ecuaciones \ref{teoria de perturbaciones expresion para k=0}, \ref{teoria de perturbaciones expresion para k=1}
+y \ref{teoria de perturbaciones expresion para k=2} sigue siendo
+válido y, en particular, la propia asignación \( E_{n}^{\left( 0\right) }=\varepsilon _{n} \).
+
+Lo que ya no es necesariamente válido es la identificación de los
+autoestados debido a que ahora \( n \) no identifica un solo autovector
+sino un conjunto de ellos. Por eso cambiaremos la notación como sigue\[
+\mathrm{H_0}\ket{n,r}=\varepsilon _{n}\ket{n.r}\, \, \, r=1,2,\ldots d\]
+donde el nuevo índice \( r \) diferencia entre estados con la misma
+energía . Las soluciones perturbativas expresadas como un desarrollo
+en serie son ahora
+
+\begin{equation}
+\label{Teoria de perturbaciones desarrollo 2}
+\begin{array}{c}
+\ket{\psi _{n,r}}=\ket{\psi _{n,r}^{\left( 0\right) }}+\lambda \ket{\psi _{n,r}^{\left( 1\right) }}+\lambda ^{2}\ket{\psi ^{\left( 2\right) }_{n,r}}+\ldots \\
+E_{n,r}=E^{\left( 0\right) }_{n,r}+\lambda E^{\left( 1\right) }_{n,r}+\lambda ^{2}E^{\left( 2\right) }_{n,r}+\cdots 
+\end{array}
+\end{equation}
+ya que cada nivel \( n \) puede desdoblarse en \( d \) estados al
+introducir la perturbación. 
+
+La forma más general de los \( d \) autoestados de orden cero correspondientes
+al nivel \( n \) es\[
+\ket{\psi ^{\left( 0\right) }_{n,r}}=\sum _{s'=1}^{d}\alpha _{rs'}\ket{n.s'}\, \, \, r=1,2,\ldots ,d\]
+Los coeficientes \( \alpha _{rs'} \) no pueden ser cualesquiera sino
+que vienen fijados por la perturbación. En efecto, proyectando \ref{teoria de perturbaciones expresion para k=1}
+sobre los estados \( \bra{n,s},\, \, s=1,2,\ldots ,d \) 
+
+\[
+\Braket{n,s}{\mathrm{H}_{0}-E_{n}^{\left( 0\right) }}{\psi _{n,r}^{\left(
+ 1\right) }}=\braket{n,s}{\left( E_{n,r}^{\left( 1\right) }-\mathrm{W}\right)
+ |\psi ^{(0)}_{n,r}}\]
+
+
+\[
+0=\sum _{s'}\Braket{n,s}{E_{n,r}^{\left( 1\right) }-\mathrm{W}}{n,s'}\alpha _{rs'}\]
+ que queda finalmente reducido a \[
+\sum _{s'=1}^{d}\Braket{n,s}{W}{n,s'}\alpha _{rs}=E_{n,r}^{\left( 1\right) }\alpha _{rs,}\, r,s\in \{1,...,d\}\]
+\begin{eqnarray*}
+ & d & \\
+ & \left( \overbrace{\begin{array}{cccc}
+\Braket{n,1}{W}{n,1} & \Braket{n,1}{W}{n,2} &  & \\
+\Braket{n,2}{W}{n,1} & \Braket{n,2}{W}{n,2} &  & \\
+ &  &  & \\
+ &  &  & \Braket{n,d}{W}{n,d}
+\end{array}}\right)  & \left( \begin{array}{c}
+\alpha _{r1}\\
+\alpha _{r2}\\
+\\
+\alpha _{rd}
+\end{array}\right) =E_{n,r}^{(1)}\left( \begin{array}{c}
+\alpha _{r1}\\
+\alpha _{2}\\
+\\
+\alpha _{rd}
+\end{array}\right) 
+\end{eqnarray*}
+Esta ecuación de autovalores nos proporciona las \( d \) energías
+en que se separa el nivel \( n \) y los \( d \) conjuntos de coeficientes
+\( \{\alpha _{rs},s=1...d\} \) que definen los correspondientes autovectores. 
+
+Como casi todos los sistemas físicos tienen niveles degenerados podría
+parecer que siempre hay que utilizar teoría de perturbaciones degenerada
+y resolver la ecuación anterior. En ocasiones la matriz \( \Braket{n,r}{W}{n,s} \)
+es diagonal en los estados \( \ket{n,r} \) y entonces podemos recuperar
+la expresión del caso no degenerado a orden 1. Si \( \Braket{nr}{W}{ns}\propto \delta _{rs} \) 
+
+\[
+\left( \begin{array}{cccc}
+\Braket{n,1}{W}{n,1} &  &  & \\
+ & \Braket{n,2}{W}{n,2} &  & \\
+ &  & \ddots  & \\
+ &  &  & \Braket{n,d}{W}{n,d}
+\end{array}\right) \left( \begin{array}{c}
+\alpha _{r1}\\
+\alpha _{r2}\\
+\\
+\alpha _{rd}
+\end{array}\right) =E_{n}^{(1)}\left( \begin{array}{c}
+\alpha _{r1}\\
+\alpha _{2}\\
+\\
+\alpha _{rd}
+\end{array}\right) \]
+y nos queda\begin{eqnarray*}
+E^{\left( 1\right) }_{nr}=\Braket{n,r}{\mathrm{W}}{n.r} &  & r=1\ldots d\\
+\ket{\psi _{n,r}^{\left( 0\right) }} & = & \ket{n,r}
+\end{eqnarray*}
+En los casos de aplicación de la teoría de perturbaciones en este
+curso se dará habitualmente esta situación por lo que utilizaremos
+teoría de perturbaciones no degenerada. 
+
+\begin{description}
+\item [Ejemplo:]perturbación cuadrática en \( x \) del oscilador armónico
+\end{description}
+{\small Consideremos una partícula de masa \( m \) que realiza un
+movimiento unidimensional sometida al hamiltoniano \[
+H=\dfrac{p^{2}}{2m}+\dfrac{1}{2}m\omega ^{2}x^{2}+\dfrac{1}{2}\lambda m\omega ^{2}x^{2}=H_{0}+\dfrac{1}{2}\lambda m\omega ^{2}x^{2}\]
+que es la suma de un oscilador más un término cuadrático en \( x \).
+El objetivo de este ejemplo es calcular las autoenergías de este hamiltoniano
+de dos formas diferentes. Recordemos que los autovalores de \( H_{0} \)
+son\[
+E^{0}_{n}=\hbar \omega \left( n+\dfrac{1}{2}\right) \]
+}{\small \par}
+
+\begin{enumerate}
+\item {\small Primero procederemos al cálculo de los nuevos autovalores
+de forma exacta. Para ello observamos que \[
+H=H_{0}+\dfrac{1}{2}\lambda m\omega ^{2}x^{2}=\dfrac{p^{2}}{2m}+\dfrac{1}{2}m\omega ^{2}\left( 1+\lambda \right) x^{2}=\dfrac{p^{2}}{2m}+\dfrac{1}{2}m\omega '^{2}x^{2}\]
+donde \( \omega '=\omega \sqrt{1+\lambda } \). Por lo tanto podemos
+escribir que \[
+E_{n}=\hbar \omega '\left( n+\dfrac{1}{2}\right) =\hbar \omega \left( n+\dfrac{1}{2}\right) \left( 1+\dfrac{\lambda }{2}-\dfrac{\lambda ^{2}}{8}+...\right) \]
+}{\small \par}
+\item {\small Como estrategia alternativa procederemos utilizando teoría
+de perturbaciones. Introducimos los operadores de aniquilación \( \mathrm{A} \)
+y de destrucción \( \mathrm{A}^{+} \) definidos como sigue \[
+\begin{array}{c}
+\mathrm{A}=\left( 2m\hbar \omega \right) ^{-\dfrac{1}{2}}\left( m\omega \mathrm{x}+i\mathrm{p}\right) \\
+\mathrm{A}^{+}=\left( 2m\hbar \omega \right) ^{-\dfrac{1}{2}}\left( m\omega \mathrm{x}-i\mathrm{p}\right) 
+\end{array}\]
+que poseen conmutador \( \left[ \mathrm{A},\mathrm{A}^{+}\right] =1 \).
+Se introduce también el} \emph{\small operador} {\small }\emph{\small número}
+{\small \( \mathrm{N}=\mathrm{A}^{+}\mathrm{A} \) cuyos autovalores
+son simplemente los números naturales\[
+\mathrm{N}\ket{n}=n\ket{n},\: n=0,1,2,...\]
+ El hamiltoniano no perturbado se expresa en función de este nuevo
+operador como \[
+\mathrm{H}_{0}=\hbar \omega \left( \mathrm{N}+\dfrac{1}{2}\right) \]
+de manera que \[
+\mathrm{H}_{0}\ket{n}=\hbar \omega \left( \mathrm{N}+\dfrac{1}{2}\right) \ket{n}=\hbar \omega \left( n+\dfrac{1}{2}\right) \ket{n}\]
+Algunas propiedades de los autoestados de \( \mathrm{N} \) son}{\small \par}
+
+\begin{enumerate}
+\item {\small ortogonalidad \( \braket{n}{n'}=\delta _{nn'} \)}{\small \par}
+\item {\small aniquilación \( \mathrm{A}\ket{n}=\sqrt{n}\ket{n-1} \)}{\small \par}
+\item {\small creación \( \mathrm{A}^{+}\ket{n}=\sqrt{n+1}\ket{n+1} \) }{\small \par}
+\item {\small \( \phi _{n}^{\left( 0\right) }=H_{n}\left( x\right) =\braket{x}{n} \) }{\small \par}
+\end{enumerate}
+{\small Expresando \( \mathrm{W} \) en términos de los operadores
+de creación y aniquilación resulta \[
+\mathrm{W}=\dfrac{1}{2}m\omega ^{2}\mathrm{x}^{2}=\dfrac{1}{4}\hbar \omega \left( \mathrm{A}+\mathrm{A}^{+}\right) ^{2}=\dfrac{1}{4}\hbar \omega \left( \mathrm{A}^{2}+\left( \mathrm{A}^{+}\right) ^{2}+2\mathrm{N}+1\right) \]
+Las energías aproximadas (hasta segundo orden en \( \lambda  \) )
+se escriben \[
+E_{n}=E_{n}^{0}+\lambda \Braket{n}{\mathrm{W}}{n}+\lambda ^{2}\sum _{n\neq n'}\dfrac{\left| \Braket{n'}{\mathrm{W}}{n}\right| ^{2}}{E^{0}_{n}-E_{n'}^{0}}\]
+Los únicos elementos de matriz no nulos de la perturbación son \[
+\begin{array}{ccccc}
+\Braket{n}{\mathrm{W}}{n} & = & \dfrac{1}{4}\hbar \omega \Braket{n}{2\mathrm{N}+1}{n} & = & \dfrac{1}{4}\hbar \omega (2n+1)\\
+\Braket{n}{\mathrm{W}}{n+2} & = & \dfrac{1}{4}\hbar \omega \Braket{n}{\mathrm{A}^{2}}{n+2} & = & \dfrac{1}{4}\hbar \omega [(n+1)(n+2)]^{1/2}\\
+\Braket{n}{\mathrm{W}}{n-2} & = & \dfrac{1}{4}\hbar \omega \Braket{n}{\left( \mathrm{A}^{+}\right) ^{2}}{n-2} & = & \dfrac{1}{4}\hbar \omega [n(n-1)]^{1/2}
+\end{array}\]
+Verifiquemos explícitamente el primero de ellos\begin{eqnarray*}
+\Braket{n}{\mathrm{A}^{2}}{n}=\Braket{n}{\mathrm{AA}}{n}=\sqrt{n}\Braket{n}{\mathrm{A}}{n-1}=\sqrt{n\left( n-1\right) }\braket{n}{n-2} & = & 0\\
+\Braket{n}{\left( \mathrm{A}^{+}\right) ^{2}}{n} & = & 0\\
+\Braket{n}{2\mathrm{N}+1}{n}=\left( 2n+1\right) \braket{n}{n} & = & 2n+1
+\end{eqnarray*}
+ Substituyendo en la expresión superior llegamos a \[
+E_{n}=E^{0}_{n}+\lambda \dfrac{\hbar \omega }{4}(2n+1)+\lambda ^{2}\dfrac{(\hbar \omega )^{2}}{16}\left[ \dfrac{(n+1)(n+2)}{E^{0}_{n}-E^{0}_{n+2}}+\dfrac{n(n-1)}{E_{n}^{0}-E^{0}_{n-2}}\right] \]
+ y teniendo en cuenta que \( E^{0}_{n}-E_{n± 2}^{0}=\mp 2\hbar \omega  \),
+obtenemos nuevamente}{\small \par}
+
+\end{enumerate}
+{\small \[
+E_{n}=\hbar \omega \left( n+\dfrac{1}{2}\right) \left( 1+\dfrac{\lambda }{2}-\dfrac{\lambda ^{2}}{8}+\ldots \right) \]
+}{\small \par}
+
+\begin{description}
+\item [Ejemplo:]Teoría de perturbaciones (no degenerada) en un sistema de
+dos niveles
+\end{description}
+{\small Admitamos que el hamiltoniano del sistema, \( H \), tiene
+la siguiente forma: \[
+\mathrm{H}=\mathrm{H}_{0}+\lambda \mathrm{W}\]
+ donde \( \mathrm{H}_{0} \) es tal que conocemos sus autoenergías
+y autoestados \[
+\mathrm{H}_{0}\ket{\phi _{i}^{(0)}}=E_{i}^{(0)}\ket{\phi _{i}^{(0)}}\]
+ Para reducir el formalismo a un mínimo admitiremos que el espacio
+de estados tiene dimensión 2 y por tanto el índice anterior toma valores
+\( i=1,2 \) . Como \( \left\{ \ket{\phi ^{(0)}_{i}}\right\} _{i=1,2} \)es
+una base de autofunciones ortonormales, se verifican las siguientes
+relaciones\begin{eqnarray*}
+\braket{\phi _{1}^{(0)}}{\phi _{1}^{(0)}}=\braket{\phi _{2}^{(0)}}{\phi _{2}^{(0)}} & = & 1\\
+\braket{\phi _{1}^{(0)}}{\phi _{2}^{(0)}} & = & 0
+\end{eqnarray*}
+ El objetivo que perseguimos es resolver la} \textbf{\small }{\small ecS}
+\textbf{\small }{\small correspondiente al hamiltoniano completo\[
+\mathrm{H}\ket{\phi }=E\ket{\phi }\]
+ cuando \( \lambda \ll 1 \) (perturbación pequeña ). Cualesquiera
+que sean los autoestados exactos \( \ket{\phi } \), podemos desarrollarlos
+como \[
+ket{\phi }=\alpha _{1}\ket{\phi _{1}^{(0)}}+\alpha _{2}\ket{\phi _{2}^{(0)}}\]
+Sustituyendo esta expresión en la ecS tenemos \begin{eqnarray*}
+\mathrm{H}\ket{\phi } & = & \beta _{1}\ket{\phi ^{(0)}_{1}}+\beta _{2}\ket{\phi _{2}^{(0)}}\\
+ & = & E\ket{\phi }\\
+ & = & E\alpha _{1}\ket{\phi _{1}^{(0)}}+E\alpha _{2}\ket{\phi _{2}^{(0)}}
+\end{eqnarray*}
+ Podemos poner los coeficientes \( \beta  \) en función de los \( \alpha  \).
+Proyectando sobre \( \bra{\phi _{1}^{(0)}} \) y por \( \bra{\phi _{2}^{(0)}} \)
+para aprovechar las relaciones de ortogonalidad se obtiene, respectivamente\begin{eqnarray*}
+\Braket{\phi _{1}^{(0)}}{\mathrm{H}}{\phi } & = & \beta _{1}\\
+\Braket{\phi ^{(0)}_{2}}{\mathrm{H}}{\phi } & = & \beta _{2}
+\end{eqnarray*}
+Luego\begin{eqnarray*}
+\beta _{1} & = & \Braket{\phi _{1}^{(0)}}{\mathrm{H}}{\phi }\\
+ & = & \Braket{\phi ^{(0)}_{1}}{\mathrm{H}}{\left( \alpha _{1}\ket{\phi _{1}^{(0)}}+\alpha _{2}\ket{\phi _{2}^{(0)}}\right) }\\
+ & = & \alpha _{1}\Braket{\phi ^{(0)}_{1}}{\mathrm{H}}{\phi _{1}^{(0)}}+\alpha _{2}\Braket{\phi _{1}^{(0)}}{\mathrm{H}}{\phi _{2}^{(0)}}\\
+\beta _{2} & = & \alpha _{1}\Braket{\phi _{2}^{(0)}}{\mathrm{H}}{\phi _{1}^{(0)}}+\alpha_2 \Braket{\phi _{2}^{(0)}}{\mathrm{H}}{\phi _{2}^{(0)}}
+\end{eqnarray*}
+ Si al elemento de matriz \( \BraketH{\phi _{i}^{(0)}}{\phi _{j}^{(0)}} \)
+lo llamamos \( H_{ij} \) tenemos una matriz \( 2× 2 \) que
+cumple\[
+H_{21}=\BraketH{\phi _{2}^{(0)}}{\phi _{1}^{(0)}}=\Braket{\phi _{1}^{(0)}}{\mathrm{H}^{+}}{\phi _{2}^{(0)}}^{*}=H_{12}^{*}\]
+ por ser \( \mathrm{H} \) hermítico \( (\mathrm{H}=\mathrm{H}^{+}) \).
+Así, las ecuaciones anteriores que expresan los \( \beta  \) en función
+de los \( \alpha  \) se escriben de forma más compacta:\begin{eqnarray*}
+\beta _{1} & = & \alpha _{1}H_{11}+\alpha _{2}H_{12}=E\alpha _{1}\\
+\beta _{2} & = & \alpha _{1}H_{21}+\alpha _{2}H_{22}=E\alpha _{2}
+\end{eqnarray*}
+ o bien\[
+\left( \begin{array}{cc}
+H_{11} & H_{12}\\
+H_{21} & H_{22}
+\end{array}\right) \binom{\alpha _{1}}{\alpha _{2}}=E\binom{\alpha _{1}}{\alpha _{2}}\]
+ Los autovalores de esta matriz se obtienen a partir de la fórmula\begin{equation}
+\label{vap_E_del_H_perturbado}
+E=\dfrac{1}{2}\left( H_{11}+H_{22}± \left| H_{11}-H_{22}\right| \sqrt{1+\dfrac{4\left| H_{12}\right| ^{2}}{(H_{11}-H_{22})^{2}}}\right) 
+\end{equation}
+ Vamos a proceder a calcular los diferentes términos de esta expresión
+de la energía para el hamiltoniano perturbado en función de los datos
+del problema, es decir, de la perturbación \( \lambda W \), del hamiltoniano
+no perturbado y de las energías y autofunciones de éste, \( E_{i}^{(0)} \)
+y \( \ket{\phi _{i}^{(0)}} \) respectivamente.}{\small \par}
+
+{\small \begin{eqnarray*}
+H_{11} & = & \Braket{\phi _{1}^{(0)}}{\mathrm{H}_{0}+\lambda \mathrm{W}}{\phi _{1}^{(0)}}=E_{1}^{(0)}+\lambda \Braket{\phi _{1}^{(0)}}{\mathrm{W}}{\phi _{1}^{(0)}}=E_{1}^{(0)}+\lambda W_{11}\\
+H_{22} & = & E_{2}^{(0)}+\lambda W_{22}\\
+H_{12} & = & \Braket{\phi _{1}^{(0)}}{\mathrm{H}_{0}+\lambda \mathrm{W}}{\phi _{2}^{(0)}}=\lambda W_{12}
+\end{eqnarray*}
+ la última igualdad se verifica en virtud de \( \Braket{\phi _{1}^{(0)}}{\mathrm{H}_{0}}{\phi _{2}^{(0)}}=0 \).
+Ahora necesitamos el término\begin{eqnarray*}
+\dfrac{4\left| H_{12}\right| ^{2}}{\left( H_{11}-H_{22}\right) ^{2}} & = &
+ \dfrac{4\lambda ^{2}\left| W_{12}\right| ^{2}}{\left[ E_{1}^{(0)}-E_{2}^{(0)}+
+\lambda \left( W_{11}-W_{22}\right)\right] ^{2}}\\
+ & = & \dfrac{4\lambda ^{2}\left| W_{12}\right| ^{2}}{\left( E_{1}^{(0)}-E_{2}^{(0)}\right) ^{2}}\left( \dfrac{1}{1+\lambda \dfrac{W_{11}-W_{22}}{E_{1}^{(0)}-E_{2}^{(0)}}}\right) ^{2}\\
+ & \simeq  & \dfrac{4\lambda ^{2}\left| W_{12}\right| ^{2}}{\left( E_{1}^{(0)}-E_{2}^{(0)}\right) ^{2}}
+\end{eqnarray*}
+Donde la última expresión es el primer término de un desarrollo en
+serie cuya exactitud depende de que \( \left| E_{1}^{(0)}-E_{2}^{(0)}\right| \gg \lambda \left| W_{11}-W_{22}\right|  \),
+por lo que no puede haber degeneración. La raíz la desarrollamos:\[
+\sqrt{1+\dfrac{4\left| H_{12}\right| ^{2}}{H_{11}-H_{22}}}=1+\dfrac{2\lambda ^{2}\left| W_{12}\right| ^{2}}{\left( E_{1}^{(0)}-E_{2}^{(0)}\right) ^{2}}+O\left( \lambda ^{3}\right) \]
+ Si enchufamos todo esto en la ecuación \ref{vap_E_del_H_perturbado}\begin{eqnarray*}
+E_{1} & = & H_{11}+\dfrac{\lambda ^{2}\left| W_{12}\right| ^{2}}{E_{2}^{(0)}-E_{1}^{(0)}}+O\left( \lambda ^{3}\right) =E_{1}^{(0)}+\lambda W_{11}+\lambda ^{2}\dfrac{\left| W_{21}\right| ^{2}}{E_{1}^{(0)}-E_{2}^{(0)}}+O\left( \lambda ^{3}\right) \\
+E_{2} & = & H_{22}+\dfrac{\lambda ^{2}\left| W_{12}\right| ^{2}}{E_{2}^{(0)}-E_{1}^{(0)}}+O\left( \lambda ^{3}\right) =E_{2}^{(0)}+\lambda W_{22}+\lambda ^{2}\dfrac{\left| W_{12}\right| ^{2}}{E_{2}^{(0)}-E_{1}^{(0)}}+O\left( \lambda ^{3}\right) 
+\end{eqnarray*}
+o, por ejemplo, para la primera autoenergía:\[
+E_{1}=E_{1}^{(0)}+\Braket{\phi _{1}^{(0)}}{\lambda 
+\mathrm{W}}{\phi _{1}^{(0)}}+\dfrac{\left|
+ \Braket{\phi _{2}^{(0)}}{\lambda \mathrm{W}}{\phi_{1}^{(0)}}\right|^{2}}{E_{1}^{(0)}-E_{2}^{(0)}}+O(\lambda ^{3})\]
+ }{\small \par}
+
+
+\section{Método variacional}
+
+
+\subsection{Descripción }
+
+El objetivo que perseguimos en esta sección es el cálculo (aproximado)
+de las energías y autofunciones del espectro discreto, y en particular
+del estado fundamental del sistema, que supondremos no degenerado.
+Denotemos por \( E_{1} \) a su energía, que es la más baja del sistema,
+y por \( \ket{\phi _{1}} \) al estado correspondiente. El método
+variacional se basa en un teorema debido a \noun{Ritz} que afirma:
+
+\begin{quote}
+Sea \( H \) un operador hermítico con espectro discreto y acotado
+inferiormente. Si introducimos el funcional \( E \)\[
+E:\ket{\psi }\in {\cal F}\to E\left[ \psi \right] =\dfrac{\Braket{\psi }{\mathrm{H}}{\psi }}{\braket{\psi }{\psi }}\]
+ entonces \[
+E\left[ \psi \right] \geq E_{1\: }\forall \ket{\psi }\in \mathcal{F},\, \, \, E[\psi ]=E_{1}\, \, sys\, \, \ket{\psi }=\ket{\phi _{1}}\]
+
+\end{quote}
+La minimización del funcional anterior o, para ser más precisos, la
+busqueda de los extremos del mismo conduce a una solución formal que
+nos indica que dichos extremos locales corresponden a estados \( \ket{\psi } \)
+que son autoestados de \( \mathrm{H} \). En otras palabras,
+la minimización formal nos conduce a la ecS\textbf{.}
+
+Este resultado, aunque teóricamente muy elegante, no es de gran ayuda
+si no sabemos resolver la ecS. En tanto y cuanto deseemos buscar
+soluciones aproximadas de la misma conviene proceder de otra forma. En
+concreto, escogemos, basándonos en argumentos de tipo físico, una
+familia de estados (de prueba) \( \ket{\psi _{p}(\mathbf{b})} \) y
+calculamos el funcional \( E \) correspondiente a estas funciones.  En
+esta última expresión \( \mathbf{b} \) representa un conjunto de
+parámetros de los que dependen las funciones de prueba. Por supuesto
+que esta familia no cubre completamente el espacio de estados (ver
+\ref{esquema de un espacio de hilbert}), pero basta que contenga el
+mínimo absoluto para que el método funcione.
+\begin{figure}
+{\centering \includegraphics{fig/espacio-hilbert-esquematico-src.eps} \par}
+
+
+\caption{{\small \label{esquema de un espacio de hilbert}Esquema de un espacio
+de} \noun{\small Hilbert}}
+\end{figure}
+Cuando nos restringimos a nuestras funciones de prueba\[
+E\left[ \psi \left( \mathbf{b}\right) \right] =\dfrac{\Braket{\psi \left( \mathbf{b}\right) }{\mathrm{H}}{\psi \left( \mathbf{b}\right) }}{\braket{\psi \left( \mathbf{b}\right) }{\psi \left( \mathbf{b}\right) }}\Fld E\left[ \mathbf{b}\right] \]
+ el \emph{funcional} se reduce simplemente a una \emph{función} de
+los parámetros \( \mathbf{b} \).
+
+
+\subsection{Método variacional en un sistema de dos partículas}
+
+Sea un sistema de dos partículas de masas \( m_{1} \), \( m_{2} \)
+cuyas posiciones en un sr fijo son \( \mathbf{r}_{1} \), \( \mathbf{r}_{2} \)
+y cuyo hamiltoniano se escribe como\[
+H=\dfrac{\mathbf{p}_{1}^{2}}{2m_{1}}+\dfrac{\mathbf{p}_{2}^{2}}{2m_{2}}+V\left( \left| \mathbf{r}_{1}-\mathbf{r}_{2}\right| \right) \]
+Se consigue una simplificación notable del problema realizando el
+siguiente cambio de variables\[
+\mathbf{R}=\dfrac{m_{1}\mathbf{r}_{1}+m_{2}\mathbf{r}_{2}}{m_{1}+m_{2}}=\dfrac{m_{1}\mathbf{r}_{1}+m_{2}\mathbf{r}_{2}}{M}\fld \mathbf{P}=M\dot{\mathbf{R}}\]
+\[
+\mathbf{r}=\mathbf{r}_{2}-\mathbf{r}_{1}\fld \mathbf{p}=m\dot{\mathbf{r}}\]
+siendo \( m=\dfrac{m_{1}m_{2}}{M} \) la \emph{masa reducida del sistema} y $M=m_1+m_2$ la masa total del sistema.
+Tras el cambio de coordenadas el hamiltoniano queda reducido a
+
+\[
+H=\dfrac{\mathbf{P}^{2}}{2M}+\dfrac{\mathbf{p}^{2}}{2m}+V\left( \left| \mathbf{r}\right| \right) \]
+ De esta forma hemos reducido un problema de dos partículas en interacción
+en dos problemas de una sóla partícula. Una de ellas, con coordenada
+\( \mathbf{R} \), es una partícula libre y  otra cuya coordenada
+es \textbf{\( \mathbf{r} \)}, cuyo módulo es el argumento del 
+potencial \( V \). 
+
+En el sistema de referencia inercial asociado al CM se cumple que
+\( \mathbf{P}=0 \), con lo cual el hamiltoniano queda reducido a
+\[
+H=\dfrac{\mathbf{p}^{2}}{2m}+V\left( r\right) \, \, r=\left| \mathbf{r}\right| \]
+
+
+Hasta ahora todo son cantidades clásicas. Para construir el operador
+asociado aplicamos las reglas de correspondencia de \noun{Schrödinger\[
+\begin{array}{c}
+\mathbf{p}\fld \mathsfbf{p}=-i\hbar \nabla _{r}\\
+\mathbf{r}\fld \mathsfbf{r}=\mathbf{r}
+\end{array}\]
+}de forma que \[
+H\fld \mathrm{H}=-\dfrac{\hbar ^{2}}{2m}\nabla ^{2}+V\left( \mathrm{r}\right) \]
+Substituyendo \( \nabla ^{2}=\dfrac{1}{\mathrm{r}}\ddpr{}\mathrm{r}-\dfrac{\mathsfbf{L}^{2}}{\hbar ^{2}\mathrm{r}^{2}} \)
+tenemos que\[
+\mathrm{H}=-\dfrac{\hbar ^{2}}{2m}\dfrac{1}{\mathrm{r}}\ddpr{}\mathrm{r}+\dfrac{\mathsfbf{L}^{2}}{2m\mathrm{r}^{2}}+V\left( \mathrm{r}\right) \]
+En FCI habíamos resuelto el problema de autovalores correspondiente
+a este hamiltoniano y encontramos que los fdo de los estados ligados
+del espectro discreto son\[
+\phi _{nlm}=\phi _{nlm}\left( r,\theta ,\varphi \right) =R_{nl}\left( r\right) Y_{m}^{l}\left( \Omega \right) \]
+donde \( R_{nl} \) es la función radial y los armónicos esféricos
+\( Y_{m}^{l} \) que obtenemos son los autoestados del momento angular
+orbital y cumplen\begin{eqnarray*}
+\mathsfbf{L}^{2}Y_{m}^{l} & = & \hbar ^{2}l\left( l+1\right) Y_{m}^{l}\\
+\mathsfbf{L}_{z}Y_{m}^{l} & = & \hbar mY_{m}^{l}\\
+\int d\Omega \left( Y_{m'}^{l'}\right) ^{*}Y_{m}^{l} & = & \delta _{ll'}\delta _{mm'}
+\end{eqnarray*}
+De los casos que hemos estudiado en FCI (átomo de hidrógeno, oscilador
+tridimensional,...) parece deducirse que el estado fundamental siempre
+posee \( l=0 \), y en consecuencia una fdo \[
+\phi _{n00}\left( \mathbf{r}\right) =\dfrac{R_{n0}\left( r\right) }{\sqrt{4\pi }}\]
+ya que \( Y_{0}^{0}=\dfrac{1}{\sqrt{4\pi }} \). 
+
+Dado que estamos interesados en buscar aproximaciones al estado fundamental,
+podemos proponer funciones de prueba que sólo dependan de la coordenada
+radial, esto es\[
+\phi =\phi \left( r\right) ,\]
+y entonces el funcional de la energía será\[
+E\left[ \phi \right] =\dfrac{\int d\mathbf{r}\phi ^{*}\left( r\right) \mathrm{H}\phi \left( r\right) }{\int d\mathbf{r}\left| \phi \left( r\right) \right| ^{2}}=\dfrac{\int dr\cdot r^{2}\phi ^{*}\left( r\right) \left\{ -\dfrac{\hbar ^{2}}{2m}\dfrac{1}{r}\dfrac{d^{2}}{dr^{2}}r+V\right\} \phi \left( r\right) }{\int dr\cdot r^{2}\left| \phi (r)\right| ^{2}}\]
+
+
+
+\subsection{Aplicación del método al átomo de hidrógeno}
+
+Apliquemos estas expresiones al ejemplo típico de sistema a dos cuerpos:
+el átomo de \( H_{1} \). En este caso 
+
+\begin{itemize}
+\item \( m=\dfrac{m_{e}m_{\pi }}{m_{e}+m_{\pi }}\approx m_{e} \) es la masa
+reducida
+\item \( V(r)=-\dfrac{e^{2}}{r} \)
+\item Conviene introducir la variable adimensional \( \rho =\dfrac{r}{a_{0}},\, \, a_{0}=\dfrac{\hbar ^{2}}{me^{2}}\simeq 0.53  A \)
+\end{itemize}
+Así el funcional se escribe\[
+E\left[ \phi \right] =\dfrac{\int d\rho \rho ^{2}\phi ^{*}(\rho )
+\left\{ -\dfrac{\hbar ^{2}}{2ma_{0}^{2}}\dfrac{1}{\rho }\dda{} \rho -\dfrac{e^{2}}{a_{0}}\dfrac{1}{\rho }\right\} \phi (\rho )}{\int d\rho \rho ^{2}\left| \phi (\rho )\right| ^{2}}\]
+Ahora bien 
+
+\[
+\dfrac{\hbar ^{2}}{2ma_{0}^{2}}=\dfrac{1}{2}\dfrac{me^{4}}{\hbar ^{2}}=E_{I},\]
+y
+
+\[
+\dfrac{e^{2}}{a_{0}}=\dfrac{me^{4}}{\hbar ^{2}}=2E_{I}\]
+con lo cual llegamos a la forma final del funcional
+
+\[
+E\left[ \phi \right] =-E_{I}\dfrac{\int d\rho \rho ^{2}\phi ^{*}(\rho )\left\{
+ \dfrac{1}{\rho }\dda{} \rho+\dfrac{2}{\rho }\right\} \phi (\rho )}{\int d\rho \rho ^{2}\left| \phi (\rho )\right| ^{2}}\]
+
+
+Ya estamos en disposición de proponer una forma para las funciones
+de prueba para lo cual acudimos, como siempre, a argumentos físicos.
+De los distintos ejemplos vistos en FCI parece deducirse que en el
+caso de potenciales que decaen a cero muy suavemente las fdo tienen
+la forma asintótica
+
+\[
+\phi (\rho )\to e^{-b\rho },\, \, \rho \to \infty .\]
+Precisamente por ello es razonable proponer funciones de prueba que
+tengan la forma de un polinomio en $\rho$ por la exponencial
+anterior. En el caso que nos ocupa investigaremos la función más
+sencilla posible, que es la propia exponencial.
+
+\[
+\phi \left( b,\rho \right) =e^{-b\rho }.\]
+ Para obtener la función de la energía \( E(b) \) debemos calcular
+primero las siguientes integrales
+
+\[
+\int d\rho \, \rho ^{2}e^{-2b\rho }=\left( \dfrac{1}{2b}\right) ^{3}\int _{0}^{\infty }x^{2}e^{-x}\, dx=\dfrac{\Gamma (3)}{8b^{3}}=\dfrac{1}{4b^{3}},\]
+ donde hemos efectuado el cambio de variable \( x=2b\rho  \) y los
+límites de integración son \( 0,\infty  \) tanto antes como después
+del cambio. Además hemos tenido en cuenta que \( \Gamma \left( p\right) =\int dx\, x^{p-1}e^{-x}=\left( p-1\right) ! \). 
+
+Por su parte la integral que aparece en el numerador es\[
+\int d\rho \rho ^{2}e^{-b\rho }\left\{ -\da{^{2}}{\rho ^{2}}\rho-\dfrac{2}{\rho }\right\} e^{-b\rho }=\int d\rho \, \left\{ \left( 2b-2\right) \rho e^{-2b\rho }-b^{2}\rho ^{2}e^{-2b\rho }\right\} =\ldots =\dfrac{b-2}{4b^{2}},\]
+ donde se ha utilizado el mismo cambio de variable \( x=2b\rho  \).
+Finalmente llegamos a la siguiente expresión\[
+E\left[ b\right] =E_{I}\dfrac{\dfrac{b-2}{4b^{2}}}{\dfrac{1}{4b^{3}}}=
+(b^{2}-2b)E_I\]
+
+\begin{figure}
+{\centering \includegraphics[width=4cm]{fig/parabola-variacional-src.eps} \par}
+\caption{\protect\( E\left[ b\right] \protect \)}
+\end{figure}
+
+Ahora sólo tenemos que minimizar \( E[b] \) respecto a
+\( b \). El único mínimo se obtiene para \( b=1 \) y el valor de
+la función en el mismo es \( E\left[ 1\right] =-E_{I}\simeq -13.6 eV \).
+La fdo, que no está normalizada, es {\small }\[
+\phi _{EF}=e^{-\rho }.\]
+
+
+Como puede observarse los resultados obtenidos coinciden idénticamente
+con los que se obtuvieron en FCI al resolver directamente la ecS.
+Ello es debido a que la familia de funciones propuestas contiene el
+verdadero estado fundamental.
+
+Es conveniente estudiar otras propiedades además de la energía para
+valorar la exactitud del la solución. Vamos a calcular, por ejemplo,
+el tamaño del átomo. Para estimarlo usaremos el radio cuadrático medio
+(la raíz cuadrada del valor medio del cuadrado de la distancia electrón--núcleo)\[
+rqm=\sqrt{\left\langle \mathsfbf{r}^{2}\right\rangle ,}\]
+ utilizando la fdo que hemos obtenido, es decir, \( \phi (1,r) \):
+
+\emph{\[
+\left\langle r^{2}\right\rangle =\dfrac{\int d\mathbf{r}\, \phi ^{*}r^{2}\phi }{\int d\mathbf{r}\, \phi ^{*}\phi }=a_{0}^{2}\dfrac{\int d\rho \, \rho ^{4}e^{-2\rho }}{\int d\rho \, \rho ^{2}e^{-2\rho }}=a_{0}^{2}\dfrac{\Gamma (5)}{4\Gamma (3)}=3a_{0}^{2}.\]
+}Así el radio cuadrático medio vale \[
+rqm=\sqrt{3}a_0.\]
+ En este caso la familia de funciones de prueba da lugar a un valor
+de la energía y del tamaño del átomo que son adecuados, pero podríamos
+encontrar funciones de prueba que reproduciendo muy bien la energía
+proporcionen valores desastrosos para otras magnitudes.
+
+Utilizemos, por ejemplo, la siguiente fdo \( \phi (b,\rho )=\dfrac{\rho }{\rho ^{2}+b^{2}} \) que 
+da lugar a una energía
+
+\[ E \left[b\right]= \dfrac{\pi-8b}{2\pi b^2}E_I \]
+%
+cuyo mínimo ocurre en \( b=\dfrac{\pi }{4} \) lo que implica que nuestra predicción
+para la energía del estado fundamental es 
+\[
+E=-\dfrac{8}{\pi ^{2}}E_{I}\approx -0.81E_{I}.\]
+
+Este valor tiene un error del \( 20\% \), lo que puede ser considerado
+aceptable en una primera aproximación. Pero ahora viene la gran desilusión:
+si calculamos el \( rqm \) obtenemos\[
+\left\langle r^{2}\right\rangle =a_{0}^{2}\int _{0}^{\infty }d\rho \dfrac{\rho ^{4}}{\left( b^{2}+\rho ^{2}\right) ^{2}}=\infty .\]
+Este resultado es debido a que la fdo no decae suficientemente deprisa
+cuando nos alejamos del origen. De hecho \( \phi (\rho )\to \dfrac{1}{\rho }\, \, \rho \to \infty  \). 
+
+Podemos dar la siguiente moraleja: cuando utilizamos el método variacional,
+no basta con calcular la energía, sino que hay que estudiar otras
+cantidades.
+
+
+\section{Suma de momentos angulares}
+
+\begin{figure}
+{\centering \includegraphics[width=5cm]{fig/momento-clasico-cuantico.eps} \par}
+\caption{\label{fig momento angular clasico/cuantico}La determinación
+completa del momento angular es accesible en la mecánica clásica (izquierda)
+pero no en mecánica cuántica (derecha), donde sólo el módulo y una
+componente del vector pueden ser conocidos simultáneamente con máxima
+exactitud.}
+\end{figure}
+El momento angular de una partícula en la mecánica newtoniana es \[
+\mathbf{L}=\mathbf{r}\land \mathbf{p}\]
+Es una función de las magnitudes \( \mathbf{r} \) y \( \mathbf{p} \)
+al que podemos asociar el siguiente operador hermítico\[
+\mathsfbf{L}=\mathsfbf{r}\land \mathsfbf{p}\]
+y aunque \( \mathsfbf{r} \) y \( \mathsfbf{p} \) no conmutan se verifica
+que \( \mathsfbf{L}=-\mathsfbf{p}\land \mathsfbf{r} \)
+
+\begin{description}
+\item [Ejemplo]~
+\end{description}
+\[
+\mathsfbf{L}_{z}=\mathsfbf{r}_{x}\mathsfbf{p}_{y}-\mathsfbf{r}_{y}\mathsfbf{p}_{x}=-\left( \mathsfbf{p}_{x}\mathsfbf{r}_{y}-\mathsfbf{p}_{y}\mathsfbf{r}_{x}\right) =-\left( \mathsfbf{p}\land \mathsfbf{r}\right) _{z}\]
+De las propiedad de conmutación de \( \mathsfbf{r} \) y \( \mathsfbf{p} \)
+se deduce que \begin{eqnarray*}
+\left[ \mathsfbf{L}_{x},\mathsfbf{L}_{y}\right]  & = & i\hbar \mathsfbf{L}_{z}\\
+\left[ \mathsfbf{L}_{z},\mathsfbf{L}_{x}\right]  & = & i\hbar \mathsfbf{L}_{y}\\
+\left[ \mathsfbf{L}_{y},\mathsfbf{L}_{z}\right]  & = & i\hbar \mathsfbf{L}_{x}
+\end{eqnarray*}
+
+
+A partir de estas relaciones deducimos que las componentes del momento
+angular no se pueden medir simultáneamente. Sin embargo\[
+\left[ \mathsfbf{L}_{\alpha },\mathbf{L}^{2}\right] =0,\, \, \alpha =x,y,z\]
+Probemos, por ejemplo, con \( \left[ \mathsfbf{L}_{x},\mathbf{L}^{2}\right]  \)\begin{eqnarray*}
+\left[ \mathsfbf{L}_{x},\mathbf{L}^{2}\right] = & \left[ \mathsfbf{L}_{x},\mathsfbf{L}_{y}^{2}\right] +\left[ \mathsfbf{L}_{x},\mathsfbf{L}_{z}^{2}\right]  & =\\
+=\left[ \mathsfbf{L}_{x},\mathsfbf{L}_{y}\right] \mathsfbf{L}_{y}+\mathsfbf{L}_{y}\left[ \mathsfbf{L}_{x},\mathsfbf{L}_{y}\right]  & +\left( y\fldi z\right)  & =\\
+=i\hbar \left\{ \mathsfbf{L}_{z}\mathsfbf{L}_{y}+\mathsfbf{L}_{y}\mathsfbf{L}_{z}-\mathsfbf{L}_{y}\mathsfbf{L}_{z}-\mathsfbf{L}_{z}\mathsfbf{L}_{y}\right\} =0 &  & 
+\end{eqnarray*}
+En consecuencia, podemos medir simultáneamente \( \mathbf{L}^{2} \)
+y \( L_{z} \) ó \( L_{y} \) ó \( L_{x} \). Habitualmente se escoge
+\( L_{z} \). El problema de autovalores es en este caso
+
+\begin{eqnarray*}
+\mathsfbf{L}^{2}\ket{lm}=\hbar ^{2}l\left( l+1\right) \ket{lm} &  & l\in \left\{ 0,1,2,\ldots \right\} \\
+\mathsfbf{L}_{z}\ket{lm}=\hbar m\ket{lm} &  & m\in \left\{ -l,-l+1,\ldots ,0,1,\ldots l\right\} \, \forall l\\
+\braket{lm}{l'm'}=\delta _{ll'}\delta _{mm'} &  & 
+\end{eqnarray*}
+
+En Mecánica Cuántica decimos que un estado posee buen momento angular
+si conocemos simultáneamente su módulo y una de sus componentes. Esto
+es, si conocemos \( \left| \mathbf{L}\right|  \) y \( L_{\alpha } \).
+Las otras dos componentes no toman valores bien definidos. Todo ocurre
+como si el momento angular precediese alrededor del eje \( z \) definidendo
+un cono.
+
+\begin{figure}
+{\centering \includegraphics[width=5cm]{fig/un-cono-src.eps} \par}
+\caption{Representación gráfica de \protect\( \mathbf{L}\protect \) y \protect\( L_{z}\protect \)
+para un sistema}
+\end{figure}
+
+
+Supongamos que el momento angular del sistema se puede descomponer
+como \[
+\mathbf{L}=\mathbf{L}_{a}+\mathbf{L}_{b}\]
+Podemos intepretar que \( \mathbf{L}_{a,b} \) son los momentos angulares
+de dos partes del sistema y admitiremos que pueden medirse simultáneamente,
+es decir\[
+\left[ \mathsfbf{L}_{a_{\alpha }},\mathsfbf{L}_{b_{\beta }}\right] =0\]
+Denotaré por\[
+\ket{l_{a}m_{a}l_{b}m_{b}}=\ket{l_{a}m_{a}}\ket{l_{b}m_{b}}\]
+a los estados del sistema en los que está bien definido el módulo
+y la tercera componente del momento angular de cada parte\begin{eqnarray*}
+\mathsfbf{L}_{a}^{2}\ket{l_{a}m_{a}l_{b}m_{b}} & = & \hbar ^{2}l_{a}\left( l_{a}+1\right) \ket{l_{a}m_{a}l_{b}m_{b}}\\
+\mathsfbf{L}_{a_{z}}\ket{l_{a}m_{a}l_{b}m_{b}} & = & \hbar m_{b} \ket{l_{a}m_{a}l_{b}m_{b}}\\
+\braket{l_{a}m_{a}l_{b}m_{b}}{l_{a}'m_{a}'l_{b}'m_{b}'} & = & \delta _{l_{a}l_{a}'}\delta _{l_{b}l_{b}'}\delta _{m_{a}m_{b}'}\delta _{m_{b}m_{b}'}
+\end{eqnarray*}
+Ahora podemos interrogarnos sobre cúal es la información que realmente
+podemos obtener sobre el \emph{momento angular suma}\index{Momento angular suma}.
+En Mecánica Clásica donde conocemos realmente los vectores \( \mathbf{L}_{\mathbf{a}} \)
+y \( \mathbf{L}_{\mathbf{b}} \) su suma también se encuentra bien
+definida. En Mecánica Cuántica las cosas son mucho más complicadas.
+Si pensamos en la imagen geométrica sencilla de los vectores precediendo,
+tendríamos una situación como la de la figura \ref{fig suma momentos ang. en cuantica}
+en donde las únicas constantes del movimiento son
+
+
+\begin{figure}
+{\centering \includegraphics[width=4cm]{fig/dos-conos.eps} \par}
+\caption{\label{fig suma momentos ang. en cuantica}Suma de momentos
+angulares en mecánica cuántica}
+\end{figure}
+\[
+\begin{array}{ccccc}
+\left| \mathbf{L}_{\mathbf{a}}\right| , & \left| \mathbf{L}_{\mathbf{b}}\right| , & L_{a_{z}}, & L_{b_{z}}\textrm{ y } & L_{z}=L_{a_{z}}+L_{b_{z}}
+\end{array}\]
+Para investigar de una manera más formal este problema estudiemos
+algunos conmutadores. Se cumple que\begin{eqnarray*}
+\left[ \mathsfbf{L}_{x},\mathsfbf{L}_{y}\right]  & = & i\hbar \mathsfbf{L}_{z},\ldots \\
+\left[ \mathsfbf{L}_{z},\mathsfbf{L}^{2}\right]  & = & \left[ \mathsfbf{L}_{x},\mathsfbf{L}^{2}\right] =\left[ \mathsfbf{L}_{y},\mathsfbf{L}^{2}\right] =0\\
+\left[ \mathsfbf{L}_{a}^{2},\mathsfbf{L}^{2}\right]  & = & \left[ \mathsfbf{L}^{2}_{a},\mathsfbf{L}_{z}\right] =0\, \, \, \left( a\fld b\right) 
+\end{eqnarray*}
+sin embargo\[
+\left[ \mathsfbf{L}_{a_{z}},\mathsfbf{L}^{2}\right] =\left[ \mathsfbf{L}_{a_{z}},\mathsfbf{L}_{a}\cdot \mathsfbf{L}_{b}\right] \neq 0\]
+Demostremos alguna de las propiedades anteriores, por ejemplo 
+
+\[
+\left[ \mathsfbf{L}^{2}_{a},\mathsfbf{L}^{2}\right] =\left[ \mathsfbf{L}^{2}_{a},\mathsfbf{L}_{a}^{2}+\mathsfbf{L}^{2}_{b}+2\mathsfbf{L}_{a}\cdot \mathsfbf{L}_{b}\right] =2 \sum _{i}\left[ \mathsfbf{L}^{2}_{a},\mathsfbf{L}_{a_{\mathsfbf{i}}}\right] \mathsfbf{L}_{b_{\mathsfbf{i}}}=0,\]
+o por ejemplo,
+
+\[
+\left[ \mathsfbf{L}^{2}_{a},\mathsfbf{L}_{z}\right] =\left[ \mathsfbf{L}^{2}_{a},\mathsfbf{L}_{a_{z}}+\mathsfbf{L}_{b_{z}}\right] =\left[ \mathsfbf{L}^{2}_{a},\mathsfbf{L}_{a_{z}}\right] =0.\]
+ De las expresiones anteriores se deduce, que en cualquier caso, el
+número máximo de operadores que conmutan entre sí es siempre igual
+a \( 4 \). Asociadas a cada uno de estos conjuntos de operadores 
+tenemos las siguientes bases ortonormales
+
+\[
+\begin{array}{ccccccccc}
+\{\mathsfbf{L}^{2}_{a} & \mathsfbf{L}_{a_{z}} & \mathsfbf{L}_{\mathsfbf{b}}^{2} & \mathsfbf{L}_{b_{z}}\} & | & \{\mathsfbf{L}_{a}^{2} & \mathsfbf{L}^{2}_{b} & \mathsfbf{L}^{2} & \mathsfbf{L}_{z}\}\\
+\downarrow  & \downarrow  & \downarrow  & \downarrow  & | & \downarrow  & \downarrow  & \downarrow  & \downarrow \\
+|l_{a} & m_{a} & l_{b} & m_{b}> & | & |l_{a} & l_{b} & l & m>
+\end{array}\]
+Los elementos de una base son combinaciones lineales de los de la
+otra\[
+\ket{l_{a}m_{a}l_{b}m_{b}}=\sum _{lm}C_{lm}\ket{l_{a}l_{b}lm}\]
+Teniendo en cuenta la ortonormalidad de ámbas bases se puede escribir
+\[
+C_{lm}=\braket{l_{a}l_{b}lm}{l_{a}m_{a}l_{b}m_{b}}, \]
+demostrándose además que las fases de estos estados se pueden elegir de manera
+que los coeficientes $C_{lm}$ sean reales, es decir 
+\[
+C_{lm}=\braket{l_{a}l_{b}lm}{l_{a}m_{a}l_{b}m_{b}}=\braket{l_{a}m_{a}l_{b}m_{b}}{l_{a}l_{b}lm}^{*}=\braket{l_{a}m_{a}l_{b}m_{b}}{l_{a}l_{b}lm}\]
+La probabilidad de encontrar al efectuar una medida sobre el estado
+del primer miembro un valor \( \hbar \sqrt{l\left( l+1\right) } \)
+del momento total y un valor \( \hbar m \) para \( L_{z} \) es\[
+P\left( l,m\right) =\left| \braket{l_{a}l_{b}lm}{l_{a}m_{a}l_{b}m_{b}}\right| ^{2}=\left| C_{lm}\right| ^{2}\]
+
+Precisamente para recordar que \( C_{lm} \) es en realidad un solape entre los estados de las dos bases,
+se utiliza en el desarrollo anterior la notación\[
+\ket{l_{a}m_{a}l_{b}m_{b}}=\sum _{lm}\braket{l_{a}m_{a}l_{b}m_{b}}{lm}\ket{l_{a}l_{b}lm}\]
+Los coeficientes de la mezcla reciben el nombre de coeficientes
+de \noun{clebsch-gordan} y se demuestra que son cero excepto quizá
+si\begin{eqnarray*}
+l & \in  & \left\{ \left| l_{a}-l_{b}\right| ,\left| l_{a}-l_{b}\right| +1,\ldots ,l_{a}+l_{b}\right\} \\
+m & = & m_{a}+m_{b}
+\end{eqnarray*}
+ Por ello se suele escribir de forma explicita\[
+\ket{l_{a}m_{a}l_{b}m_{b}}=\sum _{l=\left| l_{a}-l_{b}\right| }^{l_{a}+l_{b}}\braket{l_{a}m_{a}l_{b}m_{b}}{lm_{a}+m_{b}}\ket{l_{a}l_{b}lm_{a}+m_{b}}\]
+La transformación inversa viene dada por los mismos coeficientes,
+aunque ahora se suma sobre las variables \( m_{a},m_{b} \)\[
+\ket{l_{a}l_{b}lm}=\sum _{m_{a},m_{b}}\braket{l_{a}m_{a}l_{b}m_{b}}{lm}\ket{l_{a}m_{a},l_{b}m_{b}}\]
+siendo \( m=m_{a}+m_{b} \).
+
+
+\section{Energías en \protect\( cm^{-1}\protect \) }
+
+Los físicos experimentales utilizan en numerosas ocasiones un sistema
+ de unidades en el que las energías vienen dadas en \( cm^{-1} \). En
+ esta sección buscaremos que relación existe entre dicho sistema de
+ unidades y el \( cgs \). Recordemos que
+
+\begin{eqnarray*}
+\hbar  & = & 1.0545× 10^{-27}erg\cdot s\\
+ & = & 1.0545× 10^{-34}J\cdot s\textrm{ en el MKS}\\
+ & = & 6.582× 10^{-16}eV\cdot s\textrm{ en el MKS}\\
+c & = & 2.9979× 10^{10}cm\cdot s^{-1}\\
+\hbar c & = &  1.973× 10^{-5} eV\cdot cm = 1973eV\cdot A\\
+\left[ \dfrac{\hbar c}{\left[ E\right] }\right]  & = & \left[ L\right] 
+\end{eqnarray*}
+Vamos a expresar en distintos sistemas de unidades naturales ({}``un{}'',
+numerados uno y dos) la cantidad \( \dfrac{\hbar c}{1eV} \)
+(ver tabla \ref{tbl unidades en cm-1}).
+
+\begin{table}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|} \hline\hline
+&    &     &    \\[-5pt]
+\textbf{ cantidad} &
+\textbf{ cgs} &
+\textbf{ sun 1}&
+\textbf{ sun 2}\\ \hline
+\( \dfrac{\hbar c}{1eV} \)
+\par &
+\( 1.973× 10^{-5} \) cm
+\par &
+\( eV^{-1} \)
+\par &
+\( \dfrac{1}{2\pi }eV^{-1} \)
+\par \\ [5pt]
+\hline
+\end{tabular}
+\end{center}
+\caption{{\small \label{tbl unidades en cm-1} En {}``sun 1{}''
+\protect\( \hbar =1\protect \), \protect\( c=1\protect \) y \protect\(
+eV\protect \) es la unidad natural de energía . En {}``sun 2{}'' (las
+que vamos a utilizar) \protect\( h=1\protect \) \protect\( c=1\protect
+\) y \protect\( eV\protect \) es la unidad natural de energía.}}
+\end{table}
+
+
+Tenemos, entonces, la siguiente equivalencia entre el \( cgs \)
+a la izquierda y \( un3 \) a la derecha\begin{eqnarray*}
+1.973× 10^{-5}cm & \equiv  & \dfrac{1}{2\pi }eV^{-1},\\
+1eV & \equiv  & \dfrac{1}{2\pi × 1.973× 10^{-5}}cm^{-1},\\
+ & \simeq  & 8066cm^{-1}.
+\end{eqnarray*}
+ Podemos hablar, por tanto, de \( 1eV \) o de \( 8066cm^{-1} \)según
+lo que nos resulte más comodo. En un experimento donde se miden las
+longitudes de onda de los fotones emitidos/absorbidos en transiciones
+entre estados puede parecer natural medir también las energías en
+\( cm^{-1} \). En este sistema la energía de ionización del \( H \)
+vale \( E_{I}\approx 110000cm^{-1} \)
+
+\begin{figure}
+\nofig
+\caption{Estructura fina de los niveles n = 2 y n=3 del hidrógeno.
+La distancia energética entre niveles está dada en \protect\( cm^{-1}\protect \).}
+\end{figure}
+
+
+
+\section{Cantidades útiles}
+
+\begin{itemize}
+\item La constante de estructura fina \( \alpha =\dfrac{e^{2}}{\hbar c}=\dfrac{1}{137} \). 
+\item \( \hbar c=1.973× 10^{-5} \, eV \cdot cm = 1973\, eV\cdot A \)
+\item Energía de ionización \( E_{I}=\dfrac{1}{2}\dfrac{me^{4}}{\hbar ^{2}}\equiv \dfrac{1}{2}mc^{2}\dfrac{e^{4}}{\hbar ^{2}c^{2}}=\dfrac{1}{2}\left( mc^{2}\right) \alpha ^{2}=\dfrac{1}{2}\left( \dfrac{1}{137}\right) ^{2}0.5\cdot 10^{6}\, eV\simeq 13.6eV \)
+\item Radio de \noun{BöHR} \( a_{0}=\dfrac{\hbar ^{2}}{me^{2}}=\dfrac{(\hbar c)^{2}}{mc^{2}e^{2}}=\dfrac{\hbar c}{mc^{2}}\dfrac{1}{\alpha }\simeq 0.53\, A \)
+\end{itemize}
+
+\section{Problemas y ejercicios}
+
+\begin{enumerate}
+\item {[}A{]} Considere una partícula que efectúa un movimiento unidimensional sometida
+al siguiente potencial \[
+V(x)=\dfrac{1}{2}m\omega ^{2}x^{2}-q\epsilon x\]
+
+
+
+\noindent El primer término es un oscilador armónico, mientras que
+el segundo término representa la interacción de la partícula (de carga
+\( q \)) con un campo eléctrico estacionario y homogéneo \( \epsilon  \).
+Obtenga valores aproximados de la energía hasta orden \( \left( q\varepsilon \right) ^{2} \).
+
+\item {[}A{]} Obtenga la energía del estado fundamental del hidrógeno suponiendo
+que el núcleo es una pequeña esfera de radio \( r_{0} \) uniformemente
+cargada. 
+\item {[}A{]} Aplique el método variacional para obtener la energía y la función
+de onda del estado fundamental de un oscilador armónico. 
+\item {[}A{]} Deduzca la energía y la función de onda del primer estado excitado
+del oscilador, utilizando el método variacional. 
+\item {[}A{]} Obtenga una aproximación al estado fundamental del oscilador utilizando
+la siguiente familia de funciones de prueba. \[
+\Psi (b,x)=\dfrac{1}{x^{2}+b}\]
+
+\item {[}A{]} Un sistema se encuentra formado por dos partículas que poseen momento
+angular bien definido y caracterizado por los números cuánticos \begin{eqnarray*}
+l_{1} & = & 1\\
+m_{1} & = & 0\\
+l_{2} & = & 1\\
+m_{2} & = & 0
+\end{eqnarray*}
+
+
+\begin{enumerate}
+\item Deduzca los posibles valores de \( L \) asociado al momento angular
+total 
+\item Escriba el estado anterior como una combinaci\'{o}n lineal de estados
+con buen momento angular. 
+\end{enumerate}
+
+\item {[}A{]} Un sistema se encuentra formado por dos part\'{\i}culas con
+momentos angulares $\mathbb{L}_a$ y $\mathbb{L}_b$. Si definimos el
+momento angular total del sistema como $\mathbb{L} = \mathbb{L}_a
++\mathbb{L}_b$, obtenga los conmutadores siguientes:
+\begin{enumerate}
+\item $ \left[ \mathsfbf{L}_{x},\mathsfbf{L}_{y}\right] = i\hbar \mathsfbf{L}_{z} $
+\item $ \left[ \mathsfbf{L}_{z},\mathsfbf{L}^{2}\right] = 0     $
+\item $ \left[ \mathsfbf{L}_{a}^{2},\mathsfbf{L}^{2}\right]  = 0$
+\item $ \left[ \mathsfbf{L}^{2}_{a},\mathsfbf{L}_{z}\right] =0  $
+\item $ \left[ \mathsfbf{L}_{a_{z}},\mathsfbf{L}^{2}\right] = 
+        \mathsfbf{L}_{a_y}\mathsfbf{L}_{b_x}-\mathsfbf{L}_{a_x}\mathsfbf{L}_{b_y}  $
+\end{enumerate}
+
+
+
+\end{enumerate}
+
+\section*{Algunas soluciones}
+
+
+\subsubsection{Ejercicio 1 (perturbación de un oscilador armónico mediante un campo
+eléctrico)}
+
+Vamos a afrontar el problema primero utilizando la teoría de perturbaciones
+y después aplicando un desarrollo en serie para dar una solución exacta. 
+
+\begin{description}
+\item [Método~perturbativo.]Las correcciones a la energía a orden uno y
+a orden dos son sendas integrales. Para aprovechar las condiciones
+de ortonormalidad sobre las funciones de onda del oscilador armónico,
+vamos a utilizar los operadores \( \mathcal{A} \) y \( \mathcal{A}^{+} \),
+intentando expresar el operador \( \mathcal{X} \) en función de ellos.
+Para ello, recordemos la expresión de \( \mathcal{A} \) y \( \mathcal{A}^{+} \)
+en términos de operadores conocidos \begin{eqnarray*}
+\mathcal{A} & = & \left( 2\hbar m\omega \right) ^{-\dfrac{1}{2}}\left( m\omega \mathcal{X}+i\mathcal{P}\right) \\
+\mathcal{A}^{+} & = & \left( 2\hbar m\omega \right) ^{-\dfrac{1}{2}}\left( m\omega \mathcal{X}-i\mathcal{P}\right) 
+\end{eqnarray*}
+ de donde, resolviendo el sistema para \( \mathcal{X} \)\[
+\mathcal{X}=\left( \dfrac{\hbar }{2m\omega }\right) ^{\dfrac{1}{2}}\left( \mathcal{A}+\mathcal{A}^{+}\right) \]
+ Sólo queda calcular las correcciones. La primera es\begin{eqnarray*}
+E^{\left( 1\right) } & = & \Braket{\phi _{n}^{\left( 0\right) }}{-q\varepsilon \mathcal{X}}{\phi _{n}^{\left( 0\right) }}\\
+ & = & -q\varepsilon \left( \dfrac{\hbar }{2m\omega }\right) ^{\dfrac{1}{2}}\Braket{\phi _{n}^{\left( 0\right) }}{\mathcal{A}+\mathcal{A}^{+}}{\phi _{n}^{\left( 0\right) }}\\
+ & = & cte× \left( \Braket{\phi _{n}^{\left( 0\right) }}{\mathcal{A}}{\phi _{n}^{\left( 0\right) }}+\Braket{\phi _{n}^{\left( 0\right) }}{\mathcal{A}^{+}}{\phi _{n}^{\left( 0\right) }}\right) 
+\end{eqnarray*}
+Las dos integrales se anulan, porque sabemos que\begin{eqnarray*}
+\mathcal{A}\ket{\phi _{n}} & = & \sqrt{n}\ket{\phi ^{\left( 0\right) }_{n-1}}\\
+\mathcal{A}^{+}\ket{\phi _{n}} & = & \sqrt{n+1}\ket{\phi ^{\left( 0\right) }_{n+1}}
+\end{eqnarray*}
+ y \( \int \phi _{i}^{\left( 0\right) }\phi ^{\left( 0\right) }_{j}dq=\delta _{ij} \)
+si las autofunciones del oscilador armónico están convenientemente
+normalizadas. Por tanto \( E^{\left( 1\right) }=0 \). Tendremos que
+añadir más términos al desarrollo.\\
+La segunda corrección a la energía supone más engorro pero ningún
+principio nuevo\begin{eqnarray*}
+E^{\left( 2\right) } & = & \sum _{n\neq j}\dfrac{\left| \Braket{\phi _{j}^{\left( 0\right) }}{-q\varepsilon \mathcal{X}}{\phi _{n}^{\left( 0\right) }}\right| ^{2}}{E_{n}^{\left( 0\right) }-E^{\left( 0\right) }_{j}}\\
+ & = & \dfrac{\hbar \left( q\varepsilon \right) ^{2}}{2m\omega }\sum _{n=j± 1}\dfrac{\left| \Braket{\phi _{j}^{\left( 0\right) }}{\mathcal{A}+\mathcal{A}^{+}}{\phi _{n}^{\left( 0\right) }}\right| ^{2}}{E_{n}^{\left( 0\right) }-E^{\left( 0\right) }_{j}}
+\end{eqnarray*}
+ para \( n=j-1 \) sólo es no nula la integral con \( \mathcal{A}^{+} \)
+como operador, y para \( n=j+1 \) la que tiene a \( \mathcal{A} \)
+como operador. \begin{eqnarray*}
+E^{\left( 2\right) } & = & \dfrac{\hbar \left( q\varepsilon \right) ^{2}}{2m\omega }\left( \dfrac{\left| \Braket{\phi _{j}^{\left( 0\right) }}{\mathcal{A}}{\phi _{j+1}^{\left( 0\right) }}\right| ^{2}}{E^{\left( 0\right) }_{j+1}-E^{\left( 0\right) }_{j}}+\dfrac{\left| \Braket{\phi _{j}^{\left( 0\right) }}{\mathcal{A}}{\phi _{j-1}^{\left( 0\right) }}\right| ^{2}}{E^{\left( 0\right) }_{j-1}-E^{\left( 0\right) }_{j}}\right) \\
+ & = & \dfrac{\left( q\varepsilon \right) ^{2}}{2m\omega ^{2}}\left( n-\left( n+1\right) \right) \\
+ & = & -\dfrac{\left( q\varepsilon \right) ^{2}}{2m\omega ^{2}}
+\end{eqnarray*}
+ donde he utilizado en los denominadores la expresión de la energía
+del oscilador armónico, \( E^{\left( 0\right) }_{n}=\left( n+\dfrac{1}{2}\right) \hbar \omega  \).
+\item [Método~exacto.]Otra forma de resolver el problema consiste en darse
+cuenta de que \( V\left( x\right) =\dfrac{1}{2}m\omega ^{2}x^{2}-q\varepsilon x=\dfrac{1}{2}m\omega ^{2}\left( x-\dfrac{q\varepsilon }{m\omega ^{2}}\right) ^{2}-\dfrac{1}{2}\dfrac{\left( q\varepsilon \right) ^{2}}{m\omega ^{2}}=\dfrac{1}{2}m\omega ^{2}x'^{2}-\dfrac{1}{2}\dfrac{\left( q\varepsilon \right) ^{2}}{m\omega ^{2}} \)
+Como \( \dx{}\doteq \da{}{x'} \)se puede escribir\[
+H=-\dfrac{\hbar ^{2}}{2m}\da{^{2}}{x'^{2}}+\dfrac{1}{2}m\omega ^{2}x'^{2}-\dfrac{\left( q\varepsilon \right) ^{2}}{2m\omega ^{2}}\]
+que no es más que el hamiltoniano de un oscilador armónico idéntico
+al no perturbado pero cuyo origen de potenciales ha sido desplazado
+en \( -\dfrac{1}{2}\dfrac{\left( q\varepsilon \right) ^{2}}{m\omega ^{2}} \).
+Por tanto\begin{eqnarray*}
+E_{n} & = & \hbar \omega \left( n+\dfrac{1}{2}\right) -\dfrac{1}{2}\dfrac{\left( q\varepsilon \right) ^{2}}{m\omega ^{2}}\\
+ & = & E_{n}^{0}-\dfrac{1}{2}\dfrac{\left( q\varepsilon \right) ^{2}}{m\omega ^{2}}
+\end{eqnarray*}
+ 
+\item [Interpretación]El potencial antes y después de la perturbación se
+encuentra representado en la figura \ref{fig oa perturbado}. La característica
+esencial del oscilador armónico es que sus niveles de energía son
+equiespaciados. Esto se mantiene al aplicar el campo eléctrico, pero
+todos ellos se desplazan \( \dfrac{1}{2}\dfrac{\left( q\varepsilon \right) ^{2}}{m\omega ^{2}} \)
+hacia abajo.
+
+\begin{figure}
+{\centering \includegraphics[width=4cm]{fig/oa-perturbado-src.eps} \par}
+\caption{\label{fig oa perturbado}La curva que pasa por el \protect\( 0,0\protect \)
+corresponde al potencial no perturbado.}
+\end{figure}
+
+Cabe señalar que el método exacto lo es porque su validez no depende
+de la pequeñez del campo aplicado, \( \varepsilon  \). Sin embargo,
+las fórmulas del método aproximado no serían válidas si \( \varepsilon  \)
+fuera grande. Por otra parte, nos damos cuenta de que los términos
+\( E^{\left( 3\right) } \) y sucesivos se anulan, pues con un desarrollo
+truncado a orden \( 2 \) se obtiene la solución exacta. Finalmente,
+se puede decir que para cualquier perturbación que dependa de una
+potencia impar de \( \mathcal{X} \), la primera corrección a la energía
+es nula. ¿Por qué?.
+\end{description}
+
+\end{document}

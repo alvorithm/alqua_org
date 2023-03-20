@@ -1,0 +1,57 @@
+:rule %.eps : %-src.py
+	:sys python $source 
+
+:rule %.pdf : %-src.eps
+	@try:
+		:sys epstopdf $source --outfile $target --debug
+	@except:
+		:print ALTERNATIVE METHOD STILL UNIMPLEMENTED
+
+:rule %.pdf : %.eps
+	@try:
+		:sys epstopdf $source
+	@except:
+		:print ALTERNATIVE METHOD STILL UNIMPLEMENTED
+
+:rule %.eps : %-src.eps
+	:print $source -> $target
+
+:rule %.eps : %-src.sk
+	:sys sk2ps $source > $target
+
+:rule %.eps : %-src.gnuplot
+	:sys gnuplot $source
+
+:rule %.bb : %.pdf
+	:sys ebb $source
+
+:rule %.bb : %.png
+	:sys ebb $source
+
+:rule %.bb : %.jpg
+	:sys ebb $source
+
+:rule %.bb : %.jpeg
+	:sys ebb $source
+
+
+sourcefiles = `glob("*-src.*")`
+
+:python
+	def outfilelist(ext): 
+		return ' '.join([fname.split('.')[0][:-4] + '.' + ext for fname in sourcefiles.split(' ') if fname[-1] not in ['~','#']])
+	epslist = outfilelist('eps')
+	pdflist = outfilelist('pdf')
+	pnglist = outfilelist('png')
+	sklist  = outfilelist('sk')
+
+@for (epsfile,sourcefile) in zip(_no.epslist,sourcefiles):
+	$epsfile : $sourcefile
+
+EPSFIG : $epslist
+PDFFIG : $pdflist
+
+#CLEANFILES : 
+#	allfiles = `glob("*")`
+#	removeable = `' '.join([file for file in ' '.join(_no.allfiles) and file not in ' '.join(_no.sourcefiles)])`
+#	:print $removeable

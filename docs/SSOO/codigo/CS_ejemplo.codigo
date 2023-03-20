@@ -1,0 +1,9 @@
+#la actualización tentativa suma 3
+
+C&S: MOVE VIEJOREG, suma
+
+DeNuevo: MOVE NUEVOREG,VIEJOREG
+
+	ADD NUEVOREG,#3
+	CS VIEJOREG,NUEVOREG,suma
+	BNEQ	DeNuevo

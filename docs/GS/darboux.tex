@@ -1,0 +1,159 @@
+\documentclass[spanish,a4paper,12pt,draft]{report}
+\usepackage{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{eurosym}
+\input{GS-packages.sty}
+\input{GS-macros.sty}
+\begin{document}
+\chapter{Teorema de Darboux}
+
+Existen básicamente dos tipos de demostraciones del teorema de Darboux.  La más clásica hace uso de la teoría de los sistemas exteriores. Se proponen ciertas ecuaciones diferenciales y a través de sus soluciones se construyen las coordenadas canónicas.
+
+El otro tipo de demostración, cuyos fundamentos se deben a Moser y a Weistein, utiliza otra estrategia.  Se basa en introducir en la variedad otra forma simpléctica $\wa'$ y junto con ella un conjunto de formas simplécticas $\omega_t$ que las unan.  Posteriormente se demuestra que todas las formas $\omega_t$ son simplectomorfas. Este tipo de razonamiento es útil en otros desarrollos de la geometría simpléctica. 
+
+ Necesitamos unos conceptos preliminares sobre las ecuaciones diferenciales.
+
+\section{Líquidos}
+
+Consideremos un subconjunto ``rígido'' $\V$ del espacio euclídeo.  Este conjunto estará lleno de un líquido incompresible.  Aunque no es necesario, fijemos por convenio un instante en el que consideremos que el tiempo $t$ es cero.
+
+Dado un instante de tiempo $t$, la partícula que se encontraba en el punto $x$ pasa a estar en el punto $x_t$.  Asignando a cada punto $x$ de $\V$ el punto $x_t$ donde se encuentra la misma partícula al cabo de un tiempo $t$, tenemos definido una aplicación
+$$
+\rho_t : \V \rightarrow \V
+$$
+
+La aplicación será inyectiva, puesto que si dos partículas ocupaban posiciones distintas $x_1$ y $x_2$ en el instante $t=0$, en el instante $t$ también deben ocupar lugares distintos.
+
+Como el líquido es incompresible, en todo momento el conjunto $\V$  está lleno de líquido.  Dado un punto $x$ de $\V$, la partícula que ahora se encuentra en $x$, debía encontrarse hace un tiempo $t$ en algún lugar de $\V$.  Este razonamiento prueba que la aplicación $\rho_t$ debe ser epiyectiva y en consecuencia también debe ser biunívoca.  Además $\rho_0= \Id$ por construcción.
+
+De este modo podemos definir una función
+$$
+\begin{array}{cccc}
+\rho :& \R \times \V & \rightarrow & \V \\
+        &(t,x ) & \rightarrow & x_t= \rho_t(x)
+\end{array}
+$$
+
+Si fijamos $t$, tenemos definida $\rho_t : \V \rightarrow \V$ que debe ser una aplicación biunívoca.  Si fijamos $x$ tenemos la función
+$$
+\begin{array}{cccc}
+\rho_x : & \R & \rightarrow & \V  \\
+        &t & \rightarrow & x_t
+\end{array}
+$$
+que describe la trayectoria de la partícula que en el instante $t=0$ se encontraba en el punto $x$.
+
+En cada instante de tiempo, la partícula que circula por el punto $x \in \V$ tiene una cierta velocidad.  Como esto ocurre en todos los puntos, para cada tiempo $t$ tenemos definido un campo vectorial $X_t$ construido con las velocidades de las partículas. 
+
+Para calcular el vector velocidad en el punto $x$ y en instante $t$, tomamos la linea que describe la trayectoria de la partícula y calculamos su velocidad
+
+$$
+X_t(x)= \frac{d\rho_s(q)}{ds}\mid_{s=t} \text{ donde }
+ q= \rho_t^{-1}(x)
+$$
+El punto $q$ es la partícula que en el instante $t$ pasa por el punto $x$. 
+
+ Lo normal es que este campo cambie con el tiempo.  En el caso en que esto no ocurra, diremos que el líquido es estacionario y en todo momento el campo de velocidades es $X$. Como bien sabemos, en este caso se tiene $\rho_t \rho_s= \rho_{t+s}$ y estamos en presencia de un grupo uniparamétrico.
+
+\section{Isotopías y campos dependientes del\\ tiempo}
+
+\begin{defi}
+
+Sea $\V$ una variedad arbitraria.  Una {\sf isotopía} \index{isotopía} es una función
+
+$$
+\rho : \V \times \R \rightarrow \V
+$$
+que cumple:
+
+\begin{itemize}
+
+\item  La aplicación es diferenciable.
+
+\item $\rho_t$ es un difeomorfismo de $\V$ para todo $t$.
+
+\item $\rho_0= \Id$.
+
+\end{itemize}
+
+\end{defi}
+
+El concepto de isotopía es la formulación matemática del movimiento de un fluido incompresible.
+
+\begin{defi}
+
+Sea $\V$ una variedad.  Un {\sf campo dependiente del tiempo} \index{campo!dependiente del tiempo} es una aplicación diferenciable
+
+$$
+X : \V \times \R \rightarrow T(\V)
+$$
+que cumple $X(x,t) \in T_x(\V)$. 
+
+Una {\sf curva integral} \index{curva!integral} es una aplicación
+$c : (a,b) \rightarrow \V$ que verifica la ecuación diferencial $c'(t)= X(c(t),t)$.
+
+\end{defi}
+
+
+Fijada la variable $t$, tendremos una sección del fibrado tangente que denotaremos $X_t$.  De esta forma un campo dependiente del tiempo se puede entender como una colección de campos ``normales'' parametrizada por el tiempo.
+
+En coordenadas, un campo dependiente del tiempo es una combinación lineal de los campos  coordenados, pero donde las funciones dependen de las coordenadas y del tiempo.
+
+$$
+X = f_i(x_1, \dots,x_n,t) \frac{\partial}{\partial x_i}
+$$
+
+Sumandole a esta expresión la derivada parcial respecto al tiempo, tendremos un campo vectorial ``normal'', pero definido en la variedad $\V \times \R$.  Denotaremos dicho campo mediante $\tilde X$.
+
+$$
+\tilde X  = f_i(x_1, \dots,x_n,t) \frac{\partial}{\partial x_i}
++ \frac{\partial}{\partial t}
+$$
+
+Esta definción se puede hacer de un modo intrínseco.  Para ello recordemos que\linebreak $T(\V \times \R) =  T(\V)\times T(\R) =  T(\V)\times \R^2$
+
+Con esta notación, el campo $\tilde X$ es la sección
+
+$$
+\begin{array}{cccc}
+\tilde X :&  \V \times \R &\rightarrow &   T(\V) \times \R^2 \\
+          &(x,t) & \rightarrow & \left ( X(t,x), (t,1)\right )
+\end{array}
+$$
+
+El campo $\tilde X$ se llama {\sf suspensión} \index{suspensión} del campo dependiente del tiempo $X_t$
+
+A cada isotopía le podemos asignar un campo dependiente del tiempo mediante la fórmula ya conocida
+$$
+X_t(x)= \frac{d\rho_s(q)}{ds}\mid_{s=t} \text{ donde }
+ q= \rho_t^{-1}(x)
+$$
+
+El problema de encontrar una isotopía que cumpla esto para un campo dependiente del tiempo es un problema de  ecuaciones diferenciales y no tiene siempre solución global, del mismo modo que no tiene solución global el problema de integración de un campo vectorial que no dependa del tiempo.
+
+
+
+Recordemos que si la variedad es compacta cualquier campo vectorial genera un grupo uniparamétrico global.  Aunque no estemos en una variedad compacta, si el soporte del campo es compacto, también genera un grupo global.
+
+En general, dada una variedad arbitraria y un campo vectorial $X$ lo más que se puede conseguir es un grupo uniparamétrico global, que no estará definido ni para todo punto, ni para todo tiempo.
+
+Utilizando la suspensión de un campo e integrando dicho campo podemos afirmar (ver \cite{abrfou, lersym} para los detalles):
+
+\begin{itemize}
+
+\item  Si la variedad es compacta todo campo dependiente del tiempo genera una isotopía global.
+
+\item  Si todos los campos $X_t$ tienen soporte compacto, se puede encontrar también una isotopía global.
+
+\item  Si para algún punto se tiene $X_t(x_0)=0$ para todo $t$, entonces existe un entorno $U$ de $x_0$ y una familia de difeomorfismo locales $\rho_t : U \rightarrow \V$ definidas para todos los valores de $t \in [0,1]$.  Dichas aplicaciones cumplen la ecuación diferencial
+$$
+\frac{d}{dt}(\rho_t(x)) = X_t(\rho_t(x))
+$$
+y verifican $\rho_t(x_0)=x_0$.
+
+Esto que hemos definido no es otra cosa que una {\sf isotopía local}.\index{isotopía!local}
+
+\end{itemize}
+
+\end{document}

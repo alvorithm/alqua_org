@@ -1,0 +1,7 @@
+T&S: TS mutex
+
+	BNF T&S
+	MOVE ACC,suma
+	ADD ACC, #B
+	MOVE suma, ACC
+	MOVE mutex,1

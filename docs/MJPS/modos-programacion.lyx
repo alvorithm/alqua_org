@@ -1,0 +1,1681 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass scrbook
+\begin_preamble
+\usepackage{framed} 
+\typearea{10}
+\usepackage{multicol}
+\end_preamble
+\language spanish
+\inputencoding auto
+\fontscheme times
+\graphics default
+\paperfontsize 11
+\spacing single 
+\papersize Default
+\paperpackage widemarginsa4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+
+\layout Chapter
+
+Modos de programación
+\layout Section
+
+Introducción
+\layout Standard
+
+La tarjeta JPS-XPC84 permite 
+\series bold 
+dos modos de configuración
+\series default 
+ de una FPGA, ya sea de la familia Spartan o de la 4000.
+ Estos son el 
+\series bold 
+modo maestro
+\series default 
+ (
+\series bold 
+\emph on 
+master
+\series default 
+\emph default 
+) y el 
+\series bold 
+modo esclavo serie
+\series default 
+ (
+\series bold 
+\emph on 
+slave
+\series default 
+\emph default 
+).
+ En el primero, la FPGA es la que lleva la iniciativa de la configuración
+ mientras que en el segundo no.
+ Ambos modos se basan en que los datos se transmiten en serie hacia la FPGA
+ y ésta los captura en los flancos de una señal de reloj denominada 
+\series bold 
+CCLK
+\series default 
+.
+ En el 
+\series bold 
+modo maestro
+\series default 
+ la FPGA se encarga de proporcionar el reloj, mientras que el 
+\series bold 
+modo esclavo
+\series default 
+ este reloj es externo.
+ 
+\layout Standard
+
+El modo en el que se encuentra operando la FPGA se selecciona mediante el
+ 
+\emph on 
+jumper
+\emph default 
+ 
+\series bold 
+JP1
+\series default 
+.
+ Si JP1 está puesto, el modo es maestro, y si se encuentra quitado el modo
+ es esclavo.
+ Los pines de la FPGA que indican el modo son P30(M1), P32(M1), P34(M2).
+\layout Standard
+
+La 
+\series bold 
+familia 4000
+\series default 
+ tiene siete modos de configuración, incluyendo el modo esclavo y maestro,
+ y utilizan los tres pines para seleccionarlos.
+ En cambio la 
+\series bold 
+familia Spartan
+\series default 
+ sólo tiene dos modos, por lo que únicamente utiliza el pin M0.
+ En la tarjeta los pines se encuentran cortocircuitados de forma que en
+ un momento dado (dependiendo del 
+\emph on 
+jumper
+\emph default 
+ JP1) sólo se pueden dar una de las siguientes configuraciones: 000 ó 111.
+ Tanto en la familia 4000 como la Spartan la primera configuración indica
+ modo maestro y la segunda modo esclavo.
+ 
+\layout Standard
+
+La Tabla 
+\begin_inset LatexCommand \ref{tab_modos_config_jps}
+
+\end_inset 
+
+ se resumen los dos modos permitidos, la configuración de los bits M0, M1
+ y M2, si la señal de reloj la genera la FPGA (salida) o externamente(entrada)
+ y cómo se suministran los datos, si en serie o en paralelo.
+\layout Standard
+
+
+\begin_inset Float table
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset  Tabular
+<lyxtabular version="3" rows="3" columns="6">
+<features>
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" rightline="true" width="0pt">
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+\align center 
+
+\series bold 
+Modo
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+M2
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+M1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+M0
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+CCLK
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+Datos
+\end_inset 
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+Maestro serie
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+0
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+0
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+0
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+salida
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+Bit-serie
+\end_inset 
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+Esclavo serie
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+entrada
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+Bit-serie
+\end_inset 
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset 
+
+
+\layout Caption
+
+Modos de configuración de la tarjeta JPS-XPC84
+\begin_inset LatexCommand \label{tab_modos_config_jps}
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+En cualquiera de los dos modos el led D1 (ver Figura 
+\begin_inset LatexCommand \ref{fig_esquematico_jps}
+
+\end_inset 
+
+) se mantendrá encendido durante todo el proceso de programación, y se apagará
+ cuando la FPGA esté correctamente cargada.
+ 
+\series bold 
+Si D1 no se apaga entonces significa que la FPGA no se ha programado correctamen
+te
+\series default 
+.
+\layout Section
+
+Modo de configuración maestro
+\begin_inset LatexCommand \label{ap_modo_maestro}
+
+\end_inset 
+
+
+\layout Standard
+\added_space_top medskip \added_space_bottom medskip \align center 
+
+\begin_inset  Tabular
+<lyxtabular version="3" rows="2" columns="6">
+<features>
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" rightline="true" width="0pt">
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+M0
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+M1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+M2
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+JP1
+\end_inset 
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+Modo maestro
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+EEPROM
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+0
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+0
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+0
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+ON
+\end_inset 
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset 
+
+
+\layout Standard
+
+En este modo la FPGA 
+\series bold 
+lee la configuración de una memoria EEPROM serie
+\series default 
+ colocado en el zócalo U2 (ver Figura 
+\begin_inset LatexCommand \ref{fig_esquematico_jps}
+
+\end_inset 
+
+).
+ La placa ha sido probada con la memoria 
+\series bold 
+AT17C128
+\series default 
+ de la casa ATMEL
+\begin_inset LatexCommand \cite{atmel}
+
+\end_inset 
+
+.
+ Para iniciar la programación en modo maestro se utiliza el pulsador S1
+ (ver Figura 
+\begin_inset LatexCommand \ref{fig_esquematico_jps}
+
+\end_inset 
+
+), de tal forma que cada vez que se pulse se cargará el diseño almacenado
+ en la FPGA.
+ En este modo, también se programará la FPGA cada vez que se conecte la
+ alimentación al circuito.
+ En la Figura 
+\begin_inset LatexCommand \ref{fig_conexion_fpga_eeprom}
+
+\end_inset 
+
+ se muestra el esquema de conexión de la memoria EEPROM con la FPGA.
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename ps/EEPROM.eps
+	display color
+	width 80text%
+
+\end_inset 
+
+
+\layout Caption
+
+Conexiones entre la FPGA y la memoria serie AT17C128
+\begin_inset LatexCommand \label{fig_conexion_fpga_eeprom}
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+En la Figura 
+\begin_inset LatexCommand \ref{fig_eeprom_crono}
+
+\end_inset 
+
+ se muestra el cronograma de las señales que provee la FPGA para leer la
+ memoria serie.
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename ps/crono_read_eeprom.eps
+	display monochrome
+	width 90text%
+
+\end_inset 
+
+
+\layout Caption
+
+Cronograma del proceso de lectura de una EEPROM serie AT17C128
+\begin_inset LatexCommand \label{fig_eeprom_crono}
+
+\end_inset 
+
+
+\end_inset 
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename ps/eeprom_caract.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+Características de la EEPROM serie AT17C128
+\end_inset 
+
+
+\layout Section
+
+Modo de configuración esclavo
+\begin_inset LatexCommand \label{ap_modo_esclavo}
+
+\end_inset 
+
+
+\layout Standard
+\added_space_top medskip \added_space_bottom medskip \align center 
+
+\begin_inset  Tabular
+<lyxtabular version="3" rows="2" columns="6">
+<features>
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" rightline="true" width="0pt">
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+M0
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+M1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+M2
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+JP1
+\end_inset 
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+Modo esclavo
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+Sistema externo o PC
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+OFF
+\end_inset 
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset 
+
+
+\layout Standard
+
+La configuración se realiza desde un sistema externo.
+ Se han habilitado dos conectores distintos CT7 y CT8.
+\layout Standard
+
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+begin{framed} AVISO: La tarjeta no se configurará correctamente en este modo si la EEPROM serie se encuentra colocada en el zócalo U2, independientemente de la posición del jumper JP1 
+\backslash 
+end{framed}
+\end_inset 
+
+
+\layout Standard
+
+En 
+\series bold 
+modo esclavo serie
+\series default 
+ la FPGA recibe los datos en serie por el pin DIN y los captura en los flancos
+ de subida de la señal CCLK, que se proporciona externamente.
+ En la Figura 
+\begin_inset LatexCommand \ref{fig_clock_slaveFPGA}
+
+\end_inset 
+
+ se muestra los cronogramas de ambas señales y los tiempos mínimos que hay
+ que respetar.
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename ps/crono_slave_fpga.eps
+	display monochrome
+	width 80text%
+
+\end_inset 
+
+
+\layout Caption
+
+Señales de configuración de la FPGA en modo esclavo
+\begin_inset LatexCommand \label{fig_clock_slaveFPGA}
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+Para comenzar el proceso de configuración hay que poner a nivel bajo la
+ señal PROGRAM (pin 55).
+ La FPGA pondrá a nivel alto la señal INIT (pin p41).
+ Cuando la FPGA haya sido correctamente programada la señal DONE se pondrá
+ a nivel alto, e indicará al sistema que la esté configurando que el proceso
+ se ha realizado correctamente.
+\layout Section
+
+Puerto de control
+\begin_inset LatexCommand \label{ap_puerto_control}
+
+\end_inset 
+
+
+\layout Standard
+
+Este puerto lo constituye el 
+\series bold 
+conector CT7
+\series default 
+.
+ Esta pensado para programar la FPGA desde otra tarjeta
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Al día de escribir esta documentación (8-dic-2002) todavía no se probado
+ este puerto, por lo que no se puede garantizar al 100% su correcto funcionamien
+to.
+\end_inset 
+
+.
+ En la Figura 
+\begin_inset LatexCommand \ref{fig_puerto_control}
+
+\end_inset 
+
+ se muestra el conexionado de pines de puerto de control.
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename ps/puerto_control.eps
+	display monochrome
+	width 80text%
+
+\end_inset 
+
+
+\layout Caption
+
+Configuración de pines del puerto de control
+\begin_inset LatexCommand \label{fig_puerto_control}
+
+\end_inset 
+
+
+\end_inset 
+
+
+\begin_inset Float table
+wide false
+collapsed false
+
+\layout Standard
+
+
+\begin_inset  Tabular
+<lyxtabular version="3" rows="2" columns="11">
+<features>
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" rightline="true" width="0pt">
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+Conector
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+2
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+3
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+4
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+5
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+6
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+7
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+8
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+9
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+10
+\end_inset 
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+P1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+DATA
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+DONE
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+CCLK
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+RESET#/OE
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+VCC
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+GND
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+SCLK
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+CE#
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset 
+
+
+\layout Caption
+
+Distribución de pines del puerto de control
+\begin_inset LatexCommand \label{tab_pines_puerto_control}
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+El puerto de control no tiene entrada para la señal PROGRAM, lo cual obliga
+ a que el usuario tenga que iniciar manualmente el proceso de configuración
+ accionando el pulsador S1.
+\layout Section
+
+Programación de la FPGA desde el PC
+\begin_inset LatexCommand \label{ap_prog_pc}
+
+\end_inset 
+
+
+\layout Standard
+
+El 
+\series bold 
+conector CT8
+\series default 
+ se ha diseñado para facilitar la programación de la FPGA desde un PC utilizando
+ las herramientas desarrollados por la empresa Xilinx
+\begin_inset LatexCommand \cite{xilinx}
+
+\end_inset 
+
+.
+ La conexión entre en el PC y la tarjeta se realiza utilizando un cable
+ especial suministrado por Xilinx denominado cable de descarga (ver Figura
+ 
+\begin_inset LatexCommand \ref{fig_download_cable}
+
+\end_inset 
+
+).
+ El cable se conecta por un lado al puerto serie de PC, por el otro a cada
+ uno de los ocho pines torneados del conector CT8.
+ A cada pin torneado se conecta una de las ocho terminaciones del cable.
+ Cada terminación tiene un color distinto y una etiqueta identificativa.
+ La correspondencia entre los pines del conector y de las etiquetas de las
+ terminaciones se resume en la tabla 
+\begin_inset LatexCommand \ref{tab_cable_descarga}
+
+\end_inset 
+
+.
+ 
+\layout Standard
+
+
+\begin_inset Float table
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset  Tabular
+<lyxtabular version="3" rows="3" columns="9">
+<features>
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" width="0pt">
+<column alignment="center" valignment="top" leftline="true" rightline="true" width="0pt">
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+1
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+2
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+3
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+4
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+5
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+6
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+7
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+8
+\end_inset 
+</cell>
+</row>
+<row topline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+CT8
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+VCC
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+GND
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+CCLK
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+DONE
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+DATA
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+PROG
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+INIT
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+RST
+\end_inset 
+</cell>
+</row>
+<row topline="true" bottomline="true">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+
+\series bold 
+Cable
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+VCC
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+GND
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+CCLK
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+D/P
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+DIN
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+PROG
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+INIT
+\end_inset 
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\layout Standard
+
+RST
+\end_inset 
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset 
+
+
+\layout Caption
+
+Correspondencia de los pines del conector CT8 con el cable de descarga suministr
+ado por Xilinx
+\begin_inset LatexCommand \label{tab_cable_descarga}
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename ps/download_cable_.eps
+	display color
+
+\end_inset 
+
+
+\layout Caption
+
+Aspecto del cable de descarga paralelo suministrado por Xilinx
+\begin_inset LatexCommand \label{fig_download_cable}
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+En la Figura 
+\begin_inset LatexCommand \ref{fig_conector_CT8}
+
+\end_inset 
+
+ se observa el aspecto real del conector CT8.
+ Junto al conecto se ha colocado en la serigrafía de la tarjeta un cuadro
+ recordatorio de la configuración de los pines.
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename ps/ct8_foto.eps
+	display color
+	height 50text%
+
+\end_inset 
+
+
+\layout Caption
+
+Foto del conector CT8
+\begin_inset LatexCommand \label{fig_conector_CT8}
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Section
+
+Programación de la EEPROM desde el puerto de control
+\begin_inset LatexCommand \label{ap_prog_eeprom}
+
+\end_inset 
+
+
+\layout Standard
+
+En el caso que se utilize una memoria 
+\series bold 
+AT17C128
+\series default 
+ se dispone de la posibilidad de programar la memoria 
+\begin_inset Quotes eld
+\end_inset 
+
+in circuit
+\begin_inset Quotes erd
+\end_inset 
+
+.
+ Para ello se utiliza el
+\series bold 
+ puerto de control
+\series default 
+ (ver Figura 
+\begin_inset LatexCommand \ref{fig_puerto_control}
+
+\end_inset 
+
+), a través del cual otro sistema, como puede ser un microprocesador u otra
+ FPGA, puede programar la memoria serie sin necesidad de tener que quitar
+ del zócalo la memoria.
+ 
+\layout Standard
+
+Para poder habilitar la programación de la EEPROM
+\series bold 
+ el pin 1 del switch de configuración
+\series default 
+ (
+\begin_inset LatexCommand \ref{fig_comp_s3}
+
+\end_inset 
+
+) 
+\series bold 
+tiene que estar en ON
+\series default 
+.
+ Mientras que la tarjeta se encuentre en este modo la FPGA no se puede cargar
+ desde la memoria EEPROM.
+ Tampoco se recomienda programar la FPGA desde el PC mientras que la tarjeta
+ se encuentra en modo programación de EEPROM.
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename ps/comp-s3.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+Componente S3, conmutadores
+\begin_inset LatexCommand \label{fig_comp_s3}
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+La tabla 
+\begin_inset LatexCommand \ref{tab_pines_puerto_control}
+
+\end_inset 
+
+ muestra la distribución de pines del puerto de control.
+ La Figura 
+\begin_inset LatexCommand \ref{fig_prog_eeprom}
+
+\end_inset 
+
+ representa el conexionado propuesto por ATMEL para realizar la programación
+ de la EEPROM.
+ En la placa JPS-XPC84 se ha respetado el esquema con la salvedad de que
+ la señal SER_EN# se encuentra conectada al bit 0 del switch de configuración(S3
+, ver 
+\begin_inset LatexCommand \ref{fig_comp_s3}
+
+\end_inset 
+
+).
+ Esta señal es la que habilita si la EEPROM se va a programar o a leer,
+ por lo que con este bit se selecciona el modo de funcionamiento de la EEPROM.
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename ps/at17_prog_conex.eps
+	display color
+	width 90text%
+
+\end_inset 
+
+
+\layout Caption
+
+Conexionado para programar la memoria EEPROM desde un sistema externo.
+ Proporcionado por ATMEL.
+\begin_inset LatexCommand \label{fig_prog_eeprom}
+
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+Se utiliza un multiplexor de dos canales de 4 bits para que las señales
+ que lleguen a la EEPROM procedan bien de la FPGA(o del Download cable)
+ o bien de un sistema grabador externo.
+ Así por ejemplo, la señal de reloj CLK que llega a la EEPROM, puede venir
+ de la señal CCLK de la FPGA o bien de la señal de reloj SCLK externa, según
+ el estado de la entrada de selección S.
+ Lo mismo ocurre con las señales RESET/#OE y CE#.
+\layout Standard
+
+En la programación de la EEPROM intervienen cinco señales: SER_EN#, CE#,
+ RESET/#OE, SCLK y DATA.
+ La señal 
+\series bold 
+SER_EN#
+\series default 
+ es la que conmuta el modo de funcionamiento de la memoria, si está a nivel
+ alto se puede leer y si esta a nivel bajo se puede escribir.
+ Esta señal se controla mediante el 
+\series bold 
+pin 1 del switch de configuración
+\series default 
+, así que debe estar activada antes de empezar a programar.
+\layout Standard
+
+La señales
+\series bold 
+ CE#
+\series default 
+, 
+\series bold 
+RESET/#OE
+\series default 
+, 
+\series bold 
+SCLK
+\series default 
+ y 
+\series bold 
+DATA
+\series default 
+ controlan el flujo de la programación y tienen que ser suministradas por
+ el sistema externo.
+ Las señales CE#, RESET/#OE tienen que ser activadas durante todo el proceso
+ de la programación.
+ CE# se activa a nivel bajo mientras que RESET/#OE se activa a nivel alto.
+ Los datos que se quieren introducir en la memoria se sumistraran en serie
+ por la señal DATA, y estos serán capturados en cada flanco bajada de la
+ señal SCLK.
+ (Para más información consultar el la hoja de datos de la familia AT17XX
+ de Atmel).
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+FALTA
+\end_inset 
+
+
+\the_end

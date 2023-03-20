@@ -1,0 +1,379 @@
+\documentclass[spanish,a4paper,12pt,draft]{report}
+\usepackage{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{eurosym}
+\input{GS-packages.sty}
+\input{GS-macros.sty}
+\begin{document}
+\chapter{Simetrías}
+
+\section{Acciones simplécticas}
+
+
+Supongamos que $X_f$ es un campo hamiltoniano que pretendemos
+integrar.  Sea $Y$ un campo invariante de $X_f$.  Esto es lo mismo que
+decir que los campos conmutan, $[X_f,Y]=0$.  Supongamos que este campo
+$Y$ genera un grupo uniparamétrico completo $\tau :\R \times \V
+\rightarrow \V$.  Tenemos entonces que $\tau_t^*(X_f)=X_f$.  Si el
+campo $Y$ es también un campo hamiltoniano $X_g$, las funciones $f$ y
+$g$ estarán en involución puesto que sus campos conmutan.  De este
+modo, la invariancia del campo $X_f$ por un grupo uniparamétrico da
+lugar a una integral primera.  Esto que acabamos de enunciar es una
+versión del {\sf teorema de E. Noether}. \index{teorema!de Noether}
+
+Si en vez de un grupo de Lie unidimensional, el campo fuera invariante
+por un grupo de Lie $r$-dimensional, tomando los campos asociados a
+una base del álgebra de Lie, construiríamos $r$ integrales primeras.
+
+\begin{defi}
+  
+  Sea $G$ un grupo de Lie y $\V$ una variedad simpléctica conexa.
+  Decimos que una acción\footnote{Sobreentendemos que la acción es
+    diferenciable, esto es que la aplicación $\phi$ es diferenciable.
+    Además todas las acciones serán por la izquierda.  Mediante
+    $\phi_g$ denotamos la aplicación $\phi_g(x) = \phi(g,x)$.}
+  $$
+  \phi : G \times \V \rightarrow \V
+  $$
+  es {\sf simpléctica} \index{acción!simpléctica} si $\phi_g$ es
+  una transformación canónica para todo $g \in G$.
+
+\end{defi}
+
+Cuando hablemos de acciones, sobreentenderemos que son de tipo
+simpléc\-tico.  La acción también se puede entender como un morfismo
+de grupos
+$$
+\begin{array}{cccc}
+\phi : & G &   \rightarrow & \Dif(\V) \\
+     &   g & \rightarrow &\phi_g
+\end{array}
+$$
+
+
+
+
+\noindent{\bf Ejemplos.}
+
+\begin{itemize}
+  
+\item Sea $X$ un campo locamente hamiltoniano que genere un grupo
+  uniparamé\-trico global.  La aplicación
+  $$
+  \tau : \R \times \V \rightarrow \V
+  $$
+  es una acción del grupo de Lie $\R$ sobre la variedad $\V$.  Como
+  el campo es localmente hamiltoniano la acción es simpléctica.
+  
+\item Sea $S^2$ la esfera unidad dotada de las
+  coordenadas\footnote{Dichas coordenadas solo son válidas en un
+    abierto, pero esto no afecta para nada a nuestros propositos}
+  cilíndricas $(\theta,h)$ donde $\theta$ es el ángulo y $h$ (ó $z$)
+  la altura.  Con la forma $d\theta \wedge dh$ la esfera es una
+  variedad simpléctica.  La circunferencia unidad $S^1$ actua sobre la
+  variedad como giros alrededor del eje $z$.
+  $$
+\begin{array}{cccc}
+ \phi: & S^1 \times S^2  & \rightarrow & S^2 \\
+     &   (\alpha, (\theta,h)) & \rightarrow & (\alpha +\theta,h)
+\end{array}
+$$
+Esta acción conserva el área y por lo tanto es simpléctica.
+
+
+\item Sea $T^2= S^1 \times S^1$ el toro bidimensional.  Dotamos de
+  coordenadas angulares $(\theta_1,\theta_2)$ es una variedad
+  simpléctica con la $2$-forma $\wa = d \theta_1 \wedge \theta_2$.
+  Dicho toro también se puede interpretar como un grupo de Lie $G$.
+  La acción
+  $$
+\begin{array}{ccc}
+ G \times T^2& \rightarrow & T^2 \\
+ (\lambda_1,\lambda_2), (\theta_1,\theta_2) & \rightarrow & (\theta_1+ \lambda_1, \theta_2 + \lambda_2)
+\end{array}
+$$
+es simpléctica.
+
+
+
+
+\item Sea $\phi : G \times \V \rightarrow \V$ una acción arbitraria en
+  el espacio de configuración.  La subida de esta acción al fibrado
+  cotangente
+  $$
+  \tilde \phi : G \times \Gamma (\V) \rightarrow \Gamma (\V) \\
+  $$
+  donde $ \tilde \phi_g = (\phi^{-1}_g)^*$, es una acción
+  simpléctica de $G$ en el espacio de fases.  Este tipo de acciones se
+  dice que son {\sf puntuales}, \index{acción!puntual} pues todos los
+  difeomorfismo son transformaciones puntuales.  Recordemos que las
+  transformaciones puntuales ademas de conservar la estrutura
+  simpléctica, conservan también la forma de Liouville.
+
+\end{itemize}
+
+\section{Derivada de una acción}
+
+Dada una acción $\phi$ y un elemento $X \in \g$ del álgebra de Lie del
+grupo, podemos construir un campo en la variedad.
+
+Asociado al elemento $X$, existe un morfismo de grupos
+$$
+\exp_X: \R \rightarrow G
+$$
+La composición de este morfismo con $\phi$, da lugar a una acción
+de $\R$ en la variedad.  El campo que le corresponde a esta variedad
+lo denotaremos por $\tilde X$ y diremos que es campo asociado a $X$.
+En fórmulas este campo se calcula como
+$$
+\tilde X (x) = \left (\frac{d}{dt}\right )_{t=0}((\exp tX) \cdot x)
+$$
+
+De esta manera construimos una aplicación $\phi' : \g \rightarrow
+\Der(\V)$ que es lineal y cumple
+$$
+\phi'([X,Y]) = - [\phi'(X), \phi' (Y)]
+$$
+Podemos decir, que salvo el signo que no aporta nada, tenemos un
+morfismo de álgebras de Lie $\phi'$.
+
+\begin{defi}
+  
+  Decimos que $\phi'$ es la derivada de la acción $\phi$.
+
+\end{defi}
+
+Si la acción es simpléctica todos los campos que construyamos serán
+localmente hamiltonianos.  De este modo $\phi'$ valora en la
+subálgebra de los campos localmente hamiltonianos\footnote{Si
+  trabajamos con grupos de Lie de dimensión infinita, el álgebra de
+  Lie del grupo $\Dif(\V)$ es precisamante $\Der (\V)$ y el álgebra de
+  Lie del grupo simpléctico está formada por los campos localmente
+  hamiltonianos.  En este caso $\phi'$ se entiende como la derivada de
+  un morfismo de grupos.}.
+
+
+\section{Acciones hamiltonianas}
+
+A nosotros nos interesan aquellas acciones que tengan asociados campos
+hamiltonianos, de tal forma que todo campo $\tilde X = \phi(X)$ tenga
+un hamiltoniano.  Además nos interesa que dicho hamiltoniano se pueda
+elegir de modo que se respete la estructura de álgebra de Lie.  Ello
+nos lleva a considerar la siguiente
+
+
+\begin{defi}
+  
+  Una acción simpléctica de $G$ en $\V$ es {\sf
+    hamiltoniana}\footnote{También se llaman acciones de Poisson}
+  \index{acción!hamiltoniana} si existe un {\sf
+    antimorfismo}\footnote{Llamamos antimorfismo de álgebras de Lie a
+    una aplicación lineal $\phi$ que cumple $\phi([X,Y])= - [\phi(X),
+    \phi(Y)]= [\phi(Y), \phi(X)]$.} \index{antimorfismo} de álgebras
+  de Lie
+  $$
+\begin{array}{cccc}
+\mu^*  : &\g  &\rightarrow & C^\infty (\V) \\
+    &     X & \rightarrow & \mu^X
+\end{array}
+$$
+que cumpla que $ \mu^X$ sea un hamiltoniano de $\tilde X =
+\phi'(X)$.  La aplicación $\mu^*$ se llama {\sf comomento}.
+\index{comomento}
+\end{defi}
+
+De este modo $\tilde X= X_{\mu^X}$.  Además se debe cumplir
+$$
+\mu^{[X,Y]}= -\{\mu^X, \mu^Y\}
+$$
+Como el hamiltoniano de un campo no es único, sino que se le puede
+sumar una constante, puede existir más de un comomento $\mu^*$ que
+cumpla lo pedido.  A nosotros con que exista uno nos llega y nos
+sobra.
+
+
+Existen dos problemas por los que una acción simpléctica puede no ser
+hamiltoniana:
+
+\begin{itemize}
+  
+\item Debido a que algunos campos localmente hamiltonianos no son
+  hamiltonianos.  Esto equivale a que algunas formas pueden ser
+  cerradas pero no exactas.  Este es un problema de la cohomología de
+  la variedad.
+  
+\item A pesar de que todos los campos sean hamiltonianos, puede ser
+  imposible elegir para cada uno de ellos un hamiltoniano de tal forma
+  que se conserve la estructura de álgebra de Lie.  Este problema
+  tiene que ver con la cohomología del álgebra de Lie.
+
+\end{itemize}
+
+\begin{propo}
+  
+  Dada una acción arbitraria $\phi : G \times \V \rightarrow \V$, la
+  subida de esa acción al fibrado cotangente siempre es hamiltoniana.
+  Un hamiltoniano del campo $\tilde X$ se obtiene mediante la fórmula
+  $$
+  \mu^X = - d(i_{\tilde X}\theta)
+  $$
+
+\end{propo}
+
+\dem
+
+La demostración se base en que la acción es puntual y por lo tanto
+conserva la forma de Liouville, $\tilde X^L(\theta)=0$.
+$$
+0=\tilde X^L(\theta) = (di_{\tilde X}+i_{\tilde X}d)\theta=
+di_{\tilde X}\theta +i_{\tilde X}d \theta
+$$
+De esta forma $ i_{\tilde X}d \theta =\mathsf{p}(\tilde X)=
+-d(i_{\tilde X}\theta) $.
+
+
+Queda comprobar que en efecto $\mu^{[X,Y]}= -\{\mu^X, \mu^Y\}$, lo
+cual es un cálculo sencillo.  \fin
+
+
+Veamos otro ejemplo de acción hamiltoniana.
+
+\begin{propo}
+  
+  Sea $\phi: G \rightarrow Sp(E)$ una representación\footnote{Un
+    representación lineal es un morfismo de grupos de $G$ en el grupo
+    lineal de un espacio vectorial (de dimensión finita).  Si la
+    imagen del morfismo está incluida en el grupo simpléctico, la
+    acción se dice que es simpléctica puesto que $\phi_g$ es un
+    morfismo métrico, para cualquier elección del elemento $g \in G$.}
+  lineal.  La acción inducida por dicha representación es
+  hamiltoniana.
+
+\end{propo}
+
+\dem
+
+A cada elemento $X \in \g$ le corresponde, por diferenciación, un
+elemento $\bar X$ de $\mathfrak{sp}(E)$ que es un endomorfismo de $E$.
+Dicho elemento $\bar X$ se puede entender también como un campo
+diferencible en la variedad y además coincide con $\tilde X$ que es el
+campo asociado a la acción.  Tenemos que $i_{\tilde X}\wa$ es cerrada
+y por lo tanto, al estar en un espacio vectorial, por el lema de
+Poincaré es exacta.  De este modo $i_{\tilde X}\wa = d \mu^X$.  La
+constante indeterminada de esa función se fija con la condición
+$\mu^X(0)=0$.  Es inmediato comprobar que de este modo se obtiene un
+anti-morfismo de álgebras de Lie.  \fin
+
+La función anterior se puede probar que es
+$$
+\mu^X(x) = \frac{1}{2}\wa(\tilde X (x), x)
+$$
+
+
+
+
+\section{Momento de una acción}
+
+Dada una acción hamiltoniana de un grupo de Lie de dimensión $r$, si
+toma\-mos una base $\{X_i\}$ del álgebra, tenemos $r$ funciones
+diferenciables $\mu^{X_i}$.  Estas funciones se pueden agrupar en una
+sola función con valores vectoriales.
+
+\begin{defi}
+  
+  Dada una acción hamiltoniana $\phi$ diremos que una aplicación
+  diferenciable
+  $$
+  \mu :\V \rightarrow \g^*
+  $$
+  es un momento de la acción si
+  $$
+  d(i_X \circ \mu) = i_{\phi'(X)} \wa = \mu^X \text{ para todo } X
+  \in \g
+  $$
+  En diagramas
+  $$
+  \xymatrix{
+    \V \ar[r]^\mu \ar[dr]_{i_X \circ \mu} & \g*\ar[d]^{i_X} \\
+    & \R}
+  $$
+
+\end{defi}
+
+Por tanto $\mu$ es un momento si $i_X \circ \mu$ es un hamiltoniano de
+$\phi'(X)$.
+
+
+
+El momento no tiene por que ser único, pues no es único el
+hamiltoniano de un campo.
+
+
+
+
+\section{Teorema de Noether}
+
+
+Pasemos ya al estudio de como los grupos de simetría nos proporcionan
+integrales primeras.
+
+\begin{defi}
+  
+  Dada una acción simpléctica $\phi$, un hamiltoniano $f: \V
+  \rightarrow R$ es invariante por la acción si
+  $$
+  f(x) = f (\phi_g(x)) \text{ para todo } g \in G , x \in \V
+  $$
+
+\end{defi}
+
+Esta definición también se pueden encontrar en la forma $\phi^*(f) =
+f$, utilizando la imagen inversa.
+
+\begin{teo}[de Noether] \index{teorema!de Noether}
+  
+  Si $f$ es invariante por una acción hamiltoniana $\phi$ que posee un
+  momento $\mu$, entonces $\mu$ es una constante del movimiento.
+  Igualando a constantes las componentes del momento obtenemos
+  subvariedades invariantes.
+
+\end{teo}
+
+\dem
+
+Es suficiente demostrar que $\mu^X$ es invariante, siendo $X$ un
+elemento cual\-quiera del álgebra de Lie.
+
+El subgrupo de $\phi'(X)= \tilde X $ es la restricción de la acción
+$\phi$ y por lo tanto $f$ es invariante por el flujo de $\phi'(X)$
+para todo $X \in \g$.
+
+Trasladado a la noción infinitesimal
+$$
+(\phi'(X))^L (f) =0
+$$
+lo que implica $\{\mu^X, f\}=0$, que es lo que pretendiamos
+demostrar.  \fin
+
+\section{Variedades riemannianas}
+
+Supongamos ahora que $\V$ está dotado de una métrica riemanniana o
+semi-riemanniana $g$.  La polaridad establece un isomorfismo entre los
+fibrados tangente y cotangente.  Via este isomorfismo podemos
+considerar en el fibrado tangente una estructura simpléctica.
+
+Si un grupo de Lie $G$ actua por isometrías (cada $\phi_g$ es una
+isometría), la subida de esta acción al fibrado tangente conserva la
+$1$-forma de la estructura simpléctica.
+
+En este caso se pueden construir un momento de la acción mediante la
+fórmula
+$$
+(i_X \circ \mu) (D_x) = g (D_x, {\tilde X}_x)
+$$
+donde $\tilde X$ es el campo sobre el espacio de configuración que
+le corresponde elemento del álgebra de Lie $X$.
+
+
+\end{document}

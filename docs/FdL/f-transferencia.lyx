@@ -1,0 +1,1320 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass book
+\begin_preamble
+\input{/home/alv/libredocumentos/FdL/FdL-macros.sty}
+\usepackage{ae,aecompl}
+\end_preamble
+\language spanish
+\inputencoding latin1
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize a4paper
+\paperpackage widemarginsa4
+\use_geometry 0
+\use_amsmath 1
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Chapter
+
+Resonadores
+\layout Section
+
+La función de transferencia de un resonador óptico
+\layout Standard
+
+Consideremos un resonador óptico formado por dos espejos alineados según
+ un eje.
+ Entre ellos puede existir un medio material de propiedades conocidas.
+\layout Standard
+
+Los espejos, que denotaremos 
+\begin_inset Formula $1$
+\end_inset 
+
+ y 
+\begin_inset Formula $2$
+\end_inset 
+
+ están caracterizados respectivamente por unas transmitancias del campo
+ 
+\begin_inset Formula $\tit_{1},\tit_{2}$
+\end_inset 
+
+ y unas reflectancias 
+\begin_inset Formula $\tir_{1},\tir_{2}$
+\end_inset 
+
+.
+ En cuanto a los objetos que se encuentran entre los espejos, éstos modifican
+ el campo que se transmite a su través.
+ Caracterizaremos esta modificación mediante una 
+\emph on 
+función de transferencia
+\emph default 
+
+\begin_inset LatexCommand \index{función de transferencia}
+
+\end_inset 
+
+ que denotaremos 
+\begin_inset Formula $f$
+\end_inset 
+
+.
+ El campo resultante de la propagación a través de los objetos entre los
+ espejos es el producto de la función de transferencia por el campo incidente.
+\layout Standard
+
+Denotemos por 
+\begin_inset Formula $E_{0}$
+\end_inset 
+
+ el campo que incide sobre el espejo 
+\begin_inset Formula $1$
+\end_inset 
+
+ (figura 
+\begin_inset LatexCommand \ref{fig:proceso-atenuacion}
+
+\end_inset 
+
+).
+ El campo que lo atraviesa será 
+\begin_inset Formula $\tit_{1}E_{0}$
+\end_inset 
+
+.
+ Este campo se propaga entre los espejos con la función de transferencia
+ 
+\begin_inset Formula $f$
+\end_inset 
+
+, por lo que el campo que llega al espejo 
+\begin_inset Formula $2$
+\end_inset 
+
+ es 
+\begin_inset Formula $f\tit_{1}E_{0}$
+\end_inset 
+
+.
+ Una parte 
+\begin_inset Formula $\tit_{2}f\tit_{1}E_{0}$
+\end_inset 
+
+ atraviesa el espejo 
+\begin_inset Formula $2$
+\end_inset 
+
+ y otra 
+\begin_inset Formula $\tir_{2}f\tit_{1}E_{0}$
+\end_inset 
+
+ se refleja
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Estas expresiones siguen el orden del proceso, con los sucesos más recientes
+ incorporándose como factores por la izquierda.
+\end_inset 
+
+.
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Todavía se puede mejorar este orden poniendo todo en orden de ocurrencia 
+\backslash 
+emph{directo},}
+\end_inset 
+
+ La parte reflejada atraviesa el espacio de vuelta hacia el espejo 
+\begin_inset Formula $1$
+\end_inset 
+
+, al que llega un campo 
+\begin_inset Formula $f\tir_{2}f\tit_{1}E_{0}$
+\end_inset 
+
+.
+ El campo que parte hacia el espejo 
+\begin_inset Formula $2$
+\end_inset 
+
+ es 
+\begin_inset Formula $\tir_{1}f\tir_{2}f\tit_{1}E_{0}$
+\end_inset 
+
+.
+ De nuevo sólo una fracción del campo, 
+\begin_inset Formula $f\tir_{1}f\tir_{2}f\tit_{1}E_{0}$
+\end_inset 
+
+ llega al espejo 
+\begin_inset Formula $2$
+\end_inset 
+
+, y de éste sólo sale hacia afuera del resonador 
+\begin_inset Formula $\tit_{2}f\,(\tir_{1}f\tir_{2}f)\,\tit_{1}E_{0}$
+\end_inset 
+
+.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/deduccion-fn-transf-src.eps
+	scale 90
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:proceso-atenuacion}
+
+\end_inset 
+
+Proceso de atenuación sufrido por el campo 
+\begin_inset Formula $E_{0}$
+\end_inset 
+
+ entrante en el resonador.
+\end_inset 
+
+
+\layout Standard
+
+El proceso ilustrado se repite indefinidamente, lo cual equivale a multiplicar
+ sucesivas veces la expresión obtenida por lo que va entre paréntesis, que
+ denotaremos por 
+\begin_inset Formula $\tir$
+\end_inset 
+
+ y representa el proceso de ir de un espejo a otro y volver.
+ La suma de todos los campos que atraviesan el resonador da el campo total,
+ 
+\begin_inset Formula $E_{T}$
+\end_inset 
+
+, y forma una progresión geométrica:
+\begin_inset Formula \begin{eqnarray*}
+E_{T} & = & \tit_{2}f\left(1+\tir+\tir^{2}+\cdots+\tir^{n}\right)\tit_{1}E_{0}\\
+ & = & E_{0}\tit_{2}f\tit_{1}\sum_{i=0}^{n}\tir^{i}\\
+ & = & E_{0}\frac{\tit_{2}f\tit_{1}}{1-\tir_{1}\tir_{2}f^{2}}.\end{eqnarray*}
+
+\end_inset 
+
+Se puede definir una una función de transferencia total
+\begin_inset LatexCommand \index{función de transferencia!para el campo}
+
+\end_inset 
+
+ del resonador, como 
+\begin_inset Formula $f_{T}\equiv E_{T}/E_{0}$
+\end_inset 
+
+:
+\begin_inset Formula \begin{equation}
+f_{T}=\frac{\tit_{2}f\tit_{1}}{1-\tir_{1}\tir_{2}f^{2}}\label{eq:fn-transf-campo-res-pasivo}\end{equation}
+
+\end_inset 
+
+En esta expresión 
+\begin_inset Formula $\tir_{2}=\left|\tir_{2}\right|e^{i\pi},r_{1}=\left|\tir_{1}\right|e^{i\pi}$
+\end_inset 
+
+, pues el efecto habitual de los espejos, al ser medios ópticamente más
+ densos, es introducir un desfase de 
+\begin_inset Formula $\pi$
+\end_inset 
+
+.
+ Si se desprecia el pequeño desfase que se produce al atravesar los espejos,
+ ya que es acumulativo, la función de transferencia 
+\begin_inset Formula $F_{T}=|f_{T}|^{2}$
+\end_inset 
+
+ 
+\emph on 
+para la intensidad
+\begin_inset LatexCommand \index{función de transferencia!para la intensidad}
+
+\end_inset 
+
+
+\emph default 
+ es, usando las variables 
+\begin_inset Formula $R_{1}=|\tir_{1}|^{2},R_{2}=|\tir_{2}|^{2},T_{1}=|\tit_{1}|^{2},T_{2}=|\tit_{2}|^{2}$
+\end_inset 
+
+,
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Como también los radios de los espejos van en mayúsculas, quizá se podría usar $
+\backslash 
+tilde{R}_i$ para los coef. de transferencia en la intensidad -ATC. Cierto, pero como en otros casos la notación estándar no siempre es la más razonable -JGP.} 
+\end_inset 
+
+
+\begin_inset Formula \[
+F_{T}=\frac{T_{1}T_{2}\left|f\right|^{2}}{1+R_{1}R_{2}\left|f\right|^{4}-\sqrt{R_{1}R_{2}}\left(\left(f^{*}\right)^{2}+f^{2}\right)}.\]
+
+\end_inset 
+
+ Es útil definir la reflectividad cuadrática media de los dos espejos, 
+\begin_inset Formula $R\equiv\sqrt{R_{1}R_{2}}$
+\end_inset 
+
+.
+\layout Standard
+
+En un 
+\emph on 
+resonador pasivo
+\emph default 
+
+\begin_inset LatexCommand \index{resonador!pasivo}
+
+\end_inset 
+
+ el campo se atenúa en su tránsito entre los espejos en proporción al coeficient
+e de transmisión 
+\begin_inset Formula $\ti{t}_{i}$
+\end_inset 
+
+ de los medios situados en la región intermedia (ecuación 
+\begin_inset LatexCommand \ref{eq:fn-transf-campo-res-pasivo}
+
+\end_inset 
+
+).
+ En su propagación el campo también sufrirá un cambio de fase espacial,
+ de modo que 
+\begin_inset Formula $f=\ti{t}_{i}e^{i\phi}$
+\end_inset 
+
+ o, en intensidad, 
+\begin_inset Formula $F=\left|f\right|^{2}=\ti{t}_{i}^{2}=T_{i}$
+\end_inset 
+
+.
+ Aquí 
+\begin_inset Formula $\phi$
+\end_inset 
+
+ representa el cambio de fase entre los dos espejos, proporcional a la distancia
+ entre ambos.
+\layout Standard
+
+La función de transferencia total para la intensidad se puede reexpresar
+ así:
+\begin_inset Formula \[
+F_{T}=\frac{T_{1}T_{2}T_{i}}{1+T_{i}^{2}R^{2}-2RT_{i}\cos2\phi}\]
+
+\end_inset 
+
+o, utilizando que 
+\begin_inset Formula $\cos2\phi=1-2\sin^{2}\phi$
+\end_inset 
+
+,
+\begin_inset Formula \begin{equation}
+F_{T}=\frac{T_{1}T_{2}T_{i}}{\left(1-T_{i}R\right)^{2}+4T_{i}R\sin^{2}\phi}.\label{eq:funcion-transferencia-intensidad}\end{equation}
+
+\end_inset 
+
+Esta expresión se hace máxima cuando 
+\begin_inset Formula $\phi_{q}=q\pi,q\in\mathbb{N}$
+\end_inset 
+
+, de modo que es para estos valores del desfase espacial 
+\begin_inset Formula $\phi$
+\end_inset 
+
+ para los que aparecen las resonancias.
+\layout Standard
+
+Los resonadores abiertos
+\begin_inset LatexCommand \index{resonador!abierto}
+
+\end_inset 
+
+, es decir, formados por dos espejos alineados según un eje, y de dimensiones
+ transversas dentro de la zona paraxial se denominan 
+\emph on 
+interferómetros de Fabry-Perot
+\emph default 
+
+\begin_inset LatexCommand \index{interferómetro!Fabry-Perot}
+
+\end_inset 
+
+
+\begin_inset LatexCommand \index{Fabry-Perot}
+
+\end_inset 
+
+.
+\layout Standard
+
+Hasta aquí sólo hemos tenido en cuenta el cambio de fase debido al camino
+ longitudinal.
+ Pero en los modos gaussianos la fase depende también de la estructura transvers
+a del haz.
+\layout Section
+
+Frecuencias resonantes de los modos gaussianos
+\layout Standard
+
+La amplitud normalizada y lentamente variable del campo de un modo gaussiano,
+ usando 
+\begin_inset LatexCommand \ref{eq:ampli-un-gaussiano}
+
+\end_inset 
+
+ y 
+\begin_inset Formula $u_{nm}\left(\vec{r}\right)=u_{n}\left(x,z\right)u_{m}\left(y,z\right)$
+\end_inset 
+
+, es
+\begin_inset Formula \begin{eqnarray*}
+u_{nm}\left(\vec{r}\right) & = & \left(\frac{2}{\pi}\right)^{\frac{1}{2}}\frac{\exp i\left[\left(n+m+1\right)\left(\psi\left(z\right)-\psi\left(0\right)\right)\right]}{\left(2^{n+m}n!m!\right)^{1/2}}\frac{H_{n}\left(x\sqrt{2}/w\right)H_{m}\left(x\sqrt{2}/w\right)}{w\left(z\right)}\cdot\\
+ &  & \times\exp\left(-\frac{x^{2}+y^{2}}{w\left(z\right)}\right)\exp\left(-i\frac{k}{2}\frac{x^{2}+y^{2}}{R\left(z\right)}\right).\end{eqnarray*}
+
+\end_inset 
+
+Incluyendo la variación espacial rápida 
+\begin_inset Formula $\exp\left(-ikz\right)$
+\end_inset 
+
+ el campo es
+\begin_inset Formula \[
+E_{nm}\left(\vec{r}\right)=u_{nm}\left(\vec{r}\right)\exp\left(-ikz\right).\]
+
+\end_inset 
+
+
+\layout Standard
+
+La fase del campo, 
+\begin_inset Formula $\phi$
+\end_inset 
+
+, tiene dos contribuciones, una debida a la fase longitudinal y dada por
+ 
+\begin_inset Formula $\exp\left(-ikz\right)$
+\end_inset 
+
+ y otra a la fase transversa dada por 
+\begin_inset Formula $\exp i\left(n+m+1\right)\Delta\psi$
+\end_inset 
+
+.
+\layout Standard
+
+Si el modo está atrapado en un resonador el cambio que sufre la fase del
+ campo cuando recorre la distancia 
+\begin_inset Formula $l=z_{2}-z_{1}$
+\end_inset 
+
+ que separa a los espejos será, en condiciones de resonancia, un número
+ entero de veces 
+\begin_inset Formula $\pi$
+\end_inset 
+
+: 
+\begin_inset Formula $\phi\left(z_{2}-z_{1}\right)=q\pi$
+\end_inset 
+
+.
+ Para hallar las frecuencias de resonancia escribimos 
+\begin_inset Formula $k$
+\end_inset 
+
+ en términos de 
+\begin_inset Formula $\omega$
+\end_inset 
+
+:
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Mencionar en nota al pie cómo cambia esto si la simetría es Gauss-Laguerre.}
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray}
+\phi\left(z_{2}-z_{1}\right) & = & k\left(z_{2}-z_{1}\right)-\left(n+m+1\right)\left[\psi\left(z_{2}\right)-\psi\left(z_{1}\right)\right]\nonumber \\
+ & = & \frac{\omega}{c}l-\left(n+m+1\right)\left[\psi\left(z_{2}\right)-\psi\left(z_{1}\right)\right]\label{eq:fase-espacial}\end{eqnarray}
+
+\end_inset 
+
+Imponiendo entonces que el cambio de fase total sea 
+\begin_inset Formula $\phi\left(z_{2}-z_{1}\right)=q\pi=\phi_{q}$
+\end_inset 
+
+ podemos despejar las frecuencias de resonancia 
+\begin_inset Formula $\omega_{q,nm}$
+\end_inset 
+
+:
+\begin_inset Formula \begin{equation}
+\omega_{q,nm}=\frac{\pi c}{l}\left[q+\left(n+m+1\right)\frac{\psi\left(z_{2}\right)-\psi\left(z_{1}\right)}{\pi}\right].\label{eq:frecuencias-resonancia}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+Por lo tanto, aparte de las habituales contribuciones axiales, dependientes
+ de 
+\begin_inset Formula $q$
+\end_inset 
+
+ tenemos contribuciones a la frecuencia de la geometría transversa que están
+ ligadas a la fase de Guoy, 
+\begin_inset Formula $\psi\left(z\right)$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+Debemos pues evaluar el cambio en la fase de Guoy en el recorrido del resonador.
+ Para ello recordemos la expresión de la fase de Guoy 
+\begin_inset LatexCommand \ref{eq:Guoy-de-z}
+
+\end_inset 
+
+ y 
+\begin_inset Formula $z_{1},z_{2},z_{R}$
+\end_inset 
+
+ en función de los parámetros del resonador 
+\begin_inset Formula $g_{1},g_{2}$
+\end_inset 
+
+(ec.
+ 
+\begin_inset LatexCommand \ref{eq:z1-z2-zR}
+
+\end_inset 
+
+)
+\begin_inset Formula \begin{eqnarray*}
+\tan\psi\left(z_{2}\right) & = & \frac{z_{2}}{z_{R}}=\frac{g_{1}\left(1-g_{2}\right)}{\sqrt{g_{1}g_{2}\left(1-g_{1}g_{2}\right)}}\\
+\tan\psi\left(z_{1}\right) & = & \frac{z_{1}}{z_{R}}=-\frac{g_{2}\left(1-g_{1}\right)}{\sqrt{g_{1}g_{2}\left(1-g_{1}g_{2}\right)}}\end{eqnarray*}
+
+\end_inset 
+
+Pero 
+\begin_inset Formula $\tan\left(x-y\right)=\left(\tan x-\tan y\right)/\left(1+\tan x\,\tan y\right)$
+\end_inset 
+
+, con lo cual:
+\begin_inset Formula \[
+\tan\left[\psi\left(z_{2}\right)-\psi\left(z_{1}\right)\right]=\frac{\frac{g_{2}\left(1-g_{1}\right)+g_{1}\left(1-g_{2}\right)}{\sqrt{g_{1}g_{2}\left(1-g_{1}g_{2}\right)}}}{1-\frac{g_{1}g_{2}\left(1-g_{1}\right)\left(1-g_{2}\right)}{g_{1}g_{2}\left(1-g_{1}g_{2}\right)}}=\frac{1-g_{1}g_{2}}{\sqrt{g_{1}g_{2}\left(1-g_{1}g_{2}\right)}}.\]
+
+\end_inset 
+
+ Entonces
+\begin_inset Formula \[
+\tan^{2}\left(\psi\left(z_{2}\right)-\psi\left(z_{1}\right)\right)=\frac{1}{g_{1}g_{2}}-1\]
+
+\end_inset 
+
+pero 
+\begin_inset Formula $\cos x=\pm\sqrt{1/\left(1+\tan^{2}x\right)}$
+\end_inset 
+
+ (
+\begin_inset Formula $+$
+\end_inset 
+
+ si 
+\begin_inset Formula $x\in\left(0,\pi/2\right)\cup\left(3\pi/2,2\pi\right)$
+\end_inset 
+
+ y 
+\begin_inset Formula $-$
+\end_inset 
+
+ si 
+\begin_inset Formula $x\in\left(-\pi/2,3\pi/2\right)$
+\end_inset 
+
+) y por lo tanto
+\begin_inset Formula \[
+\cos\left(\psi\left(z_{2}\right)-\psi\left(z_{1}\right)\right)=\pm\sqrt{g_{1}g_{2}}\]
+
+\end_inset 
+
+Donde el signo positivo es para 
+\begin_inset Formula $g_{1,2}>0$
+\end_inset 
+
+ y el negativo para 
+\begin_inset Formula $g_{1,2}<0$
+\end_inset 
+
+ (recordemos que ambos deben tener el mismo signo para que el resonador
+ sea estable, figura 
+\begin_inset LatexCommand \ref{fig:condiciones-estabilidad}
+
+\end_inset 
+
+).
+ Así el desfase de Guoy en el resonador será
+\begin_inset Formula \begin{eqnarray}
+\psi\left(z_{2}\right)-\psi\left(z_{1}\right) & = & \arccos\pm\sqrt{g_{1}g_{2}}\nonumber \\
+ & = & \arccos\pm\sqrt{\left(1-\frac{l}{R_{1}}\right)\left(1-\frac{l}{R_{2}}\right)}\label{eq:desfase-Guoy-de-R1-R2}\end{eqnarray}
+
+\end_inset 
+
+
+\layout Standard
+
+Consideremos unos cuantos casos (figura 
+\begin_inset LatexCommand \ref{fig:modos-todos-resonador}
+
+\end_inset 
+
+) para interpretar el efecto de la fase de Guoy.
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{En el futuro se podrá compactar y clarificar esta enumeración en una tabla, y referirse en el pie de figura a sus filas.}
+\end_inset 
+
+
+\layout Itemize
+
+Si los espejos son planos, 
+\begin_inset Formula $R_{1}=R_{2}=\infty$
+\end_inset 
+
+, 
+\begin_inset Formula $g_{1}=g_{2}=1$
+\end_inset 
+
+ y 
+\begin_inset Formula $\psi\left(z_{2}\right)-\psi\left(z_{1}\right)=0$
+\end_inset 
+
+.
+ Por lo tanto el corrimiento de frecuencia debido a la geometría transversa
+ es nulo.
+ Sólo quedarían las frecuencias debidas a los modos axiales del resonador,
+ representados por los diferentes valores de 
+\begin_inset Formula $q$
+\end_inset 
+
+: 
+\begin_inset Formula \[
+\omega_{q,nm}\left(\infty,\infty\right)=\frac{\pi c}{l}q\]
+
+\end_inset 
+
+En este caso nuestro resonador genérico se reduce a un Fabry-Perot de espejos
+ planos, que se estudia en un primer curso de óptica.
+\layout Itemize
+
+Si los radios de los espejos son mayores que la longitud del resonador pero
+ menores que los del resonador plano, 
+\begin_inset Formula $l<R_{1},R_{2}<\infty$
+\end_inset 
+
+ la fase de Guoy acumula en el resonador un desfase dado por 
+\begin_inset LatexCommand \ref{eq:desfase-Guoy-de-R1-R2}
+
+\end_inset 
+
+.
+ El cambio producido por la geometría transversa será para el modo 
+\begin_inset Formula $\mathrm{TEM}_{mn}$
+\end_inset 
+
+ en 
+\begin_inset Formula $\omega_{q,mn}\left(\infty,\infty\right)$
+\end_inset 
+
+:
+\begin_inset Formula \[
+\omega_{q,nm}\left(R_{1},R_{2}\right)-\omega_{q,nm}\left(\infty,\infty\right)=\left(n+m+1\right)\frac{\psi\left(z_{2}\right)-\psi\left(z_{1}\right)}{\pi}\frac{\pi c}{l}>0.\]
+
+\end_inset 
+
+ Si los radios son mayores o iguales que 
+\begin_inset Formula $l$
+\end_inset 
+
+ el desfase en la fase de Guoy es menor de 
+\begin_inset Formula $\pi/2$
+\end_inset 
+
+.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/modos-dif-resonadores-src.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:modos-todos-resonador}
+
+\end_inset 
+
+En la primera línea, resonador plano con separación 
+\begin_inset Formula $\pi c/l$
+\end_inset 
+
+ entre 
+\begin_inset Formula $\omega_{q}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\omega_{q\pm1}$
+\end_inset 
+
+ .
+ En la tercera, la separación entre las frecuencias de la geometría transversa
+ que 
+\emph on 
+escoltan
+\emph default 
+ a las axiales es la mitad de la que había entre dos frecuencias axiales
+ consecutivas.
+ Los modos que antes estaban pegados a las 
+\begin_inset Formula $\omega_{q}$
+\end_inset 
+
+ han ido o bien a la mitad del intervalo o a superponerse con 
+\begin_inset Formula $\omega_{q+algo}$
+\end_inset 
+
+.
+ Para el cuarto caso las transversas se han movido tanto que escoltan a
+ la axial 
+\emph on 
+siguiente
+\emph default 
+.
+\end_inset 
+
+
+\layout Itemize
+
+Si 
+\begin_inset Formula $R_{1}=R_{2}=l$
+\end_inset 
+
+ el resonador es confocal (
+\begin_inset Formula $g_{1}=g_{2}=0$
+\end_inset 
+
+) y 
+\begin_inset Formula $\psi\left(z_{2}\right)-\psi\left(z_{1}\right)=\pi/2$
+\end_inset 
+
+.
+ El cambio en las frecuencias será
+\begin_inset Formula \[
+\omega_{q,nm}\left(l,l\right)-\omega_{q,nm}\left(\infty,\infty\right)=\left(n+m+1\right)\frac{\pi c}{2l}.\]
+
+\end_inset 
+
+En el resonador confocal la mitad de las frecuencias cambiadas por la geometría
+ transversa coinciden con las del resonador plano y son pues degeneradas.
+\layout Itemize
+
+Si 
+\begin_inset Formula $l/2<R_{1},R_{2}<l$
+\end_inset 
+
+ entonces 
+\begin_inset Formula $g_{1},g_{2}<0$
+\end_inset 
+
+; el cambio en la fase de Guoy es mayor que 
+\begin_inset Formula $\pi/2$
+\end_inset 
+
+ y se aproxima a 
+\begin_inset Formula $\pi$
+\end_inset 
+
+ según 
+\begin_inset Formula $R_{1,2}\rightarrow l/2$
+\end_inset 
+
+.
+ Por tanto las frecuencias 
+\begin_inset Formula $\omega_{q,mn}$
+\end_inset 
+
+ se acercan a las 
+\begin_inset Formula $\omega_{q+1,nm}\left(\infty,\infty\right)$
+\end_inset 
+
+, produciendo la falsa impresión de que el cambio de frecuencia ha sido
+ negativo.
+ No obstante, sigue siendo
+\begin_inset Formula \[
+\omega_{q,nm}\left(R_{1},R_{2}\right)-\omega_{q,nm}\left(\infty,\infty\right)=\left(n+m+1\right)\frac{\left(\psi\left(z_{2}\right)-\psi\left(z_{1}\right)\right)}{\pi}\frac{\pi c}{l}>0.\]
+
+\end_inset 
+
+
+\layout Itemize
+
+Finalmente en el caso de que 
+\begin_inset Formula $R_{1}=R_{2}=l/2$
+\end_inset 
+
+ el resonador es el que hemos llamado concéntrico, por ser coincidentes
+ los centros de curvatura de ambos espejos.
+ En este caso 
+\begin_inset Formula $\psi\left(z_{2}\right)-\psi\left(z_{1}\right)=\pm\pi$
+\end_inset 
+
+ y por tanto la separación en frecuencia entre modos de diferente geometría
+ transversa es 
+\begin_inset Formula \[
+\omega_{q,nm}\left(l/2,l/2\right)-\omega_{q,nm}\left(\infty,\infty\right)=\frac{\pi c}{l},\]
+
+\end_inset 
+
+es decir, precisamente la separación entre frecuencias de los modos axiales
+ en el resonador plano.
+ Por tanto el resonador concéntrico tiene las mismas frecuencias que el
+ plano (degeneración).
+\layout Subsection
+
+Batido de modos
+\layout Standard
+
+Cuando el campo del resonador contiene las frecuencias de varios modos el
+ campo total oscila simultáneamente en todas estas frecuencias, de manera
+ que su dependencia temporal puede ser bastante complicada.
+ Para estudiar este fenómeno introduciremos explícitamente en la expresión
+ de los campos de los modos la oscilación temporal rápida 
+\begin_inset Formula $e^{i\omega t}$
+\end_inset 
+
+.
+\layout Standard
+
+Sea un campo que contiene dos modos de frecuencias 
+\begin_inset Formula $\omega_{1},\omega_{2}$
+\end_inset 
+
+,
+\begin_inset Formula \[
+E\left(\vec{r},t\right)=E_{1}\left(\vec{r}\right)e^{i\omega_{1}t}+E_{2}\left(\vec{r}\right)e^{i\omega_{2}t}\]
+
+\end_inset 
+
+ La intensidad de esta radiación será, a la salida de uno de los espejos,
+ 
+\begin_inset Formula \[
+I\left(\vec{r},t\right)=c\epsilon_{0}EE^{*}\left(1-R\right).\]
+
+\end_inset 
+
+Esta intensidad se puede medir con un detector de área sensible 
+\begin_inset Formula $s$
+\end_inset 
+
+, que producirá una corriente 
+\begin_inset Formula $i$
+\end_inset 
+
+ proporcional a la intensidad 
+\begin_inset Formula $I\left(\vec{r},t\right)$
+\end_inset 
+
+ de la radiación integrada sobre dicho área, es decir 
+\begin_inset Formula $i\propto\int\int_{s}\left|E\right|^{2}\mathrm{d}s$
+\end_inset 
+
+ o, desarrollando,
+\begin_inset Formula \begin{eqnarray*}
+i\propto & = & \iint_{s}\left(E_{1}^{*}e^{-i\omega_{1}t}+E_{2}^{*}e^{-i\omega_{2}t}\right)\left(E_{1}e^{i\omega_{1}t}+E_{2}e^{i\omega_{2}t}\right)\mathrm{\, d}^{2}s\\
+ & = & \iint_{s}\left(\left|E_{1}\right|^{2}+\left|E_{2}\right|^{2}+E_{1}^{*}E_{2}e^{i\left(\omega_{2}-\omega_{1}\right)t}+E_{1}E_{2}^{*}e^{-i\left(\omega_{2}-\omega_{1}\right)t}\right)\,\mathrm{d}^{2}s\\
+ & = & \iint_{s}\left(\left|E_{1}\right|^{2}+\left|E_{2}\right|^{2}+u_{1}^{*}u_{2}e^{-i\left[\left(k_{2}-k_{1}\right)z-\left(\omega_{2}-\omega_{1}\right)t\right]}+u_{1}u_{2}^{*}e^{i\left[\left(k_{2}-k_{1}\right)z-\left(\omega_{2}-\omega_{1}\right)t\right]}\right)\mathrm{\, d}^{2}s\end{eqnarray*}
+
+\end_inset 
+
+ Si el área del detector es menor que la sección transversa del haz podemos
+ llamar
+\begin_inset Formula \[
+V_{ij}=\iint_{s}u_{i}^{*}u_{j}\,\mathrm{d}^{2}s=V_{ji}^{*}\]
+
+\end_inset 
+
+y con ello escribir
+\begin_inset Formula \begin{eqnarray*}
+i & \propto & V_{11}+V_{22}+V_{12}e^{-i\left[\left(k_{2}-k_{1}\right)z-\left(\omega_{2}-\omega_{1}\right)t\right]}+V_{12}^{*}e^{i\left[\left(k_{2}-k_{1}\right)z-\left(\omega_{2}-\omega_{1}\right)t\right]}\\
+ & = & V_{11}+V_{22}+2\left|V_{12}\right|\cos\left[\left(\omega_{2}-\omega_{1}\right)t+\phi_{12}\left(z\right)\right].\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Standard
+
+Por lo tanto, la intensidad medida oscila con la diferencia entre las frecuencia
+s de los dos modos, que se llama 
+\emph on 
+frecuencia de batido
+\emph default 
+
+\begin_inset LatexCommand \index{frecuencia! de batido}
+
+\end_inset 
+
+.
+ La frecuencia de batido entre dos modos es
+\begin_inset Formula \begin{eqnarray*}
+\omega_{2}-\omega_{1} & = & \omega_{q_{2},n_{2}m_{2}}-\omega_{q_{1},n_{1}m_{1}}\\
+ & = & \left[\left(q_{2}-q_{1}\right)+\left(n_{2}-n_{1}+m_{2}-m_{1}\right)\frac{\psi\left(z_{2}\right)-\psi\left(z_{1}\right)}{\pi}\right]\frac{\pi c}{l}.\end{eqnarray*}
+
+\end_inset 
+
+La radiación detectada aparece modulada por los diversos batidos.
+ Una forma de ver cuántos modos hay en un resonador y cuáles son sus frecuencias
+ es hacer la transformada de Fourier de esta oscilación y ver las componentes
+ de frecuencia del batido.
+ Para eso, no obstante, es necesario que el detector esté en el dominio
+ paraxial; si se toma toda la luz proveniente del resonador no se observa
+ nada.
+\layout Standard
+
+En efecto, si el área del detector es mayor que la sección transversa del
+ haz, podemos sustituir 
+\begin_inset Formula $s$
+\end_inset 
+
+ por 
+\begin_inset Formula $\mathbb{R^{2}}$
+\end_inset 
+
+, dominio en el que los modos 
+\begin_inset Formula $u_{i}$
+\end_inset 
+
+ son ortogonales:
+\begin_inset Formula \[
+V_{ij}=\iint_{\mathbb{R^{2}}}u_{i}^{*}u_{j}\,\mathrm{d}s=\delta_{ij}\]
+
+\end_inset 
+
+ y entonces no se observa la modulación de batido.
+\layout Section
+
+El perfil de los modos en un resonador Fabry-Perot
+\layout Standard
+
+Nuestro objetivo es estudiar cómo quedan ensanchadas las resonancias por
+ efecto de las pérdidas internas y en los espejos.
+\layout Standard
+
+La función de transferencia en intensidad, 
+\begin_inset Formula $F_{T}$
+\end_inset 
+
+ (ec.
+ 
+\begin_inset LatexCommand \ref{eq:funcion-transferencia-intensidad}
+
+\end_inset 
+
+) de un resonador Fabry-Perot pasivo depende de la fase espacial, que se
+ puede escribir como en 
+\begin_inset LatexCommand \ref{eq:fase-espacial}
+
+\end_inset 
+
+:
+\begin_inset Formula \[
+\phi=\frac{\omega l}{c}-\left(n+m+1\right)\left[\psi\left(z_{2}\right)-\psi\left(z_{1}\right)\right]\]
+
+\end_inset 
+
+Alrededor de la resonancia 
+\begin_inset LatexCommand \ref{eq:frecuencias-resonancia}
+
+\end_inset 
+
+ podemos escribir 
+\begin_inset Formula $\omega=\omega_{q,nm}+\delta\omega$
+\end_inset 
+
+, refiriendo la frecuencia a la central del modo, y sustituirlo en la ecuación
+ anterior:
+\begin_inset Formula \[
+\phi=\frac{l}{c}\left(\omega_{q,nm}+\delta\omega\right)-\left(n+m+1\right)\left[\psi\left(z_{2}\right)-\psi\left(z_{1}\right)\right]=\frac{l}{c}\delta\omega+\pi q\]
+
+\end_inset 
+
+y entonces, desarrollando el seno de la suma,
+\begin_inset Formula \[
+\sin\phi=\sin\frac{l}{c}\delta\omega\cos\pi q+\cos\frac{l}{c}\delta\omega\sin\pi q=\pm\sin\frac{l}{c}\delta\omega.\]
+
+\end_inset 
+
+
+\layout Standard
+
+Si ahora suponemos que 
+\begin_inset Formula $\omega$
+\end_inset 
+
+ no se aparta demasiado de la resonancia (
+\begin_inset Formula $\delta\omega$
+\end_inset 
+
+ pequeño), 
+\begin_inset Formula $l\delta\omega/c\ll\pi/2\simeq1\,\mathrm{rad}$
+\end_inset 
+
+ y podemos confundir el seno y el ángulo
+\begin_inset Formula \[
+\sin\phi\simeq\pm\frac{l}{c}\delta\omega\]
+
+\end_inset 
+
+Y así cerca de la frecuencia 
+\begin_inset Formula $\omega_{q,nm}$
+\end_inset 
+
+ la función de transferencia 
+\begin_inset LatexCommand \ref{eq:funcion-transferencia-intensidad}
+
+\end_inset 
+
+ se puede aproximar por 
+\begin_inset Formula \begin{eqnarray*}
+F_{T} & \simeq & \frac{T_{1}T_{2}T_{i}}{\left(1-T_{i}R\right)^{2}+4T_{i}R\left(\frac{l}{c}\delta\omega\right)^{2}}\\
+ & = & \frac{{\displaystyle \frac{T_{1}T_{2}}{R}}\left({\displaystyle \frac{c}{2l}}\right)^{2}}{\left({\displaystyle \frac{1-T_{i}R}{T_{i}R}}\right)^{2}\left({\displaystyle \frac{c}{2l}}\right)^{2}+\left(\omega-\omega_{q,nm}\right)^{2}}\end{eqnarray*}
+
+\end_inset 
+
+Vemos pues que el perfil de la función de transferencia superpuesta a cada
+ modo es, dentro de la aproximación apuntada (verosímil para la mayoría
+ de los resonadores), lorentziano con una anchura total a media altura
+\begin_inset Formula \begin{equation}
+\delta\omega=\frac{1-T_{i}R}{\sqrt{T_{i}R}}\frac{c}{l}\label{eq:anchura-reso-pasiva}\end{equation}
+
+\end_inset 
+
+ Como 
+\begin_inset Formula $T_{i}\leq1$
+\end_inset 
+
+ y 
+\begin_inset Formula $R\leq1$
+\end_inset 
+
+ la condición de proximidad a la resonancia 
+\begin_inset Formula $l\delta\omega/c\ll1\mathrm{rad}$
+\end_inset 
+
+ será
+\begin_inset Formula \[
+\frac{1-T_{i}R}{\sqrt{T_{i}R}}\ll1\longrightarrow T_{i}R\simeq1\]
+
+\end_inset 
+
+Es decir, que las pérdidas en la propagación (transmitividad interna 
+\begin_inset Formula $T_{i}\simeq1$
+\end_inset 
+
+) sean pequeñas y la reflectividad cuadrática media de los espejos 
+\begin_inset Formula $R$
+\end_inset 
+
+ sea grande.
+ No obstante esta condición no es demasiado restrictiva.
+ Usualmente se puede asumir en un Fabry-Perot pasivo 
+\begin_inset Formula $T_{i}=1$
+\end_inset 
+
+ y si la reflectividad es 
+\begin_inset Formula $R=0.9$
+\end_inset 
+
+ para 
+\begin_inset Formula $l=1\mathrm{m}$
+\end_inset 
+
+
+\begin_inset Formula \[
+\delta\omega\simeq\frac{1-R}{\sqrt{R}}\frac{c}{l}=3.16\times10^{7}\mathrm{s}^{-1}.\]
+
+\end_inset 
+
+ Dado que la separación entre dos modos axiales o 
+\emph on 
+rango espectral libre
+\begin_inset LatexCommand \index{rango espectral libre}
+
+\end_inset 
+
+
+\emph default 
+ en un resonador plano o concéntrico es 
+\begin_inset Formula \[
+\Delta\omega=\frac{\pi c}{l}\simeq10^{9}\,\mathrm{s^{-1}}\]
+
+\end_inset 
+
+ vemos que 
+\begin_inset Formula $\delta\omega\ll\Delta\omega$
+\end_inset 
+
+ (figura 
+\begin_inset LatexCommand \ref{fig:ensanchamiento-linea-y-rango-libre}
+
+\end_inset 
+
+).
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{En la figura se puede mostrar tres modos $
+\backslash 
+omega_{q-1,nm},
+\backslash 
+omega_{q,nm},
+\backslash 
+omega_{q+1,nm}$,  y superponer en el central un perfil lorentziano, marcando FWHM. Anotar que se hace para un resonador concéntrico o plano ($
+\backslash 
+Delta 
+\backslash 
+Psi=0$) y que la escala está muy ampliada.}
+\end_inset 
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/perfil-un-modo-src.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:ensanchamiento-linea-y-rango-libre}
+
+\end_inset 
+
+El rango espectral libre entre modos axiales es por lo general órdenes de
+ magnitud mayor que el ensanchamiento de línea debido al carácter no ideal
+ del aparato.
+\end_inset 
+
+
+\layout Standard
+
+La anchura de las resonancias del Fabry-Perot da la medida de la 
+\emph on 
+resolución
+\emph default 
+ o finura del aparato.
+ En los FP destinados a las medidas espectrales se utilizan espejos con
+ reflectividad 
+\begin_inset Formula $>0.99$
+\end_inset 
+
+, lo que explica su enorme precisión.
+\layout Standard
+
+Hemos constatado cómo tanto las pérdidas internas 
+\begin_inset Formula $T_{i}$
+\end_inset 
+
+ como las de reflexión 
+\begin_inset Formula $R$
+\end_inset 
+
+ en los espejos juegan un papel esencial en el comportamiento del resonador.
+ Es entonces conveniente introducir un parámetro que caracterice las pérdidas
+ en el resonador, el tiempo de vida en el interior del resonador o 
+\emph on 
+tiempo de permanencia
+\emph default 
+
+\begin_inset LatexCommand \index{tiempo de permanencia}
+
+\end_inset 
+
+.
+ 
+\layout Standard
+
+Supongamos que del espejo 
+\begin_inset Formula $1$
+\end_inset 
+
+ parte una intensidad 
+\begin_inset Formula $I_{0}$
+\end_inset 
+
+ que después de un recorrido de ida y vuelta ha cambiado en un factor 
+\begin_inset Formula $R^{2}T_{i}^{2}$
+\end_inset 
+
+, quedando 
+\begin_inset Formula $R^{2}T_{i}^{2}I_{0}$
+\end_inset 
+
+.
+\layout Standard
+
+Después de 
+\begin_inset Formula $n$
+\end_inset 
+
+ recorridos de ida y vuelta la intensidad restante será 
+\begin_inset Formula $\left(RT_{i}\right)^{2n}I_{0}$
+\end_inset 
+
+.
+ El número de recorridos necesario para que la intensidad se reduzca en
+ un factor 
+\begin_inset Formula $e$
+\end_inset 
+
+ lo llamamos 
+\begin_inset Formula $n_{c}$
+\end_inset 
+
+:
+\begin_inset Formula \begin{eqnarray*}
+\frac{I_{0}}{e} & = & I_{0}\left(RT_{i}\right)^{2n_{c}}\\
+n_{c} & = & -\frac{1}{2\ln RT_{i}}\end{eqnarray*}
+
+\end_inset 
+
+ Entonces la longitud óptica que la radiación recorre antes de atenuarse
+ por un factor 
+\begin_inset Formula $e$
+\end_inset 
+
+ es 
+\begin_inset Formula $2ln_{c}$
+\end_inset 
+
+ y el tiempo que permanece en el resonador o cavidad óptica, 
+\begin_inset Formula $t_{c}=2ln_{c}/c$
+\end_inset 
+
+ es (el subíndice 
+\emph on 
+c
+\emph default 
+ indica cavidad resonante):
+\begin_inset Formula \begin{equation}
+t_{c}=-\frac{l}{c\ln RT_{i}}.\label{eq:tiempo-permanencia}\end{equation}
+
+\end_inset 
+
+Si, como hemos supuesto, 
+\begin_inset Formula $RT_{i}\simeq1$
+\end_inset 
+
+ podemos aproximar el tiempo de permanencia desarrollando el logaritmo,
+ y compararlo con el factor 
+\begin_inset Formula $\sqrt{T_{i}R}/\left(1-T_{i}R\right)$
+\end_inset 
+
+ que aparece en 
+\begin_inset Formula $\delta\omega_{q,nm}$
+\end_inset 
+
+
+\begin_inset Formula \[
+t_{c}\simeq\frac{l}{c}\frac{1}{1-RT_{i}}\simeq\frac{1}{\delta\omega_{q,nm}},\]
+
+\end_inset 
+
+de forma que la radiación confinada en el resonador cumple la relación de
+ incertidumbre propia de las transformadas integrales,
+\begin_inset Formula \[
+t_{c}\delta\omega_{q,mn}\simeq1.\]
+
+\end_inset 
+
+Este parámetro 
+\begin_inset Formula $t_{c}$
+\end_inset 
+
+ caracteriza las pérdidas reales de los resonadores: 
+\begin_inset Formula $t_{c}=l/c\gamma$
+\end_inset 
+
+.
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Introducir aquí relación de $t_c$ con $t_r=2l/c$.}
+\end_inset 
+
+
+\the_end

@@ -1,0 +1,14 @@
+Directorio de figuras.
+Para compilar un diagrama conmutativo a eps con objeto de
+incluirlo en la portada el procedimiento es el siguiente:
+
+1. Seleccionarlo y copiarlo a un fichero en blanco ($$...$$).
+2. Incluir los paquetes y macros necesarios para su compilación.
+3. >latex diag.tex
+4. >dvips diag.dvi
+5. >ps2epsi diag.ps
+6. Quitar la parte entre %%BeginPreview y %%EndPreview de 
+   diag.epsi con un editor estándar (es una previsualización que 
+   no hace más que ocupar espacio).
+7. Grabar como diag.eps
+8. Poner coverimage: 'diag.eps' en el yaml del documento.

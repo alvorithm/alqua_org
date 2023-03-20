@@ -1,0 +1,266 @@
+####################
+## preparatory work: set variables, obtain document metadata
+####################
+
+#TODO: 
+# allow pynd-metadata extraction
+# allow passing of pageranges to dvipdfm through commandline
+
+
+@import os
+@import yaml 	# Parsing the yaml file requires PyYaml 0.32.
+@from Cheetah.Template import Template # Filling the metadata requires Cheetah 0.9.15
+
+#this has to come from commandline, configfile, best guess or else env. var.
+basedir   = /home/alv/edita
+datadir   = $(basedir)/aux
+
+:child fig/main.aap
+
+:python
+	mdfiles = glob('*.yml')
+	mdfiles.sort() 
+	mdfile = mdfiles[-1]  #the most recent metadata file
+	print 'AQ> reading metadata file ' + mdfile
+	md    = yaml.loadFile(mdfile).next()
+	ext   = md['sourceformat']['ext']
+	ver   = md['releases'][-1]['number']
+	encver = ver.replace('.','_')
+	short = md['shorttitle']
+	shortv = '-'.join([md['shorttitle'],encver])
+	print 'AQ> working to compile ' +  shortv
+	units = md['bodyunits'] + md['appendixes']
+	basenames =  [unit['basename'] for unit in units]
+	def files(type): return ' '.join([basename + type  for basename in basenames]) 
+	htmlfiles, htmlrawfiles = files('.html'), files('.html-raw')
+	dvifiles, psfiles, pdffiles = files('.dvi'), files('.ps'), files('.pdf')
+	auxfiles, texfiles, texbodies =  files('.aux'), files('.tex'), files('-body.tex')
+	srcfiles = files('.' + ext)
+
+####################
+## variants are selected through command-line arguments
+####################
+
+#which LaTeX template to use? - you can pass another name through textmpl=anothername.tex
+textmpl ?= $(basedir)/latex/latex-book-b-es.tex
+
+#which HTML template to use? - same as with LaTeX template
+htmltmpl ?= $(basedir)/html/fichaweb-es.html
+
+#a variant for the chapter template should be introduced...
+
+#generating thumbnails slows a lot pdf-production. 
+#further, it may be unnecesary for acrobat>=6 (check). 
+thumbs ?= no
+:variant thumbs
+	no
+		dvitopdf = dvipdfm
+	yes	
+		dvitopdf = dvipdft
+	
+
+:variant pdfroute
+	dvi
+		:rule {sourceexists} %.pdf : %.dvi 
+			:sys $dvitopdf $source
+		#here targets related to dvipdfm, and thumbs sub-variant
+		$(shortv).pdf : $(shortv).dvi 
+
+	tex	
+		:rule {sourceexists} %.pdf : %.tex
+			#see epstopdf.sty for explanation on the shell-escape option
+			:sys pdflatex -shell-escape $source
+		
+		#here targets related to pdftex
+		$(shortv).pdf : $(shortv).tex $*texbodies
+			:sys pdflatex -shell-escape $(shortv).tex
+			@if 'ind' in _no.md['features']:
+				:sys makeindex $shortv
+			@if 'bib' in _no.md['features']:
+				:sys bibtex $shortv
+			:sys pdflatex -shell-escape $(shortv).tex
+			:sys pdflatex -shell-escape $(shortv).tex
+
+
+eps2pdf ?= normal
+:variant eps2pdf
+	normal
+		dvitopdf += -D "zcat -f %i | gs -q -sPAPERSIZE=a0 -sDEVICE=pdfwrite -dCompatibilityLevel=1.2 -dUseFlateCompression=true -dSAFER -sOutputFile=%o - -c quit"
+	epstopdf
+		dvitopdf += -D "epstopdf --outfile=%o %i" -V 3
+	epscrop
+		dvitopdf += -D "zcat -f %i | gs -q -sPAPERSIZE=a0 -sDEVICE=pdfwrite -dCompatibilityLevel=1.2 -dUseFlateCompression=true -dSAFER -dEPSCrop -sOutputFile=%o - -c quit"
+		
+
+####################
+## rules to perform file conversions
+####################
+
+:rule %-body.tex : %.tex
+	:print AQ> $source -> $target (stripping preamble and \end{document})
+	:python
+		[preamble, rest] = file(_no.source,'r').read().split('\\begin{document}')
+		body             = rest.split('\\end{document}')[0]
+		file(_no.target,'w').write(body)
+		#for the moment I don't see any use in writing out the preambles
+	     	#file(_no.source+'-preamble','w').write(preamble)	      
+
+:rule {sourceexists} %.tex : %.lyx
+	:sys lyx -e latex $source
+
+:rule {sourceexists} %.tex : %.tm
+	:sys texmacs $source
+
+:rule {sourceexists} %.ps : %.dvi
+	:sys dvips $source -o $target
+	
+:rule {sourceexists} %.aux : %.tex
+        :sys latex $source
+	
+:rule {sourceexists} %.html-raw: %.tex
+        @thebase = _no.source.split('.')[0] #basename for the current .tex file, needed by TTH's -L switch
+	:sys tth -r -e2 -w2 -L$(thebase) < $(source) > $target
+
+:rule {sourceexists} %.html: %.html-raw
+        :print AQ> $source -> $target (beautifying and inserting navigational aids)
+	:python
+                #ugly hack to get nonlocal data: name and filename of previous and following unit to the current
+		#might be useful as a separate function
+		#alternative is to create a nonlocal "htmlbook" target without individualized dependencies
+		#it would depend on all ".html-raw" files at the same time.
+	        thebase = _no.source.split('.')[0]
+		numunits = len(_no.units) - 1
+		pos = _no.basenames.index(thebase)
+		unit = _no.units[pos]
+		if pos > 0:            unit['theprev'] = _no.units[pos-1]
+		if pos < numunits - 1: unit['thenext'] = _no.units[pos+1]
+ 		unit['content'] = file(unit['basename'] + '.html-raw','r').read()
+		
+		replaceablestrings = {'Chapter 1 ': 'Capítulo','Bibliography':'Bibliografía',
+ 				      '<center>Figure ': '<center>Figura ', '<h3>Footnotes:</h3>': '<h3>Notas:</h3>'}
+ 		for (k,v) in replaceablestrings.items(): unit['content'] = unit['content'].replace(k,v)
+
+ 		tmplobj = _no.Template(file = _no.basedir + '/html/capitulo-es.html',
+ 				       searchList = [_no.md, {'datadir': _no.datadir + '/'},{'chapter': unit}] )
+ 		file(_no.target, 'w').write(str(tmplobj))
+			
+
+####################
+## several implemented targets
+####################
+
+$(shortv).tex {comment = fill LaTeX template with metadata to produce master} : $mdfile $textmpl
+  :print AQ> $mdfile + $textmpl => $(shortv).tex (filling metadata into template file)
+  :python
+        tmplobj = _no.Template(file       =  _no.textmpl,
+	                   searchList = [_no.md, {'datadir':_no.datadir + os.sep}])
+        file(_no.shortv + '.tex', 'w').write(str(tmplobj))
+
+mastertex  {virtual}{remember} {comment = fill LaTeX template with metadata to produce master} : $(shortv).tex
+
+$(shortv).html {comment = fill html template with metadata to produce master}: $mdfile $htmltmpl
+  :print AQ> $mdfile + $htmltmpl => $(shortv).html (filling metadata into template file)
+  :python
+        tmplobj = _no.Template(file       =  _no.htmltmpl, 
+	                   searchList = [_no.md, {'datadir':_no.datadir + os.sep}])
+        file(_no.shortv + '.html', 'w').write(str(tmplobj))
+masterhtml  {virtual}{remember} {comment = fill HTML template with metadata to produce master} : $(shortv).html
+
+#if source is not already latex we ship it to latex. We make each texfile depend on its sourcefile.
+#WARNING: test with tex-sourced project, probably an else clause is needed.
+@for (auxfile,  htmlfile,  htmlrawfile,  texfile, texbody,  srcfile, dvifile, psfile, pdffile) in \
+     zip(auxfiles, htmlfiles, htmlrawfiles, texfiles,texbodies,srcfiles, dvifiles, psfiles, pdffiles):
+	@if not _no.ext == 'tex':
+		$texfile : $srcfile
+	$texbody : $texfile
+	$htmlrawfile: $texfile $auxfile
+	$htmlfile : $htmlrawfile $mdfile
+	$psfile : $dvifile
+	$pdffile : $dvifile
+
+$(shortv).dvi: $(shortv).tex $*texbodies
+        #test rubber (one day) for automatic dependency handling & more in latex files
+	:sys latex $(shortv).tex
+	@if 'ind' in _no.md['features']:
+		:sys makeindex $shortv
+	@if 'bib' in _no.md['features']:
+		:sys bibtex $(shortv)
+	:sys latex $(shortv).tex
+	:sys latex $(shortv).tex
+
+$(shortv).ps : $(shortv).dvi
+$(shortv)-$(ext).zip {comment = package the source files} :
+        :sys zip -r $(shortv)-$(encver)-$(ext).zip *.$(ext) *.sty *.bib fig inc
+
+texset {virtual}{remember}{comment = export, if needed, source files to LaTeX} : $*texfiles
+texbodiesset {virtual}{remember}{comment = produce LaTeX bodies from LaTeX files} : $*texbodies
+htmlrawset {virtual}{remember}{comment = html-raw units}: $*htmlrawfiles
+htmlset {virtual}{remember}{comment = html navigable units}: $*htmlfiles
+psset {virtual}{remember}{comment = postscript units}: $*psfiles
+pdfset {virtual}{remember}{comment = postscript units}: $*pdffiles
+html {virtual}{remember}{comment = full html version to be uploaded}: masterhtml htmlset 
+pdf {virtual}{remember}{comment = pdf version}: $(shortv).pdf 
+ps {virtual}{remember}{comment = postscript version}: $(shortv).ps 
+dvi {virtual}{remember}{comment = dvi version}: $(shortv).dvi
+src {virtual}{remember}{comment = zipped source}: $(shortv)-$(encver)-$(ext).zip
+#remember to add a pdfchapters target in order to be able to distribute "sliced" documents.
+
+
+#this has to be improved: force, all files, etc, if for tex, in order to never remove sources... 
+
+cleantex {comment = remove latex-compilation related files, also .tex themselves if not source}: 
+	@filexts = ['.aux','.bbl', '.blg', 'brf','-body.tex', '.toc', '.idx', '.dvi', '.log', '.out']
+	@if not _no.ext == 'tex': filexts.append('.tex')
+	@if raw_input('files with ' + ' '.join(filexts) + ' extensions to be removed. Sure? (y/n)[n] ') == 'y':
+		@for filext in filexts:
+			:del {f} *$(filext)
+
+cleanhtml {comment = remove html-formation related files, currently does not eliminate png graphics}:
+	#b/c there's no way to know without dependency analysis if they are source or output files...
+	@if raw_input(str(_no.htmlrawfiles) + ' to be removed. Sure? (y/n)[n] ') == 'y':
+		:del {f} $htmlrawfiles
+	
+
+cleanoutput {comment = remove targets such as pdf, html and source zips}:
+	@if raw_input('pdf, html and zip files to be removed. Sure? (y/n)[n] ') == 'y':
+		:del {f} $(shortv).pdf $(shortv).html $(shortv)-$(encver)-$(ext).zip $htmlfiles 
+	
+cleanbackups {comment = remove nasty autobackups}:
+	#consider using :tree directive. for some reason I didn't manage to erase also \#*#
+        #automatically
+	@if raw_input('backup files~ to be removed. Sure? (y/n)[n] ') =='y':
+		:del {f} *~ fig/*~ inc/*~ 
+
+cleanall {comment = remove everything non-source}: cleanoutput cleantex cleanhtml cleanbackups
+	:print done cleaning!
+
+####################
+## related to publishing
+####################
+# remember to ssh-agent and ssh-add before this.
+@berlios_project = 'alqua-' + _no.shortv.lower()
+SCP = scp -oProtocol=2	
+#FILES should get the souce figures from the child recipe 
+FILES = $(shortv).pdf
+	$(shortv).html
+	$(shortv)-$(encver)-$(ext).zip
+	$htmlfiles
+  	fig/*ps
+	inc/* 
+
+:attr {publish = scp://alv@acercade.net/alqua.org/get/$(shortv)/%file%
+                 scp://alvaro@pikachu.innova.uned.es/$(shortv)/%file%
+		 scp://alv@shell.berlios.de:/home/groups/$(berlios_project)/htdocs/%file%  
+		 scp://alv@shell.berlios.de:/home/groups/ftp/pub/$(berlios_project)/%file% }  $FILES
+
+#scp://alvarotc@alumnos.fis.ucm.es/%file%  when it works!.
+
+
+####################
+## help and metadata for the aap recipe
+####################
+
+version {comment = output version numbers} : $textmpl $mdfile
+	:print $textmplfile is version 1.0
+        :print $mdfile is version 1.1
+        :print This recipe is version 0.1

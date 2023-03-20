@@ -1,0 +1,641 @@
+\documentclass[spanish,a4paper,12pt,draft]{report}
+\usepackage{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{eurosym}
+\input{GS-packages.sty}
+\input{GS-macros.sty}
+\begin{document}
+\chapter{Variedades de contacto}
+
+
+En los problemas de mecánica dependientes del tiempo, el espacio donde está definido el hamiltoniano es $\R \times T^*(\V)$, que es una variedad de dimensión impar.  Como tal no puede admitir una estructura simpléctica, pero admite sin embargo una estructura llamada de contacto, que vendrá dada por la $1$-forma $dt- \theta$, donde $\theta $ es la forma de Liouville.  En coordenadas adecuadas esta forma se expresa $dt-  \xi_idx_i$.
+
+
+Aparte de la importancia que en dinámica tienen las variedades de contacto, también son  el marco natural donde se formulan las ecuaciones en derivadas parciales de primer orden en las que aparece explícitamente la función incógnita.
+
+\section{Subespacio característico}\label{sec:unoformas}
+
+
+
+\begin{defi}
+
+Sea $\alpha$ una forma de grado uno definida en un abierto $U$ de la variedad.  El {\sf espacio característico} \index{espacio!característico} de $\alpha $ en el punto $x \in U$ es
+$$
+\mathcal{C}_x(\alpha)= \{ X_x \in T_x(\V) \text{ tales que } i_{X_x}\alpha_x =0 , \quad i_{X_x}d\alpha_x=0 \}
+$$
+La dimensión del espacio $\mathcal{C}_x(\alpha)$ se llama {\sf rango} \index{rango!de una forma} de la forma $\alpha$ en el punto $x$.  La codimensión de este subespacio es la {\sf clase} \index{clase!de una forma} de $\alpha$ en $x$.
+
+\end{defi}
+
+
+
+Si a cada punto $x \in U$ le asociamos el espacio $\mathcal{C}_x(\alpha)$ tenemos un subfibrado del fibrado tangente.  Este subfibrado se denotará $\mathcal{C}(\alpha)$ y lo llamaremos {\sf subfibrado característico} \index{subfibrado!característico} de $\alpha$.
+
+
+
+\bigskip
+
+\noindent{\bf Ejemplos.}
+
+\begin{itemize}
+
+\item El espacio característico de $\alpha$ en el punto $x$ coincide con la intersección
+$$
+\mathcal{L}_x= \Ker(\alpha_x) \cap \mathrm{Rad}(d\alpha_x)
+$$
+El núcleo de una forma lineal es siempre un hiperplano.  La dimensión del radical de una forma  de grado $2$ no es conocida a priori, pero siempre debe ser par.
+
+\item A cada subespacio $\mathcal{C}_x$ le corresponde por dualidad un subespacio del espacio cotangente.  Denotamos por $\mathcal{C}^*_x$ a dicho subespacio, que son las formas lineales que se anulan sobre el espacio característico.  La clase de $\alpha$ en $x$ coincide con la dimensión de $\mathcal{C}^*_x$.
+
+\item Sea $\V$ un espacio de fases y $\theta$ la forma de Liouville.  Como la diferencial de la forma de Liouville es una forma simpléctica, carece de radical y no puede existir ningún vector $X_x$ que cumpla $i_{X_x}d\theta=0$.  Por lo tanto el espacio característico de la forma de Liouville es nulo en todos los puntos.
+
+\item  Sea ahora la variedad $\R \times T^*(\V) $ con la forma $\alpha = dt- \theta$.  La diferencial de esta forma coincide con $d\theta$.  En este caso si existen vectores que cumplen $i_{X_x}d\theta=0$.  Estos vectores son $\frac{\partial}{\partial t}$ y sus proporcionales.  Pero estos vectores no cumplen $i_{X_x}\alpha= 0$ por lo que de nuevo el espacio característico de $\alpha$ es nulo en todo punto.
+
+
+\item En $\R^3$ con $\alpha = xdy$, el espacio característico en todo punto está generado por $\frac{\partial}{\partial z}$. 
+
+
+\end{itemize}
+
+Estamos interesados en las formas cuya clase sea la misma en todos los puntos.  En el caso de formas de clase constante el subfibrado característico es un verdadero subfibrado diferenciable.
+
+\begin{defi}
+
+Una forma $\alpha$ es {\sf regular} \index{forma!regular} de clase $m$ si $\alpha$ no se anula en ningún punto y es de clase constante $m$ en todo el abierto donde esté definida.
+
+\end{defi}
+
+\section{Campos característicos}
+
+\begin{defi}
+
+Dada una forma de grado uno $\alpha$, definida en un abierto $U$, llamamos campos característicos de $\alpha$  a las secciones del fibrado característico.
+
+\end{defi}
+
+Si $X$ es un campo característico, en cada punto del abierto se cumple $i_{X_x}\alpha=0$ e $i_{X_x}d\alpha=0$.  Globalizando este resultado, los campos característicos son precisamente aquellos que verifican las condiciones
+$$
+i_X\alpha=0 \qquad i_Xd\alpha=0
+$$
+
+\begin{propo}
+
+Un campo es característico si y solo si cumple 
+$$
+i_X \alpha=0 \qquad X^L\alpha=0
+$$
+
+\end{propo}
+
+\dem
+
+Recordando la fórmula de Cartan
+$$
+X^L= i_X \circ d + d \circ i_X
+$$
+tenemos que $X^L\alpha=0$ si $X$ es característico y el recíproco  es inmediato. \fin
+
+Tenemos una fórmula análoga a la de Cartan, que relaciona la contracción interior con el paréntesis de Lie.
+$$
+[X^L,i_Y]= i_{[X,Y]}
+$$
+También es conocida la siguiente relación
+$$
+[X^L, Y^L]= [X,Y]^L
+$$
+que junto con la anterior permite demostrar la 
+
+\begin{propo}
+
+El conjunto de campos característicos de $\alpha$ es un álgebra de Lie.
+
+\end{propo}
+
+Aplicando el teorema de Frobenius, el subfibrado característico de $\alpha$ es integrable
+
+
+\section{Estructuras de contacto}
+
+De ahora en adelante $\V$ será una variedad de dimensión impar $2n+1$.
+
+\begin{defi}
+
+Una estructura de contacto {\sf global} en $\V$ es una forma de primer grado $\alpha$, regular de clase máxima, $2n+1$, definida en todo $\V$.  Al par $(\V, \alpha)$ se le llama {\sf variedad de contacto}, \index{variedad!de contacto} y $\alpha$ es la {\sf forma de contacto}.\index{forma!de contacto}
+
+\end{defi}
+
+Por el teorema de Darboux siempre es posible encontrar coordenadas locales $(t,x_i,\xi_i)$ que cumplan $\alpha = dt - \xi_idx_i$.  Este tipo de coordenadas se llaman {\sf coordenadas canónicas (de contacto)}. \index{coodenadas!canónicas de contacto} En el caso $\R \times T^*(\V) $ con $\alpha = dt - \theta$ podemos asegurar la existencia de coordenadas canónicas sin recurrir al teorema de Darboux.
+
+La diferencial de la forma de contacto $d\alpha$ no es una forma simpléctica.  Su rango es   2n y su radical es de dimensión $1$ en todos los puntos.  En cada punto $x$ el subespacio característico  es nulo y los subespacios $\Ker(\alpha_x)$ y $\mathrm{Rad}(d\alpha_x)$ tienen intersección nula.  Como la suma de sus dimensiones es $2n+1$ se tiene la descomposición en suma directa
+$$
+T_x(\V)= \Ker(\alpha_x) \oplus \mathrm{Rad}(d\alpha_x)
+$$
+
+Utilizando el teorema de Darboux podemos dar una nueva definición de estructura de contacto.
+
+\begin{defi}
+
+Una {\sf estructura de contacto} global en $\V$ es una forma de grado uno $\alpha$ que cumple
+$$
+\alpha \wedge (d\alpha)^n \neq 0 \text{ en todo  punto }
+$$
+
+\end{defi}
+
+
+\dem
+
+Utilizando las formas normales, la única posibilidad de que  $\alpha \wedge (d\alpha)^n \neq 0$ es que $\alpha$ sea de clase $2n+1$. \fin
+
+Una forma de contacto $\alpha$ determina un subfibrado $\mathcal{P}$ de $T^*(\V)$ de rango~$1$, asociando a cada punto $x$ el subespacio vectorial generado por $\alpha_x$.
+$$
+\mathcal{P}_x = <\alpha_x>
+$$
+
+Si $\alpha'$ es proporcional a $\alpha$, $\alpha'= f \alpha$ con $f$ no nula en ningún punto, el fibrado asociado a $\alpha'$ coincide con el fibrado asociado a $\alpha$.
+
+Las {\sf estructuras de contacto} \index{estructura de contacto} generales se definen como subfibrados de rango $1$ del fibrado cotangente y que localmente están generados por formas regulares de clase máxima.  Se hace de este modo, pues la existencia de una forma de contacto global impone restricciones topológicas a la variedad que se evitan de esta forma.  De este modo dos formas de Pfaff proporcionales definen la misma estructura de contacto.  
+
+
+\begin{cor}
+
+Toda variedad de contacto  global es orientable.
+
+\end{cor}
+
+\dem
+
+Sabemos que $\alpha \wedge  (d\alpha)^n\neq 0$ en todos los puntos y por lo tanto será una forma de volumen.  \fin
+
+\section{Distribuciones de hiperplanos}
+
+Dualizando el subfibrado $\mathcal{P}$, obtenemos que a cada punto $x$ le podemos hacer corresponder un hiperplano del espacio tangente, precisamente el núcleo de una cualquiera de las formas  de $\mathcal{P}_x$.  Esta es la interpretación geométrica de una estructura de contacto:  una estructura de  contacto en $\V$ es una distribución de hiperplanos.  Sin embargo el recíproco no tiene por qué ser cierto puesto a una distribución de hiperplanos le corresponde siempre una forma de grado uno, pero no podemos asegurar que esta sea de clase máxima.
+
+
+\begin{defi}
+
+Una {\sf distribución de hiperplanos} \index{distribución de hiperplanos} $H$ definida en un abierto $U$, es una función que asigna a cada punto $x \in U$ un hiperplano tangente en dicho punto
+$$
+H : x \rightarrow H_x \subset T_x(\V)
+$$
+Una forma  $\alpha$ {\sf define localmente}  una distribución de hiperplanos si $\Ker(\alpha_x) = H_x$ en todos los puntos de un abierto.
+\end{defi}
+
+Si $\alpha$ define una distribución de hiperplanos, todas las formas proporcionales  también lo definen.
+
+\begin{defi}
+
+Una distribución de hiperplanos $H$ es {\sf diferenciable} \index{distribución!diferenciable} si está definida en un entorno de cada punto por una forma de primer grado.
+
+\end{defi}
+
+En principio la forma de Pfaff que define la distribución de hiperplano no está definida globalmente.
+
+Si $\alpha$ define una distribución de hiperplanos, tenemos que $d\alpha$ es una \mbox{$2$-forma} definida localmente.  Podemos restringir la forma $d\alpha$ al hiperplano $H_x$ y obtenemos de este modo una métrica antisimétrica en cada hiperplano.  En el caso de las variedades de contacto está métrica no tiene radical.
+
+\begin{defi}
+
+Una {\sf estructura de contacto} \index{estructura de contacto} en $\V$ es una distribución diferenciable de hiperplanos que induce una métrica simpléctica en cada hiperplano.
+
+\end{defi}
+
+En principio parece que la definición depende de la forma $\alpha$ particular que hayamos tomado para definir la distribución de hiperplanos.  Pero si tomamos otra, tiene que ser proporcional y  se cumple
+$$
+d(\alpha')=d(f\alpha)= df \wedge \alpha + f d\alpha
+$$
+Restringiendo a cada hiperplano $d\alpha'_x= f(x)d\alpha_x$ puesto que el primer término es nulo y las formas inducidas son proporcionales.
+
+
+
+\begin{propo}
+
+Las dos definiciones de estructuras de contacto coinciden.
+
+\end{propo}
+
+\dem
+
+Si $\alpha $ es una forma de clase $2n+1$, podemos ponerla en forma normal. En este caso es claro que en cada punto se tiene
+$$
+T_x(\V) = \Ker(\alpha_x) \oplus \mathrm{Rad}(d\alpha_x)
+$$
+y la métrica restringida al hiperplano es simpléctica.
+
+\smallskip
+
+Recíprocamente, si se tiene una descomposición del espacio tangente en forma de suma directa como la anteriormente indicada, el espacio característico en cada punto es nulo y  la clase de la forma es máxima.  \fin
+
+
+\section{Variedad de elementos de contacto}
+
+Este ejemplo es que motivó el estudio y la notación de las estructuras de contacto.  La siguiente discusión asocia a una variedad simpléctica exacta (el espacio de fases), una variedad de contacto, cuya dimensión es una unidad menor.  
+
+\begin{defi}
+
+Sea $\V$ una variedad arbitraria. Un {\sf  elemento de contacto} \index{elemento de contacto} es un par $(x,H_x)$ formado por un punto $x \in \V$ y un hiperplano $H_x$ tangente en dicho punto.
+
+\end{defi}
+
+Dado un elemento de contacto $(x,H_x)$, existe una forma, $\alpha_x$, que cumple \linebreak \mbox{$\Ker(\alpha_x)= H_x$.}  Esta forma no es única, puesto que cualquier forma proporcional cumple también la condición.
+
+
+
+
+
+Dado un elemento de contacto $(x,H_x)$, podemos pensar en él como un par $(x,H_x^0)$ donde $H_x^0$ es el subespacio unidimensional de $T^*_x(\V)$ obtenido por dualidad.
+La unión de todos los elementos de contacto de una variedad $\V$ se denota $\Pro (T^*(\V))$.  Entonces
+
+$$
+\Pro(T^*(\V))= \{(x,H_x) \text { tales que } x \in \V\}
+$$
+
+Este conjunto tiene una estructura fibrada sobre $\V$
+$$
+\begin{array}{cccc}
+\pi: & \Pro(T^*(\V)) &\rightarrow & \V  \\
+     & (x,H_x) & \rightarrow & x
+\end{array}
+$$
+
+La fibra de cada punto está formada por todos los hiperplanos tangentes en el punto.  Por dualidad a cada hiperplano le corresponde un subespacio unidimensional del espacio tangente.  Con esta identificación en mente, la fibra de un punto $x$ se identifica con el espacio proyectivo $\Pro(T^*_x(\V))$ del espacio dual, de donde proviene la notación.
+
+El conjunto $\Pro(T^*(\V))$ tiene una estructura de variedad de dimensión $2n-1$ puesto que la fibra tiene dimensión $n-1$.
+
+Sobre la variedad que hemos construido existe un estructura de contacto canónica definida por una distribución de hiperplanos $\mathcal{H}$.  Dado un punto  $p=(x,H_x)$  llamamos {\sf hiperplano de contacto} \index{hiperplano!de contacto} $\mathcal{H}_p$ a los vectores tangentes $X$ en $p$ que cumplan $\pi'(X) \in H_x$.  Dicho de otro modo.  Dado un punto tenemos una aplicación lineal $\pi': T_p(\Pro(T^*\V)) \rightarrow T_x(\V)$.  La antiimagen del hiperplano $H_x$ será un hiperplano tangente $\mathcal{H}_p $ en el punto $p$ puesto que la aplicación lineal es epiyectiva.
+
+Tomando coordenadas en el espacio proyectivo,de modo que la primera coordenada sea $1$, se comprueba que en efecto está distribución de hiperplanos viene definida por una forma de clase máxima y que por lo tanto hemos construido una variedad de contacto.
+
+
+
+
+
+
+
+
+
+
+\section{Transformaciones de contacto}
+
+
+\begin{defi}
+
+Sea $\V$ y $\V'$ variedades de contacto globales de la misma dimensión.  Una {\sf transformación de contacto} \index{transformación!de contacto} es un difeomorfismo
+$$
+\varphi : \V \rightarrow \V'
+$$
+que cumple $\varphi^*(\alpha') = f\alpha$, donde $f$ es una función diferenciable y no nula en ningún punto.
+
+\end{defi}
+
+Si $H$ y $H'$ son las distribuciones de hiperplanos que definen la estructura de contacto, una transformación de contacto transforma dicha distribuciones
+$$
+\varphi'(H_x) = H'_{\varphi(x)}
+$$
+que es otra posible definición de las transformaciones de contacto, útil cuando no existe globlamente la forma de contacto.
+
+Si $\mathcal{P}$ y $\mathcal{P}'$ son los fibrados asociados y $\varphi$ es una transformación de contacto, $\varphi$ transforma un fibrado en el otro, en el siguiente sentido
+$$
+\varphi'_x(\mathcal{P}_x) = \mathcal{P}'_{\varphi(x)}
+$$
+o dicho de otro modo, transforma secciones de $\mathcal{P}$ en secciones de $\mathcal{P}'$.
+
+El conjunto de todas las transformaciones de contacto de una misma variedad forma un grupo, que llamaremos {\sf grupo de contacto}. \index{grupo!de contacto}
+
+\begin{defi}
+
+Una {\sf transformación infinitesimal de contacto} \index{transformación!infinitesimal de contacto} es un  campo vectorial que cumple $X^L\alpha = \rho \alpha$, donde $\rho$  es una función diferenciable que puede tener ceros.
+
+\end{defi}
+
+Si $X$ genera un grupo uniparamétrico, cada elemento es una transformación de contacto y recíprocamente.  El conjunto de todas las transformaciones infinitesimales de contacto forma un álgebra de Lie.
+
+\begin{defi}
+
+Las {\sf transformaciones de Pfaff} \index{transformación!de Pfaff} son los difeomorfismos que conservan la forma de contacto, esto es $\varphi^*\alpha = \alpha$.  Los campos que cumplen $X^L\alpha = 0$ son la versión infinitesimal de las transformaciones de Pfaff.
+
+\end{defi}
+
+\section{Campo de Reeb}
+
+Definiremos ahora un campo asociado a la variedad de contacto, que será la generalización del campo $\frac{\partial}{\partial t}$ en la variedad $\R \times T^*(\V)$.
+
+\begin{propo}
+
+En una variedad de contacto existe un único campo $R$ que cumple:
+
+\begin{enumerate}[\indent 1.- ]
+
+\item $i_R\alpha = 1$
+
+\item $i_Rd\alpha=0$
+
+
+\end{enumerate}
+
+\end{propo}
+
+\dem
+
+Consideremos coordenadas canónicas locales.
+
+Si se cumple $i_Rd\alpha =0$, necesarimente $R= f\frac{\partial}{\partial t}$  puesto que radical de la métrica $d\alpha$ es unidimensional.
+
+De la primera condición obtenemos que necesariamente $f=1$.
+
+
+Esto prueba su existencia y unicidad en coordenadas locales y por lo tanto también su existencia y unicidad en coordenadas globales. \fin
+
+
+
+
+
+\begin{defi}
+
+El campo construido en la proposición anterior se llama  {\sf campo de Reeb}. \index{campo!de Reeb}
+
+\end{defi}
+
+\begin{cor}
+
+El campo de Reeb conserva la forma de contacto.
+
+\end{cor}
+
+\dem
+
+$R^L(\alpha) = di_R\alpha+ i_R (d\alpha)=0$.  \fin
+
+\begin{cor}
+
+El campo de Reeb nunca es nulo y además cumple
+$$
+i_R(\alpha \wedge (d\alpha)^n) = (d\alpha)^n
+$$
+
+\end{cor}
+
+\dem
+
+Nunca es nulo pues coincide localmente con $\frac{\partial}{\partial t}$.
+La fórmula se deriva de las dos propiedades que definen al campo de Reeb.  \fin
+
+\noindent{\bf Ejemplos.}
+
+\begin{itemize}
+
+\item En la variedad $\R \times T^*(\V)$ con la forma de contacto $\alpha = dt - \theta$, el campo de Reeb es precisamente $R = \frac{\partial}{\partial t}$, puesto que cumple claramente las dos propiedades.
+
+\item  En $\R^3$ con la forma $\alpha = xdy+dz$ el campo de Reeb es $\frac{\partial}{\partial z}$.
+
+\item  Consideremos la esfera $S^{2n-1}$,   de dimensión $2n-1$.   La esfera es una subvariedad de $\R^{2n}$ en el que introducimos coordenadas $(x_1,y_1, \dots, x_n, y_n)$. La esfera junto con la forma 
+$\alpha= \sum x_idy_i -y_idx_i$ es una variedad de contacto.  El campo de Reeb es, salvo un factor 
+$$
+R=x_i\frac{\partial}{\partial y_i} - y_i \frac{\partial}{\partial x_i}
+$$
+
+\end{itemize} 
+
+En el caso de la variedad $\R \times T^*(\V) $, el campo de Reeb es globalmente integrable, cosa que en general no ocurre.  A cada punto   del espacio de fases se le asocia un curva integral maximal. En la variedad definimos una relación de equivalencia, diciendo que dos puntos son equivalentes si pertenecen a la misma curva integral.  El conjunto cociente es entonces $T^*(\V)$.  Denotando por $\pi$ la proyección en el espacio cociente, tenemos que la estructura simpléctica $\wa$ del espacio de fases cumple que $\pi^*(\wa) = d\alpha$ donde $\pi$ es la proyeción canónica de la variedad $\R \times T^*(\V)$ en el segundo factor. 
+
+\section{Variedad simpléctica asociada}
+
+Sea $(\V, \alpha)$ una variedad de contacto de dimensión $2n+1$.  $\mathcal{P}$ denotará el subfibrado del espacio de fases de  esta variedad.  Vamos a asociar a cada estructura de contacto $(\V, \alpha)$ una variedad simpléctica exacta $(\V_S,\alpha_S)$ y a cada transformación de contacto $\varphi :\V \rightarrow \V'$ una transformación canónica $\varphi_S : \V_S \rightarrow \V'_S$.  Tendremos de este modo definido un functor de la categoría de variedades de contacto en la categoría de variedades simplécticas exactas.  Muchos problemas de las variedades de contacto se pueden reducir a problemas sobre variedades simplécticas.
+
+Mediante $\V_S$ denotamos el conjunto
+$$
+\V_S = \{ (x, \omega_x) \text{ donde } x \in \V , \omega_x \in \mathcal{P}_x, \omega_x\neq 0 \}
+$$
+El conjunto $\V_S$ tiene una estructura fibrada sobre $\V$
+$$
+\begin{array}{cccc}
+\pi :& \V_S & \rightarrow & \V\\
+     & (x, \omega_x) & \rightarrow & x
+\end{array}
+$$
+La fibra típica es $\R - 0$.
+
+Introduzcamos una estructura diferenciable en el conjunto $\V_S$.
+
+Sea $U \subset \V$ un abierto coordenado y $(t, x_i, \xi_i)$ coordenadas canónicas  en dicho abierto.  Si $(x, \omega_x)$ es un punto de $\pi^{-1}(U)$, le asociamos los $2n+2$ números
+$$
+(t(x), x_i(x), \xi_i(x), \lambda)
+$$
+donde $\lambda$ es el único número real que cumple $\lambda\alpha_x = \omega_x$.
+
+Admitamos que efectivamente los cambios de coordenadas son de clase $\C^\infty$.  Introduciendo en $\V_S$ la topología  menos fina que hace que las coordenadas sean continuas, y aplicando argumentos estandar de geometría de variedades, dotamos a $\V_S$ de una estructura de variedad diferenciable de dimensión $2n+2$.  La proyección canónica $\pi:\V_S \rightarrow \V$ es una sumersión epiyectiva,  que es un fibrado diferenciable.
+
+Como el conjunto $\V_S$ ``está'' constituido por formas algebraicas  de grado uno, podemos construir una forma diferencial
+$$
+{(\alpha_S)}_{(x,\omega_x)}(X) = \omega_x (\pi'(X))
+$$
+
+Como vemos la construcción  de la forma $\alpha_S$ es análoga a la construcción de la forma de Liouville en el espacio de fases.
+
+Expresando la forma que acabamos de construir en coordenadas tenemos
+
+$$
+\alpha_S= \lambda dt- \lambda \xi_1 dx_1 - \dots- \lambda \xi_n dx_n = \lambda \pi^*(\alpha)
+$$
+lo que prueba que $\alpha_S$ es de clase máxima $2n+2$.  De este modo tenemos una estructura de variedad simpléctica homogénea en $\V_S$.
+
+\begin{defi}
+
+La variedad $(\V_S, \alpha_S)$, es la {\sf variedad simpléctica asociada} \index{variedad!simpléctica asociada} a la variedad de contacto $(\V, \alpha)$.
+
+\end{defi}
+
+
+Sin embargo las coordenadas que hemos introducido no son canónicas, pero esto se soluciona fácilmente  definiendo $\bar \xi_i= - \lambda \xi_i$.  Ahora 
+$$
+(\lambda, x_1, \dots, x_n, t,\bar \xi_1, \dots, \bar \xi_n)
+$$
+ ya forman un sistema de coordenadas canónicas para la estructura simpléctica.  Si además definimos $\lambda= \xi_0$ y $t=x_0$ la estructura de las variables canónicas es mucho más simétrica.
+
+
+
+Sea $\varphi: \V \rightarrow \V'$ una transformación de contacto.  Esta función se extiende de modo natural a una aplicación biunívoca
+$$
+\varphi_S : \V_S \rightarrow \V'_S
+$$
+mediante la fórmula $\varphi_S (x, \omega_x) = (\varphi(x), (\varphi^{-1})^*(\omega_x))$.  La aplicación así definida es diferenciable (pruébese en coordenadas) y además es una transformación canónica homogénea
+$$
+\varphi_S^*(\alpha'_S) = \alpha_S
+$$
+
+Esta función que acabamos de construir hace conmutativo el diagrama
+
+$$
+\xymatrix{
+{V_S} \ar[d]_\pi \ar[r]^{\varphi_S} & V'_S\ar[d]^\pi \\
+\V \ar[r]^{\varphi}&     \V'
+}
+$$
+Del mismo modo que ``subimos'' a la variedad $\V_S$ las transformaciones de contacto, podemos subir las transformaciones infinitesimales  de contacto $X$ que generen un grupo global.  A pesar de que estas campos no generen grupos uniparamétricos globales, también existen métodos unívocos para subir campos $X$ que sean transformaciones infinitesimales de contacto.  La subida del campo $X$ se denota $X_S$.  Naturalmente $X_S$ conserva la forma $\alpha_S$.
+
+Como en el caso del fibrado cotangente tenemos las propiedades:
+
+\begin{itemize}
+
+\item $(\varphi \circ \phi)_S = \varphi_S \circ \phi_S$.
+
+\item $(\varphi_S)^{-1}= (\varphi^{-1})_S$.
+
+\item $X \rightarrow X_S$ es un morfismo de álgebras de Lie inyectivo.
+
+\end{itemize}
+
+
+\section{Geometría de las $2$-formas cerradas}
+
+Muchas veces, en mecánica, debemos considerar la forma simpléctica sobre una subvariedad.  Naturalmente dicha forma, en general, no será simpléctica sobre la subvariedad.
+
+En el estudio de las variedades de contacto, ciertas construcciones dependen solamente de la $2$-forma $d\alpha$, que tiene radical.
+
+Ejemplos como los anteriores nos inducen a estudiar la estructura de las $2$-formas cerradas, del mismo modo que en la sección \ref{sec:unoformas} se hizo con las formas de Pfaff.
+
+\begin{defi}
+
+Dada una $2$-forma $\omega$, el {\sf espacio característico} \index{espacio!característico} de $\omega $ en el punto $x$ es 
+$$
+\mathcal{L}_x = \rad{\omega_x}
+$$
+El subfibrado $\mathcal{L}$ del fibrado tangente que en cada punto coincide con el espacio característico, se denomina {\sf subfibrado característico}. \index{subfibrado!característico}
+
+Un campo vectorial $X$ es {\sf característico} si $X_x \in \mathcal{L}_x$ para todo $x$.  Esto es equivalente a que $i_X\omega=0$.
+
+\end{defi}
+
+En el caso en que la $2$-forma $\omega$ tenga rango constante, el subfibrado $\mathcal{L}$ es diferenciable.
+
+El interés de las formas cerradas se debe a la siguiente proposición.
+
+\begin{propo}
+
+Sea $\omega$ una $2$-forma cerrada y de rango constante.  El subfibrado característico es integrable.
+
+\end{propo}
+
+\dem
+
+Según el teorema de integrabilidad de Frobenius, basta con demostrar que el corchete de dos campos característicos es de nuevo un campo característico.  Sean $X$ e $Y$ dos campos característicos
+
+\begin{equation*}
+\begin{split}
+i_{[X,Y]}\omega & = X^Li_Y\omega - i_Y X^L \omega \\
+                & = - i_Y X^L \omega \\
+                & = i_Y(i_XD\omega+ d i_X\omega)=0
+\end{split}
+\end{equation*}
+por lo que $[X,Y]$ es un campo característico. \fin
+
+Veamos ahora tipos canónicos de las $2$-formas cerradas.
+
+\begin{teo}[Darboux] \index{teorema!de Darboux}
+
+Sea $\omega$ una $2$-forma cerrada y de rango constante $2n$.  En un entorno de cada punto existen coordenadas
+$$
+(x_1, \dots, x_n, \xi_1, \dots, \xi_n, r_1, \dots, r_k)
+$$
+tales que 
+$$
+\omega = dx_i \wedge d\xi_i
+$$
+
+\end{teo}
+
+\dem
+
+Como $\omega$ es cerrada, es localmente exacta.  Existe una forma de Pfaff $\alpha$ tal que $d\alpha= \omega$.  Necesariamente $\alpha$ es de clase $2n$ o de clase $2n+1$.  En cualquiera de los dos casos las coordenadas que llevan a $\alpha$ a la forma canónica cumplen el teorema.  \fin
+
+Estamos interesados en las formas definidas sobre variedades de dimensión impar $2n+1$ y cuyo rango sea el máximo posible, que en este caso es $2n$.  El espacio característico de estas formas es unidimensional.  Basta con dar un campo característico no nulo para conocer todo el espacio característico.
+
+Por analogía con el caso de las variedades de contacto, denotaremos por 
+$$
+(x_1, \dots, x_n, \xi_1, \dots, \xi_n, t)
+$$
+a las coordenadas que llevan a $\omega $ a la forma canónica.
+
+Daremos varios ejemplos donde se produce esta situación.
+
+
+
+
+\bigskip
+
+\noindent{\bf Ejemplos.}
+
+\begin{itemize}
+
+
+\item Sea $\V$ una variedad simpléctica de dimensión $2n$ y $h$ un hamiltoniano.  Sea $\lambda$ un valor regular del hamiltoniano.  La hipersuperficie $f= \lambda$ la denotamos $\Sigma_\lambda$.  La forma simpléctica $\wa$ restringida a $\Sigma_\lambda$ es de rango máximo.  Consideramos ahora el campo hamiltoniano $X_h$ sobre  la hipersuperficie.  Resulta que este campo es característico y que por lo tanto genera el subfibrado característico, ya que al ser $\lambda$ un valor regular dicho campo es no nulo en la hipersuperficie.
+
+\item Sea ahora la variedad $\R \times \V$ con la forma simpléctica $\wa $ de la variedad simpléctica.  En la variedad producto dicha forma no es simpléctica sino que posee radical.  El campo $\frac{\partial}{\partial t}$ es característico y al ser no nulo genera el subfibrado característico.
+
+\item Dada la variedad $\R \times \V$, consideramos un hamiltoniano dependiente del tiempo, $h \in C^\infty(\R \times \V)$.  Asociado a este hamiltoniano tenemos la $2$-forma
+$$
+\omega_h = \wa + dh \wedge dt
+$$
+que es de rango $2n$ y cerrada.
+
+Sea $\bar X_h= \frac{\partial}{\partial t} + X_h$ un campo definido en la variedad producto.  Este campo es carasterístico de $\omega_h$.
+
+\end{itemize}
+
+
+Aplicando el teorema de Cartan de reducción de un sistema exterior, sabemos que si $\alpha $ es de clase $m$, entonces $\alpha $ se puede expresar localmente en función de $m$ coordenadas y de sus diferenciales.  El teorema de Darboux afina más esta situación.
+
+\begin{teo}[Darboux]\index{teorema!de Darboux}
+
+Sea $\alpha $ regular de clase $m$ y $x \in \V$ un punto arbitrario.
+
+
+\begin{enumerate}[\indent 1.-]
+
+\item Si $m = 2k+1$, existen $2k+1$ funciones $(t, x_1, \dots, x_k,\xi_1, \dots, \xi_k)$,  independientes funcionalmente,  que cumplen
+$$
+\alpha = dt - \xi_1dx_1 - \dots- \xi_kdx_k
+$$ 
+en un entorno del punto $x$.
+
+\item Si $m= 2k$, existen $2k$ funciones $(x_1, \dots,x_k,\xi_1, \dots, x_k)$, funcionalmente independientes en un entorno de $x$ tales que
+$$
+\alpha = \xi_1dx_1+ \dots+\xi_k dx_k
+$$
+
+\end{enumerate}
+
+
+\end{teo}
+
+\dem
+
+Puede hallarse en el libro de Muñoz o en el de Godbillon.  \fin
+
+El teorema anterior clasifica de modo total las formas de Pfaff de clase constante.  Hemos encontrado las {\sf tipos canónicos} locales \index{tipo canónico!de las formas de Pfaff} de las formas de Pfaff.
+
+\begin{cor}
+
+Si $\alpha$ es clase $2k $ o de clase $2k+1$ entonces $d\alpha$ es una forma de segundo grado cuyo rango es $2k$. 
+
+\end{cor}
+
+\dem
+
+Utilizando las formas normales tenemos que en los dos casos 
+$$
+d\alpha= d\xi_1 \wedge dx_1 + \dots + d\xi_k \wedge dx_k
+$$
+ lo que prueba que la diferencial tiene rango $2k$. \fin 
+
+
+\begin{defi}
+
+Sea $\V$ una variedad arbitraria. Un {\sf  elemento de contacto} \index{elemento de contacto} es un par $(x,H_x)$ formado por un punto $x \in \V$ y un hiperplano $H_x$ tangente en dicho punto.
+
+\end{defi}
+
+Dado un elemento de contacto $(x,H_x)$, existe una forma de Pfaff, $\alpha_x$, que cumple que $\Ker(\alpha_x)= H_x$.  Esta forma no es única, puesto que cualquier forma proporcional cumple también la condición.
+
+
+\end{document}

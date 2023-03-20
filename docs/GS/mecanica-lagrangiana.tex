@@ -1,0 +1,124 @@
+\documentclass[spanish,a4paper,12pt,draft]{report}
+\usepackage{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{eurosym}
+\input{GS-packages.sty}
+\input{GS-macros.sty}
+\begin{document}
+\chapter{Mecánica lagrangiana}
+
+\section{Introducción}
+
+Dada una variedad diferenciable $\V$, consideramos su fibrado tangente $T(\V)$.  También lo podemos llamar {\sf espacio de fases de velocidades}. \index{espacio de fases!de velocidades} Tomamos una función diferenciable $L \in C^\infty (T(\V))$, definida sobre el fibrado tangente.  Dicha función recibe el nombre de {\sf lagrangiano}, \index{lagrangiano} por analogías de la física clásica.
+
+Fijados estos elementos podemos construir una función del fibrado tangente en el fibrado cotangente de la variedad.  Es lo que llamaremos {\sf transformación de Legrendre} \index{transformación!de Legendre} asociada al lagrangiano $L$.
+
+En muchos casos la transformación de Legendre establece un difeomorfismo (local), lo que permite introducir una estructura simpléctica en el fibrado tangente.
+
+El estudio de las ecuaciones del movimiento, entendiendolas como campos de vectores en el fibrado tangente, es lo que denominamos\index{mecánica!lagrangiana}
+ {\sf mecánica lagrangiana}. 
+Bajo ciertas hipótesis se puede probar que este enfoque y el enfoque hamiltoniano son equivalentes.
+
+\section{Derivada en las fibras}
+
+Sea $L : T(\V) \rightarrow \R$ una función diferenciable y $x \in \V$ un punto arbitrario.  Los vectores tangentes en ese punto los denotamos $v_x$.  Sea  $L_x$  la función $L$ restringida a $T_x(\V)$.  Esto es
+$$
+\begin{array}{cccl}
+L_x: & T_x(\V) & \rightarrow & \R \\
+      &  v_x& \rightarrow & L_x(v_x) = L(x,v_x)
+\end{array}
+$$
+
+La función $L_x$ está definida en un espacio vectorial y dado un punto $v_x$ del espacio vectorial  tiene sentido calcular su diferencial $D_{v_x}L_x$. Esta aplicación tiene como dominio el mismo espacio y como imagen $\R$.  De este modo podemos considerarla como un elemento del espacio dual, $T^*_x(\V)$.
+
+\begin{defi}
+
+Llamamos {\sf transformación de Legendre} \index{transformación!de Legendre} (asociada al lagrangiano $L$) a la aplicación
+
+$$
+\begin{array}{cccl}
+\mathbf{L} : & T(\V) &\rightarrow&  T^*(\V) \\
+            &   v_x  & \rightarrow & D_{v_x}L_x
+\end{array}
+$$
+
+\end{defi}
+
+Viendo la aplicación como una derivada tenemos
+$$
+\mathbf{L}(v_x)(v'_x) = {\left ( \frac{d}{ds}\right )}_{s=0}L(v_x+s v'_x)
+$$
+
+Dicha función transforma vectores tangentes en un punto, en vectores cotangentes en ese mismo punto.  Tenemos el diagrama conmutativo
+$$
+\xymatrix{
+T(\V)\ar[rd] \ar[rr]^{\mathbf{L}} &  & T^(\V)\ar[ld] \\
+    & \V & }
+$$
+
+
+
+\section{Lagrangianos regulares}
+
+\begin{defi}
+
+Un lagrangiano es {\sf regular}  \index{lagrangiano!regular} si $\mathbf{L}$  difeomorfismo local.
+Un lagrangiano es {\sf hiperregular} \index{lagrangiano!hiperregular} si $\mathbf{L}$ es un difeomorfismo.
+
+\end{defi}
+
+Todo lagrangiano hiperregular es también regular.  Supondremos a partir de ahora que todo lagrangiano es regular.
+
+\begin{defi}
+
+La $1$-forma $\theta_L= \mathbf{L}^*(\theta)$ se llama {\sf $1$-forma de Lagrange}. \index{$1$-forma de Lagrange}
+La $2$ forma $\omega_L= \mathbf{L}^*(\wa)$ se llama {\sf $2$-forma de Lagrange}.  \index{$2$-forma de Lagrange}
+
+\end{defi}
+
+Como la diferencial exterior conmuta con la imagen inversa tenemos que $\omega_L= d \theta_L  $.  En particular,  la $2$-forma de Lagrange es cerrada.  
+
+Esto es válido para todos los lagrangianos.  Pero en el caso regular tenemos
+
+\begin{propo}
+
+Si el lagrangiano es regular, la forma de Lagrange dota al fibrado tangente de una estructura de variedad simpléctica.
+
+\end{propo}
+
+\dem
+
+Ya vimos que la forma era cerrada.  Si el lagrangiano es regular, la aplicación tangente en todo punto es un isomorfismo y por lo tanto, punto a punto la forma de Lagrange es no degenerada, debido  a que es la imagen por un isomorfismo de una forma no degenerada. \fin
+
+Si la $2$-forma de Lagrange es simpléctica, en cada punto la transformación de Lagrange tiene que tener como diferencial un isomorfismo.  De este modo, la transformación de Lagrange será un difeormorsimo local en todo punto.
+
+Esto nos conduce a una definición más clásica de la regularidad de un lagrangiano.
+
+\begin{defi}
+
+Un lagrangiano es {\sf regular} \index{lagrangiano!regular} si la $2$-forma de Lagrange asociada es una forma simpléctica.
+
+\end{defi}
+
+\section{Ecuaciones de Euler-Lagrange}
+
+\begin{defi}
+
+Llamamos {\sf acción} \index{acción} de un lagrangiano a la función
+$$
+\begin{array}{cccc}
+A : & T(\V) &  \rightarrow & \R  \\
+    &  v_x & \rightarrow &\mathbf{L}(v_x)(v_x)
+\end{array}
+$$
+  La {\sf energía} \index{energía} es la función $E= A-L$.
+
+\end{defi}
+
+Como estamos suponiendo que el lagrangiano es regular, la función energia tiene asociado un campo hamiltoniano, $X_E$, definido en el fibrado tangente.  Llamaremos a ese campo, {\sf campo lagrangiano}.
+\index{campo!lagrangiano}
+
+
+
+\end{document}

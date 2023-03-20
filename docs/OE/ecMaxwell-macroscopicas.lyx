@@ -1,0 +1,1005 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass book
+\begin_preamble
+\input{OE-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding latin1
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize a4paper
+\paperpackage a4
+\use_geometry 1
+\use_amsmath 1
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 2
+\papersides 2
+\paperpagestyle default
+
+\layout Chapter
+
+Ecuaciones de 
+\noun on 
+Maxwell
+\noun default 
+ macroscópicas 
+\begin_inset LatexCommand \label{cap EcmM}
+
+\end_inset 
+
+
+\layout Section
+
+Planteamiento
+\layout Standard
+
+Éste es uno de los grandes bloques del curso: el estudio de la propagación
+ de las ondas en la materia, los fenómenos relacionados con la interacción
+ radiación-materia.
+ Nos serviremos de los conceptos adquiridos sobre las ondas (capítulo 
+\begin_inset LatexCommand \ref{cap Ondas}
+
+\end_inset 
+
+) y sobre la materia (capítulo 
+\begin_inset LatexCommand \ref{cap Materia}
+
+\end_inset 
+
+).
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/interaccion-radiacion-materia.eps
+	display monochrome
+	width 5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Interacción radiación-materia: los campos de las cargas excitadas (libres
+ y ligadas) se superponen al campo incidente.
+\end_inset 
+
+El problema que se nos plantea es muy difícil, porque no tenemos que resolver
+ las ecM (que ya son difíciles de por sí) sino las ecM acopladas a la materia
+ (habría que describir el estado de movimiento de 
+\begin_inset Formula $\sim10^{2x}$
+\end_inset 
+
+ átomos por metro cúbico).
+ Imposible: hay que hacer aproximaciones.
+ Podemos considerar dos grandes tipos de aproximaciones:
+\layout Enumerate
+
+Medios 
+\emph on 
+ópticamente
+\emph default 
+ poco densos (o diluídos).
+\layout Enumerate
+
+Medios 
+\emph on 
+ópticamente
+\emph default 
+ densos.
+\layout Standard
+
+En el resto del curso nos dedicaremos principalmente a los medios densos,
+ que constituyen la situación más común.
+ Pero antes vamos a tratar sucintamente los poco densos.
+\layout Description
+
+Ejemplos
+\begin_deeper 
+\layout Itemize
+
+
+\size small 
+Un gas es en general, desde el punto de vista de la óptica un medio denso.
+ Por ejemplo, el aire es un medio 
+\emph on 
+ópticamente
+\emph default 
+ denso.
+ 
+\layout Itemize
+
+
+\size small 
+Un medio poco denso es uno en que la distancia entre las partículas es mayor
+ que la longitud de onda.
+ En general, se pueden formar medios poco densos en el laboratorio.
+ El medio interestelar podría considerarse un medio ópticamente poco denso.
+ 
+\end_deeper 
+\layout Section
+
+Medios ópticamente poco densos
+\layout Subsubsection
+
+Aproximación de partículas independientes
+\layout Standard
+
+Si las partículas sólo interaccionan con el campo incidente, podemos hacer
+ la aproximación de partículas independientes.
+ Esto será correcto sólo si las cargas están suficientemente separadas entre
+ sí.
+ No hay más que determinar la evolución de las cargas (independientemente
+ unas de otras) en relación con el campo incidente.
+\layout Subsubsection
+
+Procedimiento de solución
+\layout Standard
+
+
+\begin_inset Formula \[
+\mathbf{E},\mathbf{B}\textrm{ como dato }\fld\mathbf{r}\left(t\right)\fld\mathbf{E}',\mathbf{B}\]
+
+\end_inset 
+
+ Normalmente se da el dato de los campos.
+ Entonces se encuentra la ecuación de movimiento de una carga aislada, independi
+ente (como si las demás no estuvieran).
+ A partir de esto se pueden hallar los campos reemitidos por esa carga.
+ El interés está ahí, porque los campos con prima (reemitidos) contienen
+ información sobre la materia (cargas, masas, frecuencias naturales).
+ Estos problemas se suelen llamar problemas de 
+\emph on 
+scattering
+\emph default 
+ (esparcimiento) y para ellos se define un parámetro que se llama 
+\emph on 
+sección
+\emph default 
+ 
+\emph on 
+eficaz
+\emph default 
+ y que condensa gran parte de la información: cuánta enegía del campo incidente
+ toma el proceso de esparcimiento, cuán eficaz es el proceso de propagación.
+ 
+\layout Standard
+
+La traducción de 
+\emph on 
+scattering
+\emph default 
+ por 
+\emph on 
+dispersión
+\emph default 
+ puede llevar a la confusión, ya que en Óptica se llama en general dispersión
+ a la dependencia de una magnitud respecto a la frecuencia de la radiación.
+\layout Section
+
+Medios ópticamente densos
+\layout Subsection
+
+Hipótesis.
+ El continuo óptico
+\layout Standard
+
+Esta segunda aproximación nos conducirá a caracterizar cualquier substancia
+ por un parámetro llamado 
+\emph on 
+índice
+\emph default 
+ 
+\emph on 
+de
+\emph default 
+ 
+\emph on 
+refracción
+\emph default 
+.
+ Utilizaremos las ecuaciones de 
+\noun on 
+Maxwell
+\noun default 
+ macroscópicas o en la materia, ecMm.
+ 
+\layout Standard
+
+En la materia ordinaria puede haber del orden de 
+\begin_inset Formula $10^{28}$
+\end_inset 
+
+ átomos por metro cúbico.
+ La interacción electromagnética mutua de esta miríada de átomos cons\SpecialChar \-
+ti\SpecialChar \-
+tu\SpecialChar \-
+ye
+ un problema formidable.
+ Si consideramos el volumen de un cubo cuyas aristas sean longitudes de
+ onda 
+\begin_inset Formula $\lambda$
+\end_inset 
+
+ en el visible, encontraremos que en 
+\begin_inset Formula $\lambda^{3}$
+\end_inset 
+
+ hay del orden de 
+\begin_inset Formula $10^{10}$
+\end_inset 
+
+ átomos
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+en la atmósfera por ejemplo, tenemos 
+\begin_inset Formula $10^{7}$
+\end_inset 
+
+ átomos.
+\end_inset 
+
+.
+ Esto nos indica que no podemos hacer la aproximación de partículas independient
+es.
+ Pero sí
+\layout Enumerate
+
+aprovecharemos lo próximos que se encuentran entre sí los átomos.
+ Podemos aventurar que en todo el 
+\begin_inset Formula $\Delta V$
+\end_inset 
+
+ las cargas verán el mismo campo, pues las variaciones espaciales de éste
+ se producen en el orden de la longitud de onda, que es mucho mayor que
+ 
+\begin_inset Formula $\Delta V^{\frac{1}{3}}$
+\end_inset 
+
+.
+ 
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/volumen-y-longitud-de-onda.eps
+	display monochrome
+	width 3.5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+En 
+\begin_inset Formula $\Delta V\ll\lambda^{3}$
+\end_inset 
+
+ encontraremos muchísimas partículas, cargas libres y ligadas.
+ La dinámica en su interior es muy complicada.
+ Pero por su tamaño frente a 
+\begin_inset Formula $\lambda$
+\end_inset 
+
+, en el interior el campo se puede considerar homogéneo.
+\end_inset 
+
+
+\layout Enumerate
+
+prescindiremos del carácter discreto de la materia.
+ Esto lo haremos introduciendo promedios espaciales de las magnitudes implicadas
+: 
+\begin_inset Formula $\mathbf{E},\mathbf{B},\rho,\mathbf{j}$
+\end_inset 
+
+.
+ Esto simplificará obviamente la descripción.
+ El problema es que ahora no vamos a poder separar campo incidente de campo
+ reemitido (debido a la proximidad de las cargas): 
+\begin_inset Formula $\mathbf{E},\mathbf{B}$
+\end_inset 
+
+ tendrán dos componentes indistinguibles.
+\layout Standard
+
+Vamos a utilizar un pequeño volumen esférico 
+\begin_inset Formula $\Delta V$
+\end_inset 
+
+ parametrizado de modo que 
+\begin_inset Formula $\mathbf{r}$
+\end_inset 
+
+ sea la coordenada del centro de la esfera y 
+\begin_inset Formula $\mathbf{r}+\mathbf{r}'\in\Delta V$
+\end_inset 
+
+.
+ Sobre este volumen los promedios se escriben como sigue: 
+\begin_inset Formula \[
+\mathbf{E}_{mac}\left(\mathbf{r},t\right)=\frac{1}{\Delta V}\int_{\Delta V}\mathbf{E}_{mic}\left(\mathbf{r}+\mathbf{r}',t\right)d^{3}\mathbf{r}'\]
+
+\end_inset 
+
+ los subíndices distinguen campo microscópico de campo macroscópico (que
+ por ser un promedio no hace caso de las variaciones a escala atómica).
+\layout Standard
+
+La longitud de onda de la radiación es tan grande que ésta no 
+\begin_inset Quotes eld
+\end_inset 
+
+ve
+\begin_inset Quotes erd
+\end_inset 
+
+ el carácter discreto de la materia.
+ De nuevo las hipótesis de la aproximación fenomenológica están pendientes
+ de justificación mediante experimento.
+\layout Standard
+
+Utilizaremos la notación siguiente para el promedio espacial
+\begin_inset Formula \[
+\left\langle \mathbf{E}_{mic}\right\rangle \equiv\mathbf{E}_{mac}\]
+
+\end_inset 
+
+
+\layout Subsection
+
+Promedios para llegar a las ecMm
+\layout Standard
+
+Esperamos que el problema de las ecMm sobre un continuo sea más sencillo
+ que el problema de las ecM sobre cargas discretas.
+\layout Standard
+
+Como las derivadas 
+\begin_inset Formula $\dpx{}$
+\end_inset 
+
+ de las ecuaciones de 
+\noun on 
+Maxwell
+\noun default 
+ son respecto a 
+\begin_inset Formula $\mathbf{r}$
+\end_inset 
+
+ y la integral es respecto a 
+\begin_inset Formula $\mathbf{r}'$
+\end_inset 
+
+ se puede escribir
+\begin_inset Formula \begin{eqnarray*}
+\left\langle \dpx{}\mathbf{E}_{mic}\right\rangle  & = & \dpx{}\left\langle \mathbf{E}_{mic}\right\rangle =\dpx{\mathbf{E}_{mac}}\\
+\left\langle \dpt{}\mathbf{E}_{mic}\right\rangle  & = & \dpt{}\left\langle \mathbf{E}_{mic}\right\rangle =\dpt{\mathbf{E}_{mac}}\end{eqnarray*}
+
+\end_inset 
+
+Tomamos promedios a ambos lados de las ecM
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+licito por la linealidad de la media, que es una integral.
+\layout Standard
+
+Lo que el escribio en clase es TODA la ecuacion entre
+\layout Standard
+
+parentesis angulares.
+ Pero yo me he tomado la libertad
+\layout Standard
+
+de poner los parentesis en ambos miembros.
+ Como he dicho,
+\layout Standard
+
+creo que es correcto, y desde luego, queda mejor alineado.
+\layout Standard
+
+-rojo.
+\end_inset 
+
+:
+\begin_inset Formula \begin{eqnarray*}
+\left\langle \epsilon_{0}\nabla\cdot\mathbf{E}_{mic}\right\rangle  & = & \left\langle \rho\right\rangle \\
+\left\langle \nabla\cdot\mathbf{B}_{mic}\right\rangle  & = & \left\langle 0\right\rangle \\
+\left\langle \nabla\wedge\mathbf{E}_{mic}+\dpt{\mathbf{B}_{mic}}\right\rangle  & = & \left\langle 0\right\rangle \\
+\left\langle \frac{1}{\mu_{0}}\nabla\wedge\mathbf{B}_{mic}-\epsilon_{0}\dpt{\mathbf{E}_{mic}}\right\rangle  & = & \left\langle \mathbf{j}\right\rangle \end{eqnarray*}
+
+\end_inset 
+
+ Se convierten en
+\begin_inset Formula \begin{eqnarray*}
+\epsilon_{0}\nabla\cdot\mathbf{E}_{mac} & = & \left\langle \rho\right\rangle \\
+\nabla\cdot\mathbf{B}_{mac} & = & 0\\
+\nabla\wedge\mathbf{E}_{mac}+\dpt{\mathbf{B}_{mac}} & = & 0\\
+\frac{1}{\mu_{0}}\nabla\wedge\mathbf{B}_{mac}-\epsilon_{0}\dpt{\mathbf{E}_{mac}} & = & \left\langle \mathbf{j}\right\rangle \end{eqnarray*}
+
+\end_inset 
+
+ la segunda y tercera ecuaciones están ya en el formato que buscamos, mientras
+ que las otras necesitan de algunos arreglos, para los que nos valdremos
+ de los siguientes resultados del electromagnetismo
+\layout Enumerate
+
+
+\begin_inset Formula $\left\langle \rho\right\rangle =\left\langle \rho_{lib}\right\rangle +\left\langle \rho_{lig}\right\rangle $
+\end_inset 
+
+, donde 
+\begin_inset Formula $\left\langle \rho_{lig}\right\rangle =-\nabla\cdot\mathbf{P}$
+\end_inset 
+
+.
+ El vector
+\begin_inset Formula \begin{equation}
+\mathbf{P}=\frac{1}{\Delta V}\sum_{j\in\Delta V}q_{j}\mathbf{r}_{j}\label{ec def vect polarizacion}\end{equation}
+
+\end_inset 
+
+ recibe el nombre de 
+\emph on 
+vector
+\emph default 
+ 
+\emph on 
+polarización
+\emph default 
+ (nada que ver con la polarización de una onda) y corresponde al momento
+ dipolar por unidad de volumen.
+ 
+\layout Enumerate
+
+
+\begin_inset Formula $\left\langle \mathbf{j}\right\rangle =\left\langle \mathbf{j}_{lig}\right\rangle +\left\langle \mathbf{j}_{lib}\right\rangle $
+\end_inset 
+
+, donde 
+\begin_inset Formula $\left\langle \mathbf{j}_{lig}\right\rangle =\dpt{\mathbf{P}}+\nabla\wedge\mathbf{M}$
+\end_inset 
+
+.
+ El vector
+\begin_inset Formula \[
+\mathbf{M}=\frac{1}{\Delta V}\sum_{j\in\Delta V}\frac{1}{2}q_{j}\dot{\mathbf{r}}_{j}\wedge\mathbf{r}_{j}\]
+
+\end_inset 
+
+se llama 
+\emph on 
+vector
+\emph default 
+ 
+\emph on 
+magnetización
+\emph default 
+, y corresponde a la magnetización por unidad de volumen.
+\layout Standard
+
+Así las cosas las dos ecuaciones de 
+\noun on 
+Maxwell
+\noun default 
+ que dependen de la materia quedan
+\begin_inset Formula \begin{eqnarray*}
+\epsilon_{0}\nabla\cdot\mathbf{E}_{mac} & = & \left\langle \rho_{lib}\right\rangle -\nabla\cdot\mathbf{P}\\
+\nabla\wedge\mathbf{B}_{mac}-\epsilon_{0}\dpt{\mathbf{E}_{mac}} & = & \left\langle \mathbf{j}_{lib}\right\rangle +\dpt{\mathbf{P}}+\nabla\wedge\mathbf{M}\end{eqnarray*}
+
+\end_inset 
+
+ Por concisión prescindiremos en lo que sigue de los subíndices 
+\begin_inset Formula $_{mac}$
+\end_inset 
+
+; usaremos 
+\begin_inset Formula $\mathbf{E}\equiv\mathbf{E}_{mac}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathbf{B}\equiv\mathbf{B}_{mac}$
+\end_inset 
+
+.
+ Definiendo unos nuevos vectores (llamados, respectivamente, vector 
+\emph on 
+desplazamiento
+\emph default 
+ 
+\emph on 
+eléctrico
+\emph default 
+ y vector 
+\emph on 
+campo
+\emph default 
+ 
+\emph on 
+magnético
+\emph default 
+)
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{D} & = & \epsilon_{0}\mathbf{E}+\mathbf{P}\\
+\mathbf{H} & = & \frac{1}{\mu_{0}}\mathbf{B}-\mathbf{M}\end{eqnarray*}
+
+\end_inset 
+
+ se reescriben las dos ecuaciones en cuestión
+\begin_inset Formula \begin{eqnarray*}
+\nabla\cdot\mathbf{D} & = & \left\langle \rho_{lib}\right\rangle \\
+\nabla\wedge\mathbf{H}-\dpt{\mathbf{D}} & = & \left\langle \mathbf{j}_{lib}\right\rangle \end{eqnarray*}
+
+\end_inset 
+
+
+\layout Standard
+
+Las ecMm son ecuaciones en las que aparecen cuatro campos.
+ Y eso es porque dos de ellos tienen en cuenta la materia, las 
+\begin_inset Formula $\sim10^{28}$
+\end_inset 
+
+ partículas por metro cúbico: 
+\begin_inset Formula $\mathbf{P}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathbf{M}$
+\end_inset 
+
+.
+ Éstas son las ecuaciones de 
+\noun on 
+Maxwell
+\noun default 
+ macroscópicas:
+\begin_inset Formula \begin{eqnarray}
+\nabla\cdot\mathbf{D} & = & \left\langle \rho_{lib}\right\rangle \label{ecMm1}\\
+\nabla\cdot\mathbf{B} & =0\label{ecMm2}\\
+\nabla\wedge\mathbf{E}-\dpt{\mathbf{B}} & = & 0\label{ecMm3}\\
+\nabla\wedge\mathbf{H}-\dpt{\mathbf{D}} & = & \left\langle \mathbf{j}_{lib}\right\rangle \label{ecMm4}\end{eqnarray}
+
+\end_inset 
+
+ Las ecMm son las ecM de partida, pero con las densidades de carga y de
+ corriente ligadas incluídas en los campos del lado izquierdo.
+ Los resultados de la propagación en el vacío se pueden trasponer con ciertas
+ precauciones, y resulta para la energía transportada por la onda
+\begin_inset Formula \[
+\mathbf{S}=\mathbf{E}\wedge\mathbf{H}\]
+
+\end_inset 
+
+ y el promedio temporal para ondas armónicas
+\begin_inset Formula \[
+\left\langle \mathbf{S}\right\rangle =\frac{1}{2}\Re\left\{ \mathbf{E}\wedge\mathbf{H}^{*}\right\} \]
+
+\end_inset 
+
+ La ecuación de continuidad es 
+\begin_inset Formula \[
+\dpt{\left\langle \rho_{lib}\right\rangle }+\nabla\cdot\left\langle \mathbf{j}_{lib}\right\rangle =0\]
+
+\end_inset 
+
+
+\layout Subsection
+
+EcmM para ondas armónicas
+\layout Standard
+
+La materia se puede polarizar de muchos modos, pero nosotros sólo estamos
+ interesados en las 
+\begin_inset Formula $\mathbf{P}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathbf{M}$
+\end_inset 
+
+ causadas en el material por los campos electromagnéticos que constituyen
+ las oem que se propagan en el medio.
+ De modo que los 
+\begin_inset Formula $\mathbf{r}_{j}$
+\end_inset 
+
+ de la definición de 
+\begin_inset Formula $\mathbf{P}$
+\end_inset 
+
+ son las separaciones entre carga positiva y negativa inducidas por los
+ campos incidentes.
+ A partir de ahora sólo utilizaremos ondas armónicas como agentes de perturbació
+n:
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{E}\left(\mathbf{r},t\right) & = & \mathbf{E}_{0}\left(\mathbf{r}\right)e^{-i\omega t}\\
+\mathbf{B}\left(\mathbf{r},t\right) & = & \mathbf{B}_{0}\left(\mathbf{r}\right)e^{-i\omega t}\end{eqnarray*}
+
+\end_inset 
+
+ y por lo dicho antes del único mecanismo de polarización que nos interesa,
+ 
+\begin_inset Formula $\mathbf{P}=\mathbf{P}\left(\mathbf{E},\mathbf{H}\right)$
+\end_inset 
+
+ En virtud de los razonamientos sobre la separación entre cargas cuando
+ incide un campo (aproximación lineal)
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Para justificar esta expresión conviene utilizar la ecuación 
+\begin_inset LatexCommand \ref{ec_tray_carga_ligada}
+
+\end_inset 
+
+ en la definición de 
+\begin_inset Formula $\mathbf{P}$
+\end_inset 
+
+ (ecuación 
+\begin_inset LatexCommand \ref{ec def vect polarizacion}
+
+\end_inset 
+
+).
+\end_inset 
+
+ y a partir de los resultados fenomenológicos se puede escribir que
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{P}\left(\mathbf{r},t\right) & = & \chi_{e}\left(\mathbf{r},\omega\right)\epsilon_{0}\mathbf{E}\left(\mathbf{r},t\right)\\
+\mathbf{M}\left(\mathbf{r},t\right) & = & \chi_{m}\left(\mathbf{r},\omega\right)\mathbf{H}\left(\mathbf{r},t\right)\end{eqnarray*}
+
+\end_inset 
+
+ donde 
+\begin_inset Formula $\chi_{e},\chi_{m}$
+\end_inset 
+
+ son, respectivamente la 
+\emph on 
+susceptibilidad eléctrica
+\emph default 
+ y la 
+\emph on 
+susceptibilidad magnética
+\emph default 
+ del material.
+ Aprovechando esto podemos plantear una relación similar para la densidad
+ de corriente, ya que 
+\begin_inset Formula \[
+\left\langle \mathbf{j}_{lib}\right\rangle =\frac{1}{\Delta V}\sum_{j\in\Delta V}q_{j}\dot{\mathbf{r}}_{j}\]
+
+\end_inset 
+
+ y la velocidad para una onda armónica es proporcional a 
+\begin_inset Formula $\omega\mathbf{E}$
+\end_inset 
+
+, con lo que 
+\begin_inset Formula \[
+\left\langle \mathbf{j}_{lib}\right\rangle =\sigma\left(\mathbf{r},\omega\right)\mathbf{E}\left(\mathbf{r},t\right)\]
+
+\end_inset 
+
+ Donde 
+\begin_inset Formula $\sigma$
+\end_inset 
+
+ se llama 
+\emph on 
+conductividad
+\emph default 
+.
+ Estas aproximaciones lineales serán suficientes para el trabajo que vamos
+ a hacer.
+ 
+\layout Standard
+
+Finalmente:
+\layout Standard
+
+
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{D} & = & \epsilon_{0}\left(1+\chi_{e}\right)\mathbf{E}\\
+\mathbf{B} & = & \mu_{0}\left(1+\chi_{m}\right)\mathbf{H}\end{eqnarray*}
+
+\end_inset 
+
+ y podemos definir 
+\begin_inset Formula $\epsilon$
+\end_inset 
+
+ la constante dieléctrica del material y 
+\begin_inset Formula $\mu$
+\end_inset 
+
+, su permeabilidad magnética de modo que
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{D} & = & \varepsilon\mathbf{E}\\
+\mathbf{B} & = & \mu\mathbf{H}\end{eqnarray*}
+
+\end_inset 
+
+En general ocurrirá que 
+\begin_inset Formula \[
+\chi_{e},\chi_{m},\sigma,\epsilon,\mu\]
+
+\end_inset 
+
+ serán funciones con valores complejos del punto 
+\begin_inset Formula $\mathbf{r}$
+\end_inset 
+
+ y también de la frecuencia 
+\begin_inset Formula $\omega$
+\end_inset 
+
+.
+ Además, si la fuerza recuperadora no fuera isótropa, todas estas funciones
+ podrían ser tensores.
+\layout Subsubsection
+
+Conclusiones
+\layout Standard
+
+Sólo necesitamos dos campos, 
+\begin_inset Formula $\mathbf{E},\mathbf{H}$
+\end_inset 
+
+.
+ Para lo demás tendremos la información sobre el material condensada en
+ los tensores 
+\begin_inset Formula $\chi_{e},\chi_{m}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\sigma$
+\end_inset 
+
+, si logramos expresar la densidad de carga libre en función de alguno de
+ ellos, lo que haremos por medio de la ecuación de continuidad.
+\begin_inset Formula \[
+\dpt{\left\langle \rho_{lib}\right\rangle }=-\nabla\cdot\left(\sigma\mathbf{E}_{0}\left(\mathbf{r}\right)e^{-i\omega t}\right)\]
+
+\end_inset 
+
+ debido a que las ondas son armónicas podemos integrar para obtener 
+\begin_inset Formula \[
+\left\langle \rho_{lib}\right\rangle =\nabla\cdot\left(-\frac{i}{\omega}\sigma\mathbf{E}\right)\]
+
+\end_inset 
+
+
+\layout Subsubsection
+
+Ecuaciones de 
+\noun on 
+Maxwell
+\noun default 
+ macroscópicas para ondas monocromáticas
+\layout Standard
+
+
+\begin_inset Formula \begin{eqnarray*}
+\nabla\cdot\left(\epsilon_{gen}\mathbf{E}_{0}\left(\mathbf{r}\right)\right) & = & 0\\
+\nabla\cdot\left(\mu\mathbf{H}_{0}\left(\mathbf{r}\right)\right) & = & 0\\
+\nabla\wedge\mathbf{E}_{0}\left(\mathbf{r}\right)-i\omega\mu\mathbf{H}_{0}\left(\mathbf{r}\right) & = & 0\\
+\nabla\wedge\mathbf{H}_{0}\left(\mathbf{r}\right)+i\omega\epsilon_{gen}\mathbf{E}_{0}\left(\mathbf{r}\right) & = & 0\end{eqnarray*}
+
+\end_inset 
+
+ donde podemos llamar 
+\emph on 
+constante
+\emph default 
+ 
+\emph on 
+dieléctrica
+\emph default 
+ 
+\emph on 
+generalizada
+\emph default 
+ (que contiene el efecto de las cargas ligadas y 
+\emph on 
+también
+\emph default 
+ 
+\emph on 
+el
+\emph default 
+ 
+\emph on 
+de
+\emph default 
+ 
+\emph on 
+las
+\emph default 
+ 
+\emph on 
+cargas
+\emph default 
+ 
+\emph on 
+libres
+\emph default 
+ a la cantidad
+\begin_inset Formula \[
+\epsilon_{gen}=\epsilon+\frac{i}{\omega}\sigma\]
+
+\end_inset 
+
+ 
+\layout Standard
+
+Hemos reducido el problema de describir la materia al de especificar dos
+ funciones, 
+\begin_inset Formula $\epsilon_{gen}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mu$
+\end_inset 
+
+, que pueden ser complicadas.
+ Nuestro trabajo es ahora el de dadas estas dos funciones resolver las ecuacione
+s para diversos medios, pues sus soluciones caracterizan completamente la
+ propagación de la radiación en los medios ópticamente densos.
+\layout Subsection
+
+Clasificación de los medios
+\layout Standard
+
+En esta sección vamos a dar la nomenclatura usual que clasifica los medios
+ materiales en función de las propiedades de las funciones 
+\begin_inset Formula $\epsilon_{gen}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mu$
+\end_inset 
+
+.
+\layout Standard
+
+La permeabilidad magnética es casi siempre 
+\begin_inset Formula $\mu\approx\mu_{0}$
+\end_inset 
+
+ (medios no magnéticos) y así lo supondremos en lo que sigue.
+ En función de lo que valgan la conductividad y la constante dieléctrica
+ generalizada tendremos diversos tipos de materiales, que etiquetamos con
+ los siguientes nombres convencionales
+\layout Itemize
+
+
+\series bold 
+conductores
+\series default 
+ 
+\begin_inset Formula $\sigma\neq0$
+\end_inset 
+
+, 
+\series bold 
+dieléctricos
+\series default 
+ 
+\begin_inset Formula $\sigma=0$
+\end_inset 
+
+ (no tienen cargas libres).
+\layout Itemize
+
+
+\begin_inset Formula $\epsilon_{gen}$
+\end_inset 
+
+ escalar: medio 
+\series bold 
+isótropo
+\series default 
+, si 
+\begin_inset Formula $\epsilon_{gen}$
+\end_inset 
+
+ es un tensor: medio 
+\series bold 
+anisótropo
+\series default 
+.
+\layout Itemize
+
+si 
+\begin_inset Formula $\epsilon_{gen}$
+\end_inset 
+
+ es función de la posición el medio se dice 
+\series bold 
+inhomogéneo
+\series default 
+.
+ Si no, el medio es 
+\series bold 
+homogéneo
+\series default 
+.
+\layout Itemize
+
+si 
+\begin_inset Formula $\epsilon_{gen}$
+\end_inset 
+
+ es función de la frecuencia, estamos frente a un medio 
+\series bold 
+dispersivo
+\series default 
+.
+ Si no es así, el medio es no 
+\series bold 
+dispersivo
+\series default 
+.
+\layout Standard
+
+Vamos a ver en el siguiente tema que si
+\layout Itemize
+
+
+\begin_inset Formula $\epsilon_{gen}\in\Re$
+\end_inset 
+
+ estamos frente a un medio 
+\series bold 
+transparente
+\series default 
+ y si 
+\begin_inset Formula $\epsilon_{gen}\in\mathcal{C}$
+\end_inset 
+
+ el medio es 
+\series bold 
+absorbente
+\series default 
+.
+\layout Standard
+
+El tipo de preguntas que nos haremos en lo sucesivo es del tipo ¿cómo se
+ propaga la luz en un medio dieléctrico, anisótropo e inhomogéneo?, etc,
+ hasta agotar una serie de combinaciones significativas.
+ El caso más general corresponde a un medio anisótropo, inhomogéneo, dispersivo
+ y absorbente.
+\the_end

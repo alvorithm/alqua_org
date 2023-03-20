@@ -1,0 +1,578 @@
+\documentclass[spanish,a4paper,12pt,draft]{report}
+\usepackage{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{eurosym}
+\input{GS-packages.sty}
+\input{GS-macros.sty}
+\begin{document}
+\chapter{Paréntesis de Poisson.  Invariantes}\label{cap:parentesis}
+
+\section{Polaridad}
+
+Una métrica no degenerada permite establecer un isomorfismo entre un espacio vectorial y su dual, siempre que el espacio sea de dimensión finita.  Globa\-lizando este resultado a variedades simplécticas tenemos
+definida la polaridad.
+
+La denotamos
+$$
+\begin{array}{cccc}
+\mathsf{p} :& \Der (\V)& \rightarrow & \bigwedge^1(\V) \\
+   &    X &    \rightarrow   & i_X\wa
+\end{array}
+$$
+
+A una forma $\alpha$ le corresponde un campo $X_\alpha$ y a una función $f$ le podemos asociar el campo $X_f$ (ver sección \ref{sec:polaridad2}).
+
+La polaridad es una aplicación lineal sobre el cuerpo $\R$, pero además si $f$ es una función se tiene que $\mathsf{p}(f \cdot X) = f \cdot \mathsf{p}(X)$.  La polaridad es también un morfismo de módulos, donde el anillo es $C^\infty(\V)$.
+
+La condición $d\wa=0$ no se emplea para nada en la demostración de la biunivocidad de $\mathsf{p}$.  El único resultado que empleamos es que $(\wa)_x$ es no degenerada en todo punto.
+
+La polaridad también se puede entender como una aplicación diferenciable.
+
+\begin{defi}
+
+Llamamos {\sf polaridad} \index{polaridad} a la función
+
+$$
+\begin{array}{cccc}
+\mathsf{p} :& T(\V)& \rightarrow & T^*(\V) \\
+   &    X_x &    \rightarrow   & i_{X_x}(\wa)_x
+\end{array}
+$$
+
+\end{defi}
+
+Esta aplicación es diferenciable (utilícense coordenadas canónicas) y biuní\-voca.  Es por tanto un difeomorfismo entre las variedades.  Este difeomorfismo hace conmutativo el diagrama
+
+
+$$
+\xymatrix{
+T(\V)\ar[rd]_\pi \ar[rr]^{\mathsf{p}}   &  &T^*(\V)\ar[ld]^\pi \\
+   &   \V &
+   }
+$$
+
+Si $X$ es un campo vectorial, entendido como una sección del fibrado tangente, la composición $\mathsf{p} \cdot X$ es una sección del espacio de fases y por tanto es una \mbox{$1$-forma}.  Se puede comprobar fácilmente que esta forma es precisamente $i_X\wa$.
+
+De este modo la polaridad nos permite transformar secciones de $T(\V)$ en secciones de $T^*(\V)$.
+
+\section{Paréntesis de Poisson}\label{sec:poisson}
+
+Asociado a la polaridad, podemos definir un paréntesis de Lie en el espacio de $1$-formas.  Por razones históricas se denomina {\sf paréntesis de Poisson}. 
+
+Si $\alpha, \alpha'$ son dos formas, su corchete de Poisson, denotado $\{\alpha,\alpha'\}$ es la \mbox{$1$-forma}
+$$
+\{\alpha,\alpha'\} = \mathsf{p}([X_\alpha, X_{\alpha'}])
+$$
+
+Con esta operación el conjunto de formas es un álgebra de Lie de dimensión infinita sobre el cuerpo $\R$.
+
+
+Nótese que la estructura de álgebra de Lie en los campos de la variedad es natural y  no depende más que de la estructura de variedad.  Sin embargo la estructura de álgebra en el conjunto de  $1$-formas depende claramente de $\wa$.
+
+Por construcción las dos álgebras son isomorfas y por lo tanto esta nueva álgebra no nos aporta ninguna información.
+
+Dotaremos ahora de estructura de álgebra de Lie al conjunto de funciones de una variedad simpléctica.  
+
+\begin{defi}
+
+Si $f,g$ son dos funciones diferenciables en una variedad sim\-pléctica $\V$, llamamos {\sf paréntesis de Poisson} \index{paréntesis!de Poisson} y denotamos $\{f,g\}$ a la función
+$$
+\{f,g\}= -\wa(X_f,X_g)
+$$
+o también tenemos la fórmula
+$$
+\{f,g\}= X_f(g)
+$$
+
+\end{defi}
+
+La primera definición es un tanto extraña debido al signo menos.  Ello se debe a que nosotros tomamos como forma simpléctica en el espacio de fases  $d\theta$ y no su opuesta, que es lo que se hace en otros libros. 
+
+De la definición se derivan inmediatamente algunas propiedades interesantes.
+
+\begin{cor}
+
+El paréntesis de Poisson es una operación bilineal (sobre $\R$)  y antisimétrica.  Esto es, se cumple:
+
+\begin{itemize}
+
+\item $\{f+f',g\}= \{f,g\}+\{f',g\}$
+
+\item $ \{\lambda f, g\}= \lambda\{f,g \}$ donde $\lambda \in \R$.
+
+\item $\{f,g\} = -\{g,f\}$.  En particular $\{f,f\}=0$.
+
+\end{itemize}
+Además $\{f, g \cdot g'\} = \{f,g\}\cdot g'+ g \cdot \{f,g'\}$, que nos dice que el paréntesis de Poisson cumple la {\sf regla de Leibniz} \index{regla de Leibniz} para la derivación de productos.
+ 
+\end{cor}
+
+\dem
+
+Utilizando la definición del paréntesis dada por $\{f,g\}= -\wa(X_f,X_g)$ obte\-nemos las primeras propiedades.
+
+Si partimos de  la definición $\{f,g\}= X_f(g)$ tenemos que
+
+$$
+\{f,g \cdot g'\}= X_f(g \cdot g') = X_f(g) \cdot g' + g \cdot X_f(g')
+$$
+donde hemos utilizado que $X_f$  es una derivación del anillo de funciones.  \fin
+
+
+\begin{propo}\label{propo:diferencial}
+
+Sea $d : \C^\infty (\V) \rightarrow \bigwedge^1(\V)$ la diferencial exterior.  Entonces se cumple
+$$
+d \{f,g\}= \{df,dg\}
+$$
+
+\end{propo}
+
+\dem
+
+Al lector.  \fin
+
+Por construcción, el paréntesis de Poisson es un operación local.  Se puede restringir a cualquier abierto o aplicarlo simplemente a gérmenes de funciones.  Ello nos permite preguntarnos cual será la expresión del corchete de Poisson en coordenadas locales.
+
+
+
+\begin{propo}
+
+En coordenadas canónicas tenemos
+$$
+\{f,g\} =  \sum \left ( \frac{\partial f}{\partial \xi_i}\frac{\partial g}{\partial x_i}- \frac{\partial f}{\partial x_i}\frac{\partial g}{\partial \xi_i} \right )
+$$
+
+\end{propo}
+
+\dem
+
+Tenemos que en coordenadas locales
+$$
+X_f (g) = \sum \left ( \frac{\partial f}{\partial \xi_i} \cdot \frac{\partial}{\partial x_i} -  \frac{\partial f}{\partial x_i} \cdot \frac{\partial}{\partial \xi_i} \right )(g)
+$$
+lo que demuestra el enunciado.  \fin
+
+\begin{propo}
+
+El paréntesis de Poisson introduce en $C^\infty(\V)$ una estructura de álgebra de Lie.  La dimensión de ese álgebra es infinita.
+
+\end{propo}
+
+\dem
+
+Tenemos que
+$$
+\{f, \{g,h\}\} = X_f(\{g,h\}) = X_f(X_g(h))
+$$
+
+Análogamente
+$$
+\{g,\{h,f\}\}= X_g(\{h,f\}= -X_g(X_f(h))
+$$
+
+Si utilizamos que $d\{f,g\}= \{df,dg\}$ obtenemos
+$$
+\{h,\{f,g\}\}= - X_{\{f,g\}}(h)= -[X_f,X_g](h)
+$$
+
+Sumando las tres expresiones de la derecha y recordando que por la definición de paréntesis de Lie \mbox{$[X,Y]=XY-YX$} obtenemos
+$$
+\{f, \{g,h\}\}+ \{g,\{h,f\}\} + \{h,\{f,g\}\}= 0
+$$
+que es la {\sf identidad de Jacobi}. \index{identidad de Jacobi} \fin
+
+La proposición \ref{propo:diferencial} no dice ahora que la diferencial exterior es un morfismo de álgebras de Lie.  Su núcleo está formado por las funciones localmente constantes.  En particular, si la variedad es conexa, el núcleo es $\R$.
+
+\begin{cor}
+
+La correspondencia $ f \rightarrow X_f$ es un morfismo de álgebras de Lie.
+
+\end{cor}
+
+Esto demuestra la existencia de transformaciones canónicas infinitesimales no triviales en cualquier variedad simpléctica.   Si en particular la variedad es compacta, todos estos campos generan grupos uniparamétricos globales, que estarán formados por transformaciones canónicas.  
+
+Es fácil comprobar que por ser la diferencial una operacion local tenemos que \linebreak $\sop(X_f) \subset \sop(f)$.  Si $f$ es una función de soporte compacto, el campo asociado también y genera entonces un grupo global.  Funciones de soporte compacto se pueden construir pues al ser la variedad paracompacta existen particiones de la unidad.
+
+\begin{defi}
+
+Dos funciones $f,$ están en {\sf involución} \index{funciones!en involución} si $\{f,g\}=0$.
+
+\end{defi}
+
+Como $\{f,g\}= X_f(g)$, si dos funciones están en involución, $g$ es integral primera del campo $X_f$ y viceversa.
+
+\begin{propo}
+
+Si $f$ está en involución con $g$ y con $h$, entonces está en involución con $\{g,h\}$
+
+\end{propo}
+
+\dem
+
+Utilizando la identidad de Jacobi
+
+$$
+\{f,\{g,h\}\}= -\{g,\{h,f\}\}-\{h,\{f,g\}\}
+$$
+y la parte de la derecha es nula.  \fin
+
+Aplicando esta proposición, si conocemos dos integrales primeras de un campo hamiltoniano podemos construir otra integral primera.  Sin embargo muchas veces las integrales primeras que construimos no nos aportan nada pues ``dependen funcionalmente'' de las que ya teníamos.
+
+
+\begin{cor}
+
+Las integrales primeras de un campo hamiltoniano $X_f$ forman una subálgebra de Lie.
+
+\end{cor}
+
+\dem
+
+$g$ es una integral primera de $X_f$ si y solo si $\{f,g\}=0$. \fin
+
+
+
+
+
+\section{Formas invariantes}
+
+Los campos hamiltonianos son los que describen la evolución de un sistema dinámico en el espacio de fases.
+
+En todos los problemas ``físicos'' podemos suponer que el campo hamiltoniano que describe el sistema denámico genera un grupo uniparamétrico.  Ello es debido a que debemos saber para cualquier instante de tiempo el lugar donde se encuentran todos los puntos del espacio de fases.  Caso de no ser así, es posible que el problema no sea ``físico'' o que se haya elegido mal el espacio de configuración del problema.
+
+
+\begin{defi}
+
+Sea $\V$ una variedad arbitraria y $X$ un campo de vectores sobre la variedad.  Una $k$-forma $\alpha$ es un {\sf invariante} \index{forma!invariante} del campo $X$ si
+$$
+X^L(\alpha)=0
+$$
+Las funciones invariantes reciben también el nombre de {\sf integrales primeras} \index{integral primera} o {\sf constantes del movimiento} \index{constantes del movimiento} del campo $X$.  Son las que cumplen
+$$
+X(f)=0
+$$
+
+\end{defi}
+
+
+\noindent{\bf Ejemplos.}
+
+\begin{itemize}
+
+\item Una función $g$ es integral primera de un campo hamiltoniano $X_f$ si \linebreak  \mbox{$\{f,g\}=0$}.  Aplicando la identidad de Jacobi, el conjunto de integrales primeras de un campo hamiltoniano es una subál\-gebra de Lie del conjunto de todas las funciones.  
+
+
+\item La forma simpléctica $\wa$ también es un invariante de todo campo hamiltoniano, pues ya hemos probado que 
+$$
+(X_f)^L(\wa)=0
+$$
+En general será invariante por cualquier campo localmente hamiltoniano.
+
+\item Del mismo modo el elemento de volumen es un invariante de cualquier campo localmente hamiltoniano.
+
+\item  Consideremos la variedad simpléctica $\R^2$ con coordenadas $(q,p)$.  Sea $X$ es campo $\frac{\partial}{\partial q}$ y sea $f$ una función que dependa solo de $p$.  Entonces la forma $\alpha= f\cdot dq \wedge dp$ es invariante. 
+
+\item En general, dado un campo que sea la parcial de una coordenada, toda forma que se construya utilizando solamente funciones que no dependan de esa coordenada, es una forma invariante.  Cartan demostró que si el campo no se anula en un punto está es la situación general, tal como demostraremos.
+
+\end{itemize}
+
+Supongamos que el campo $X$ genera un grupo uniparamétrico global $\tau_t$.  Una $k$-forma es invariante por $X$ si y solo si $\tau_t^*(\alpha) = \alpha$. Una forma es invariante para un campo $X$ si es invariante para su flujo\footnote{El flujo de un campo $X$ es la aplicación $\tau: \R \times \V \rightarrow \V$ tal que $\tau(t,x) = \tau_t(x)$}.
+
+\begin{propo}[Poincaré-Cartan]\index{teorema! de Poincaré- Cartan}
+
+Supongamos que $X$ genera un grupo global.  Si $\alpha$ es una $p$-forma invariante para toda parte compacta $K$ de cualquier subvariedad de dimensión $p$ se tiene
+$$
+\int_K \tau_t^* (\alpha) = \int_K \alpha = \int_{\tau_t(K)} \alpha \quad \text{ para todo } t \in \R
+$$
+
+\end{propo}
+
+Esto justifica el nombre histórico de invariantes integrales.  Antes de Cartan las formas exteriores, mejor dicho el análogo a las formas exteriores, solo servían para ser integradas.  Cartan les dió un significado geométrico propio, sin referirnos para nada al concepto de integral.
+
+El recíproco de esta proposición también es cierto, aunque no lo probaremos aquí.  Vease \cite{abrfou}. \fin
+
+
+\begin{defi}
+
+Sea $X$ un campo.  Una $(p-1)$-forma $\alpha$ es un {\sf invariante  relativo} \index{invariante! relativo} si $d\alpha$ es una $p$-forma invariante.
+
+\end{defi}
+
+
+Aplicando el teorema de Stokes al teorema de Poincaré-Cartan obtenemos
+
+\begin{cor}
+
+Sea  $X$ un campo que genera un grupo global.  Si $\alpha$ es una $(p-1)$-forma invariante relativa, para toda parte compacta $K$ de cualquier subvariedad de dimensión $p$ se tiene
+$$
+\int_{\partial K} \tau_t^* (\alpha) = \int_{\partial K} \alpha \quad \text{ para todo } t \in \R
+$$
+
+
+\end{cor}
+
+
+
+\begin{propo}
+
+Sea $X$ un campo en una variedad, $\alpha$ y $\beta$  dos formas invariantes.  Entonces
+
+\begin{itemize}
+
+\item $i_X \alpha$ es un invariante de $X$.
+
+\item $d\alpha$ es un invariante de $X$.
+
+\item $\alpha \wedge \beta$ es invariante.
+
+\end{itemize}
+
+\end{propo}
+
+\dem
+
+La derivada de Lie conmuta con la contracción interior
+$$
+X^L \cdot i_X = i_X \cdot X^L
+$$
+  Luego $X^L(i_X \alpha)= i_X(X^L(\alpha))=0$.
+
+Del mismo modo la derivada de Lie conmuta  con la diferencial exterior y $d\alpha$ es un invariante.
+
+La derivada de Lie es una derivación del álgebra exterior.  Entonces
+$$
+X^L(\alpha \wedge \beta)= X^L(\alpha) \wedge \beta + \alpha \wedge X^L(\beta)
+$$
+que es nulo.  \fin
+
+
+
+De este modo el conjunto de formas invariantes de un campo $X$ es una subálgebra del álgebra exterior de la variedad que es estable mediante los operadores $d$ y $i_X$.
+
+
+
+
+
+
+
+
+
+Veamos la interpretación en coordenadas del concepto de forma invariante.
+
+Sea $x$ un punto de la variedad donde el campo $X$ no sea nulo.  Se sabe por ecuaciones diferenciales que en un entorno de $x$ se puede elegir unas coordenadas $\{x_1, \cdots,x_n\}$ de tal forma que localmente
+
+$$
+X= \frac{\partial}{\partial x_1}
+$$
+
+Si la forma $\alpha$ se escribe en coordenadas
+$$
+\alpha = \alpha_{i_1, \cdots,i_k} dx_{i_1}\wedge \cdots \wedge dx_{i_k}
+$$
+tenemos que 
+$$
+X^L(\alpha)=  \frac{\partial}{\partial x_1}\left (\alpha_{i_1, \cdots,i_k} dx_{i_1}\wedge \cdots \wedge dx_{i_k}\right )= \frac{\partial}{\partial x_1}\left (\alpha_{i_1, \cdots,i_k} \right )dx_{i_1}\wedge \cdots \wedge dx_{i_k}
+$$
+Luego todas las funciones $\alpha_{i_1, \cdots,i_k}$ deben tener derivada parcial nula con respecto a $x_1$.  Bajo condiciones bien conocidas esto es equivalente a que ninguna de esas funciones dependa de la coordenada $x_1$. 
+
+
+\section{Invariantes integrales absolutos}
+
+
+Si multiplicamos un campo vectorial $X$ por una función $f$ (no nula), las curvas integrales del campo $fX$ son, geométricamente, las mismas que las curvas integrales de $X$, aunque recorridas con otra velocidad.
+Decimos en este caso que todas las curvas integrales de $fX$ y las curvas integrales de $X$ tienen el mismo soporte\footnote{En realidad le estamos asociando,de un modo diferenciable, a cada punto de la variedad $\V$ un subespacio vectorial de dimensión $1$.  Esto no es más que un subfribrado regular de rango $1$ del fibrado tangente.}.
+
+Si un objeto es invariante por todas las posibles reparametrizaciones de una curva, podemos afirmar que es invariante para el soporte de la curva, que no es  otra cosa que la imagen mediante una parametrización cualquiera del conjunto $\R$, que entenderemos como una variable temporal.  Bajo condiciones bastante generales el soporte la curva será una subvariedad de dimensión $1$.
+
+
+
+\begin{defi}\label{def:invarianteintegralabsoluto}
+
+Una $k$-forma $\alpha$ es un {\sf invariante integral absoluto} \index{invariante!integral absoluto} de un campo $X$ si se cumplen las condiciones
+
+$$
+ X^L(\alpha), \quad i_X\alpha =0
+$$
+Estas condiciones son equivalentes a que
+
+$$
+ i_X\alpha =0, \quad i_X d\alpha=0
+$$
+
+
+
+\end{defi}
+
+En particular los invariantes absolutos son formas invariantes.
+
+
+
+\begin{propo}
+
+Si $\alpha$ es un invariante integral absoluto de un campo $X$, entonces $\alpha$ es invariante integral absoluto por todo campo de la forma $fX$.
+
+\end{propo}
+
+\dem
+
+ Tenemos que 
+\begin{equation*}
+\begin{split}
+i_{(fX)}\alpha = f i_X \alpha = 0 \\
+i_{(fX)}d\alpha = fi_X d \alpha=0
+\end{split}
+\end{equation*}
+utilizando la segunda definición.  \fin
+
+Si el campo no se anula en un punto podemos suponer que $X= \frac{\partial}{\partial x_1}$.  Observemos que en este caso, todas las demás coordenadas son integrales primeras del campo.  Razonando de modo parecido a lo hecho en la sección anterior tenemos que en la expresión local de una forma  no puede aparecer la coordenada $x_1$, ni la diferencial $dx_1$ de esa coordenada.
+
+Como diría Cartan, los invariantes integrales absolutos de un campo $X$ son los que se pueden construir utilizando únicamente integrales primeras y diferenciales de las integrales primeras.
+
+\section{Subvariedades invariantes}
+
+
+Pasemos ahora al caso de una variedad simplectica y de un campo hamiltoniano.
+
+
+
+La integral primera más evidente de un campo hamiltoniano $X_f$ es el propio hamiltoniano, pues $\{f,f\}=0$ por la antisimetría del paréntesis de Poisson.  Este resultado, se conoce en física como el \index{teorema!conservación de la energía}{\sf teorema de consevación de la energía}. 
+
+Esto nos dice que las curvas integrales de $X_f$ se mantienen sobre la hipersuperficie $f= cte$.  La hipersuperficie puede no ser variedad en algunos puntos.
+
+
+
+
+
+\begin{defi}
+
+Sea $\V' \subset \V$ una subvariedad y $X$ un campo definido en toda la variedad.  $\V'$ es una {\sf subvariedad invariante} \index{subvariedad!invariante} si para todo punto $x' \in \V$ se tiene que $X_{x'} \in T_{x'}(\V')$.  El campo $X$ se puede entender como un campo en la subvariedad.
+
+\end{defi}
+
+Si tenemos un punto de $\V'$, la curva integral del campo $X$ restringido a $\V'$ tiene que ser la misma que la curva integral del campo $X$ en toda la variedad, debido al teorema de existencia y unicidad para ecuaciones diferenciales.  Pero el sistema de ecuaciones diferenciales en la subvariedad siempre tendrá menos variables que el sistema equivalente en toda la variedad.  De este modo, el encontrar subvariedades invariantes reduce el orden del sistema de ecuaciones diferenciales.
+
+Inversamente, si tomamos un punto arbitrario de una subvariedad, y las curvas integrales de $X$ permanecen en la subvariedad, entonces dicha subvariedad es invariante.  En efecto, si calculamos los vectores tangentes a esas curvas tenemos que pertencen al espacio tangente de la subvariedad.
+
+\begin{propo}
+
+Sea $g_i : \V \rightarrow \R, i= 1 \cdots k$ un conjunto de integrales primeras de un campo hamiltoniano $X_f$ \index{funcionalmente independientes} {\sf funcionalmente independientes}\footnote{Un conjunto de funciones es funcionalmente independiente en un punto si sus diferenciales en ese punto son linealmente independientes.}.  Igualando a cero esas funciones obtenemos una subvariedad $\V'$ de $\V$.  $\V'$ es una subvariedad invariante.
+
+\end{propo}
+
+\dem
+
+Que es subvariedad es un resultado elemental de análisis.
+
+Como son integrales primeras, el valor a lo largo de las curvas integrales de $X_f$ es siempre el mismo, en este caso cero.  Las curvas integrales del campo se mantienen en la subvariedad, que es entonces invariante.  \fin
+
+Sumando constantes a las funciones, se obtiene un resultado análogo igualando a constantes las integrales primeras.
+
+Recordemos que para que las funciones sean integrales primeras del campo hamiltoniano debe cumplirse $\{g_i,f\}=0$.
+
+
+
+Los sistemas hamiltonianos más sencillos son aquellos que poseen gran cantidad de integrales primeras independientes.  Además si las integrales primeras están en involución, el problemas es todavia más sencillo.
+
+\begin{defi}
+
+Un sistema hamiltoniano $X_f$ de dimensión $2n$ es {\sf integrable} \index{sistema!integrable} si posee $n$ integrales primeras $f_1= f, f_2, \dots ,f_n$ que están dos a dos en involución.
+
+\end{defi}
+
+Que esten dos a dos en involución significa que $\{f_i,f_j\}=0$.  De esta forma los grupos uniparamétricos que generan conmutan.
+
+Si tenemos un conjunto de integrales primeras, la subvariedad que se obtiene igualando a constantes dichas integrales es una subvariedad invariante. El teorema fundamental sobre sistemas integrables nos dice que si esa subvariedad es compacta, entonces necesariamente es isomorfa a toro de dimensión $n$ (véase \cite{arnmat,analec}).
+
+
+
+
+\begin{defi}
+
+Un punto $x_0 \in \V$ es un {\sf punto de equilibrio} \index{punto!de equilibrio} de un campo $X$ si $X_{x_0}=0$. 
+
+\end{defi}
+
+Si $x_0$ es un punto de equilibrio, la curva integral se reduce a ese único punto, luego el punto permanece estable aunque el tiempo discurra. Si las curvas integrales de puntos próximos a $x_0$ permanecen en un entorno de $x_0$, el punto de equilibrio es \index{punto!de equilibrio estable} {\sf estable}.  En otro caso se dice que el punto de equilibrio es \index{punto!de equilibrio inestable}{\sf inestable}.
+
+\begin{propo}
+
+Los puntos de equilibrio de un campo hamiltoniano $X_f$ son los puntos que anulan la diferencial de $f$, que normalmente son llamados {\sf puntos críticos} \index{punto!crítico} de la aplicación $f$.
+
+\end{propo}
+
+
+\section*{Problemas}
+
+\addcontentsline{toc}{section}{Problemas}
+
+
+\begin{pro}
+
+La polaridad es una operación de tipo local.  Calcular la $1$-forma que le corresponde al campo
+$$
+X= a_i \frac{\partial}{\partial x_i} + b_i \frac{\partial}{\partial \xi_i}
+$$
+
+\end{pro}
+
+\begin{pro}
+
+Sea $\V$ una variedad riemaniana.  Intentar definir un paréntesis de Poisson en el fibrado tangente.
+
+\end{pro}
+
+\begin{pro}
+
+Calcular los paréntesis de Poisson de las funciones coordenadas.
+
+\end{pro}
+
+\begin{pro}
+
+El paréntesis de Poisson de dos formas cerradas es una forma exacta.  Encontrar una primitiva de dicha forma exacta.
+
+\end{pro}
+
+\begin{pro}
+
+Calcular $\{f,x_i\}$ y $\{f,\xi_i\}$.
+
+\end{pro}
+
+\begin{pro}
+
+El paréntesis de Lie de dos campos hamiltonianos es de nuevo hamiltoniano.  Encontrar el hamiltoniano del paréntesis.
+
+Dos campos hamiltonianos conmutan si y solo si el paréntesis de Poisson de los hamiltonianos es una función localmente constante.
+
+\end{pro}
+
+\begin{pro}
+
+Demostrar que las condiciones de la definición \ref{def:invarianteintegralabsoluto} son equivalentes.
+
+\end{pro}
+
+
+\begin{pro}
+
+Sea $X$ un campo localmente hamiltoniano.  Probar la verdad o falsedad de las afirmaciones:
+
+\begin{itemize}
+
+\item Una $1$-forma $\alpha$ en invariante por el campo $X$ si y solo si $\mathsf{p}(X)$ y $\alpha$ están en involución (su paréntesis de Poisson es nulo).
+
+\item El paréntesis de Poisson de dos formas invariantes es invariante.
+
+\end{itemize}
+
+\end{pro}
+
+\begin{pro}
+
+El conjunto de invariantes integrales absolutos de un campo $X$ es una subálgebra estable por el operador $d$.
+
+\end{pro}
+
+\end{document}

@@ -1,0 +1,170 @@
+---
+alquafeatures:
+    - manifiesto
+    - pub
+    - librosabiertos
+authors:
+    -
+        email: jmguerra@fis.ucm.es
+        name: José Manuel Guerra Pérez
+        url: 'http://alqua.org/people/jmguerra'
+base_url: 'http://alqua.org/documents/'
+bodyunits:
+    -
+        basename: campo-electromagnetico
+        name: El campo electromagnético
+
+    -  
+        basename: cuantificacion-radiacion
+        name: La cuantificación de la radiación
+
+    -   
+        basename: cuantificacion-materia
+        name: La cuantificación de la materia
+
+    - 
+        basename: evolucion-temporal
+        name: La evolución temporal de los estados
+
+    -
+        basename: absorcion-emision
+        name: Absorción y emisión de radiación
+
+    -
+        basename: tr-no-radiativas
+        name: Transiciones no radiativas
+
+    -
+        basename: modelo-probabilistico
+        name: El modelo probabilístico
+
+    -
+        basename: campo-paraxial
+        name: El campo electromagnético paraxial
+
+    -
+        basename: f-transferencia
+        name: Resonadores
+
+    -
+        basename: ampli-propagacion
+        name: Amplificadores de propagación de radiación
+
+    -
+        basename: pequenya-senyal-sat
+        name: Pequeña señal y saturación
+
+    -
+        basename: laser-avalancha
+        name: Láseres de avalancha
+
+    -
+        basename: ampli-res-regenerativos
+        name: Amplificadores resonantes regenerativos
+
+    -
+        basename: saturado-espontanea
+        name: El oscilador láser saturado por la emisión espontánea
+
+    -
+        basename: optimiz
+        name: Optimización de la salida de un láser
+
+    -
+        basename: bombeo-pulsado
+        name: El láser de régimen de bombeo pulsado cuasiestacionario
+
+    -
+        basename: dinamica-laser
+        name: Dinámica del láser
+
+    -
+        basename: metodos-bombeo
+        name: Métodos de bombeo
+
+
+appendixes:
+    -
+        basename: convol-2lorentz
+        name: Convolución de dos perfiles de Lorentz
+    -
+        basename: sol-gauss-hermite
+        name: Solución Gauss-Hermite
+    -
+        basename: sol-propag-I-fp
+        name: Resolución de la ecuación de propagación de la intensidad en el Fabry-Perot
+    -
+        basename: gas-esferas-duras
+        name: El modelo del gas de esferas duras
+
+classification:
+    area: óptica
+    doctype: libro
+    series: apuntes
+    udc: '535.13'
+coverimage: fig/evol-intens-propag.eps
+dedication: []
+description: Un curso de física del láser en el que se describen sus fundamentos en la teoría cuántica de la radiación, el funcionamiento de los resonadores comúnmente utilizados, el proceso de amplificación y los métodos de bombeo para instalar la inversión de población. El libro se centra en los fundamentos teóricos que mayor dificultad pueden ofrecer al estudiante no especializado, exponiéndolos de una forma detallada, ordenada y lo más autoconsistente posible. Contiene ejemplos y numerosas figuras.
+editors:
+    -
+        email: alvaro@alqua.org
+        name: Álvaro Tejero Cantero
+        url: 'http://alqua.org/people/alvaro'
+features:
+    - toc
+    - ind
+    - bib
+    - lic
+keywords: [láser, resonadores ópticos, Fabry-Perot, amplificación de radiación, modos gaussianos, dinámica láser, bloqueo de modos, mode-locking, conmutación de ganancia, Q-switch, pulso gigante, bombeo óptico, bombeo en descargas, bombeo de inyección, coeficientes de Einstein, ensanchamiento homogéneo, perfil Lorentz, ensanchamiento inhomogéneo, perfil Gauss, propagación paraxial]
+language: es
+license:
+    backcover: 'Aprende en comunidad - http://alqua.org'
+    frontcover: 'Un libro libre de Alqua'
+    invariant:
+        - Manifiesto de alqua
+    name: CC-by_nc_sa
+    version: '1.0'
+    restrictions:
+      - by
+      - nc
+      - sa
+note: ''
+publisher:
+    email: alqua@alqua.org
+    name: alqua
+    url: 'http://alqua.org'
+
+releases:
+     - 
+        date: '2004-04-15'
+        description:
+            - Primera versión pública, basada en los los temas expuestos en el curso de la asignatura Física del láser impartida en la licenciatura de Ciencias Físicas de la Universidad Complutense de Madrid por José Manuel Guerra Pérez.
+            - Pasados a máquina, con numerosas figuras por Roberto Arévalo, Lucas Lamata, José Augusto Rodrigo, Isabel González y Álvaro Tejero.
+            - Reorganización de la estructura, con la creación de cuatro apéndices - ATC, JGP.
+            - Corrección de erratas, revisión notacional, mejoras a la presentación - ATC, JGP.
+            - Compleción de la nómina de figuras  - ATC, Robert Jördens.
+        number: '1.0.0'
+        
+requisites:
+    - Un curso de electromagnetismo que cubra las ecuaciones de Maxwell.
+    - Un curso de física cuántica.
+    - Un curso de óptica electromagnética.
+shorttitle: FdL
+sourceformat:
+    ext: lyx
+    macros:
+        - FdL-macros.sty
+    name: LyX
+    packages:
+        - FdL-packages.sty
+        - lyxpackages.sty
+    ver: '1.3'
+subtitle: 'Volumen 1: fundamentos'
+title: Física del láser
+todo:
+    - Incorporar ejercicios.
+    - Completar la bibliografía indicando las ediciones más actuales.
+    - Completar y homogeneizar el índice de materias.
+contributors:
+    - Álvaro Tejero Cantero <alvaro@antalia.com> 2003,2004.
+    - Robert Jördens <jordens@debian.org> 2004.

@@ -1,0 +1,1744 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass book
+\begin_preamble
+\input{OE-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding latin1
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize a4paper
+\paperpackage a4
+\use_geometry 1
+\use_amsmath 1
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+
+\layout Chapter
+
+Ondas electromagnéticas en el vacío 
+\begin_inset LatexCommand \label{cap Ondas}
+
+\end_inset 
+
+
+\layout Standard
+
+La óptica electromagnética estudia el comportamiento de la luz, considerando
+ ésta como un ente de carácter ondulatorio.
+ Para tal fin será necesario introducir algunos conceptos asociados a las
+ ondas electromagnéticas, objeto de este capítulo.
+ Se realizará un breve repaso de las ecuaciones de Maxwell, describiremos
+ la forma más general de una onda electromagnética, entendida como una onda
+ armónica plana, así como su forma compleja, .
+ Se revisarán conceptos tales como frente de ondas, vector y longitud de
+ onda, velocidad de fase y de grupo,\SpecialChar \ldots{}
+ Estudiaremos también el carácter transversa
+l de las ondas electromagnéticas, y el fenómeno asociado de la polarización.
+ Por último describiremos en este capítulo la energía que transporta una
+ onda en términos del vector de Poynting.
+\layout Section
+
+Planteamiento
+\layout Standard
+
+En esta sección repasaremos algunas cuestiones de electromagnetismo.
+\layout Standard
+
+La óptica electromagnética parte de identificar la luz como fenómeno electromagn
+ético.
+ En consecuencia la luz está gobernada por las ecuaciones de Maxwell.
+ Las ecuaciones de Maxwell 
+\begin_inset LatexCommand \index{Maxwell !ecuaciones de}
+
+\end_inset 
+
+microscópicas (en el vacío) son:
+\begin_inset Formula \begin{eqnarray}
+\nabla\cdot\mathbf{E} & = & \frac{\rho}{\epsilon_{0}}\label{ecM1}\\
+\nabla\cdot\mathbf{B} & = & 0\label{ecM2}\\
+\nabla\wedge\mathbf{E} & = & -\dpt{\mathbf{B}}\label{ecM3}\\
+\frac{1}{\mu_{0}}\nabla\wedge\mathbf{B} & = & \mathbf{j}+\epsilon_{0}\dpt{\mathbf{E}}\label{ecM4}\end{eqnarray}
+
+\end_inset 
+
+ Estas ecuaciones diferenciales parciales vectoriales involucran materia
+ (a través de 
+\begin_inset Formula $\mathbf{j}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\rho$
+\end_inset 
+
+) y campos 
+\begin_inset Formula $\left(\mathbf{E},\mathbf{B}\right)$
+\end_inset 
+
+.
+ Además de estas ecuaciones necesitaremos una que nos dé la fuerza que ejercen
+ los campos sobre las cargas
+\begin_inset Formula \begin{equation}
+\mathbf{F}=q\left(\mathbf{E}+\dt{\mathbf{r}}\wedge\mathbf{B}\right)\label{ecLorentz}\end{equation}
+
+\end_inset 
+
+ Con este bagaje podemos estudiar la propagación de la luz en la materia.
+ La luz es una solución de las ecuaciones de Maxwell en forma de onda electromag
+nética.
+ Es decir
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+El vector 
+\begin_inset Formula $\mathbf{E}$
+\end_inset 
+
+ se llama 
+\emph on 
+campo
+\emph default 
+ 
+\emph on 
+eléctrico
+\emph default 
+ y el vector 
+\series bold 
+B 
+\series default 
+recibe el nombre de 
+\emph on 
+inducción magnética.
+\end_inset 
+
+ campos 
+\begin_inset Formula $\mathbf{E}\left(\mathbf{r},t\right)$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathbf{B}\left(\mathbf{r},t\right)$
+\end_inset 
+
+ acoplados y con forma de onda vectorial (un tipo especial de dependencia
+ espaciotemporal).
+ El siguiente esquema resume la interconexión de los fenómenos electromagnéticos
+ con la dinámica de las cargas y corrientes:
+\begin_inset Formula \begin{eqnarray*}
+\rho,\mathbf{j} & \fld & \mathbf{E},\mathbf{B}\\
+\left\{ \mathbf{F}\right\}  & \fld & \rho',\mathbf{j}'\\
+ & \fld & \mathbf{E}',\mathbf{B}'\\
+ & \fld & \ldots\end{eqnarray*}
+
+\end_inset 
+
+ Cargas y densidades de corriente no estacionarias generan campos (luz)
+ variables en el tiempo (ondas que se propagarán en el vacío) que a su vez
+ actuarán sobre otras cargas y corrientes mediante una fuerza.
+ La aceleración inducida en estas últimas dará lugar a nuevas ondas que
+ se superpondrán con las incidentes, etc.
+\layout Standard
+
+Todo el proceso (generación, propagación, detección) estará sujeto a las
+ ecuaciones de Maxwell.
+ El primer gran problema al que nos vamos a enfrentar será el de la propagación
+ en la materia.
+ En primer lugar hablaremos de las ondas electromagnéticas en el vacío y
+ después pasaremos al problema más complicado de su propagación en la materia.
+\layout Section
+
+Ondas electromagnéticas en el vacío
+\begin_inset LatexCommand \index{ondas! electromagnéticas!en el vacío}
+
+\end_inset 
+
+
+\layout Standard
+
+En el vacío no hay ni cargas ni corrientes: 
+\begin_inset Formula $\rho=0$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathbf{j}=\ceron$
+\end_inset 
+
+.
+ Las ondas electromagnéticas obtenidas serán una solución particular de
+ las ecuaciones de Maxwell.
+ Si combinamos la tercera ecuación con la cuarta, podremos llegar a la siguiente
+ expresión 
+\begin_inset Formula \begin{equation}
+\nabla^{2}\mathbf{E}=\frac{1}{c^{2}}\ddpt{\mathbf{E}}\label{ecOndas_para_E}\end{equation}
+
+\end_inset 
+
+ una ecuación de ondas vectorial donde el parámetro 
+\begin_inset Formula $c$
+\end_inset 
+
+ (velocidad de la luz) vale
+\begin_inset Formula \[
+c=\frac{1}{\sqrt{\epsilon_{0}\mu_{0}}}\]
+
+\end_inset 
+
+ Entre las soluciones particulares que se pueden encontrar a la ecuación
+ están las que estudiamos a continuación.
+\layout Subsection
+
+Ondas armónicas
+\begin_inset LatexCommand \index{ondas! armónicas}
+
+\end_inset 
+
+
+\begin_inset LatexCommand \index{ondas!monocromáticas}
+
+\end_inset 
+
+
+\layout Standard
+
+Las ondas armónicas (también llamadas 
+\emph on 
+monocromáticas
+\emph default 
+) tienen, por definición, la forma
+\begin_inset Formula \begin{eqnarray*}
+E_{x}\left(\mathbf{r},t\right) & = & A_{x}\left(\mathbf{r}\right)\cos\left(\omega t-g_{x}\left(\mathbf{r}\right)\right)\\
+E_{y}\left(\mathbf{r},t\right) & = & A_{y}\left(\mathbf{r}\right)\cos\left(\omega t-g_{y}\left(\mathbf{r}\right)\right)\\
+E_{z}\left(\mathbf{r},t\right) & = & A_{z}\left(\mathbf{r}\right)\cos\left(\omega t-g_{z}\left(\mathbf{r}\right)\right)\end{eqnarray*}
+
+\end_inset 
+
+Una onda armónica es una solución particular que tiene toda la dependencia
+ temporal en 
+\begin_inset Formula $\cos\omega t$
+\end_inset 
+
+.
+ Las otras funciones 
+\begin_inset Formula $\left(A_{i},g_{i}\right)$
+\end_inset 
+
+ son funciones de punto, pero no del tiempo.
+ La frecuencia angular se relaciona con la frecuencia y con el período de
+ la onda según
+\begin_inset Formula \[
+\omega=2\pi\nu=\frac{2\pi}{T}\]
+
+\end_inset 
+
+ Las 
+\begin_inset Formula $A_{x},A_{y},A_{z}$
+\end_inset 
+
+ son las 
+\emph on 
+amplitudes
+\emph default 
+ de cada una de las componentes de la onda.
+ El argumento del coseno es lo que se llama 
+\emph on 
+fase 
+\emph default 
+de la onda.
+ Por la naturaleza de su dependencia temporal, esta onda se extiende en
+ el tiempo desde 
+\begin_inset Formula $-\infty$
+\end_inset 
+
+ a 
+\begin_inset Formula $\infty$
+\end_inset 
+
+; si restringimos su duración, ya no se puede considerar armónica ni tiene
+ la expresión expuesta.
+\layout Standard
+
+Las ondas armónicas
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+aqui convendria alguna reflexion mas estructural proveniente
+\layout Standard
+
+del capitulo de desarrollo en serie de autofunciones de EDII
+\layout Standard
+
+y de las ondas lineales...
+ -ATC.
+\end_inset 
+
+
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+hacer referencia al documento de edp
+\layout Standard
+
+,marta
+\end_inset 
+
+ constituyen una base de funciones para las ondas: a partir de ellas se
+ puede construir cualquier onda por superposición de 
+\noun on 
+F
+\noun default 
+ourier.
+ La clasificación de las ondas en función de las frecuencias de las ondas
+ armónicas que contienen constituye el 
+\emph on 
+espectro
+\emph default 
+ 
+\emph on 
+electromagnético
+\emph default 
+
+\begin_inset LatexCommand \index{espectro electromagnético}
+
+\end_inset 
+
+.
+ Dentro de él, la luz visible es una onda en el rango de frecuencias (figura
+ 
+\begin_inset LatexCommand \ref{fig:espectro electromagnetico}
+
+\end_inset 
+
+)
+\begin_inset Formula \begin{eqnarray*}
+4\times10^{14}Hz & <\nu< & 7.5\times10^{14}Hz\\
+IR & <\nu< & UV\end{eqnarray*}
+
+\end_inset 
+
+ Este tipo de ondas es el que estimula nuestro sistema visual.
+ Aquellas cuyas frecuencias no pertenecen a este rango no provocan sensación
+ visual pero se comportan muy similarmente.
+ Las ondas armónicas se llaman también monocromáticas porque provocan sensación
+ de un color definido.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+nofig
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig:espectro electromagnetico}
+
+\end_inset 
+
+Espectro electromagnético - parte visible (IR-UV).
+\end_inset 
+
+
+\layout Standard
+
+Las ondas armónicas permiten introducir una herramienta muy útil: la 
+\emph on 
+representación
+\emph default 
+ 
+\emph on 
+compleja
+\emph default 
+
+\begin_inset LatexCommand \index{representación compleja}
+
+\end_inset 
+
+.
+ Esta expresión es útil para no arrastrar cosenos y senos por los cálculos.
+ De modo que 
+\emph on 
+solamente para simplificar los cálculos 
+\emph default 
+se escribe el coseno como la parte real de una exponencial compleja, función
+ que tiene la ventaja de que su derivada es ella misma.
+\begin_inset Formula \[
+e^{ia}=\cos a+i\sin a\]
+
+\end_inset 
+
+ Reescribamos nuestras relaciones
+\begin_inset Formula \[
+E_{x}=\Re\left\{ A_{x}\left(\mathbf{r}\right)e^{+ig_{x}\left(\mathbf{r}\right)}e^{-i\omega t}\right\} \]
+
+\end_inset 
+
+ usaremos el convenio (indiferente: el coseno es par) de poner la propagación
+ en 
+\begin_inset Formula $e^{-i\omega t}$
+\end_inset 
+
+, es decir, con el signo menos en el exponente
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Observación a tener en cuenta cuando se acuda a la bibliografía.
+\end_inset 
+
+.
+ En todo lo que sigue prescindiremos de escribir 
+\begin_inset Formula $\Re\left\{ \ldots\right\} $
+\end_inset 
+
+ y se habrá de entender que las amplitudes 
+\begin_inset Formula $\mathbf{E}\left(\mathbf{r},t\right)$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathbf{E}_{0}\left(\mathbf{r},t\right)$
+\end_inset 
+
+ son vectores complejos, de los cuales 
+\emph on 
+sólo la parte real tiene significado
+\emph default 
+ (puede ser medida en laboratorio).
+ La expresión de la onda queda, pues
+\begin_inset Formula \[
+\mathbf{E}\left(\mathbf{r},t\right)=\mathbf{E}_{0}\left(\mathbf{r}\right)e^{-i\omega t}\]
+
+\end_inset 
+
+ Pero no siempre se puede utilizar: si bien para sumas, integrales, derivadas\SpecialChar \ldots{}
+
+ la representación compleja es legítima (porque la parte real de la suma
+ es la suma de las partes reales), para efectuar el producto de dos 
+\lang english
+ondas armónicas
+\lang spanish
+ ya no vale.
+ Moraleja: cuando hagamos operaciones 
+\emph on 
+lineales
+\emph default 
+ y sólo entonces podremos utilizar la representación compleja.
+\layout Subsection
+
+Frentes de onda 
+\begin_inset LatexCommand \index{onda!frente de}
+
+\end_inset 
+
+
+\begin_inset LatexCommand \index{frente de onada}
+
+\end_inset 
+
+
+\layout Standard
+
+Para el resto del curso admitiremos que
+\layout Standard
+
+
+\begin_inset Formula \[
+g_{x}\left(\mathbf{r}\right)=g_{y}\left(\mathbf{r}\right)=g_{z}\left(\mathbf{r}\right)\equiv g\left(\mathbf{r}\right)\]
+
+\end_inset 
+
+ Ahora todas las componentes tienen la misma fase, con lo que la fase de
+ la onda armónica queda 
+\begin_inset Formula \[
+\mathrm{fase}_{oa}\left(\mathbf{r},t\right)=\omega t-g\left(\mathbf{r}\right)\]
+
+\end_inset 
+
+Para un tiempo fijo 
+\begin_inset Formula $t_{0}$
+\end_inset 
+
+ un 
+\emph on 
+frente de ondas
+\emph default 
+ es el conjunto de puntos del espacio donde la onda tiene la misma fase.
+\begin_inset Formula \begin{eqnarray*}
+\omega t_{0}-g\left(\mathbf{r}\right) & = & cte\\
+g\left(\mathbf{r}\right)-\omega t_{0}-cte & = & 0\end{eqnarray*}
+
+\end_inset 
+
+Ésta es la ecuación de un sistema de superficies (variando la constante)
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Por ejemplo, 
+\begin_inset Formula $F\left(\mathbf{r}\right)=cte$
+\end_inset 
+
+ con 
+\begin_inset Formula $\mathbf{F}\left(\mathbf{r}\right)=x^{2}+y^{2}+z^{2}$
+\end_inset 
+
+ es la ecuación de una foliación del espacio por esferas de radio 
+\begin_inset Formula $\sqrt{cte}$
+\end_inset 
+
+.
+\end_inset 
+
+.
+ Si ahora permitimos la variación del tiempo concluiremos que los frentes
+ de ondas cambian con el tiempo:
+\begin_inset Formula \[
+g\left(\mathbf{r}\right)+cte=\omega t_{1}\]
+
+\end_inset 
+
+ Los frentes de onda se propagan (ver figura 
+\begin_inset LatexCommand \ref{fig:propagacion de frentes de onda}
+
+\end_inset 
+
+), lo mismo que se propaga la perturbación, en el espacio y en el tiempo.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/frentes-onda.eps
+	display monochrome
+	width 6cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig:propagacion de frentes de onda}
+
+\end_inset 
+
+Frentes de onda para dos tiempos distintos.
+\end_inset 
+
+
+\layout Subsection
+
+Ondas planas
+\begin_inset LatexCommand \index{ondas!planas}
+
+\end_inset 
+
+
+\layout Standard
+
+Para un instante dado, las 
+\emph on 
+ondas
+\emph default 
+ 
+\emph on 
+planas
+\emph default 
+ son aquellas para las cuales el campo eléctrico toma el mismo valor sobre
+ superficies que son planos.
+ Es decir, para 
+\begin_inset Formula $t=t_{0}$
+\end_inset 
+
+ se cumple que 
+\begin_inset Formula \[
+\mathbf{E}\left(\mathbf{r},t_{0}\right)=\mathbf{cte}\,\Fd\,\mathbf{r}\in\Pi\]
+
+\end_inset 
+
+ donde 
+\begin_inset Formula $\Pi$
+\end_inset 
+
+ es un plano.
+ La ecuación de los planos de vector director 
+\begin_inset Formula $\mathbf{k}=\left(a,b,c\right)$
+\end_inset 
+
+ es 
+\begin_inset Formula $ax+by+cz=d$
+\end_inset 
+
+, es decir, 
+\begin_inset Formula $\mathbf{k}\cdot\mathbf{r}=d$
+\end_inset 
+
+ (ver figura 
+\begin_inset LatexCommand \ref{fig:ondas planas}
+
+\end_inset 
+
+).
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/plano-fase.eps
+	display monochrome
+	width 6cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig:ondas planas}
+
+\end_inset 
+
+Plano de fase (frente de ondas) y vector 
+\series bold 
+
+\begin_inset Formula $\mathbf{k}$
+\end_inset 
+
+ 
+\series default 
+para una onda plana.
+ Explicación de la dependencia sólo en 
+\begin_inset Formula $\mathbf{k}\cdot\mathbf{r}$
+\end_inset 
+
+.
+\end_inset 
+
+ Esta definición permite que la dependencia espacial de la onda se pueda
+ escribir mediante un producto escalar por un vector constante: la onda
+ no depende de 
+\begin_inset Formula $\mathbf{r}$
+\end_inset 
+
+ sino de su proyección sobre la dirección de propagación, ortogonal a los
+ planos.
+ Al vector constante 
+\begin_inset Formula $\mathbf{k}$
+\end_inset 
+
+ se le llama 
+\emph on 
+vector de ondas
+\begin_inset LatexCommand \index{vector de ondas}
+
+\end_inset 
+
+.
+\emph default 
+
+\begin_inset Formula \[
+\mathbf{E}=\mathbf{E}\left(\mathbf{k}\cdot\mathbf{r},t\right)\]
+
+\end_inset 
+
+ Estas ondas no son de gran utilidad por sí solas si no se combinan con
+ las ondas armónicas.
+ 
+\layout Subsection
+
+Ondas armónicas planas
+\begin_inset LatexCommand \index{ondas!armónicas! planas}
+
+\end_inset 
+
+
+\layout Standard
+
+Si tanto la dependencia armónica temporal como la dependencia espacial en
+ forma de onda plana son impuestas a la ecuación de ondas vectorial 
+\begin_inset LatexCommand \ref{ecOndas_para_E}
+
+\end_inset 
+
+ las ondas armónicas planas se ven obligadas a adoptar esta expresión:
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{E}\left(\mathbf{r},t\right) & = & \mathbf{E}_{0}e^{i\left(\mathbf{k}\cdot\mathbf{r}-\omega t\right)}\\
+\mathbf{B}\left(\mathbf{r},t\right) & = & \mathbf{B}_{0}e^{i\left(\mathbf{k}\cdot\mathbf{r}-\omega t\right)}\end{eqnarray*}
+
+\end_inset 
+
+ Toda la dependencia espaciotemporal está en la exponencial compleja; tanto
+ 
+\begin_inset Formula $\mathbf{E}_{0}$
+\end_inset 
+
+ como 
+\begin_inset Formula $\mathbf{B}_{0}$
+\end_inset 
+
+ son vectores complejos constantes.
+ Cualquier onda se puede desarrollar como superposición de ondas armónicas
+ planas.
+ 
+\layout Standard
+
+Pero las soluciones no deben serlo sólo de la ecuación de ondas, deben cumplir
+ también las ecuaciones de Maxwell.
+ Eso introduce ligaduras entre las constantes preexponenciales.
+ Si se impone el cumplimiento de las ecuaciones de Maxwell se desemboca
+ en las siguientes ecuaciones:
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{k}\cdot\mathbf{E}_{0} & = & 0\\
+\mathbf{k}\cdot\mathbf{B}_{0} & = & 0\end{eqnarray*}
+
+\end_inset 
+
+ a partir de las dos divergencias nulas (ecuaciones 
+\begin_inset LatexCommand \ref{ecM1}
+
+\end_inset 
+
+ y 
+\begin_inset LatexCommand \ref{ecM2}
+
+\end_inset 
+
+ en el vacío).
+ Y, si hacemos los dos rotacionales 
+\begin_inset LatexCommand \ref{ecM3}
+
+\end_inset 
+
+ y 
+\begin_inset LatexCommand \ref{ecM4}
+
+\end_inset 
+
+ obtenemos además
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{B}_{0} & = & \frac{1}{\omega}\mathbf{k}\wedge\mathbf{E}_{0}\\
+\mathbf{E}_{0} & = & -\frac{c^{2}}{\omega}\mathbf{k}\wedge\mathbf{B}_{0}\end{eqnarray*}
+
+\end_inset 
+
+ De estas condiciones se extraen cuatro ecuaciones
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{k}\cdot\mathbf{E} & = & 0\\
+\mathbf{k}\cdot\mathbf{B} & = & 0\\
+\mathbf{B} & = & \frac{1}{\omega}\mathbf{k}\wedge\mathbf{E}\\
+\mathbf{E} & = & -\frac{c^{2}}{\omega}\mathbf{k}\wedge\mathbf{B}\end{eqnarray*}
+
+\end_inset 
+
+ que permiten obtener importantes conclusiones sobre la estructura de la
+ onda: los campos son ortogonales entre sí, y cada uno de ellos al vector
+ de ondas.
+ Se forma pues un triedro directo
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+en el sentido de que 
+\begin_inset Formula $\mathbf{E}\wedge\mathbf{B}$
+\end_inset 
+
+ está en la dirección de 
+\begin_inset Formula $\mathbf{k}$
+\end_inset 
+
+.
+\end_inset 
+
+ 
+\begin_inset Formula $\mathbf{E},\mathbf{B},\mathbf{k}$
+\end_inset 
+
+.
+ Si combinamos las dos últimas ecuaciones y se usa
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Esta 
+\emph on 
+magia
+\emph default 
+ puede ser recordada como la regla 
+\begin_inset Quotes eld
+\end_inset 
+
+
+\series bold 
+
+\begin_inset Formula $\mathbf{bac}-\mathbf{cab}$
+\end_inset 
+
+
+\series default 
+
+\begin_inset Quotes erd
+\end_inset 
+
+ para el triple producto vectorial.
+\end_inset 
+
+ 
+\begin_inset Formula \[
+\mathbf{a}\wedge\left(\mathbf{b}\wedge\mathbf{c}\right)=\mathbf{b}\left(\mathbf{a}\cdot\mathbf{c}\right)-\mathbf{c}\left(\mathbf{a}\cdot\mathbf{b}\right)\]
+
+\end_inset 
+
+ se obtiene
+\begin_inset Formula \begin{eqnarray*}
+\left|\mathbf{k}\right|^{2} & = & \frac{\omega^{2}}{c^{2}}\\
+k & = & \frac{\omega}{c}\\
+ & = & \frac{2\pi}{\lambda}\end{eqnarray*}
+
+\end_inset 
+
+ la última ecuación constituye la definición de 
+\begin_inset Formula $\lambda$
+\end_inset 
+
+, la longitud de onda.
+ La condición 
+\begin_inset Formula \begin{eqnarray*}
+\frac{2\pi\nu}{c} & = & \frac{2\pi}{\lambda}\\
+\lambda\nu & = & c\end{eqnarray*}
+
+\end_inset 
+
+permite clasificar las ondas también por su longitud de onda, puesto que
+ conocemos la relación con la frecuencia.
+ Lo que llamamos 
+\emph on 
+luz
+\emph default 
+ cumple aproximadamente
+\begin_inset Formula \[
+400nm<\lambda<750nm\]
+
+\end_inset 
+
+
+\layout Description
+
+Ejercicio ¿Cómo son los frentes de onda de una onda armónica plana?.
+ 
+\begin_deeper 
+\layout Standard
+
+
+\size small 
+En primer lugar hay que identificar su fase: es 
+\begin_inset Formula $\mathbf{k}\cdot\mathbf{r}-\omega t$
+\end_inset 
+
+.
+ Los frentes de onda vendrán dados por 
+\begin_inset Formula \[
+\mathbf{k}\cdot\mathbf{r}-\omega t=cte\]
+
+\end_inset 
+
+ podemos escoger el vector de ondas particular 
+\begin_inset Formula $\mathbf{k}=\mathrm{k}\mathbf{u}_{z}$
+\end_inset 
+
+ y entonces
+\begin_inset Formula \[
+kz-\omega t=cte\]
+
+\end_inset 
+
+ Para ver que estos planos perpendiculares al eje 
+\begin_inset Formula $z$
+\end_inset 
+
+ se desplazan con el tiempo podemos despejar la coordenada
+\begin_inset Formula \[
+z=\frac{\omega}{k}t+\frac{cte}{k}=ct+\frac{cte}{k}\]
+
+\end_inset 
+
+ los planos de la misma fase se mueven con velocidad 
+\begin_inset Formula $c$
+\end_inset 
+
+: la 
+\emph on 
+velocidad de fase
+\emph default 
+ es 
+\begin_inset Formula $c$
+\end_inset 
+
+.
+\end_deeper 
+\layout Section
+
+Información contenida en la expresión de una onda armónica plana
+\layout Standard
+
+Una onda armónica plana queda determinada por su frecuencia, 
+\begin_inset Formula $\omega$
+\end_inset 
+
+, su dirección, 
+\begin_inset Formula $\mathbf{k}$
+\end_inset 
+
+ y su amplitud 
+\begin_inset Formula $\mathbf{E}_{0}$
+\end_inset 
+
+.
+ Los frentes de onda se desplazan en la dirección de 
+\begin_inset Formula $\mathbf{k}$
+\end_inset 
+
+ a velocidad 
+\begin_inset Formula $c$
+\end_inset 
+
+.
+ En cuanto al campo magnético, está completamente determinado por las ecuaciones
+ que lo expresan en función del eléctrico.
+ A partir de ellas se puede escribir 
+\begin_inset Formula \[
+\left|\mathbf{B}_{0}\right|=\frac{1}{c}\left|\mathbf{E}_{0}\right|\]
+
+\end_inset 
+
+ Lo que resta del capítulo está dedicado a la amplitud compleja, 
+\begin_inset Formula $\mathbf{E}_{0}$
+\end_inset 
+
+.
+ Este vector contiene dos tipos de información:
+\layout Enumerate
+
+Sobre la polarización de la onda.
+\layout Enumerate
+
+Sobre su intensidad.
+\layout Section
+
+Polarización 
+\begin_inset LatexCommand \index{polarización!onda armónica plana}
+
+\end_inset 
+
+de una onda armónica plana
+\layout Standard
+
+Ya que conocemos la estructura de la onda, elegimos los ejes de modo que
+ 
+\begin_inset Formula $\mathbf{k}\parallel\mathbf{u}_{z}$
+\end_inset 
+
+.
+ En consecuencia, 
+\begin_inset Formula $\mathbf{k}=\frac{\omega}{c}\mathbf{u}_{z}$
+\end_inset 
+
+ y 
+\begin_inset Formula $E_{z}=0$
+\end_inset 
+
+.
+\layout Description
+
+Polarización
+\begin_inset LatexCommand \index{polarización}
+
+\end_inset 
+
+ es la trayectoria que describe el vector campo eléctrico en el plano 
+\begin_inset Formula $xy$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+Vamos a demostrar que esta trayectoria se puede escribir siempre como una
+ elipse.
+\begin_inset Formula \begin{eqnarray*}
+E_{x} & = & E_{0x}e^{i\left(kz-\omega t\right)}=\left|E_{0x}\right|e^{-i\delta_{x}}e^{i\left(kz-\omega t\right)}\\
+E_{y} & = & E_{0y}e^{i\left(kz-\omega t\right)}=\left|E_{0y}\right|e^{-i\delta_{y}}e^{i\left(kz-\omega t\right)}\end{eqnarray*}
+
+\end_inset 
+
+ donde el signo de la fase es arbitrario
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Hemos descompuesto el vector amplitud compleja en módulo y argumento y expresado
+ su fase como 
+\begin_inset Formula $-\delta_{x}$
+\end_inset 
+
+ o 
+\begin_inset Formula $-\delta_{y}$
+\end_inset 
+
+.
+ El haber elegido fases 
+\begin_inset Formula $\delta_{x}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\delta_{y}$
+\end_inset 
+
+ no cambiaría nada.
+\end_inset 
+
+.
+ Nos interesa más la representación real 
+\begin_inset Formula \begin{eqnarray*}
+E_{x} & = & \left|E_{0x}\right|\cos\left(\omega t+\delta_{x}-kz\right)\\
+E_{y} & = & \left|E_{0y}\right|\cos\left(\omega t+\delta_{y}-kz\right)\end{eqnarray*}
+
+\end_inset 
+
+ Utilizando relaciones trigonométricas se puede eliminar el tiempo, con
+ lo que queda la ecuación (correspondiente a una elipse en general):
+\size footnotesize 
+
+\begin_inset Formula \[
+\left(\frac{E_{x}}{\left|E_{0x}\right|}\right)^{2}+\left(\frac{E_{y}}{\left|E_{0y}\right|}\right)^{2}-2\frac{E_{x}E_{y}}{\left|E_{0x}\right|\left|E_{0y}\right|}\cos\left(\delta_{y}-\delta_{x}\right)=\sin^{2}\left(\delta_{y}-\delta_{x}\right)\]
+
+\end_inset 
+
+
+\size default 
+ Para una onda armónica el vector campo eléctrico describe una elipse con
+ frecuencia 
+\begin_inset Formula $\omega$
+\end_inset 
+
+ (figura 
+\begin_inset LatexCommand \ref{fig:polarizacion eliptica y circular}
+
+\end_inset 
+
+ (a)).
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/elipse-polarizacion.eps
+	display monochrome
+	width 3.5cm
+
+\end_inset 
+
+
+\begin_inset Graphics
+	filename fig/igual-polarizacion.eps
+	display monochrome
+	width 3.5cm
+	subcaption
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig:polarizacion eliptica y circular}
+
+\end_inset 
+
+En el plano 
+\begin_inset Formula $E_{y},E_{x}$
+\end_inset 
+
+, (a) elipse de polarización y (b) dos estados de polarización iguales.
+\end_inset 
+
+El sentido de recorrido de la elipse puede ser dextrógiro (horario) o 
+\emph on 
+dextro 
+\emph default 
+o bien levógiro o 
+\emph on 
+levo.
+ 
+\emph default 
+Precaución: hay que especificar cuál es la dirección de propagación, la
+ misma elipse vista por una cara u otra da diferentes sentidos de giro.
+ Nuestro convenio será suponer que la onda se propaga 
+\emph on 
+hacia nosotros 
+\emph default 
+(es el convenio más generalizado en la Óptica).
+\layout Standard
+
+Un 
+\emph on 
+estado
+\emph default 
+ 
+\emph on 
+de
+\emph default 
+ 
+\emph on 
+polarización
+\emph default 
+ es una elipse particular.
+ Recorridos en distinto sentido de la misma elipse son distintos estados
+ de polarización.
+ Sin embargo, dos elipses homotéticas no representan diferentes estados
+ de polarización (figura 
+\begin_inset LatexCommand \ref{fig:polarizacion eliptica y circular}
+
+\end_inset 
+
+ (b)).
+ Es decir, que si la única diferencia entre dos elipses es el tamaño y no
+ el sentido o la forma el estado de polarización se considera el mismo.
+ Más formalmente: los vectores 
+\begin_inset Formula $\mathbf{E}_{0}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\eta\mathbf{E}_{0},\,\eta\in\mathcal{C}$
+\end_inset 
+
+ representan el mismo estado de polarización.
+ 
+\layout Standard
+
+Hay que fijarse en que la forma de la elipse sólo depende de 
+\begin_inset Formula $\left(\delta_{x}-\delta_{y}\right)$
+\end_inset 
+
+ y no de cada una de las fases 
+\begin_inset Formula $\delta_{x}$
+\end_inset 
+
+ o 
+\begin_inset Formula $\delta_{y}$
+\end_inset 
+
+ por separado.
+\layout Subsection
+
+Polarización lineal
+\begin_inset LatexCommand \index{polarización!lineal}
+
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/polarizacion-lineal.eps
+	display monochrome
+	width 4cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig elipse degenera en recta}
+
+\end_inset 
+
+Una elipse puede degenerar en una recta.
+\end_inset 
+
+Un caso particular de elipse es una recta que pasa por el origen (figura
+ 
+\begin_inset LatexCommand \ref{fig elipse degenera en recta}
+
+\end_inset 
+
+).
+ Esto significa que el campo está vibrando en una misma dirección del espacio.
+ Esta situación degenerada se produce cuando
+\begin_inset Formula \[
+\delta_{y}-\delta_{x}=\left\{ \begin{array}{c}
+0\\
+\pi\end{array}\right.\]
+
+\end_inset 
+
+ o bien cuando 
+\begin_inset Formula $\left|E_{0x}\right|=0$
+\end_inset 
+
+ o 
+\begin_inset Formula $\left|E_{0y}\right|=0$
+\end_inset 
+
+.
+ Entonces diremos que la polarización es lineal y que la luz es 
+\emph on 
+linealmente polarizada
+\begin_inset LatexCommand \index{luz linealmente polarizada}
+
+\end_inset 
+
+.
+ 
+\emph default 
+Podemos usar la notación
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{E}_{0} & = & \left(\begin{array}{c}
+E_{0x}\\
+E_{0y}\end{array}\right)=\left(\begin{array}{c}
+\left|E_{0x}\right|e^{-i\delta_{x}}\\
+\left|E_{0y}\right|e^{-i\delta_{y}}\end{array}\right)\\
+ & = & e^{-i\delta_{y}}\left(\begin{array}{c}
+\left|E_{0x}\right|e^{-i\left(\delta_{x}-\delta_{y}\right)}\\
+\left|E_{0y}\right|\end{array}\right)\end{eqnarray*}
+
+\end_inset 
+
+ aprovechamos la condición de diferencia de fase 
+\begin_inset Formula $0$
+\end_inset 
+
+ o 
+\begin_inset Formula $\pi$
+\end_inset 
+
+ para poner
+\begin_inset Formula \[
+\mathbf{E}_{0}=e^{-i\delta_{y}}\left(\begin{array}{c}
+\pm\left|E_{0x}\right|\\
+\left|E_{0y}\right|\end{array}\right)\propto\textrm{vector real}\]
+
+\end_inset 
+
+ es decir, siempre que haya proporcionalidad a un vector real (aunque el
+ coeficiente sea complejo) se dirá que la luz está linealmente polarizada.
+\layout Subsection
+
+Polarización circular
+\begin_inset LatexCommand \index{polarización!circular}
+
+\end_inset 
+
+
+\layout Standard
+
+Se dice que la luz está circularmente polarizada cuando la elipse se reduce
+ a una circunferencia.
+ Esto ocurre si se dan las siguientes dos condiciones
+\begin_inset Formula \begin{eqnarray*}
+\left|E_{0x}\right| & = & \left|E_{0y}\right|\\
+\delta_{y}-\delta_{x} & = & \pm\frac{\pi}{2}\end{eqnarray*}
+
+\end_inset 
+
+ donde 
+\begin_inset Formula $+\fd\textrm{dextro}$
+\end_inset 
+
+ y 
+\begin_inset Formula $-\fd\textrm{levo}$
+\end_inset 
+
+.
+ En otros términos,
+\begin_inset Formula \[
+\mathbf{E}_{0}=e^{-i\delta_{y}}\left(\begin{array}{c}
+\left|E_{0x}\right|e^{i\left(\delta_{y}-\delta_{x}\right)}\\
+\left|E_{0y}\right|\end{array}\right)=e^{-i\delta_{y}}\left|E_{0x}\right|\left(\begin{array}{c}
+\pm i\\
+1\end{array}\right)\]
+
+\end_inset 
+
+ Para este tipo de luz se tiene siempre que la amplitud es proporcional
+ a un vector de componentes 
+\begin_inset Formula $1$
+\end_inset 
+
+ y 
+\begin_inset Formula $\pm i$
+\end_inset 
+
+; el orden y los signos darán el sentido.
+\layout Subsection
+
+Luz no monocromática
+\layout Standard
+
+En el caso más general la luz es superposición de ondas monocromáticas.
+ Entonces el vector campo eléctrico ya no describe una elipse, y en general,
+ no sigue ninguna trayectoria reconocible (es lo que se llama luz no polarizada
+ o 
+\emph on 
+luz natural
+\emph default 
+
+\begin_inset LatexCommand \index{luz natural}
+
+\end_inset 
+
+).
+ Pero puede ocurrir que la trayectoria 
+\emph on 
+se aproxime
+\emph default 
+ a una de las polarizaciones simples que hemos visto.
+ Es lo que se conoce bajo el nombre de 
+\emph on 
+polarización
+\emph default 
+ 
+\emph on 
+parcial
+\emph default 
+
+\begin_inset LatexCommand \index{polarización!parcial}
+
+\end_inset 
+
+.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/no-polarizada.eps
+	display monochrome
+	width 3.5cm
+	subcaption
+
+\end_inset 
+
+
+\begin_inset Graphics
+	filename fig/parcialmente-polarizada.eps
+	display monochrome
+	width 3.5cm
+	subcaption
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Luz natural y luz parcialmente polarizada.
+\end_inset 
+
+
+\layout Section
+
+Intensidad
+\layout Subsection
+
+Vector de Poynting
+\begin_inset LatexCommand \index{Poynting!vector de }
+
+\end_inset 
+
+
+\begin_inset LatexCommand \index{vector !de Poynting}
+
+\end_inset 
+
+
+\layout Standard
+
+Es otra característica de la onda ligada a su amplitud, 
+\begin_inset Formula $\mathbf{E}_{0}$
+\end_inset 
+
+.
+ La ecuación de Lorentz para la fuerza da idea de que una onda transporta
+ energía en su propagación.
+ Es necesario cuantificar la energía que una onda transporta.
+ Para ello se define el 
+\emph on 
+vector de
+\noun on 
+ 
+\noun default 
+Poynting
+\noun on 
+:
+\begin_inset Formula \begin{eqnarray}
+\mathbf{S} & \equiv & \frac{1}{\mu_{0}}\mathbf{E}\wedge\mathbf{B}\label{ec:vector de Poynting}\\
+\left[\mathbf{S}\right] & = & \frac{E}{T\times A}=\left\{ \frac{W}{m^{2}}\right\} \end{eqnarray}
+
+\end_inset 
+
+ 
+\emph default 
+\noun default 
+Describe un flujo de energía (energía por unidad de tiempo y superficie),
+ y coincide con la magnitud
+\emph on 
+ irradiancia
+\begin_inset LatexCommand \index{irradiancia}
+
+\end_inset 
+
+ 
+\emph default 
+de la óptica geométrica.
+ En los cálculos con esta magnitud nos está prohibido usar la representación
+ compleja, porque hay un producto, que es una operación no lineal (la parte
+ real del producto no es el producto de las partes reales).
+ Un vector de Poynting imaginario es una señal de que hemos cometido este
+ error.
+ En adelante, el subíndice 
+\begin_inset Formula $_{R}$
+\end_inset 
+
+ subrayará el uso de la representación real.
+\layout Description
+
+Ejemplo Vector de Poynting para una onda armónica plana
+\size small 
+
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{S} & = & \frac{1}{\mu_{0}}\mathbf{E}_{R}\wedge\left(\frac{1}{\omega}\mathbf{k}\wedge\mathbf{E}_{R}\right)\\
+ & = & \frac{1}{\mu_{0}}\left[\frac{\mathbf{k}}{\omega}\mathbf{E}_{R}^{2}-\frac{1}{\omega}\mathbf{E}_{R}\left(\mathbf{k}\cdot\mathbf{E}_{R}\right)\right]\end{eqnarray*}
+
+\end_inset 
+
+ con lo que 
+\begin_inset Formula \[
+\mathbf{S}=\frac{1}{\mu_{0}\omega}\mathbf{E}_{R}^{2}\mathbf{k}=\sqrt{\frac{\epsilon_{0}}{\mu_{0}}}\mathbf{E}_{R}^{2}\mathbf{u}_{k}\]
+
+\end_inset 
+
+ El vector de Poynting va en la dirección del vector de ondas.
+ Por lo tanto, para una onda armónica plana, fase y energía se propagan
+ en la dirección del vector de ondas.
+ La energía es proporcional al cuadrado del campo eléctrico: una estimación
+ del cuadrado del campo nos aporta una estimación de la energía.
+\layout Subsection
+
+Promedio temporal del vector de Poynting
+\begin_inset LatexCommand \index{vector de Poynting!promedio temporal}
+
+\end_inset 
+
+
+\layout Standard
+
+Si partimos de la expresión para ondas armónicas planas:
+\layout Standard
+
+
+\begin_inset Formula \[
+\mathbf{S}=\frac{1}{\mu_{0}\omega}\left(\mathbf{E}_{R}\cdot\mathbf{E}_{R}\right)\mathbf{k},\]
+
+\end_inset 
+
+ y representamos 
+\begin_inset Formula $\mathbf{S}$
+\end_inset 
+
+ para la luz visible veremos una función oscilante de frecuencia 
+\begin_inset Formula $\simeq10^{14}Hz$
+\end_inset 
+
+, con un período tan breve que prácticamente ningún detector tiene resolución
+ temporal para notar las oscilaciones.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/oscilaciones-temporales-poynting.eps
+	display monochrome
+	width 5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig:prom temp poynting, valor absoluto}
+
+\end_inset 
+
+
+\begin_inset Formula $\left|\left\langle \mathbf{S}\right\rangle \right|\left(t\right)$
+\end_inset 
+
+, función a oscilaciones muy rápidas.
+\end_inset 
+
+Si ponemos un detector y enchufamos un osciloscopio al detector sólo veremos
+ promedios temporales (figura
+\begin_inset LatexCommand \ref{fig:prom temp poynting, valor absoluto}
+
+\end_inset 
+
+).
+ Se requiera una magnitud que tenga en cuenta nuestra incapacidad de seguir
+ las variaciones rápidas del vector de Poynting 
+\begin_inset Quotes eld
+\end_inset 
+
+instantáneo
+\begin_inset Quotes erd
+\end_inset 
+
+, 
+\begin_inset Formula $\mathbf{S}\left(t\right)$
+\end_inset 
+
+.
+ Entonces
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Habitualmente se utilizan los paréntesis angulares para denotar 
+\begin_inset Quotes eld
+\end_inset 
+
+promedio sobre las configuraciones posibles
+\begin_inset Quotes erd
+\end_inset 
+
+ y la barra superior para el promedio temporal.
+ Éste no es el caso aquí.
+\end_inset 
+
+ 
+\begin_inset Formula \[
+\left\langle \mathbf{S}\right\rangle \left(t\right)=\frac{1}{\Delta t}\int_{t}^{t+\Delta t}\mathbf{S}\left(\mathbf{r},t'\right)dt'\]
+
+\end_inset 
+
+ donde 
+\begin_inset Formula $\Delta t$
+\end_inset 
+
+ representa el intervalo sobre el que se promedia.
+ Afortunadamente para las frecuencias que nos interesan el promedio temporal
+ de energía no depende del tiempo de respuesta
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Para hacerse una idea, un tiempo de respuesta muy bueno, correspondiente
+ a un detector muy rápido, sería del orden del nanosegundo, 
+\begin_inset Formula $\Delta t\simeq10^{-9}s$
+\end_inset 
+
+.
+\end_inset 
+
+, 
+\begin_inset Formula $\Delta t$
+\end_inset 
+
+.
+ No hay más que hacer la integral, siempre recordando usar la representación
+ real puesto que hay un producto de campos.
+ 
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{E}_{R} & = & \frac{1}{2}\left(\mathbf{E}_{0}\left(\mathbf{r}\right)e^{-i\omega t}+\mathbf{E}_{0}^{*}\left(\mathbf{r}\right)e^{i\omega t}\right)\\
+\mathbf{B}_{R} & = & \frac{1}{2}\left(\mathbf{B}_{0}\left(\mathbf{r}\right)e^{-i\omega t}+\mathbf{B}_{0}^{*}\left(\mathbf{r}\right)e^{i\omega t}\right)\end{eqnarray*}
+
+\end_inset 
+
+llevamos esto a la expresión general para 
+\begin_inset Formula $\mathbf{S}$
+\end_inset 
+
+, 
+\begin_inset Formula $\mathbf{S}=\frac{1}{\mu_{0}}\mathbf{E}\wedge\mathbf{B}$
+\end_inset 
+
+, puesto que la onda no tiene por qué ser plana.
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{S} & = & \frac{1}{4\mu_{0}}\left(\mathbf{E}_{0}\wedge\mathbf{B}_{0}^{*}+\mathbf{E}_{0}^{*}\wedge\mathbf{B}_{0}\right)\\
+ &  & +\frac{1}{4\mu_{0}}\left(\mathbf{E}_{0}\wedge\mathbf{B}_{0}e^{-i2\omega t}+\mathbf{E}_{0}^{*}\wedge\mathbf{B}_{0}^{*}e^{i2\omega t}\right)\end{eqnarray*}
+
+\end_inset 
+
+ nos quedan cuatro integrales.
+ Para el primer paréntesis no hay problema:
+\begin_inset Formula \[
+\left\langle \mathbf{S}\right\rangle =\frac{1}{4\mu_{0}}\left(\mathbf{E}_{0}\wedge\mathbf{B}_{0}^{*}+\mathbf{E}_{0}^{*}\wedge\mathbf{B}_{0}+\ldots\right)\]
+
+\end_inset 
+
+ pero en los puntos suspensivos tenemos las integrales
+\begin_inset Formula \[
+\frac{1}{\Delta t}\int_{t}^{t+\Delta t}dt'e^{\pm i2\omega t'}=\frac{1}{i2\omega\Delta t}\left(e^{\pm i2\omega\left(t+\Delta t\right)}-e^{\pm i2\omega t}\right)\]
+
+\end_inset 
+
+ en el rango óptico y con los detectores que utilizamos, 
+\begin_inset Formula $\Delta t$
+\end_inset 
+
+ nunca es suficientemente pequeño como para que estas integrales sean relevantes
+: el denominador vale como mínimo 
+\begin_inset Formula $10^{5}$
+\end_inset 
+
+ ya que 
+\begin_inset Formula $\omega\Delta t\simeq10^{14}\Delta t\simeq10^{5}$
+\end_inset 
+
+ con un 
+\begin_inset Formula $\Delta t\simeq10^{-9}s$
+\end_inset 
+
+, que es razonable.
+ Así: 
+\begin_inset Formula \begin{equation}
+\left\langle \mathbf{S}\right\rangle \left(\mathbf{r},t\right)=\frac{1}{2\mu_{0}}\Re\left\{ \mathbf{E}\left(\mathbf{r},t\right)\wedge\mathbf{B}^{*}\left(\mathbf{r},t\right)\right\} \label{ec:promedio temp vector poyntoing para oaps}\end{equation}
+
+\end_inset 
+
+para una onda armónica.
+ Lo bueno de esta fórmula es que está escrita de modo que se puede sustituir
+ la representación compleja.
+ Es importante recalcar que esto 
+\emph on 
+sólo vale para ondas armónicas
+\emph default 
+.
+ Para otro tipo de ondas no somos capaces de dar una expresión explícita.
+ 
+\layout Description
+
+Ejemplo Particularizar la expresión hallada para la onda armónica plana
+\size small 
+
+\begin_inset Formula \[
+\left\langle \mathbf{S}\right\rangle =\frac{1}{2\mu_{0}}\Re\left\{ \mathbf{E}_{0}e^{i\fase}\wedge\mathbf{B}_{0}^{*}e^{i\left(\omega t-\mathbf{k}\cdot\mathbf{r}\right)}\right\} \]
+
+\end_inset 
+
+ se desemboca en la siguiente expresión
+\begin_inset Formula \[
+\left\langle \mathbf{S}\right\rangle =\frac{1}{2}\sqrt{\frac{\epsilon_{0}}{\mu_{0}}}\left|\mathbf{E}_{0}\right|^{2}\mathbf{u}_{k}\]
+
+\end_inset 
+
+ donde 
+\begin_inset Formula $\left|\mathbf{E}_{0}\right|^{2}=\mathbf{E}_{0}\cdot\mathbf{E}_{0}^{*}$
+\end_inset 
+
+.
+\layout Section
+
+Sobre la notación: ondas armónicas y ondas armónicas planas
+\layout Standard
+
+Representamos una onda armónica así:
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+\mathbf{E}\left(\mathbf{r},t\right)=\mathbf{E}_{0}\left(\mathbf{r}\right)\mathbf{e}^{-i\omega t}\label{ec:onda armonica}\end{equation}
+
+\end_inset 
+
+ (hay dependencia espacial en la función preexponencial).
+ Pero para la onda armónica 
+\emph on 
+plana 
+\emph default 
+
+\begin_inset Formula \begin{equation}
+\mathbf{E}\left(\mathbf{r},t\right)=\mathbf{E}_{0}e^{i\fase}\label{ec:oap}\end{equation}
+
+\end_inset 
+
+ Las notaciones se corresponden de la siguiente manera: escribimos una onda
+ armónica plana como onda armónica usando el siguiente término de amplitud.
+\begin_inset Formula \[
+\mathbf{E}_{0}\left(\mathbf{r}\right)=\mathbf{E}_{0}e^{i\mathbf{k}\cdot\mathbf{r}}\]
+
+\end_inset 
+
+
+\the_end

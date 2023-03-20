@@ -1,0 +1,639 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass scrbook
+\begin_preamble
+\input{FdL-packages.sty}
+\input{FdL-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding auto
+\fontscheme default
+\graphics default
+\paperfontsize 11
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Chapter
+
+El oscilador láser saturado por la emisión espontánea
+\layout Standard
+
+En los apartados precedentes hemos estudiado la amplificación en un amplificador
+ resonante regenerativo.
+ Sin embargo, en el estudio realizado se suponía que la radiación amplificada
+ entraba en el resonador a través de los espejos, y ésta no es la situación
+ que suele producirse en un sistema físico real.
+ En la práctica no se puede prescindir de la emisión espontánea, como se
+ ha obrado de hecho en el cálculo idealizado anterior.
+\layout Standard
+
+En un amplificador resonante por encima del umbral, la emisión espontánea
+ emitida dentro de un pequeño ángulo sólido 
+\begin_inset Formula $\mathrm{d}^{2}\Omega$
+\end_inset 
+
+ en dirección ortogonal a los espejos por el medio invertido en la transición
+ láser (
+\begin_inset Formula $h\nu_{21}$
+\end_inset 
+
+) es amplificada sucesivamente hasta saturarlo.
+ La radiación láser que se extrae a través de los espejos no es más que
+ la 
+\emph on 
+propia emisión espontánea del nivel láser
+\emph default 
+ amplificada en el medio por la inversión de población.
+ En este caso, por lo tanto, la radiación que entra en el resonador no lo
+ hace a través del espejo, sino que se genera dentro del propio amplificador.
+\layout Standard
+
+A partir de las expresiones para la evolución de la intensidad del ruido
+ 
+\begin_inset LatexCommand \ref{eq:Iruido-en-l}
+
+\end_inset 
+
+ y 
+\begin_inset LatexCommand \ref{eq:ganancia-ruido}
+
+\end_inset 
+
+, y cambiando la longitud óptica del resonador (
+\begin_inset Formula $l$
+\end_inset 
+
+) por la del medio amplificador (
+\begin_inset Formula $L$
+\end_inset 
+
+), podemos escribir
+\layout Standard
+
+
+\begin_inset Formula \[
+I_{R}\left(L\right)=I_{\mathrm{esp}}\left(L\right)\frac{\exp\left[\left(n_{i}\sigma_{21}-\alpha_{i}\right)L\right]-1}{\left(n_{i}\sigma_{21}-\alpha_{i}\right)L}\]
+
+\end_inset 
+
+donde 
+\begin_inset Formula \[
+I_{\mathrm{esp}}\left(L\right)=\frac{h\nu_{0}}{\tau_{21}}\frac{\Omega}{4\pi}\frac{\delta\nu}{\Delta\nu}Ln_{2}\]
+
+\end_inset 
+
+ es la emisión espontánea total sin amplificar producida por el medio amplificad
+or dentro del ángulo sólido 
+\begin_inset Formula $\Omega$
+\end_inset 
+
+ y en una anchura espectral 
+\begin_inset Formula $\delta\nu$
+\end_inset 
+
+.
+ Tanto 
+\begin_inset Formula $\Omega$
+\end_inset 
+
+ como 
+\begin_inset Formula $\delta\nu$
+\end_inset 
+
+ son difíciles de estimar a priori, si bien en una primera aproximación
+ 
+\begin_inset Formula $\Omega$
+\end_inset 
+
+ podría estimarse como el ángulo sólido dentro del que sale la emisión láser
+ y 
+\begin_inset Formula $\delta\nu=\delta\nu_{m}$
+\end_inset 
+
+ (la anchura de amplificación del modo axial).
+ Como la intensidad espontánea es en general baja, su régimen de amplificación
+ en un paso suele ser de baja señal, y por tanto
+\begin_inset Formula \[
+G=\exp n_{i}\sigma_{21}L\]
+
+\end_inset 
+
+ Teniendo en cuenta que 
+\begin_inset Formula $T_{i}=\exp\left(-\alpha_{i}L\right)$
+\end_inset 
+
+ se tiene, en forma compacta, 
+\begin_inset Formula \[
+I_{R}=I_{\mathrm{esp}}\frac{GT_{i}-1}{\ln GT_{i}}\]
+
+\end_inset 
+
+
+\layout Standard
+
+Para poder considerar aplicable el tratamiento que hemos hecho del amplificador
+ resonante, tenemos que plantear el problema del mismo modo.
+ Pero en la teoría que habíamos hecho suponíamos una luz procedente de fuera
+ que se amplificaba, mientras que la luz en la situación presente se genera
+ dentro y se dirige a ambos espejos.
+ Convirtamos pues en una señal externa lo que tenemos para poder aplicar
+ las fórmulas de las que disponemos.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/ems-esp-como-ext-src.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:S1-S2}
+
+\end_inset 
+
+Izquierda: entrada externa 
+\begin_inset Formula $S_{1}$
+\end_inset 
+
+ equivalente la la intensidad del ruido que llega al segundo espejo.
+ Entrada externa 
+\begin_inset Formula $S_{2}$
+\end_inset 
+
+ equivalente la la intensidad del ruido que llega al primer espejo.
+\end_inset 
+
+Consideremos la figura 
+\begin_inset LatexCommand \ref{fig:S1-S2}
+
+\end_inset 
+
+ (izquierda) y sea en ella 
+\begin_inset Formula $S_{1}$
+\end_inset 
+
+ la intensidad que tendría que entrar por el espejo 
+\begin_inset Formula $1$
+\end_inset 
+
+ equivalente a la 
+\begin_inset Formula $I_{R}$
+\end_inset 
+
+ que llega al espejo 
+\begin_inset Formula $2$
+\end_inset 
+
+.
+ Entonces 
+\begin_inset Formula $I_{R}=GT_{i}T_{1}S_{1}$
+\end_inset 
+
+ y la fuente externa 
+\begin_inset Formula $S_{1}$
+\end_inset 
+
+ es 
+\begin_inset Formula \[
+S_{1}=I_{R}/GT_{i}T_{1}\]
+
+\end_inset 
+
+Análogamente, (figura 
+\begin_inset LatexCommand \ref{fig:S1-S2}
+
+\end_inset 
+
+, derecha) sea 
+\begin_inset Formula $S_{2}$
+\end_inset 
+
+ la intensidad que entrando por el espejo 
+\begin_inset Formula $1$
+\end_inset 
+
+ sería equivalente a la intensidad 
+\begin_inset Formula $I_{R}$
+\end_inset 
+
+ que desde el interior llega a este espejo.
+ Entonces, 
+\begin_inset Formula $R_{1}I_{R}=T_{1}S_{2}$
+\end_inset 
+
+ y la fuente externa 
+\begin_inset Formula $S_{2}$
+\end_inset 
+
+ es
+\begin_inset Formula \[
+S_{2}=\frac{R_{1}I_{R}}{T_{1}}\]
+
+\end_inset 
+
+ La señal total entrante equivalente a la emisión espontánea es la suma
+ de ambas:
+\begin_inset Formula \[
+S=S_{1}+S_{2}=I_{R}\frac{1+R_{1}T_{i}G}{GT_{i}T_{1}}\]
+
+\end_inset 
+
+ Ahora 
+\begin_inset Formula $S$
+\end_inset 
+
+ juega el papel de 
+\begin_inset Formula $I\left(0\right)$
+\end_inset 
+
+ en la ecuación de 
+\begin_inset Formula $I_{T}$
+\end_inset 
+
+ en los cálculos del amplificador, y la intensidad saliente por el espejo
+ 
+\begin_inset Formula $2$
+\end_inset 
+
+ será, como entonces (función de transferencia 
+\begin_inset LatexCommand \ref{eq:GT-transf-intensidad}
+
+\end_inset 
+
+),
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Citar la ecuación con $I(0)$ que se menciona.}
+\end_inset 
+
+ 
+\begin_inset Formula \[
+I_{S_{2}}=S\frac{T_{1}T_{2}GT_{i}}{\left(1-T_{i}RG\right)^{2}+4T_{i}RG\sin^{2}\phi}\]
+
+\end_inset 
+
+ o, sustituyendo 
+\begin_inset Formula $S$
+\end_inset 
+
+, 
+\begin_inset Formula \[
+I_{S_{2}}=I_{\mathrm{esp}}\frac{\left(GT_{i}-1\right)}{\ln GT_{i}}\frac{T_{2}\left(1+R_{1}T_{i}G\right)}{\left(1-T_{i}RG\right)^{2}+4T_{i}RG\sin^{2}\phi}\]
+
+\end_inset 
+
+En el empleo de esta expresión lo más difícil es la estimación o medida
+ de 
+\begin_inset Formula $G$
+\end_inset 
+
+ e 
+\begin_inset Formula $I_{\mathrm{esp}}$
+\end_inset 
+
+ (donde están comprendidos parámetros de difícil estimación como 
+\begin_inset Formula $\delta\nu$
+\end_inset 
+
+ y 
+\begin_inset Formula $\Omega$
+\end_inset 
+
+); por otra parte, la forma de 
+\begin_inset Formula $G\left(\nu\right)$
+\end_inset 
+
+ influye ahora de una manera algo distinta en el perfil 
+\begin_inset Formula $I_{S_{2}}\left(\nu\right)$
+\end_inset 
+
+, aunque los cambios no sean esenciales respecto a lo estudiado anteriormente.
+ No debemos olvidar que en esta expresión tenemos una dependencia de la
+ frecuencia, por una parte en 
+\begin_inset Formula $G$
+\end_inset 
+
+ y por otra en 
+\begin_inset Formula $\phi$
+\end_inset 
+
+.
+ La que nos interesa considerar es la más pronunciada de ambas, que ya intuimos
+ que corresponde a la de los modos
+\begin_inset Foot
+collapsed false
+
+\layout Standard
+
+Hay una excepción: los láseres IR pueden tener una dependencia frecuencial
+ en 
+\begin_inset Formula $G$
+\end_inset 
+
+ más rápida que la debida al Fabry-Perot.
+ Por tanto, para ellos no vale el desarrollo subsiguiente.
+\end_inset 
+
+.
+ Por ello, seguimos teniendo la radiación emitida distribuida en las resonancias
+ del Fabry-Perot (figura 
+\begin_inset LatexCommand \ref{fig:tres-modos-fp}
+
+\end_inset 
+
+).
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/tres-modos-fp-src.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:tres-modos-fp}
+
+\end_inset 
+
+Los modos en el resonador Fabry-Perot tienen una distancia 
+\begin_inset Formula $\Delta\nu_{m}=c/2l$
+\end_inset 
+
+.
+ La frecuencia 
+\begin_inset Formula $\nu_{k}$
+\end_inset 
+
+ es, por ser los modos equiespaciados, 
+\begin_inset Formula $\nu_{k}=k\Delta\nu_{m}$
+\end_inset 
+
+ y la fase 
+\begin_inset Formula $\phi_{k}=k\pi=\frac{\pi}{\Delta\nu_{m}}\nu_{k}$
+\end_inset 
+
+.
+\end_inset 
+
+
+\layout Standard
+
+La intensidad promediada sobre el intervalo que saldrá en una de las resonancias
+ de la figura será
+\begin_inset Formula \[
+\bar{I}_{S_{2}}=\frac{1}{\Delta\nu_{m}}\int_{\nu_{k}-\Delta\nu_{m}/2}^{\nu_{k}+\Delta\nu_{m}/2}I_{S_{2}}\left(\nu\right)\,\mathrm{d}\nu\]
+
+\end_inset 
+
+Salvo en los láseres de infrarrojo lejano (como por ejemplo el de 
+\begin_inset Formula $\mathrm{CO}_{2}$
+\end_inset 
+
+) la dependencia más fuerte en 
+\begin_inset Formula $\nu$
+\end_inset 
+
+ es la debida a la fase (resonancia en el denominador de 
+\begin_inset Formula $I_{S_{2}}$
+\end_inset 
+
+).
+ Podemos aplicarlo para sacar factores fuera de la integral:
+\begin_inset Formula \[
+\bar{I}_{S_{2}}=\frac{I_{\mathrm{esp}}\left(\nu_{m}\right)}{\Delta\nu_{m}}\frac{\left[G\left(\nu_{k}\right)T_{i}-1\right]\:\left[1+R_{1}T_{i}G\left(\nu_{k}\right)\right]T_{2}}{\ln G\left(\nu_{k}\right)T_{i}}\;\int_{\nu_{k}-\Delta\nu_{m}/2}^{\nu_{k}+\Delta\nu_{m}/2}\frac{\mathrm{d}\nu}{\left(1-T_{i}RG\left(\nu\right)\right)^{2}+4T_{i}RG\left(\nu\right)\sin^{2}\phi}\]
+
+\end_inset 
+
+
+\layout Standard
+
+Además, como conviene hacer la integral sobre la fase, con relación fase-frecuen
+cia dada por 
+\begin_inset Formula $\mathrm{d}\nu=\left(\Delta\nu_{m}/\pi\right)\,\mathrm{d}\phi$
+\end_inset 
+
+ los límites de integración pasan a ser 
+\begin_inset Formula $-\pi/2$
+\end_inset 
+
+ y 
+\begin_inset Formula $\pi/2$
+\end_inset 
+
+ en virtud de:
+\begin_inset Formula \begin{eqnarray*}
+\nu_{k}\rightarrow\phi_{k}=k\pi;\qquad\frac{\Delta\nu_{m}}{2} & \rightarrow & \frac{1}{2}\left(\phi_{k}-\phi_{k-1}\right)=\frac{\pi}{2}\end{eqnarray*}
+
+\end_inset 
+
+Llamando por conveniencia 
+\begin_inset Formula $A=\left(1-GT_{i}R\right)^{2}$
+\end_inset 
+
+ y 
+\begin_inset Formula $B=4GT_{i}R$
+\end_inset 
+
+ la integral se escribe
+\begin_inset Formula \[
+\frac{\Delta\nu_{m}}{2}\int_{-\pi/2}^{\pi/2}\frac{\mathrm{d}\phi}{A+B\sin^{2}\phi}=\frac{\Delta\nu_{m}}{\sqrt{A^{2}+AB}}=\frac{\Delta\nu_{m}}{1-G^{2}\left(\nu_{k}\right)T_{i}R^{2}}\]
+
+\end_inset 
+
+ y, finalmente, 
+\begin_inset Formula \[
+\bar{I}_{S_{2}}=I_{\mathrm{esp}}\left(\nu_{0}\right)\frac{\left[G\left(\nu_{k}\right)T_{i}-1\right]\:\left[1+R_{1}T_{i}G\left(\nu_{k}\right)\right]T_{2}}{\ln G\left(\nu_{k}\right)T_{i}}\frac{1}{\left|1-T_{i}^{2}R^{2}G^{2}\left(\nu_{k}\right)\right|}.\]
+
+\end_inset 
+
+
+\layout Standard
+
+Aunque es habitual que uno de los espejos en los láseres sea totalmente
+ reflector, podemos generalizar el tratamiento considerando una cierta transmiti
+vidad en el espejo 
+\begin_inset Formula $1$
+\end_inset 
+
+.
+ La expresión para la intensidad media por modo que sale a través del espejo
+ 
+\begin_inset Formula $1$
+\end_inset 
+
+, después de un cálculo simétrico del anterior, es la misma que acabamos
+ de ver pero con las sustituciones 
+\begin_inset Formula $R_{1}\rightarrow R_{2}$
+\end_inset 
+
+ y 
+\begin_inset Formula $T_{2}\rightarrow T_{1}$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+La potencia por unidad de área y por modo axial obtenida en total a través
+ de los dos espejos del resonador, a partir de radiación espontánea amplificada
+ es la suma:
+\begin_inset Formula \[
+\bar{I}_{S}\left(\nu_{k}\right)=\bar{I}_{S_{1}}+\bar{I}_{S_{2}}=I_{\mathrm{esp}}\left(\nu_{0}\right)\,\frac{G\left(\nu_{k}\right)T_{i}-1}{\ln G\left(\nu_{k}\right)T_{i}}\:\frac{T_{1}+T_{2}+T_{i}G\left(\nu_{k}\right)\left(R_{2}T_{1}+R_{1}T_{2}\right)}{\left|1-T_{i}^{2}R^{2}G^{2}\left(\nu_{k}\right)\right|}\]
+
+\end_inset 
+
+en esta expresión queda en evidencia que cuando se alcanza la condición
+ umbral, 
+\begin_inset Formula $T_{i}G\left(\nu_{k}\right)R=1$
+\end_inset 
+
+ la intensidad en el modo se hace infinita.
+\layout Standard
+
+En el caso de amplificación en un sólo paso, como en los láseres de avalancha,
+ la fórmula es también válida, particularizando a los siguientes valores:
+ 
+\begin_inset Formula $T_{1}=T_{2}=1$
+\end_inset 
+
+ y 
+\begin_inset Formula $R_{1}=R_{2}=0$
+\end_inset 
+
+
+\begin_inset Formula \[
+\bar{I}_{S}=2I_{\mathrm{esp}}\frac{T_{i}G-1}{\ln T_{i}G}\]
+
+\end_inset 
+
+Aquí 
+\begin_inset Formula $G$
+\end_inset 
+
+ es la ganancia en un paso en saturación.
+ En régimen de onda viajera, con amplificación en un sólo sentido, habría
+ que eliminar el factor dos.
+ 
+\layout Standard
+
+Otra posibilidad es el resonador pasivo, cuya finura depende de que 
+\begin_inset Formula $T=T_{1}=T_{2}$
+\end_inset 
+
+ sea pequeña y 
+\begin_inset Formula $R_{1}=R_{2}=R\simeq1-T$
+\end_inset 
+
+ lo mayor posible.
+ En este caso, 
+\begin_inset Formula $T_{i}\simeq1$
+\end_inset 
+
+ y se cumple 
+\begin_inset Formula \[
+\lim_{G\rightarrow1}\frac{G-1}{\ln G}=1\]
+
+\end_inset 
+
+ Por tanto el ruido térmico extraído a través de los dos espejos sería
+\begin_inset Formula \[
+\bar{I}_{S}=2I_{\mathrm{esp}}\frac{T}{1-R}=2I_{\mathrm{esp}}\]
+
+\end_inset 
+
+que es independiente de la reflectividad de los espejos: la finura del Fabry-Per
+ot aumenta con la reflectividad de los espejos, pero no así el ruido.
+ 
+\layout Standard
+
+Para considerar un caso no extremo, plausible para un láser habitual, utilicemos
+ los siguientes parámetros: 
+\begin_inset Formula $G\simeq1,T_{i}\simeq1$
+\end_inset 
+
+ (ganancia por paso pequeña, pérdidas internas pequeñas).
+ Entonces se puede usar la aproximación 
+\begin_inset Formula \[
+\frac{T_{i}G-1}{\ln T_{i}G}\simeq1\]
+
+\end_inset 
+
+ y si, para simplificar, tomamos 
+\begin_inset Formula $T=T_{1}=T_{2},R=R_{1}=R_{2}$
+\end_inset 
+
+ obtenemos
+\begin_inset Formula \[
+\bar{I}\left(\nu_{k}\right)\simeq I_{\mathrm{esp}}\frac{2T+2TRT_{i}G}{\left|1-T_{i}^{2}R^{2}G^{2}\right|}=I_{\mathrm{esp}}\left(\nu_{k}\right)\frac{2T}{\left|1-T_{i}RG\right|}\]
+
+\end_inset 
+
+si en esta ecuación despejamos el denominador
+\begin_inset Formula \[
+1-T_{i}RG\left(\nu_{k}\right)=\frac{I_{\mathrm{esp}}\left(\nu_{k}\right)}{\bar{I}_{S}\left(\nu_{k}\right)}2T\]
+
+\end_inset 
+
+
+\layout Standard
+
+Por lo tanto, la desviación del umbral que corresponde a una salida 
+\begin_inset Formula $\bar{I}_{S}\left(\nu_{k}\right)$
+\end_inset 
+
+ está dada por la razón entre la intensidad emitida espontáneamente en la
+ frecuencia del modo y la emitida por el láser en este modo.
+ Así cuanto mayor sea la intensidad estimulada respecto a la espontánea
+ 
+\begin_inset Formula $I_{\mathrm{esp}}$
+\end_inset 
+
+ emitida en un modo, tanto más próximo se encuentra el amplificador a su
+ umbral de saturación (
+\begin_inset Formula $RT_{i}G\simeq1$
+\end_inset 
+
+), si bien la ganancia en realimentación 
+\begin_inset Formula $T_{i}RG$
+\end_inset 
+
+ es siempre menor que la unidad.
+\layout Standard
+
+En la práctica no se pueden evitar ciertas oscilaciones en el bombeo y en
+ el estado estacionario real se presentará una serie de continuas correcciones
+ alrededor del umbral durante el funcionamiento del láser.
+\the_end

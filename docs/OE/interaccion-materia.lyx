@@ -1,0 +1,760 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass book
+\begin_preamble
+\input{OE-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding latin1
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize a4paper
+\paperpackage a4
+\use_geometry 1
+\use_amsmath 1
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+
+\layout Chapter
+
+Materia y su interacción con la radiación 
+\begin_inset LatexCommand \label{cap Materia}
+
+\end_inset 
+
+
+\layout Section
+
+Introducción.
+ Tipos de carga
+\layout Standard
+
+Tenemos que dar dos especificaciones: cómo es la materia y cómo interacciona
+ la radiación con ella.
+ Para ser más precisos, deberíamos describir el aspecto 
+\begin_inset Quotes eld
+\end_inset 
+
+carga
+\begin_inset Quotes erd
+\end_inset 
+
+ de la materia, porque es el que afecta a y es afectado por los campos electroma
+gnéticos.
+ Utilizaremos una descripción clásica (no cuántica), que será suficiente
+ para los fenómenos y la precisión que nos interesan.
+\layout Standard
+
+Para empezar, hay que establecer una distinción entre cargas libres y cargas
+ ligadas.
+\layout Subsection
+
+Cargas libres 
+\layout Standard
+
+Son aquellas cargas o sistemas de cargas que vistos con el grado de precisión
+ que tenemos no tienen ninguna estructura interna.
+ Por ejemplo, los electrones.
+\layout Standard
+
+Las cargas libres las supondremos puntuales, de modo que será suficiente
+ para su especificación dar su carga, su masa y su trayectoria 
+\begin_inset Formula $\mathbf{r}\left(t\right)$
+\end_inset 
+
+.
+ Ésta es solución de la ecuación dinámica de 
+\noun on 
+Newton
+\noun default 
+ (ecN):
+\begin_inset Formula \[
+m\ddot{\mathbf{r}}=\mathbf{F}\]
+
+\end_inset 
+
+ para nosotros la fuerza será exclusivamente la del campo em, dada por la
+ ecuación de 
+\noun on 
+Lorentz,
+\noun default 
+ 
+\begin_inset LatexCommand \ref{ecLorentz}
+
+\end_inset 
+
+.
+\layout Subsection
+
+Cargas ligadas: hipótesis
+\layout Standard
+
+Son sistemas de cargas con estructura interna.
+ Por ejemplo, átomos, moléculas o agregados de moléculas\SpecialChar \ldots{}
+
+\layout Standard
+
+Para describir las cargas ligadas pensaremos en el ejemplo de un átomo.
+ Tiene un tamaño característico de 
+\begin_inset Formula $0.1nm$
+\end_inset 
+
+.
+ Para tratarlo la teoría clásica se demuestra insuficiente.
+ Rigurosamente, necesitaríamos de la Física Cuántica.
+ Pero vamos en su lugar a usar la Física clásica 
+\begin_inset Quotes eld
+\end_inset 
+
+parcheada
+\begin_inset Quotes erd
+\end_inset 
+
+ para evitar las dificultades de las que somos conscientes
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+por ejemplo, la inestabilidad de los átomos si efectivamente los electrones
+ radian en su trayectoria alrededor del núcleo.
+\end_inset 
+
+.
+ Basta con la teoría clásica completada con las hipótesis oportunas para
+ describir los fenómenos de nuestro interés.
+\layout Standard
+
+Primera hipótesis (no clásica): los átomos tienen un estado fundamental
+ estable.
+ Podemos imaginar una nube de carga alrededor del núcleo, una idea semicuántica
+ del átomo.
+ Esa nube de carga tendrá un centro de carga que puede coincidir o no con
+ el núcleo.
+ Pensaremos para simplificar el análisis en moléculas no polares, es decir,
+ sin momento dipolar permanente.
+ Para ellas, el centro de carga positiva y negativa está superpuesto.
+ De todos modos, la única dificultad extra de tratar con momentos dipolares
+ permanentes es meramente calculatoria.
+\layout Standard
+
+Un campo electromagnético perturbará el átomo, cambiando la forma de la
+ nube electrónica en el estado fundamental.
+ El centro de carga negativa ya no estará sobre el núcleo: se ha creado
+ un pequeño dipolo.
+ Esto corresponde a 
+\emph on 
+excitar
+\emph default 
+ el átomo.
+ El átomo se intentará oponer a esta perturbación; aparecerá una fuerza
+ de recuperación para reunir de nuevo los centros de carga.
+ Dentro de una teoría clásica diríamos que aparecen fuerzas internas en
+ el átomo que intentan compensar el efecto de la perturbación de los agentes
+ externos.
+ 
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/molecula-perturbada.eps
+	display monochrome
+	width 4cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Molécula perturbada (centros de carga separados).
+ El origen de coordenadas está en la carga positiva y el vector 
+\begin_inset Formula $\mathbf{r}$
+\end_inset 
+
+ está dirigido hacia la carga negativa.
+\end_inset 
+
+Para encontrar una expresión explícita para estas fuerzas que nos permita
+ incluírlas en la ecuación de movimiento vamos a hacer la suposición de
+ que la separación inducida entre centros de carga es muy pequeña, lo que
+ nos permitirá usar una expresión lineal en la separación
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+La
+\emph on 
+ óptica lineal
+\emph default 
+ es aquella para la que vale la aproximación lineal para las fuerzas internas.
+ La mayoría de las fuentes de luz se pueden caracterizar con el desarrollo
+ sólo lineal de la fuerza recuperadora.
+\layout Standard
+
+Un
+\emph on 
+ medio (electromagnéticamente) isótropo
+\emph default 
+ es un medio en el que no se pueden distinguir unas direcciones de otras
+ a efectos de propagación de campos electromagnéticos.
+ El que se haga una aproximación lineal no implica que el medio sea isótropo
+ o deje de serlo.
+ De hecho se puede hacer óptica lineal anisótropa utilizando para la fuerza
+ recuperadora un coeficiente no escalar, sino tensorial.
+\end_inset 
+
+, el primer término del desarrollo en serie de 
+\begin_inset Formula $\mathbf{F}_{int}$
+\end_inset 
+
+:
+\begin_inset Formula \[
+\mathbf{F}_{int}\left(\mathbf{r}\right)\simeq m\omega_{0}^{2}\mathbf{r}\]
+
+\end_inset 
+
+ donde 
+\begin_inset Formula $m$
+\end_inset 
+
+ es la masa del electrón y 
+\begin_inset Formula $\omega_{0}$
+\end_inset 
+
+ es lo que llamaremos 
+\emph on 
+frecuencia de resonancia.
+\layout Standard
+
+Hay casos, como es el del campo debido a la radiación de un láser en los
+ que habría que tener en cuenta 
+\begin_inset Formula $\mathrm{o}\left(\mathbf{r}^{2}\right)$
+\end_inset 
+
+, un término de orden superior, ya que la separación entre las cargas es
+ grande (y la aproximación lineal imprecisa) cuando el campo es muy fuerte.
+\layout Standard
+
+Revisemos las hipótesis:
+\layout Itemize
+
+Existe un estado fundamental estable.
+\layout Itemize
+
+No hay momento dipolar permanente.
+\layout Itemize
+
+Para las fuerzas internas de compensación vale una aproximación lineal,
+ porque la separación de centros de carga es pequeña.
+\layout Section
+
+Ecuación de movimiento de la carga
+\layout Subsection
+
+Formulación y discusión de sus aspectos
+\layout Standard
+
+Estamos en condiciones de escribir la ecuación dinámica para la carga ligada
+\begin_inset Formula \[
+m\ddot{\mathbf{r}}=\mathbf{F}-m\omega_{0}^{2}\mathbf{r}\]
+
+\end_inset 
+
+ Como vemos la fuerza recuperadora es la del oscilador armónico de frecuencia
+ natural 
+\begin_inset Formula $\omega_{0}$
+\end_inset 
+
+.
+ Hemos reducido el problema a este paradigma físico tan general y a la vez
+ tan simple.
+ 
+\layout Standard
+
+Pero tenemos que atender a las ecM: las cargas aceleradas generan ondas
+ electromagnéticas que llevan energía que debe ser retirada de la energía
+ del sistema de cargas en movimiento.
+ Por tanto, debe tenerse en cuenta que el sistema de cargas tendrá pérdidas
+ irreversibles de energía (la oem generada se va al infinito, no regresa).
+ Otros mecanismos de pérdida de energía son las colisiones.
+ Vamos a introducir un término de de fricción 
+\emph on 
+ad
+\emph default 
+ 
+\emph on 
+hoc
+\emph default 
+, que dé cuenta de modo fenomenológico de esas pérdidas de energía:
+\begin_inset Formula \begin{equation}
+m\ddot{\mathbf{r}}=\mathbf{F}-m\omega_{0}^{2}\mathbf{r}-\gamma m\dot{\mathbf{r}}\label{edo_carga_ligada}\end{equation}
+
+\end_inset 
+
+ La dependencia en la velocidad la hemos elegido porque es la más simple
+ posible.
+ 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+ representa una constante
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Detengámonos para examinar el problema siguiente: llega una onda, pone en
+ movimiento la carga ligada y por lo tanto a la onda incidente se superpone
+ la onda debida al movimiento de la carga ligada.
+ Eso es algo que tendremos en cuenta 
+\emph on 
+para el resto de las cargas y sistemas de cargas del universo
+\emph default 
+, pero no para la propia carga ligada que es foco de un nuevo campo.
+ La razón de esta limitación, artificial, es que tener en cuenta la influencia
+ del campo de una carga sobre sí misma constituye un problema formidable,
+ que se aborda de forma interesante en 
+
+
+\begin_inset LatexCommand \cite{Jackson}
+
+\end_inset 
+
+.
+ 
+
+Pero si se hace esta consideración el término de rozamiento ya no puede
+ tener la forma que hemos sugerido.
+\end_inset 
+
+.
+ 
+\layout Standard
+
+Para la carga libre, la ecuación de evolución es la misma pero con 
+\begin_inset Formula $\omega_{0}=0$
+\end_inset 
+
+, ya que no hay fuerza recuperadora.
+ Basta pues resolver el problema de la carga ligada para después particularizar
+ para frecuencia natural nula y obtener las soluciones de la carga libre.
+\layout Standard
+
+La fuerza de fricción que hemos utilizado es la más sencilla que se puede
+ pro\SpecialChar \-
+po\SpecialChar \-
+ner, pero no necesariamente es exacta.
+ Nos limitaremos a un análisis elemental.
+ Un tratamiento más avanzado utiliza un término en 
+\begin_inset Formula $\dot{\ddot{\mathbf{r}}}$
+\end_inset 
+
+ en lugar de 
+\begin_inset Formula $\dot{\mathbf{r}}$
+\end_inset 
+
+, con conclusiones finales semejantes.
+ En algunos textos, como el 
+\begin_inset LatexCommand \cite{Stone}
+
+\end_inset 
+
+ o el [Cabrera] encontramos la expresión
+\begin_inset Formula \[
+\gamma=\frac{q^{2}\omega^{2}}{6\pi\epsilon_{0}mc^{3}}\]
+
+\end_inset 
+
+ 
+\begin_inset Formula $\omega$
+\end_inset 
+
+ es la frecuencia del campo incidente sobre la carga ligada.
+ Un valor para un átomo aislado es 
+\begin_inset Formula $\gamma\simeq10^{8}s^{-1}$
+\end_inset 
+
+.
+ Los valores son mayores incluso cuando se considera la materia como agrupamient
+o de átomos próximos.
+ Nótese que con una expresión de este tipo la fuerza de fricción no dependería
+ de la masa de la partícula.
+\layout Subsection
+
+Solución para la carga ligada 
+\layout Standard
+
+Resolveremos la ecuación de movimiento para un caso particular de onda incidente
+ muy significativo, que es el que nos interesará en el resto del curso:
+ la onda armónica plana.
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{E} & = & \mathbf{E}_{0}e^{i\fase}\\
+\mathbf{B} & = & \frac{1}{\omega}\mathbf{k}\wedge\mathbf{E}\end{eqnarray*}
+
+\end_inset 
+
+ no hay más que utilizar estos campos en la expresión de la ecuación 
+\begin_inset LatexCommand \ref{ecLorentz}
+
+\end_inset 
+
+.
+ La ecuación resultante es muy complicada, 
+\begin_inset Formula \[
+m\ddot{\mathbf{r}}=q\left(\mathbf{E}+\dot{\mathbf{r}}\wedge\mathbf{B}\right)-m\omega_{0}^{2}\mathbf{r}-\gamma m\dot{\mathbf{r}}\]
+
+\end_inset 
+
+de modo que vamos a introducir dos aproximaciones:
+\layout Enumerate
+
+Para una oap sabemos que 
+\begin_inset Formula \[
+\left|\mathbf{B}_{0}\right|=\frac{1}{c}\left|\mathbf{E}_{0}\right|\]
+
+\end_inset 
+
+ si esto se lleva a la ecuación
+\begin_inset Formula \[
+\mathbf{F}=q\left(\mathbf{E}+\dot{\mathbf{r}}\wedge\mathbf{B}\right)\]
+
+\end_inset 
+
+ el segundo término va en 
+\begin_inset Formula $\frac{\dot{r}}{c}$
+\end_inset 
+
+.
+ Así, podemos aproximar la fuerza sólo por la fuerza eléctrica, 
+\begin_inset Formula $\mathbf{F}\simeq q\mathbf{E}$
+\end_inset 
+
+, lo que es como suponer que 
+\begin_inset Formula $\dot{r}\ll c$
+\end_inset 
+
+.
+ Si el campo em fuera suficientemente fuerte (por ejemplo, el debido a un
+ laser) esto no sería cierto.
+ En todo caso, dejamos pendiente de comprobación la sensatez de la hipótesis.
+ La ecuación queda
+\begin_inset Formula \begin{eqnarray*}
+m\ddot{\mathbf{r}} & = & q\mathbf{E}-m\omega_{0}^{2}\mathbf{r}-\gamma m\dot{\mathbf{r}}\\
+ & = & q\mathbf{E}_{0}e^{i\fase}-m\omega_{0}^{2}\mathbf{r}-\gamma m\dot{\mathbf{r}}\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Enumerate
+
+La ecuación 
+\begin_inset LatexCommand \ref{edo_carga_ligada}
+
+\end_inset 
+
+ es no lineal en la medida en que la incógnita 
+\begin_inset Formula $\mathbf{r}$
+\end_inset 
+
+ aparece en un exponente.
+ Admitiremos que en la solución la separación entre cargas positivas y negativas
+ cumple:
+\begin_inset Formula \[
+\left|\mathbf{r}\left(t\right)-\mathbf{r}\left(0\right)\right|\ll\lambda\]
+
+\end_inset 
+
+ El tamaño típico de los átomos es del orden del nm, y 
+\begin_inset Formula $\mathbf{r}\left(t\right)$
+\end_inset 
+
+ cabe esperar que será como máximo el tamaño del átomo.
+ La longitud de onda del visible es del orden de 
+\begin_inset Formula $500$
+\end_inset 
+
+ veces mayor.
+ Así,
+\begin_inset Formula \[
+\mathbf{k}\cdot\mathbf{r}\left(t\right)\simeq\mathbf{k}\cdot\mathbf{r}\left(0\right)=cte\]
+
+\end_inset 
+
+ Entonces podemos incluir este factor constante en la amplitud 
+\begin_inset Formula $\mathbf{E}_{0}$
+\end_inset 
+
+.
+ Con ello queda la siguiente expresión para la fuerza de 
+\noun on 
+Lorentz
+\begin_inset Formula \[
+\mathbf{F}\simeq q\mathbf{E}_{0}\mathbf{e}^{-i\omega t}\]
+
+\end_inset 
+
+
+\layout Standard
+
+La ecuación que tenemos que resolver se reduce una vez admitidas ambas hipótesis
+ a:
+\begin_inset Formula \begin{equation}
+\ddot{\mathbf{r}}+\gamma\dot{\mathbf{r}}+\omega_{0}^{2}\mathbf{r}=\frac{q}{m}\mathbf{E}_{0}e^{-i\omega t}\label{ec ed mov carga ligada}\end{equation}
+
+\end_inset 
+
+ que es la ecuación de un oscilador armónico amortiguado y forzado.
+ La teoría de edos nos aporta
+\begin_inset Formula \[
+\mathbf{r}_{gi}=\mathbf{r}_{pi}+\mathbf{r}_{gh}\]
+
+\end_inset 
+
+ La solución general de la homogénea 
+\begin_inset Formula $\left(\mathbf{r}_{gh}\right)$
+\end_inset 
+
+ la tomamos con 
+\begin_inset Formula $\mathbf{E}_{0}=0$
+\end_inset 
+
+, ya que dependerá de algo parecido
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+esto no me convence -ATC
+\end_inset 
+
+ a 
+\begin_inset Formula $e^{-\gamma t}$
+\end_inset 
+
+.
+ Siendo 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+ tan grande 
+\begin_inset Formula $\left(\simeq10^{8}s^{-1}\right)$
+\end_inset 
+
+ el tiempo del 
+\emph on 
+transitorio
+\emph default 
+ que es la solución de la homogénea es del orden del 
+\begin_inset Formula $10ns$
+\end_inset 
+
+.
+ Aquí no nos interesaremos por esos transitorios rápidos.
+ Nos quedaremos pues con una solución particular de la inhomogénea 
+\begin_inset Formula $\left(\mathbf{r}_{pi}\right)$
+\end_inset 
+
+, que dependerá del campo eléctrico.
+\begin_inset Formula \[
+\mathbf{r}=\mathbf{r}_{0}e^{-i\omega t}\]
+
+\end_inset 
+
+ 
+\begin_inset Formula $\mathbf{r}_{0}$
+\end_inset 
+
+ se obtiene insertando esta solución en la ecuación 
+\begin_inset LatexCommand \ref{ec ed mov carga ligada}
+
+\end_inset 
+
+.
+ Se calculan las derivadas 
+\begin_inset Formula $\dot{\mathbf{r}}=-i\omega\mathbf{r}_{0}e^{-i\omega t}\textrm{ y }\ddot{\mathbf{r}}=-\omega^{2}\mathbf{r}_{0}e^{-i\omega t}$
+\end_inset 
+
+ y la ecuación queda
+\begin_inset Formula \[
+\left(-\omega^{2}-i\omega\gamma+\omega_{0}^{2}\right)\mathbf{r}_{0}e^{-i\omega t}=\frac{q}{m}\mathbf{E}_{0}e^{-i\omega t}\]
+
+\end_inset 
+
+despejando, la amplitud y la ecuación de la trayectoria de la carga ligada
+ resultan ser
+\begin_inset Formula \begin{eqnarray}
+\mathbf{r}_{0} & = & \frac{\frac{q}{m}}{\omega_{0}^{2}-\omega^{2}-i\gamma\omega}\mathbf{E}_{0}\nonumber \\
+\mathbf{r}\left(t\right) & = & \frac{\frac{q}{m}}{\omega_{0}^{2}-\omega^{2}-i\gamma\omega}\mathbf{E}_{0}e^{-i\omega t}\label{ec_tray_carga_ligada}\end{eqnarray}
+
+\end_inset 
+
+ En el caso de un átomo 
+\begin_inset Formula $m$
+\end_inset 
+
+ y 
+\begin_inset Formula $q$
+\end_inset 
+
+ son la masa y la carga del electrón, respectivamente.
+\layout Subsubsection
+
+Comentarios a la ecuación de la trayectoria 
+\begin_inset LatexCommand \ref{ec_tray_carga_ligada}
+
+\end_inset 
+
+
+\layout Enumerate
+
+El desplazamiento de las cargas es lineal en el campo.
+\layout Enumerate
+
+La constante de proporcionalidad es compleja, lo que deriva del hecho de
+ que hay pérdidas (profundizaremos en esto más adelante).
+\layout Enumerate
+
+La constante de proporcionalidad depende de la frecuencia de forzamiento.
+ Sabemos que si la frecuencia de forzamiento es muy próxima a la de resonancia,
+ la respuesta será muy fuerte.
+\layout Subsubsection
+
+Cumplimiento de las hipótesis
+\layout Standard
+
+En cuanto al cumplimiento de las hipótesis que nos han conducido a 
+\begin_inset LatexCommand \ref{ec_tray_carga_ligada}
+
+\end_inset 
+
+, se darán dos situaciones: 
+\layout Itemize
+
+
+\begin_inset Formula $\omega\neq\omega_{0}$
+\end_inset 
+
+ (aproximación muy buena) y 
+\layout Itemize
+
+
+\begin_inset Formula $\omega=\omega_{0}$
+\end_inset 
+
+ (resonancia).
+ En este segundo caso la aproximación de estos cálculos clásicos es peor,
+ aunque suficiente.
+ Para este caso se podría pasar al modelo cuántico de la materia.
+ 
+\layout Description
+
+Ejercicio 
+\size small 
+verificar numéricamente estas dos afirmaciones sobre las aproximaciones.
+\layout Description
+
+Ejemplo Evaluar el cumplimiento de las hipótesis 
+\begin_inset Formula $\dot{r}\ll c$
+\end_inset 
+
+ y 
+\begin_inset Formula $\left|\mathbf{r}\left(t\right)-\mathbf{r}\left(0\right)\right|\ll\lambda$
+\end_inset 
+
+ para luz solar y electrones como carga ligada.
+\begin_deeper 
+\layout Standard
+
+
+\size small 
+Para la luz solar
+\begin_inset Formula \[
+\left|\mathbf{E}_{0}\right|_{solar}\simeq10^{3}\frac{V}{m}\]
+
+\end_inset 
+
+ una frecuencia típica del visible es 
+\begin_inset Formula \[
+\omega\simeq3\times10^{15}\frac{rad}{s}\]
+
+\end_inset 
+
+ utilizamos el valor de 
+\begin_inset Formula $\gamma\simeq10^{8}s^{-1}$
+\end_inset 
+
+ y los datos de carga y masa del electrón.
+ Puesta en forma real, la solución para una carga libre es una oscilación
+ de amplitud
+\begin_inset Formula \[
+\left|\mathbf{r}_{0}\right|\simeq2\times10^{-17}m=2\times10^{-8}nm\]
+
+\end_inset 
+
+ y longitud de onda 
+\begin_inset Formula $\lambda\simeq600nm$
+\end_inset 
+
+.
+ Vemos que la diferencia de orden de magnitud entre el tamaño del átomo
+ (
+\begin_inset Formula $\simeq$
+\end_inset 
+
+ separación de las cargas) y la longitud de onda incidente justifica la
+ prumera aproximación tomada
+\begin_inset Formula \[
+\left|\mathbf{r}\left(t\right)-\mathbf{r}\left(0\right)\right|\leq2\times10^{-8}nm\ll\lambda=600nm\]
+
+\end_inset 
+
+ En cuanto a la velocidad máxima, es del orden de 
+\begin_inset Formula \[
+\left|\mathbf{r}_{0}\right|\omega\simeq6\times10^{-2}\frac{m}{s}\]
+
+\end_inset 
+
+ lo cual queda muy lejos de la velocidad de la luz, lo que justifica (son
+ 10 órdenes de magnitud\SpecialChar \ldots{}
+) el haber despreciado el efecto del campo magnético.
+\end_deeper 
+\layout Subsection
+
+Solución para la carga libre
+\layout Standard
+
+La ecuación de la trayectoria para la carga libre es
+\begin_inset Formula \[
+\mathbf{r}\left(t\right)=\frac{-\frac{q}{m}}{\omega^{2}+i\gamma\omega}\mathbf{E}_{0}e^{-i\omega t}\]
+
+\end_inset 
+
+ donde 
+\begin_inset Formula $q$
+\end_inset 
+
+ es la carga y 
+\begin_inset Formula $m$
+\end_inset 
+
+ la masa (por ejemplo, de un ión).
+\the_end

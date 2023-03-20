@@ -1,0 +1,1923 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass scrbook
+\language spanish
+\inputencoding auto
+\fontscheme pslatex
+\graphics default
+\float_placement !hbtp
+\paperfontsize default
+\spacing single 
+\papersize a4paper
+\paperpackage a4wide
+\use_geometry 0
+\use_amsmath 1
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Chapter
+
+Gestión de procesos
+\layout Section
+
+Procesos y tareas
+\layout Description
+
+Proceso
+\begin_inset LatexCommand \index{proceso}
+
+\end_inset 
+
+ una definición tradicional de proceso es la de instancia de un programa
+ en ejecución.
+ La ejecución de tal programa es indicada al SO mediante una acción u orden
+ especializada.
+\layout Standard
+
+El SO responde en ese punto creando un nuevo proceso.
+ En general, esta actividad consiste en la creación e iniciliazación de
+ estructuras de datos en el SO para monitorizar y controlar el progreso
+ de proceso en cuestión.
+ Una vez creado, el proceso pasará a estar activo y competirá por la utilización
+ de recursos del sistema como el procesador y los dispositivos I/O.
+ 
+\layout Standard
+
+Un proceso evoluciona cíclicamente entre períodos de ejecución activa y
+ de espera por la terminación de actividades de I/O.
+ Cuando un proceso queda inactivo por especificar una operación de I/O y
+ quedar a la espera de que ésta se complete, el SO puede planificar la ejecución
+ de otro proceso.
+\layout Standard
+
+Desde este punto de vista, un proceso es una entidad individualmente planificabl
+e, que puede ser asignada al procesador y ejecutada por éste.
+ El SO controla, pues, dinámicamente la evolución de los procesos registrando
+ la información correspondiente a sus cambios cuando éstos se produzcan.
+ Esta información es utilizada por el SO para sus labores de planificación
+ y gestión sobre el conjunto de procesos que en un determinado momento pueden
+ coexistir en el sistema informático.
+\layout Standard
+
+De esta forma además de la plantilla estática constituida por el programa
+ ejecutable en que se basa, un proceso posee ciertos atributos que ayudan
+ al SO en su gestión.
+ Los atributos de un proceso incluyen su estado actual, unidad de planificación,
+ derechos de acceso, nivel de prioridad entre otros datos.
+ Desde el punto de vista del usuario, un proceso no es más que la ejecución
+ de un conjunto de instrucciones que llevan a cabo una determinada tarea,
+ mientras que para el SO es una entidad que atraviesa dinámicamente un conjunto
+ de estados y que solicita los recursos del sistema que le son necesarios.
+ De esta forma, el acceso a tales recursos debe ser planificado de forma
+ que se consiga un rendimiento en la utilización de los mismos lo más óptimo
+ posible.
+\layout Subsection
+
+División implícita y explícita de tareas
+\layout Standard
+
+Dependiendo del SO y del entorno objetivo de ejecución de programas, la
+ división de un trabajo en tareas que serán ejecutadas como procesos independien
+tes así como la asignación inicial de los atributos de esos procesos pueden
+ ser efectuadas o bien por el SO o bien por el desarrollador de la aplicación.
+ En otras palabras, lo que constituirá un proceso independiente puede provenir
+ de:
+\layout Enumerate
+
+División
+\begin_inset LatexCommand \index{división implicita de tareas}
+
+\end_inset 
+
+ implícita de tareas definida por el sistema.
+\layout Enumerate
+
+División 
+\begin_inset LatexCommand \index{division explicita de tareas}
+
+\end_inset 
+
+explícita de tareas definida por el desarrollador.
+\layout Standard
+
+En general, la división implícita de tareas se aplica en sistemas operativos
+ multitarea para multiplexar la ejecución de una serie de programas y explotar
+ los beneficios de la concurrencia entre una serie de aplicaciones.
+ La división explícita en tareas permite mejoras adicionales en el rendimiento
+ al explotar la concurrencia inherente o propia de una determinada aplicación
+ o programa.
+ La división implícita en tareas significa que los procesos son definidos
+ por el sistema, esta división aparece comúnmente en sistemas de multiprogramaci
+ón de propósito general tales como los sistemas de tiempo compartido.
+ En este enfoque cada programa remitido para su ejecución es tratado por
+ el SO como un proceso independiente.
+ 
+\layout Standard
+
+El SO asignará valores iniciales a lo atributos del proceso tales como la
+ prioridad de planificación y los derechos de acceso en el momento de la
+ creación del proceso basándose en el perfil del usuario y en valores predetermi
+nados del sistema.
+\layout Standard
+
+La división explícita significa que los desarrolladores definen explícitamente
+ cada proceso y alguno de sus atributos, típicamente una única aplicación
+ queda dividida en varios procesos relacionados con objeto de mejorar su
+ rendimiento.
+ La división explícita se utiliza en situaciones donde se desea elevar la
+ eficiencia o controlar explícitamente las actividades del sistema.
+ 
+\layout Standard
+
+Entre las razones más comunes para aplicar la división explícita de tareas
+ se incluyen
+\layout Enumerate
+
+Ganancia de velocidad: algunas de las tareas independientes en que quede
+ dividida la aplicación podrán ejecutarse de forma concurrente con la consiguien
+te mejora en el tiempo total de ejecución de la aplicación.
+\layout Enumerate
+
+Mejora en el rendimiento de la utilización de dispositivos de I/O con latencia:
+ dedicando tareas explícitas a la realización de operaciones I/O, éstas
+ podrán ser planificadas por el SO de forma concurrente con tareas de computació
+n intensiva con la consiguiente ganancia en el rendimiento.
+\layout Enumerate
+
+Multiprocesamiento: los procesos independientes que constituyen una aplicación
+ pueden ser perfectamente portados para su ejecución en un entorno multiprocesad
+or con lo que se conseguiría paralelismo real.
+\layout Enumerate
+
+Computación distribuida: de igual forma, cada tarea independiente puede
+ ser asignada a un procesador que forme parte de un sistema distribuido,
+ siendo necesaria una sincronización con el resto de procesadores que se
+ ocupan de sus respectivas tareas.
+\layout Subsection
+
+Tipos de procesos y relación entre procesos concurrentes
+\layout Standard
+
+En principio, podemos realizar una clasificación muy general de los procesos
+ entre procesos de usuario y procesos de sistema.
+ Un proceso de usuario
+\begin_inset LatexCommand \index{proceso de usuario}
+
+\end_inset 
+
+ es aquel creado por el SO como respuesta a una de ejecución del usuario
+ o de una aplicación que ejecuta a instancias de éste.
+\layout Standard
+
+Un proceso de sistema
+\begin_inset LatexCommand \index{proceso de sistema}
+
+\end_inset 
+
+ es un proceso que forma parte del propio SO y que desempeña alguna de sus
+ labores características, como por ejemplo, la elección del siguiente proceso
+ a ejecutar o bien la prestación de un servicio determinado como el acceso
+ a un recurso de I/O del sistema.
+ Cualquiera que sea la naturaleza de los procesos, éstos pueden mantener
+ fundamentalmente dos tipos de relaciones: Competición y/o Colaboración.
+\layout Standard
+
+En virtud de la compartición de recursos de un solo sistema, todos los procesos
+ concurrentes compiten unos con otros por la asignación de los recursos
+ del sistema necesarios para sus operaciones respectivas.
+ Además, una colección de procesos relacionados que representen colectivamente
+ una sola aplicación lógica, suelen cooperar entre sí.
+ La cooperación es habitual entre los procesos creados como resultado de
+ una división explícita de tareas.
+ Los procesos cooperativos intercambian datos y señales de sincronización
+ necesarios para estructurar su progreso colectivo.
+ Tanto la competición como la colaboración de procesos requiere una cuidada
+ asignación y protección de los recursos en términos de aislamiento de los
+ diferentes espacios de direcciones.
+ La cooperación depende de la existencia de mecanismos para la utilización
+ controlada de los datos compartidos y el intercambio de señales de sincronizaci
+ón.
+\layout Standard
+
+Los procesos cooperativos comparten típicamente algunos recursos y atributos
+ además de interactuar unos con otros.
+ Por esta razón, con frecuencia se agrupan en lo que se denomina una familia
+ de procesos
+\begin_inset LatexCommand \index{familia de procesos}
+
+\end_inset 
+
+.
+ Aunque dentro de una familia son posibles relaciones complejas entre sus
+ procesos miembro, la relación más comúnmente soportada por los sistemas
+ operativos es la relación padre-hijo.
+ Esta relación se establece cuando el SO crea un nuevo proceso a instancias
+ de otro ya existente.
+ Los procesos hijos heredan generalmente los atributos de sus procesos padres
+ en el momento de su creación y también pueden compartir recursos con sus
+ procesos hermanos.
+\layout Subsection
+
+El sistema operativo y los procesos
+\layout Standard
+
+Todos los SSOO de multiprogramación están construidos en torno al concepto
+ de proceso.
+ Los requisitos principales que debe cumplir un SO para con los procesos
+ son los siguientes
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+estudiar bien
+\end_inset 
+
+:
+\layout Enumerate
+
+El SO debe intercalar la ejecución de procesos para optimizar la utilización
+ del procesador ofreciendo a la vez un tiempo de respuesta razonable.
+\layout Enumerate
+
+El SO debe asignar los recursos del sistema a los procesos en conformidad
+ con una política específica que evite situaciones de interbloqueo.
+\layout Enumerate
+
+El SO podría tener que dar soporte a la comunicación entre procesos y ofrecer
+ mecanismos para su creación, labores que pueden ser de ayuda en la estructuraci
+ón de aplicaciones.
+\layout Section
+
+Creación y terminación de procesos
+\layout Standard
+
+Cuando se añade un proceso a los que ya está admisnitrando el SO, hay que
+ construir las estructuras de datos que se utilizan para gestionar y controlar
+ el proceso y asignar el espacio de direcciones que va a utilizar dicho
+ proceso.
+ Estas acciones constituyen la creación de un nuevo proceso.
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+estudiar bien
+\end_inset 
+
+
+\layout Standard
+
+Son cuatro los sucesos comunes que llevan a la creación de un proceso.
+\layout Enumerate
+
+Nueva tarea en un sistema de proceso por lotes.
+\layout Enumerate
+
+Nueva conexión interactiva.
+\layout Enumerate
+
+Nuevo proceso creado por el SO para dar un servicio.
+\layout Enumerate
+
+Un proceso generado por otro ya existente.
+\layout Standard
+
+Por otro lado, en cualquier sistema informático debe existir alguna forma
+ de que un proceso indique su terminación.
+ Un trabajo por lotes debe incluir una instrucción de detención 
+\series bold 
+halt
+\series default 
+ o una llamada explícita a un servicio del sistema operativo para indicar
+ su terminación, mientras que en una aplicación interactiva, será la acción
+ del usuario la que indique cuándo termine el proceso.
+\layout Standard
+
+Todas estas acciones provocan al final una petición de servicio al SO para
+ terminar el proceso demandante.
+ Además, una serie de errores pueden llevarnos a la terminación de un proceso.
+ A continuación se enumeran algunas de las condiciones más habituales de
+ terminación de procesos:
+\layout Enumerate
+
+Terminación normal: Un proceso termina de ejecutar su conjunto de instrucciones
+ y finaliza.
+\layout Enumerate
+
+Tiempo límite excedido: El proceso requiere más tiempo para completar su
+ ejecución del que el sistema establece como máximo.
+\layout Enumerate
+
+No disponibilidad de memoria: Tiene lugar cuando un proceso necesita más
+ memoria de la que el sistema puede proporcionar.
+\layout Enumerate
+
+Violación de límites: Ocurre cuando un proceso trata de acceder a una posición
+ de memoria a la que no puede hacerlo.
+\layout Enumerate
+
+Error de protección: Se produce si un proceso intenta utilizar un recurso
+ o un archivo para el que no tiene permiso o trata de utilizarlo de forma
+ incorrecta.
+\layout Enumerate
+
+Error aritmético: Aparece si el proceso intenta hacer un cálculo prohibido
+ como la división por cero o trata de almacenar un número mayor del que
+ el hardware acepta.
+\layout Enumerate
+
+Superación del tiempo máximo de espera por un recurso: En este caso, el
+ proceso se encuentra a la espera de obtener un recurso o de que tenga lugar
+ un determinado evento durante un tiempo que alcanza el límite establecido.
+\layout Enumerate
+
+Fallo de dispositivo I/O: Se produce por un error en la entrada o la salida
+ tal como la incapacidad de encontrar un archivo o la ocurrencia de un fallo
+ de lectura o escritura después de un número máximo de intentos.
+\layout Enumerate
+
+Instrucción no válida: Se produce si un proceso intenta ejecutar una instrucción
+ inexistente.
+\layout Enumerate
+
+Inento de acceso a una instrucción privilegiada: Se presenta si un proceso
+ intenta utilizar una instrucción reservada para el SO.
+\layout Enumerate
+
+Mal uso de los datos: Un elemento de dato no está inicializado o es de un
+ tipo equivocado para la operación que se pretende realizar.
+\layout Enumerate
+
+Intervención del operador o del SO: Por alguna razón, el operador o el SO
+ termina con el proceso.
+ Por ejemplo, si se considera comprometido el rendimiento del sistema.
+\layout Enumerate
+
+Finalización del proceso padre: Cuando un proceso padre finaliza el SO puede
+ diseñarse para terminar automáticamente con todos sus descendientes.
+\layout Enumerate
+
+Solicitud del proceso padre: Un proceso padre tiene normalmente autoridad
+ para terminar con cualquiera de sus hijos.
+\layout Section
+
+Estados de un proceso
+\layout Standard
+
+En cualquier sistema operativo, es básico conocer el comportamiento que
+ exhibirán los distintos procesos y el conjunto de estados que pueden atravesar.
+\layout Subsection
+
+Modelo de dos estados
+\layout Standard
+
+El modelo más sencillo que puede construirse tiene en cuenta que un momento
+ dado un proceso puede estar ejecutándose en el procesador o no.
+ Así pues, un proceso puede estar en uno de dos estados: Ejecución o No
+ ejecución (Véase la figura 
+\begin_inset LatexCommand \ref{dos estados}
+
+\end_inset 
+
+).
+\layout Standard
+
+
+\begin_inset Float figure
+placement htbp
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/SSOO_fig_1_02.eps
+	lyxscale 60
+	display color
+	scale 60
+	rotateOrigin center
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{dos estados}
+
+\end_inset 
+
+Esquema de un diagrama de dos estados
+\end_inset 
+
+
+\layout Standard
+
+Cuando el SO crea un nuevo proceso, éste entra en el sistema en el estado
+ de 
+\emph on 
+No ejecución
+\emph default 
+.
+ De este modo, el proceso existe, es conocido por el SO y está esperando
+ la oportunidad de ejecutarse.
+ En un momento dado, el sistema operativo decide otorgar el procesador a
+ un proceso determinado con lo que dicho proceso pasará de estado 
+\emph on 
+No
+\emph default 
+ 
+\emph on 
+ejecución
+\emph default 
+ a 
+\emph on 
+Ejecución
+\emph default 
+.
+\layout Standard
+
+Cada cierto tiempo, el proceso en ejecución es interrumpido y el sistema
+ operativo seleccionará un nuevo proceso para que tome el control del procesador.
+ El proceso interrumpido pasa del estado de 
+\emph on 
+Ejecución
+\emph default 
+ al de 
+\emph on 
+No ejecución
+\emph default 
+ mientras que el proceso elegido realiza la transición inversa.
+\layout Standard
+
+Incluso en este modelo tan simple, se aprecian ya algunos de los elementos
+ importantes en el diseño de SSOO.
+ Cada proceso debe representarse de forma que el sistema operativo tenga
+ conocimiento de su estado actual y de su posición en memoria.
+\layout Standard
+
+Aquellos procesos que no estén en estado de ejecución deberán almacenarse
+ en algún tipo de estructura de datos mientras esperan que el sistema operativo
+ les otorgue el control sobre el procesador.
+ La siguiente figura 
+\begin_inset LatexCommand \ref{colaFIFO}
+
+\end_inset 
+
+ propone una estructura basada en una cola de procesos.
+\layout Standard
+
+
+\begin_inset Float figure
+placement htbp
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/SSOO_fig_1_03.eps
+	lyxscale 60
+	display color
+	scale 60
+	rotateOrigin center
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{colaFIFO}
+
+\end_inset 
+
+Esquema de un sistema de Cola FIFO 
+\end_inset 
+
+
+\layout Standard
+
+Dicha cola consiste en una lista enlazada de bloques en la que cada uno
+ de estos bloques representa a un proceso.
+ Cada bloque consistirá en un puntero a la estrcutura de datos donde el
+ SO guarda toda la información relativa al proceso.
+ El comportamiento del SO en este caso es similar al de un gestor de colas.
+ Así, cada vez que el SO cree un nuevo proceso se introducirá el correspondiente
+ bloque al final de la cola, acción que también se llevará a cabo cuando
+ un proceso sea expropiado del procesador en favor de otro o cuando se bloquee
+ en espera de que se complete una operación de E/S.
+ Cuando un proceso termine su ejecución, será descartado del sistema.
+ Si todos los procesos estuvieran siempre listos para ejecutar, la disciplina
+ de comportamiento de cola presentada sería eficaz.
+ El modelo de cola sigue un comportamiento FIFO y el procesador opera siguiendo
+ un turno rotatorio con los procesos disponibles.
+ De esta forma, a cada proceso de la cola se le otorga una cierta cantidad
+ de tiempo para ejecutar.
+ Si no se presentan bloqueos y transcurrido éste volverá a la cola para
+ optar de nuevo a tener control sobre el procesador.
+ Sin embargo, esta implementación no es adecuada debido a que algunos procesos
+ en estado de no ejecución estarán listos para ejecutar mientras que otros
+ se encontrarán a la espera de obtener algún recurso solicitado o a que
+ se complete una operación de E/S.
+ Así pues, el SO puede no entregar el procesador al proceso que se encuentre
+ al frente de la cola.
+ Si éste está bloqueado, tendrá que recorrer la cola buscando el primer
+ proceso que no lo esté y que lleve más tiempo en espera.
+ 
+\layout Standard
+
+Una forma más natural de afrontar esta situación es dividir el estado de
+ 
+\emph on 
+no ejecucución
+\emph default 
+ en dos; los estados 
+\emph on 
+listo
+\begin_inset LatexCommand \index{estado listo}
+
+\end_inset 
+
+
+\emph default 
+ y 
+\emph on 
+bloqueado
+\emph default 
+
+\begin_inset LatexCommand \index{estado bloqueado}
+
+\end_inset 
+
+.
+ Además se añadirán dos nuevos estados al sistema.
+ Estos estados son: 
+\emph on 
+nuevo
+\emph default 
+ y 
+\emph on 
+terminado
+\emph default 
+, que resultan de utilidad para las labores de gestión de procesos.
+ Así se dará lugar al modelo de 5 estados.
+\layout Subsection
+
+Modelo de 5 estados
+\layout Standard
+
+En este modelo un proceso puede encontrarse en cualquiera de los siguiente
+ 5 estados.
+\layout Enumerate
+
+Estado 
+\series bold 
+Nuevo
+\series default 
+
+\begin_inset LatexCommand \index{estado nuevo}
+
+\end_inset 
+
+: esta estado corresponderá a procesos 
+\emph on 
+que acaban de ser definidos pero que aún no han sido admitidos por el sistema
+ operativo como procesos ejecutables
+\emph default 
+.
+ Para estos procesos se habrán realizado ciertas tareas de gestión interna
+ como la asignación de un identificador y la creación de algunas estructturas
+ de control.
+ La principal motivación para la existencia de este estado es la limitación
+ por parte del SO del número total de procesos activos por razones de rendimient
+o
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Se puede llegar a perder más tiempo en la gestión del cambio de procesos
+ que en el proceso mismo.
+\end_inset 
+
+ o por las restricciones impuestas por la capacidad de la memoria.
+\layout Enumerate
+
+Estado 
+\series bold 
+Listo
+\series default 
+ o 
+\series bold 
+Preparado
+\series default 
+
+\begin_inset LatexCommand \index{estado preparado}
+
+\end_inset 
+
+
+\begin_inset LatexCommand \index{estado listo}
+
+\end_inset 
+
+: En este estado se encontrarán aquellos procesos que dispongan de todos
+ los recursos necesarios para comenzar o proseguir su ejecución y se encuentran
+ a la espera de que se les concedael control del procesador.
+ 
+\layout Enumerate
+
+Estado de 
+\series bold 
+Ejecución
+\series default 
+
+\begin_inset LatexCommand \index{estado de ejecución}
+
+\end_inset 
+
+: En este estado se encuentra el proceso que tiene el control del procesador.
+ Dado que se considerarán arquitecturas que disponen de un único procesador,
+ en un instante determinado sólo un proceso puede encontrarse en este estado.
+\layout Enumerate
+
+Estado 
+\series bold 
+Bloqueado
+\series default 
+
+\begin_inset LatexCommand \index{estado bloqueado}
+
+\end_inset 
+
+: En este estado se encuentran aquellos procesos que carecen de algún recurso
+ necesario para su ejecución siendo este recurso distinto del procesador
+ o bien se encuentran a la espera de que tenga lugar un determinado evento.
+\layout Enumerate
+
+Estado 
+\series bold 
+Terminado
+\series default 
+
+\begin_inset LatexCommand \index{estado terminado}
+
+\end_inset 
+
+: A este estado pertenecen aquellos procesos excluidos por el SO del grupo
+ de procesos ejecutables.
+ Un proceso alcanza este estado cuando llega al punto normal de terminación,
+ cuando se abandona debido a un error irrecuperable o cuando un proceso
+ con la debida autoridad hace que termine su ejecución.
+ En este punto, el proceso ya no es susceptible de ser elegido para ejecutarse.
+ Sin embargo, el SO conserva cierta información asociada con él para su
+ posible utilización, bien por otras aplicaciones como programas de utilidad
+ para el análisis de la historia y rendimiento del proceso o bien por parte
+ del SO con fines estadísticos.
+ Una vez extraída esta información, el SO ya no necesita mantener más datos
+ relativos al proceso y éstos se borran del sistema.
+\layout Standard
+
+En la figura 
+\begin_inset LatexCommand \ref{diag_transiciones}
+
+\end_inset 
+
+ presentamos el diagrama de transiciones entre estados
+\layout Standard
+
+
+\begin_inset Float figure
+placement htbp
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/SSOO_fig_1_04.eps
+	lyxscale 50
+	display color
+	scale 50
+	rotateOrigin center
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{diag_transiciones}
+
+\end_inset 
+
+Diagrama de transiciones entre estados.
+ La línea punteada indica situación expcecional.
+\end_inset 
+
+
+\layout Description
+
+Transición\SpecialChar ~
+a\SpecialChar ~
+Nuevo: Se crea un nuevo proceso para ejecutar un programa
+\layout Description
+
+Transición\SpecialChar ~
+Nuevo-Preparado: Esta transición tiene lugar cuando el SO está
+ preparado para aceptar o admitir un proceso más.
+ Se tendrán en cuenta las restricciones derivadas de la capacidad de la
+ memoria y que no haya tantos procesos activos como para degradar el rendimiento.
+\layout Description
+
+Transición\SpecialChar ~
+Preparado-Ejecución: Esta transición se produce cuando el SO seleccion
+a un nuevo proceso para ejecutar en función de su política de planificación.
+\layout Description
+
+Transición\SpecialChar ~
+Ejecución-Preparado: La razón más común para esta transición es
+ que el proceso que está en ejecución ha alcanzado el tiempo máximo permitido
+ de ejecución ininterrumpida.
+ Hay otras causas alternativas que no están implementadas en todos los SSOO
+ como la expropiación de un proceso en favor de otro más prioritario.
+ Otra situación, muy extraordinaria, que origina esta transición es que
+ un proceso ceda voluntariamente el control del procesador.
+\layout Description
+
+Transición\SpecialChar ~
+Ejecución-Bloqueo: Un proceso realiza esta transición cuando queda
+ a la espera por la concesión de un determinado recurso o por la ocurrencia
+ de un determinado suceso.
+\layout Description
+
+Transición\SpecialChar ~
+Bloqueado-Preparado: Tiene lugar si a un proceso bloqueado se
+ le concede el recurso solicitado u ocurre el suceso por el que estaba esperando.
+\layout Description
+
+Transición\SpecialChar ~
+Preparado-Terminado: Puede ocurrir si, por ejemplo, un proceso
+ padre decide en un momento determinado finalizar la ejecución de sus procesos
+ hijos.
+ Si alguno de dichos procesos se encontraba en estado 
+\series bold 
+preparado
+\series default 
+ realizará esta transición.
+ Otra razón puede ser debida a un requisito de memoria que es denegado.
+\layout Description
+
+Transición\SpecialChar ~
+Bloqueado-Terminado: Un proceso hijo puede realizar esta transición
+ por la misma razón que la anterior.
+ Otra causa puede ser que el proceso supere el tiempo máximo de espera por
+ un recurso y el sistema operativo decida entonces terminarlo (es la razón
+ más habitual).
+\layout Standard
+
+Este modelo de 5 estados puede implementarse igualmente mediante estructuras
+ de tipo cola siguiendo un esquema como el se muestra en la figura 
+\begin_inset LatexCommand \ref{5estado_cola}
+
+\end_inset 
+
+.
+\layout Standard
+
+
+\begin_inset Float figure
+placement htbp
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/SSOO_fig_1_05.eps
+	lyxscale 60
+	display color
+	scale 60
+	rotateOrigin center
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{5estado_cola}
+
+\end_inset 
+
+Diagrama de transiciones entre estados implementada con una cola.
+\end_inset 
+
+
+\layout Standard
+
+Ahora se dispone de dos colas, una para los procesos en situación de 
+\series bold 
+preparado
+\series default 
+ y otra para los 
+\series bold 
+bloqueados
+\series default 
+.
+ A medida que se admiten procesos nuevos en el sistema, éstos se sitúan
+ en la cola de 
+\series bold 
+preparados
+\series default 
+.
+ Cuando el SO tiene que escoger un proceso para ejecutar, lo hace sacanado
+ uno de dicha cola.
+ En ausencia de prioridades, la referida cola puede gestionarse mediante
+ un algoritmo FIFO.
+ Cuando un proceso es expropiado del procesador, puede ser porque ha terminado
+ su ejecución, porque ha excedido el tiempo máximo de posesión del procesador
+ y entonces es devuelto a la cola de 
+\series bold 
+preparados
+\series default 
+ o porque ha quedado bloqueado a la espera de un determinado suceso con
+ lo que se introducirá en la cola de 
+\series bold 
+bloquedados
+\series default 
+.
+ Cuando tiene lugar un determinado suceso, todos los procesos que esperaban
+ por él son pasados desde la cola de 
+\series bold 
+bloquedados
+\series default 
+ a la de 
+\series bold 
+preparados
+\series default 
+.
+\layout Standard
+
+Esta última medida significa que cuando se produce un suceso, el SO debe
+ recorrer toda la cola de bloqueados buscando aquellos procesos que esperen
+ por el suceso.
+ En un SO grande puede haber una gran cantidad de procesos en la cola de
+ bloqueados, por tanto, resultará más eficiente disponer de un conjunto
+ de colas, una para cada suceso.
+ En tal caso, cuando se produzca un evento, la lista entera de procesos
+ en la cola correspondiente a ese suceso podrá pasarse a estado 
+\series bold 
+preparado
+\series default 
+.
+ Véase la figura 
+\begin_inset LatexCommand \ref{5estado_ncolas}
+
+\end_inset 
+
+.
+\layout Standard
+
+
+\begin_inset Float figure
+placement htbp
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/SSOO_fig_1_06.eps
+	lyxscale 60
+	display color
+	scale 60
+	rotateOrigin center
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{5estado_ncolas}
+
+\end_inset 
+
+Diagrama de transiciones entre estados con varias colas, una para cada proceso.
+\end_inset 
+
+
+\layout Standard
+
+Si la planificación de procesos se realiza mediante un esquema basado en
+ prioridades, entonces es conveniente tener un cierto número de colas de
+ procesos listos, una para cada prioridad.
+\layout Subsection
+
+Procesos suspendidos
+\begin_inset LatexCommand \index{prcoeso suspendido}
+
+\end_inset 
+
+
+\layout Standard
+
+Debido a que el procesador es mucho más rápido que los dispositivos de E/S
+ puede ocurrir que en un momento dado todos los procesos del sistema se
+ encuentren bloqueados a la espera de que se complete alguna operación de
+ E/S.
+ Para solucionar este problema existen dos opciones
+\layout Enumerate
+
+Amplir la memoria del sistema de forma que sea posible albergar en ella
+ más procesos e incrementar así la posibilidad de que alguno de ellos haga
+ uso efectivo del procesador.
+\layout Enumerate
+
+La otra solución consiste en aplicar una técnica conocida como 
+\emph on 
+intercambio
+\emph default 
+ o 
+\emph on 
+swaping
+\emph default 
+.
+ Esta técnica consiste en que cuando todos los procesos que se encuentran
+ en memoria principal están bloqueados, el SO puede sacar a uno de ellos
+ de su correspondiente cola y transferirlo a memoria secundaria.
+ El proceso transferido se dice entonces que queda en estado suspendido.
+ Una vez realizada esta operación, el SO está en condiciones de traer de
+ nuevo a memoria a un proceso previamente suspendido o bien dar entrada
+ al sistema a un nuevo proceso.
+\layout Standard
+
+En general, se considera suspendido a un proceso que presenta las característica
+s siguientes:
+\layout Enumerate
+
+Un proceso suspendido no está disponible de inmediato para su ejecución.
+\layout Enumerate
+
+Un proceso puede estar esperando o no un suceso.
+ Si lo está, la condición de bloqueado es independiente de la condición
+ de suspendido y el acontecimiento del suceso bloqueante no lo habilita
+ para la ejecución.
+\layout Enumerate
+
+El proceso fue situado en estado suspendido por un agente (el SO o el proceso
+ padre) con el fin de impedir su ejecución.
+\layout Enumerate
+
+El proceso no puede apartarse de estado hasta que llegue la orden expresa
+ para ello.
+\layout Standard
+
+Si añadimos este nuevo estado a nuestro diagrama de 5 estados, obtendremos
+ la figura 
+\begin_inset LatexCommand \ref{5estados+suspendido}
+
+\end_inset 
+
+.
+\layout Standard
+
+
+\begin_inset Float figure
+placement htbp
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/SSOO_fig_1_07.eps
+	display color
+	scale 50
+	rotateOrigin center
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{5estados+suspendido}
+
+\end_inset 
+
+Diagrama de 5 estados + suspendido
+\end_inset 
+
+
+\layout Standard
+
+Teniendo en cuenta que un proceso suspendido se encontraba bloqueado a la
+ espera de que ocurriera un cierto suceso y que dicho suceso puede ocurrir
+ mientras el proceso permanece en memoria secundaria, sería más eficiente
+ desdoblar el estado suspendido en dos, uno para las procesos suspendidos
+ que aún esperan el suceso que les bloqueó (estado bloqueado y suspendido)
+ y otro para los procesos suspendidos que por haber tenido lugar se encuentran
+ en situación de proseguir su ejecución (estado listo y suspendido).
+ Para verlo mejor, consúletese la figura 
+\begin_inset LatexCommand \ref{5estados+2suspendidos}
+
+\end_inset 
+
+.
+\layout Standard
+
+
+\begin_inset Float figure
+placement htbp
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/SSOO_fig_1_08.eps
+	display color
+	scale 50
+	rotateOrigin center
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{5estados+2suspendidos}
+
+\end_inset 
+
+Diagrama de 5 estados + 2 suspendidos (preparado y suspendido, bloqueado
+ y suspendido)
+\end_inset 
+
+
+\layout Standard
+
+Las transiciones que involucran a los nuevos estados son las siguientes:
+\layout Itemize
+
+Transición Bloqueado y Suspendido-Preparado y Suspendido: Esta transición
+ tiene lugar si se ha producido un suceso por el que había sido bloqueado
+ el proceso suspendido.
+ Es importante tener en cuenta que esto requiere que esté accesible para
+ el SO la información relativa a los procesos suspendidos.
+\layout Itemize
+
+Transición Preparado y Suspendido-Preparado: Cuando no hay procesos preparados
+ en memoria principal el sistema operativo tendrá que traer de memoria secundari
+a un proceso que pueda continuar su ejecución.
+ Además, puede darse el caso de que el proceso en estado Preparado y Suspendido
+ tenga una nueva prioridad mayor que la de los procesos en estado Preparado.
+ En este caso se deberá decidir entre ejecutar el proceso de mayor prioridad
+ con el coste consiguiente de la operación de intercambio si no hay espacio
+ en memoria principal para todos los procesos, o bien esperar a que haya
+ espacio suficiente en memoria principal para albergar al proceso suspendido.
+\layout Itemize
+
+Transición Preparado-Preparado y Suspendido: Como veíamos en la transición
+ anterior, se puede producir un intercambio entre un proceso en estado Preparado
+ y Suspendido y otro en estado de Preparado si no hay memoria suficiente
+ para ambos.
+ Generalmente, el SO prefiere suspender a un proceso bloqueado en vez de
+ a uno en estado Preparado.
+ Sin embargo, puede ser necesario suspender a un proceso Preparado si ésta
+ es la única forma de liberar un bloque lo suficientemente grande de memoria
+ principal.
+ Además, el SO puede escoger suspender un proceso Preparado de más baja
+ prioridad en lugar de uno bloqueado de prioridad más alta si se estima
+ que el proceso bloqueado pronto pasará a estado de Preparado.
+\layout Itemize
+
+Transición Bloqueado y Suspendido-Bloqueado: Si un proceso termina y libera
+ memoria principal y existe además algún proceso en la cola de procesos
+ Bloqueados y Suspendidos con mayor prioridad de la de todos los proceso
+ que se encuentran en la cola de Preparados y Suspendidos, el SO puede entonces
+ traer el proceso a memoria si tiene razones para suponer que va a ocurrir
+ pronto el suceso que bloqueó al proceso.
+\layout Itemize
+
+Transición Ejecución-Preparado y Suspendido: Generalmente, un proceso en
+ ejecución pasa al estado Preparado cuando expira su fracción de tiempo
+ de procesador, sin embargo, si se está expulsando al proceso porque hay
+ otro de prioridad mayor en la lista de Bloqueados y Suspendidos que acaba
+ de desbloquearse, entonces el SO podría pasar directamente el proceso en
+ ejecución a la cola de Preparados y Suspendidos, liberando así espacio
+ en la memoria principal.
+\layout Description
+
+ejemplo 1 proceso de prioridad 1 en estado Bloqueado, 3 procesos de prioridad
+ 2 en Preparado, 1 proceso en Ejecución de prioridad 1 y 1 Preparado de
+ prioridad 3.
+ 1 bloqueado y suspendido de prioridad 1.
+ los bloqueados lo dejarán de estar pronto.
+ ¿qué transición tendría lugar?
+\layout Standard
+
+Entre las razones más habituales para la suspensión de procesos podemos
+ citar las siguientes:
+\layout Enumerate
+
+Intercambio un proceso por otro(s): El SO necesita liberar memoria principal
+ para cargar un proceso que está listo para ejecutarse.
+\layout Enumerate
+
+Suspensión de un proceso por el SO por 
+\emph on 
+sospechar
+\emph default 
+ que está causando algún tipo de problema.
+\layout Enumerate
+
+Solicitud expresa del usuario.
+\layout Enumerate
+
+Un proceso puede ejecutarse periódicamente y puede ser suspendido mientras
+ espera el intervalo de tiempo antes de una nueva ejecución.
+\layout Enumerate
+
+Por una petición del proceso padre.
+\layout Section
+
+Estructuras de control del sistema operativo
+\layout Standard
+
+El SO es el controlador de los sucesos que se producen en un sistema informático
+ y es el responsable de planificar y expedir a los procesos para su ejecución
+ en el procesador.
+ El SO es quien asigna los recursos a los procesos y el que responde a las
+ solicitudes de servicios básicos realizadas por los programas de usuario,
+ esencialemte se puede considerar al SO como una entidad que administra
+ el uso que hacen los procesos de los recursos del sistema.
+\layout Standard
+
+A continuación se tratarán los elementos que necesita el SO para llevar
+ a cabo sus labores de control de procesos y de administración de recursos.
+\layout Subsection
+
+Tablas de memoria
+\begin_inset LatexCommand \index{Tablas de memoria}
+
+\end_inset 
+
+, de E/S, de archivos y de procesos
+\layout Standard
+
+Si el SO va a administrar procesos y recursos, entonces tiene que disponer
+ de información sobre el estado actual de cada proceso y de cada recurso.
+ El método universal para obtener esta información es sencillo.
+ El sistema operativo construye y mantiene tablas de información sobre cada
+ entidad que está administrando.
+ Por ejemplo, las tablas de memoria se utilizan para mantener el control
+ sobre la memoria principal o 
+\emph on 
+real
+\emph default 
+ y la secundaria o 
+\emph on 
+virtual
+\emph default 
+.
+\layout Standard
+
+Las tablas de memoria deberán incluir la siguiente información:
+\layout Enumerate
+
+Asignación de memoria principal a los procesos.
+\layout Enumerate
+
+Asignación de memoria secundaria a los procesos.
+\layout Enumerate
+
+Atributos de protección de segmentos de memoria principal o secundaria.
+\layout Enumerate
+
+Información necesaria para la gestión de la memoria secundaria.
+\layout Standard
+
+Las tablas de E/S son utilizadas por el SO para administrar los dispositivos
+ y los canales de E/S del sistema informático.
+ En un momento dado, un dispositivo de E/S puede estar disponible o estar
+ asignado a un proceso particular.
+ Si hay una operación de E/S en marcha el SO necesita conocer el estado
+ de dicha operación y la posición de memoria principal que se está utilizando
+ como origen o destino de la transferencia de E/S.
+\layout Standard
+
+El SO también mantiene un conjunto de tablas de archivos, las cuales ofrecen
+ información sobre las propiedades de éstos.
+ Sobre su posición y distribución en la memoria secundaria, su estado actual
+ y otros atributos.
+ Gran parte de esta información, sino toda, puede ser mantenida y utilizada
+ por un sistema de gestión de archivos.
+ Éste consisitirá en un módulo del SO bien diferenciado y su labor se ocupará
+ de todas las operaciones necesarias para la gestión y tratamiento de los
+ archivos.
+ 
+\layout Standard
+
+Un ejemplo de estructura para la ubicación de archivos es la conocida como
+ FAT (File Allocation Table)
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Consiste en una tabla enlazada que hace referencia a los sectores del disco
+ duro asignados a un mismo fichero.
+ FAT da problemas al fragmentarse frecuentemente lo que provoca un retardo
+ al acceder a esos datos.
+ Para solucionar este problema existen herramientas de desfragmentación.
+ En sistemas UNIX se trata desde el principio más eficientemente esta asignación
+ y los datos almacenados apenas sufren fragmentación.
+\end_inset 
+
+.
+ Un ejemplo de sistema de ficheros sería el utilizado por el SO Windows
+ NT y conocido NTFS (NT Filesystem).
+ 
+\layout Standard
+
+Las tablas de procesos almacenan información relativa al conjunto de procesos
+ activos presentes en un instante determinado en el sistema.
+ La información típicamente almacenada para cada proceso y conocida como
+ imagen del proceso en memoria consiste en:
+\layout Enumerate
+
+Datos de usuario: Almacena los datos con que trabaja el proceso así como
+ la pila utilizada por éste.
+ [espacio de direcciones del proceso]
+\layout Enumerate
+
+Programa de usuario: Contiene el código objeto
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+código que puede ser ejecutado por una determinada arquitectura.
+\end_inset 
+
+ del programa que se va a ejecutar.
+ [espacio de direcciones del proceso]
+\layout Enumerate
+
+Pila de sistema: Se utiliza para almacenar parámetros y direcciones de retorno.
+ [estructuras del sistema operativo]
+\layout Enumerate
+
+Bloque de control de proceso: Contiene la información necesaria para que
+ un proceso pueda ser gestionado y controlado por el SO.
+ [estructuras del sistema operativo]
+\layout Subsection
+
+Bloque de control de procesos (BCP)
+\layout Standard
+
+El SO agrupa toda la información que necesita conocer respecto a un proceso
+ particular en una estructura de datos denominada 
+\emph on 
+descriptor de proceso 
+\emph default 
+o 
+\emph on 
+bloque de control de proceso
+\begin_inset LatexCommand \index{bloque de control de proceso}
+
+\end_inset 
+
+ 
+\emph default 
+(BCP).
+ Cada vez que se crea un proceso, el SO crea uno de estos bloques para que
+ sirva como descripción en tiempo de ejecución durante toda la vida del
+ proceso (Véase figura 
+\begin_inset LatexCommand \ref{BCPs}
+
+\end_inset 
+
+).
+ Cuando el proceso termina, su BCP es 
+\emph on 
+liberado
+\emph default 
+ y devuelto al depósito de celdas libres del cual se extraen nuevos BCPs.
+\layout Standard
+
+
+\begin_inset Float figure
+placement htbp
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/SSOO_fig_1_09.eps
+	display color
+	scale 50
+	rotateOrigin center
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{BCPs}
+
+\end_inset 
+
+Dentro de la memoria asignada al SO tenemos unos bloques reservados para
+ los BCPs de los procesos.
+\end_inset 
+
+
+\layout Standard
+
+Un proceso resultará conocido para el SO y, por tanto, susceptible de ser
+ elegido para competir por los recursos del sistema sólo cuando existe un
+ BCP activo asociado a él
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+en el modelo de 5 estados, había un estado llamado Nuevo en donde el SO
+ sabía que existía un nuevo proceso pero sin BCP ya que aún no era candidato
+ para asignarle recursos.
+\end_inset 
+
+.
+ El BCP es una estructura de datos
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+El SO tiene bloques de memoria libres preparados para almacenar BCPs.
+\end_inset 
+
+ con campos para registrar los diferentes aspectos de ejecución del proceso
+ así como de la utilización de los recursos.
+ La información del BCP se agrupa generalmente en las siguientes categorías:
+\layout Enumerate
+
+Identificación del proceso
+\begin_deeper 
+\layout Standard
+
+La información correspondiente a la identificación del proceso consiste
+ en un conjunto de identificadores que incluyen:
+\layout Enumerate
+
+El identificador del proceso (PID): Consiste en un número entero asignado
+ por el sistema.
+\layout Enumerate
+
+El identificador del proceso padre
+\layout Enumerate
+
+La identificación del usuario: Es una cadena de caracteres.
+\end_deeper 
+\layout Enumerate
+
+Información del estado del procesador: La información relativa al estado
+ del miscroprocesador consta de:
+\begin_deeper 
+\layout Enumerate
+
+Registros visibles para el usuario: Son los registros utilizados por el
+ proceso para almacenar datos de entrada y resultados.
+\layout Enumerate
+
+Registros de control y estado, entre los cuales de incluyen el 
+\emph on 
+contador de programa
+\emph default 
+ (PC), los 
+\emph on 
+regitros de códigos de condición
+\emph default 
+
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+bits que reflejan el resultado de una operación aritmética (bit de overflow,
+ bit de acarreo, bit de cero, etc)
+\end_inset 
+
+, los 
+\emph on 
+registros con indicadores de habilitación o inhabilitación de interrupciones
+ y el modo de ejecución
+\emph default 
+.
+\layout Enumerate
+
+Puntero a la pila del proceso: El proceso utiliza una estructura de pila
+ para almacenar parámetros y direcciones de retorno de funciones y procedimiento
+s
+\end_deeper 
+\layout Enumerate
+
+Información de control y gestión del proceso: La información de control
+ y gestión del proceso incluye:
+\begin_deeper 
+\layout Enumerate
+
+Información de planificación y estado: esta información es necesaria para
+ que el SO lleve a cabo sus funciones de planificación.
+ Los elementos típicos de esta información son los siguientes
+\begin_deeper 
+\layout Enumerate
+
+Estado del proceso (ejecución, preparado, etc).
+\layout Enumerate
+
+Prioridad de planificación (se utilizarán algoritmos de planificación que
+ usarán esta información).
+\layout Enumerate
+
+Información para la planificación: ésta depende del algoritmo de planificación
+ utilizado.
+\layout Enumerate
+
+Suceso por el que se encuentre esperando el suceso para reanudar su ejecución
+\end_deeper 
+\layout Enumerate
+
+Estructuación de datos: Un proceso puede estar enlazado con otros procesos
+ formando una cola, un anillo o alguna otra estructura.
+ Por ejemplo; todos los procesos que se encuentran en estado preparado con
+ un determinado nivel de prioridad pueden estar enlazado en una cola.
+ El BCP podrá contener entonces punteros a otros BCPs para dar soporte a
+ esas estructuras.
+\layout Enumerate
+
+Comunicación entre procesos: en el BCP pueden ubicarse indicadores, señales
+ y mensajes asociados con la comunicación entre los procesos independientes.
+\layout Enumerate
+
+Privilegios de los procesos: A los procesos se les otorgan privilegios en
+ términos de la memoria a la que pueden acceder y los tipos de instrucciones
+ que pueden ejecutar.
+ Además, también se pueden aplicar privilegios al uso de servicios y utilidades
+ del sistema.
+\layout Enumerate
+
+Gestión de memoria: Esta sección incluye punteros a las tablas de página
+ y/o segmentos que describen la memoria asignada al proceso.
+\layout Enumerate
+
+Recursos en propiedad y utilización de los procesos: Se incluyen los recursos
+ controlados por el proceso tales como los ficheros abiertos por éste.
+ También se suele incluir un histórico de la utilización del procesador
+ o de otro recurso.
+ Esta información puede ser necesaria para el planificador.
+\end_deeper 
+\layout Subsection
+
+Estados del sistema y listas de procesos
+\layout Standard
+
+Un estado de un proceso es sólo un componente del estado global del sistema
+ que incluye a todos los procesos y recursos.
+ Para controlar la evolución de todos los procesos, el SO mantiene listas
+ de BCPs clasificadas por el estado actual de los procesos aceptados.
+ En general, existirá una lista con los BCPs de todos los procesos en situación
+ de 
+\emph on 
+preparado
+\emph default 
+ y una lista con todos los BCPs en situación de 
+\emph on 
+suspendido
+\emph default 
+.
+ Mediante estas listas el SO forma colecciones de procesos en estados análogos
+ y serán examinadas por las rutinas de asignación de recursos del SO.
+ 
+\layout Description
+
+ejemplo El planificador buscará el siguiente proceso a ejecutar en la lista
+ de los BCPs de procesos preparados.
+ 
+\layout Standard
+
+El rendimiento del SO puede mejorar ordenando y actualizando estas listas
+ de la manera más conveniente para las rutinas del SO que operan con ellas.
+ Las transiciones de estado de un proceso quedarán reflejadas en el cambio
+ de su BCP de una lista a otra.
+\layout Subsection
+
+Conmutación de procesos
+\layout Standard
+
+Una transición entre dos procesos residentes en memoria en un sistema multitarea
+ se denomina 
+\emph on 
+conmutación
+\begin_inset LatexCommand \index{conmutación de procesos}
+
+\end_inset 
+
+ de procesos
+\emph default 
+ o 
+\emph on 
+conmutación de tareas.
+
+\emph default 
+ Las principales operaciones implicadas en una conmutación de procesos están
+ resumidas en la figura 
+\begin_inset LatexCommand \ref{conmutacionRecursos}
+
+\end_inset 
+
+.
+\layout Standard
+
+
+\begin_inset Float figure
+placement htbp
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/SSOO_fig_1_10.eps
+	display color
+	scale 70
+	rotateOrigin center
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{conmutacionRecursos}
+
+\end_inset 
+
+Esquema de conmutación de recursos
+\end_inset 
+
+
+\layout Standard
+
+La figura se interpreta de la siguiente manera
+\layout Itemize
+
+Estamos en modo usuario con un proceso 
+\begin_inset Formula $P_{x}$
+\end_inset 
+
+ ejecutándose.
+ Ocurre un suceso.
+\layout Itemize
+
+Pasamos a modo supervisor (ejecutamos SO).
+\begin_deeper 
+\layout Itemize
+
+Guarda el estado del proceso interrumpido en su BCP correspondiente
+\layout Itemize
+
+Actualiza el estado de 
+\begin_inset Formula $P_{x}$
+\end_inset 
+
+ (en función del suceso que haya tenido lugar, el estado será uno u otro)
+ y los datos de planificación (Algunos ssoo tienen ciertas consideraciones
+ para recalcular estos datos de planificación para un proceso.
+ Por ejemplo, restar prioridad a procesos largos.
+\layout Itemize
+
+Atendemos al suceso dependiendo de cada caso (no incluimos esta operación
+ en lo que consideramos 
+\emph on 
+proceso de conmutación
+\emph default 
+)
+\layout Itemize
+
+Planificamos cuál va a ser el siguiente proceso a ejecutar (que podría ser
+ el mismo de inicio).
+\layout Itemize
+
+Una vez elegido el nuevo proceso a ejecutar, llamémosle 
+\begin_inset Formula $P_{y}$
+\end_inset 
+
+, hay que restaurar su estado HW y recuperamos sus atributos gracias a su
+ BCP.
+\end_deeper 
+\layout Itemize
+
+Una vez elegido el nuevo proceso, realizamos un cambio de modo.
+\layout Standard
+
+La conmutación de procesos es una operación considerablemente más compleja
+ y costosa que la conmutación del contexto de interrupción y puede ser bastante
+ complicada en ssoo grandes que disponen de un mantenimiento preciso de
+ recursos y de sofisticados esquemas de planificación.
+ Dada su complejidad y su relativamente alta frecuencia de ocurrencia, la
+ implementación de la conmutación de procesos puede afectar significativamente
+ al rendimiento de un SO de multiprogramación.
+\layout Standard
+
+Es especialmente importante en sistemas donde el tiempo es un factor crítico
+ tales comos los 
+\emph on 
+sistemas en tiempo real
+\emph default 
+.
+ La eficiencia de la conmutación de procesos puede ser mejorada con ayuda
+ del hardware y una estructura de software especial conocida como 
+\series bold 
+hebra
+\series default 
+ o 
+\series bold 
+hilo
+\series default 
+.
+\layout Standard
+
+Un esquema hardware habitualmente empleado para la acelerar la conmutación
+ de procesos es disponer de múltiples conjuntos estructuralmente idénticos
+ de registros del procesador.
+ Un conjunto para el SO y otro para los procesos de usuario.
+ Un bit dedicado en la única copia de la palabra del estado del procesador
+ indica el estado actual de operación supervisor o usuario y el conjunto
+ de registros activos.
+ Este método reduce el gasto software por conmutación de modo y la mayor
+ parte del proceso de almacenamiento del estado hardware a la ejecución
+ de unas pocas instrucciones de manipulación de bits.
+ Si se dispone de más de dos conjuntos de registros, se pueden aplicar ahorros
+ similares a los procesos de usuario hasta alcanzar el número de conjuntos
+ de registros disponibles.
+\layout Description
+
+Pregunta ¿Por qué la conmutación de procesos es más costosa que la conmutación
+ del contexto de interrupción?
+\layout Subsection
+
+Servicios del sistema operativo para la gestión de procesos
+\layout Standard
+
+Aunque los ssoo suelen diferir en su filosofía y objetivos de diseño sus
+ capas del núcleo más internas muestran una gran similitud en cuanto al
+ tipo y rango de primitivas de gestión de procesos que ofrecen.
+ Los detalles y parámetros varían inevitablemente de un sistema a otro,
+ pero las funciones proporcionadas por la colección total de llamadas al
+ SO son muy parecidas.
+ Esto es así porque el concepto de proceso es común a todos los ssoo pero
+ cada uno los gestiona de forma distinta.
+\layout Itemize
+
+El servicio de creación de procesos 
+\family typewriter 
+\size small 
+crear(Id_proceso, atributos)
+\family default 
+\size default 
+: En respuesta a esta llamada el SO crea un proceso con el identificador
+ y los atributos especificados o predeterminados por el sistema.
+ 
+\emph on 
+El SO obtiene un nuevo BCP del conjunto de memoria libre, rellena sus campos
+ con los parámetros proporcionados y/o predeterminados e inserta el BCP
+ en la cola de procesos preparados
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+cuando un proceso tiene BCP ya puede ejecutarse por lo que ya estará en
+ el nivel de Preparado.
+\end_inset 
+
+.
+ 
+\emph default 
+De esta manera, el proceso especificado podrá ser elegido por el SO para
+ su ejecución.
+ Algunos de los parámetros o atributos que pueden definirse en el momento
+ de creación de un proceso son los siguientes:
+\begin_deeper 
+\layout Enumerate
+
+Nivel de privilegios.
+\layout Enumerate
+
+Nivel de prioridad.
+\layout Enumerate
+
+Tamaño y requisitos de memoria.
+\layout Enumerate
+
+Información sobre acceso a memoria y derechos de acceso a dispositivos de
+ E/S.
+\layout Enumerate
+
+Tamaño máximo del área de datos y/o de la pila.
+\end_deeper 
+\layout Itemize
+
+El servicio de terminación de procesos
+\family typewriter 
+\size small 
+ terminar(Id_proceso)
+\family default 
+\size default 
+: La invocación de esta llamada hace que el SO destruya el proceso designado
+ y lo suprima del sistema.
+ El SO reacciona reclamando todos los recursos asignados al proceso especificado
+, cerrando los archivos abiertos por o para el proceso y efectuando otras
+ operaciones de que pueden considerarse necesarias y que dependerán de la
+ naturaleza del proceso.
+ A continuación el BCP es eliminado de la lista en que resida y devuelto
+ al conjunto de posiciones libres.
+ Un proceso puede eliminarse a sí mismo pero no puede crearse a sí mismo.
+ Un proceso podrá eliminar a otro siempre y cuando tenga privilegios para
+ ello.
+\layout Itemize
+
+El servicio para abortar un proceso 
+\family typewriter 
+\size small 
+abortar(Id_proceso)
+\family default 
+\size default 
+: Esta orden supone la terminación forzosa de un proceso.
+ El SO efectúa generalmente muchas de las acciones que conlleva la orden
+ 
+\family typewriter 
+\size small 
+terminar
+\family default 
+\size default 
+.
+ Habitualmente se proporciona un volcado de registros y memoria junto con
+ la información relativa a la identidad del proceso que se aborta y la razón
+ de la acción.
+ El uso más frecuente de esta orden es para terminaciones involuntarias.
+ 
+\begin_deeper 
+\layout Description
+
+ejemplo en MS Windows NT se produce una operación inválida y el SO lo aborta.
+ Aparece una ventana 
+\emph on 
+detalles 
+\emph default 
+en donde se ofrece un volcado del registro y memoria.
+\end_deeper 
+\layout Itemize
+
+El servicio dividir/unir 
+\family typewriter 
+\size small 
+fork()/join()
+\family default 
+\size default 
+: La operación dividir 
+\family typewriter 
+\size small 
+fork()
+\family default 
+\size default 
+ se utiliza para dividir una sencuencia de instrucciones en dos secuencias
+ que se ejecutan concurrentemente.
+ Se crea así un nuevo proceso (proceso hijo) que ejecuta una rama del código
+ dividido mientras el proceso padre continúa ejecutando la otra.
+ Esta llamada proporciona al proceso padre el identificador del proceso
+ hijo y lo utiliza para asignarle una rama de código.
+ La operación unir 
+\family typewriter 
+\size small 
+join()
+\family default 
+\size default 
+ se utiliza para reunir las dos secuencias de códigos divididos y puede
+ ser empleada por un proceso padre para sincronizarse con un proceso hijo.
+\begin_deeper 
+\layout Description
+
+ejemplo Esto se utilizó mucho en servidores de ficheros.
+ Existe un proceso llamado 
+\emph on 
+listener
+\emph default 
+ que se mantiene a la escucha.
+ Cuando recibe la petición de un cliente (identificado por una dirección
+ IP, etc).
+ 
+\emph on 
+Listener
+\emph default 
+ realiza un 
+\family typewriter 
+\size small 
+fork()
+\family default 
+\size default 
+ y al nuevo proceso le proporciona la dirección IP del cliente mientras
+ el proceso Padre sigue a la escucha.
+\end_deeper 
+\layout Itemize
+
+El servicio para bloquear un proceso 
+\family typewriter 
+\size small 
+bloquear(Id_proceso)
+\family default 
+\size default 
+: Como respuesta a esta llamada, el proceso designado queda bloqueado idefinidam
+ente y pasa a este estado.
+ Un proceso puede bloquearse a sí mismo o puede bloquear a otro proceso
+ cuando está autorizado para ello en virtud de su nivel de privilegio, prioridad
+ o pertenencia a una familia.
+\layout Itemize
+
+Servicio para reanudar un proceso 
+\family typewriter 
+\size small 
+reanudar(Id_proceso)
+\family default 
+\size default 
+: Esta llamada al sistema saca un proceso del estado de bloqueo impuesto
+ por la llamada anterior, el BCP del proceso pasa a la lista de preparados.
+ Un proceso no puede reanudarse a sí mismo si está en estado de bloqueo
+ indefinido, por lo que si se encuentra en 
+\layout Itemize
+
+esta situación no podrá continuar hasta que sea reanudado.
+\layout Itemize
+
+Servicio para retardar un proceso 
+\family typewriter 
+\size small 
+retardar(Id_proceso, tiempo)
+\family default 
+\size default 
+: Esta orden es conocida en bastantes ssoo como 
+\series bold 
+sleep 
+\series default 
+y bloquea a un proceso durante un tiempo igual al especificado.
+\layout Itemize
+
+Servicio para leer los atributos de un proceso 
+\family typewriter 
+\size small 
+leer_Atributos(Id_proceso,atributos)
+\family default 
+\size default 
+: Esta llamada vuelca en la estructura suministrada el conjunto de atributos
+ del proceso.
+\layout Itemize
+
+Servicio para modificar la prioridad de un proceso 
+\family typewriter 
+\size small 
+modificar_Prioridad(Id_proceso, nuevo_valor_prioridad)
+\family default 
+\size default 
+: Esta llamada al sistema establece como nueva prioridad del proceso la
+ especificada por parámetros.
+\layout Standard
+
+\the_end

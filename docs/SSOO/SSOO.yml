@@ -1,0 +1,112 @@
+---
+alquafeatures:
+    - manifiesto
+    - pub
+    - librosabiertos
+authors:
+    -
+        email: pablo@alqua.org
+        name: Pablo Ruiz Múzquiz
+        url: 'http://alqua.org/people/pablo'
+base_url: 'http://alqua.org/libredoc/'
+bodyunits:
+    -
+        basename: introduccion-ssoo
+        name: Introducción a los Sistemas Operativos
+
+    -  
+        basename: gestion-procesos
+        name: Gestión de procesos
+
+    -   
+        basename: planificacion-procesos
+        name: Planificación de procesos
+
+    - 
+        basename: programacion-concurrente
+        name: Programación concurrente
+
+    -
+        basename: interbloqueos
+        name: Interbloqueos
+
+    -
+        basename: gestion-memoria
+        name: Gestión de memoria
+
+appendixes: []
+
+classification:
+    area: Sistemas operativos
+    doctype: libro
+    series: apuntes
+    udc: '004.451'
+coverimage: fig/SSOO_fig_1_00.eps
+dedication: [A mi hermana Inés]
+description: Este documento trata los conceptos fundamentales de los sistemas operativos. Se explica su desarrollo histórico y se abordan la gestión y planificación de procesos, la programación concurrente a un nivel introductorio y el análisis de la gestión de memoria.
+editors:
+    -
+        email: pablo@alqua.org
+        name: Pablo Ruiz Múzquiz
+        url: 'http://alqua.org/people/pablo'
+features:
+    - toc
+    - ind
+    - lic
+keywords:
+    - sistema
+    - CPU
+    - arquitectura
+    - proceso
+    - memoria
+    - gestión de recursos
+    - recurso
+    - round-robin
+    - FCFS
+    - interbloqueo
+    - multiprogramación
+    - conmutación de procesos
+    - contexto
+    - pila de procesos
+    - estado de proceso
+language: es
+license:
+    backcover: 'Aprende en comunidad - http://alqua.org'
+    frontcover: 'Un libro libre de Alqua'
+    invariant:
+        - Manifiesto de alqua
+    name: CC-by_nc_sa
+    version: '1.0'
+    restrictions:
+     - by
+     - nc
+     - sa
+note: ''
+publisher:
+    email: alqua@alqua.org
+    name: alqua
+    url: 'http://alqua.org'
+
+releases:
+     -
+        date: '2004-04-15'
+        description:
+            - Primera versión pública a partir de los materiales y las clases preparados por Antonio Reinoso.
+        number: '0.5.0'
+
+requisites:
+    - Manejo elemental de un ordenador
+    - Conocimiento básicos de hardware.
+shorttitle: SSOO
+sourceformat:
+    ext: lyx
+    macros: []
+    name: LyX
+    packages: [lyxpackages.sty, ]
+    ver: '1.3'
+subtitle: ''
+title: Sistemas Operativos
+todo:
+    - Ampliar el tema de Programación concurrente
+    - Mejorar algunas figuras
+    - Incorporar una bibliografía

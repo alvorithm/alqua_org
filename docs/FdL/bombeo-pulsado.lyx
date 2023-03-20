@@ -1,0 +1,347 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass book
+\begin_preamble
+\input{FdL-packages.sty}
+\input{FdL-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding auto
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Chapter
+
+El láser de régimen de bombeo pulsado cuasiestacionario
+\layout Standard
+
+La dinámica del láser obedece en su forma más general a las ecuaciones semiclási
+cas, en las que se tiene en cuenta no solamente la intensidad de la luz,
+ la inversión de población y el campo, sino también la polarización atómica.
+ La polarización está relacionada con la inversión de población, y está
+ acoplada el campo.
+ La inversión está acoplada al campo y a la polarización, y el campo solamente
+ a la polarización.
+ Las tres ecuaciones para estas variables se llaman 
+\emph on 
+ecuaciones de Maxwell-Block
+\emph default 
+ y se plantean no sólo en el tiempo, sino en el espacio: son del tipo 
+\emph on 
+(3+1)
+\emph default 
+.
+ Las dinámicas descritas por estas ecuaciones constituyen un activo campo
+ de investigación.
+ Como no podemos abordar este nivel de dificultad, vamos a estudiar algunos
+ regímenes sencillos.
+\layout Standard
+
+Por ejemplo, el bombeo, aunque pueda cambiar con el tiempo, supondremos
+ que en forma de pulso tiene mayor anchura que el tiempo de vida de la inversión
+ de población.
+ En ese caso es aplicable la aproximación adiabática que discutimos.
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Citar apartado.}
+\end_inset 
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/evol-bombeo-inversion-intensidad-src.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:evol-bombeo-inversion-intensidad}
+
+\end_inset 
+
+
+\begin_inset Formula $P\left(t\right)$
+\end_inset 
+
+,
+\begin_inset Formula $n_{i}\left(t\right),I_{S_{2}}\left(t\right)$
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+Suponemos que el bombeo de poblaciones es creciente hasta alcanzar un máximo,
+ para después decrecer hasta anularse.
+ Esto es lo que sería un régimen de 
+\emph on 
+bombeo pulsado
+\emph default 
+
+\begin_inset LatexCommand \index{bombeo!pulsado}
+
+\end_inset 
+
+, provocando a su vez un pulso de emisión láser (la evolución del bombeo,
+ la inversión de población y la intensidad de salida pueden verse esquemáticamen
+te en la figura 
+\begin_inset LatexCommand \ref{fig:evol-bombeo-inversion-intensidad}
+
+\end_inset 
+
+).
+\layout Enumerate
+
+Durante la 
+\series bold 
+etapa de crecimiento del bombeo
+\series default 
+ y hasta que se alcanza el umbral, la ecuación de la inversión es (
+\begin_inset LatexCommand \ref{eq:dni-dt-en-fn-P-3niv}
+
+\end_inset 
+
+ sin el término de erosión debido a la presencia de radiación estimulada)
+\begin_inset Formula \[
+\dt{n_{i}}=-\frac{n_{i}}{\tau}+P\left(t\right)\]
+
+\end_inset 
+
+que se integra con la condición inicial 
+\begin_inset Formula $n_{i}\left(0\right)=0$
+\end_inset 
+
+ (situación de equilibrio térmico):
+\begin_inset Formula \[
+n_{i}\left(t\right)=\int_{0}^{t}P\left(t'\right)\exp\left(-\frac{t-t'}{\tau}\right)\,\mathrm{d}t'\]
+
+\end_inset 
+
+ la inversión de población crece hasta que se produce la emisión láser,
+ es decir, hasta que en 
+\begin_inset Formula $t_{u}$
+\end_inset 
+
+ se alcanza la inversión umbral: 
+\begin_inset Formula $n_{i}\left(t_{u}\right)=n_{iu}$
+\end_inset 
+
+, 
+\begin_inset Formula \[
+n_{iu}=\int_{0}^{t_{u}}P\left(t'\right)\exp\left(-\frac{t_{u}-t'}{\tau}\right)\,\mathrm{d}t'=-\frac{1}{\sigma_{21}L}\left(\ln R-\alpha_{i}L\right)\]
+
+\end_inset 
+
+Desde esta ecuación se puede obtener 
+\begin_inset Formula $t_{u}$
+\end_inset 
+
+ en principio si se conoce la forma de 
+\begin_inset Formula $P\left(t\right)$
+\end_inset 
+
+.
+ No obstante y en caso de que los tiempos implicados en el fenómeno y en
+ particular 
+\begin_inset Formula $t_{u}$
+\end_inset 
+
+ sean mucho menores que 
+\begin_inset Formula $\tau$
+\end_inset 
+
+ podemos tomar
+\begin_inset Formula \[
+\exp\left(-\frac{t_{u}-t'}{\tau}\right)\simeq1\]
+
+\end_inset 
+
+con lo cual 
+\begin_inset Formula \[
+n_{iu}\simeq\int_{0}^{t_{u}}P\left(t'\right)\,\mathrm{d}t'\]
+
+\end_inset 
+
+y por lo tanto el tiempo 
+\begin_inset Formula $t_{u}$
+\end_inset 
+
+ que se tarda en alcanzar el umbral no dependería de la forma concreta del
+ bombeo, sino sólo de la energía necesaria para acumular 
+\begin_inset Formula $n_{iu}$
+\end_inset 
+
+, y por lo tanto sería una buena medida de ella.
+\layout Enumerate
+
+Una vez 
+\series bold 
+alcanzado el umbral
+\series default 
+ la inversión se estabiliza.
+ Si el proceso es cuasiestacionario 
+\begin_inset Formula \[
+\dt{n_{iu}}=-\frac{1}{\tau}\left(1+\frac{I}{I_{0}}\right)n_{iu}+P\left(t\right)\simeq0\]
+
+\end_inset 
+
+entonces
+\begin_inset Formula \[
+I=I_{0}\left(\frac{\tau P\left(t\right)}{n_{iu}}-1\right)\]
+
+\end_inset 
+
+y la intensidad de salida es
+\begin_inset Formula \begin{eqnarray*}
+I_{S_{2}} & = & \left(1-R_{2}\right)I_{+}\left(l\right)\\
+ & = & \frac{1-R_{2}}{1+R_{2}}\left(\frac{\tau P\left(t\right)}{n_{iu}}-1\right)\\
+ & = & I_{0}\frac{1-R_{2}}{1+R_{2}}\left(\frac{\tau P\left(t\right)\sigma_{21}L}{\alpha_{i}l-\ln R}-1\right)\\
+ & = & I_{0}\frac{1-R_{2}}{1+R_{2}}\left(\frac{\alpha_{0}\left(t\right)l}{\alpha_{i}l-\ln R}-1\right)\end{eqnarray*}
+
+\end_inset 
+
+ donde hemos utilizado que 
+\begin_inset Formula $R=\sqrt{R_{1}R_{2}}$
+\end_inset 
+
+, que la intensidad total es la suma de las que transcurren en cada sentido,
+\begin_inset Formula \[
+I=I_{+}\left(l\right)+I_{-}\left(l\right)=\left(1+R_{2}\right)I_{+}\left(l\right)\]
+
+\end_inset 
+
+y que
+\begin_inset Formula \[
+n_{iu}=\frac{\alpha_{i}l-\ln R}{\sigma_{21}l}\]
+
+\end_inset 
+
+con 
+\begin_inset Formula $\alpha_{0}\left(t\right)=\tau\sigma_{21}P\left(t\right)$
+\end_inset 
+
+.
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Se podrá compactar un poco haciendo las referencias oportunas.}
+\end_inset 
+
+
+\layout Enumerate
+
+Esto es válido para el intervalo de tiempo en el que estamos por encima
+ del umbral y hay emisión láser.
+ ¿Cuándo terminará ésta?.
+ Para un 
+\begin_inset Formula $t_{f}$
+\end_inset 
+
+ tal que 
+\begin_inset Formula $P\left(t_{f}\right)=n_{iu}/\tau$
+\end_inset 
+
+, es decir, cuando 
+\series bold 
+el bombeo empieza a dejar de compensar las pérdidas
+\series default 
+.
+ La ecuación es la misma que en la fase inicial, pero con la condición inicial
+ 
+\begin_inset Formula $n_{i}\left(t_{f}\right)=n_{iu}$
+\end_inset 
+
+.
+ Así,
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Verificar signos argumento primera exponencial.}
+\end_inset 
+
+
+\begin_inset Formula \[
+n_{i}\left(t\right)=n_{iu}\exp\left(-\frac{t-t_{f}}{\tau}\right)+\int_{t_{f}}^{t}P\left(t'\right)\exp\left(-\frac{t-t'}{\tau}\right)\,\mathrm{d}t'.\]
+
+\end_inset 
+
+En cuanto el pulso de bombeo se anula, sólo queda la evolución exponencial
+ de la inversión con su tiempo de relajación 
+\begin_inset Formula $\tau$
+\end_inset 
+
+ propio.
+ 
+\layout Standard
+
+Todo este análisis, si bien es usualmente cualitativamente correcto, sólo
+ lo es cuantitativamente si se puede aplicar la aproximación adiabática
+ que permite definir el tiempo de relajación 
+\begin_inset Formula $\tau$
+\end_inset 
+
+ y el proceso puede ser considerado cuasiestacionario; por ello es por lo
+ que tampoco se ha usado la ecuación de los fotones y sólo se ha empleado
+ la condición umbral.
+\layout Standard
+
+Recordemos las condiciones simplificadoras cuyo cumplimiento mejora la validez
+ del análisis:
+\layout Itemize
+
+
+\begin_inset Formula $R_{2}$
+\end_inset 
+
+ debe ser muy cercano a uno.
+ Esto da la homogeneidad longitudinal.
+\layout Itemize
+
+Anchura de pulso del bombeo mucho mayor que el tiempo de relajación de la
+ inversión.
+\layout Itemize
+
+Homogeneidad de la intensidad en todo el resonador.
+ Aunque el bombeo sea bastante uniforme en sentido transverso, la forma
+ de los modos implica que la inversión de población se desgaste menos lejos
+ del eje.
+ Ésta es la hipótesis menos conforme con la realidad.
+\the_end

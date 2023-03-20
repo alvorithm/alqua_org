@@ -1,0 +1,169 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass book
+\begin_preamble
+\input{FdL-packages.sty}
+\input{FdL-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding auto
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Chapter
+
+Resolución de la ecuación de propagación de la intensidad en el Fabry-Perot
+\begin_inset LatexCommand \label{cha:sol-ed-propag-I-FP}
+
+\end_inset 
+
+
+\layout Standard
+
+En el apartado 
+\begin_inset LatexCommand \ref{sec:optimiz-ec-propag}
+
+\end_inset 
+
+ planteábamos, en términos de la intensidad normalizada 
+\begin_inset Formula $y\equiv\beta_{+}\equiv I_{+}/I_{0}$
+\end_inset 
+
+ la siguiente ecuación diferencial para la propagación con ganancia en el
+ seno del Fabry-Perot (ec.
+ 
+\begin_inset LatexCommand \ref{eq:ecdif-propag-ganancia-fp}
+
+\end_inset 
+
+):
+\layout Standard
+
+
+\begin_inset Formula \[
+\frac{y^{2}+y+\beta_{0}^{2}}{y\left[-\alpha_{i}y^{2}+(\alpha_{0}-\alpha_{i})y-\alpha_{i}\beta_{0}^{2}\right]}\:\mathrm{d}y=\mathrm{d}x\]
+
+\end_inset 
+
+ Para integrarla, puesto que el integrando es algebraico, hay que separar
+ en fracciones simples:
+\begin_inset Formula \begin{eqnarray*}
+\frac{y^{2}+y+\beta_{0}^{2}}{y\left[-\alpha_{i}y^{2}+(\alpha_{0}-\alpha_{i})y-\alpha_{i}\beta_{0}^{2}\right]} & = & \frac{A}{y}+\frac{By+C}{-\alpha_{i}y^{2}+\left(\alpha_{0}-\alpha_{i}\right)y-\alpha_{i}\beta_{0}^{2}}\\
+ & = & \frac{-\alpha_{i}Ay^{2}+(\alpha_{0}-\alpha_{i})Ay-\alpha_{i}A\beta_{0}^{2}+By^{2}+Cy}{y\left[-\alpha_{i}y^{2}+\left(\alpha_{0}-\alpha_{i}\right)y-\alpha_{i}\beta_{0}^{2}\right]}\end{eqnarray*}
+
+\end_inset 
+
+Por tanto, igualando los coeficientes de potencias semejantes
+\begin_inset Formula \[
+A=-1/\alpha_{i},B=0,C=1+\left(\alpha_{0}-\alpha_{i}\right)/\alpha_{i}=\alpha_{0}/\alpha_{i}\]
+
+\end_inset 
+
+se obtiene
+\layout Standard
+
+
+\begin_inset Formula \[
+-\frac{\mathrm{d}y}{\alpha_{i}y}+\frac{y^{2}+y+\beta_{0}^{2}}{-\alpha_{i}y^{2}+\left(\alpha_{0}-\alpha_{i}\right)y-\alpha_{i}\beta_{0}^{2}}\:\mathrm{d}y=\mathrm{d}x\]
+
+\end_inset 
+
+Tenemos que volver a separar en fracciones simples:
+\layout Standard
+
+
+\begin_inset Formula \begin{eqnarray*}
+\frac{1}{\alpha_{i}y^{2}-(\alpha_{0}-\alpha_{i})y+\alpha_{i}\beta_{0}^{2}} & = & \frac{1}{\alpha_{i}}\left(\frac{A}{y-y_{+}}+\frac{B}{y-y_{-}}\right)\\
+ & = & \frac{1}{\alpha_{i}}\frac{\left(A+B\right)y-Ay_{-}-By_{+}}{\left(y-y_{+}\right)\left(y-y_{-}\right)}\end{eqnarray*}
+
+\end_inset 
+
+donde 
+\begin_inset Formula $y_{\pm}$
+\end_inset 
+
+ son las raíces del denominador,
+\begin_inset Formula \begin{eqnarray*}
+y_{\pm} & = & \frac{\alpha_{0}-\alpha_{i}}{2\alpha_{i}}\kern1pt \pm\kern1pt \frac{1}{2}\sqrt{\left(\frac{\alpha_{0}-\alpha_{i}}{\alpha_{i}}\right)^{2}-4\beta_{0}^{2}}\end{eqnarray*}
+
+\end_inset 
+
+De nuevo
+\begin_inset Formula \[
+\left\{ \begin{array}{l}
+A+B=0\\
+-A\kern1pt y_{-}-B\kern1pt y_{+}=1\end{array}\right.\Rightarrow\left\{ \begin{array}{l}
+A=-B\\
+A=1/\left(y_{+}-y_{-}\right)\end{array}\right.,\]
+
+\end_inset 
+
+
+\layout Standard
+
+Así, 
+\begin_inset Formula $y_{+}-y_{-}=\frac{1}{\alpha_{i}}\sqrt{(\alpha_{0}-\alpha_{i})^{2}-4\alpha_{i}^{2}\beta_{0}^{2}}$
+\end_inset 
+
+, es decir 
+\begin_inset Formula $A=\frac{\alpha_{i}}{\sqrt{(\alpha_{0}-\alpha_{i})^{2}-4\alpha_{i}^{2}\beta_{0}^{2}}}=-B$
+\end_inset 
+
+ y, por tanto, quedan las integrales
+\begin_inset Formula \[
+-\frac{1}{\alpha_{i}}\int\frac{\mathrm{d}y}{y}+\frac{\alpha_{0}/\alpha_{i}}{\sqrt{\left(\alpha_{0}-\alpha_{i}\right)^{2}-4\alpha_{i}^{2}\beta_{0}^{2}}}\left(\int\frac{\mathrm{d}y}{y-y_{-}}-\int\frac{\mathrm{d}y}{y-y_{+}}\right)=\int\mathrm{d}x\]
+
+\end_inset 
+
+Tras operar obtenemos el siguiente resultado
+\begin_inset Formula \[
+-\frac{1}{\alpha_{i}}\ln y+\frac{\alpha_{0}/\alpha_{i}}{\sqrt{\left(\alpha_{0}-\alpha_{i}\right)^{2}-4\alpha_{i}^{2}\beta_{0}^{2}}}\ln\frac{y-y_{-}}{y-y_{+}}=x+\mathrm{cte}\]
+
+\end_inset 
+
+En esta expresión, recordando que 
+\begin_inset Formula $y\equiv\beta_{+}$
+\end_inset 
+
+,
+\begin_inset Formula \begin{eqnarray*}
+\frac{y-y_{+}}{y-y_{-}}=\frac{y_{+}-y}{y_{-}-y} & = & \frac{\frac{\alpha_{0}-\alpha_{i}}{2\alpha_{i}}\kern1pt +\kern1pt \frac{1}{2}\sqrt{\left(\frac{\alpha_{0}-\alpha_{i}}{\alpha_{i}}\right)^{2}-4\beta_{0}^{2}}-y}{\frac{\alpha_{0}-\alpha_{i}}{2\alpha_{i}}-\kern1pt \frac{1}{2}\sqrt{\left(\frac{\alpha_{0}-\alpha_{i}}{\alpha_{i}}\right)^{2}-4\beta_{0}^{2}}-y}\\
+ & = & -\frac{\sqrt{(\alpha_{0}-\alpha_{i})^{2}-4\alpha_{i}^{2}\beta_{0}^{2}}+\left(\alpha_{0}-\alpha_{i}-2\alpha_{i}y\right)}{\sqrt{(\alpha_{0}-\alpha_{i})^{2}-4\alpha_{i}^{2}\beta_{0}^{2}}-\left(\alpha_{0}-\alpha_{i}-2\alpha_{i}y\right)}=-F\left(\beta_{+}\right)\end{eqnarray*}
+
+\end_inset 
+
+y como
+\begin_inset Formula \[
+\ln\frac{y-y_{-}}{y-y_{+}}=-\ln\frac{y-y_{+}}{y-y_{-}},\qquad\ln\left(-1\right)=i\pi=\mathrm{cte}\]
+
+\end_inset 
+
+se puede escribir la siguiente ecuación implícita en la intensidad:
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+\alpha_{i}x+\ln\beta_{+}+\frac{\alpha_{0}}{\sqrt{(\alpha_{0}-\alpha_{i})^{2}-4\alpha_{i}^{2}\beta_{0}^{2}}}\ln F(\beta_{+})=\mathrm{cte},\label{eq:sol-implicita-ec-propag-fp}\end{equation}
+
+\end_inset 
+
+que es el resultado que buscábamos.
+\the_end

@@ -1,0 +1,499 @@
+\documentclass[spanish,a4paper,12pt,draft]{report}
+\usepackage{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{eurosym}
+\input{GS-packages.sty}
+\input{GS-macros.sty}
+\begin{document}
+\chapter{Variedades simplécticas}
+
+\section{Definición}
+
+El estudio axiomático de la mecánica, en su forma hamiltoniana, se realiza dentro del marco de la geometría simpléctica. La geometría simpléctica es la globalización de la geometría simpléctica lineal.
+
+De ahora en adelante $\V$ será una variedad diferenciable de dimensión $2n$.
+
+\begin{defi}
+
+ Una {\sf forma simpléctica} \index{forma!simpléctica} sobre $\V$ es una $2$-forma $\wa$ definida sobre  $\V$ y que cumple:
+
+\begin{enumerate}[\indent a) ]
+
+\item  Es cerrada, $d\wa=0$.
+
+\item  No degenerada en ningún punto.  Ello quiere decir que $(\wa)_x$ es una métrica sin radical sobre el espacio tangente $T_x(\V)$ para todo punto~$x$.
+
+\end{enumerate}
+
+\end{defi}
+
+Si una variedad posee una forma simpléctica necesariamente su dimensión es par.  
+
+Como $\wa$ es cerrada, es localmente exacta.  En un entorno de cada punto existe una forma diferencial de grado uno, $\theta$, que cumple $d \theta= \wa$.  Decimos que $\theta $ es un \index{potencial simplético} {\sf potencial simpléctico} de $\wa$.  Los potenciales simplécticos no son únicos: si a un potencial simpléctico le sumamos una diferencial exacta sigue siendo un potencial simpléctico.
+$$
+d(\theta+ df)= d(\theta)+ d^2f)= \wa
+$$
+
+
+\begin{defi}
+
+Una {\sf variedad simpléctica} \index{variedad!simpléctica} es un par $(\V, \wa)$ formado por una variedad $\V$ y una forma simpléctica $\wa$.
+
+\end{defi}
+
+
+\noindent{\bf Ejemplos.}
+
+\begin{itemize}
+
+\item  Todo espacio vectorial simpléctico sobre el cuerpo $\R$ es una variedad simpléctica.
+Esta forma diferencial es cerrada pues es constante en las coordenadas lineales del espacio vectorial.
+
+
+\item  Todo abierto de una variedad simpléctica es una variedad simpléctica con la forma restringida.
+
+\item Si $\V$ tiene dimensión $2$ una forma simpléctica es lo mismo que un elemento de volumen.  Toda superficie orientable es también una variedad simpléctica.  Sin embargo una superficie no orientable no puede admitir una estructura simpléctica.
+
+\item  La forma de grado $2n$, $(\wa)^n$ es un elemento de volumen en $\V$. Toda variedad simpléctica es orientable y tiene una orientación canónica.
+
+\item Sean $(\V,{\wa})$ y $(\V', \omega'_2)$ dos variedades simplécticas. La forma  de segundo grado $\pi^*(\wa)- {\pi'}^*(\omega'_2)$ es una forma simpléctica en el producto de variedades $\V \times \V'$.  Normalmente escribiremos la forma simpléctica como $\wa- \omega'_2$.
+
+\item El fibrado cotangente de cualquier variedad tiene una estructura simpléctica estandard. La construcción se realiza en el capítulo \ref{chapter:espaciodefases}.
+
+\end{itemize}
+
+
+\section{Transformaciones canónicas}
+
+Asociados a la estructura de variedad simpléctica existen unas aplicaciones llamadas {\sf morfismos simplécticos} \index{morfismo!simpléctico}  o\index{transformaciones canónicas} {\sf transformaciones canónicas}.  Esta última notación proviene de la mecánica clásica.
+
+\begin{defi}
+
+Sean $(\V, \wa)$ y $ (\V', \wa')$ dos variedades simplécticas.  Un difeomorfismo $\varphi : \V \rightarrow \V'$ es una {\sf transformación canónica} si 
+$$
+\varphi^*(\wa')=\wa
+$$
+
+\end{defi}
+
+La composición de dos transformaciones canónicas es otra transformación canónica.  Si $\varphi$ es una transformación canónica, la aplicación inversa $\varphi^{-1}$ es también una transformación canónica. Estas propiedades se derivan fácilmente de las propiedades de la imagen inversa:
+
+
+\begin{itemize}
+
+\item $(\varphi \cdot \phi)^* = \phi^* \cdot \varphi^*$
+
+\item $(\varphi^{-1})^* = (\varphi^*)^{-1}$
+
+\item $\Id^* = \Id$
+
+\end{itemize}
+
+\begin{defi}
+
+Llamaremos {\sf grupo simpléctico} \index{grupo!simpléctico} de la variedad $(\V, \wa)$ al conjunto de todas las transformaciones canónicas  de la variedad. Lo denotamos~$\Sp(\V)$.
+
+\end{defi}
+
+
+
+
+
+Sea $\varphi$ una aplicación diferenciable, no necesariamente un difeomorfismo, que cumpla $\varphi(\omega'_2)=\wa$. Como conserva la forma simpléctica, también conserva el volumen y por lo tanto su determinante en todos los puntos debe ser~$1$.   Haciendo uso del teorema de la función inversa hemos demostrado
+
+\begin{cor}
+
+Toda aplicación diferenciable que conserve la forma simpléc\-tica  es  un difeomorfismo local.
+
+\end{cor}
+
+
+Las aplicaciones $\varphi$ que cumplen $\varphi(\omega'_2)=\wa$ se llaman \index{transformación!canónica local} {\sf transformaciones canónicas locales}, puesto que restringidas a un entorno son difeomorfismos.  Las transformaciones canónicas locales no son más que las transformaciones canónicas entre abiertos de la variedad.
+
+
+\bigskip
+
+El resultado de la proposición \ref{propo:graficolagrangiano} se puede generalizar a variedades simplécticas, siendo la demostración practicamente similar.
+
+\begin{defi}
+
+Una subvariedad $\W \subset \V$ es lagrangiana si el espacio tangente $T_x(\W)$ es un subespacio lagrangiano de $T_x(\V)$ para todo $x \in \W$.
+
+\end{defi}
+
+
+
+\begin{propo}
+
+Sean $(\V, \wa)$ y $(\V',\omega'_2)$ dos variedades simplécticas.  Un difeomorfismo $\varphi: \V \rightarrow \V'$ es una transformación canónica si y solo su gráfico es una subvariedad lagrangiana.
+
+\end{propo}
+
+\dem
+
+
+En el $\V \times \V'$ consideramos la forma $\omega_2-\omega'_2$.  El gráfico de $\varphi$
+$$
+\mathrm{Gr}(\varphi)= \{ (x_1,x_2) \in \V \times \V' \text{ tales que  } x_2= \varphi(x_1)\}
+$$
+es una subvariedad isomorfa a $\V$.   Sea $x=(x_1,x_2)$ un punto de la variedad.  Su espacio tangente a esta variedad es precisamente
+$$
+T_x(\mathrm{Gr}(\varphi))= \{(e,e') \in T_x(\V\times \V') \text{ tales que } e'=\varphi_*(e)\}
+$$
+
+Si $\varphi$ es simplectomorfismo, la aplicación tangente en todo punto es un morfismo simpléctico.  El espacio tangente a la subvariedad es un subespacio lagrangiano y la subvariedad es lagrangiana.
+
+\smallskip
+
+Recíprocamente, si la subvariedad es lagrangiana, la aplicación tangente en todo punto es un morfismo simpléctico.  Como por hipótesis $\varphi$ es difeomorfismo, esto implica que $\varphi$ es una transformación canónica.  \fin
+
+
+\begin{cor}
+
+Una aplicación diferenciable es una transformación canónica local si y solo si su gráfica es una subvariedad lagrangiana del producto.
+
+\end{cor}
+
+\section{Coordenadas canónicas}\label{sec:canonicas}
+
+\begin{defi}
+
+Sea $(\V,\wa)$ una variedad simpléctica,  $\{x_1, \dots, x_n,\xi_1, \dots,\xi_n\}$ \linebreak coordenadas locales en un cierto abierto $U$.   Se dice que  estas coordenadas son {\sf canónicas}  \index{coordenadas!canónicas} si 
+$$
+\wa =  d\xi_i\wedge dx_i
+$$
+en el abierto en cuestión.
+
+\end{defi}
+
+Estas coordenadas son muy cómodas, pues es ellas la forma simpléctica tiene por matriz
+
+$$
+\left(
+\begin{array}{cc}
+ 0 & \Id_n \\ 
+ - \Id_n &0
+\end{array}
+\right)
+$$
+
+
+El siguiente teorema, que no se demostrará, es útil para estudiar localmente las variedades simplécticas.
+
+\begin{teo}[de Darboux]\label{teo:darboux} \index{teorema!de Darboux}
+
+Sea $(\V,\wa)$ una variedad simpléctica.  Cada \linebreak punto $x \in \V$ tiene un entorno $U_x$ donde se pueden introducir unas coordenadas canónicas.
+
+\end{teo}
+
+\begin{itemize}
+
+\item  La condición $d\wa=0$ es  crucial para que exista este sistema de coordenadas.  Podemos considerar esta condición como el análogo a la anulación del tensor de curvatura de una métrica simétrica, ya que una métrica riemanniana se puede reducir en un entorno a su forma normal si y solo si su tensor de curvatura se anula.
+
+\item  Siempre que tengamos que efectuar cálculos de tipo local, podemos suponer coordenadas canónicas.  Sin embargo esto no es válido globalmente.
+
+\item  Sea $T^2$ el toro.  $T^2 = S^1 \times S^1$.  Por lo tanto $T^2$ es orientable por ser producto de orientables.  El elemento de volumen dota al toro de una estructura simpléctica.  Esta variedad es compacta y como tal no puede admitir un sistema global de coordenadas.  Esto demuestra la imposibilidad de un teorema de Darboux global.
+
+\end{itemize}
+
+
+
+
+\section{Polaridad}\label{sec:polaridad2}
+
+Dada una variedad diferenciable cualquiera $\V$ denotamos por $\Der(\V)$ al conjunto de todos los campos diferenciables sobre $\V$.  Según sea necesario, entenderemos los campos como derivaciones del anillo de funciones o como secciones del fibrado tangente (dar un vector tangente en cada punto).  
+
+Denotamos por $\bigwedge^1(\V)$ el conjunto de $1$-formas diferenciables sobre la varie\-dad.
+
+\begin{defi}
+
+Llamamos {\sf polaridad} \index{polaridad} de la geometría simpléctica $(\V,\wa)$ a la aplicación
+$$
+\begin{array}{cccc}
+\mathsf{p} :& \Der (\V)& \rightarrow & \bigwedge^1(\V) \\
+   &    X &    \rightarrow   & i_X\wa
+\end{array}
+$$
+
+\end{defi}
+
+\begin{propo}
+
+La polaridad es un isomorfismo.
+
+\end{propo}
+
+\dem
+
+En cada punto $x \in \V$ la polaridad de la métrica $(\wa)_x$ es un isomorfismo puesto que la métrica es no degenerada en todo punto.  Como punto a punto la aplicación es un isomorfismo, globalmente también lo es. \fin
+
+
+Como los dos espacios son isomorfos, la estructura de álgebra de Lie que poseen los campos se traslada a la formas diferenciales de grado uno. 
+$$
+[\mathsf{p}(X),\mathsf{p}(Y)] = \mathsf{p}[X,Y]
+$$
+
+ Sin embargo, y por razones históricas, la operación entre las formas se denomina {\sf paréntesis de Poisson} \index{paréntesis!de Poisson} y no paréntesis de Lie.  Además se emplea otra  notación.  Un estudio más detallado del paréntesis de Poisson se realiza en el capítulo \ref{cap:parentesis}.
+
+
+Si tenemos una $1$-forma $\alpha$, el campo que le corresponde mediante la polaridad lo denotamos $X_\alpha$.  Dada una función diferenciable $f \in \C^\infty (\V)$ su diferencial $df$ es una $1$-forma.  A esta $1$-forma le corresponde mediante la polaridad un campo vectorial que denotamos $X_f$ en vez de $X_{df}$.  El campo que hemos construido se llama {\sf campo hamiltoniano}. \index{campo!hamiltoniano}
+La función $f$ se llama {\sf hamiltoniano} \index{hamiltoniano} del campo.  El hamiltoniano de un camo no es único y en las variedades conexas está indeterminado en una constante.
+
+\bigskip
+
+Esta construcción del campo hamiltoniano tiene su análogo en geometría riemanniana en la construcción del {\sf gradiente} \index{gradiente} de una función.  Recordamos que dada una métrica riemanniana $g$ (o semi-riemanniana) existe una polaridad
+$$
+\begin{array}{cccc}
+\mathsf{p} :& \Der (\V)& \rightarrow & \bigwedge^1(\V) \\
+   &    X &    \rightarrow   & i_X g
+\end{array}
+$$
+El gradiente se define entonces como $\grad(f) = \mathsf{p}^{-1}(df)$.
+
+\bigskip
+
+Volvamos de nuevo a la geometría simpléctica.
+
+
+\begin{propo}
+
+Se cumple 
+$$
+\mathsf{p}(\frac{\partial}{\partial x_i})= -d\xi_i ,\quad 
+\mathsf{p} (\frac{\partial}{\partial \xi_i})= dx_i 
+$$
+
+
+\end{propo}
+
+\dem
+
+Utilizando que la contracción interior con un campo es una antiderivación obtenemos
+$$
+i_{\frac{\partial}{\partial x_j}}( \textstyle{\sum} d\xi_i \wedge dx_i) = \sum
+i_{\frac{\partial}{\partial x_j}}d\xi_i \wedge dx_i -
+d\xi_i \wedge i_{\frac{\partial}{\partial x_j}}dx_i =-d\xi_i
+$$
+Y análogamente con el otro campo. \fin
+
+Leyendo esta proposición en el otro sentido tenemos
+$$
+p^{-1}(d\xi_i)=- \frac{\partial}{\partial x_i}, \quad
+p^{-1}(dx_i)= \frac{\partial}{\partial \xi_i} 
+$$
+
+\begin{cor}
+
+En coordenadas canónicas el campo $X_f$ se expresa como
+$$
+X_f = \sum \left (  \frac{\partial f}{\partial x_i} \cdot \frac{\partial}{\partial \xi_i}
+-\frac{\partial f}{\partial \xi_i} \cdot \frac{\partial}{\partial x_i} \right )
+$$
+El sistema dinámico al que da lugar tiene como ecuaciones
+$$
+\dot x_i = -\frac{\partial f}{\partial \xi_i}, \quad \dot \xi_i =  \frac{\partial f}{\partial x_i}
+$$ 
+que son llamadas {\sf ecuaciones de Hamilton}. \index{ecuaciones de Hamilton}
+\end{cor} 
+
+\dem
+
+Tenemos que 
+$$
+X_f = \mathsf{p}^{-1}(df) = \mathsf{p}^{-1} \left (\frac{\partial f}{\partial x_i}dx_i + 
+\frac{\partial f}{\partial \xi_i}d\xi_i \right )
+$$
+
+
+lo que prueba nuestra afirmación. \fin
+
+
+
+
+\begin{cor}
+
+En coordenadas canónicas, el campo $X_f$ se calcula mediante \linebreak
+ el producto matricial
+$$
+X_f= J \cdot df
+$$
+
+\end{cor}
+
+
+\section{Campos localmente hamiltonianos}
+
+Otro concepto de interés en mecánica, son los grupos uniparamétricos $\{\tau_t\}$ formados por transformaciones canónicas.  Es sabido que esto es equivalente a que $X^L \wa=0$ siendo $X$ el generador infinitesimal del grupo en cuestión.
+
+Ello nos conduce a la siguiente definición.
+
+\begin{defi}
+
+Una {\sf transformación canónica infinitesimal} \index{transformación canónica!infinitesimal} o {\sf campo localmente hamiltoniano} \index{campo!localmente hamiltoniano} es un campo $X$ que cumple
+
+$$
+X^L\wa=0
+$$
+
+\end{defi}
+
+Los campos localmente hamiltonianos también se llaman {\sf simplecticos}. \index{campo!simpléctico}
+
+Aplicando la fórmula $[X,Y]^L= [X^L,Y^L]$ demostramos que los campos localmente hamiltonianos forman una {\sf subálgebra de lie} \index{subálgebra de lie} del conjunto de todos los campos diferenciables de la variedad.  Este álgebra es de dimensión infinita como prueba la 
+
+\begin{propo}
+
+Todo campo hamiltoniano es localmente hamiltoniano.
+
+\end{propo}
+
+
+\dem
+
+Teniendo en cuenta la fórmula de Cartan para la derivada de Lie
+$$
+X^L = i_X \: d+d \: i_X
+$$
+obtenemos que 
+$$
+(X_f)^L(\wa) = i_{X_f}d(\wa) +d i_{X_f}(\wa) = 0 +d (df) = 0
+$$
+pues el primer sumando es nulo por ser la forma simpléctica cerrada. \fin
+
+\begin{cor}
+
+Un campo $X$ es localmente hamiltoniano si y solo si $i_X\wa$ es una forma diferencial cerrada.
+
+\end{cor}
+
+Los campos localmente hamiltonianos no tienen que generar grupos uniparamétricos globales, pero en el caso que lo generen (por ejemplo si la variedad es compacta) tiene que ocurrir que cada $\tau_t$ sea una transformación canónica.  Si solo genera un grupo local, los elementos del grupo serán transformaciones canónicas, pero de tipo local.
+
+\bigskip
+
+\noindent{\bf Ejemplos.}
+
+\begin{itemize}
+
+\item Sea $f$ una función de soporte compacto sobre una variedad simpléctica.  Tanto $df$ como $X_f$ son también de soporte compacto.  El campo hamiltoniano $X_f$ genera un grupo uniparamétrico global.
+
+\item Sean $X$ e $Y$ dos campos localmente hamiltonianos.  El campo $[X,Y]$ es hamiltoniano.  Para comprobarlo aplicamos la fórmula
+$$
+i_{[X,Y]}= [X^L ,i_Y]
+$$
+válida en todo el álgebra exterior.
+$$
+i_{[X,Y]}\wa= X^Li_Y\wa -i_YX^L\wa= di_Xi_Y\wa = d(\wa(X,Y)
+$$
+donde también hemos empleado la fórmula de Cartan $X^L= i_Xd+di_X$.
+
+
+
+\end{itemize}
+
+\section*{Problemas}
+
+\addcontentsline{toc}{section}{Problemas}
+
+\begin{pro}
+
+Toda transformación canónica conserva el elemento de volumen y la orientación.  Su jacobiano debe ser $1$ en todo punto.
+
+\end{pro}
+
+\begin{pro}
+
+Probar la existencia de transformaciones canónicas locales utilizando el teorema de Darboux.
+
+\end{pro}
+
+\begin{pro}
+
+Sea $\wa$ una $2$-forma cerrada sobre una variedad $\V$ de dimensión $2n$.  Entonces $\wa$ es simpléctica si y solo si $(\wa)^n$ es un elemento de volumen no nulo.
+
+\end{pro}
+
+\begin{pro}
+
+Sea $X$ un campo localmente hamiltoniano.  Demostrar que todo punto tiene un entorno donde el campo $X$ es hamiltoniano.  
+
+\end{pro}
+
+
+\begin{pro}
+
+Sea $\V$ un espacio vectorial simpléctico o un entorno dotado de coordenadas canónicas.  Denotamos $z_j=x_j + i \xi_j$.  Con esta notación las ecuaciones de Hamilton se escriben
+$$
+\dot z_j= -2i \frac{\partial f}{\partial \bar z_j}
+$$
+donde hemos denotado
+$$
+\frac{\partial}{\partial \bar z_j} = \left ( \frac{\partial}{\partial x_j} - i \frac{\partial}{\partial \xi_j}\right ) / 2
+$$
+
+\end{pro}
+
+\begin{pro}
+
+El conjunto $\R^2$ dotado de la forma $(x^2+y^2+1) dx \wedge dy$ es una variedad simpléctica.  Calcular el campo hamiltoniano de una función $f$ en las coordenadas standard de $\R^2$.
+
+\end{pro}
+
+\begin{pro}
+
+Consideremos el espacio $\C^n$ con coordenadas  $(z_1, \dots, z_n)$.
+
+\begin{itemize}
+
+\item  La forma 
+$$
+\frac{i}{2}\sum_{k=1}^n dz_k \wedge d\bar z_k
+$$
+es una forma simpléctica.
+
+\item  Si $z_k= x_k + iy_k$, expresar dicha forma en las coordenadas reales.
+
+\end{itemize}
+
+\end{pro}
+
+\begin{pro}
+
+Sea $S^2$ la subvariedad de $\R^3$ de los vectores de norma unidad.  El espacio tangente en un punto $x \in S^2$ está contenido en $\R^3$ y es precisamente el espacio ortogonal a $x$.  A~cada punto $x \in S^2$ le asociamos la forma
+$$
+\omega_x(e,f) = g(x, e \times f)
+$$
+donde $g$ denota la métrica euclídea de $\R^3$ y $\times$ el producto vectorial asociado.
+
+\begin{itemize}
+
+\item En todos los puntos $\omega_x$ es no degenerada.
+
+\item La forma $\omega$ es diferenciable.
+
+\item La forma $\omega$ es cerrada.
+
+\end{itemize}
+
+\end{pro}
+
+\begin{pro}
+
+Dos $k$-formas diferenciales $\alpha$ y $\alpha'$ son {\sf cohomólogas} \index{formas!cohomólogas} si existe otra forma $\mu$ que cumple
+$\alpha -\alpha'=d \mu$.
+Sean $\wa$ y $\wa'$ dos formas simplécticas en una variedad $\V$.  
+
+\begin{itemize}
+
+\item Todo punto $x\in \V$ posee un entorno donde dichas formas son cohomólogas. Por lo tanto, localmente, es cierta la fórmula 
+$$
+\wa-\wa' = d \mu \text{ donde } \mu \text{ es una forma de grado 1}
+$$
+
+\item Si el primer grupo de cohomología de {\sf de Rham} \index{cohomología de de Rham} es nulo, cualquier par de formas simplécticas son cohomólogas.
+
+\end{itemize}
+
+\end{pro}
+
+\end{document}

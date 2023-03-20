@@ -1,0 +1,515 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass book
+\begin_preamble
+\input{FdL-packages.sty}
+\input{FdL-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding auto
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Chapter
+
+Solución Gauss-Hermite
+\begin_inset LatexCommand \label{cha:solución-gauss-hermite}
+
+\end_inset 
+
+
+\layout Standard
+
+Las soluciones que buscamos a 
+\begin_inset LatexCommand \ref{eq:amplitud-un}
+
+\end_inset 
+
+ son de la forma genérica
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+u_{n}(x,z)=A(q)\, b_{n}\left(\frac{x}{p(z)}\right)\,\exp\left(-ik\frac{x^{2}}{2q}\right),\label{eq:forma-generica-modo-gaussiano}\end{equation}
+
+\end_inset 
+
+donde 
+\begin_inset Formula $q\left(z\right)$
+\end_inset 
+
+ viene dado por (
+\begin_inset LatexCommand \ref{eq:q-imag-de-z}
+
+\end_inset 
+
+), su inverso por 
+\begin_inset LatexCommand \ref{eq:relacion-entre-q-y-R}
+
+\end_inset 
+
+ y 
+\begin_inset Formula $A(q)$
+\end_inset 
+
+, 
+\begin_inset Formula $p(z)$
+\end_inset 
+
+ son funciones en principio arbitrarias.
+ Si llevamos esa expresión a la ecuación 
+\begin_inset LatexCommand \ref{eq:amplitud-un}
+
+\end_inset 
+
+ obtenemos
+\layout Standard
+
+
+\begin_inset Formula \[
+\dda{b_{n}}{\left(x/p\right)}-2ikx\,\left(\frac{p}{q}-\dz{p}\right)\,\da{b_{n}}{\left(x/p\right)}-ik\,\frac{p^{2}}{q}\left(1+\frac{2q}{A}\,\da{A}{q}\right)\, b_{n}=0\]
+
+\end_inset 
+
+ Podemos aprovechar la libertad de que disponemos para elegir 
+\begin_inset Formula $A(q)$
+\end_inset 
+
+ y 
+\begin_inset Formula $p(z)$
+\end_inset 
+
+ de tal modo que la ecuación anterior coincida con la ecuación diferencial
+ de Hermite (hemos llamado 
+\begin_inset Formula $\zeta=x/p$
+\end_inset 
+
+)
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+\dda{H_{n}}{\zeta}-2\zeta\da{H_{n}}{\zeta}+2nH_{n}=0\label{eq:diferencial-Hermite}\end{equation}
+
+\end_inset 
+
+ Para ello se deberá cumplir
+\begin_inset Formula \begin{align}
+ik\left(\frac{p}{q}-\dz{p}\right)= & \frac{1}{p} & \longrightarrow &  & \dz{p} & =\frac{p}{q}-\frac{i}{kp}\label{eq:dp-dz}\\
+-i\frac{kp^{2}}{q}\left(1+\frac{2q}{A}\da{A}{q}\right) & =2n\frac{2q}{A} & \longrightarrow &  & \frac{2q}{A}\da{A}{q} & =\frac{2inq}{kp^{2}}-1\label{eq:dA-dq}\end{align}
+
+\end_inset 
+
+Según las soluciones que tomemos de este sistema de ecuaciones acopladas
+ en 
+\begin_inset Formula $A$
+\end_inset 
+
+ y 
+\begin_inset Formula $p$
+\end_inset 
+
+ así serán las soluciones 
+\begin_inset Formula $q\left(z\right)$
+\end_inset 
+
+ del problema completo.
+ Una de ellas se obtiene tomando el factor de escala 
+\begin_inset Formula $p(z)$
+\end_inset 
+
+ como la anchura transversa 
+\begin_inset Formula $w(z)$
+\end_inset 
+
+ salvo un factor,
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+p(z)=\frac{1}{\sqrt{2}}w(z)\label{eq:factor-escala}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+Vamos a ver que 
+\begin_inset Formula $w(z)$
+\end_inset 
+
+ cumple la ecuación 
+\begin_inset LatexCommand \ref{eq:dp-dz}
+
+\end_inset 
+
+ partiendo de 
+\begin_inset LatexCommand \ref{eq:relacion-entre-q-y-R}
+
+\end_inset 
+
+ y usando el conjugado de 
+\begin_inset Formula $1/q$
+\end_inset 
+
+:
+\begin_inset Formula \begin{eqnarray}
+\frac{1}{q}+\frac{1}{q^{*}} & = & \frac{2}{R}\label{eq:suma-q-qast-R}\\
+\frac{1}{q}-\frac{1}{q^{*}} & = & -i\,\frac{4}{k}\,\frac{1}{w^{2}}\label{eq:resta-q-qast-w}\end{eqnarray}
+
+\end_inset 
+
+Despejando 
+\begin_inset Formula $w^{2}$
+\end_inset 
+
+ de la segunda obtenemos
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+w^{2}=\frac{4}{ik}\frac{q\, q^{*}}{q^{*}-q}=\frac{4}{ik}\frac{q\, q^{*}}{q_{0}^{*}-q_{0}}\label{eq:w-de-q-qast}\end{equation}
+
+\end_inset 
+
+donde por una parte, derivando respecto de 
+\begin_inset Formula $z$
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+2w\dz{w}=\frac{4}{ik}\frac{q\, q^{*}}{q_{0}^{*}-q_{0}}\label{32ecf9}\end{equation}
+
+\end_inset 
+
+ y sustituyendo ahí
+\layout Standard
+
+
+\begin_inset Formula \[
+\frac{1}{q_{0}^{*}-q_{0}}=w^{2}\frac{ik}{4qq^{*}}\]
+
+\end_inset 
+
+ se pasa a
+\layout Standard
+
+
+\begin_inset Formula \[
+2w\dz{w}=w^{2}\frac{q+q^{*}}{qq^{*}}=w^{2}\left(\frac{1}{q}+\frac{1}{q*}\right)\]
+
+\end_inset 
+
+ donde con 
+\begin_inset LatexCommand \ref{eq:suma-q-qast-R}
+
+\end_inset 
+
+ se termina por tener
+\layout Standard
+
+
+\begin_inset Formula \[
+2w\dz{w}=\frac{2w^{2}}{R}=2w^{2}\left(\frac{1}{q}+i\frac{2}{kw^{2}}\right)\]
+
+\end_inset 
+
+o sea
+\layout Standard
+
+
+\begin_inset Formula \[
+\dz{\left(w/\sqrt{2}\right)}=\frac{w/\sqrt{2}}{q}+\frac{i}{k\left(w/\sqrt{2}\right)^{2}},\]
+
+\end_inset 
+
+que es justamente la ecuación 
+\begin_inset LatexCommand \ref{eq:dp-dz}
+
+\end_inset 
+
+ y por tanto se puede usar 
+\begin_inset LatexCommand \ref{eq:factor-escala}
+
+\end_inset 
+
+ como solución.
+ Pero determinando 
+\begin_inset Formula $p(z)$
+\end_inset 
+
+ podemos obtener 
+\begin_inset Formula $A(q)$
+\end_inset 
+
+ de la ecuación 
+\begin_inset LatexCommand \ref{eq:dA-dq}
+
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Formula \[
+\da{A}{q}=-\frac{\mathrm{d}q}{2q}+\frac{in}{kp^{2}}\,\mathrm{d}q=-\frac{\mathrm{d}q}{2q}+\frac{2in}{kw^{2}}\,\mathrm{d}q\]
+
+\end_inset 
+
+ Usando la 
+\begin_inset LatexCommand \ref{eq:resta-q-qast-w}
+
+\end_inset 
+
+
+\begin_inset Formula \[
+\da{A}{q}=-\frac{\mathrm{d}q}{2q}+\frac{n}{2}\left(\frac{1}{q^{*}}-\frac{1}{q}\right)\,\mathrm{d}q\]
+
+\end_inset 
+
+ Es evidente de 
+\begin_inset LatexCommand \ref{eq:relacion-entre-q-y-R}
+
+\end_inset 
+
+ que 
+\begin_inset Formula $\mathrm{d}q=\mathrm{d}q^{*}$
+\end_inset 
+
+ por tanto se puede escribir (la variable es 
+\begin_inset Formula $z$
+\end_inset 
+
+)
+\layout Standard
+
+
+\begin_inset Formula \[
+\da{A}{q}=-\frac{\mathrm{d}q}{2q}+\frac{n}{2}\left(\frac{\mathrm{d}q^{*}}{q^{*}}-\frac{\mathrm{d}q}{q}\right)\]
+
+\end_inset 
+
+ Ecuación que se puede integrar con las condiciones 
+\begin_inset Formula $z=z_{0},q=q_{0}$
+\end_inset 
+
+ y 
+\begin_inset Formula $A\left(q_{0}\right)=A_{0}$
+\end_inset 
+
+:
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+A=A_{0}\left(\frac{q_{0}}{q}\right)^{1/2}\left(\frac{q_{0}q^{*}}{q\, q_{0}*}\right)^{n/2}.\label{eq:A-de-q}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+Como las soluciones correspondientes de la ecuación de Hermite son los polinomio
+s de Hermite las soluciones 
+\begin_inset LatexCommand \ref{eq:forma-generica-modo-gaussiano}
+
+\end_inset 
+
+ son de la forma
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+u_{n}(x,z)=A_{0}\left(\frac{q_{0}}{q}\right)^{\frac{1}{2}}\left(\frac{q_{0}q^{*}}{q\, q_{0}*}\right)^{\frac{n}{2}}H_{n}\left(\frac{x\sqrt{2}}{w}\right)\,\exp\left[-\frac{1}{2}\left(\frac{x\sqrt{2}}{w}\right)^{2}\right]\exp\left(-i\frac{kx^{2}}{2R}\right)\label{34}\end{equation}
+
+\end_inset 
+
+ La constante inicial 
+\begin_inset Formula $A_{0}$
+\end_inset 
+
+ se puede usar para normalizar estas soluciones de modo que
+\layout Standard
+
+
+\begin_inset Formula \[
+\int_{-\infty}^{\infty}u_{n}^{*}u_{m}\,\mathrm{d}x=\delta_{nm}\]
+
+\end_inset 
+
+ En nuestro caso la normalización se obtiene con
+\layout Standard
+
+
+\begin_inset Formula \[
+\frac{w}{2}\int_{-\infty}^{\infty}u_{n}^{*}u_{m}\,\mathrm{d}\left(\frac{x\sqrt{2}}{w}\right)=1\]
+
+\end_inset 
+
+
+\layout Standard
+
+Usando
+\layout Standard
+
+
+\begin_inset Formula \[
+\int_{-\infty}^{\infty}H_{n}^{2}(x)e^{-x^{2}}\,\mathrm{d}x=\pi^{\frac{1}{2}}2^{n}n!\]
+
+\end_inset 
+
+Llamando 
+\begin_inset Formula $\xi=x\sqrt{2}/w$
+\end_inset 
+
+ con 
+\begin_inset LatexCommand \ref{34}
+
+\end_inset 
+
+ tenemos
+\layout Standard
+
+
+\begin_inset Formula \[
+A_{0}^{2}\frac{|q_{0}|}{|q|}\frac{w(z)}{\sqrt{2}}\int_{-\infty}^{\infty}H_{n}^{2}(\xi)e^{-\xi^{2}}\,\mathrm{d}\xi=A_{0}^{2}\sqrt{\frac{\pi}{2}}2^{n}n!w(z)\frac{|q_{0}|}{|q|}=1\]
+
+\end_inset 
+
+
+\layout Standard
+
+Por otra parte con 
+\begin_inset LatexCommand \ref{eq:w-de-q-qast}
+
+\end_inset 
+
+ se ve que
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+\frac{w(0)}{w(z)}=\frac{|q_{0}|}{|q|}\label{eq:inv-w-q-1}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+Por tanto
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+A_{0}=\left(\frac{2}{\pi}\right)^{1/4}\left(\frac{1}{2^{n}n!w(0)}\right)^{1/2}\label{36}\end{equation}
+
+\end_inset 
+
+ Además como 
+\begin_inset Formula $q$
+\end_inset 
+
+ es una magnitud compleja le podemos asociar una fase 
+\begin_inset Formula $\psi(z)$
+\end_inset 
+
+ llamada fase de Guoy
+\begin_inset LatexCommand \index{Guoy}
+
+\end_inset 
+
+
+\begin_inset LatexCommand \index{fase de Guoy}
+
+\end_inset 
+
+ en la forma
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+q=|q|e^{-i(\psi-\frac{\pi}{2})}\label{37}\end{equation}
+
+\end_inset 
+
+ Como por 
+\begin_inset LatexCommand \ref{eq:relacion-entre-q-y-R}
+
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Formula \[
+\frac{i}{q}=\frac{e^{i\psi}}{|q|}=\frac{2}{kw^{2}}\left(1+i\frac{kw^{2}}{2R}\right)\]
+
+\end_inset 
+
+ O sea, la fase de Guoy viene dada por
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+\tan\psi(z)=\frac{kw^{2}}{2R}\label{eq:fase-Guoy}\end{equation}
+
+\end_inset 
+
+y claramente cuando 
+\begin_inset Formula $\psi\left(z\right)\longrightarrow0,R\left(z\right)\longrightarrow\infty$
+\end_inset 
+
+.
+ Con esto en la 
+\begin_inset LatexCommand \ref{34}
+
+\end_inset 
+
+ con 
+\begin_inset LatexCommand \ref{eq:inv-w-q-1}
+
+\end_inset 
+
+ y 
+\begin_inset LatexCommand \ref{36}
+
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+\left[\frac{1}{w(0)}\frac{q_{0}}{q}\right]^{\frac{1}{2}}=\left[\frac{|q|}{|q_{0}|w(z)}\frac{|q_{0}|e^{-i(\psi(0)-\frac{\pi}{2})}}{|q(z)|e^{-i(\psi(z)-\frac{\pi}{2})}}\right]^{\frac{1}{2}}=\frac{e^{-i\frac{\pi}{2}\left[\psi(0)-\psi(z)\right]}}{w(z)^{\frac{1}{2}}}\label{39}\end{equation}
+
+\end_inset 
+
+
+\begin_inset Formula \begin{equation}
+\left(\frac{q_{0}q^{*}}{q\, q_{0}*}\right)^{\frac{n}{2}}=\left(e^{2i\left[\psi(z)-\psi(0)\right]}\right)^{\frac{n}{2}}=\exp\left[in\left(\psi(z)-\psi(0)\right)\right].\label{40}\end{equation}
+
+\end_inset 
+
+
+\the_end

@@ -1,0 +1,821 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass book
+\begin_preamble
+\input{OE-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding latin1
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize a4paper
+\paperpackage a4
+\use_geometry 1
+\use_amsmath 1
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 2
+\papersides 2
+\paperpagestyle default
+
+\layout Standard
+
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+chapter[Óptica geométrica]{Aproximación de onda localmente plana: óptica geométrica}
+\end_inset 
+
+
+\layout Section
+
+Planteamiento
+\layout Standard
+
+El objetivo de este breve capítulo consiste en tender puentes entre la óptica
+ electromagnética (OE) y la óptica geométrica (OG).
+ La OE debe contener la OG como forma aproximada de resolver algunos problemas
+ relativos a la propagación de la luz.
+ Durante este capítulo nos limitaremos a medios isótropos y transparentes
+ para dar un tratamiento sencillo.
+ Por lo tanto, 
+\begin_inset Formula $n\in\Bbb R$
+\end_inset 
+
+.
+ De otro lado, los medios serán en general inhomogéneos: 
+\begin_inset Formula $n=n\left(\mathbf{r}\right)$
+\end_inset 
+
+.
+ Consideraremos solamente la propagación de ondas armónicas, cuya expresión
+ general es
+\begin_inset Formula \[
+\mathbf{E}\left(\mathbf{r},t\right)=\mathbf{A}\left(\mathbf{r}\right)e^{i\left(g\left(\mathbf{r}\right)-\omega t\right)}\]
+
+\end_inset 
+
+ en consecuencia podremos hablar de fase y frente de onda.
+ Si en cada punto del espacio consideramos un pequeño volumen 
+\begin_inset Formula $V$
+\end_inset 
+
+, como muestra la figura, las condiciones de aplicabilidad de la OG se pueden
+ resumir en lo siguiente:
+\layout Itemize
+
+
+\begin_inset Formula $n\left(\mathbf{r}\right)$
+\end_inset 
+
+ aproximadamente homogéneo en 
+\begin_inset Formula $V$
+\end_inset 
+
+.
+\layout Itemize
+
+
+\begin_inset Formula $\mathbf{A}\left(\mathbf{r}\right)$
+\end_inset 
+
+ aproximadamente homogéneo en 
+\begin_inset Formula $V$
+\end_inset 
+
+.
+\layout Itemize
+
+
+\begin_inset Formula $\nabla g\left(\mathbf{r}\right)$
+\end_inset 
+
+ (el gradiente de la fase) aproximadamente homogéneo en 
+\begin_inset Formula $V$
+\end_inset 
+
+.
+ 
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/pequeno-vol-frente-onda.eps
+	display monochrome
+	width 5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+El vector 
+\begin_inset Formula $\mathbf{r}$
+\end_inset 
+
+ corresponde a un punto del volumen y el 
+\begin_inset Formula $\mathbf{r}'$
+\end_inset 
+
+ parametriza todos los otros puntos del volumen de modo relativo a 
+\begin_inset Formula $\mathbf{r}$
+\end_inset 
+
+.
+ Se cumple que 
+\begin_inset Formula $\mathbf{r}+\mathbf{r}'\in V$
+\end_inset 
+
+.
+\end_inset 
+
+
+\layout Standard
+
+Al pequeño volumen 
+\begin_inset Formula $V$
+\end_inset 
+
+ le exigimos no obstante que respete 
+\begin_inset Formula $V\gg\lambda^{3}$
+\end_inset 
+
+, por lo que las condiciones se pueden expresar de otro modo diciendo que
+ la longitud de onda debe ser pequeña frente a las distancias en las que
+ 
+\begin_inset Formula $n\left(\mathbf{r}\right),\mathbf{A}\left(\mathbf{r}\right)$
+\end_inset 
+
+ y 
+\begin_inset Formula $\nabla g\left(\mathbf{r}\right)$
+\end_inset 
+
+ varían apreciablemente.
+ 
+\layout Standard
+
+La OG funcionará tanto mejor cuanto menor sea la longitud de onda.
+ Pero eso no impide que el modelo de la OG cubra una gran parte del espectro.
+ Por ejemplo, la longitud de onda del visible, desde el pto de vista macroscópic
+o es todavía muy pequeña.
+ Las condiciones que acabamos de exigir se dan pues en un número elevado
+ de situaciones prácticas.
+ Si se cumplen las condiciones la OE conduce a la descripción geométrica
+ de modo natural.
+ 
+\layout Section
+
+De las ondas a las trayectorias
+\layout Subsection
+
+Objetivo
+\layout Standard
+
+La descripción geométrica está caracterizada por dos nociones fundamentales
+ a las que vamos a tratar de llegar de modo deductivo partiendo de la descripció
+n electromagnética:
+\layout Itemize
+
+la idea de rayo.
+ Nuestro primer objetivo será demostrar que podemos hablar de trayectorias
+ para la luz.
+ Relacionar ondas y rayos constituye un logro nada trivial.
+\layout Itemize
+
+el índice de refracción determina completamente las trayectorias posibles.
+ Nuestro segundo objetivo será comprobar que las trayectorias de la luz
+ verifican el principio de 
+\noun on 
+Fermat
+\noun default 
+.
+ Dicho de otro modo, convertiremos en teorema el principio de 
+\noun on 
+Fermat
+\noun default 
+.
+ Lo que llamamos trayectorias son extremales de camino óptico.
+ El teorema de 
+\noun on 
+Fermat
+\noun default 
+ dice que allí donde el índice es continuo los rayos verifican la ecuación
+ de las trayectorias y allí donde hay discontinuidades verifican la ley
+ de 
+\noun on 
+Snell
+\noun default 
+, de modo que tenemos que probar estos dos hechos para dar por demostrado
+ el teorema de 
+\noun on 
+Fermat
+\noun default 
+.
+\layout Standard
+
+En síntesis, se trata de reducir una axiomática elegante, expresada en forma
+ de principio variacional (principio de 
+\noun on 
+Fermat
+\noun default 
+), a un caso específico de una teoría de axiomática más complicada pero
+ también más potente (las ecuaciones de 
+\noun on 
+Maxwell
+\noun default 
+).
+\layout Subsection
+
+Noción de trayectoria
+\layout Standard
+
+Veamos cómo se comportan en el volumen 
+\begin_inset Formula $V$
+\end_inset 
+
+ los parámetros 
+\begin_inset Formula $\mathbf{A}\textrm{ y }\nabla g$
+\end_inset 
+
+ si se cumplen las condiciones de validez de la OG:
+\layout Itemize
+
+Empecemos con la amplitud 
+\begin_inset Formula $\mathbf{A}\left(\mathbf{r}+\mathbf{r}'\right)$
+\end_inset 
+
+ por su homogeneidad, 
+\begin_inset Formula $\mathbf{A}\simeq\mathbf{A}\left(\mathbf{r}\right)$
+\end_inset 
+
+ (no depende de 
+\begin_inset Formula $\mathbf{r}'$
+\end_inset 
+
+).
+ 
+\layout Itemize
+
+Para 
+\begin_inset Formula $g\left(\mathbf{r}+\mathbf{r}'\right)$
+\end_inset 
+
+ podemos hacer un desarrollo en serie de potencias de 
+\begin_inset Formula $\mathbf{r}'$
+\end_inset 
+
+, pues conocemos un dato de su gradiente: es homogéneo en 
+\begin_inset Formula $V$
+\end_inset 
+
+
+\begin_inset Formula \[
+g\left(\mathbf{r}+\mathbf{r}'\right)=g\left(\mathbf{r}\right)+\nabla g\left(\mathbf{r}\right)\cdot\mathbf{r}'+\ldots\]
+
+\end_inset 
+
+ La aproximación consiste en no considerar los términos que van en las derivadas
+ del gradiente, pues éste es aproximadamente constante.
+ 
+\layout Standard
+
+Por tanto en 
+\begin_inset Formula $V$
+\end_inset 
+
+ se cumple
+\begin_inset Formula \[
+\mathbf{E}\left(\mathbf{r}+\mathbf{r}',t\right)\simeq\mathbf{A}\left(\mathbf{r}\right)e^{ig\left(\mathbf{r}\right)}e^{i\left(\mathbf{k}\cdot\mathbf{r}'-\omega t\right)}\]
+
+\end_inset 
+
+ donde definimos el vector 
+\begin_inset Formula $\mathbf{k}=\nabla g\left(\mathbf{r}\right)$
+\end_inset 
+
+.
+ La expresión obtenida dice que dentro de 
+\begin_inset Formula $V$
+\end_inset 
+
+ la onda es armónica y plana.
+ La amplitud 
+\begin_inset Formula $\mathbf{A}\left(\mathbf{r}\right)e^{ig\left(\mathbf{r}\right)}$
+\end_inset 
+
+ de esta oap es constante en 
+\begin_inset Formula $V$
+\end_inset 
+
+, porque no depende de 
+\begin_inset Formula $\mathbf{r}'$
+\end_inset 
+
+.
+ También se puede decir que 
+\begin_inset Formula $\mathbf{k}$
+\end_inset 
+
+ es una función vectorial homogénea en 
+\begin_inset Formula $V$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+Las condiciones que estamos imponiendo equivalen a decir que la onda es
+ aproximable por una onda plana, pero también que dentro del volumen el
+ índice de refracción es aproximadamente homogéneo: 
+\begin_inset Formula $n\left(\mathbf{r}+\mathbf{r}'\right)\simeq n\left(\mathbf{r}\right)$
+\end_inset 
+
+.
+ El medio es localmente homogéneo y globalmente inhomogéneo.
+\layout Standard
+
+Sabemos de las oap en medios homogéneos que tanto la fase como la energía
+ se propagan según el vector de ondas.
+ No habrá ambiguedad cuando digamos que la onda se propaga en la dirección
+ del vector de ondas, puesto que todas sus propiedades así lo hacen.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/aproximacion-local-oap.eps
+	display monochrome
+	width 4cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+La aproximación depende del punto, pero en cada punto la onda es aproximable
+ por una oap.
+\end_inset 
+
+Con esto ya podemos decir qué es un rayo.
+ Tomamos una sección transversal infinitesimal de frente de ondas y aproximamos
+ la onda allí por una onda plana.
+ Pero el vector de ondas va cambiando suavemente con el punto, manteniéndose
+ siempre el carácter de onda plana.
+ 
+\layout Description
+
+Rayo lugar geométrico de la progresión de una sección transversal infinitesimal
+ del frente de ondas.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/rayos-y-frente-de-onda.eps
+	display monochrome
+	width 5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Rayos y frente de onda.
+\end_inset 
+
+
+\layout Standard
+
+La onda se convierte según esta definición en un haz de rayos.
+ Al alcanzar la noción de rayo hemos cubierto el primer objetivo que nos
+ habíamos fijado.
+\layout Subsubsection
+
+Observaciones
+\layout Enumerate
+
+Por construcción, los rayos son perpendiculares a los frentes de onda.
+\layout Enumerate
+
+Por construcción las trayectorias tienen la propiedad de que en cada punto
+ el vector de ondas 
+\series bold 
+
+\begin_inset Formula $\mathbf{k}\left(\mathbf{r}\right)$
+\end_inset 
+
+
+\series default 
+ es tangente a ellas.
+\layout Subsection
+
+Ecuación de las trayectorias
+\layout Standard
+
+Definimos una nueva cantidad, 
+\begin_inset Formula $\mathcal{L}\left(\mathbf{r}\right)$
+\end_inset 
+
+, a través de la relación
+\begin_inset Formula \[
+g\left(\mathbf{r}\right)=\frac{\omega}{c}\mathcal{L}\left(\mathbf{r}\right)\]
+
+\end_inset 
+
+ con esta expresión para la fase el vector de ondas queda
+\begin_inset Formula \[
+\mathbf{k}\left(\mathbf{r}\right)=\nabla g\left(\mathbf{r}\right)=\frac{\omega}{c}\nabla\mathcal{L}\left(\mathbf{r}\right)\]
+
+\end_inset 
+
+ las ecMm aplicadas a una onda aproximadamente plana en un medio aproximadamente
+ homogéneo dictan que
+\begin_inset Formula \[
+\left|\mathbf{k}\left(\mathbf{r}\right)\right|=n\left(\mathbf{r}\right)\frac{\omega}{c}\]
+
+\end_inset 
+
+ de suerte que obtenemos la 
+\emph on 
+ecuación eikonal
+\begin_inset Formula \[
+\left|\nabla\mathcal{L}\left(\mathbf{r}\right)\right|=n\left(\mathbf{r}\right)\]
+
+\end_inset 
+
+ 
+\emph default 
+en muchos textos la aproximación que hemos explicado se encuentra bajo el
+ nombre de 
+\emph on 
+aproximación eikonal
+\emph default 
+.
+ Estamos listos para demostrar la ecuación de las trayectorias, que es la
+ ecuación diferencial siguiente sobre el parámetro de arco 
+\begin_inset Formula $s$
+\end_inset 
+
+
+\begin_inset Formula \[
+\da{}{s}\left(n\da{\mathbf{r}}{s}\right)=\nabla n\]
+
+\end_inset 
+
+ Para hacerlo hay que observar que 
+\begin_inset Formula $\da{\mathbf{r}}{s}$
+\end_inset 
+
+ es tangente y unitario y por lo tanto debe ser proporcional a 
+\begin_inset Formula $\mathbf{k}$
+\end_inset 
+
+.
+ Es decir
+\begin_inset Formula \[
+\da{\mathbf{r}}{s}=\frac{\mathbf{k}}{\left|\mathbf{k}\right|}=\frac{\frac{\omega}{c}\nabla\mathcal{L}}{\frac{\omega}{c}n}=\frac{1}{n}\nabla\mathcal{L}\]
+
+\end_inset 
+
+ o bien
+\begin_inset Formula \[
+n\da{\mathbf{r}}{s}=\nabla\mathcal{L}\]
+
+\end_inset 
+
+ Derivamos respecto al parámetro de arco ambos miembros y
+\begin_inset Formula \[
+\da{}{s}\left(n\da{\mathbf{r}}{s}\right)=\da{}{s}\nabla\mathcal{L}\]
+
+\end_inset 
+
+ intecambiando el orden de las derivadas
+\begin_inset Formula \[
+\da{}{s}\left(n\da{\mathbf{r}}{s}\right)=\nabla\left(\da{\mathcal{L}}{s}\right)\]
+
+\end_inset 
+
+ donde se puede aplicar la regla de la cadena para obtener 
+\begin_inset Formula \begin{eqnarray}
+\da{\mathcal{L}}{s} & = & \nabla\mathcal{L}\da{\mathbf{r}}{s}\nonumber \\
+ & = & \frac{1}{n}\left(\nabla\mathcal{L}\right)^{2}\nonumber \\
+\da{\mathcal{L}}{s} & = & n\label{ec tray rayos sobre param arco}\end{eqnarray}
+
+\end_inset 
+
+ queda demostrada la ecuación de las trayectorias según las hemos definido
+ más arriba.
+\layout Subsection
+
+Interpretación 
+\layout Standard
+
+Vamos a integrar la última ecuación (
+\begin_inset LatexCommand \ref{ec tray rayos sobre param arco}
+
+\end_inset 
+
+)
+\begin_inset Formula \[
+\mathcal{L}\left(\mathbf{r}_{2}\right)-\mathcal{L}\left(\mathbf{r}_{1}\right)=\int_{\mathbf{r}_{1}}^{\mathbf{r}_{2}}nds\]
+
+\end_inset 
+
+ En el lado izquierdo tenemos una función proporcional a la diferencia de
+ fases de la onda.
+ En el lado derecho tenemos lo que en el contexto de la OG se llama 
+\emph on 
+camino
+\emph default 
+ 
+\emph on 
+óptico
+\emph default 
+.
+ Lo que dice la ecuación es que en este nivel de aproximación diferencia
+ de fase equivale a camino óptico.
+ De modo que para calcular cambios de fase no hay más que calcular el camino
+ óptico recorrido por el rayo.
+ Otra forma de verlo es recordar que el camino óptico sirve para definir
+ los frentes de onda en OG (como superficies de igual camino óptico).
+ Ahora podemos tranquilamente, dentro de la aproximación que hemos tomado,
+ identificar los frentes de onda electromagnéticos con los frentes de onda
+ geométricos.
+\layout Subsection
+
+Trayectorias en una discontinuidad de índice
+\layout Standard
+
+Para acabar de demostrar el principio de 
+\noun on 
+Fermat
+\noun default 
+ nos falta por comprobar qué ocurre en una discontinuidad de índice.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/rayo-y-discontinuidad-indice.eps
+	display monochrome
+	width 4cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Rayo que encuentra una curva que marca una discontinuidad de índice.
+\end_inset 
+
+El problema es que la discontinuidad de índice supone una variación de índice
+ brusca en distancias del orden atómico 
+\begin_inset Formula $\ll\lambda$
+\end_inset 
+
+, lo que invalida las aproximaciones necesarias para la OG.
+ La solución es hacer aproximaciones de onda localmente plana a ambos lados
+ de la discontinuidad y 
+\begin_inset Quotes eld
+\end_inset 
+
+soldarlas
+\begin_inset Quotes erd
+\end_inset 
+
+.
+ Si la superficie de separación cumple las condiciones de diferenciabilidad
+ que aseguran que es localmente aproximable por una recta, podemos echar
+ mano del resultado del capítulo anterior.
+ Se formarán dos oap, una reflejada y otra transmitida.
+ La ley de 
+\noun on 
+Snell
+\noun default 
+ que allí encontramos es la misma que se verificaba en la OG.
+ Lo que en OG era vector tangente a la trayectoria es aquí vector de onda.
+ 
+\layout Section
+
+Conclusiones: ondas y rayos
+\layout Standard
+
+Los dos hechos demostrados equivalen completamente al principio de 
+\noun on 
+Fermat
+\noun default 
+, que queda demostrado a partir de la OE, es decir, a partir de las ecuaciones
+ de 
+\noun on 
+Maxwell
+\noun default 
+.
+\layout Subsubsection
+
+Relación entre ondas y rayos
+\layout Standard
+
+Siempre que se den las condiciones de aplicabilidad de la OG podemos pensar
+ en la onda como una colección de rayos, lo que puede ser de utilidad práctica.
+\layout Standard
+
+Para una oap en medio homogéneo tenemos un haz de rayos paralelos.
+ Esto es 
+\emph on 
+exacto
+\emph default 
+, porque en un medio homogéneo el índice no varía, la amplitud de una oap
+ es siempre constante, y el vector de ondas es constante.
+ De modo que en este contexto 
+\begin_inset Quotes eld
+\end_inset 
+
+haz de rayos paralelos
+\begin_inset Quotes erd
+\end_inset 
+
+ y 
+\begin_inset Quotes eld
+\end_inset 
+
+oap
+\begin_inset Quotes erd
+\end_inset 
+
+ son completamente equivalentes.
+ Esta consideración permite imaginar un procedimiento de generación de ondas
+ planas como el de la figura.
+ 
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/creacion-oap-lente-delgada.eps
+	display monochrome
+	width 4cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Creación de una oap (haz de rayos paralelos) mediante una lente delgada
+ infinita y una fuente puntual monocromática.
+ El camino óptico es reversible (reparametrización).
+\end_inset 
+
+Podemos interpretarlo diciendo que las lentes delgadas establecen una correspond
+encia entre ondas planas y puntos.
+ Por ejemplo, una lente delgada convergente permite contar el número de
+ ondas planas en un haz de luz (= 
+\begin_inset Formula $\mathrm{n}$
+\end_inset 
+
+úmero de puntos en la pantalla).
+\layout Subsubsection
+
+¿Existen los rayos?
+\layout Standard
+
+Lo que hemos hecho nos permite considerar una onda como una colección de
+ rayos.
+ Pero hasta ahora no hemos dicho nada de la existencia 
+\emph on 
+un 
+\emph default 
+rayo.
+ ¿Se pueden observar rayos en la práctica?.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/difraccion-aberturas-pequenas.eps
+	display monochrome
+	width 4cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig difraccion en aberturas pequeñas}
+
+\end_inset 
+
+Pesquemos una sección transversal infinitesimal, es decir, un rayo.
+\end_inset 
+
+Podemos suponer que cuanto más pequeña sea la abertura (figura 
+\begin_inset LatexCommand \ref{fig difraccion en aberturas pequeñas}
+
+\end_inset 
+
+) más se parecerá la luz emergente a un verdadero rayo.
+ Pues no.
+ Cuanto más se cierra el orificio, 
+\emph on 
+menos
+\emph default 
+ se parece la luz emergente a un rayo: es el fenómeno de la 
+\emph on 
+difracción
+\emph default 
+.
+ El ángulo del cono de luz que se crea es 
+\begin_inset Formula $\theta\propto\frac{\lambda}{R}$
+\end_inset 
+
+ donde 
+\begin_inset Formula $R$
+\end_inset 
+
+ es el radio de la abertura.
+ De modo que no se pueden conseguir rayos con precisión arbitraria
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+esto es, rayos matemáticos, o una buena aproximación de éstos.
+ Si queremos un chorro de luz no divergente tenemos que transigir con el
+ diámetro del orificio, pero entonces la sección transversal ya no es infinitesi
+mal\SpecialChar \ldots{}
+
+\end_inset 
+
+.
+\layout Standard
+
+La difracción ocurre porque debemos mutilar la onda: introducimos variaciones
+ bruscas en los parámetros que caracterizan la onda, ya que si se observara
+ un rayo matemático la amplitud detrás del agujero pasaría de un valor finito
+ a cero, de modo que nos alejamos del ámbito de aplicación de la OG (
+\series bold 
+
+\begin_inset Formula $\mathbf{A}\left(\mathbf{r}\right)$
+\end_inset 
+
+ 
+\series default 
+homogéneo en 
+\begin_inset Formula $\Delta V$
+\end_inset 
+
+).
+\layout Standard
+
+En una interpretación microscópica, los átomos en el orificio reemiten formando
+ una onda que ocupa toda la región posterior al orificio pero cuya amplitud
+ sólo es significativa en el ángulo 
+\begin_inset Formula $\theta$
+\end_inset 
+
+ que hemos señalado (por algún criterio que se especificará más adelante).
+\the_end

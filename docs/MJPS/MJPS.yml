@@ -1,0 +1,166 @@
+---
+alquafeatures:
+    - manifiesto
+    - pub
+    - librosabiertos
+authors:
+    -
+        email: juan@iearobotics.com
+        name: Juan González Gómez
+        url: 'http://www.iearobotics.com/juan'
+    -
+        email: Pablo.Haya@ii.uam.es
+        name: Pablo A. Haya Coll
+        url: 'http://www.ii.uam.es/~phaya'
+
+base_url: 'http://alqua.org/libredoc/'
+bodyunits:
+    -
+        basename: sobre-placa-jpsxpc84
+        name: Sobre la placa JPS-XPC84
+
+    -  
+        basename: descripcion
+        name: Descripción
+
+    -   
+        basename: diagrama-bloques
+        name: Diagrama de bloques
+
+    - 
+        basename: aspecto-fisico
+        name: Aspecto físico
+
+    -
+        basename: modos-programacion
+        name: Modos de programacion
+
+    -
+        basename: puertos
+        name: Puertos
+
+    -
+        basename: alimentacion
+        name: Alimentación
+
+    -
+        basename: montaje
+        name: Montaje
+
+    -
+        basename: trabajando-jps
+        name: Trabajando con la JPS
+
+    -
+        basename: fabricacion
+        name: Fabricación
+
+appendixes:
+    -
+        basename: faq
+        name: FAQs, Preguntas Más Frecuentes
+
+    -
+        basename: numeracion-zocalo
+        name: Numeración del Zócalo PLCC84
+
+    -
+        basename: por-hacer
+        name: Lo que queda por hacer
+
+    -
+        basename: bibliografia
+        name: Bibliografía
+
+classification:
+    area: electrónica
+    doctype: libro
+    series: manuales
+    udc: '621.382'
+coverimage: ps/ser-test.eps
+dedication: []
+description: Manual de la tarjeta JPS-XPC84. Se trata de una entrenadora para trabajar con las FPGAs de la familia 4000 y Spartan I de Xilinx,desarrolada bajo una licencia de Hardware Libre. El manual describe en detalle la placa, para que los usuarios puedan utilizarla, entenderla y/o modificarla. Se da por supuesto que el lector tiene conocimientos sobre FPGA y que ha simulado algún diseño.
+
+editors:
+    -
+        email: pablo@alqua.org
+        name: Pablo Ruiz Múzquiz
+        url: 'http://alqua.org/people/pablo'
+features:
+    - lic
+    - toc
+    - ind
+keywords:
+    - placa entrenadora
+    - FPGA
+    - Xilinx
+    - Spartan I
+    - Familia 4000
+    - hardware libre
+
+language: es
+license:
+    backcover: 'Aprende en comunidad - http://alqua.org'
+    frontcover: 'Un libro libre de Alqua'
+    invariant:
+        - Manifiesto de alqua
+    name: CC-by_nc_sa
+    version: '1.0'
+    restrictions:
+     - by
+     - nc
+     - sa
+note: ''
+publisher:
+    email: alqua@alqua.org
+    name: alqua
+    url: 'http://alqua.org'
+
+releases:
+     -
+        date: '2001-12-28'
+        description:
+            - Primera versión del documento. Realizada en LaTeX-- PHC
+        number: '0.9'
+
+     -
+        date: '2002-12-07'
+        description:
+            - Documento pasado a Lyx -- JGG
+            - Añadidas nuevas figuras -- JGG
+            - Agradecimientos al proyecto Alqua ([http://alqua.org]) de donde se ha obtenido la plantilla de este apartado, así como la versión 1.1 de la licencia GFDL en lyx.
+        number: '0.9.1'
+     -
+        date: '2003-01-31'
+        description:
+            - Apéndices --JGG
+            - Apartados 11 y 12 (Lo que queda por hacer y FAQS) --JGG
+            - Apartado "Fabricación" --JGG
+            - Apartado "Trabajando con la JPS" --JGG
+            - Apartado de Montaje --JGG
+            - Añadidas nuevas figuras-- JGG
+            - Añadido esquemático en EPS --JGG
+            - Apartado sobre la placa JPS-- JGG
+        number: '1.0.0'
+     -
+        date: '2004-04-15'
+        description:
+            - Primera versión pública como parte de la comunidad Alqua.
+            - Cambio de la licencia a la Attribution NonCommercial ShareAlike License de Creative Commons.
+        number: '1.1.0'
+
+requisites:
+    - Electrónica digital
+    - Conocimientos sobre FPGAs
+shorttitle: MJPS
+sourceformat:
+    ext: lyx
+    macros: []
+    name: LyX
+    packages: [lyxpackages.sty, MJPS-packages.sty]
+    ver: '1.3'
+subtitle: ''
+title: Manual de la tarjeta JPS-XPC84
+todo:
+    - Corregir erratas
+    - Comprimir figuras

@@ -1,0 +1,780 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass book
+\begin_preamble
+\input{FdL-packages.sty}
+\input{FdL-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding auto
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Chapter
+
+La cuantificación de la materia
+\layout Section
+
+Átomos hidrogenoides
+\layout Standard
+
+Los átomos más simples, del tipo del hidrógeno (un sólo electrón), considerados
+ en el sistema del centro de gravedad con masa reducida 
+\begin_inset Formula $\mu$
+\end_inset 
+
+ y prescindiendo del espín se reducen al estudio una partícula en un potencial
+ coulombiano.
+ Su ecuación de Schrödinger es:
+\begin_inset Formula \begin{equation}
+H\,\psi(\vec{r})=E\,\psi(\vec{r}),\qquad H=-\frac{\hbar^{2}}{2\mu}\Delta-\frac{Ze^{2}}{4\pi\epsilon_{0}r}\label{eq:ec-autoval-hidrogenoide}\end{equation}
+
+\end_inset 
+
+Las soluciones de esta ecuación como en todos los casos de potenciales centrales
+ están separadas en parte angular (los armónicos esféricos 
+\begin_inset Formula $Y_{l}^{m}(\theta,\varphi)$
+\end_inset 
+
+) y parte radial, 
+\begin_inset Formula $R_{nl}(r)$
+\end_inset 
+
+: 
+\begin_inset Formula \[
+\psi_{nlm}=R_{nl}(r)\, Y_{l}^{m}(\theta,\varphi)\]
+
+\end_inset 
+
+La parte radial depende del potencial central; para el Hidrógeno ha de verificar
+\begin_inset Formula \[
+-\frac{\hbar^{2}}{2\mu}\ddr{\left(rR\right)}+\left(-\frac{e^{2}}{4\pi\epsilon_{0}r}+\frac{l(l+1)}{2\mu\, r^{2}}\right)(rR)=E_{n}(rR)\]
+
+\end_inset 
+
+donde el término dependiente del número cuántico angular se denomina 
+\emph on 
+centrífugo
+\emph default 
+.
+ La resolución de esta ecuación permite obtener el espectro de energías
+ 
+\begin_inset Formula $E_{n}$
+\end_inset 
+
+ de forma exacta:
+\begin_inset Formula \[
+E_{n}=-\left(\frac{1}{4\pi\epsilon_{0}}\right)^{2}\frac{\mu e^{2}}{2n^{2}\hbar^{2}}.\]
+
+\end_inset 
+
+
+\layout Standard
+
+En el caso de un átomo multielectrónico se emplea normalmente la 
+\emph on 
+aproximación de un electrón
+\emph default 
+
+\begin_inset LatexCommand \index{aproximación!de un electrón}
+
+\end_inset 
+
+.
+ Como punto de partida para esta aproximación podemos separar el hamiltoniano
+ atómico en una suma de hamiltonianos de átomo de Hidrógeno, cada uno correspond
+iente a la energía de un electrón individual frente al núcleo de carga 
+\begin_inset Formula $Ze$
+\end_inset 
+
+, y las energías entre los electrones estimadas separadamente.
+ Así escribiremos 
+\begin_inset Formula \[
+H=H_{0}+V_{ee}\]
+
+\end_inset 
+
+Con la notación 
+\begin_inset Formula $\vec{r}_{i}$
+\end_inset 
+
+ para las coordenadas del 
+\begin_inset Formula $i$
+\end_inset 
+
+-ésimo electrón tenemos
+\begin_inset Formula \[
+H_{0}(\vec{r}_{1}\ldots\vec{r}_{n})=H_{01}(\vec{r}_{1})+H_{02}(\vec{r}_{2})+\cdots+H_{0n}(\vec{r}_{n})=\sum_{i=1}^{n}H_{0i}\left(\vec{r}_{i}\right)\]
+
+\end_inset 
+
+donde cada 
+\begin_inset Formula $H_{0i}$
+\end_inset 
+
+ es del tipo 
+\begin_inset LatexCommand \ref{eq:ec-autoval-hidrogenoide}
+
+\end_inset 
+
+:
+\begin_inset Formula \[
+H_{0i}=-\frac{\hbar^{2}}{2\mu}\Delta_{i}-\frac{Ze^{2}}{4\pi\,\epsilon_{0}\, r_{i}}\]
+
+\end_inset 
+
+Los autoestados de estos hamiltonianos hidrogenoides son esencialmente los
+ conocidos del átomo de Hidrógeno.
+ Su ecuación de autovalores es
+\begin_inset Formula \[
+H_{0i}(\vec{r}_{i})\,\varphi_{i0}(\vec{r}_{i})=E_{i0}\,\varphi_{i0}(\vec{r}_{i})\]
+
+\end_inset 
+
+y la del sistema total sin considerar la perturbación debida a la interacción
+ interelectrónica 
+\begin_inset Formula $V_{ee}$
+\end_inset 
+
+ es: 
+\begin_inset Formula \[
+H_{0}\,\psi_{0}=E_{0}\,\psi_{0}\]
+
+\end_inset 
+
+
+\layout Standard
+
+En términos de las funciones de onda y energías del problema individual,
+ la función de onda y la energía totales se escriben así:
+\begin_inset Formula \begin{eqnarray*}
+\psi_{0} & = & \varphi_{10}(\vec{r}_{1})\otimes\cdots\otimes\varphi_{n0}(\vec{r}_{n})\\
+E_{0} & = & E_{10}+\cdots+E_{n0}\end{eqnarray*}
+
+\end_inset 
+
+Asumiendo la carga del electrón repartida en el espacio en proporción a
+ la onda de probabilidad podemos calcular con estas funciones el potencial
+ que produce sobre un electrón 
+\begin_inset Formula $i$
+\end_inset 
+
+ el conjunto de electrones 
+\begin_inset Formula $j=1\ldots n,j\neq i$
+\end_inset 
+
+ del siguiente modo (figura 
+\begin_inset LatexCommand \ref{fig:int-electronica}
+
+\end_inset 
+
+):
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/int-electronica-src.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:int-electronica}
+
+\end_inset 
+
+La carga en un pequeño recinto es el producto de la densidad de carga 
+\begin_inset Formula $e\left|\varphi_{j0}\right|^{2}$
+\end_inset 
+
+ por el volumen del recinto, 
+\begin_inset Formula $\mathrm{d}^{3}V_{j}$
+\end_inset 
+
+.
+\end_inset 
+
+
+\begin_inset Formula \[
+V_{i0}(\vec{r}_{i})=\sum_{i\neq j}\int\frac{e^{2}|\varphi_{j0}(\vec{r}_{j})|^{2}}{4\pi\epsilon_{0}\,|\vec{r}_{j}-\vec{r}_{i}|}\,\mathrm{d}^{3}V_{j}\]
+
+\end_inset 
+
+donde 
+\begin_inset Formula $\varphi_{j0}$
+\end_inset 
+
+ viene de la ecuación de autovalores de un electrón.
+ 
+\layout Standard
+
+Con este potencial podemos escribir la ecuación del electrón 
+\begin_inset Formula $i$
+\end_inset 
+
+.
+ En efecto, en este orden de aproximación, 
+\begin_inset Formula \[
+\left[-\frac{\hbar^{2}}{2m}\Delta_{i}-\frac{Z\, e^{2}}{4\pi\,\epsilon_{0}\, r_{i}}+V_{i0}(r_{i})\right]\varphi_{i1}(\vec{r}_{i})=E_{i1}\varphi_{i1}(\vec{r}_{i})\]
+
+\end_inset 
+
+En esto consiste la aproximación de un electrón: sustituir 
+\begin_inset Formula $V_{ee}$
+\end_inset 
+
+ por el efecto promedio de todos los electrones.
+\begin_inset ERT
+status Open
+
+\layout Standard
+
+\backslash 
+com{Quizá se puede explicar mejor...}
+\end_inset 
+
+ La solución (generalmente numérica) de estas ecuaciones nos permite calcular
+ un nuevo grupo de autofunciones 
+\begin_inset Formula $\varphi_{i1}$
+\end_inset 
+
+ que ya tiene en cuenta el potencial mutuo entre los electrones.
+ Con estas autofunciones se puede volver a calcular el potencial sobre 
+\begin_inset Formula $i$
+\end_inset 
+
+ debido a los otros electrones: 
+\begin_inset Formula \[
+V_{i1}(\vec{r}_{i})=\sum_{i\neq j}\int\frac{e^{2}|\varphi_{j1}(\vec{r}_{j})|^{2}}{4\pi\epsilon_{0}\,|\vec{r}_{j}-\vec{r}_{i}|}\,\mathrm{d}^{3}V_{j}\]
+
+\end_inset 
+
+
+\begin_inset ERT
+status Open
+
+\layout Standard
+
+\backslash 
+com{Creo que sería muy interesante indicar la iteración del potencial o la función de onda mediante un superíndice entre corchetes; es práctica habitual en la literatura de métodos numéricos y facilita la lectura del subíndice: $V_i^{[1]},
+\backslash 
+phi_i^{[1]}$.}
+\end_inset 
+
+Que ahora será más exacto que el 
+\begin_inset Formula $V_{i0}$
+\end_inset 
+
+ que producían las funciones 
+\begin_inset Formula $\varphi_{i0}$
+\end_inset 
+
+.
+ El proceso se puede repetir iterativamente hasta que las autofunciones
+ y los potenciales se reproduzcan y sean autoconsistentes (
+\emph on 
+método de Hartree
+\emph default 
+).
+\layout Standard
+
+Es importante apuntar que el conjunto de funciones hidrogenoideas 
+\begin_inset Formula $\varphi_{i0}(\vec{r}_{i})$
+\end_inset 
+
+ tomadas para formar 
+\begin_inset Formula $\varphi_{0}$
+\end_inset 
+
+ debe ser tal que al estar ocupados por los electrones respeten el principio
+ de exclusión de Pauli
+\begin_inset LatexCommand \index{Pauli!principio de exclusión}
+
+\end_inset 
+
+; es decir, que no haya más de dos electrones (con espines opuestos) en
+ cada estado 
+\begin_inset Formula $\varphi_{i0}$
+\end_inset 
+
+.
+ Cuando se considera esta restricción, el método autoconsistente pasa a
+ denominarse 
+\emph on 
+método de Hartree-Fock
+\emph default 
+.
+\layout Section
+
+Sistemas poliatómicos 
+\layout Standard
+
+
+\begin_inset LatexCommand \label{sec:sistemas-poliatomicos}
+
+\end_inset 
+
+Los átomos que en último término constituyen la materia se agrupan formando
+ agregados de complejidad variable: van desde unos pocos (moléculas), hasta
+ del orden de 
+\begin_inset Formula $10^{23}$
+\end_inset 
+
+ o más (sólidos), a veces con estructuras ordenadas (cristales).
+\layout Standard
+
+En los sistemas polielectrónicos se asume que el corazón atómico formado
+ por el núcleo y los electrones de las capas internas (
+\emph on 
+core
+\emph default 
+
+\begin_inset LatexCommand \index{core}
+
+\end_inset 
+
+), permanece inalterado dentro del conjunto.
+ Es en este sentido en el que los átomos que lo forman conservan una cierta
+ individualidad.
+ El conjunto de los corazones atómicos forma una estructura de iones positivos,
+ que genera un potencial en el que se mueven los electrones de la última
+ capa de los átomos originales.
+ Estos son los que mantendrán unidos a los iones positivos.
+ Consideremos entonces el sistema poliatómico como formado por los corazones
+ atómicos.
+\layout Standard
+
+Si llamamos 
+\begin_inset Formula $\vec{x}_{i}$
+\end_inset 
+
+ a las coordenadas de los electrones corticales y 
+\begin_inset Formula $\vec{q}_{i}$
+\end_inset 
+
+ a las de los corazones atómicos el hamiltoniano del sistema se puede escribir
+ como una suma, 
+\begin_inset Formula $H=T_{e}+T_{n}+U$
+\end_inset 
+
+ donde
+\begin_inset ERT
+status Open
+
+\layout Standard
+
+\backslash 
+com{Una notación "gráfica" posible para subindicar una magnitud como relativa al core o la corteza sería $
+\backslash 
+Delta_{
+\backslash 
+bullet},
+\backslash 
+Delta_{
+\backslash 
+bigcirc}$.}
+\end_inset 
+
+
+\begin_inset Formula \begin{align*}
+T_{e}(x) & \equiv{\displaystyle {\textstyle \sum_{i}}-\frac{\hbar^{2}}{2m}\Delta_{\vec{x}_{i}}} &  & \textrm{(energía cinética $e^{-}$)}\\
+T_{n}(q) & \equiv{\displaystyle {\textstyle \sum_{j}}-\frac{\hbar^{2}}{2M_{j}}\Delta_{\vec{q}_{i}}} &  & \textrm{(energía cinética corazones)}\\
+U(x,q) & \equiv U(\vec{x}_{1},\vec{x}_{2},...,\vec{q}_{1},\vec{q}_{2},...) &  & \textrm{(interacción corazones-corteza)}\end{align*}
+
+\end_inset 
+
+Y la ecuación de Schrödinger del sistema poliatómico se puede escribir 
+\begin_inset Formula \[
+\left(T_{e}+T_{n}+U\right)\,\psi(x,q)=E\,\psi(x,q).\]
+
+\end_inset 
+
+
+\layout Standard
+
+En un sistema poliatómico en equilibrio todos los componentes deben estar
+ en un mínimo de potencial.
+ Si se apartan del fondo del pozo de potencial, la fuerza que actúa en pequeños
+ desplazamientos desde la posición de equilibrio es 
+\begin_inset Formula \begin{eqnarray*}
+F_{e} & =- & m\omega_{e}^{2}\Delta x\\
+F_{n} & =- & M\omega_{n}^{2}\Delta q\end{eqnarray*}
+
+\end_inset 
+
+Pero como los potenciales que afectan a los electrones exteriores y corazones
+ son de origen coulombiano y del mismo orden (misma curvatura)
+\begin_inset Formula \[
+\left.\begin{array}{c}
+F_{e}\,\simeq\, F_{n}\\
+\Delta x\,\simeq\,\Delta q\end{array}\right\} \,\Longrightarrow\,\frac{\omega_{e}}{\omega_{n}}\,\simeq\,\sqrt{\frac{M}{m}}\,\simeq\,10^{2}\]
+
+\end_inset 
+
+ Es decir que en el tiempo en el que el ion positivo realiza una oscilación
+ el electrón realiza del orden de 
+\begin_inset Formula $100$
+\end_inset 
+
+.
+ Las grandes masas de los iones positivos no pueden seguir el movimiento
+ de las pequeñas masas electrónicas.
+ Sus funciones de onda no pueden pues depender de las posiciones instantáneas
+ de los electrones.
+ Los núcleos sólo perciben el efecto promedio del electrón en su orbital.
+\layout Standard
+
+Por el contrario los orbitales electrónicos cambian en función de las posiciones
+ de los iones positivos en cada momento.
+ Resulta así razonable separar en la función de onda la parte de los iones
+ positivos de la parte electrónica:
+\begin_inset Formula \[
+\psi(x,q)=\psi_{e}(x,q)\,\psi_{n}(q)\]
+
+\end_inset 
+
+Y proceder igualmente con los operadores, 
+\begin_inset Formula $H=H_{e}+H_{n}$
+\end_inset 
+
+ con 
+\begin_inset Formula \[
+\begin{split}H_{e} & \equiv T_{e}+U(x,q)\\
+H_{n} & \equiv T_{n}\end{split}
+\]
+
+\end_inset 
+
+
+\layout Standard
+
+La ecuación de Schrödinger con esta separación resulta 
+\begin_inset Formula \[
+H_{e}\,\left[\psi_{e}(x,q)\psi_{n}(q)\right]+H_{n}\,\left[\psi_{e}(x,q)\psi_{n}(q)\right]=E\,\psi_{e}(x,q)\psi_{n}(q)\]
+
+\end_inset 
+
+Como las deformaciones que sufren los orbitales electrónicos al cambiar
+ las posiciones de los núcleos son mucho menores que las dependencias que
+ tienen en las propias variables electrónicas, podemos despreciar algunas
+ derivadas.
+ Es a esto a lo que se llama 
+\emph on 
+aproximación adiabática
+\emph default 
+
+\begin_inset LatexCommand \index{aproximación!adiabática}
+
+\end_inset 
+
+: 
+\begin_inset Formula \[
+\left.\begin{split} & \left|\frac{\partial\psi_{n}}{\partial q}\frac{\partial\psi_{e}}{\partial q}\right|\\
+ & \left|\psi_{n}\frac{\partial^{2}\psi_{e}}{\partial q^{2}}\right|\end{split}
+\right\} \,\ll\,\left|\psi_{e}\frac{\partial^{2}\psi_{n}}{\partial q^{2}}\right|,\:\left|\psi_{n}\frac{\partial^{2}\psi_{e}}{\partial q^{2}}\right|\]
+
+\end_inset 
+
+
+\layout Standard
+
+Estas suposiciones permiten simplificar la ecuación de autovalores
+\begin_inset Formula \[
+\psi_{n}H_{e}\psi_{e}+\psi_{e}H_{n}\psi_{n}=E\,\psi_{e}\psi_{n}\]
+
+\end_inset 
+
+con lo que podemos efectuar una semiseparación de variables 
+\begin_inset Formula \[
+-E_{e}(q)\equiv-\frac{1}{\psi_{e}}H_{e}\psi_{e}=\frac{1}{\psi_{n}}H_{n}\psi_{n}-E\]
+
+\end_inset 
+
+dando lugar a las siguientes dos ecuaciones
+\begin_inset Formula \begin{eqnarray*}
+H_{e}\,\psi_{e}(x;q) & = & E_{e}(q)\,\psi_{e}(x;q)\\
+{}[H_{n}+E_{e}(q)]\,\psi_{n}(q) & = & E\,\psi_{n}(q)\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Standard
+
+La primera de estas ecuaciones ha de ser resuelta en las variables electrónicas
+ y para unas posiciones fijas 
+\begin_inset Formula $q$
+\end_inset 
+
+ de los iones positivos, que funcionan como constantes en la integración
+ de la primera ecuación (parámetros adiabáticos).
+ Los autovalores 
+\begin_inset Formula $E_{e}(q)$
+\end_inset 
+
+ obtenidos al efectuar esta integración son la energía potencial en que
+ se mueven los núcleos en la segunda ecuación.
+ Por lo tanto en principio el orden lógico consiste en resolver previamente
+ la primera ecuación para poder abordar después el problema de la segunda,
+ que es la que da las energías 
+\begin_inset Formula $E$
+\end_inset 
+
+ del sistema poliatómico.
+\begin_inset ERT
+status Open
+
+\layout Standard
+
+\backslash 
+com{Ya que después se hace referencia de modo constante al término 
+\backslash 
+emph{adiabático}, puede ser conveniente explicarlo aquí un poco más, en relación con los sistemas jerárquicos -ATC. No en principio -JMGP.}
+\end_inset 
+
+
+\layout Standard
+
+Hasta ahora hemos supuesto implícitamente que el centro de gravedad de la
+ molécula está en reposo.
+ Vamos a suponer además ahora que la molécula tampoco rota.
+ De este modo sólo le quedan al sistema los grados de libertad internos.
+\layout Standard
+
+Podemos representar en un diagrama simple (figura 
+\begin_inset LatexCommand \ref{fig:niv-E-molec-src}
+
+\end_inset 
+
+) las coordenadas configuracionales de los estados de la molécula.
+ Las soluciones de la ecuación electrónica son los pozos de potencial 
+\begin_inset Formula $E_{ei}(q)$
+\end_inset 
+
+ en los que se mueven los iones positivos.
+ El fondo de cada uno de estos pozos corresponde a una posición de equilibrio
+ de los iones.
+ En estas posiciones de equilibrio los iones no vibran y la energía 
+\begin_inset Formula $E_{ei}(q_{0i})$
+\end_inset 
+
+ es puramente electrónica.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/niv-E-molec-src.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:niv-E-molec-src}
+
+\end_inset 
+
+Esquema de niveles electrónicos de un sistema molecular en función de una
+ coordenada 
+\begin_inset Formula $q$
+\end_inset 
+
+ de los corazones.
+ Las líneas paralelas en el nivel electrónico más bajo, 
+\begin_inset Formula $E_{e1}$
+\end_inset 
+
+ representan subniveles vibracionales 
+\begin_inset Formula $E_{v1j}$
+\end_inset 
+
+.
+ 
+\begin_inset Formula $E$
+\end_inset 
+
+ representa la energía total del nivel 
+\begin_inset Formula $i=1,j=6$
+\end_inset 
+
+.
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+muchísimas mejoras posibles en la notación.
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+En cada uno de estos pozos vibran los núcleos de manera que al resolver
+ la segunda ecuación se obtienen los niveles de energía 
+\begin_inset Formula $E$
+\end_inset 
+
+ del sistema.
+ En estos niveles desde la energía 
+\begin_inset Formula $E_{ei}(q_{0i})$
+\end_inset 
+
+ hasta 
+\begin_inset Formula $E$
+\end_inset 
+
+ podemos asumir una contribución de energía de vibración 
+\begin_inset Formula $E_{vij}$
+\end_inset 
+
+ de modo que 
+\begin_inset Formula \[
+E=E_{ei}\left(q_{0i}\right)+E_{vij}\]
+
+\end_inset 
+
+
+\layout Standard
+
+Frecuentemente las vibraciones son de poca amplitud
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Si las oscilaciones de los iones positivos no pueden considerarse pequeñas
+ se pueden utilizar potenciales fenomenológicos más parecidos al real, como
+ el de Morse:
+\begin_inset Formula \[
+E_{e}(q)=D\left[\left(1-e^{-\beta(q-q_{0})}\right)^{2}-1\right]\]
+
+\end_inset 
+
+En esta expresión 
+\begin_inset Formula $D$
+\end_inset 
+
+ representa la energía de disociación.
+\end_inset 
+
+ y entonces el desarrollo de 
+\begin_inset Formula $E_{ei}(q)$
+\end_inset 
+
+ alrededor del mínimo hasta orden cuadrático (parabólico) es suficiente:
+\begin_inset Formula \[
+E_{ei}\left(q\right)=E_{ei}\left(q_{i0}\right)+\left.\dpa{E_{ei}}{q}\right|_{q_{i0}}\left(q-q_{i0}\right)+\frac{1}{2}\left.\ddpa{E_{ei}}{q}\right|_{q_{i0}}\left(q-q_{i0}\right)^{2}+\cdots\]
+
+\end_inset 
+
+y como la primera derivada se anula, si llamamos 
+\begin_inset Formula $K$
+\end_inset 
+
+ al valor de la segunda tenemos la forma armónica de los pozos vibracionales:
+\layout Standard
+
+
+\begin_inset Formula \[
+E_{vi}(q)=E_{ei}(q)-E_{ei}(q_{0i})\,\simeq\,\frac{K}{2}(q-q_{0i})^{2}.\]
+
+\end_inset 
+
+
+\layout Standard
+\noindent 
+Si la molécula gira alrededor de un eje que pasa por su centro de gravedad,
+ su energía de rotación es 
+\begin_inset Formula \[
+E_{Rir}=\frac{\hbar(r+1)r}{2I}\]
+
+\end_inset 
+
+donde 
+\begin_inset Formula $I$
+\end_inset 
+
+ es el momento de inercia respecto al eje de rotación.
+ La degeneración de estos niveles, que se superponen a los vibracionales,
+ es 
+\begin_inset Formula $2r+1$
+\end_inset 
+
+.
+\layout Standard
+
+Finalmente, vemos que los números cuánticos que caracterizarán a los autoestados
+ electrónicos son 
+\layout Itemize
+
+un número cuántico genérico, 
+\begin_inset Formula $e$
+\end_inset 
+
+, que caracteriza a la parte electrónica 
+\begin_inset Formula $\psi_{e}(x,y)$
+\end_inset 
+
+ de la función de ondas y que es una abreviatura que puede contener más
+ de un número cuántico,
+\layout Itemize
+
+un número cuántico vibracional, 
+\begin_inset Formula $v$
+\end_inset 
+
+, que también puede ser una abreviatura de varios números correspondientes
+ a los diversos modos normales de vibración de la molécula, y 
+\layout Itemize
+
+un número cuántico de rotación, 
+\begin_inset Formula $r$
+\end_inset 
+
+, que puede ser también múltiple al tener la molécula varios ejes de rotación
+ no equivalentes.
+ 
+\layout Standard
+
+Es decir, que la función de ondas molecular se puede escribir abreviadamente
+ con la notación: 
+\begin_inset Formula \begin{equation}
+\psi_{evr}=\psi_{e}(x,q)\psi_{ev}(q)\psi_{r}(\theta,\varphi).\label{eq:fdo-total-elec-vib-rot}\end{equation}
+
+\end_inset 
+
+
+\the_end

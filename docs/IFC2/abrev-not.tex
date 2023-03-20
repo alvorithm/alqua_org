@@ -1,0 +1,146 @@
+\documentclass[spanish,a4paper,12pt]{book}
+\usepackage{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{eurosym}
+\input{lyxpackages.sty}
+\input{IFC2-packages.sty}
+\input{IFC2-macros.sty}
+\begin{document}
+
+
+\chapter*{Abreviaturas y convenios}
+
+
+\section*{Abreviaturas}
+
+\begin{multicols}{2}
+
+{\small ecS} {\small ecuación de} \noun{\small Schrödinger}{\small \par}
+
+{\small ecD ecuación de} \noun{\small Dirac}{\small \par}
+
+{\small ecO ecuación de ondas}{\small \par}
+
+{\small ecM ecuaciones de} \noun{\small Maxwell}{\small \par}
+
+{\small CG coeficientes} \noun{\small Clebsch}{\small -}\noun{\small Gordan}{\small \par}
+
+{\small exSG experimento} \noun{\small Stern}{\small -}\noun{\small Gerlach}{\small \par}
+
+{\small esMB estadística de} \noun{\small Maxwell}{\small -}\noun{\small Boltzmann}{\small \par}
+
+{\small esBE estadística de} \noun{\small Bose--Einstein}{\small \par}
+
+{\small esFD estadística de} \noun{\small Fermi--Dirac}{\small \par}
+
+{\small sr sistema de referencia}{\small \par}
+
+{\small CM centro de masas}{\small \par}
+
+\end{multicols}
+
+
+\section*{Unidades y terminología}
+
+Se utilizará de modo preferente el sistema cgs. Atención a las constantes
+en las ecuaciones del electromagnetismo.
+
+\begin{description}
+\item [estacionaria]se dice de una magnitud que es constante en el tiempo
+(con derivada parcial respecto al tiempo nula).
+\item [homogénea]se dice de una magnitud que no es función de punto (las
+derivadas parciales respecto a coordenadas espaciales son nulas).
+\end{description}
+
+\section*{Notación}
+
+
+\subsection*{Operadores}
+
+En modo matemático \LaTeX{} (y por tanto LyX)
+utiliza por defecto números tipo \emph{Roman} mientras qye los caracteres
+son tipo \emph{Italic.} Para caracterizar las magnitudes físicas escalares
+utilizaremos letras de tipo \emph{itálica} en cursiva. Ejemplos son
+la distancia al origen $r$, la frecuencia $\omega$ o la energía
+$E$. Las magnitudes vectoriales vendrán escritas en \emph{Roman}
+negrita como, por ejemplo, $\mathbf{B}$ y $\mathbf{p}$ que son respectivamente
+la inducción magnética y el momento lineal. Para los operadores se
+utilizarán letras \emph{Roman} ($\mathrm{r},\,\mathrm{H}$ respectivamente
+el operador asociado a la coordenada radial y el hamiltoniano) excepto
+si son operadores vectoriales en los que emplearemos letras \emph{rectas}
+y sencillas mediante la font \emph{Sans Serif} ($\mathsf{L},\,\mathsf{p},\,\mathsf{r}$
+son el momento angular orbital, el momento lineal y el operador asociado
+al vector de posición). En el cuadro \ref{t: not operadores} situamos
+juntas para su comparación algunas magnitudes físicas y el observable
+asociado.%
+\begin{table}[!hbtp]
+\begin{longtable}{c|c|c|c|c|c}
+{\large Magnitud}&
+{\large Posición}&
+{\large Distancia}&
+{\large M. lineal}&
+{\large M. angular}&
+{\large Energía}\tabularnewline
+\hline
+{\large Símbolo Mag.}&
+\textsf{\large $\mathbf{r}$}&
+\textsf{\large $r$}&
+\textsf{\large $\mathbf{p}$}&
+\textsf{\large $\mathbf{L}$}&
+\textsf{\large $H$}\tabularnewline
+{\large Símbolo Oper.}&
+\textsf{\large $\mathsf{r}$}&
+\textsf{\large $\mathrm{r}$}&
+\textsf{\large $\mathsf{p}$}&
+\textsf{\large $\mathsf{L}$}&
+\textsf{\large $\mathrm{H}$ }\tabularnewline
+\hline
+\end{longtable}
+
+
+\caption{\label{t: not operadores}Notación para operadores.}
+\end{table}
+
+
+Nota: la aplicación de este convenio notacional condujo a algunos
+conflictos, por lo que no es completa a lo largo del documento.
+
+
+\subsection*{Aproximaciones, igualdades formales}
+
+Haremos dos tipos de cálculos aproximados:
+
+\begin{itemize}
+\item De precisión {}``orden de magnitud'' (símbolo $\approx$). Estos
+cálculos pueden ser inexactos hasta en un orden de magnitud.
+\item Cálculos más finos, pero, por supuesto y como muchas veces en física,
+no totalmente precisos (para ellos utilizaremos el símbolo $\simeq$).
+\end{itemize}
+Por otra parte, el símbolo $\doteq$ se utilizará para denotar \emph{igualdades}
+\emph{formales}, es decir, igualdades que no deben entenderse matemáticamente
+del modo convencional estricto (porque no tendrían sentido). Un ejemplo
+de esto lo constituye la regla mnemotécnica del producto vectorial
+que lo {}``iguala'' (en el sentido de $\doteq$) a un determinante,
+algunos de cuyos elementos son escalares y otros de los cuales son
+vectores.
+
+
+\section*{Clasificación de los problemas}
+
+Es conveniente saber cuál es el propósito de cada problema y sobre
+qué puntos merece la pena incidir a la hora del estudio de la resolución
+de problemas. Por eso se han clasificado los ejercicios utilizando
+los siguientes códigos.
+
+{[}T{]} Problema de naturaleza teorica que complementa las clases
+de teoría.
+
+{[}TS{]} Problema teórico suplementario. 
+
+{[}A{]} Problema de aplicación de la teoría.
+
+{[}X{*}{]} Los problemas marcados con un asterisco presentan una mayor
+dificultad. 
+
+\end{document}

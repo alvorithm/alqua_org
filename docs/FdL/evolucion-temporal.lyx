@@ -1,0 +1,449 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass book
+\begin_preamble
+\input{FdL-packages.sty}
+\input{FdL-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding auto
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Chapter
+
+La evolución temporal de los estados 
+\layout Section
+
+Introducción
+\layout Standard
+
+Sea un sistema físico representado por un hamiltoniano 
+\begin_inset Formula $H_{0}$
+\end_inset 
+
+ cuyo problema espectral
+\begin_inset Formula \[
+H_{0}\ket{n}=E_{n}^{0}\ket{n}\]
+
+\end_inset 
+
+está resuelto, de forma que los estados 
+\begin_inset Formula $\{\ket{n}\}$
+\end_inset 
+
+ forman una base ortonormalizada del espacio de Hilbert de los estados del
+ sistema, 
+\begin_inset Formula $\braket{m}{n}=\delta_{mn}$
+\end_inset 
+
+.
+ Su evolución obedecerá a la ecuación de Schr\i \"{o}
+dinger, 
+\begin_inset Formula \[
+i\hbar\frac{\partial}{\partial t}\,\ket{n\left(t\right)}=H_{0}\,\ket{n\left(t\right)}.\]
+
+\end_inset 
+
+Podemos describir también esta evolución utilizando un operador 
+\begin_inset Formula $U(t)$
+\end_inset 
+
+ unitario 
+\begin_inset Formula $(U^{\dag}U=UU^{\dag}=I)$
+\end_inset 
+
+:
+\begin_inset Formula \[
+\ket{n\left(t\right)}=U(t)\ket{n\left(0\right)}=U(t)\ket{n}\]
+
+\end_inset 
+
+de modo que 
+\begin_inset Formula \[
+i\hbar\frac{\partial}{\partial t}U(t)|n\rangle=H_{0}U(t)|n\rangle\quad\rightarrow\quad i\hbar\frac{\partial}{\partial t}U(t)=H_{0}U(t).\]
+
+\end_inset 
+
+Si 
+\begin_inset Formula $H_{0}$
+\end_inset 
+
+ no depende explícitamente del tiempo, la solución formal de esta ecuación
+ es 
+\begin_inset Formula \[
+U(t)=\exp\left(-\frac{i}{\hbar}H_{0}t\right)\]
+
+\end_inset 
+
+o sea 
+\begin_inset Formula \[
+\begin{split}|n(t)\rangle & =\exp\left(-\frac{i}{\hbar}H_{0}t\right)\,|n\rangle=(1-\frac{i}{\hbar}H_{0}t+\cdots)|n\rangle\\
+ & =(1-i\frac{E^{0}}{\hbar}t+\cdots)|n\rangle=\exp\left(-i\,\frac{E^{0}}{\hbar}t\right)|n\rangle.\end{split}
+\]
+
+\end_inset 
+
+
+\layout Standard
+
+Es fácil ver que la ortonormalidad de los autoestados 
+\begin_inset Formula $|n(t)\rangle$
+\end_inset 
+
+ se conserva en el transcurso del tiempo y por tanto siguen formando una
+ base del espacio.
+\layout Section
+
+Evolución temporal en presencia de una perturbación
+\layout Standard
+
+Supongamos ahora que nuestro sistema está representado por un hamiltoniano
+ 
+\begin_inset Formula $H$
+\end_inset 
+
+ que difiere de 
+\begin_inset Formula $H_{0}$
+\end_inset 
+
+ en el hamiltoniano 
+\begin_inset Formula $V$
+\end_inset 
+
+ que actúa sobre los estados del mismo espacio de Hilbert 
+\begin_inset Formula \[
+H=H_{0}+V\]
+
+\end_inset 
+
+Un vector estado del sistema será ahora 
+\begin_inset Formula $|\psi(t)\rangle$
+\end_inset 
+
+, solución de la ecuación de Schr\i \"{o}
+dinger 
+\begin_inset Formula \begin{equation}
+i\hbar\frac{\partial}{\partial t}|\psi(t)\rangle=(H_{0}+V)|\psi(t)\rangle.\label{eq:Sch-perturb}\end{equation}
+
+\end_inset 
+
+Este vector estado se puede expandir como una combinación lineal de los
+ vectores de la base 
+\begin_inset Formula $|n(t)\rangle$
+\end_inset 
+
+ de soluciones no perturbadas,
+\begin_inset Formula \[
+|\psi(t)\rangle=\sum_{n}C_{n}(t)e^{-\frac{i}{\hbar}E_{n}^{0}t}|n\rangle\]
+
+\end_inset 
+
+ Llevando este desarrollo a la ecuación de evolución 
+\begin_inset LatexCommand \ref{eq:Sch-perturb}
+
+\end_inset 
+
+ 
+\begin_inset Formula \[
+i\hbar\sum_{n}\dt{C_{n}\left(t\right)}e^{-\frac{i}{\hbar}E_{n}^{0}t}|n\rangle+\sum_{n}E_{n}^{0}C_{n}(t)e^{-\frac{i}{\hbar}E_{n}^{0}t}|n\rangle=\sum_{n}C_{n}(t)e^{-\frac{i}{\hbar}E_{n}^{0}t}(E_{n}^{0}+V)|n\rangle\]
+
+\end_inset 
+
+Cancelando los términos en 
+\begin_inset Formula $E_{n}^{0}$
+\end_inset 
+
+ y multiplicando escalarmente por el autoestado 
+\begin_inset Formula $\langle m|$
+\end_inset 
+
+ obtenemos
+\begin_inset Formula \begin{equation}
+\dt{C_{m}}=\frac{1}{i\hbar}\sum_{n}e^{-\frac{i}{\hbar}\left(E_{n}^{0}-E_{m}^{0}\right)t}C_{n}(t)\langle m|V|n\rangle\label{eq:evol-Cm}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+Resolver este conjunto de ecuaciones diferenciales acopladas es equivalente
+ a resolver la ecuación de Schr\i \"{o}
+dinger 
+\begin_inset LatexCommand \ref{eq:Sch-perturb}
+
+\end_inset 
+
+.
+ En la práctica frecuentemente se trata de un conjunto infinito de ecuaciones
+ y por tanto su resolución exacta puede resultar imposible.
+\layout Section
+
+El desarrollo perturbativo
+\layout Standard
+
+Las ecuaciones 
+\begin_inset LatexCommand \ref{eq:evol-Cm}
+
+\end_inset 
+
+ se pueden escribir de una forma más compacta introduciendo la frecuencia
+ de transición entre los niveles 
+\begin_inset Formula $m$
+\end_inset 
+
+ y 
+\begin_inset Formula $n$
+\end_inset 
+
+ y el elemento de matriz del potencial entre ambos:
+\begin_inset Formula \[
+\omega_{mn}\equiv\frac{E_{m}^{0}-E_{n}^{0}}{\hbar},\qquad V_{mn}\equiv\langle m|V|n\rangle.\]
+
+\end_inset 
+
+Así:
+\begin_inset Formula \begin{equation}
+\dt{C_{m}\left(t\right)}=\frac{1}{i\hbar}\sum_{n}e^{i\omega_{mn}t}V_{mn}C_{n}(t)\label{eq:evol-Cm-compacta}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+Vamos ahora a escribir los coeficientes 
+\begin_inset Formula $C_{n}(t)$
+\end_inset 
+
+ en la forma de un desarrollo en serie de potencias del elemento o elementos
+ de matriz del hamiltoniano 
+\begin_inset Formula $V$
+\end_inset 
+
+:
+\begin_inset Formula \begin{equation}
+C_{n}(t)=C_{n}^{(0)}(t)+C_{n}^{(1)}(t)+C_{n}^{(2)}(t)+\cdots\qquad\textrm{con}\qquad C_{n}^{(l)}(t)\propto\left(\frac{Vt}{\hbar}\right)^{l}\label{eq:desarrollo-Cn}\end{equation}
+
+\end_inset 
+
+El orden cero de perturbación corresponderá a la situación en que 
+\begin_inset Formula $V=0$
+\end_inset 
+
+.
+ En este caso los coeficientes 
+\begin_inset Formula $C_{n}(t)$
+\end_inset 
+
+ se mantendrían en los valores iniciales:
+\begin_inset Formula \[
+C_{n}^{(0)}(t)=C_{n}(0),\qquad\dt{C_{n}^{(0)}(t)}=0\]
+
+\end_inset 
+
+El desarrollo 
+\begin_inset LatexCommand \ref{eq:desarrollo-Cn}
+
+\end_inset 
+
+ debe cumplir la ecuación de evolución (
+\begin_inset LatexCommand \ref{eq:evol-Cm-compacta}
+
+\end_inset 
+
+), 
+\begin_inset Formula \[
+\dt{C_{m}^{(1)}}+\dt{C_{m}^{(2)}}+\cdots=\frac{1}{i\hbar}\sum_{n}(C_{n}(0)+C_{n}^{(1)}(t)+\cdots)\, e^{i\omega_{mn}t}V_{mn}\]
+
+\end_inset 
+
+Aquí 
+\begin_inset Formula $V$
+\end_inset 
+
+ es arbitrario, por lo que se deberán anular individualmente los términos
+ en las diversas potencias de 
+\begin_inset Formula $Vt/\hbar$
+\end_inset 
+
+.
+ Tenemos así el sistema de ecuaciones 
+\begin_inset Formula \begin{eqnarray}
+\dt{C_{m}^{(1)}} & = & \frac{1}{i\hbar}\sum_{n}C_{n}(0)e^{i\omega_{mn}t}V_{mn}\nonumber \\
+\dt{C_{m}^{(2)}} & = & \frac{1}{i\hbar}\sum_{n}C_{n}^{(1)}e^{i\omega_{mn}t}V_{mn}\nonumber \\
+\vdots & = & \vdots\label{eq:sistema-dif-Cm}\end{eqnarray}
+
+\end_inset 
+
+que puede en principio ser resuelto iterativamente a partir de las condiciones
+ iniciales 
+\begin_inset Formula $C_{n}(0)$
+\end_inset 
+
+.
+\layout Standard
+
+Para fijar ideas, imaginemos que el hamiltoniano 
+\begin_inset Formula $V$
+\end_inset 
+
+ comienza a actuar en el instante 
+\begin_inset Formula $t=0$
+\end_inset 
+
+ y que el sistema ha sido preparado en este instante inicial en el autoestado
+ 
+\begin_inset Formula $|j\rangle$
+\end_inset 
+
+ de 
+\begin_inset Formula $H_{0}$
+\end_inset 
+
+, de modo que 
+\begin_inset Formula $C_{n}(0)=\delta_{nj}$
+\end_inset 
+
+.
+ Las ecuaciones 
+\begin_inset LatexCommand \ref{eq:sistema-dif-Cm}
+
+\end_inset 
+
+ para el primer orden de perturbación en 
+\begin_inset Formula $V$
+\end_inset 
+
+ serán ahora 
+\begin_inset Formula \[
+\dt{C_{n}^{(1)}}=\frac{1}{i\hbar}e^{i\omega_{nj}t}V_{nj}\]
+
+\end_inset 
+
+Por tanto 
+\begin_inset Formula \begin{equation}
+C_{n}^{(1)}(t)=\frac{1}{i\hbar}\int_{0}^{t}V_{nj}e^{i\omega_{nj}t_{1}}\,\mathrm{d}t_{1}\label{eq:Cn-orden1}\end{equation}
+
+\end_inset 
+
+que cumple con lo estipulado en 
+\begin_inset LatexCommand \ref{eq:desarrollo-Cn}
+
+\end_inset 
+
+ para 
+\begin_inset Formula $l=1$
+\end_inset 
+
+:
+\begin_inset Formula \[
+C_{n}^{(1)}\propto\frac{Vt}{\hbar}.\]
+
+\end_inset 
+
+
+\layout Standard
+
+Si llevamos la solución a primer orden 
+\begin_inset LatexCommand \ref{eq:Cn-orden1}
+
+\end_inset 
+
+ a la ecuación del segundo orden obtenemos
+\begin_inset Formula \[
+\dt{C_{m}^{(2)}}=\left(\frac{1}{i\hbar}\right)^{2}\sum_{n}e^{i\omega_{mn}t}V_{mn}\int_{0}^{t}e^{i\omega_{nj}t_{1}}V_{nj}(t_{1})\,\mathrm{d}t_{1}\]
+
+\end_inset 
+
+que al integrar proporciona
+\begin_inset Formula \[
+C_{m}^{(2)}(t)=\left(\frac{1}{i\hbar}\right)^{2}\sum_{n}\int_{0}^{t}e^{i\omega_{mn}t_{2}}V_{mn}(t_{2})\left[\int_{0}^{t_{2}}e^{i\omega_{nj}t_{1}}V_{nj}(t_{1})\,\mathrm{d}t_{1}\right]\,\mathrm{d}t_{2}\]
+
+\end_inset 
+
+Y por tanto 
+\begin_inset Formula \[
+C_{m}^{(2)}\propto\frac{V^{2}t^{2}}{\hbar^{2}},\textrm{ e inducimos que }C_{m}^{(l)}\propto\left(\frac{Vt}{\hbar}\right)^{l}.\]
+
+\end_inset 
+
+Entonces, si los elementos de matriz cumplen 
+\begin_inset Formula $V_{mn}t/\hbar\ll1$
+\end_inset 
+
+ (o equivalentemente el tiempo es tan pequeño que 
+\begin_inset Formula $t\ll\hbar/V_{mn}$
+\end_inset 
+
+), el desarrollo perturbativo 
+\begin_inset LatexCommand \ref{eq:desarrollo-Cn}
+
+\end_inset 
+
+ converge rápidamente y lo aproximamos reteniendo solamente el primer orden
+ de perturbación:
+\begin_inset Formula \[
+C_{m}(t)\simeq C_{m}^{(1)}(t)\]
+
+\end_inset 
+
+
+\layout Standard
+
+Un estado inicial general es una combinación lineal de elementos 
+\begin_inset Formula $\ket{n}$
+\end_inset 
+
+ de la base,
+\begin_inset Formula \[
+|\psi(0)\rangle=\sum_{n}C_{n}(0)|n\rangle.\]
+
+\end_inset 
+
+Según 
+\begin_inset LatexCommand \ref{eq:sistema-dif-Cm}
+
+\end_inset 
+
+ el primer orden de perturbación es 
+\begin_inset Formula \[
+\dt{C_{m}}=\frac{1}{i\hbar}\sum_{n}C_{n}(0)e^{i\omega_{mn}t}V_{mn}\]
+
+\end_inset 
+
+que se puede integrar formalmente 
+\begin_inset Formula \[
+C_{m}(t)=\frac{1}{i\hbar}\sum_{n}C_{n}(0)\int_{0}^{t}e^{i\omega_{mn}t_{1}}V_{mn}\,\mathrm{d}t_{1}\]
+
+\end_inset 
+
+De manera que si 
+\begin_inset Formula $V$
+\end_inset 
+
+ no depende explícitamente del tiempo se tiene
+\begin_inset Formula \begin{equation}
+C_{m}(t)=\frac{1}{i\hbar}\sum_{n}C_{n}(0)V_{mn}\frac{e^{i\omega_{mn}t}-1}{i\omega_{mn}}.\label{eq:coef-desarrollo-perturb-indepd-t}\end{equation}
+
+\end_inset 
+
+
+\the_end

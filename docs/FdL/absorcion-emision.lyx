@@ -1,0 +1,2614 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass book
+\begin_preamble
+\input{FdL-packages.sty}
+\input{FdL-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding latin1
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize a4paper
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 1
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Chapter
+
+Absorción y emisión de radiación
+\layout Section
+
+Hamiltoniano del sistema radiación-materia
+\layout Standard
+
+En los temas anteriores hemos estudiado los estados del campo de radiación
+ y también el espectro de autoestados de los sistemas moleculares.
+ Por otra parte, hemos comprobado cómo se puede hacer el estudio de un sistema
+ sometido a una pequeña perturbación.
+ Es el momento de aprovechar estas herramientas para afrontar la descripción
+ del sistema acoplado radiación-materia, como un sistema aislado.
+ 
+\layout Standard
+
+Si el sistema material es tratado en la aproximación de una partícula, obedece
+ al hamiltoniano atómico 
+\begin_inset Formula $H_{a}$
+\end_inset 
+
+,
+\begin_inset Formula \[
+H_{a}=\frac{\vec{p}^{2}}{2m}+eV\left(\vec{r}\right)\]
+
+\end_inset 
+
+El hamiltoniano de 
+\emph on 
+un
+\emph default 
+ modo de radiación es, por su parte
+\begin_inset Formula \[
+H_{r}=\hbar\omega\left(a^{\dag}a+1/2\right)\]
+
+\end_inset 
+
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Esta notación es confusa, porque cuando hicimos la cuantificación de la radiación $H_r$ correspondía a la 
+\backslash 
+emph{suma} de todos los hamiltonianos de los modos... Por otra parte, quizá podríamos poner el indicativo de a qué sistema se refiere el hamiltoniano como superíndice (muy útil para $H_{i}$), ya que el H no suele aparecer en potencias -ATC.}
+\end_inset 
+
+Como es sabido, en la formulación del hamiltoniano de un sistema cuántico
+ el operador de momento lineal está asociado al momento hamiltoniano de
+ la partícula (la variable canónicamente conjugada de las coordenadas generaliza
+das).
+ Este momento frecuentemente coincide en los sistemas conservativos con
+ el momento mecánico, 
+\begin_inset Formula $\boldsymbol{\pi}=m\vec{v}$
+\end_inset 
+
+ o 
+\emph on 
+cantidad de movimiento
+\emph default 
+ de la partícula.
+ No obstante, si la partícula está en interacción con un campo electromagnético
+ esto no es así.
+ En este caso el momento mecánico de la partícula es 
+\begin_inset Formula \[
+\boldsymbol{\pi}=\vec{p}-e\vec{A}\]
+
+\end_inset 
+
+donde 
+\begin_inset Formula $\vec{p}$
+\end_inset 
+
+ es el momento hamiltoniano y por tanto es el que tiene asociado el operador
+ 
+\begin_inset Formula $\vec{p}=-i\hbar\grad{}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\vec{A}$
+\end_inset 
+
+ es el potencial vector del campo electromagnético.
+ Esto es consecuencia del carácter no conservativo del campo electromagnético,
+ pues la fuerza de Lorentz 
+\begin_inset Formula $\vec{F}=q\vec{E}+q\vec{v}\wedge\vec{B}$
+\end_inset 
+
+ depende de la velocidad.
+ Entonces el hamiltoniano total del sistema, incluyendo la interacción radiación
+ materia es
+\begin_inset Formula \begin{eqnarray*}
+H & = & \frac{(\vec{p}-e\vec{A})^{2}}{2m}+eV(\vec{r})+H_{r}\\
+ & = & \frac{\vec{p}^{2}}{2m}+eV(\vec{r})+H_{r}+\frac{e}{2m}(-\vec{p}\cdot\vec{A}-\vec{A}\cdot\vec{p})+\frac{e^{2}}{2m}\vec{A}^{2}\end{eqnarray*}
+
+\end_inset 
+
+Aquí 
+\begin_inset Formula $\vec{A}(\vec{r})$
+\end_inset 
+
+ en principio no conmuta con 
+\begin_inset Formula $\vec{p}$
+\end_inset 
+
+, pero sí cumple
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+El lector puede comprobar que una función arbitraria 
+\begin_inset Formula $F\left(q_{i}\right)$
+\end_inset 
+
+ cumple 
+\begin_inset Formula $[p_{i},F(q_{i})]=-i\hbar\frac{\partial F}{\partial q_{i}}$
+\end_inset 
+
+.
+\end_inset 
+
+
+\begin_inset Formula \[
+p_{i}A_{i}-A_{i}p_{i}=-i\hbar\frac{\partial A_{i}}{\partial x_{i}}\]
+
+\end_inset 
+
+que se da la circunstancia de que utilizando la condición de Coulomb
+\begin_inset LatexCommand \index{Coulomb! gauge de}
+
+\end_inset 
+
+
+\begin_inset LatexCommand \index{gauge! de Coulomb (o de radiación)}
+
+\end_inset 
+
+ o gauge de radiación
+\begin_inset LatexCommand \index{radiación! gauge de}
+
+\end_inset 
+
+ (
+\begin_inset Formula $\vec{\nabla}\cdot\vec{A}=0$
+\end_inset 
+
+) se transforma en:
+\begin_inset Formula \[
+\vec{p}\cdot\vec{A}-\vec{A}\cdot\vec{p}=-i\hbar\vec{\nabla}\cdot\vec{A}=0\]
+
+\end_inset 
+
+Entonces, como 
+\begin_inset Formula $\vec{p}\cdot\vec{A}=\vec{A}\cdot\vec{p}$
+\end_inset 
+
+ el término lineal en 
+\begin_inset Formula $\vec{A}$
+\end_inset 
+
+ se simplifica:
+\begin_inset Formula \[
+H=\frac{\vec{p}^{2}}{2m}+eV(\vec{r})+H_{r}-\frac{e}{m}\vec{A}\cdot\vec{p}+\frac{e^{2}}{2m}\vec{A}^{2}\]
+
+\end_inset 
+
+
+\layout Standard
+
+En esta expresión 
+\begin_inset Formula $\vec{p}$
+\end_inset 
+
+ es el momento hamiltoniano y no el momento mecánico de la partícula pero
+ aun así 
+\begin_inset Formula $\left|e\vec{A}\right|\ll\left|\vec{p}\right|$
+\end_inset 
+
+ consideraremos como hamiltoniano no perturbado 
+\begin_inset Formula \[
+H_{0}=\frac{\vec{p}^{2}}{2m}+eV(\vec{r})+H_{r}\]
+
+\end_inset 
+
+Y como perturbación debida a la interacción el hamiltoniano
+\begin_inset Formula \[
+H_{i}=-\frac{e}{m}\vec{A}\cdot\vec{p}+\frac{e^{2}}{2m}\vec{A}^{2}.\]
+
+\end_inset 
+
+
+\layout Standard
+
+Usualmente, incluso para grandes intensidades de radiación,
+\begin_inset Formula \[
+\left|\frac{e}{m}\,\vec{A}\cdot\vec{p}\right|\gg\frac{e^{2}}{2m}\,\vec{A}^{2}\]
+
+\end_inset 
+
+así que despreciamos el término en 
+\begin_inset Formula $\vec{A}^{2}$
+\end_inset 
+
+, cuyas contribuciones más importantes se producen a los procesos a dos
+ fotones:
+\begin_inset Formula \begin{equation}
+H_{i}\simeq-\frac{e}{m}\vec{A}\cdot\vec{p}\label{eq:ham-interaccion-rad-mat}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+Escribimos las ecuaciones de autovalores de la radiación y del átomo con
+ la siguiente notación, respectivamente:
+\begin_inset Formula \begin{align*}
+a^{\dag}a|n\rangle & =n|n\rangle &  & \textnormal{(radiación)}\\
+H_{a}|s\rangle & =\Sigma_{s}|s\rangle &  & \textrm{(materia)}\end{align*}
+
+\end_inset 
+
+Las autofunciones y autovalores de 
+\begin_inset Formula $H_{0}$
+\end_inset 
+
+ (es decir, sin considerar la interacción radiación--materia) tienen la
+ siguiente forma:
+\begin_inset Formula \begin{eqnarray*}
+|s,n\rangle & = & |s\rangle\otimes|n\rangle\\
+E_{sn} & = & \Sigma_{s}+\hbar\omega\left(n+1/2\right)\end{eqnarray*}
+
+\end_inset 
+
+Entonces el coeficiente de probabilidad del estado 
+\begin_inset Formula $|s',n'\rangle$
+\end_inset 
+
+ es, suponiendo la perturbación 
+\begin_inset Formula $V\equiv H_{i}$
+\end_inset 
+
+ independiente del tiempo (ec.
+ 
+\begin_inset LatexCommand \ref{eq:coef-desarrollo-perturb-indepd-t}
+
+\end_inset 
+
+):
+\begin_inset Formula \[
+C_{s'n'}(t)=\frac{1}{i\hbar}\sum_{sn}C_{sn}(0)\, H_{i,s'n'sn}\,\frac{e^{i\omega_{s'n'sn}t}-1}{i\omega_{s'n'sn}}\]
+
+\end_inset 
+
+donde 
+\begin_inset Formula \[
+\omega_{s'n'sn}=\left(\Sigma_{s'}-\Sigma_{s}\right)/\hbar+\omega(n'-n)=\omega_{s's}+\omega(n'-n)\]
+
+\end_inset 
+
+con 
+\begin_inset Formula $\hbar\omega$
+\end_inset 
+
+ la energía del cuanto de radiación en el modo, 
+\begin_inset Formula $H_{i,s'n'sn}=\langle s',n'|H_{i}|s,n\rangle$
+\end_inset 
+
+ el elemento de matriz de la transición y 
+\begin_inset Formula $\omega_{s's}=\left(\Sigma_{s'}-\Sigma_{s}\right)/\hbar$
+\end_inset 
+
+ la frecuencia de Bohr
+\begin_inset LatexCommand \index{frecuencia!de Bohr}
+
+\end_inset 
+
+
+\begin_inset LatexCommand \index{Bohr!frecuencia de}
+
+\end_inset 
+
+.
+\layout Subsection
+
+Probabilidad de transición
+\layout Standard
+
+En la onda electromagnética (ec.
+ 
+\begin_inset LatexCommand \ref{eq:campo-un-modo}
+
+\end_inset 
+
+):
+\begin_inset Formula \[
+\vec{A}(\vec{r})=\sqrt{\frac{\hbar}{2\omega\varepsilon_{0}}}\left[a\vec{u}(\vec{r})+a^{\dag}\vec{u}^{*}(\vec{r})\right]\]
+
+\end_inset 
+
+usando que 
+\begin_inset Formula $\vec{u}(\vec{r})=\vec{e}\, u\left(\vec{r}\right)$
+\end_inset 
+
+ el operador de interacción 
+\begin_inset LatexCommand \ref{eq:ham-interaccion-rad-mat}
+
+\end_inset 
+
+ se expresa
+\begin_inset Formula \[
+H_{i}=-\frac{e}{m}\sqrt{\frac{\hbar}{2\omega\varepsilon_{0}}}\,\left[a\, u(\vec{r})+a^{\dag}\, u^{*}(\vec{r})\right]\vec{e}\cdot\vec{p}\]
+
+\end_inset 
+
+y el elemento de matriz de 
+\begin_inset Formula $H_{i}$
+\end_inset 
+
+ para la transición resulta
+\layout Standard
+
+
+\begin_inset Formula \[
+H_{i,s'n'sn}=-\frac{e}{m}\sqrt{\frac{\hbar}{2\omega\varepsilon_{0}}}\left[\Braket{n'}{a}{n}\Braket{s'}{u\left(\vec{r}\right)\,\vec{p}}{s}+\left\langle n'|a^{\dag}|n\right\rangle \Braket{s'}{u^{*}\left(\vec{r}\right)\,\vec{p}}{s}\right]\cdot\vec{e}.\]
+
+\end_inset 
+
+
+\layout Standard
+
+Las funciones de onda de los estados 
+\begin_inset Formula $|s\rangle$
+\end_inset 
+
+ y 
+\begin_inset Formula $|s'\rangle$
+\end_inset 
+
+ sólo toman valores apreciables en las proximidades de la posición 
+\begin_inset Formula $\vec{r}_{a}$
+\end_inset 
+
+ del sistema acoplado al campo.
+ Es decir, en regiones de tamaño atómico, del orden de 
+\begin_inset Formula $10^{-10}$
+\end_inset 
+
+ metros.
+ Sin embargo, la distribución espacial 
+\begin_inset Formula $u(\vec{r})$
+\end_inset 
+
+ del campo tiene sus variaciones más rápidas en distancias del orden de
+ la longitud de onda 
+\begin_inset Formula $\lambda$
+\end_inset 
+
+.
+ En las regiones del espectro electromagnético que nos interesan 
+\begin_inset Formula $\lambda\gg10^{-10}$
+\end_inset 
+
+ metros: la distribución espacial es mucho más uniforme.
+ Por lo tanto en el cálculo de los elementos de matriz se puede considerar
+ 
+\begin_inset Formula $u$
+\end_inset 
+
+ constante con el valor que toma en la posición 
+\begin_inset Formula $\vec{r}_{a}$
+\end_inset 
+
+.
+ Así: 
+\begin_inset Formula \[
+\langle s'|u\left(\vec{r}\right)\,\vec{p}|s\rangle\simeq u(\vec{r}_{a})\langle s'|\vec{p}|s\rangle\]
+
+\end_inset 
+
+
+\layout Standard
+
+Queremos reepresar el operador momento.
+ Para ello, nos valemos de la expresión
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Esta ecuación se cumple cuando se puede desarrollar 
+\begin_inset Formula $F$
+\end_inset 
+
+ en serie de potencias y se obtiene a partir de 
+\begin_inset Formula $\left[x,p\right]=i\hbar$
+\end_inset 
+
+
+\end_inset 
+
+
+\begin_inset Formula \[
+[x_{i},F(p_{i})]=i\hbar\frac{\partial F}{\partial p_{i}}\]
+
+\end_inset 
+
+que permite escribir
+\begin_inset Formula \[
+[\vec{r},H_{a}]=\left[\vec{r},\frac{p^{2}}{2m}\right]=i\hbar\frac{\vec{p}}{m}=\vec{r}\, H_{a}-H_{a}\,\vec{r}\]
+
+\end_inset 
+
+y entonces, llamando 
+\begin_inset Formula $\vec{r}_{s's}\equiv\langle s'|\vec{r}|s\rangle$
+\end_inset 
+
+ 
+\begin_inset Formula \[
+\begin{split}\langle s'|\vec{p}|s\rangle & =-\frac{i}{\hbar}m\left(\langle s'|\vec{r}H_{a}|s\rangle-\langle s'|H_{a}\vec{r}|s\rangle\right)\\
+ & =\frac{i}{\hbar}m\langle s'|\vec{r}|s\rangle(\Sigma_{s'}-\Sigma_{s})=i\, m\,\omega_{s's}\,\vec{r}_{s's}\end{split}
+\]
+
+\end_inset 
+
+
+\layout Standard
+
+Designamos por 
+\begin_inset Formula $\vec{D}_{s's}$
+\end_inset 
+
+ al elemento de matriz del momento dipolar de la carga acoplada al campo,
+ 
+\begin_inset Formula $\langle s'|e\vec{r}|s\rangle=\vec{D}_{s's}$
+\end_inset 
+
+.
+ Entonces: 
+\begin_inset Formula \begin{equation}
+H_{i,s'n'sn}=-i\sqrt{\frac{\hbar}{2\omega\varepsilon_{0}}}\omega_{s's}\left[u(\vec{r}_{a})\langle n'|a|n\rangle+u^{*}(\vec{r}_{a})\langle n'|a^{\dag}|n\rangle\right]\,\vec{e}\cdot\vec{D}_{s's}\label{eq:Hi-prop-D}\end{equation}
+
+\end_inset 
+
+Los elementos de matriz de la radiación se calculan empleando las ecuaciones
+ 
+\begin_inset LatexCommand \ref{eq:elem-matriz-destruccion}
+
+\end_inset 
+
+ y 
+\begin_inset LatexCommand \ref{eq:elem-matriz-creacion}
+
+\end_inset 
+
+; podemos abreviar el factor dependiente de la materia como,
+\begin_inset Formula \[
+H_{i,s's}=-i\sqrt{\frac{\hbar}{2\omega\varepsilon_{0}}}\omega_{s's}\,\vec{e}\cdot\vec{D}_{s's}\]
+
+\end_inset 
+
+con lo que finalmente el elemento de matriz de la transición es
+\begin_inset Formula \[
+H_{i,s'n'sn}=H_{i,s's}\left[u(\vec{r}_{a})\sqrt{n}\,\delta_{n',n-1}+u^{*}(\vec{r}_{a})\sqrt{n+1}\,\delta_{n',n+1}\right]\]
+
+\end_inset 
+
+con él la amplitud de probabilidad del estado al que se efectúa la transición
+ será 
+\begin_inset Formula \begin{equation}
+\begin{split}C_{s'n'}(t) & =\frac{1}{i\hbar}\sum_{sn}C_{sn}(0)H_{i,s's}\left[u(\vec{r}_{a})\sqrt{n}\delta_{n',n-1}+u^{*}(\vec{r}_{a})\sqrt{n+1}\delta_{n',n+1}\right]\\
+ & \times\frac{{\displaystyle e^{i[\omega_{s's}+\omega(n'-n)]t}-1}}{{\displaystyle i[\omega_{s's}+\omega(n'-n)]}}.\end{split}
+\label{eq:factor-resonante}\end{equation}
+
+\end_inset 
+
+
+\layout Section
+
+Resonancia
+\layout Standard
+
+Supongamos que sólo dos niveles de la materia (el 
+\begin_inset Formula $|s\rangle$
+\end_inset 
+
+ y el 
+\begin_inset Formula $|s'\rangle$
+\end_inset 
+
+) cumplen la condición 
+\begin_inset Formula $|\omega_{s's}|\sim\omega$
+\end_inset 
+
+ y por tanto sólo éstos pueden hacer resonante el denominador de la expresión
+ 
+\begin_inset LatexCommand \ref{eq:factor-resonante}
+
+\end_inset 
+
+.
+ Entonces los términos de la suma correspondientes a los demás estados serán
+ siempre muy pequeños y se podrán ignorar.
+ Además teniendo en cuenta las deltas que contiene la expresión sólo son
+ posibles las transiciones en que el número de cuantos del modo cambie en
+ una unidad, 
+\begin_inset Formula $\left|n-n'\right|=1$
+\end_inset 
+
+.
+\layout Standard
+
+Tenemos así dos coeficientes correspondientes a dos procesos resonantes:
+ 
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/proc-absorcion-src.eps
+	display monochrome
+	scale 90
+	keepAspectRatio
+	subcaption
+	subcaptionText "Absorción\label{fig:proc-absorcion}"
+
+\end_inset 
+
+
+\begin_inset Graphics
+	filename fig/proc-emision-src.eps
+	scale 90
+	keepAspectRatio
+	subcaption
+	subcaptionText "Emisión \label{fig:proc-emision}"
+
+\end_inset 
+
+
+\layout Caption
+
+Procesos de absorción (izquierda) y emisión (derecha) entre dos estados
+ de la materia 
+\begin_inset Formula $\ket{s}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\ket{s'}$
+\end_inset 
+
+.
+\end_inset 
+
+
+\layout Itemize
+
+Absorción de radiación por la materia (figura 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+ref{fig:proc-absorcion}
+\end_inset 
+
+), con coeficiente
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Es necesario ajustar con opciones el paquete 
+\backslash 
+emph{subfigure} en la plantilla para que el aspecto de los pies de las subfiguras concuerde con el pie general.}
+\end_inset 
+
+
+\begin_inset Formula \[
+C_{s'n-1}(t)=\frac{H_{i,s's}}{i\hbar}C_{sn}(0)\sqrt{n}\, u(\vec{r}_{a})\frac{e^{i(\omega_{s's}-\omega)t}-1}{i\left(\omega_{s's}-\omega\right)}\]
+
+\end_inset 
+
+Es resonante si 
+\begin_inset Formula $\omega_{s's}>0$
+\end_inset 
+
+ cuando 
+\begin_inset Formula $\omega_{s's}-\omega\simeq0$
+\end_inset 
+
+.
+ 
+\newline 
+En este proceso el campo pasa de tener 
+\begin_inset Formula $n$
+\end_inset 
+
+ fotones a tener 
+\begin_inset Formula $n-1$
+\end_inset 
+
+ y la materia aumenta su energía de 
+\begin_inset Formula $\Sigma_{s}$
+\end_inset 
+
+ a 
+\begin_inset Formula $\Sigma_{s'}$
+\end_inset 
+
+.
+ Obsérvese que cuanto mayor sea el número de fotones en el modo, mayor es
+ la amplitud de probabilidad de absorción.
+ 
+\layout Itemize
+
+Emisión de radiación por la materia (figura 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+ref{fig:proc-emision}
+\end_inset 
+
+).
+ Su amplitud de probabilidad es
+\begin_inset Formula \[
+C_{s'n+1}(t)=\frac{H_{i,s's}}{i\hbar}C_{sn}(0)\sqrt{n+1}\, u^{*}(\vec{r}_{a})\,\frac{e^{i(\omega_{s's}+\omega)t}-1}{i(\omega_{s's}+\omega)}\]
+
+\end_inset 
+
+Hay resonancia si 
+\begin_inset Formula $\omega_{s's}<0$
+\end_inset 
+
+ cuando 
+\begin_inset Formula $\omega_{s's}+\omega\simeq0$
+\end_inset 
+
+.
+ 
+\newline 
+En este proceso el campo pasa de tener 
+\begin_inset Formula $n$
+\end_inset 
+
+ fotones a tener 
+\begin_inset Formula $n+1$
+\end_inset 
+
+.
+ La materia, al ser ahora 
+\begin_inset Formula $\Sigma_{s}>\Sigma_{s'}$
+\end_inset 
+
+, pierde la energía que se lleva el fotón incorporado al modo.
+ La amplitud de probabilidad también crece con el número 
+\begin_inset Formula $n$
+\end_inset 
+
+ de fotones preexistentes en el modo.
+ Pero en este caso es no nula 
+\emph on 
+aún en ausencia de fotones en el modo
+\emph default 
+.
+\layout Subsubsection*
+
+Absorción
+\layout Standard
+
+La probabilidad de la transición de absorción cuando se considera la resonancia
+ con 
+\begin_inset Formula $n$
+\end_inset 
+
+ fotones es
+\begin_inset Formula \[
+|C_{s'n-1}(t)|^{2}=\frac{|H_{i,s's}|^{2}}{\hbar^{2}}|C_{sn}(0)|^{2}\, n\,|u(\vec{r}_{a})|^{2}\,\frac{4\sin^{2}\frac{1}{2}(\omega_{s's}-\omega)t}{(\omega_{s's}-\omega)^{2}}\]
+
+\end_inset 
+
+ Es evidente que la resonancia se produce con cualquier número de fotones
+ que haya en los estados que forman parte del estado inicial (piénsese en
+ estados que no son Fock).
+ Por tanto la probabilidad 
+\emph on 
+total
+\emph default 
+ de paso del estado 
+\begin_inset Formula $|s\rangle$
+\end_inset 
+
+ al 
+\begin_inset Formula $|s'\rangle$
+\end_inset 
+
+ es una suma,
+\begin_inset Formula \[
+\begin{split}|C_{s'}|_{a}^{2} & =\sum_{n=1}^{\infty}|C_{sn-1}(t)|^{2}\\
+ & =\frac{|H_{i,s's}|^{2}}{\hbar^{2}}\,\frac{4\sin^{2}\frac{1}{2}(\omega_{s's}-\omega)t}{(\omega_{s's}-\omega)^{2}}\,|u(\vec{r}_{a})|^{2}\,\sum_{n=1}^{\infty}|C_{sn}(0)|^{2}\, n\end{split}
+\]
+
+\end_inset 
+
+Supongamos ahora que en el estado inicial radiación-materia, 
+\begin_inset Formula $\ket{\psi\left(0\right)}$
+\end_inset 
+
+ la radiación está en un estado coherente
+\begin_inset Formula \[
+\begin{split}|\psi(0)\rangle & =|s\rangle\otimes|\alpha\rangle=|s\rangle\otimes\sum_{n=0}^{\infty}e^{-\frac{1}{2}|\alpha|^{2}}\,\,\frac{\alpha^{n}}{\sqrt{n!}}|n\rangle\\
+ & =\sum_{n=0}^{\infty}C_{sn}(0)|s\rangle\otimes|n\rangle\end{split}
+\]
+
+\end_inset 
+
+Entonces 
+\begin_inset Formula \[
+C_{sn}(0)=e^{-\frac{1}{2}|\alpha|^{2}}\frac{\alpha^{n}}{\sqrt{n!}}\]
+
+\end_inset 
+
+y así la suma en 
+\begin_inset Formula $\left|C_{s'}\right|_{a}^{2}$
+\end_inset 
+
+ se puede concretar:
+\begin_inset Formula \[
+\begin{split}\sum_{n=1}^{\infty}|C_{sn}(0)|^{2}\, n & =\sum_{n=1}^{\infty}e^{-|\alpha|^{2}}\frac{|\alpha|^{2n}}{n!}\, n\\
+ & =e^{-|\alpha|^{2}}\sum_{n=1}^{\infty}\frac{|\alpha|^{2(n-1)}}{(n-1)!}|\alpha|^{2}=|\alpha|^{2}=\langle n\rangle.\end{split}
+\]
+
+\end_inset 
+
+Por lo tanto 
+\begin_inset Formula \begin{equation}
+|C_{s'}(t)|_{a}^{2}=\frac{|H_{i,s's}|^{2}}{\hbar^{2}}|u(\vec{r}_{a})|^{2}\frac{4\sin^{2}\frac{1}{2}(\omega_{s's}-\omega)t}{(\omega_{s's}-\omega)^{2}}\,\langle n\rangle.\label{eq:absorcion}\end{equation}
+
+\end_inset 
+
+
+\layout Subsubsection*
+
+Emisión
+\layout Standard
+
+En el proceso de emisión, 
+\begin_inset Formula \[
+|C_{s'n+1}(t)|^{2}=\frac{|H_{i,s's}|^{2}}{\hbar^{2}}\,|C_{sn}(0)|^{2}\,(n+1)\,|u\left(\vec{r}_{a}\right)|^{2}\,\frac{4\sin^{2}\frac{1}{2}(\omega-\omega_{ss'})t}{(\omega-\omega_{ss'})^{2}}\]
+
+\end_inset 
+
+La probabilidad total queda 
+\begin_inset Formula \[
+\begin{split}|C_{s'}|_{e}^{2} & =\sum_{n=0}^{\infty}|C_{sn+1}(t)|^{2}\\
+ & =\frac{|H_{i,s's}|^{2}}{\hbar^{2}}\,|u(\vec{r}_{a})|^{2}\,\frac{4\sin^{2}\frac{1}{2}(\omega-\omega_{ss'})t}{(\omega-\omega_{ss'})^{2}}\sum_{n=0}^{\infty}|C_{sn}(0)|^{2}\,(n+1)\end{split}
+\]
+
+\end_inset 
+
+Si la radiación está inicialmente en un estado coherente 
+\begin_inset Formula \[
+\begin{split}\sum_{n=0}|C_{sn}(0)|^{2}\,(n+1) & =e^{-|\alpha|^{2}}\sum_{n=0}^{\infty}\frac{|\alpha|^{2n}}{n!}\,(n+1)\\
+ & =e^{-|\alpha|^{2}}\left(\sum_{n=1}^{\infty}\frac{|\alpha|^{2n}}{(n-1)!}+\sum_{n=0}^{\infty}\frac{|\alpha|^{2n}}{n!}\right)\\
+ & =|\alpha|^{2}+1=\langle n\rangle+1\end{split}
+\]
+
+\end_inset 
+
+Y la probabilidad de emisión es 
+\begin_inset Formula \begin{equation}
+|C_{s'}|_{e}^{2}=\frac{|H_{i,s's}|^{2}}{\hbar^{2}}\,|u\left(\vec{r}_{a}\right)|^{2}\,\frac{4\sin^{2}\frac{1}{2}(\omega-\omega_{ss'})t}{(\omega-\omega_{ss'})^{2}}(\langle n\rangle\underline{+1}).\label{eq:emision}\end{equation}
+
+\end_inset 
+
+
+\layout Subsubsection*
+
+Onda coherente plana
+\layout Standard
+
+Si la radiación fuera una onda plana normalizada en el volumen 
+\begin_inset Formula $V$
+\end_inset 
+
+ que confina a la radiación, se tendría (ec.
+ 
+\begin_inset LatexCommand \ref{eq:def-depd-espacial}
+
+\end_inset 
+
+): 
+\begin_inset Formula \[
+u(\vec{r})=\frac{e^{i\vec{k}\cdot\vec{r}}}{\sqrt{V}}\]
+
+\end_inset 
+
+Y en este caso 
+\begin_inset Formula \[
+|u(\vec{r}_{a})|^{2}=\frac{1}{V}.\]
+
+\end_inset 
+
+
+\layout Standard
+
+De modo que la probabilidad no dependería de la posición del centro acoplado
+ a la radiación.
+ No obstante en general esto no es así, y en particular no lo es siempre
+ que la distribución de la radiación sea inhomogénea.
+ Como veremos, la distribución de la radiación en un modo gaussiano (de
+ interés en los resonadores empleados en los láser) 
+\emph on 
+es
+\emph default 
+ inhomogénea.
+\layout Subsubsection*
+
+Emisión espontánea y emisión estimulada
+\layout Standard
+
+En 
+\begin_inset LatexCommand \ref{eq:emision}
+
+\end_inset 
+
+ vemos que, como habíamos apuntado, la emisión se puede producir incluso
+ cuando 
+\begin_inset Formula $\langle n\rangle=0$
+\end_inset 
+
+.
+ El estado coherente, en que el valor esperado 
+\begin_inset Formula $\langle n\rangle=0$
+\end_inset 
+
+ coincide con el estado Fock 
+\begin_inset Formula $|0\rangle$
+\end_inset 
+
+, clásicamente sería un estado sin radiación, pero cuánticamente sabemos
+ que la energía residual en el modo es 
+\begin_inset Formula $\frac{1}{2}\hbar\omega$
+\end_inset 
+
+.
+ Esta energía puede inducir la emisión en ausencia de cuantos.
+ Así, las transiciones inducidas por la presencia de cuantos se llaman 
+\emph on 
+transiciones estimuladas
+\begin_inset LatexCommand \index{transiciones!estimuladas}
+
+\end_inset 
+
+
+\emph default 
+ y las inducidas por el campo residual se llaman 
+\emph on 
+transiciones espontáneas
+\emph default 
+
+\begin_inset LatexCommand \index{transiciones!espontáneas}
+
+\end_inset 
+
+.
+\layout Standard
+
+En el caso de que la radiación del modo se hubiera preparado en un estado
+ de Fock 
+\begin_inset Formula $|n\rangle$
+\end_inset 
+
+ en lugar de en un estado coherente 
+\begin_inset Formula $\ket{\alpha}$
+\end_inset 
+
+ el valor esperado sería 
+\begin_inset Formula $\langle n\rangle=n$
+\end_inset 
+
+ y por tanto las expresiones de 
+\begin_inset Formula $|C_{s'}|^{2}$
+\end_inset 
+
+ serían las mismas sustituyendo 
+\begin_inset Formula $\langle n\rangle$
+\end_inset 
+
+ por 
+\begin_inset Formula $n$
+\end_inset 
+
+.
+\layout Standard
+
+El resultado 
+\begin_inset LatexCommand \ref{eq:emision}
+
+\end_inset 
+
+ indica que la probabilidad 
+\begin_inset Formula $|C_{s'}|^{2}$
+\end_inset 
+
+ es la misma a través de la emisión estimulada, cuando hay un valor esperado
+ 
+\begin_inset Formula $\langle n\rangle=1$
+\end_inset 
+
+, que a través de la emisión espontánea.
+\layout Standard
+
+En lo que sigue vamos a utilizar el promedio espacial de los coeficientes
+ de probabilidad con el objeto de obtener resultados que no dependan de
+ la posición 
+\begin_inset Formula $\vec{r}_{a}$
+\end_inset 
+
+ del centro y sean al mismo tiempo realistas.
+ Es decir, sustituiremos 
+\begin_inset Formula $|u(\vec{r}_{a})|^{2}$
+\end_inset 
+
+ por 
+\begin_inset Formula \[
+\overline{|\vec{u}(\vec{r})|^{2}}=\frac{1}{V}{\displaystyle \int\left|\vec{u}\left(\vec{r}\right)\right|^{2}\,\mathrm{d^{3}}V}=\frac{1}{V}\quad\textrm{pues}\quad\int\left|\vec{u}\left(\vec{r}\right)\right|^{2}\,\mathrm{d^{3}}V=1\]
+
+\end_inset 
+
+
+\layout Standard
+\noindent 
+siendo 
+\begin_inset Formula $V$
+\end_inset 
+
+ el volumen del resonador en que está confinada la radiación.
+ También recordaremos que 
+\begin_inset Formula \[
+|H_{i,s's}|^{2}=\frac{\hbar\,\omega_{s's}^{2}}{2\omega\,\varepsilon_{0}}|\vec{e}\cdot\vec{D}_{s's}|^{2}.\]
+
+\end_inset 
+
+
+\layout Section
+
+Los coeficientes de Einstein
+\layout Subsection
+
+Probabilidades de los procesos de absorción
+\layout Standard
+
+El coeficiente de probabilidad de la absorción, usando la expresión explícita
+ de 
+\begin_inset Formula $H_{i,s's}$
+\end_inset 
+
+ es
+\begin_inset Formula \[
+|C_{s'}(t)|^{2}=\frac{\omega_{s's}^{2}}{2\hbar\varepsilon_{0}V\omega}|\vec{e}\cdot\vec{D}_{s's}|^{2}\,\left\langle n\right\rangle \frac{4\sin^{2}\frac{1}{2}(\omega_{s's}-\omega)t}{(\omega_{s's}-\omega)^{2}}\]
+
+\end_inset 
+
+Esta expresión corresponde al caso en que una sola frecuencia (la del modo
+ de radiación) interacciona con la materia.
+ Su comportamiento cerca de la resonancia es cuadrático en el tiempo
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Si 
+\begin_inset Formula $x\ll1$
+\end_inset 
+
+, 
+\begin_inset Formula $\sin x\simeq x$
+\end_inset 
+
+.
+\end_inset 
+
+:
+\begin_inset Formula \[
+\lim_{\omega\rightarrow\omega_{s's}}|C_{s'}(t)|^{2}=\frac{\omega_{s's}^{2}}{2\hbar\varepsilon_{0}V\omega}\,|\vec{e}\cdot\vec{D}_{s's}|^{2}\,\left\langle n\right\rangle \, t^{2}\]
+
+\end_inset 
+
+Sin embargo, el comportamiento proporcional a 
+\begin_inset Formula $t^{2}$
+\end_inset 
+
+ es poco usual, siendo en general la probabilidad proporcional a 
+\begin_inset Formula $t$
+\end_inset 
+
+.
+ La razón esencial de esta discrepancia se encuentra en las hipótesis simplifica
+doras que asumen una sola frecuencia en la radiación y niveles de la materia
+ infinitamente estrechos.
+ En la práctica ni los niveles atómicos ni la radiación lo son.
+\layout Standard
+
+Como en el caso estudiado se ha supuesto la interacción de los niveles de
+ la materia con una sola frecuencia de la radiación, para tener la probabilidad
+ inducida por todas las frecuencias presentes se habrán de sumar las probabilida
+des sobre ellas.
+ Si también hay diferentes direcciones de propagación y polarizaciones se
+ deben sumar de igual modo.
+ Imaginemos por ejemplo que (como en el caso de la radiación de equilibrio
+ térmico) tenemos la energía distribuida en todos los modos: en todas las
+ frecuencias angulares 
+\begin_inset Formula $\omega$
+\end_inset 
+
+, direcciones de propagación 
+\begin_inset Formula $\hat{\vec{k}}=\vec{k}/\left|\vec{k}\right|$
+\end_inset 
+
+ y polarizaciones 
+\begin_inset Formula $\sigma$
+\end_inset 
+
+:
+\begin_inset Formula \[
+\left\langle n\right\rangle =\left\langle n\right\rangle \left(\omega,\hat{\vec{k}},\sigma\right).\]
+
+\end_inset 
+
+
+\layout Standard
+
+Según hemos estudiado, el número de modos con frecuencia angular 
+\begin_inset Formula $\omega$
+\end_inset 
+
+ en un intervalo 
+\begin_inset Formula $\mathrm{d}\omega$
+\end_inset 
+
+, vector de ondas 
+\begin_inset Formula $\vec{k}$
+\end_inset 
+
+ dentro del ángulo sólido 
+\begin_inset Formula $\mathrm{d}^{2}\Omega$
+\end_inset 
+
+ y polarización 
+\begin_inset Formula $\sigma$
+\end_inset 
+
+ viene dado por 
+\begin_inset Formula \[
+\mathrm{d}^{3}N_{\sigma}=\frac{V}{(2\pi c)^{3}}\omega^{2}\,\mathrm{d}\omega\,\mathrm{d}^{2}\Omega.\]
+
+\end_inset 
+
+Entonces la probabilidad de que un cuanto de esta radiación sea absorbido
+ será el producto de la probabilidad de absorción 
+\begin_inset Formula $\left|C_{s'}\left(t\right)\right|^{2}$
+\end_inset 
+
+ de un cuanto en una frecuencia por el número de modos ó frecuencias disponibles
+,
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/orienta-rel-D-e-src.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:orienta-rel-D-e}
+
+\end_inset 
+
+La probabilidad total de absorción depende de la orientación relativa de
+ los momentos dipolares de la materia 
+\begin_inset Formula $\vec{D}_{s's}$
+\end_inset 
+
+ y la polarización de la radiación 
+\begin_inset Formula $\vec{e}_{\sigma}$
+\end_inset 
+
+.
+\end_inset 
+
+
+\begin_inset Formula \[
+\mathrm{d}^{3}P_{\sigma,a}=|C_{s'}(t)|^{2}\frac{V}{(2\pi c)^{3}}\omega^{2}\,\mathrm{d}\omega\,\mathrm{d^{2}}\Omega\]
+
+\end_inset 
+
+Y la probabilidad total de absorción será 
+\begin_inset Formula \[
+P_{a}=\frac{\omega_{s's}^{2}}{2\hbar\varepsilon_{0}(2\pi c)^{3}}\sum_{\sigma=1,2}\int_{0}^{\infty}\left[\omega\frac{4\sin^{2}\frac{1}{2}(\omega_{s's}-\omega)t}{(\omega_{s's}-\omega)^{2}}\int|\vec{e}_{\sigma}\cdot\vec{D}_{s's}|^{2}\left\langle n_{\sigma}\right\rangle \mathrm{d}^{2}\Omega\right]\,\mathrm{d}\omega\]
+
+\end_inset 
+
+Como se aprecia en esta expresión lo que cuenta en la integral geométrica
+ es cómo están orientados los momentos dipolares de la materia 
+\begin_inset Formula $\vec{D}_{s's}$
+\end_inset 
+
+ respecto a la polarización de la radiación 
+\begin_inset Formula $\vec{e}_{\sigma}$
+\end_inset 
+
+.
+ Dejando fija la polarización 
+\begin_inset Formula $\vec{e}_{\sigma}$
+\end_inset 
+
+, si las orientaciones atómicas están distribuidas isotrópicamente respecto
+ a 
+\begin_inset Formula $\vec{e}_{\sigma}$
+\end_inset 
+
+ podemos tomar el ángulo sólido 
+\begin_inset Formula $\mathrm{d}^{2}\Omega$
+\end_inset 
+
+ alrededor de la dirección de 
+\begin_inset Formula $\vec{D}_{s's}$
+\end_inset 
+
+ (figura 
+\begin_inset LatexCommand \ref{fig:orienta-rel-D-e}
+
+\end_inset 
+
+): 
+\begin_inset Formula \begin{equation}
+\begin{split}\sum_{\sigma=1,2}\int|\vec{e}_{\sigma}\cdot\vec{D}_{s's}|^{2}\left\langle n_{\sigma}\right\rangle \,\mathrm{d}\Omega & =\sum_{\sigma=1,2}\left\langle n_{\sigma}\right\rangle |\vec{D}_{s's}|^{2}\int_{0}^{\pi}\cos^{2}\theta\sin\theta\,\mathrm{d}\theta\int_{0}^{2\pi}\,\mathrm{d}\varphi\\
+ & =\frac{4\pi}{3}\,\left|\vec{D}_{s's}\right|^{2}\,\sum_{\sigma=1,2}\left\langle n_{\sigma}\right\rangle =\frac{4\pi}{3}\,\left|\vec{D}_{s's}\right|^{2}\,\left\langle n\right\rangle \end{split}
+\label{eq:polarizacion}\end{equation}
+
+\end_inset 
+
+(
+\begin_inset Formula $\langle n\rangle$
+\end_inset 
+
+ es el valor esperado del número total de cuantos en las dos polarizaciones).
+ Con lo cual 
+\begin_inset Formula \[
+P_{a}=\frac{8\pi}{3}\frac{\omega_{s's}^{2}|\vec{D}_{s's}|^{2}}{\hbar\varepsilon_{0}(2\pi c)^{3}}\int_{0}^{\infty}\omega\,\left\langle n(\omega)\right\rangle \frac{\sin^{2}\frac{1}{2}(\omega_{s's}-\omega)t}{(\omega_{s's}-\omega)^{2}}\,\mathrm{d}\omega\]
+
+\end_inset 
+
+
+\layout Standard
+
+La función subintegral contiene el factor rápidamente variable 
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/func-auxiliar-src.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:func-auxiliar}
+
+\end_inset 
+
+Para tiempos suficientemente largos la variación rápida de la función 
+\begin_inset Formula $g\left(\omega\right)$
+\end_inset 
+
+ permite considerar solamente el valor en el máximo 
+\begin_inset Formula $\left\langle n\left(\omega_{s's}\right)\right\rangle $
+\end_inset 
+
+ de la función lentamente variable 
+\begin_inset Formula $\left\langle n\left(\omega\right)\right\rangle $
+\end_inset 
+
+.
+ 
+\end_inset 
+
+
+\begin_inset Formula \[
+g\left(\omega\right)=\frac{\sin^{2}\frac{1}{2}(\omega_{s's}-\omega)t}{(\omega_{s's}-\omega)^{2}},\]
+
+\end_inset 
+
+que representamos en la figura 
+\begin_inset LatexCommand \ref{fig:func-auxiliar}
+
+\end_inset 
+
+.
+ La anchura del pico central, estimada como la distancia del máximo al primer
+ mínimo, vale 
+\begin_inset Formula $2\pi/t$
+\end_inset 
+
+.
+ Si el tiempo transcurrido es lo suficientemente largo como para que ésta
+ sea mucho menor que la anchura 
+\begin_inset Formula $\triangle\omega$
+\end_inset 
+
+ de 
+\begin_inset Formula $\langle n(\omega)\rangle$
+\end_inset 
+
+, es decir, si se cumple
+\begin_inset Formula \[
+\frac{2\pi}{t}\ll\triangle\omega\]
+
+\end_inset 
+
+entonces se puede considerar 
+\begin_inset Formula $\left\langle n\left(\omega\right)\right\rangle \simeq\left\langle n\left(\omega_{s's}\right)\right\rangle $
+\end_inset 
+
+ y por lo tanto aproximar así la integral
+\begin_inset Formula \[
+P_{a}(t)\simeq\frac{8\pi}{3}\frac{\omega_{s's}^{3}|\vec{D}_{s's}|^{2}}{\hbar\varepsilon_{0}(2\pi c)^{3}}\,\langle n(\omega_{s's})\rangle\,\int_{0}^{\infty}\frac{\sin^{2}\frac{1}{2}(\omega_{s's}-\omega)t}{(\omega_{s's}-\omega)^{2}}\,\mathrm{d}\omega\]
+
+\end_inset 
+
+
+\layout Standard
+
+Con el cambio 
+\begin_inset Formula $x=\omega_{s's}-\omega$
+\end_inset 
+
+ 
+\begin_inset Formula \[
+\int_{0}^{\infty}\frac{\sin^{2}\frac{1}{2}(\omega_{s's}-\omega)t}{(\omega_{s's}-\omega)^{2}}\,\mathrm{d}\omega\simeq\int_{-\infty}^{\infty}\frac{\sin^{2}\left(xt/2\right)}{x^{2}}\,\mathrm{d}x=\frac{\pi}{2}\, t\]
+
+\end_inset 
+
+y queda 
+\begin_inset Formula \[
+P_{a}(t)=\frac{1}{6\pi}\frac{\omega_{s's}^{3}|\vec{D}_{s's}|^{2}}{\hbar\varepsilon_{0}c^{3}}\langle n(\omega_{s's})\rangle t.\]
+
+\end_inset 
+
+
+\layout Standard
+
+Finalmente, la probabilidad de absorción estimulada por la radiación será,
+ por unidad de tiempo 
+\begin_inset Formula $W_{a}^{\mathrm{est}}\equiv P_{a}\left(t\right)/t$
+\end_inset 
+
+ o, 
+\begin_inset Formula \[
+W_{a}^{\mathrm{est}}=\frac{1}{6\pi}\frac{\omega_{s's}^{3}|\vec{D}_{s's}|^{2}}{\hbar\varepsilon_{0}c^{3}}\langle n(\omega_{s's})\rangle.\]
+
+\end_inset 
+
+
+\layout Subsection
+
+Probabilidades de los procesos de emisión
+\layout Standard
+
+Si comparamos las expresiones 
+\begin_inset LatexCommand \ref{eq:absorcion}
+
+\end_inset 
+
+ y 
+\begin_inset LatexCommand \ref{eq:emision}
+
+\end_inset 
+
+ para la absorción y para la emisión vemos que esencialmente sólo se diferencian
+ en el factor del número de fotones, 
+\begin_inset Formula $\langle n_{\sigma}\rangle$
+\end_inset 
+
+ en un caso y 
+\begin_inset Formula $\langle n_{\sigma}\rangle+1$
+\end_inset 
+
+ en el otro.
+ Al sumar sobre las dos polarizaciones el factor para la emisión será 
+\begin_inset Formula $\langle n(\omega_{s's})\rangle+2$
+\end_inset 
+
+, por lo tanto, la probabilidad 
+\emph on 
+total
+\emph default 
+ de emisión será 
+\begin_inset Formula \begin{equation}
+W_{e}=\frac{1}{6\pi}\frac{\omega_{s's}^{3}|\vec{D}_{s's}|^{2}}{\hbar\varepsilon_{0}c^{3}}(\left\langle n(\omega_{s's})\right\rangle +2)\label{eq:prob-emision-tot}\end{equation}
+
+\end_inset 
+
+Las emisiones estimuladas, correspondientes al primer término, se producen
+ con una probabilidad igual que la de absorción estimulada,
+\begin_inset Formula \[
+W_{e}^{\mathrm{est}}=\frac{1}{6\pi}\frac{\omega_{s's}^{3}|\vec{D}_{s's}|^{2}}{\hbar\varepsilon_{0}c^{3}}\,\left\langle n(\omega_{s's})\right\rangle .\]
+
+\end_inset 
+
+Si la radiación tiene su energía isotrópicamente distribuida, 
+\begin_inset Formula $\langle n(\omega_{s's})\rangle=2\langle n_{\sigma}(\omega_{s's})\rangle$
+\end_inset 
+
+, donde 
+\begin_inset Formula $n_{\sigma}(\omega_{s's})$
+\end_inset 
+
+ es el número de cuantos por modo en la frecuencia de la transición.
+ Entonces
+\begin_inset LatexCommand \index{emisión!estimulada}
+
+\end_inset 
+
+
+\begin_inset Formula \begin{equation}
+W_{a}^{\mathrm{est}}=W_{e}^{\mathrm{est}}=\frac{1}{3\pi}\frac{\omega_{s's}^{3}|\vec{D}_{s's}|^{2}}{\hbar\varepsilon_{0}c^{3}}\langle n_{\sigma}(\omega_{s's})\rangle\label{eq:prob-proc-estim}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+Por otra parte, si 
+\begin_inset Formula $u_{\nu}(\nu)$
+\end_inset 
+
+ es la densidad de energía de radiación por unidad de volumen y de intervalo
+ de frecuencia, como 
+\begin_inset Formula $\langle n_{\sigma}\rangle\, h\nu$
+\end_inset 
+
+ es la energía por modo 
+\begin_inset Formula \[
+u_{\nu}(\nu)=\rho(\nu)\langle n_{\sigma}\rangle h\nu=\frac{8\pi\nu^{2}}{c^{3}}h\nu\langle n_{\sigma}\rangle=\frac{2\hbar\omega^{3}}{\pi c^{3}}\langle n_{\sigma}\rangle\rightarrow\langle n_{\sigma}\rangle=\frac{\pi c^{3}}{2\hbar\omega^{3}}u_{\nu}(\nu)\]
+
+\end_inset 
+
+se pueden poner las probabilidades de los procesos estimulados en función
+ de la densidad de energía de la radiación:
+\begin_inset Formula \[
+W_{a}^{\mathrm{est}}=W_{e}^{\mathrm{est}}=B_{s's}u_{\nu}(\nu_{s's})\]
+
+\end_inset 
+
+donde los coeficientes 
+\begin_inset Formula $B$
+\end_inset 
+
+ se conocen como 
+\emph on 
+coeficientes de Einstein de las transiciones estimuladas
+\emph default 
+
+\begin_inset LatexCommand \index{coeficientes de Einstein!de las transiciones estimuladas}
+
+\end_inset 
+
+ y valen:
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+B_{s's}=\frac{|\vec{D}_{s's}|^{2}}{6\hbar^{2}\varepsilon_{0}}=B_{ss'}\label{eq:coef-B}\end{equation}
+
+\end_inset 
+
+El segundo término de 
+\begin_inset LatexCommand \ref{eq:prob-emision-tot}
+
+\end_inset 
+
+ nos indica que puede haber emisión de un cuanto aunque no haya cuantos
+ en la radiación 
+\begin_inset Formula $(\langle n_{\sigma}\rangle=0)$
+\end_inset 
+
+.
+ Por ello este término se conoce como la 
+\emph on 
+probabilidad de emisión espontánea
+\emph default 
+
+\begin_inset LatexCommand \index{emisión!espontánea}
+
+\end_inset 
+
+.
+ Su expresión será la 
+\begin_inset LatexCommand \ref{eq:prob-proc-estim}
+
+\end_inset 
+
+ pero tomando en ella 
+\begin_inset Formula $\langle n_{\sigma}\rangle=1$
+\end_inset 
+
+, ya que como se desprende de la expresión para 
+\begin_inset Formula $W_{e}$
+\end_inset 
+
+ el campo de cero fotones produce la misma emisión que el de un fotón:
+\begin_inset Formula \[
+A_{s's}=\frac{1}{3\pi}\frac{\omega_{s's}^{3}|\vec{D}_{s's}|^{2}}{\hbar\varepsilon_{0}c^{3}}\]
+
+\end_inset 
+
+
+\layout Standard
+
+El cociente entre el coeficiente de emisión espontánea y el coeficiente
+ de uno cualquiera de los procesos estimulados (de emisión o de absorción)
+ depende únicamente de la longitud de onda de la radiación (en el medio,
+ ya que 
+\begin_inset Formula $c$
+\end_inset 
+
+ está referida al medio): 
+\begin_inset Formula \begin{equation}
+\frac{A_{s's}}{B_{s's}}=\frac{8\pi h\nu^{3}}{c^{3}}=\frac{8\pi h}{\lambda^{3}}\label{eq:rel-A-B-Einstein}\end{equation}
+
+\end_inset 
+
+La fórmula es de aplicabilidad general a toda radiación electromagnética.
+ Así, sabemos ahora que la radiación estimulada, que es la de interés en
+ el láser, predominará con mayor facilidad cuanto mayor sea la longitud
+ de onda.
+ En efecto, una emisora de radio emite estimuladamente, y por lo tanto con
+ muy poco ruido cuántico (emisión espontánea), mientras que los átomos y
+ moléculas representan una situación intermedia; en los núcleos, dada la
+ cortísima longitud de onda en la que emiten (rayos 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+), la radiación estimulada está en proporción despreciable.
+\layout Standard
+
+El uso de radiaciones de onda muy corta en los resonadores láser plantea
+ además numerosos problemas tecnológicos; a pesar de ello, se ha conseguido
+ diseñar sistemas láser que trabajan en el dominio de los rayos 
+\begin_inset Formula $X$
+\end_inset 
+
+.
+\layout Subsection
+
+Efecto de la polarización
+\layout Standard
+
+En el caso en que la radiación está planopolarizada, los momentos dipolares
+ 
+\begin_inset Formula $\vec{D}_{s's}$
+\end_inset 
+
+ inducidos en el sistema material se alinean rápidamente con el campo eléctrico
+ de la radiación 
+\begin_inset Formula $(\vec{e}\Vert\vec{D}_{s's})$
+\end_inset 
+
+, y tenemos que la integral geométrica en la ec.
+ 
+\begin_inset LatexCommand \ref{eq:polarizacion}
+
+\end_inset 
+
+ vale
+\begin_inset Formula \[
+\begin{split}\sum_{\sigma=1,2}\int|\vec{e}_{\sigma}\cdot\vec{D}_{s's}|^{2}\,\left\langle n_{\sigma}\right\rangle \,\mathrm{d}^{2}\Omega & =|\vec{D}_{s's}|^{2}\left(\int_{0}^{\pi}\int_{0}^{2\pi}\,\mathrm{d}^{2}\Omega\right)\sum_{\sigma=1,2}\left\langle n_{\sigma}\right\rangle =4\pi|\vec{D}_{s's}|^{2}\left\langle n\right\rangle \end{split}
+\]
+
+\end_inset 
+
+Comparando esta expresión con la correspondiente a una orientación isótropa,
+ 
+\begin_inset LatexCommand \ref{eq:polarizacion}
+
+\end_inset 
+
+ vemos que ambas difieren en un factor 
+\begin_inset Formula $1/3$
+\end_inset 
+
+.
+ Resulta que los coeficientes estimulados pueden tener un valor entre estos
+ dos extremos, según sea la polarización de la radiación estimulante: 
+\begin_inset Formula \[
+\frac{|\vec{D}_{s's}|^{2}}{6\hbar^{2}\varepsilon_{0}}\leq B_{s's}\leq\frac{|\vec{D}_{s's}|^{2}}{2\hbar^{2}\varepsilon_{0}}\]
+
+\end_inset 
+
+El valor más pequeño del coeficiente 
+\begin_inset Formula $B$
+\end_inset 
+
+ es el correspondiente a la radiación isotrópica o a la desorientación atómica
+ isotrópica, y fue el calculado por Einstein.
+ La radiación polarizada da lugar a mayor eficiencia en los procesos estimulados.
+\layout Subsection
+
+Efecto de la degeneración
+\begin_inset LatexCommand \index{degeneración}
+
+\end_inset 
+
+
+\layout Standard
+
+Los valores calculados de los coeficientes corresponden a transiciones entre
+ distintos 
+\emph on 
+estados
+\emph default 
+ de diferente energía.
+ Se pueden encontrar también fácilmente los coeficientes correspondientes
+ a transiciones entre 
+\emph on 
+niveles
+\emph default 
+ de energía que comprenden varios estados, es decir, niveles degenerados.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/tr-niv-degenerados-src.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:tr-niv-degenerados}
+
+\end_inset 
+
+Desde cada estado 
+\begin_inset Formula $\lambda$
+\end_inset 
+
+ del nivel 
+\begin_inset Formula $1$
+\end_inset 
+
+ podemos transitar a cualquiera de los estados 
+\begin_inset Formula $\mu$
+\end_inset 
+
+ del nivel 
+\begin_inset Formula $2$
+\end_inset 
+
+.
+ El número de estados con energía 
+\begin_inset Formula $E_{1}$
+\end_inset 
+
+ es la degeneración del nivel 
+\begin_inset Formula $1$
+\end_inset 
+
+ y se denota por 
+\begin_inset Formula $g_{1}$
+\end_inset 
+
+; análogamente para el nivel 
+\begin_inset Formula $2$
+\end_inset 
+
+.
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+corregir dibujo: sustituir 
+\begin_inset Formula $\omega$
+\end_inset 
+
+ por 
+\begin_inset Formula $W$
+\end_inset 
+
+.
+\end_inset 
+
+
+\end_inset 
+
+
+\layout Standard
+
+En efecto, asignemos los subíndices 
+\begin_inset Formula $\lambda$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mu$
+\end_inset 
+
+ a los estados degenerados de los niveles 1 y 2 del sistema (figura 
+\begin_inset LatexCommand \ref{fig:tr-niv-degenerados}
+
+\end_inset 
+
+).
+ La probabilidad de transición desde un estado 
+\begin_inset Formula $\lambda$
+\end_inset 
+
+ a un estado 
+\begin_inset Formula $\mu$
+\end_inset 
+
+ es 
+\begin_inset Formula $W_{\lambda\mu}=B_{\lambda\mu}u_{\nu}(\nu_{12})$
+\end_inset 
+
+ y la probabilidad desde el estado 
+\begin_inset Formula $\lambda$
+\end_inset 
+
+, que es la probabilidad desde el nivel 
+\begin_inset Formula $1$
+\end_inset 
+
+, a todos los estados del nivel 2 será la suma 
+\begin_inset Formula $W_{12}=\sum_{\mu}W_{\lambda\mu}$
+\end_inset 
+
+.
+ Pero usualmente los elementos de matriz 
+\begin_inset Formula $\vec{D}_{\lambda\mu}$
+\end_inset 
+
+ (los armónicos esféricos) son iguales cualesquiera que sean los valores
+ de 
+\begin_inset Formula $\lambda$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mu$
+\end_inset 
+
+, por lo que
+\begin_inset Formula \begin{eqnarray*}
+W_{12} & = & g_{2}W_{\lambda\mu}=g_{2}B_{\lambda\mu}u_{\nu}(\nu_{12})=B_{12}u_{\nu}(\nu_{12})\\
+W_{21} & = & g_{1}W_{\mu\lambda}=g_{1}B_{\mu\lambda}u_{\nu}(\nu_{12})=B_{21}u_{\nu}(\nu_{12})\end{eqnarray*}
+
+\end_inset 
+
+Hemos demostrado con anterioridad que 
+\begin_inset Formula $B_{\mu\lambda}=B_{\lambda\mu}$
+\end_inset 
+
+, así que
+\begin_inset Formula \[
+\frac{B_{12}}{B_{21}}=\frac{g_{2}}{g_{1}}.\]
+
+\end_inset 
+
+
+\layout Subsection
+
+Tiempo de vida radiativo y ensanchamiento natural
+\layout Standard
+
+El coeficiente espontáneo 
+\begin_inset Formula $A_{s's}$
+\end_inset 
+
+ representa la probabilidad de que el sistema se desexcite radiativamente
+ una vez por unidad de tiempo de forma espontánea.
+ Es claro que su inverso será el 
+\emph on 
+tiempo de vida radiativo
+\begin_inset LatexCommand \index{tiempo de vida radiativo}
+
+\end_inset 
+
+
+\emph default 
+ del estado excitado 
+\begin_inset Formula $\ket{s'}$
+\end_inset 
+
+, 
+\begin_inset Formula \[
+\tau_{s's}=\frac{1}{A_{s's}}\]
+
+\end_inset 
+
+El cambio por unidad de tiempo del número 
+\begin_inset Formula $N_{s'}$
+\end_inset 
+
+ de átomos excitados debido a la emisión espontánea será, omitiendo los
+ subíndices 
+\begin_inset Formula $s$
+\end_inset 
+
+ y 
+\begin_inset Formula $s'$
+\end_inset 
+
+,
+\begin_inset Formula \[
+\dt{N}=-AN\]
+
+\end_inset 
+
+Integrando con la condición inicial 
+\begin_inset Formula $N\left(0\right)=N_{0}$
+\end_inset 
+
+ átomos inicialmente excitados en 
+\begin_inset Formula $\ket{s'}$
+\end_inset 
+
+ se obtiene
+\begin_inset Formula \[
+N=N_{0}e^{-At}=N_{0}e^{-t/\tau}\]
+
+\end_inset 
+
+Los procesos de desexcitación espontánea provocan un decrecimiento exponencial
+ de la población del nivel.
+\layout Standard
+
+Como por cada desexcitación se produce un cuanto de radiación, el cambio
+ por unidad de tiempo en el número de cuantos en la frecuencia de la transición
+ será 
+\begin_inset Formula \[
+\dt{\left\langle n(\omega_{s's})\right\rangle }=-\dt{N}=-AN_{0}e^{-t/\tau}\]
+
+\end_inset 
+
+Esta magnitud es evidentemente proporcional a la potencia emitida, que a
+ su vez es proporcional al módulo al cuadrado del campo 
+\begin_inset Formula $\vec{E}$
+\end_inset 
+
+ de la radiación emitida 
+\begin_inset Formula \[
+|\vec{E}|^{2}\propto e^{-t/\tau}\]
+
+\end_inset 
+
+Por lo tanto podemos escribir el campo clásico emitido como
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/E-de-t-I-de-omega-src.eps
+	scale 60
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:E-de-t-I-de-omega}
+
+\end_inset 
+
+Arriba, evolución temporal del campo.
+ Abajo, espectro de Fourier de la intensidad.
+\end_inset 
+
+
+\begin_inset Formula \begin{equation}
+\vec{E}=\vec{E}_{0}\, e^{-t/2\tau_{s's}}\, e^{-i\omega_{s's}t}\label{eq:evol-temporal-campo-amort}\end{equation}
+
+\end_inset 
+
+Cuando 
+\begin_inset Formula $\tau_{s's}\gg\omega_{s's}^{-1}$
+\end_inset 
+
+ este campo es muy aproximadamente el del estado coherente, porque el amortiguam
+iento es muy lento comparado con el período (la emisión de los fotones va
+ sustrayendo energía, figura 
+\begin_inset LatexCommand \ref{fig:E-de-t-I-de-omega}
+
+\end_inset 
+
+).
+ La no monocromaticidad estricta se pone de manifiesto en su espectro de
+ Fourier,
+\begin_inset Formula \[
+\tilde{E}(\omega)=\frac{E_{0}}{\sqrt{2\pi}}\int_{0}^{\infty}e^{-i\omega t}\, e^{-t/2\tau}\, e^{i\omega_{s's}t}\,\mathrm{d}t=\frac{E_{0}}{\sqrt{2\pi}}\,\frac{1}{1/2\tau+i(\omega-\omega_{s's})}\]
+
+\end_inset 
+
+El cuadrado del módulo de 
+\begin_inset Formula $\tilde{E}(\omega)$
+\end_inset 
+
+ es proporcional a la intensidad en la frecuencia 
+\begin_inset Formula $\omega$
+\end_inset 
+
+, 
+\begin_inset Formula $\tilde{I}\left(\omega\right)$
+\end_inset 
+
+ por lo cual el espectro de la intensidad será 
+\begin_inset Formula \[
+|\tilde{E}(\omega)|^{2}\propto\frac{E_{0}^{2}}{2\pi}\,\frac{1}{\left(1/2\tau\right)^{2}+(\omega-\omega_{s's})^{2}}\]
+
+\end_inset 
+
+La anchura de este espectro a mitad de altura (
+\emph on 
+Full Width at Half Maximum
+\emph default 
+, FWHM
+\begin_inset LatexCommand \index{FWHM}
+
+\end_inset 
+
+); se obtiene de 
+\begin_inset Formula \[
+\frac{E_{0}^{2}(2\tau)^{2}}{4\pi}=\frac{E_{0}^{2}}{2\pi}\frac{1}{\left(1/2\tau\right)^{2}+\left(\triangle\omega_{n}/2\right)^{2}}\]
+
+\end_inset 
+
+y resulta ser 
+\begin_inset Formula $\triangle\omega_{n}=\tau^{-1}$
+\end_inset 
+
+.
+ Por lo tanto, la intensidad de la radiación emitida espontáneamente se
+ reparte sobre las frecuencias angulares con un 
+\emph on 
+perfil
+\begin_inset Foot
+collapsed false
+
+\layout Standard
+
+Una distribución se denomina 
+\emph on 
+perfil
+\begin_inset LatexCommand \index{perfil}
+
+\end_inset 
+
+
+\emph default 
+ cuando está normalizada a la unidad.
+\end_inset 
+
+ de Lorentz
+\begin_inset LatexCommand \index{perfil!de Lorentz}
+
+\end_inset 
+
+
+\begin_inset LatexCommand \index{Lorentz, perfil de}
+
+\end_inset 
+
+
+\emph default 
+:
+\begin_inset Formula \[
+g_{L}(\omega_{s's},\omega)=\frac{\Delta\omega}{2\pi}\frac{1}{(\omega-\omega_{s's})^{2}+\left(\frac{\Delta\omega_{n}}{2}\right)^{2}},\qquad\int g_{L}(\omega_{s's},\omega)\,\mathrm{d}\omega=1\]
+
+\end_inset 
+
+cuya anchura es el inverso del tiempo de vida radiativo del estado excitado.
+ Este ensanchamiento 
+\begin_inset Formula $\Delta\omega_{n}$
+\end_inset 
+
+, que es inherente al proceso de emisión espontánea se denomina 
+\emph on 
+anchura natural
+\begin_inset LatexCommand \index{ensanchamiento!natural}
+
+\end_inset 
+
+
+\begin_inset LatexCommand \label{txt:anchura-natural}
+
+\end_inset 
+
+
+\emph default 
+ (de ahí el subíndice 
+\begin_inset Formula $n$
+\end_inset 
+
+) y como es el mismo para todos los sistemas emisores de la misma naturaleza
+ se dice que es un 
+\emph on 
+ensanchamiento homogéneo
+\emph default 
+
+\begin_inset LatexCommand \index{ensanchamiento!homogéneo}
+
+\end_inset 
+
+.
+ Como los tiempos de vida de los niveles atómicos son típicamente de orden
+ de 
+\begin_inset Formula $\tau\sim10^{-8}\,\mathrm{s},\triangle\omega_{n}=10^{8}\,\mathrm{s^{-1}}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\triangle\nu_{n}=1.6\times10^{7}\,\mathrm{Hz}$
+\end_inset 
+
+.
+\layout Standard
+
+Dado que la intensidad total emitida espontáneamente es proporcional al
+ coeficiente de Einstein 
+\begin_inset Formula $A$
+\end_inset 
+
+, esto es equivalente a considerar que el coeficiente 
+\begin_inset Formula $A$
+\end_inset 
+
+ está repartido sobre el perfil, de manera que la probabilidad de emisión
+ espontánea en un intervalo 
+\begin_inset Formula $\mathrm{d}\omega$
+\end_inset 
+
+ sea 
+\begin_inset Formula \[
+\mathrm{d}A=A\, g_{L}(\omega_{s's},\omega)\,\mathrm{d}\omega\]
+
+\end_inset 
+
+Al ser los otros coeficientes de Einstein proporcionales a 
+\begin_inset Formula $A$
+\end_inset 
+
+ también se los puede considerar repartidos sobre el perfil 
+\begin_inset Formula $g_{L}$
+\end_inset 
+
+.
+\layout Section
+
+Sistemas moleculares 
+\layout Subsection
+
+Principio de Franck-Condon
+\layout Standard
+
+Hemos visto que la función de ondas se puede escribir, en virtud de la aproximac
+ión adiabática como un producto de función electrónica, vibracional y rotacional
+ (ec.
+ 
+\begin_inset LatexCommand \ref{eq:fdo-total-elec-vib-rot}
+
+\end_inset 
+
+).
+ En lo que sigue prescindiremos de este último aspecto y tomaremos
+\begin_inset Formula \[
+\psi_{ev}^{t}\left(x,q\right)=\psi_{e}\left(x,q\right)\psi_{ev}\left(q\right)\]
+
+\end_inset 
+
+Como hemos visto (ec.
+ 
+\begin_inset LatexCommand \ref{eq:Hi-prop-D}
+
+\end_inset 
+
+), la probabilidad de transición es proporcional al elemento de matriz dipolar
+ eléctrico, y para las transiciones entre estados electrónicos 
+\begin_inset Formula $\vec{D}=e\vec{x}$
+\end_inset 
+
+ así que el elemento de matriz será
+\begin_inset Formula \begin{equation}
+\begin{split}\Braket{\psi_{e'v'}^{t}}{\vec{D}}{\psi_{ev}^{t}}= & e\iint\psi_{e'}^{*}\psi_{e'v'}^{*}\,\vec{x}\,\psi_{e}\psi_{ev}\,\mathrm{d}v_{x}\,\mathrm{d}v_{q}\\
+ & =\int\psi_{e'v'}^{*}\left[e\int\psi_{e'}^{*}\,\vec{x}\,\psi_{e}\,\mathrm{d}v_{x}\right]\psi_{ev}\,\mathrm{d}v_{q}\\
+ & =\int\psi_{e'v'}^{*}\left(q\right)\,\vec{D}_{e'e}\left(q\right)\,\psi_{ev}\left(q\right)\,\mathrm{d}v_{q}.\end{split}
+\label{eq:elem-matriz-dipolar-elec}\end{equation}
+
+\end_inset 
+
+Hemos separado la parte electrónica, encapsulándola en
+\begin_inset Formula \[
+\vec{D}_{e'e}\left(q\right)=e\int\psi_{e'}^{*}\,\vec{x}\,\psi_{e}\,\mathrm{d}v_{x}\]
+
+\end_inset 
+
+
+\layout Standard
+\noindent 
+Es de señalar que en estas integrales 
+\begin_inset Formula $\mathrm{d}v_{q}$
+\end_inset 
+
+ no es un verdadero volumen, sino el producto de los diferenciales de las
+ variables de los modos normales de vibración de los iones positivos.
+ 
+\layout Standard
+\noindent 
+Las funciones 
+\begin_inset Formula $\psi_{ev}$
+\end_inset 
+
+ son autoestados de oscilador que, para pequeñas amplitudes, serán de oscilador
+ armónico.
+ Las funciones de oscilador (por contener los polinomios de Hermite) suelen
+ tener máximos muy altos en los extremos de la trayectoria de oscilación
+ clásica.
+ El resto de los máximos son relativamente pequeños.
+ 
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/franck-condon.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:franck-condon}
+
+\end_inset 
+
+El proceso de absorción tiene lugar del primer nivel vibracional en el nivel
+ electrónico más bajo a aquel de los niveles vibracionales del nivel electrónico
+ superior con mayor solapamiento.
+ Después ocurre una transición no radiativa muy rápida, señalada con línea
+ punteada, al fundamental vibracional del nivel electrónico superior.
+ Sigue la desexcitación entre niveles electrónicos, que vuelve a obedecer
+ al principio de máximo solapamiento.
+ Finalmente se produce una desexcitación vibracional en el nivel electrónico
+ más bajo.
+\end_inset 
+
+
+\layout Standard
+
+Por otra parte, los centros de oscilación de los diversos estados electrónicos
+ no suelen coincidir.
+ La situación se ha diagramado en la figura 
+\begin_inset LatexCommand \ref{fig:franck-condon}
+
+\end_inset 
+
+.
+\begin_inset ERT
+status Open
+
+\layout Standard
+
+\backslash 
+com{Figura corregida; falta representar en ella la desexcitación vibracional final dentro del nivel electrónico más bajo. Falta comentar también que la desexcitación vibracional puede ir a una banda $
+\backslash 
+Sigma_v$, y quizá numerar los procesos de forma correlativa 1-4 en el texto y en la figura.}
+\end_inset 
+
+ Para que el elemento de matriz 
+\begin_inset LatexCommand \ref{eq:elem-matriz-dipolar-elec}
+
+\end_inset 
+
+ sea grande, deberán solaparse los máximos de las funciones vibracionales,
+ particularmente, los grandes máximos de cada función.
+ Como, normalmente, el estado electrónico inferior suele tener ocupado sólo
+ su nivel vibracional más bajo, en él la función de ondas será 
+\begin_inset Formula $\psi_{e0}\left(q\right)$
+\end_inset 
+
+, cuya forma es gaussiana (un sólo gran pico, central).
+ El máximo de esta gaussiana solapará, en el estado electrónico excitado,
+ con los máximos de las funciones vibracionales situadas cerca de 
+\begin_inset Formula $q_{0e}$
+\end_inset 
+
+.
+ Podemos entonces sacar de la integral sobre las variables 
+\begin_inset Formula $q$
+\end_inset 
+
+ el elemento de matriz electrónico con su valor en la coordenada 
+\begin_inset Formula $q_{0e}$
+\end_inset 
+
+ de reposo de los núcleos:
+\begin_inset Formula \[
+\left(\vec{D}_{e'e}\right)_{v'0}=\Braket{\psi_{e'v'}^{t}}{\vec{D}}{\psi_{e0}^{t}}\backsimeq\vec{D}_{e'e}\left(q_{0e}\right)\int\psi_{e'v'}^{*}\psi_{e0}\,\mathrm{d}v_{q}\]
+
+\end_inset 
+
+
+\layout Standard
+
+Esta expresión es la consecuencia más conocida del llamado 
+\emph on 
+principio de Franck-Condon
+\emph default 
+
+\begin_inset LatexCommand \index{principio!de Franck-Condon}
+
+\end_inset 
+
+
+\begin_inset LatexCommand \index{Franck-Condon!principio de}
+
+\end_inset 
+
+, que viene a decir que la transición es tan rápida que los iones positivos
+ no tienen tiempo de moverse de su posición de equilibrio durante la absorción.
+ Se basa en la idea clásica de que los electrones se mueven mucho más rápido
+ que los iones positivos, idea que discutimos en el apartado 
+\begin_inset LatexCommand \ref{sec:sistemas-poliatomicos}
+
+\end_inset 
+
+.
+\layout Standard
+
+En general, después de la absorción la molécula queda vibracionalmente excitada
+ en el estado electrónico excitado.
+ En la mayoría de los casos la molécula no está aislada, de manera que a
+ través de rápidos procesos no radiativos
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+La desexcitación vibracional es, en la práctica, del orden de tres o cuatro
+ órdenes de magnitud más rápida que la electrónica.
+\end_inset 
+
+ transmite su energía al entorno y pierde la excitación vibracional, situándose
+ en el nivel vibracional más bajo del estado electrónico excitado.
+\layout Standard
+
+Es desde este nivel 
+\begin_inset Formula $\psi_{e'0}$
+\end_inset 
+
+ desde donde se emite al nivel vibracional con mayor solapamiento del estado
+ electrónico inferior.
+ En la emisión, por lo tanto, el elemento de matriz del momento dipolar
+ es 
+\begin_inset Formula \[
+\left(\vec{D}_{e'e}\right)_{0v}=\Braket{\psi_{e'0}^{t}}{\vec{D}}{\psi_{ev}^{t}}=\vec{D}_{e'e}\left(q_{0e'}\right)\int\psi_{e'0}^{*}\psi_{ev}\,\mathrm{d}v_{q}\]
+
+\end_inset 
+
+
+\layout Standard
+\noindent 
+como la energía 
+\begin_inset Formula $h\nu_{a}$
+\end_inset 
+
+ absorbida en la transición es mayor que la emitida (figura 
+\begin_inset LatexCommand \ref{fig:franck-condon}
+
+\end_inset 
+
+) 
+\begin_inset Formula \[
+h\nu_{a}>h\nu_{e}\]
+
+\end_inset 
+
+la emisión aparece corrida hacia el rojo, fenómeno denominado 
+\emph on 
+salto de Stokes
+\emph default 
+
+\begin_inset LatexCommand \index{Stokes!salto de}
+
+\end_inset 
+
+
+\begin_inset LatexCommand \index{corrimiento de Stokes}
+
+\end_inset 
+
+.
+\layout Standard
+
+Como sabemos, la probabilidad de transición espontánea en emisión es 
+\begin_inset Formula \[
+\left(A_{e'e}\right)_{0v}=\frac{1}{3\pi}\frac{\omega_{0}^{3}}{\epsilon_{0}c^{3}\hbar}\,\left|\left(\vec{D}_{e'e}\right)_{0v}\right|^{2}\]
+
+\end_inset 
+
+Pero como el estado vibracional de número cuántico 
+\begin_inset Formula $v$
+\end_inset 
+
+ puede ser uno cualquiera de los del estado electrónico de llegada 
+\begin_inset Formula $e$
+\end_inset 
+
+, la probabilidad total será 
+\begin_inset Formula \begin{equation}
+A_{e'e}=\sum_{v}\left(A_{e'e}\right)_{0v}=\frac{1}{3\pi}\frac{\omega_{e}^{3}}{\epsilon_{0}c^{3}\hbar}\left|\vec{D}_{e'e}\left(q_{0e'}\right)\right|^{2}\sum_{v}\left|\int\psi_{e'0}^{*}\psi_{ev}\,\mathrm{d}v_{q}\right|^{2}\label{eq:coef-emis-con-est-vib}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+Así, en el caso de un modo normal, las autofunciones de vibración forman
+ una base del espacio de Hilbert, por lo que podemos expandir el estado
+ 
+\begin_inset Formula $\psi_{e'0}$
+\end_inset 
+
+ en la base 
+\begin_inset Formula $\left\{ \psi_{ev}\right\} $
+\end_inset 
+
+ (los estados vibracionales del estado electrónico inferior), es decir 
+\begin_inset Formula \begin{equation}
+\psi_{e'0}=\sum_{v}C_{v}\psi_{ev}\label{eq:exp-elecsup-fn-vibrinf}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+\noindent 
+con los coeficientes dados por
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Cambiamos 
+\begin_inset Formula $\mathrm{d}v_{q}$
+\end_inset 
+
+ por 
+\begin_inset Formula $\mathrm{d}q$
+\end_inset 
+
+ porque se ha supuesto que interviene solamente un modo normal de vibración,
+ correspondiente a la variable 
+\begin_inset Formula $q$
+\end_inset 
+
+.
+\end_inset 
+
+
+\begin_inset Formula \[
+C_{v}=\int\psi_{ev}^{*}\psi_{e'0}\,\mathrm{d}q=\left(\int\psi_{e'v}^{*}\psi_{e0}\,\mathrm{d}q\right)^{*}\]
+
+\end_inset 
+
+
+\layout Standard
+\noindent 
+y cumpliendo la condición de normalización
+\begin_inset Formula \[
+\sum_{v}\left|C_{v}\right|^{2}=\sum_{v}\left|\int\psi_{e'0}^{*}\psi_{ev}\,\mathrm{d}q\right|^{2}=1\]
+
+\end_inset 
+
+
+\layout Standard
+\noindent 
+Por lo tanto (comparar con la ec.
+ 
+\begin_inset LatexCommand \ref{eq:coef-emis-con-est-vib}
+
+\end_inset 
+
+),
+\begin_inset Formula \[
+A_{e'e}=\frac{1}{3\pi}\frac{\omega_{e}^{3}}{\epsilon_{0}c^{3}\hbar}\left|\vec{D}_{e'e}\left(q_{0e'}\right)\right|^{2}.\]
+
+\end_inset 
+
+Es decir, la estructura vibracional no influye en la probabilidad total
+ de la transición entre los dos estados electrónicos.
+ De hecho vemos que depende del momento dipolar calculado con los núcleos
+ en la posición de equilibrio en el estado de partida (excitado).
+\layout Standard
+
+Como los coeficientes 
+\begin_inset Formula $A$
+\end_inset 
+
+ y 
+\begin_inset Formula $B$
+\end_inset 
+
+ de Einstein están relacionados por 
+\begin_inset LatexCommand \ref{eq:rel-A-B-Einstein}
+
+\end_inset 
+
+ todos los razonamientos efectuados se aplican también a los procesos estimulado
+s (pero 
+\begin_inset Formula $D_{ee'}\left(q_{0e}\right)\neq D_{e'e}\left(q_{0e'}\right)$
+\end_inset 
+
+).
+\layout Subsection
+
+Reparto frecuencial de la intensidad
+\layout Standard
+
+La subestructura vibracional de las bandas electrónicas se refleja en en
+ la distribución espectral de la intensidad absorbida y emitida por la molécula.
+ Así, la intensidad emitida sobre la frecuencia es la de 
+\begin_inset Formula $\left(A_{e'e}\right)_{0v}$
+\end_inset 
+
+.
+ Por lo tanto, será la forma de 
+\begin_inset Formula $E_{e}\left(q\right)$
+\end_inset 
+
+ la que determine la distribución de la intensidad.
+\layout Standard
+
+Se llama 
+\emph on 
+factores de Franck-Condon
+\emph default 
+
+\begin_inset LatexCommand \index{Franck-Condon!factores de}
+
+\end_inset 
+
+ a los cuadrados de los coeficientes de la expansión 
+\begin_inset LatexCommand \ref{eq:exp-elecsup-fn-vibrinf}
+
+\end_inset 
+
+:
+\layout Standard
+
+
+\begin_inset Formula \[
+F_{0v}=\left|C_{v}\right|^{2}=\left|\int\psi_{e'0}^{*}\psi_{ev}\,\mathrm{d}q\right|^{2}\]
+
+\end_inset 
+
+
+\layout Standard
+\noindent 
+Su conocimiento da la distribución de la intensidad en la emisión.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/diag-elec-vibr-molec-src.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:diag-elec-vibr-molec}
+
+\end_inset 
+
+Diagrama de transiciones entre los dos primeros estados electrónicos en
+ un sistema molecular.
+\end_inset 
+
+
+\layout Standard
+
+Así, si se puede emplear la aproximación armónica del potencial 
+\begin_inset Formula $E_{e}\left(q\right)$
+\end_inset 
+
+ tendríamos que las frecuencias de la emisión y de la absorción serían,
+ respectivamente (ver la figura 
+\begin_inset LatexCommand \ref{fig:diag-elec-vibr-molec}
+
+\end_inset 
+
+):
+\layout Standard
+
+
+\begin_inset Formula \begin{eqnarray*}
+\nu_{e} & = & \frac{E_{e2}\left(q_{02}\right)-v_{0}h\nu_{1}-E_{e1}\left(q_{01}\right)}{h}=\nu_{12}-v_{0}\nu_{1}\\
+\nu_{a} & = & \frac{E_{e2}\left(q_{02}\right)+v'_{0}h\nu_{2}-E_{e1}\left(q_{01}\right)}{h}=\nu_{12}+v'_{0}\nu_{2}\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Standard
+\noindent 
+donde 
+\begin_inset Formula $v_{0}$
+\end_inset 
+
+ y 
+\begin_inset Formula $v'_{0}$
+\end_inset 
+
+ serían los números cuánticos de vibración de los niveles vibracionales
+ en que se hacen máximos los respectivos factores de Franck-Condon (utilizamos
+ el subíndice cero para subrayar que nos referimos a los números de vibración
+ con máximo solape, de entre los varios que participan en la transición).
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Propagar la notación al gráfico.}
+\end_inset 
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/corr-Stokes-src.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:corr-Stokes}
+
+\end_inset 
+
+(arriba) El corrimiento de Stokes supone el desplazamiento hacia mayores
+ longitudes de onda del perfil de emisión respecto al de absorción.
+ (abajo) Perfil de los factores de Franck-Condon.
+\end_inset 
+
+El corrimiento de Stokes vale
+\begin_inset Formula \[
+\Delta\nu=\nu_{a}-\nu_{e}=v'_{0}\nu_{2}+v_{0}\nu_{1}\]
+
+\end_inset 
+
+
+\layout Standard
+
+Dada la relación lineal existente en este caso entre la frecuencia de la
+ radiación y el número vibracional 
+\begin_inset Formula $v$
+\end_inset 
+
+ o el 
+\begin_inset Formula $v'$
+\end_inset 
+
+, el perfil de los factores de Franck-Condon es el de la radiación, es decir,
+ el perfil de línea (figura 
+\begin_inset LatexCommand \ref{fig:corr-Stokes}
+
+\end_inset 
+
+, abajo): 
+\begin_inset Formula \[
+\left(A_{e'e}\right)_{0v}=A_{e'e}\, F_{0v}\]
+
+\end_inset 
+
+el número vibracional se calcula así a partir de las frecuencias (emisión):
+\layout Standard
+
+
+\begin_inset Formula \[
+\nu_{v}=\nu_{12}-v\,\nu_{1}\quad\Rightarrow v=\frac{\nu_{12}-\nu_{v}}{\nu_{1}}\]
+
+\end_inset 
+
+La probabilidad de emisión (
+\begin_inset Formula $e',v\rightarrow e,0$
+\end_inset 
+
+) es pues
+\begin_inset Formula \[
+A_{e'e}\left(\nu_{v}\right)=A_{e'e}\, F_{0,\left(\nu_{12}-\nu_{v}\right)/\nu_{1}}=A_{e'e}\, g(\nu_{e},\nu_{v})\]
+
+\end_inset 
+
+Y tomando 
+\begin_inset Formula $\nu_{v}$
+\end_inset 
+
+ como una variable continua 
+\begin_inset Formula $\nu$
+\end_inset 
+
+ 
+\layout Standard
+
+
+\begin_inset Formula \[
+1=\sum_{v}F_{0v}=\sum_{v}F_{0,\left(\nu_{12}-\nu_{v}\right)/\nu_{1}}\quad\Rightarrow\quad\int g(\nu_{e},\nu)\,\mathrm{d}\nu=1\]
+
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Formula \[
+A_{e'e}(\nu)=A_{e'e}\, g(\nu_{e},\nu).\]
+
+\end_inset 
+
+
+\the_end

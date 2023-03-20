@@ -1,0 +1,148 @@
+---
+template: 'latex-book-b-es.tex'
+alquafeatures:
+    - manifiesto
+    - pub
+    - librosabiertos
+appendixes:
+    -
+        basename: abrev-not
+        name: Abreviaturas y convenios
+    -
+        basename: bibifc2
+        name: Bibliografía
+authors:
+    -
+        email: iokin@nuc3.fis.ucm.es
+        name: Joaquín Retamosa Granado
+        url: 'http://nuclear.fis.ucm.es/~iokin/'
+    -
+        email: alvaro@alqua.org
+        name: Álvaro Tejero Cantero
+        url: 'http://alqua.org/people/alvaro'
+    -
+        email: pablo@alqua.org
+        name: Pablo Ruiz Múzquiz
+        url: 'http://alqua.org/people/pablo'
+base_url: 'http://alqua.org/libredoc/'
+bodyunits:
+    -
+        basename: preambulo-teorico
+        name: Preámbulo teórico
+    -
+        basename: estructura-fina
+        name: Estructura fina del átomo de Hidrógeno
+    -
+        basename: p-identicas
+        name: Partículas idénticas
+    -
+        basename: s-pocos-electrones
+        name: Sistemas con pocos electrones
+    -
+        basename: maxwell-boltzmann
+        name: 'Introducción a la física estadística: distribución de Maxwell--Boltzmann'
+    -
+        basename: estad-cuanticas
+        name: Estadísticas cuánticas
+    -
+        basename: trans-em
+        name: Transiciones electromagnéticas
+classification:
+    area: física cuántica
+    doctype: libro
+    series: apuntes
+    udc: '539.1'
+coverimage: fig/niveles-dens-prob-Phi-12-a-src.eps
+dedication: []
+description: Un segundo curso de física cuántica, dirigido a introducir los sistemas con pocos electrones, las transiciones electromagnéticas y la física estadística cuántica. Contiene ejercicios resueltos.
+editors:
+    -
+        email: alvaro@alqua.org
+        name: Álvaro Tejero Cantero
+        url: 'http://alqua.org/people/alvaro'
+features:
+    - toc
+    - lic
+keywords:
+    - método variacional
+    - perturbaciones
+    - transiciones electromagnéticas
+    - reglas de selección
+    - partículas idénticas
+    - Zeeman
+    - Darwin
+    - espín órbita
+    - molécula
+    - helio
+    - Maxwell-Boltzmann
+    - estadística
+    - Bose-Einstein
+    - Fermi-Dirac
+    - cuerpo negro
+    - bosones
+    - fermiones
+language: es
+license:
+    backcover: 'Aprende en comunidad - http://alqua.org'
+    frontcover: 'Un libro libre de Alqua'
+    name: CC-by_nc_sa
+    version: '1.0'
+    restrictions:
+     - by
+     - nc
+     - sa
+note: 
+publisher:
+    email: alqua@alqua.org
+    name: alqua
+    url: 'http://alqua.org'
+releases:
+    -
+        date: '2000-06-02'
+        description:
+            - Primera versión pública --JRG y ATC.
+            - Agradecemos las notas del primer capítulo a Teresa Marrodán Undagoitia.
+            - Agradecemos la colaboración en las figuras de Cristina Borrero del Pino.
+        number: '0.0.1'
+    -
+        date: '2002-05-23'
+        description:
+            - Añadidas referencias a la bibliografía para numerosas figuras ausentes --JRG.
+            - Comentarios a la bibliografía --JRG, ATC.
+            - Mejoras generalizadas en el documento --JRG y PRM.
+            - Retoques en la sección de abreviaturas y convenios --ATC.
+            - Movido el capítulo de transiciones electromagnéticas al final. --ATC
+            - Cambio notacional, para adecuarse a lo indicado en "Abreviaturas y Convenios". La reescritura ha topado con algunas dificultades que han de salvarse en próximas versiones. --JRG
+        number: '1.0.0'
+    -
+        date: '2004-04-15'
+        description:
+            - Nueva licencia Creative Commons Non Commercial Share Alike.
+            - Actualización de plantilla a book-latex-es-b y metadatos al esquema 1.1 --ATC.
+            - Incorporación de la versión más actual del manifiesto (2.0), así como de una descripción del proyecto librosabiertos --ATC.
+            - Pequeñas correcciones ortográficas y de estilo en texto y fórmulas --ATC.
+            - Corrección de erratas - JRG.
+            - Reconstrucción de originales vectoriales para numerosas figuras, aprovechando para mejorar la visibilidad de sub/superíndices, y mejorar presentación. 
+        number: '1.1.0'
+requisites:
+    - Álgebra y cálculo de primero de carrera.
+    - Una introducción a la física cuántica que cubra el átomo de hidrógeno.
+shorttitle: IFC2
+sourceformat:
+    ext: tex
+    macros:
+        - IFC2-macros.sty
+    name: LaTeX
+    packages:
+        - lyxpackages.sty
+    ver: '2e'
+subtitle: segunda parte
+title: Introducción a la física cuántica
+todo:
+    - Crear un índice de materias.
+    - Completar las figuras. Se necesita especial ayuda para los diagramas de niveles.
+    - Homogeneizar el tratamiento notacional de los operadores.
+    - Incorporar una buena explicación del concepto de masa reducida.
+    - Explicar el cálculo del hamiltoniano de una partícula en un campo magnético.
+    - Justificar bajo que condiciones una partícula compuesta puede tratarse como un fermion o boson elemental
+    - Hace falta ayuda para incorporar algunos elemenotos de los problemas como complementos al texto principal: en uno de los problemas se explica el origen del hamiltoniano de una particula en un campo elecromagnetico externo, en otro se trabaja con coordenadas relativas y masa reducida...

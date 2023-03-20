@@ -1,0 +1,41 @@
+{VERSION 3 0 "IBM INTEL LINUX" "3.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 0 
+0 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 }
+{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 
+0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Text Output" -1 2 1 
+{CSTYLE "" -1 -1 "Courier" 1 10 0 0 255 1 0 0 0 0 0 1 3 0 3 }1 0 0 -1 
+-1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Warning" 2 7 1 {CSTYLE "" -1 -1 "" 0 
+1 0 0 255 1 0 0 0 0 0 0 1 0 0 }0 0 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }
+{PSTYLE "Maple Output" 0 11 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 
+0 0 0 0 0 }3 3 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "" 11 12 1 
+{CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 }1 0 0 -1 -1 -1 0 0 
+0 0 0 0 -1 0 }}
+{SECT 0 {EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 12 "with(plots);" }}
+{PARA 12 "" 1 "" {XPPMATH 20 "6#7U%(animateG%*animate3dG%-animatecurve
+G%-changecoordsG%,complexplotG%.complexplot3dG%*conformalG%,contourplo
+tG%.contourplot3dG%*coordplotG%,coordplot3dG%-cylinderplotG%,densitypl
+otG%(displayG%*display3dG%*fieldplotG%,fieldplot3dG%)gradplotG%+gradpl
+ot3dG%-implicitplotG%/implicitplot3dG%(inequalG%-listcontplotG%/listco
+ntplot3dG%0listdensityplotG%)listplotG%+listplot3dG%+loglogplotG%(logp
+lotG%+matrixplotG%(odeplotG%'paretoG%*pointplotG%,pointplot3dG%*polarp
+lotG%,polygonplotG%.polygonplot3dG%4polyhedra_supportedG%.polyhedraplo
+tG%'replotG%*rootlocusG%,semilogplotG%+setoptionsG%-setoptions3dG%+spa
+cecurveG%1sparsematrixplotG%+sphereplotG%)surfdataG%)textplotG%+textpl
+ot3dG%)tubeplotG" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 27 "S := ex
+p(-Q)*(1+Q+(Q^2)/3);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"SG*&-%$exp
+G6#,$%\"QG!\"\"\"\"\",(F,F,F*F,*$)F*\"\"#\"\"\"#F,\"\"$F," }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 81 "W:=1/sqrt(2*(1-S))*(exp( -sqrt(x^2+
+(y-Q/2)^2) )-exp( -sqrt(x^2+(y+Q/2)^2) ) )^2 ;" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%\"WG,$*$),&-%$expG6#,$*$-%%sqrtG6#,&*$)%\"xG\"\"#\"\"
+\"\"\"\"*$),&%\"yGF7$!++++]7!\"*F7F5F6F7F6!\"\"F7-F*6#,$*$-F/6#,&F2F7*
+$),&F;F7$\"++++]7F>F7F5F6F7F6F?F?F5F6$\"+gPY2'*!#5" }}}{EXCHG {PARA 0 
+"> " 0 "" {MPLTEXT 1 0 9 "Q := 2.5;" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 
+0 "" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"QG$\"#D!\"\"" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 91 "plot3d(W,x=-4..4,y=-4..4,grid=[40,4
+0],orientation=[20,80],axes=boxed,labels=['X','Y','Z']);" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 15 "plotsetup(X11);" }}}{EXCHG {PARA 0 
+"> " 0 "" {MPLTEXT 1 0 51 "plotsetup(PostScript,plotoptions=`color,por
+trait`);" }}{PARA 7 "" 1 "" {TEXT -1 46 "Warning, plotoutput file set \+
+to postscript.out" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}
+{MARK "8" 0 }{VIEWOPTS 1 1 0 1 1 1803 }

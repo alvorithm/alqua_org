@@ -1,0 +1,1145 @@
+#LyX 1.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 220
+\textclass scrbook
+\language spanish
+\inputencoding auto
+\fontscheme pslatex
+\graphics default
+\float_placement !hbtp
+\paperfontsize 10
+\spacing single 
+\papersize a4paper
+\paperpackage widemarginsa4
+\use_geometry 0
+\use_amsmath 1
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+
+\layout Chapter
+
+Introducción a los Sistemas Operativos
+\layout Section
+
+Definición de Sistema Operativo
+\layout Standard
+
+Un sistema operativo puede ser contemplado como una colección organizada
+ de extensiones software del hardware, consistentes en rutinas de control
+ que hacen funcionar al computador y proporcionan un entorno para la ejecución
+ de programas.
+ Además, estos programas utilizan las facilidades proporcionadas por el
+ sistema operativo para obtener acceso a recursos del sistema informático
+ como el procesador, archivos y dispositivos de entrada/salida (E/S).
+ De esta forma, el SO constituye la base sobre la cual pueden escribirse
+ los programas de aplicación, los cuales invocarán sus servicios por medio
+ de 
+\emph on 
+llamadas
+\emph default 
+ 
+\emph on 
+al
+\emph default 
+ 
+\emph on 
+sistema
+\emph default 
+
+\begin_inset LatexCommand \index{llamadas al sistema}
+
+\end_inset 
+
+.
+ Por otro lado, los usuarios pueden interactuar directamente con el SO a
+ través de órdenes concretas.
+ En cualquier caso, el SO actúa como 
+\emph on 
+interfaz
+\emph default 
+ entre los usuarios/aplicaciones y el hardware de un sistema informático.
+\layout Standard
+
+El rango y la extensión de los servicios proporcionados por un SO dependen
+ de varios factores.
+ Así, las funciones visibles al usuario están en gran medida determinadas
+ por la necesidades y características del entorno objetivo que el SO está
+ destinado a soportar.
+ Por ejemplo, un SO destinado al desarrollo de programas en un entorno interacti
+vo puede tener un conjunto bastante diferente de llamadas y órdenes que
+ un sistema operativo diseñado para soporte en tiempo de ejecución a una
+ aplicación de tiempo real dedicada, tal como el control del motor de un
+ coche, el control del reactor de una central nuclear o el sistema de actualizac
+iones derivado de las operaciones de un cajero automático de una entidad
+ bancaria.
+\layout Standard
+
+Internamente, un SO actúa como gestor de los recursos del sistema informático
+ tales como el procesador, la memoria, los archivos y los dispositivos de
+ E/S.
+ En esa función, el SO mantiene actualizada la información relativa al estado
+ de sistemas que soportan la ejecución concurrente de programas, el SO resuelve
+ las peticiones conflictivas de recursos de manera que preserve la integridad
+ del sistema y al hacerlo intenta optimizar el rendimiento final.
+\layout Standard
+
+En general, el SO presenta al usuario el equivalente de una máquina virtual
+ que sea más fácil de utilizar que la máquina subyacente y uno de sus objetivos
+ primarios es incrementar la productividad de los recursos que ofrece al
+ sistema mediante una planificación lo más óptima posible de ellos.
+\layout Section
+
+Relación con la máquina subyacente
+\layout Subsection
+
+Componentes básicos de la arquitectura Von Neuman
+\begin_inset LatexCommand \index{arquitectura Von Neuman}
+
+\end_inset 
+
+
+\layout Standard
+
+A un nivel muy alto, un sistema informático que implemente la arquitectura
+ Von Neuman clásica consta de 3 componentes básicos: memoria principal,
+ unidad central de proceso y dispositivos de entrada/salida.
+ La unidad central de proceso
+\begin_inset LatexCommand \index{unidad central de proceso}
+
+\end_inset 
+
+, a su ves, está constituida por la unidad aritmético-lógica, la unidad
+ de control y un conjunto de registros.
+ Los componentes básicos mencionados se encuentran interconectados para
+ llevar a cabo la función principal del computador, que consiste en la ejecución
+ de las sentencias que forman los procesos.
+ Así pues, se tienen cuatro elementos estructurales principales.
+\layout Itemize
+
+Memoria principal
+\begin_inset LatexCommand \index{memoria principal}
+
+\end_inset 
+
+: Comúnmente conocida como memoria RAM.
+ En ella se encontrará el programa en código máquina a ejecutar, los datos
+ de entrada y los resultados.
+ La memoria está formada por un conjunto de celdas idénticas que pueden
+ ser accedidas de forma aleatoria mediante los distintos registros de direcciona
+miento.
+ Esta memoria es normalmente volátil y también se conoce como 
+\emph on 
+memoria real
+\emph default 
+.
+\layout Itemize
+
+La unidad aritmético-lógica
+\begin_inset LatexCommand \index{unidad aritmético-lógica}
+
+\end_inset 
+
+ permite efectuar un conjunto de opoeraciones aritméticas y lógicas de los
+ datos.
+ Estos datos, que pueden proceder de memoria principal o ser el resultado
+ de operaciones previas, se almacenarán en los registros de entrada de que
+ esta unidad dispone.
+ El resultado de la operación, así como la información relativa al estado
+ de terminación de la misma, quedarán almacenados en los correspondientes
+ registros.
+\layout Itemize
+
+La unidad de control
+\begin_inset LatexCommand \index{unidad de control}
+
+\end_inset 
+
+ es la que se encarga de hacer funcionar al conjunto, para lo cual lleva
+ a cabo las siguientes funciones:
+\begin_deeper 
+\layout Itemize
+
+Lee de memoria las instrucciones máquina que forman el programa.
+\layout Itemize
+
+Interpreta cada instrucción leída.
+\layout Itemize
+
+Lee los datos de memoria referenciados por la instrucción.
+\layout Itemize
+
+Ejecuta la instrucción.
+\layout Itemize
+
+Almacena el resultado de cada instrucción.
+\end_deeper 
+\layout Itemize
+
+Finalmente, la unidad de Entrada/Salida
+\begin_inset LatexCommand \index{unidad de Entrada/Salida}
+
+\end_inset 
+
+ se encarga de realizar la transferencia de información entre la memoria
+ (o los registros) y los periféricos.
+ La E/S se puede efectuar bajo el gobierno de la unidad de control (E/S
+ programada) o de forma independiente (DMA).
+ El transporte de datos se realiza, pues, entre el computador y su entorno
+ exterior.
+ Dicho entorno consta de una gran variedad de dispositivos externos que
+ incluye a los dispositivos de memoria secundaria, los equipos de comunicación
+ y los terminales.
+\layout Standard
+
+Además de los descritos anteriormente, los sistemas informáticos disponene
+ de un conjunto de elementos de interconexión (
+\emph on 
+buses
+\emph default 
+ 
+\emph on 
+de
+\emph default 
+ 
+\emph on 
+datos
+\emph default 
+).
+ Estos elementos están constituidos por mecanismos que permiten la comunicación
+ entre los componentes que conforman el sistema informático, es decir, su
+ función es la de interconectar procesadores, memoria principal y módulos
+ de E/S.
+\layout Subsection
+
+Registros del procesador
+\layout Standard
+
+Dentro del procesador hay un conjunto de registros que ofrecen un nivel
+ de memoria que es más rápido y pequeño que la memoria principal.
+ Los registros del procesador pueden clasificarse de la siguiente forma:
+\layout Itemize
+
+Registros visibles de usuario: Un registro visible al usuario es aquél que
+ puede ser referenciado por medio de lenguaje máquina que ejecuta el procesador,
+ siendo, por lo general, accesible a todos los programas, tanto de aplicación
+ como de sistema.
+ Un programador de lenguaje de máquina o ensamblador puede minimizar las
+ referencias a memoria principal mediante un uso óptimo de estos registros.
+ Los tipos de registro normalmente disponibles son: registros de datos
+\begin_inset LatexCommand \index{registros de datos}
+
+\end_inset 
+
+, registros de dirección
+\begin_inset LatexCommand \index{registros de dirección}
+
+\end_inset 
+
+ y registros de códigos de condición
+\begin_inset LatexCommand \index{registros de códigos de condición}
+
+\end_inset 
+
+.
+\begin_deeper 
+\layout Itemize
+
+Los registros de datos pueden ser asignados por el programador a diversas
+ funciones.
+ En muchos casos, son de propósito general y pueden ser empleados por instruccio
+nes que lleven a cabo cualquier tipo de operación sobre un dato determinado.
+ Sin embargo, suelen establecerse ciertas restricciones como dedicar algunos
+ registros para operaciones en coma flotante.
+\layout Itemize
+
+Los registros de dirección guardan direcciones de memoria principal que
+ pueden contener datos, instrucciones o parte de una dirección efectiva
+ utilizada para calcularla.
+ Como ejemplo de registros de dirección podemos incluir los siguientes:
+\begin_deeper 
+\layout Itemize
+
+Registro índice
+\begin_inset LatexCommand \index{Registro índice}
+
+\end_inset 
+
+: Se utiliza en el direccionamiento indexado que consiste en sumar un índice
+ a un valor base para obtener la dirección efectiva.
+\layout Itemize
+
+Puntero de segmento
+\begin_inset LatexCommand \index{Puntero de segmento}
+
+\end_inset 
+
+: Cuando se utiliza direccionamiento segmentado la memoria se divide en
+ segmentos, que son bloques de palabras de tamaño variable.
+ Una referencia a memoria consta de un segmento particular y un desplazamiento
+ dentro del segmento.
+\layout Itemize
+
+Puntero de pila
+\begin_inset LatexCommand \index{Puntero de pila}
+
+\end_inset 
+
+: Si existe un direccionamiento de pila visible para los usuarios, la pila
+ estará, por lo general, en memoria principal, existiendo un registro dedicado
+ a señalar la cima de la pila, para poder sacar (pop) e introducir (push)
+ elementos en ella.
+\end_deeper 
+\layout Itemize
+
+Una última categoría de registros que son, al menos, parcialmente visibles
+ para los usuarios, son aquéllos que contienen 
+\series bold 
+códigos
+\series default 
+ 
+\series bold 
+de
+\series default 
+ 
+\series bold 
+condición
+\begin_inset LatexCommand \index{códigos de condición}
+
+\end_inset 
+
+
+\series default 
+ (también denominados 
+\emph on 
+indicadores 
+\emph default 
+o 
+\emph on 
+flags
+\emph default 
+).
+ Los códigos de condición son bits activados por el hardware como resultado
+ de determinadas operaciones.
+ Por ejemplo, una operación aritmética puede producir un resultado positivo,
+ negativo, cero, con acarreo o con desbordamiento, lo que se reflejará en
+ el correspondiente bit o flag de control y que puede consultarse posteriormente
+, por ejemplo, como parte de una operación de salto condicional.
+ Es importante tener en cuenta que los códigos de condición pueden ser consultad
+os por las aplicaciones de usuario pero no modificados por éstas.
+ Los bits de código de condición se sgrupan en uno o más registros que forman
+ parte de los determinados registros o palabras de control
+\begin_inset LatexCommand \index{palabras de control}
+
+\end_inset 
+
+ que veremos a continuación.
+\layout Standard
+
+En algunas máquinas, una llamadaa un procedimiento o subrutina provocará
+ que los registros visibles de usuario se salven automáticamente, para luego
+ restaurarlos y continuar con la ejecución normal.
+ Este proceso de salvar y restaurar lo lleva a cabo el procesador como parte
+ de las instrucciones de llamada y retorno.
+ Esto permite que cada procedimiento pueda utilizar los registros de forma
+ independiente.
+ En otras máquinas, sin embargo, es responsabilidad del programador salvar
+ los registros que considere relevantes antes de efectuar una llamada a
+ un procedimiento.
+\end_deeper 
+\layout Itemize
+
+Los registros de control y estado
+\begin_inset LatexCommand \index{registros de control y estado}
+
+\end_inset 
+
+ son utilizados por el procesador para el control de las operaciones o por
+ rutinas privilegiadas del sistema operativo para controlar la ejecución
+ de los programas.
+ En la mayoría de las máquinas, la mayor parte de estos registros no son
+ visibles para los usuarios.
+ Además de los registros MAR, MBR, IOAR, IOBR, que se utilizan en funciones
+ de direccionamiento e intercambio de datos entre la unidad procesadora
+ y la memoria principal y los dispositivos de E/S, la unidad de control
+ tiene asociados una serie de registros, entre los que cabe destacar el
+ contador de programa
+\begin_inset LatexCommand \index{contador de programa}
+
+\end_inset 
+
+ (PC, 
+\emph on 
+program
+\emph default 
+ 
+\emph on 
+counter
+\emph default 
+), que indica la dirección de la siguiente instrucción máquina a ejecutar,
+ el puntero de pila
+\begin_inset LatexCommand \index{puntero de pila}
+
+\end_inset 
+
+ (SP, 
+\emph on 
+stack pointer
+\emph default 
+), que sirve para manejar la pila del sistema en memoria principal, el registro
+ de instrucción
+\begin_inset LatexCommand \index{registro de instrucción}
+
+\end_inset 
+
+ (RI) que permite almacenar la instrucción máquina a ejecutar, y el registro
+ de estado
+\begin_inset LatexCommand \index{registro de estado}
+
+\end_inset 
+
+ (SR) o palabra de estado del programa
+\begin_inset LatexCommand \index{palabra de estado del programa}
+
+\end_inset 
+
+ (PSW, 
+\emph on 
+program status word
+\emph default 
+) que almacena junto con el contador de programa (PC) diversa información
+ producida por la última instrucción del programa ejecutada (bits de estado
+ aritmético) e información sobre la forma en que ha de comportarse la computador
+a (bits de nivel de ejecución que determinan el modo en que la computadora
+ ejecuta las instrucciones, usuario o sistema o supervisor, y bits de control
+ de interrupciones que establecen las instrucciones que se pueden aceptar).
+\layout Subsection
+
+Ejecución de instrucciones
+\layout Standard
+
+La tarea básica que realiza un computador es la ejecución de instrucciones.
+ El punto de vista más sencillo es considerar que el procesamiento de instruccio
+nes consiste en una sencuencia sencilla que se repite a alta velocidad (cientos
+ de millones de veces por segundo).
+ Esta secuencia consiste en 3 pasos: lectura de memoria de la instrucción
+ máquina apuntada por el PC, incremento del contador del programa - para
+ que apunte a la siguiente instrucción máquina - y ejecución de la instrucción.
+\layout Standard
+
+Esta secuencia tiene 2 prioridades fundamentales: es lineal, es decir, ejecuta
+ de forma consecutiva las instrucciones que están en direcciones consecutivas,
+ y forma un bucle infinito.
+ Esto significa que la unidad de control de la computadora está continua
+ e ininterrumpidamente realizando esta secuencia.
+\layout Standard
+
+Podemos decir, por tanto, que lo único que sabe hacer la computadora es
+ repetir a gran velocidad esta secuencia.
+ Esto quiere decir, que para que realice algo útil, se ha de tener cargados
+ en memoria un programa máquina con sus datos y hemos de conseguir que el
+ contador de program apunte a la instrucción máquina inicial del programa.
+\layout Standard
+
+El esquema de ejecución lineal es muy limitado, por lo que se añaden unos
+ mecanismos que permiten alterar esta ejecución lineal.
+ En esencia, todos ellos se basan en algo muy simple; modifican el contenido
+ del programa, con lo que se consigue que se salte o bifurque a otro segmento
+ del programa o a otro programa (que, lógicamente, también ha de residir
+ en memoria).
+ Los tres mecanismos básicos de ruptura de secuencia son los siguientes.
+\layout Itemize
+
+Las instrucciones máquina de salto o bifurcación, que permiten que el programa
+ rompa su secuencia lineal de ejecución pasando a otro fragmento de sí mismo.
+\layout Itemize
+
+Las interrupciones externas o internas, que hacen que la unidad de control
+ modifique el valor del contador de programa saltando a otro programa.
+\layout Itemize
+
+La instrucción de máquina 
+\begin_inset Quotes eld
+\end_inset 
+
+TRAP
+\begin_inset Quotes erd
+\end_inset 
+
+, que produce un efecto similar a la interrupción, haciendo que se salte
+ a otro programa.
+\layout Standard
+
+Si desde el punto de vista de la programación son especialmente interesantes
+ las instrucciones de salto, desde el punto de vista de los SSOO son mucho
+ más importantes las interrupciones y las interrupciones de TRAP.
+ Por tanto, centraremos nuestro interés en resaltar los aspectos fundamentales
+ de estos dos mecanismos.
+\layout Subsection
+
+Interrupciones
+\layout Standard
+
+Casi todos los computadores tienen un mecanismo mediante el cual otros módulos
+ (E/S, memoria) pueden interrumpir la ejecución normal del procesador.
+ Las interrupciones aparecen, principalmente, como una vía para mejorar
+ la eficiencia del procesamiento debido a que la mayoría de los dispositivos
+ externos son mucho más lentos que el procesador.
+\layout Standard
+
+Con las interrupciones, el procesador se puede dedicar a la ejecución de
+ otras instrucciones mientras una operación de E/S está en proceso.
+ Cuando el dispositivo de E/S esté disponible, es decir, cuando esté preparado
+ para aceptar más datos del procesador, el módulo de E/S de dicho dispositivo
+ enviará una señal de 
+\emph on 
+solicitud de interrupción
+\emph default 
+ al procesador.
+ El procesador responde suspendiendo la operación del programa en curso
+ y saltando a un programa que da servicio al dispositivo de E/S en particular,
+ conocido como 
+\emph on 
+rutina de tratamiento de interrupciones (Interrupt handler)
+\emph default 
+, reanudando la ejecución original después de haber atendido al dispositivo.
+\layout Standard
+
+Desde el punto de vista del programa de usuario una interrupción es solamente
+ eso: una interrupción de la secuencia normal de ejecución.
+ Cuando el tratamiento de la interrupción termina, la ejecución continúa.
+ El programa no tiene que disponer de ningún código especial para dar cabida
+ a las interrupciones; el procesador y el sistema operativo son los responsables
+ de suspender el pograma de usuario y de reanudarlo después en el mismo
+ punto.
+\layout Standard
+
+Para dar cabida a las interrupciones, se añade un ciclo de interrupción
+ al ciclo de instrucción.
+ En el ciclo de interrupción el procesador comprueba si ha ocurrido alguna
+ interrupción, lo que se indicará con la presencia de alguna señal de interrupci
+ón.
+ Si no hay interrupciones pendientes, el procesador sigue con el ciclo de
+ lectura y trae la próxima instrucción del programa en curso.
+ Si hay una interrupción pendiente, el programador suspende la ejecución
+ del programa en curso y ejecuta una rutina de tratamiento de interrupción.
+ Esta rutina, generalmente, forma parte del sistema operativo, determina
+ la naturaleza de la interrupción y realiza cuantas acciones sean necesarias.
+ Una interrupción desencadena una serie de sucesos tanto en el hardware
+ del procesador como en el software.
+ Estos sucesos pueden secuenciarse de la siguiente forma:
+\layout Enumerate
+
+El dispositivo emite una señal de interrupción al procesador.
+\layout Enumerate
+
+El procesador finaliza la ejecución de la instrucción en curso antes de
+ responder a la interrupción.
+\layout Enumerate
+
+El procesador pregunta por la interrupción comprueba que hay una y envía
+ una señal de reconocimiento al dispositivo que generó la interrupción,
+ de forma que éste suspende su señal de interrupción.
+\layout Enumerate
+
+El procesador necesita ahora prepararse para transferor el control a la
+ rutina de interrupción.
+ Para empezar, hace falta salvar la información necesaria para reanudar
+ la ejecución del programa en curso en el punto de la la interrupción.
+ La mínima información es la palabra de estado del programa (PSW) y la ubicación
+ de la próxima instrucción a ejecutar.
+\layout Enumerate
+
+El procesador carga ahora el contador de programa con la ubicación de entrada
+ del programa de tratamiento de interrupción.
+\layout Enumerate
+
+La rutina de interrupción suele comenzar salvando el contenido de los registros
+ del procesador porque la rutina puede utilizarlos y se perdería la información
+ que la ejecución del proceso interrumpido hibiera dejado en ellos.
+\layout Enumerate
+
+La rutina de tratamiento de la interrupción procesa la interrupción realizando
+ las acciones requeridas para atenderla.
+\layout Enumerate
+
+Tras completar el tratamiento de la interrupción, se recuperan de la pila
+ los valores de los registros que se salvaron y se restauran en los correspondie
+ntes registros.
+\layout Enumerate
+
+El paso final es restaurar los valores del la PSW y del contador de programa
+ también a partir de la pila y continuar con la ejecución del programa interrump
+ido.
+ Estas acciones se llevan a cabo como resultado de ejecutar la instrucción
+ máquina para retorno de interrupción, RETI, que incluyen la mayoría de
+ las computadoras en su lenguaje máquina.
+\layout Standard
+
+Las computadoras incluyen varias señales de solicitud de interrupción, cada
+ una de las cuales tiene una determinada prioridad.
+ En caso de activarse al tiempo varias de estas señales, se tratará la de
+ mayor prioridad, quedando las demás a la espera de ser atendidas.
+ Además la computadora incluye un mencanismo de 
+\series bold 
+inhibición
+\series default 
+ selectiva que permite detener todas o determinadas señales de interrupción.
+ Las señales inhibidas no son atendidas hasta que pasen a estar desinhibidas.
+ La información de inhibición de las interrupciones suele incluirse en la
+ parte del registro de estado que solamente es modificable en nivel de núcleo,
+ por lo que su modificación queda restringida al sistema operativo.
+\layout Standard
+
+Las interrupciones se pueden generar por diversas causas, que se pueden
+ clasificar de la siguiente forma:
+\layout Itemize
+
+Excepciones de programa.
+ Hay determinadas causas que hacen que un programa presente un problema
+ en su ejecución, por lo que deberá generarse una interrupción, de forma
+ que el SO trate dicha causa.
+ Ejemplos de errores de este tipo son el desbordamiento de operaciones matemátic
+as, al división entre cero, el intento de acceso a una zona de memoria no
+ permitida, etc.
+\layout Itemize
+
+Interrupciones de reloj.
+\layout Itemize
+
+Interrupciones de E/S.
+ Los controladores de los dispositivos de E/S necesitan interrumpir para
+ indicar que han terminado una operación o un conjunto de ellas.
+\layout Itemize
+
+Excepciones del hardware como la detección de un error de paridad en la
+ memoria.
+\layout Itemize
+
+Instrucciones de TRAP.
+ Estas instrucciones permiten que un programa genere una interrupción y
+ se utilizan fundamentalmente para solicitar los servicios del SO.
+\layout Section
+
+Funciones y objetivos de los Sistemas Operativos
+\layout Standard
+
+Como ya se ha visto, un sistema operativo actúa como interfaz entre la máquina
+ desnuda y los programas de aplicaciones o el propio usuario.
+ por otro lado, el sistema operativo también se encarga de gestionar los
+ recursos del sistema informático para obtener un uso lo más óptimo posible
+ de éstos.
+ A continuación, trataremos las funciones del sistema operativo desde estos
+ dos puntos de vista, así como las características que debe presentar para
+ mantener una capacidad de evolución adecuada.
+\layout Subsection
+
+El Sistema Operativo como Interfaz Usuario/Computadora
+\layout Standard
+
+Un sistema operativo debe hacer que la interacción del usuario o de los
+ programas de aplicación con el computador resulte sencilla y fácil y debe
+ construirse de modo que permita el desarrollo efectivo, la verificación
+ y la introducción de nuevas funciones en el sistema y, a la vez, no interferir
+ en los servicios ya proporcionados.
+\layout Standard
+
+El Hardware y el Software que se utilizan para proveer al usuario de aplicacione
+s puede contemplarse de forma estratificada o jerárquica.
+ Este usuario final no tiene que preocuparse de la arquitectura del computador
+ y contempla el sistema informático en términos de aplicaciones.
+ Estas aplicaciones pueden construirse con un lenguaje de programación y
+ son desarrolladas por los programadores de aplicaciones.
+\layout Standard
+
+Si se tuviera que desarrollar un programa de aplicación con un conjunto
+ de instrucciones totalmente responsables del control del hardware, dicho
+ programa tendría una tarea abrumadora y compleja.
+ Para facilitar esta tarea, se ofrecen una serie de programas de sistema.
+ Algunos de estos programas implementan funciones muy utilizadas que ayudan
+ a la creación de aplicaciones de usuario, la gestión de archivos y el control
+ de los dispositivos de E/S.
+ El programa de sistema más importante es el sistema operativo.
+\layout Standard
+
+El sistema operativo oculta al programador los detalles del hardware y le
+ proporciona una interfaz cómoda para utilizar el sistema y actúa como mediador,
+ ofreciendo al programador y a los programas de aplicación un conjunto de
+ servicios y utilidades que faciliten su tarea.
+\layout Standard
+
+De forma resumida el sistema operativo ofrece 
+\emph on 
+servicios
+\emph default 
+ en las siguientes áreas:
+\layout Itemize
+
+Creación de programas: El sistema operativo ofrece una gran variedad de
+ servicios como los editores y depuradores (
+\emph on 
+debuggers
+\emph default 
+), para ayudar al programador en la creación de programas.
+ Normalmente, estos servicios están en forma de programas de utilidad que
+ no forman realmente parte del sistema operativo, pero que son accesibles
+ a través de él.
+\layout Itemize
+
+Ejecución de programas: Para ejecutar un programa es necesario realizar
+ un cierto número de tareas.
+ Las instrucciones y los datos deben cargarse en memoria principal, los
+ archivos y los dispositivos de E/S deben inicializarse y deben prepararse
+ otros recursos.
+ El sistema operativo administra todas estas tareas por el usuario.
+\layout Itemize
+
+Acceso a los dispositivos de E/S: Cada dispositivo de E/S requiere un conjunto
+ propio y peculiar de instrucciones o señales de control para su funcionamiento.
+ El sistema operativo, ayudado por los manejadores o 
+\emph on 
+drivers
+\emph default 
+ de dispositivo tiene en cuenta estos detalles de forma que el programador
+ pueda pensar en forma de lecturas y escrituras simples desde o hacia el
+ dispositivo.
+\layout Itemize
+
+Acceso controlado a los archivos: El sistema operativo se ocupa del formato
+ de los archivos y del medio de almacenamiento.
+ En el caso de sistemas de varios usuarios trabajando simultáneamente, es
+ el sistema operativo el que brinda los mecanismos para controlar que el
+ acceso a los archivos se lleve a cabo de una forma correcta.
+\layout Itemize
+
+Acceso al sistema: En el caso de un sistema compartido o público, el sistema
+ operativo controla el acceso al sistema como un todo y a los recursos específic
+os del sistema.
+ Las funciones de acceso deben brindar proteción a los recursos y a los
+ datos ante usuarios no autorizados y debe resolver conflictos en la propiedad
+ de los recursos.
+\layout Itemize
+
+Detección y respuesta a errores: Cuando un sistema informático está en funcionam
+iento pueden producirse varios errores.
+ El sistema operativo debe dar una respuesta que elimine la condición de
+ error con el menor impacto posible sobre las aplicaciones que están en
+ ejecución.
+\layout Itemize
+
+Contabilidad: Un sistema operativo debe recoger estadísticas de utilización
+ de los diversos recursos y supervisar parámetros de rendimiento tales como
+ el tiempo de respuesta.
+\layout Subsection
+
+El Sistema OPerativo como administrador de recursos
+\layout Standard
+
+Un SO debe perseguir una utilización lo más óptima y equilibrada posible
+ de los recursos que administra.
+ De esta forma se obtendrá un alto rendimiento del sistema informático gobernado.
+\layout Standard
+
+El SO es el responsable de la gestión de los recursos de la máquina y mediante
+ su administración tiene el control sobre las funciones básicas de la misma.
+ El SO no es nada más que un programa pero la diferencia clave es su propósito.
+ El SO dirige al procesador en el empleo de otros recursos del sistema y
+ en el control del tiempo de ejecución de los programas de usuario.
+\layout Standard
+
+Una parte del SO reside en memoria principal.
+ En esta parte está el núcleo (
+\emph on 
+kernel
+\emph default 
+) que incluye funciones del SO utilizdas con más frecuencia aunque, en un
+ momento dado, puede incluir otras partes en uso.
+ El resto de la memoria, que contiene datos y programas de usuario, es administr
+ada conjuntamente por el SO y por el hardware de control de memoria.
+ El SO decide cuándo puede utilizarse un dispositivo de E/S por parte de
+ un programa en ejecución y controla el acceso y la utilización de los archivos.
+ El procesador es, en sí mismo, un recurso y es el SO el que debe determinar
+ cuánto tiempo de procesador debe dedicarse a la ejecución de un programa
+ usuario en particular.
+ En el caso de sistemas multiprocesador, la decisión debe tomarse entre
+ todos los procesadores.
+\layout Subsection
+
+Facilidad de evolución del Sistema Operativo
+\layout Standard
+
+Un SO importante evolucionará en el tiempo por una serie de razones:
+\layout Itemize
+
+Actualizaciones del hardware y nuevos tipos de hardware: Las mejoras introducida
+s en los componentes hardware del computador deben tener soporte en el sistema
+ operativo.
+ Un ejemplo es el aprovechamiento del sistema operativo del hardware de
+ paginación que acompaña a la memoria de algunos sistemas informáticos.
+\layout Itemize
+
+Nuevos servicios: Como respuesta a nuevas necesidades, el sistema operativo
+ ampliará su oferta de servicios para añadir nuevas medidas y herramientas
+ de control.
+\layout Itemize
+
+Correcciones: El sistema operativo tiene fallos que se descubrirán con el
+ curso del tiempo y que es necesario corregir.
+\layout Standard
+
+La necesidad de hacer cambios en un SO de forma regular introduce ciertos
+ requisitos en el diseño.
+ Una afirmación obvia es que el sistema debe tener una construcción modular,
+ con interfaces bien definidas entre los módulos y debe estar bien documentado.
+\layout Section
+
+Evolución histórica de los Sistemas Operativos
+\layout Standard
+
+Para intentar comprender los requisitos básicos de un SO y el significado
+ de las características principales de un sistema operativo contemporáneo,
+ resulta útil considerar cómo han evolucionado los sistemas operativos a
+ los largo de los años.
+\layout Subsection
+
+Proceso en serie.
+ Primera generación (1945-1955)
+\layout Standard
+
+En los primeros computadores, de finales de los 40 hasta mediados de los
+ 50, el programa interactuaba directamente con el hardware: no había sistema
+ operativo.
+ La operación con estas máquinas se efectuaba desde una consola dotada con
+ indicadores luminosos y conmutadores o a través de un teclado hexadecimal.
+ Los programas se arrancan cargando el registro contador de programas con
+ la dirección de la primera instrucción.
+ Si se detenía el programa por un error, la condición de error se indicaba
+ mediante los indicadores luminosos.
+ El programador podía examinar los registros relevantes y la memoria principal
+ para comprobar el resultado de la ejecución o para determinar la causa
+ del error.
+\layout Standard
+
+El siguiente paso significativo de la evolución en el uso de sistemas informátic
+os vino con la llegada de dispositivos de E/S tales como tarjetas perforadas
+ y cintas de papel y con los traductores de lenguajes.
+ Los programas.
+ codificados ahora en un lenguaje de programación, se traducen a un forato
+ ejecutable mediante un programa como un compilador o un intérprete.
+ Otro programa, llamado 
+\emph on 
+cargador
+\emph default 
+, automatiza el proceso de cargar en memoria estos programas en código ejecutabl
+e.
+ El usuario coloca un programa y sus datos de entrada en un dispositivo
+ de entrada y el cargador transfiere la información desde el dispositivo
+ a la memoria.
+ Después de transferir el control al programa cargado por medios manuales
+ o automáticos, comienza la ejecución del mismo.
+ El programa en ejecución lee sus datos desde el dispositivo de entrada
+ asignado y puede producir ciertos resultados en un dispositivo de salida
+ tal como una impresora o la pantalla.
+\layout Standard
+
+Estos primeros sistemas presentaban dos problemas principales:
+\layout Itemize
+
+Planificación: La mayoría de las instalaciones empleaban un formulario de
+ reserva de tiempo de máquina.
+ Normalmente, un usuario podía reservar bloques de tiempo, múltiplos, por
+ ejemplo, de media hora.
+ Si la ejecución del programa terminaba antes del plazo asignado, el tiempo
+ restante se desperdiciaba.
+ También podía suceder que el programa no terminara dentro del plazo asignado,
+ con lo que el programadir no podía saber si el programa había terminado
+ satisfactoriamente o no.
+\layout Itemize
+
+Tiempo de preparación: Un programa aun siendo sencillo requería un tiempo
+ de preparación bastante grande ya que en primer lugar se cargaba un compilador
+ y un programa en lenguaje de alto nivel (programa fuente) en la memoria.
+ A continuación, se salvaba el programa ya compilado (programa objeto) y,
+ por último, se montaba y cargaba este programa objeto junto con las funciones
+ comunes.
+\layout Standard
+
+Este modo de trabajo podía denominarse 
+\emph on 
+proceso
+\emph default 
+ 
+\emph on 
+en
+\emph default 
+ 
+\emph on 
+serie
+\emph default 
+ porque refleja el hecho de los que usuarios tenían que acceder al computador
+ en serie.
+\layout Subsection
+
+Sistemas sencillos de proceso por lotes.
+ Segunda generación (1955-1965)
+\layout Standard
+
+Las primeras máquinas eran muy caras y, por tanto, era importante maximizar
+ la utilización de las mismas.
+ El tiempo desperdiciado en la planificación y la preparación era inaceptable.
+\layout Standard
+
+Para mejorar el uso, se desarrolló el concepto de sistema operativo por
+ lotes (
+\emph on 
+batch
+\emph default 
+).
+ El primer sistema operativo por lotes fue desarrollado a mediados de los
+ 50 por la General Motoros para usar en un IBM 701.
+\layout Standard
+
+La idea central que está detrás del esquema sencillo de proceso por lotes
+ es el uso de un elemento de software conocido como 
+\series bold 
+monitor
+\series default 
+.
+ Con el uso de esta clase de sistema operativo, los usuarios ya no tenían
+ acceso directo a la máquina.
+ En su lugar, el usuario debía entregar los trabajos en tarjetas o en cinta
+ al operador del computador, quien agrupaba secuencialmente los trabajos
+ por lotes y ubicaba los lotes enteros en un dispositivo de entrada para
+ su empleo por parte del monitor.
+ Cada programa se construía de modo tal que volviera al monitor al terminar
+ el procesamiento y, en ese momento, el monitor comenzaba a cargar automáticamen
+te el siguiente programa.
+\layout Standard
+
+Para obtener provecho del potencial de utilización de recursos, un lote
+ de trabajos debe ejecutarse automáticamente sin intervención humana.
+ Para este fin, deben proporcionarse algunos medios que instruyan al sistema
+ operativo sobre cómo debe tratar cada trabajo individual.
+ Estas intrucciones son suministradas generalmente por medio de órdenes
+ del sistema operativo incorporadas al flujo de lotes.
+ Las órdenes del sistema operativo son sentencias escritas en un Lenguaje
+ de Control de Trabajos (
+\emph on 
+JCL,
+\emph default 
+ 
+\emph on 
+Job Control Language
+\emph default 
+).
+ Entre las órdenes típicas de un JCL se incluyen las marcas de comienzo
+ y finalización de un trabajo, las órdenes para cargar y ejecutar programas
+ y las órdenes que anuncian necesidades de recursos tales como el tiempo
+ esperado de ejecución y los requisitos de memoria.
+ Estas órdenes se hallan incoporadas al flujo de los trabajos, junto a los
+ programas y a los datos del usuario.
+\layout Standard
+
+Una parte residente en memoria del SO por lotes, a veces llamado 
+\emph on 
+monitor de lotes
+\emph default 
+, lee, interpreta y ejecuta estas órdenes.
+ En respuesta a ellas, los trabajos del lote se ejecutan de uno en uno.
+\layout Subsection
+
+Multiprogramación.
+ Tercera Generación (1965-1980)
+\layout Standard
+
+Incluso con las mejoras anteriores, el proceso por lotes dedica los recursos
+ del sistema informático a una única tarea a la vez.
+\layout Standard
+
+En el curso de su ejecucicón, la mayoría de los programas oscilan entre
+ fases intensivas de cálculo y fases intensivas de operaciones de E/S.
+ Esto queda indicado en la figura 
+\begin_inset LatexCommand \ref{mutiprogramación}
+
+\end_inset 
+
+ donde los periodos de cálculo intensivo se indican mediante cuadros sombreados
+ y las operaciones de E/S mediante zonas en blanco.
+ El problema es que los dispositivos de E/S son muy lentos comparados con
+ el procesador.
+ El procesador gasta parte del tiempo ejecutando hasta que encuentra una
+ instrucción de E/S.
+ Entonces debe esperar a que concluya la instrucción de E/S antes de continuar.
+\layout Standard
+
+
+\begin_inset Float figure
+placement htbp
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics FormatVersion 1
+	filename fig/SSOO_fig_1_00.eps
+	display color
+	size_type 2
+	scale 50
+	rotateOrigin center
+	lyxsize_type 2
+	lyxscale 60
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{mutiprogramación}
+
+\end_inset 
+
+Ejecución secuencial vs multiprogramación
+\end_inset 
+
+
+\layout Standard
+
+Esta ineficiencia no es necesaria.
+ Se sabe que hay memoria suficiente para almacenar en memoria el sistema
+ operativo (monitor residente) y un programa usuario.
+ Supongamos que hay espacio suficiente para almacenar el sistema operativo
+ y dos programas de usuario.
+ Ahora, cuando un trabajo necesite esperar por una operación de E/S, el
+ procesador puede cambiar a otro trabajo que esté listo para ser ejecutado.
+ Si ampliamos la memoria para almacenar varios programas, podremos conmutar
+ entre todos de forma que el procesador permanezca ocupado el mayor tiempo
+ posible, evitando así el desperdicio de tiempo que suponen las esperas
+ hasta que se completen las operaciones de E/S.
+ Este concepto es conocido como 
+\series bold 
+multiprogramación
+\series default 
+
+\begin_inset LatexCommand \index{multiprogramación}
+
+\end_inset 
+
+ o 
+\series bold 
+multitarea
+\series default 
+
+\begin_inset LatexCommand \index{multitarea}
+
+\end_inset 
+
+ y es el punto central de los sistemas operativos modernos.
+\layout Standard
+
+Como sugiere la figura 
+\begin_inset LatexCommand \ref{mutiprogramación}
+
+\end_inset 
+
+ se pueden lograr ganancias significativas de rendimiento intercalando la
+ ejecución de los programas, o, 
+\emph on 
+multiprigramando
+\emph default 
+, que es como se le denomina a este modo de operación.
+ Con un solo procesador no es posible la ejecución paralela de programas,
+ y como máximo, sólo un programa puede tener el control del procesador en
+ un instante determinado.
+ El ejemplo presentado en la figura 
+\begin_inset LatexCommand \ref{mutiprogramación}
+
+\end_inset 
+
+ (b) consigue un 100% de utilización del procesador sólo con dos programas
+ activos.
+ Aunque conveniente para ilustrar la idea básica en la multiprogramación,
+ no se deben esperar resultados tan espectaculares en programas reales,
+ ya que las distribuciones de las fases de computación y E/S tienden a ser
+ más variables.
+ Para aumentar la utilización de recursos, los sistemas de multiprogramación
+ reales permiten generalmente que más de dos programas compitan por los
+ recursos del sistema al mismo tiempo.
+ El número de programas en competencia activa por los recursos de un sistema
+ informático se denomina 
+\emph on 
+grado de multiprogramación
+\begin_inset LatexCommand \index{grado de multiprogramación}
+
+\end_inset 
+
+
+\emph default 
+.
+ En principio, mayores grados de multiprogramación deben dar lugar a una
+ mayor utilización de recursos.
+\layout Standard
+
+La multiprogramación ha sido tradicionalmente empleada para aumentar la
+ utilización de los recursos de un sistema informático y para soportar múltiples
+ usuarios simultáneamente activos.
+\layout Subsection
+
+Computadoras personales.
+ Cuarta Generación (1980-1990)
+\layout Standard
+
+Con el desarrollo de la tecnología LCI (Large Scale Integration) de construcción
+ de circuitos, que permitía fabricar chips con miles de transistores en
+ un centímetro cuadrado de silicio, se inicio la era de la computadora personal.
+ En términos de arquitectura, las computadoras personales no eran muy distintas
+ de las minicomputadoras del tipo PDP-11, pero en términos de precio sí
+ eran bastante distintas.
+ Las computadoras personales más poderosas reciben el nombre genérico de
+ 
+\emph on 
+estaciones de trabajo
+\emph default 
+, pero en realidad sólo son computadoras personales grandes.
+\layout Standard
+
+La amplia disponibilidad de poder de cómputo condujo, junto con un nivel
+ gráfico bastante adecuado, al crecimiento de la industria de producción
+ de software para las computadoras personales.
+ Gran parte de este software tenía, además, la ventaja de presentar una
+ gran amiganilidad con el usuario.
+\layout Standard
+
+Dos sistemas operativos han dominado la escena de las computadoras personales
+ y las estaciones de trabajo: MS-DOS de Microsoft y UNIX de AT&T.
+ MS-DOS tuvo un amplio uso en el IBM PC y otras máquinas que incorporaban
+ el microprocesador 8088 de Intel o alguno de sus sucesores.
+ UNIX, su contendiente principal, dominó las computadoras que no utilizaban
+ microprocesadores de Intel, así como las estaciones de trabajo, en particular
+ las que poseen chips RISC de altas prestaciones.
+\layout Standard
+
+Un interesante desarrollo que comenzó a llevarse a cabo a mediados de la
+ década de los 80 ha sido el crecimiento de las redes de computadoras personales
+ con sistemas operativos en red y sistemas operativos distribuidos.
+ En un sistema operativo en red, los usuarios son conscientes de la existencia
+ de varias computadoras y pueden conectarse con máquinas remotas.
+ Cada máquina ejecuta su propio sistema operativo local y tiene su propio
+ usuario.
+ Un sistema operativo distribuido, por el contrario, presenta al usuario
+ un conjunto de computadores independientes como si se tratara de un solo
+ sistema.
+ En un sistema operativo distribuido los usuarios no deben ser conscientes
+ del lugar donde su programa va a ejecutarse o la ubicación de los archivos
+ a los que desea acceder, esas cuestiones deben ser manejadas automáticamente
+ y de forma eficiente por el sistema operativo.
+\the_end

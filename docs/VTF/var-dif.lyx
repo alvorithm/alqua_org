@@ -1,0 +1,6592 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass scrbook
+\begin_preamble
+\input{VTF-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding auto
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize a4paper
+\paperpackage a4
+\use_geometry 1
+\use_amsmath 1
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Chapter
+
+Variedades diferenciables
+\layout Standard
+
+El concepto de 
+\emph on 
+variedad
+\emph default 
+ 
+\emph on 
+diferenciable
+\emph default 
+ aparece al generalizar y formalizar la definición de superficie, independientem
+ente de un espacio exterior.
+ El vocabulario de la disciplina toma términos de la descripción del globo
+ terrestre: la representación plana de la superficie terrestre es un problema
+ que ha ocupado un papel fundamental en la geometría durante la historia.
+ Las regiones de la Tierra se representan mediante cartas o mapas, que se
+ reúnen en un volumen para formar un atlas, un conjunto de cartas para todo
+ el planeta.
+\layout Standard
+
+Dos nombres de especial relevancia son el de Gauss, que inicia el estudio
+ intrínseco (invariante frente al sistema de coordenadas) de las superficies
+ y el de Riemann, que aporta una estructura métrica para las variedades.
+\layout Standard
+
+
+\begin_inset LatexCommand \cite{Schutz}
+
+\end_inset 
+
+ indica que la palabra 
+\begin_inset Quotes eld
+\end_inset 
+
+variedad
+\begin_inset Quotes erd
+\end_inset 
+
+ es el sustituto matemáticamente preciso de la palabra 
+\begin_inset Quotes eld
+\end_inset 
+
+espacio
+\begin_inset Quotes erd
+\end_inset 
+
+, sea éste el de todos los estados de equilibrio termodinámico, el espacio
+ de fases de la mecánica, u otro más abstracto y complejo aún.
+ La importancia de este concepto para la física matemática es, pues, difícil
+ de exagerar.
+\layout Standard
+
+En este capítulo estudiaremos la definición de variedad diferenciable, examinand
+o todas las nociones previas que es necesario conocer para entenderla, presentar
+emos las variedades más comunes y algunos ejemplos de ellas, y, por último
+ trasladaremos nuestros conocimientos matemáticos de 
+\begin_inset Formula $\cR{m}$
+\end_inset 
+
+ a estos espacios más generales, en particular los de aplicación diferenciable,
+ curva y vector.
+\layout Section
+
+Hacia la definición de variedad
+\layout Standard
+
+En esta sección diseccionaremos el concepto de variedad diferenciable, de
+ modo que el campo de juego en el que se va a desarrollar el curso sea bien
+ conocido desde el principio.
+ Empezaremos con una introducción algo informal.
+\layout Subsection
+
+Introducción
+\layout Standard
+
+Supongamos que existe un espacio abstracto 
+\begin_inset Formula $M$
+\end_inset 
+
+, en torno a cada punto 
+\begin_inset Formula $P$
+\end_inset 
+
+ del cual tenemos un entorno homeomorfo a un subconjunto abierto de 
+\begin_inset Formula $\mathbb{R}^{m}$
+\end_inset 
+
+ (figura 
+\begin_inset LatexCommand \ref{fig aplicacion carta}
+
+\end_inset 
+
+).
+ Este homeomorfismo dota al espacio 
+\begin_inset Formula $M$
+\end_inset 
+
+ de unas coordenadas locales para cada punto, 
+\begin_inset Formula $\varphi\left[P\right]=\left(x^{1}\ldots x^{m}\right)$
+\end_inset 
+
+.
+ Cada punto de 
+\begin_inset Formula $M$
+\end_inset 
+
+ puede recibir un 
+\emph on 
+parche
+\emph default 
+ local al que es asignable por medio de 
+\begin_inset Formula $\varphi$
+\end_inset 
+
+ un subconjunto abierto de 
+\begin_inset Formula $\mathbb{R}^{m}$
+\end_inset 
+
+.
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-app-de-carta-simple.eps
+	display monochrome
+	width 9cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig aplicacion carta}
+
+\end_inset 
+
+Aplicación de un entorno de un punto en 
+\begin_inset Formula $M$
+\end_inset 
+
+ a un subconjunto abierto de 
+\begin_inset Formula $\cR{m}$
+\end_inset 
+
+.
+\end_inset 
+
+
+\layout Standard
+
+Surge un problema: al intentar cubrir esa variedad 
+\begin_inset Formula $M$
+\end_inset 
+
+ puede haber dos parches que solapen en una determinada región, de modo
+ que para un punto 
+\begin_inset Formula $P$
+\end_inset 
+
+ se tengan dos posibles subconjuntos abiertos de 
+\begin_inset Formula $\cR{m}$
+\end_inset 
+
+, 
+\begin_inset Formula $\varphi_{1}\left[U_{1}\cap U_{2}\right]$
+\end_inset 
+
+ y 
+\begin_inset Formula $\varphi_{2}\left[U_{1}\cap U_{2}\right]$
+\end_inset 
+
+.
+ Pero si queremos que las coordenadas tengan un cierto grado de diferenciabilida
+d para poder definir sobre ellas objetos (funciones u otros más complicados)
+ de, a su vez, cierto grado de diferenciabilidad, deben imponerse algunas
+ condiciones de compatibilidad.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-prob-compat-cartas.eps
+	display monochrome
+	width 10cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig compatibilidad cartas}
+
+\end_inset 
+
+El problema de la compatibilidad entre dos cartas 
+\begin_inset Formula $\left(U_{1},\varphi_{1}\right)$
+\end_inset 
+
+ y 
+\begin_inset Formula $\left(U_{2},\varphi_{2}\right)$
+\end_inset 
+
+.
+\end_inset 
+
+ 
+\layout Standard
+
+Como condición de compatibilidad exigiremos que los dos cambios de coordenadas,
+ 
+\begin_inset Formula \begin{eqnarray*}
+\varphi_{2}\circ\varphi_{1}^{-1}:\cR{m} & \fd & \cR{m}\\
+\left(x^{1}\ldots x^{m}\right) & \mapsto & \left(x^{1'}\ldots x^{m'}\right)\end{eqnarray*}
+
+\end_inset 
+
+ y su inverso, 
+\begin_inset Formula $\varphi_{2}\circ\varphi_{2}^{-1}$
+\end_inset 
+
+ sean suficientemente diferenciables.
+\layout Standard
+
+Cualitativamente, una variedad diferenciable es un conjunto que localmente
+ se puede representar por 
+\begin_inset Formula $\cR{m}$
+\end_inset 
+
+ y tal que los cambios de coordenadas entre diferentes representaciones
+ de un subconjunto son 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+.
+ 
+\layout Subsection
+
+Conceptos previos
+\layout Description
+
+carta
+\begin_inset LatexCommand \index{carta}
+
+\end_inset 
+
+ sea 
+\begin_inset Formula $X$
+\end_inset 
+
+ un 
+\emph on 
+espacio
+\emph default 
+ 
+\emph on 
+topológico
+\emph default 
+.
+ Se define una 
+\emph on 
+carta
+\emph default 
+ para 
+\begin_inset Formula $X$
+\end_inset 
+
+ como el par 
+\begin_inset Formula $\left(U,\varphi\right)$
+\end_inset 
+
+ donde 
+\begin_inset Formula $U$
+\end_inset 
+
+ es un subconjunto abierto de 
+\begin_inset Formula $X$
+\end_inset 
+
+ y 
+\begin_inset Formula $\varphi$
+\end_inset 
+
+ es un 
+\emph on 
+homeomorfismo
+\emph default 
+ de 
+\begin_inset Formula $U$
+\end_inset 
+
+ en 
+\begin_inset Formula $\mathbb{R}^{m}$
+\end_inset 
+
+, es decir:
+\begin_inset Formula \begin{eqnarray*}
+\varphi:U\subset X & \fd & \mathbb{R}^{m}\\
+P & \mapsto & \left(x^{1}\ldots x^{m}\right)\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Description
+
+espacio\SpecialChar ~
+topológico
+\begin_inset LatexCommand \index{espacio topológico}
+
+\end_inset 
+
+ es un conjunto 
+\begin_inset Formula $X$
+\end_inset 
+
+ en el que se ha definido una familia de subconjuntos especiales que se
+ denominan 
+\emph on 
+conjuntos
+\emph default 
+ 
+\emph on 
+abiertos
+\emph default 
+ y que satisfacen lo siguiente:
+\begin_deeper 
+\layout Enumerate
+
+La intersección finita de abiertos es un abierto.
+\layout Enumerate
+
+La unión arbitraria (
+\begin_inset Formula $\bigcup_{1}^{\infty}$
+\end_inset 
+
+)de conjuntos abiertos es un abierto.
+\layout Enumerate
+
+El conjunto vacío, 
+\begin_inset Formula $\varnothing$
+\end_inset 
+
+ y el total, 
+\begin_inset Formula $X$
+\end_inset 
+
+ son conjuntos abiertos.
+ 
+\layout Standard
+
+A la familia de subconjuntos se la denomina una 
+\emph on 
+topología
+\begin_inset LatexCommand \index{topología}
+
+\end_inset 
+
+
+\emph default 
+ del conjunto.
+ Se pueden definir algunas topologías triviales
+\layout Enumerate
+
+La discreta: todos los subconjuntos son abiertos.
+\layout Enumerate
+
+La concreta: sólo el vacío y 
+\begin_inset Formula $X$
+\end_inset 
+
+ son abiertos.
+\layout Enumerate
+
+Una topología 
+\emph on 
+métrica
+\emph default 
+.
+ En 
+\begin_inset Formula $\cR{m}$
+\end_inset 
+
+ tenemos definida una distancia dada por el teorema de Pitágoras.
+\begin_inset Formula \[
+d\left[x,y\right]=\sqrt{\left(x^{1}-y^{1}\right)^{2}+\ldots+\left(x^{m}-y^{m}\right)^{2}}\]
+
+\end_inset 
+
+ Un punto 
+\begin_inset Formula $P$
+\end_inset 
+
+ es interior a un conjunto 
+\begin_inset Formula $U$
+\end_inset 
+
+ si existe 
+\begin_inset Formula $\varepsilon>0$
+\end_inset 
+
+ tal que en su 
+\begin_inset Formula $\varepsilon$
+\end_inset 
+
+-vecindad dada por la métrica está enteramente en 
+\begin_inset Formula $U$
+\end_inset 
+
+.
+ Se dice que 
+\begin_inset Formula $U$
+\end_inset 
+
+ es abierto
+\begin_inset LatexCommand \label{conjunto abierto}
+
+\end_inset 
+
+ si todos sus puntos son interiores.
+ 
+\end_deeper 
+\layout Standard
+
+Necesitamos la estructura de espacio topológico porque 
+\begin_inset Formula $\varphi:U\subset X\fd\mathbb{R}^{m}$
+\end_inset 
+
+ es un homeomorfismo, lo que quiere decir que 
+\begin_inset Formula $\varphi$
+\end_inset 
+
+ y 
+\begin_inset Formula $\varphi^{-1}$
+\end_inset 
+
+ son continuas.
+ 
+\begin_inset Formula $\varphi$
+\end_inset 
+
+ continua implica, por la definición algebraica de homeomorfismo, que 
+\begin_inset Formula $\varphi^{-1}$
+\end_inset 
+
+ de un conjunto abierto (el codominio del homeomorfismo 
+\begin_inset Formula $\varphi$
+\end_inset 
+
+ es 
+\begin_inset Formula $\cR{m}$
+\end_inset 
+
+, que es un abierto) debe ser un conjunto abierto.
+ Pero para saber qué es un abierto tengo que saber qué son los conjuntos
+ abiertos en 
+\begin_inset Formula $X$
+\end_inset 
+
+.
+ Y para eso tengo que haber introducido una topología en 
+\begin_inset Formula $X$
+\end_inset 
+
+, una estructura topológica.
+ 
+\layout Standard
+
+En resumen, la función de la carta lleva abiertos a abiertos, como su inversa.
+\layout Description
+
+dimensión\SpecialChar ~
+de\SpecialChar ~
+una\SpecialChar ~
+carta es la dimensión del subconjunto 
+\begin_inset Formula $U$
+\end_inset 
+
+, es decir 
+\begin_inset Formula $m$
+\end_inset 
+
+ (la 
+\begin_inset Formula $\dim\left[\cR{m}\right]$
+\end_inset 
+
+).
+\layout Description
+
+entorno\SpecialChar ~
+de\SpecialChar ~
+coordenadas
+\begin_inset LatexCommand \index{entorno de coordenadas}
+
+\end_inset 
+
+ 
+\begin_inset Formula $U$
+\end_inset 
+
+ (también llamado dominio de coordenadas).
+\layout Description
+
+aplicación\SpecialChar ~
+de\SpecialChar ~
+coordenadas
+\begin_inset LatexCommand \index{aplicación de coordenadas}
+
+\end_inset 
+
+ 
+\begin_inset Formula $\varphi$
+\end_inset 
+
+ (aplicación de carta).
+\layout Description
+
+sistema\SpecialChar ~
+de\SpecialChar ~
+coordenadas
+\begin_inset LatexCommand \index{sistema de coordenadas}
+
+\end_inset 
+
+ usaremos habitualmente 
+\begin_inset Formula $(x^{1}\ldots x^{m})$
+\end_inset 
+
+ y 
+\begin_inset Formula $\left(x^{1'}\ldots x^{m'}\right)$
+\end_inset 
+
+ para denotar diferentes sistemas de coordenadas.
+ 
+\layout Description
+
+cartas\SpecialChar ~
+compatibles\SpecialChar ~
+
+\begin_inset Formula $\mathcal{C}^{\infty}$
+\end_inset 
+
+ Sea 
+\begin_inset Formula $X$
+\end_inset 
+
+ un espacio topológico y sean 
+\begin_inset Formula $\left(U_{1},\varphi_{1}\right)$
+\end_inset 
+
+ y 
+\begin_inset Formula $\left(U_{2},\varphi_{2}\right)$
+\end_inset 
+
+ dos cartas para 
+\begin_inset Formula $X$
+\end_inset 
+
+ tales que
+\begin_inset Formula \begin{eqnarray*}
+\varphi_{1}:U_{1}\subset X & \fd & \cR{m}\\
+P & \mapsto & \left(x^{1}\ldots x^{m}\right)\\
+\\\varphi_{2}:U_{2}\subset X & \fd & \cR{m}\\
+P & \mapsto & \left(x^{1'}\ldots x^{m'}\right)\end{eqnarray*}
+
+\end_inset 
+
+se dice que estas cartas son 
+\begin_inset Formula $\mathcal{C}^{\infty}$
+\end_inset 
+
+-compatibles si se cumplen estas dos condiciones
+\begin_deeper 
+\layout Enumerate
+
+
+\begin_inset Formula $m=n$
+\end_inset 
+
+, y
+\layout Enumerate
+
+o bien 
+\begin_inset Formula $U_{1}\cap U_{2}\equiv\varnothing$
+\end_inset 
+
+ o bien si 
+\begin_inset Formula $U_{1}\cap U_{2}\neq\varnothing$
+\end_inset 
+
+ (los entornos de coordenadas solapan) las aplicaciones 
+\begin_inset Formula $\varphi_{2}\circ\varphi_{1}^{-1}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\varphi_{1}\circ\varphi_{2}^{-1}$
+\end_inset 
+
+ (cambios de coordenadas) son 
+\begin_inset Formula $\mathcal{C}^{\infty}$
+\end_inset 
+
+.
+ 
+\begin_inset Formula \begin{eqnarray*}
+\varphi_{2}\circ\varphi_{1}^{-1}:\varphi_{1}\left[U_{1}\cap U_{2}\right]\subset\cR{m} & \fd & \varphi_{2}\left[U_{1}\cap U_{2}\right]\subset\mathbb{R}^{m}\\
+\left(x^{1}\ldots x^{m}\right) & \mapsto & \left(x^{1'}\left[x^{1}\ldots x^{m}\right]\ldots x^{m'}\left[x^{1}\ldots x^{m}\right]\right)\end{eqnarray*}
+
+\end_inset 
+
+ (ejercicio: escribir el cambio inverso).
+\end_deeper 
+\layout Standard
+
+Ahora vamos a ir exponiendo requisitos sucesivos a imponer sobre un espacio
+ para considerarlo variedad diferenciable, escenario de una física del continuo.
+\layout Description
+
+variedad\SpecialChar ~
+topológica
+\begin_inset LatexCommand \index{variedad topológica}
+
+\end_inset 
+
+ Una 
+\emph on 
+variedad
+\emph default 
+ 
+\emph on 
+topológica
+\emph default 
+ 
+\begin_inset Formula $X$
+\end_inset 
+
+ es un espacio topológico 
+\emph on 
+Haussdorf
+\emph default 
+ y 
+\emph on 
+separable
+\emph default 
+ junto con una familia de cartas 
+\begin_inset Formula $\{(U_{a},\varphi_{a})\}_{a}$
+\end_inset 
+
+ (de dimensión 
+\begin_inset Formula $m$
+\end_inset 
+
+) que recubren a 
+\begin_inset Formula $X$
+\end_inset 
+
+.
+\layout Description
+
+espacio\SpecialChar ~
+topológico\SpecialChar ~
+Haussdorf
+\begin_inset LatexCommand \index{Haussdorf}
+
+\end_inset 
+
+ se dice de un espacio topológico 
+\begin_inset Formula $X$
+\end_inset 
+
+ que es 
+\emph on 
+Haussdorf
+\emph default 
+ si 
+\begin_inset Formula $\forall P,Q\in X:P\neq Q,\exists U,V\subset X$
+\end_inset 
+
+ abiertos tales que 
+\begin_inset Formula $P\in U$
+\end_inset 
+
+ y 
+\begin_inset Formula $Q\in V$
+\end_inset 
+
+, 
+\begin_inset Formula $U\cap V=\varnothing$
+\end_inset 
+
+.
+ Es decir, que se puede separar dos puntos distintos (figura 
+\begin_inset LatexCommand \ref{fig Haussdorf}
+
+\end_inset 
+
+).
+ 
+\begin_deeper 
+\layout Standard
+
+Todo espacio con una topología métrica es Haussdorf.
+ En un espacio métrico, dados dos puntos 
+\begin_inset Formula $x$
+\end_inset 
+
+ e 
+\begin_inset Formula $y$
+\end_inset 
+
+, calculamos la distancia 
+\begin_inset Formula $d$
+\end_inset 
+
+ entre ellos y alrededor de cada punto construimos una bola de radio 
+\begin_inset Formula $<\frac{d}{2}$
+\end_inset 
+
+.
+ Esas bolas son los conjuntos 
+\begin_inset Formula $U,V$
+\end_inset 
+
+ disjuntos a los que nos referimos en esta definición.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-cond-haussdorf.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig Haussdorf}
+
+\end_inset 
+
+Ilustración de la condición Haussdorf para dos puntos 
+\begin_inset Formula $P,Q$
+\end_inset 
+
+ en 
+\begin_inset Formula $\cR{2}$
+\end_inset 
+
+
+\end_inset 
+
+
+\end_deeper 
+\layout Description
+
+espacio\SpecialChar ~
+topológico\SpecialChar ~
+separable
+\begin_inset LatexCommand \index{separabilidad}
+
+\end_inset 
+
+ se dice de un espacio topológico 
+\begin_inset Formula $X$
+\end_inset 
+
+ que es 
+\emph on 
+separable
+\emph default 
+ si admite una 
+\emph on 
+base
+\emph default 
+ 
+\emph on 
+numerable
+\emph default 
+ de entornos abiertos.
+\layout Description
+
+base\SpecialChar ~
+de\SpecialChar ~
+entornos\SpecialChar ~
+abiertos\SpecialChar ~
+de\SpecialChar ~
+un\SpecialChar ~
+punto Para un punto 
+\begin_inset Formula $P$
+\end_inset 
+
+ de un espacio topológico 
+\begin_inset Formula $X$
+\end_inset 
+
+, una 
+\emph on 
+base
+\emph default 
+ 
+\emph on 
+de
+\emph default 
+ 
+\emph on 
+entornos
+\emph default 
+ 
+\emph on 
+abiertos
+\emph default 
+ es una familia de conjuntos abiertos 
+\begin_inset Formula $\{ U_{a}\}_{a}$
+\end_inset 
+
+ que contiene a 
+\begin_inset Formula $P$
+\end_inset 
+
+ de tal manera que si se toma cualquier otro conjunto abierto 
+\begin_inset Formula $V$
+\end_inset 
+
+ que lo contenga siempre se pueda encontrar un 
+\begin_inset Formula $U_{a}$
+\end_inset 
+
+ perteneciente a 
+\begin_inset Formula $V$
+\end_inset 
+
+.
+ 
+\begin_deeper 
+\layout Standard
+
+Comentarios:
+\layout Itemize
+
+En realidad lo que permite una base numerable de conjuntos abiertos abiertos
+ es poder partir un cálculo integral en al menos una cantidad numerable
+ de cálculos.
+\layout Itemize
+
+Por ejemplo, en 
+\begin_inset Formula $\cR{m}$
+\end_inset 
+
+ una base de entornos abiertos sería el conjunto (numerable) de bolas de
+ radio racional.
+\end_deeper 
+\layout Standard
+
+Que una familia de cartas 
+\begin_inset Formula $\{(U_{a},\varphi_{a})\}_{a}$
+\end_inset 
+
+ 
+\emph on 
+recubre
+\emph default 
+ 
+\begin_inset Formula $X$
+\end_inset 
+
+ quiere decir que 
+\begin_inset Formula $\forall P\in X$
+\end_inset 
+
+ existe al menos un 
+\begin_inset Formula $U$
+\end_inset 
+
+ tal que 
+\begin_inset Formula $P\in U$
+\end_inset 
+
+.
+ Es decir que para todo punto siempre hay un entorno de coordenadas de una
+ carta en el que está incluido.
+ 
+\layout Description
+
+atlas\SpecialChar ~
+de\SpecialChar ~
+una\SpecialChar ~
+variedad\SpecialChar ~
+topológica\SpecialChar ~
+
+\begin_inset Formula $X$
+\end_inset 
+
+ es una familia de cartas que la recubre.
+\layout Description
+
+atlas\SpecialChar ~
+
+\emph on 
+
+\begin_inset Formula $\mathcal{C}^{\infty}$
+\end_inset 
+
+ 
+\emph default 
+Sea 
+\begin_inset Formula $X$
+\end_inset 
+
+ una variedad topológica.
+ Se dice que un atlas 
+\begin_inset Formula $\{(U_{a},\varphi_{a})\}_{a}$
+\end_inset 
+
+ es 
+\begin_inset Formula $\mathcal{C}^{\infty}$
+\end_inset 
+
+ si cualesquiera cartas 
+\begin_inset Formula $(U_{1},\varphi_{1})$
+\end_inset 
+
+ y 
+\begin_inset Formula $(U_{2},\varphi_{2})$
+\end_inset 
+
+ del atlas son 
+\begin_inset Formula $\mathcal{C}^{\infty}$
+\end_inset 
+
+ compatibles.
+
+\emph on 
+ 
+\layout Description
+
+carta\SpecialChar ~
+admisible\SpecialChar ~
+para\SpecialChar ~
+un\SpecialChar ~
+atlas\SpecialChar ~
+
+\emph on 
+
+\begin_inset Formula $\mathcal{C}^{\infty}$
+\end_inset 
+
+ 
+\emph default 
+sea 
+\begin_inset Formula $X$
+\end_inset 
+
+ una variedad topológica y 
+\begin_inset Formula $\{(U_{a},\varphi_{a})\}_{a}$
+\end_inset 
+
+un atlas 
+\begin_inset Formula $\mathcal{C}^{\infty}$
+\end_inset 
+
+.
+ Se dice que la carta 
+\begin_inset Formula $(V,\psi)$
+\end_inset 
+
+ es admisible para dicho atlas si es 
+\begin_inset Formula $\mathcal{C}^{\infty}$
+\end_inset 
+
+ compatible con todas sus cartas.
+ 
+\layout Standard
+
+Si coleccionamos todas las cartas admisibles para un atlas podemos así construir
+ un 
+\emph on 
+atlas
+\emph default 
+ 
+\emph on 
+máximo
+\emph default 
+
+\begin_inset LatexCommand \index{atlas máximo}
+
+\end_inset 
+
+, que es el que contiene todas las cartas admisibles para un atlas inicial
+ dado.
+ Es necesario utilizar este atlas con 
+\emph on 
+todas 
+\emph default 
+las cartas para definir la variedad, y eso es por consistencia lógica.
+ Así no privilegiamos ningún sistema de coordenadas respecto a la estructura,
+ porque el atlas máximo es único, mientras que el atlas inicial es una descripci
+ón concreta y arbitraria del espacio topológico.
+ Además si no fuese así se daría la paradoja de que consideraríamos distintos
+ dos objetos cuya única diferencia está en su descripción (el atlas).
+\layout Standard
+
+Es interesante preguntarse cuál es el número mínimo de cartas que recubren
+ una variedad.
+ En el caso de la esfera, se puede hacer con sólo 2.
+\layout Subsection
+
+Definición de variedad
+\layout Description
+
+variedad\SpecialChar ~
+diferenciable\SpecialChar ~
+
+\begin_inset Formula $\mathcal{C}^{\infty}$
+\end_inset 
+
+ Una variedad diferenciable
+\begin_inset LatexCommand \index{variedad diferenciable}
+
+\end_inset 
+
+ 
+\begin_inset Formula $M$
+\end_inset 
+
+ es un espacio topológico Hausdorff y separable junto con un atlas 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ 
+\begin_inset Formula $\left\{ \left(U_{a},\varphi_{a}\right)\right\} _{a}$
+\end_inset 
+
+ de dimensión 
+\begin_inset Formula $m$
+\end_inset 
+
+ y todas sus cartas admisibles (un atlas máximo para el atlas dado).
+\layout Standard
+
+Esencialmente es una variedad topológica dotada de una estructura diferenciable.
+\layout Standard
+
+Tenemos pues la siguiente definición completa: una variedad diferenciable
+ 
+\begin_inset Formula $\mathcal{C}^{\infty}$
+\end_inset 
+
+ 
+\begin_inset Formula $M$
+\end_inset 
+
+ es un espacio topológico Hausdorff y separable junto con una familia de
+ cartas 
+\begin_inset Formula $\left\{ \left(U_{a},\varphi_{a}\right)\right\} _{a}$
+\end_inset 
+
+ 
+\begin_inset Formula $m$
+\end_inset 
+
+-dimensionales que satisfacen las siguientes propiedades
+\layout Enumerate
+
+
+\begin_inset Formula $\forall P\in M\,\exists\left(U_{a},\varphi_{a}\right)$
+\end_inset 
+
+ tal que 
+\begin_inset Formula $P\in U_{a}$
+\end_inset 
+
+ (la familia recubre 
+\begin_inset Formula $M$
+\end_inset 
+
+).
+\layout Enumerate
+
+Cualesquiera 
+\begin_inset Formula $\left(U_{a},\varphi_{a}\right)$
+\end_inset 
+
+ y 
+\begin_inset Formula $\left(U_{b},\varphi_{b}\right)$
+\end_inset 
+
+ pertenecientes a la familia son 
+\begin_inset Formula $\mathcal{C}^{\infty}$
+\end_inset 
+
+ compatibles.
+\layout Enumerate
+
+Toda carta admisible para la familia de cartas está contenida en ella (atlas
+ máximo).
+\layout Standard
+
+Otras explicaciones se basan en definir una estructura diferenciable para
+ una variedad topológica, lo cual es simplemente el conjunto de cartas con
+ las tres propiedades que hemos dicho.
+ Esto separa nítidamente una parte topológica (
+\begin_inset Quotes eld
+\end_inset 
+
+variedad topológica
+\begin_inset Quotes erd
+\end_inset 
+
+) y una parte diferenciable (
+\begin_inset Quotes eld
+\end_inset 
+
+estructura diferenciable
+\begin_inset Quotes erd
+\end_inset 
+
+); distinción importante porque incluso para variedades topológicas tan
+ sencillas como 
+\begin_inset Formula $\cR{4}$
+\end_inset 
+
+ se pueden introducir varias estructuras diferenciables.
+ Esta multiplicidad de estructuras diferenciables para una misma variedad
+ topológica se presenta en algunos modelos geométricos extraídos de la Física.
+\layout Standard
+
+Hay algunas consideraciones que hacer sobre la compatibilidad de cartas:
+\layout Itemize
+
+A partir de una estructura analítica (
+\begin_inset Formula $\mathcal{C}^{\omega}$
+\end_inset 
+
+) se puede, añadiendo todas las cartas 
+\begin_inset Formula $\mathcal{C}^{\infty}$
+\end_inset 
+
+ compatibles con las analíticamente compatibles, construir una estructura
+ diferenciable 
+\begin_inset Formula $\mathcal{C}^{\infty}$
+\end_inset 
+
+.
+ 
+\layout Itemize
+
+análogamente para 
+\begin_inset Formula $\mathcal{C}^{k}$
+\end_inset 
+
+ a partir de 
+\begin_inset Formula $\mathcal{C}^{\infty}$
+\end_inset 
+
+.
+ 
+\layout Itemize
+
+Resultado importante (y difícil de probar): para una estructura 
+\begin_inset Formula $\mathcal{C}^{k}$
+\end_inset 
+
+ (hasta 
+\begin_inset Formula $\mathcal{C}^{1}$
+\end_inset 
+
+) podemos, simplemente descartando las cartas no analíticas, obtener una
+ estructura diferenciable analítica.
+\layout Standard
+
+Vemos que, a fin de cuentas, no debemos preocuparnos excesivamente por el
+ grado de diferenciabilidad de las transformaciones.
+ La estructura de variedad topológica incluye ya 
+\begin_inset Formula $\mathcal{C}^{0}$
+\end_inset 
+
+ (transformaciones continuas), pero eso no permite acceder a la estructura
+ de variedad diferenciable.
+ El tercer requisito para una variedad diferenciable introduce una enorme
+ dificultad práctica que se resuelve por el siguiente aserto:
+\layout Description
+
+estructura\SpecialChar ~
+diferenciable
+\begin_inset LatexCommand \index{estructura diferenciable}
+
+\end_inset 
+
+ (teorema) Una variedad topológica 
+\begin_inset Formula $X$
+\end_inset 
+
+ más un atlas 
+\begin_inset Formula $\mathcal{C}^{\infty}$
+\end_inset 
+
+ sobre ella definen de manera única una estructura diferenciable 
+\begin_inset Formula $\mathcal{C}^{\infty}$
+\end_inset 
+
+ para 
+\begin_inset Formula $X$
+\end_inset 
+
+ y que contiene al atlas dado.
+\layout Section
+
+Variedades importantes
+\begin_inset LatexCommand \label{sec variedades importantes}
+
+\end_inset 
+
+
+\layout Standard
+
+En este apartado describiremos algunas categorías de variedades especialmente
+ significativas para las aplicaciones, y daremos algunos ejemplos concretos
+ junto con las definiciones necesarias para su comprensión.
+\layout Subsection
+
+El espacio habitual: 
+\begin_inset Formula $\mathbb{R}^{m}$
+\end_inset 
+
+ 
+\layout Standard
+
+Un ejemplo conocido de variedad diferenciable es el propio espacio 
+\begin_inset Formula $\cR{m}$
+\end_inset 
+
+.
+ Sobre él definimos la topología habitual, una topología métrica dada por
+ la distancia
+\begin_inset Formula \[
+d\left[x,y\right]=\sqrt{(x^{1}-y^{1})+\ldots+\left(x^{m}-y^{m}\right)^{2}}\]
+
+\end_inset 
+
+ 
+\layout Standard
+
+Por estar dotado de una topología métrica 
+\begin_inset Formula $\Bbb R^{m}$
+\end_inset 
+
+ es Hausdorff.
+ También es separable (tómese una base de entornos centrados en los números
+ racionales).
+ En cuanto a la estructura diferenciable, podemos recubrirlo con una sola
+ carta, trivial: 
+\begin_inset Formula $\left(\mathbb{R}^{m},id\right)$
+\end_inset 
+
+ (el propio abierto 
+\begin_inset Formula $\cR{m}$
+\end_inset 
+
+ y la aplicación identidad, 
+\begin_inset Formula $id$
+\end_inset 
+
+).
+\layout Subsection
+
+Las subvariedades abiertas
+\begin_inset LatexCommand \index{subvariedades abiertas}
+
+\end_inset 
+
+
+\begin_inset LatexCommand \label{ssec Las subvar abiertas}
+
+\end_inset 
+
+
+\layout Standard
+
+Cualquier subconjunto abierto 
+\begin_inset Formula $N$
+\end_inset 
+
+ de una variedad diferenciable 
+\begin_inset Formula $M$
+\end_inset 
+
+ es, a su vez, una variedad diferenciable.
+ Veamos cómo 
+\begin_inset Formula $N$
+\end_inset 
+
+ hereda las propiedades topológicas y diferenciables necesarias de 
+\begin_inset Formula $M$
+\end_inset 
+
+:
+\layout Enumerate
+
+
+\series bold 
+Topología\SpecialChar ~
+inducida\SpecialChar ~
+de\SpecialChar ~
+
+\begin_inset Formula $M$
+\end_inset 
+
+\SpecialChar ~
+en\SpecialChar ~
+
+\begin_inset Formula $N$
+\end_inset 
+
+.
+ 
+\series default 
+Diremos que un 
+\begin_inset Formula $U\subset N$
+\end_inset 
+
+ es abierto si 
+\begin_inset Formula $\exists\hat{U}\subset M$
+\end_inset 
+
+ abierto tal que 
+\begin_inset Formula $U\equiv\hat{U}\cap N$
+\end_inset 
+
+.
+ Esta definición permite saber qué es y qué no es un subconjunto abierto
+ de 
+\begin_inset Formula $N$
+\end_inset 
+
+.
+ Por ejemplo, para determinar si un subconjunto de la esfera
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+En adelante debe entenderse 
+\emph on 
+superficie
+\emph default 
+ 
+\emph on 
+esférica
+\emph default 
+ cuando quiera que nos refiramos a 
+\emph on 
+esfera
+\emph default 
+ o al 
+\emph on 
+conjunto
+\emph default 
+ 
+\begin_inset Formula $\Bbb S^{2}$
+\end_inset 
+
+.
+ La esfera en sentido tradicional (
+\emph on 
+llena
+\emph default 
+) se designará aquí con el término habitual de topología, 
+\emph on 
+bola
+\emph default 
+.
+\end_inset 
+
+ 
+\begin_inset Formula $\Bbb S^{2}$
+\end_inset 
+
+ es abierto a partir de una topología de 
+\begin_inset Formula $\cR{3}$
+\end_inset 
+
+ no hay más que encontrar un abierto de 
+\begin_inset Formula $\cR{3}$
+\end_inset 
+
+ cuya intersección sea el subconjunto de la esfera en cuestión.
+\layout Enumerate
+
+
+\series bold 
+Haussdorf.
+
+\series default 
+ Sean 
+\begin_inset Formula $P,Q\in N\subset M$
+\end_inset 
+
+.
+ Entonces 
+\begin_inset Formula $\exists\,\hat{U},\hat{V}\subset M$
+\end_inset 
+
+ abiertos tales que 
+\begin_inset Formula $P\in\hat{U}$
+\end_inset 
+
+ y 
+\begin_inset Formula $Q\in\hat{V}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\hat{U}\cap\hat{V}=\varnothing.$
+\end_inset 
+
+ Pero entonces
+\begin_inset Formula \begin{eqnarray*}
+U & \equiv & \hat{U}\cap N\\
+V & \equiv & \hat{V}\cap N\end{eqnarray*}
+
+\end_inset 
+
+por construcción, son subconjuntos abiertos de 
+\begin_inset Formula $N$
+\end_inset 
+
+.
+ Luego efectivamente si el conjunto de partida es Hausdorff, el subconjunto
+ con topología inducida también lo es.
+\layout Enumerate
+
+
+\series bold 
+Separabilidad.
+
+\series default 
+ Dada una base de entornos abiertos numerable para 
+\begin_inset Formula $M$
+\end_inset 
+
+ (por ser separable) conseguimos una para 
+\begin_inset Formula $N$
+\end_inset 
+
+ simplemente formando su intersección con 
+\begin_inset Formula $M$
+\end_inset 
+
+.
+ Más formalmente, 
+\begin_inset Formula $\exists\,\{\hat{U}_{a}\}_{a}$
+\end_inset 
+
+ abiertos de 
+\begin_inset Formula $M$
+\end_inset 
+
+ implica que es posible construir una base numerable de entornos abiertos
+ para 
+\begin_inset Formula $N$
+\end_inset 
+
+, 
+\begin_inset Formula $\{ U_{a}\}_{a}$
+\end_inset 
+
+, simplemente definiendo 
+\begin_inset Formula $U_{a}=\hat{U}_{a}\cap N$
+\end_inset 
+
+.
+ 
+\layout Enumerate
+
+
+\series bold 
+Atlas\SpecialChar ~
+
+\begin_inset Formula $\mathcal{C}^{\infty}$
+\end_inset 
+
+.
+
+\series default 
+ Si 
+\begin_inset Formula $M$
+\end_inset 
+
+ es una variedad 
+\begin_inset Formula $\mathcal{C}^{\infty}$
+\end_inset 
+
+ a partir de su atlas, 
+\begin_inset Formula $\{(\hat{U}_{a},\hat{\varphi}_{a})\}_{a}$
+\end_inset 
+
+ construimos un atlas 
+\begin_inset Formula $\mathcal{C}^{\infty}$
+\end_inset 
+
+ para 
+\begin_inset Formula $N$
+\end_inset 
+
+, 
+\begin_inset Formula $\left\{ (U_{a},\varphi_{a})\right\} _{a}$
+\end_inset 
+
+ del siguiente modo: 
+\begin_inset Formula \begin{eqnarray*}
+U_{a} & \equiv & \hat{U}_{a}\cap N\\
+\varphi_{a} & \equiv & \left.\hat{\varphi}_{a}\right|_{U_{a}}\end{eqnarray*}
+
+\end_inset 
+
+ Los conjuntos abiertos los construimos por intersección con los de 
+\begin_inset Formula $M$
+\end_inset 
+
+ y las aplicaciones de carta mediante restricción del dominio original (en
+ 
+\begin_inset Formula $M$
+\end_inset 
+
+) a 
+\begin_inset Formula $N$
+\end_inset 
+
+.
+\layout Standard
+
+Las subvariedades abiertas tienen la misma dimensión que 
+\begin_inset Formula $\cR{m}$
+\end_inset 
+
+, la variedad ambiente.
+ La esfera 
+\emph on 
+no
+\emph default 
+ es por tanto una subvariedad abierta de 
+\begin_inset Formula $\cR{3}$
+\end_inset 
+
+.
+ La bola de dimensión 
+\begin_inset Formula $m$
+\end_inset 
+
+ sí es una subvariedad abierta de 
+\begin_inset Formula $\cR{m}$
+\end_inset 
+
+.
+ 
+\layout Subsection
+
+La esfera: 
+\begin_inset Formula $\mathbb{S}^{2}$
+\end_inset 
+
+
+\layout Standard
+
+La esfera
+\begin_inset LatexCommand \index{esfera}
+
+\end_inset 
+
+ de dimensión 2 se puede definir por una ecuación: 
+\begin_inset Formula \[
+\mathbb{S}^{2}=\left\{ \left(x^{1},x^{2},x^{3}\right)\in\cR{3}:\left(x^{1}\right)^{2}+\left(x^{2}\right)^{2}+\left(x^{3}\right)^{2}=1\right\} \]
+
+\end_inset 
+
+Para probar que es una variedad diferenciable tenemos que definir qué son
+ conjuntos abiertos en la esfera (estructura topológica) y encontrar para
+ ella un atlas 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ (estructura diferenciable):
+\layout Enumerate
+
+Inducimos la topología de 
+\begin_inset Formula $\cR{3}$
+\end_inset 
+
+.
+ Un conjunto 
+\begin_inset Formula $U\subset\mathbb{S}^{2}$
+\end_inset 
+
+ es abierto si 
+\begin_inset Formula $\exists$
+\end_inset 
+
+ 
+\begin_inset Formula $\hat{U}\subset\cR{3}$
+\end_inset 
+
+ abierto tal que 
+\begin_inset Formula $U=\hat{U}\cap\mathbb{S}^{2}$
+\end_inset 
+
+.
+ Por el razonamiento de 
+\begin_inset LatexCommand \ref{ssec Las subvar abiertas}
+
+\end_inset 
+
+ 
+\begin_inset Formula $\Bbb S^{2}$
+\end_inset 
+
+ es Haussdorf y separable.
+\layout Enumerate
+
+Para definir un atlas necesitamos una colección de conjuntos abiertos que
+ recubra la variedad y aplicaciones que los lleven a 
+\begin_inset Formula $\cR{2}$
+\end_inset 
+
+.
+ Vamos a identificar abiertos de 
+\begin_inset Formula $\cR{3}$
+\end_inset 
+
+ tal que al intersecar con 
+\begin_inset Formula $\mathbb{S}^{2}$
+\end_inset 
+
+ obtengamos una familia de conjuntos abiertos que recubra toda la esfera.
+ Podemos utilizar estos 6:
+\begin_inset Formula \begin{eqnarray*}
+\hat{U}_{a}^{+} & = & \left\{ \left(x^{1},x^{2},x^{3}\right)\in\Bbb R^{3}:x^{a}>0\right\} _{a=1,2,3}\\
+\hat{U}_{a}^{-} & = & \left\{ \left(x^{1},x^{2},x^{3}\right)\in\Bbb R^{3}:x^{a}<0\right\} _{a=1,2,3}\end{eqnarray*}
+
+\end_inset 
+
+ Estos conjuntos son semiespacios de 
+\begin_inset Formula $\cR{3}$
+\end_inset 
+
+ según se divide por planos de 
+\begin_inset Formula $x^{a}=0$
+\end_inset 
+
+.
+ Definimos entonces 6 conjuntos abiertos, que serán 6 superficies hemisféricas
+ 
+\begin_inset Formula $U_{a}^{\pm}=\hat{U}_{a}^{\pm}\cap\Bbb S^{2}$
+\end_inset 
+
+.
+ Por ejemplo, para 
+\begin_inset Formula $a=1$
+\end_inset 
+
+:
+\begin_inset Formula \[
+U_{1}^{+}=\left\{ \left(x^{1},x^{2},x^{3}\right)\in\Bbb R^{3}:x^{1}>0,\left(x^{1}\right)^{2}+\left(x^{2}\right)^{2}+\left(x^{3}\right)^{2}=1\right\} \]
+
+\end_inset 
+
+ 
+\begin_deeper 
+\layout Standard
+
+Estos conjuntos recubren la esfera porque como la distancia al cuadrado
+ es uno, alguna coordenada tiene que ser 
+\begin_inset Formula $\neq0$
+\end_inset 
+
+.
+ Para asignar las coordenadas 
+\begin_inset Formula $\Bbb S^{2}\fd\cR{2}$
+\end_inset 
+
+ no hay más que proyectar las coordenadas sobre 
+\begin_inset Formula $x^{1}=0$
+\end_inset 
+
+ si estamos en 
+\begin_inset Formula $U_{1}^{\pm}$
+\end_inset 
+
+, 
+\begin_inset Formula $x^{2}=0$
+\end_inset 
+
+ si estamos en 
+\begin_inset Formula $U_{2}^{\pm}$
+\end_inset 
+
+, etc.
+ Como ejemplo veamos las dos aplicaciones de carta correspondientes a 
+\begin_inset Formula $x^{1}$
+\end_inset 
+
+: 
+\begin_inset Formula \begin{eqnarray*}
+\varphi_{1}^{\pm}:U_{1}^{\pm}\subset\Bbb S^{2} & \fd & \cR{2}\\
+\left(x^{1},x^{2},x^{3}\right) & \fd & \left(x^{2},x^{3}\right)\end{eqnarray*}
+
+\end_inset 
+
+ que van de abiertos a abiertos: son homeomorfismos de 
+\begin_inset Formula $\Bbb S^{2}$
+\end_inset 
+
+ en 
+\begin_inset Formula $\cR{2}$
+\end_inset 
+
+.
+ El atlas es pues 
+\begin_inset Formula $\left\{ U_{a}^{\pm},\varphi_{a}^{\pm}\right\} _{a}$
+\end_inset 
+
+ y tenemos ya una estructura de variedad topológica.
+\end_deeper 
+\layout Enumerate
+
+Ahora tenemos que demostrar que la variedad es diferenciable, estableciendo
+ la compatibilidad entre cartas.
+ Hagámoslo por ejemplo con 
+\begin_inset Formula $\left(U_{1}^{+},\varphi_{1}^{+}\right)$
+\end_inset 
+
+ y 
+\begin_inset Formula $\left(U_{2}^{-},\varphi_{2}^{-}\right)$
+\end_inset 
+
+.
+ Lo que debemos determinar es si 
+\begin_inset Formula $\varphi_{2}^{-}\circ\left(\varphi_{1}^{+}\right)^{-1}$
+\end_inset 
+
+ es 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ en 
+\begin_inset Formula $\varphi_{1}^{+}\left[U_{1}^{+}\cap U_{2}^{-}\right]$
+\end_inset 
+
+ (que es donde está definido).
+ Veamos primero cuál es el conjunto intersección:
+\begin_inset Formula \[
+U_{1}^{+}\cap U_{2}^{-}=\left\{ \left(x^{1},x^{2},x^{3}\right)\in\cR{3}:x^{1}>0,x^{2}<0,\left(x^{1}\right)^{2}+\left(x^{2}\right)^{2}+\left(x^{3}\right)^{2}=1\right\} \]
+
+\end_inset 
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-hemisferio.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig ej S^2: app de carta}
+
+\end_inset 
+
+
+\size small 
+
+\begin_inset Formula $\varphi_{3}$
+\end_inset 
+
+ proyecta según el eje 
+\begin_inset Formula $x^{3}$
+\end_inset 
+
+.
+\end_inset 
+
+El cambio inverso, 
+\begin_inset Formula $\varphi_{1}^{+}\circ\left(\varphi_{2}^{-}\right)^{-1}$
+\end_inset 
+
+, también debe ser 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ (en 
+\begin_inset Formula $\varphi_{2}^{-}\left[U_{1}^{+}\cap U_{2}^{-}\right]$
+\end_inset 
+
+) .
+ 
+\begin_deeper 
+\layout Standard
+
+La aplicación 
+\begin_inset Formula $\varphi_{2}^{-}\circ\left(\varphi_{1}^{+}\right)^{-1}$
+\end_inset 
+
+ es
+\begin_inset Formula \begin{eqnarray*}
+\varphi_{2}^{-}\circ\left(\varphi_{1}^{+}\right)^{-1}:\varphi_{1}^{+}\left[U_{1}^{+}\cap U_{2}^{-}\right] & \fd & \varphi_{2}^{-}\left[U_{1}^{+}\cap U_{2}^{-}\right]\\
+\left(x^{2},x^{3}\right) & \mapsto & \left(x^{1}=x^{1}\left[x^{2},x^{3}\right],x^{3}=x^{3}\left[x^{2},x^{3}\right]\right)\end{eqnarray*}
+
+\end_inset 
+
+ se debe cumplir 
+\begin_inset Formula $(x^{1})^{2}+(x^{2})^{2}+(x^{3})^{2}=1$
+\end_inset 
+
+ luego 
+\begin_inset Formula $(x^{1})^{2}=1-((x^{2})^{2}+(x^{3})^{2})$
+\end_inset 
+
+.
+ Nos debemos quedar con la raíz cuadrada positiva, por culpa de la restricción
+ 
+\begin_inset Formula $x^{1}>0$
+\end_inset 
+
+.
+\begin_inset Formula \[
+x^{1}\left[x^{2},x^{3}\right]=\sqrt{1-\left(\left(x^{2}\right)^{2}+\left(x^{3}\right)^{2}\right)}\]
+
+\end_inset 
+
+ por otra parte, 
+\begin_inset Formula $x^{3}\left[x^{2},x^{3}\right]=x^{3}$
+\end_inset 
+
+.
+ La función del cambio de coordenadas es, por culpa de la restricción 
+\begin_inset Formula $\left(x^{1}\right)^{2}+\left(x^{2}\right)^{2}+\left(x^{3}\right)^{2}=1$
+\end_inset 
+
+ y de que 
+\begin_inset Formula $x^{1}>0$
+\end_inset 
+
+, una raíz cuadrada positiva de algo positivo, luego es 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ en el dominio de definición:
+\begin_inset Formula \[
+\varphi_{1}^{+}\left[U_{1}^{+}\cap U_{2}^{-}\right]=\varphi_{1}^{+}\left[\left\{ x^{1},x^{2},x^{3}\in\Bbb R^{3}:\, x^{2}<0,\,\left(x^{1}\right)^{2}+\left(x^{3}\right)^{2}<1\right\} \right]\]
+
+\end_inset 
+
+ En cuanto a la otra aplicación, 
+\begin_inset Formula \begin{eqnarray*}
+\varphi_{1}^{+}\circ\left(\varphi_{2}^{-}\right)^{-1}:\varphi_{2}^{-}\left[U_{1}^{+}\cap U_{2}^{-}\right] & \fd & \varphi_{1}^{+}\left[U_{1}^{+}\cap U_{2}^{-}\right]\\
+\left(x^{1},x^{3}\right) & \mapsto & \left(x^{2}=x^{2}\left[x^{1},x^{3}\right],x^{3}=x^{3}\left[x^{1},x^{3}\right]\right)\end{eqnarray*}
+
+\end_inset 
+
+ para la expresión de 
+\begin_inset Formula \[
+x^{2}\left[x^{1},x^{3}\right]=-\sqrt{1-\left(\left(x^{1}\right)^{2}+\left(x^{3}\right)^{2}\right)}\]
+
+\end_inset 
+
+ tomamos el signo menos porque 
+\begin_inset Formula $x^{2}<0$
+\end_inset 
+
+ en la restricción.
+ Debemos probar que es 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ en el conjunto
+\begin_inset Formula \[
+\varphi_{2}^{-}\left[U_{1}^{+}\cap U_{2}^{-}\right]=\left\{ \left(x^{1},x^{3}\right)\in\cR{2}:x^{1}>0,\left(x^{1}\right)^{2}+\left(x^{3}\right)^{2}<0\right\} \]
+
+\end_inset 
+
+ por el mismo razonamiento de antes esta función es 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+.
+ En cuanto a las funciones lineales como 
+\begin_inset Formula $x^{3}\left[x^{1},x^{3}\right]=x^{3}$
+\end_inset 
+
+, son automáticamente 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+.
+ 
+\end_deeper 
+\layout Subsection
+
+Variedades diferenciales definidas por ecuaciones
+\begin_inset LatexCommand \label{ssec var def por ecuaciones}
+
+\end_inset 
+
+
+\layout Standard
+
+El método recién utilizado para definir la esfera, utilizando una ecuación,
+ es generalizable.
+ Se trata de seleccionar aquellos puntos de 
+\begin_inset Formula $\cR{n}$
+\end_inset 
+
+ que satisfacen una determinada ecuación.
+ La pregunta que uno se puede hacer es si dado un sistema de ecuaciones,
+ (con 
+\begin_inset Formula $c^{1}\ldots c^{k}$
+\end_inset 
+
+ constantes y 
+\begin_inset Formula $x^{1}\ldots x^{n}\in\cR{n}$
+\end_inset 
+
+),
+\begin_inset Formula \begin{eqnarray*}
+f^{1}\left[x^{1}\ldots x^{n}\right] & = & c^{1}\\
+ & \vdots\\
+f^{k}\left[x^{1}\ldots x^{n}\right] & = & c^{k}\end{eqnarray*}
+
+\end_inset 
+
+ el espacio determinado por sus soluciones es una variedad diferenciable.
+ Esencialmente, como veremos, se trata de reformular el teorema de la función
+ implícita.
+ 
+\layout Description
+
+función\SpecialChar ~
+implícita
+\begin_inset LatexCommand \index{teorema de la función implícita}
+
+\end_inset 
+
+ (teorema) Sea 
+\begin_inset Formula $f:\cR{n}\fd\cR{k}$
+\end_inset 
+
+ de clase 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+.
+ Consideremos el espacio de soluciones de las 
+\begin_inset Formula $k$
+\end_inset 
+
+ ecuaciones 
+\begin_inset Formula $f^{i}\left[x^{1}\ldots x^{n}\right]=c^{i}$
+\end_inset 
+
+ (con 
+\begin_inset Formula $c$
+\end_inset 
+
+ un vector constante) que denotamos por 
+\begin_inset Formula $M$
+\end_inset 
+
+.
+ Si el jacobiano de 
+\begin_inset Formula $f$
+\end_inset 
+
+ es de rango máximo en todos los puntos 
+\begin_inset Formula $P\in M$
+\end_inset 
+
+, entonces 
+\begin_inset Formula $M$
+\end_inset 
+
+ tiene una estructura de variedad diferenciable 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ de dimensión 
+\begin_inset Formula $n-k$
+\end_inset 
+
+ y además en torno a cada punto 
+\begin_inset Formula $P$
+\end_inset 
+
+ podemos escoger 
+\begin_inset Formula $m=n-k$
+\end_inset 
+
+ coordenadas cartesianas del espacio ambiente como coordenadas locales.
+\layout Description
+
+jacobiano\SpecialChar ~
+de\SpecialChar ~
+
+\begin_inset Formula $f$
+\end_inset 
+
+ denotado a veces 
+\begin_inset Formula \[
+J\left[f\left[x^{1}\ldots x^{n}\right]\right]=\frac{\partial\left(f^{1}\ldots f^{k}\right)}{\partial\left(x^{1}\ldots x^{n}\right)}\]
+
+\end_inset 
+
+se calcula así: 
+\begin_inset Formula \[
+J\left[f\left[x^{1}\ldots x^{n}\right]\right]=\left|\begin{array}{ccc}
+\dpa{f^{1}}{x^{1}} & \ldots & \dpa{f^{1}}{x^{n}}\\
+\vdots & \ddots & \vdots\\
+\dpa{f^{k}}{x^{1}} & \ldots & \dpa{f^{k}}{x^{n}}\end{array}\right|\]
+
+\end_inset 
+
+
+\layout Description
+
+
+\size small 
+Ejemplo
+\size default 
+ 
+\size small 
+Sea 
+\begin_inset Formula \begin{equation}
+M=\left\{ \left(x^{1},x^{2},x^{3},x^{4}\right)\in\cR{4}:\left(x^{1}\right)^{2}+\left(x^{2}\right)^{2}=1,\left(x^{3}\right)^{2}+\left(x^{4}\right)^{2}=1\right\} \label{ec def por ecs de un toro2}\end{equation}
+
+\end_inset 
+
+ con 
+\begin_inset Formula $n=4,k=2$
+\end_inset 
+
+ y 
+\begin_inset Formula $c^{1}=c^{2}=1$
+\end_inset 
+
+.
+ Lo primero que hay que comprobar es que
+\begin_inset Formula \begin{eqnarray*}
+f^{1} & = & \left(x^{1}\right)^{2}+\left(x^{2}\right)^{2}\\
+f^{2} & = & \left(x^{3}\right)^{2}+\left(x^{4}\right)^{2}\end{eqnarray*}
+
+\end_inset 
+
+ son 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ (lo son, porque son polinomios).
+ Lo siguiente es escribir la matriz jacobiana:
+\begin_inset Formula \[
+J=\left(\begin{array}{cccc}
+2x^{1} & 2x^{2} & 0 & 0\\
+0 & 0 & 2x^{3} & 2x^{4}\end{array}\right)\]
+
+\end_inset 
+
+ y ver si es de rango máximo para todos y cada uno de los puntos que satisfacen
+ la ecuación 
+\begin_inset Formula $\left(M\right)$
+\end_inset 
+
+.
+ El rango del jacobiano es máximo si no se anulan simultáneamente todos
+ los menores de orden 2: 
+\begin_inset Formula \begin{eqnarray*}
+x^{1}x^{3} & = & 0\\
+x^{1}x^{4} & = & 0\\
+x^{2}x^{3} & = & 0\\
+x^{2}x^{4} & = & 0\end{eqnarray*}
+
+\end_inset 
+
+ de aquí, imponiendo 
+\begin_inset LatexCommand \ref{ec def por ecs de un toro2}
+
+\end_inset 
+
+, concluimos que es imposible que el rango no sea máximo: sobre los puntos
+ de la variedad siempre hay algún determinante 2
+\begin_inset Formula $\times2$
+\end_inset 
+
+ que no se anula.
+ La variedad tiene dimensión 
+\begin_inset Formula $4-2=2$
+\end_inset 
+
+.
+ 
+\begin_deeper 
+\layout Standard
+
+
+\size small 
+Se puede pensar en la variedad recién descrita como el producto cartesiano
+ de las soluciones de la primera ecuación y las soluciones de la segunda
+ ecuación\SpecialChar \@.
+ Análogamente, se puede describir el toro 
+\begin_inset Formula $\Bbb T^{2}$
+\end_inset 
+
+ como producto cartesiano de dos circunferencias unidad: 
+\begin_inset Formula \begin{eqnarray*}
+\Bbb S^{1} & = & \left\{ \left(x^{1},x^{2}\right):\left(x^{1}\right)^{2}+\left(x^{2}\right)^{2}=1\right\} \\
+\Bbb S^{1'} & = & \left\{ \left(x^{3},x^{4}\right):\left(x^{3}\right)^{2}+\left(x^{4}\right)^{2}=1\right\} \end{eqnarray*}
+
+\end_inset 
+
+
+\end_deeper 
+\layout Description
+
+
+\size small 
+Ejercicio probar que el conjunto de las matrices 
+\begin_inset Formula $2\times2$
+\end_inset 
+
+ de números reales con determinante unidad es una variedad diferenciable.
+\layout Standard
+
+Intentemos justificar el teorema
+\begin_inset LatexCommand \label{tx just th fn implicita}
+
+\end_inset 
+
+, suponiendo que sus hipótesis (jacobiano de 
+\begin_inset Formula $f$
+\end_inset 
+
+ no nulo para cualquier 
+\begin_inset Formula $P_{0}\in M$
+\end_inset 
+
+) se cumplen en el siguiente ejemplo de 
+\begin_inset Formula $k=1$
+\end_inset 
+
+:
+\layout Standard
+
+
+\begin_inset Formula \[
+M=\left\{ \left(x^{1}\ldots x^{n}\right)\in\cR{n}:f\left[x^{1}\ldots x^{n}\right]=c\right\} \]
+
+\end_inset 
+
+ El gradiente (jacobiano) de la función es 
+\begin_inset Formula \[
+\left|\left(\dpa{f}{x^{1}},\ldots\dpa{f}{x^{n}}\right)\right|_{P_{0}\in M}\neq\ceron\]
+
+\end_inset 
+
+
+\layout Standard
+
+Al menos una de las derivadas 
+\begin_inset Formula $\dpa{f}{x^{i}}\left[x^{1}\ldots x^{n}\right]$
+\end_inset 
+
+ es no nula para que el rango del jacobiano sea máximo.
+ Podemos asumir sin pérdida de generalidad que es la 
+\begin_inset Formula $n$
+\end_inset 
+
+-ésima.
+ Entonces existe un entorno 
+\begin_inset Formula $V_{0}$
+\end_inset 
+
+ del punto proyección de 
+\begin_inset Formula $P_{0}$
+\end_inset 
+
+ según la coordenada de derivada no nula, 
+\begin_inset Formula \[
+Q_{0}\equiv\left(x_{0}^{1}\ldots x_{0}^{n-1}\right)\in\cR{n-1}\]
+
+\end_inset 
+
+ y un entorno 
+\begin_inset Formula $\left(x_{0}^{n}-\delta,x_{0}^{n}+\delta\right)$
+\end_inset 
+
+ alrededor de 
+\begin_inset Formula $x_{0}^{n}$
+\end_inset 
+
+, tales que (figura 
+\begin_inset LatexCommand \ref{fig convencimiento fn implicita}
+
+\end_inset 
+
+):
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-explica-th-valor-medio.eps
+	display monochrome
+	height 7cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig convencimiento fn implicita}
+
+\end_inset 
+
+
+\begin_inset Formula $V_{0}$
+\end_inset 
+
+ es un entorno del punto 
+\begin_inset Formula $Q_{0}$
+\end_inset 
+
+.
+ Según la coordenada 
+\begin_inset Formula $x^{n}$
+\end_inset 
+
+ tenemos un entorno de 
+\begin_inset Formula $x_{0}^{n}$
+\end_inset 
+
+.
+ 
+\end_inset 
+
+
+\layout Enumerate
+
+existe 
+\begin_inset Formula $y\left[x^{1}\ldots x^{n-1}\right]=x^{n}$
+\end_inset 
+
+ en 
+\begin_inset Formula $V_{0}$
+\end_inset 
+
+ tal que 
+\begin_inset Formula $f\left[x^{1}\ldots x^{n-1},y\left[x^{1}\ldots x^{n-1}\right]\right]=0$
+\end_inset 
+
+.
+ Es decir, en un entorno del punto 
+\begin_inset Formula $Q_{0}$
+\end_inset 
+
+ y de 
+\begin_inset Formula $x_{0}^{n}$
+\end_inset 
+
+ puedo despejar 
+\begin_inset Formula $x^{n}$
+\end_inset 
+
+ en función del resto de variables: 
+\begin_inset Formula $y\left[x^{1}\ldots x^{n-1}\right]=x^{n}$
+\end_inset 
+
+ 
+\layout Enumerate
+
+
+\begin_inset Formula $x_{0}^{n}=y\left[x_{0}^{1}\ldots x_{0}^{n-1}\right]$
+\end_inset 
+
+ 
+\layout Enumerate
+
+La distancia 
+\begin_inset Formula $\left|x_{0}^{n}-y\left[x_{0}^{1}\ldots x_{0}^{n-1}\right]\right|\leq\delta$
+\end_inset 
+
+ 
+\layout Enumerate
+
+Todas las soluciones en 
+\begin_inset Formula $V_{0}\times\left(x_{0}^{n}-\delta,x_{0}^{n}+\delta\right)$
+\end_inset 
+
+ se pueden escribir como 
+\begin_inset Formula $x^{n}=y\left[x^{1}\ldots x^{n-1}\right]$
+\end_inset 
+
+ 
+\layout Standard
+
+Es decir que en un entorno cilíndrico del punto podemos despejar la función
+ (localmente).
+\layout Enumerate
+
+Para definir la estructura de variedad topológica debemos encontrar para
+ 
+\begin_inset Formula $P_{0}$
+\end_inset 
+
+ un 
+\begin_inset Formula $\left(U,\varphi\right)$
+\end_inset 
+
+.
+ 
+\begin_inset Formula $U$
+\end_inset 
+
+ es simplemente el conjunto del cilindro abierto con 
+\begin_inset Formula $M$
+\end_inset 
+
+:
+\begin_inset Formula \[
+U\equiv\left(V_{0}\times\left(x_{0}^{n}-\delta,x_{0}^{n}+\delta\right)\right)\cap M\]
+
+\end_inset 
+
+ un conjunto abierto por definición (topología inducida).
+\begin_inset Formula \begin{eqnarray*}
+\varphi:U & \fd & V_{0}\subset\cR{n-1}\\
+\left(x^{1}\ldots x^{n}\right) & \mapsto & \left(x^{1}\ldots x^{n-1}\right)\end{eqnarray*}
+
+\end_inset 
+
+ 
+\begin_inset Formula $\varphi$
+\end_inset 
+
+ es la proyección.
+ La inversa consiste en pasar de 
+\begin_inset Formula $(x^{1}\ldots x^{n-1})$
+\end_inset 
+
+ a 
+\begin_inset Formula $(x^{1}\ldots x^{n-1},y\left[x^{1}\ldots x^{n-1}\right])$
+\end_inset 
+
+.
+ Como esto lo podemos hacer para todo 
+\begin_inset Formula $P$
+\end_inset 
+
+ podemos escoger un entorno como este para cualquier punto de la variedad,
+ luego tenemos una familia de cartas que recubre toda la variedad, es decir,
+ una estructura de variedad topológica.
+\layout Enumerate
+
+Estudiemos ahora la compatibilidad entre cartas (estructura diferenciable).
+ En una de ellas la derivada que no se anula es la 
+\begin_inset Formula $i$
+\end_inset 
+
+-ésima: 
+\begin_inset Formula $\left(U_{1},\varphi_{1}\right)$
+\end_inset 
+
+ 
+\begin_inset Formula \begin{eqnarray*}
+\varphi_{1}:U_{1} & \fd & \cR{n-1}\\
+\left(x^{1}\ldots x^{n}\right) & \mapsto & \left(x^{1}\ldots x^{i-1},x^{i+1},\ldots x^{n}\right)\end{eqnarray*}
+
+\end_inset 
+
+ en otra carta: 
+\begin_inset Formula $\left(U_{2},\varphi_{2}\right)$
+\end_inset 
+
+, no se anula la 
+\begin_inset Formula $n$
+\end_inset 
+
+-ésima 
+\begin_inset Formula \begin{eqnarray*}
+\varphi_{2}:U_{2} & \fd & \cR{n-1}\\
+\left(\hat{x}^{1}\ldots\hat{x}^{n}\right) & \mapsto & \left(\hat{x}^{1}\ldots\hat{x}^{n-1}\right)\end{eqnarray*}
+
+\end_inset 
+
+ El teorema de la función implícita asegura la 
+\emph on 
+despejabilidad
+\emph default 
+ local de una variable en todo caso; la global se alcanza si puede despejarse
+ una variable en función de las demás (como en 
+\begin_inset Formula $4x^{1}+3x^{2}=1$
+\end_inset 
+
+) para todo 
+\begin_inset Formula $\Bbb R^{n}$
+\end_inset 
+
+ (en el ejemplo, 
+\begin_inset Formula $V_{0}=\Bbb R^{2}$
+\end_inset 
+
+).
+ 
+\newline 
+El cambio es
+\begin_deeper 
+\layout Standard
+
+
+\begin_inset Formula \begin{eqnarray*}
+x^{1} & = & \hat{x}^{1}\\
+ & \vdots\\
+x^{i-1} & = & \hat{x}^{i-1}\\
+x^{i+1} & = & \hat{x}^{i+1}\\
+ & \vdots\\
+x^{n-1} & = & \hat{x}^{n-1}\\
+x^{n} & = & y\left[\hat{x}^{1}\ldots\hat{x}^{n-1}\right]\end{eqnarray*}
+
+\end_inset 
+
+ el inverso es análogo pero con 
+\begin_inset Formula $\hat{x}_{i}=g\left[x^{1}\ldots x^{i-1},x^{i+1}\ldots x^{n}\right]$
+\end_inset 
+
+.
+\end_deeper 
+\layout Subsubsection
+
+En conclusión
+\layout Standard
+
+Después de aplicar el teorema de la función implícita con éxito sabemos
+ que tenemos una variedad diferenciable, pero necesitamos todavía construir
+ el atlas; el teorema no nos lo da, pero nos asegura que existe.
+\layout Subsection
+
+Método 
+\emph on 
+cortar y pegar
+\emph default 
+: la banda de Möbius
+\layout Standard
+
+Este sistema consiste en tomar ciertos subconjuntos de 
+\begin_inset Formula $\cR{m}$
+\end_inset 
+
+ y pegarlos adecuadamente.
+ Por ejemplo, la banda de Möbius se puede hacer pegando dos
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Aunque también se puede hacer con un sólo subconjunto el ejemplo lo desarrollare
+mos con dos.
+\end_inset 
+
+ subconjuntos de 
+\begin_inset Formula $\cR{2}$
+\end_inset 
+
+.
+ El problema es que sobre el punto en que se pega los puntos son los mismos,
+ por lo que necesitaremos definir una relación de equivalencia.
+ Sean las dos franjas cuya parametrización aparece en la figura 
+\begin_inset LatexCommand \ref{fig parametrizacion banda moebius}
+
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray*}
+S & = & \left\{ \left(x,y\right)\in\cR{2}:-5<x<5,-1<y<1\right\} \\
+\hat{S} & = & \left\{ \left(\hat{x},\hat{y}\right)\in\cR{2}:-5<\hat{x}<5,-1<\hat{y}<1\right\} \end{eqnarray*}
+
+\end_inset 
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-cartas-mobius.eps
+	display monochrome
+	height 4cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig parametrizacion banda moebius}
+
+\end_inset 
+
+Parametrización de las bandas 
+\begin_inset Formula $S$
+\end_inset 
+
+ y 
+\begin_inset Formula $\hat{S}$
+\end_inset 
+
+, que vamos a pegar.
+\end_inset 
+
+Para pegarlas debemos dar 
+\layout Enumerate
+
+unas zonas de solapamiento (que denotaremos por 
+\begin_inset Formula $T=T_{1}\cup T_{2}$
+\end_inset 
+
+ para 
+\begin_inset Formula $S$
+\end_inset 
+
+ y por 
+\begin_inset Formula $\hat{T}=\hat{T}_{1}\cup\hat{T}_{2}$
+\end_inset 
+
+ para 
+\begin_inset Formula $\hat{S}$
+\end_inset 
+
+).
+ La definición de una de ellas es, por ejemplo, 
+\begin_inset Formula $T=\left\{ \left(x,y\right)\in\cR{2}:-5<x<-4,-1<y<1\right\} \cup\left\{ \left(x,y\right)\in\cR{2}:4<x<5,-1<y<1\right\} $
+\end_inset 
+
+ (
+\begin_inset Formula $\hat{T}$
+\end_inset 
+
+ se define análogamente, sin más que poner gorros).
+\layout Enumerate
+
+una forma de solapar (de identificar puntos).
+ 
+\begin_deeper 
+\layout Standard
+
+Por el interior (centro de la figura 
+\begin_inset LatexCommand \ref{fig parametrizacion banda moebius}
+
+\end_inset 
+
+) pegamos tal cual, de forma que el 
+\begin_inset Formula $-5$
+\end_inset 
+
+ vaya a parar al 4 y el 
+\begin_inset Formula $-4$
+\end_inset 
+
+ al 5.
+ Por el exterior la otra haremos lo mismo, pero pasando de 
+\begin_inset Formula $y$
+\end_inset 
+
+ a 
+\begin_inset Formula $-y$
+\end_inset 
+
+ (es el momento de coger una cinta de papel e intentar verlo).
+ Las aplicaciones correspondientes son
+\begin_inset Formula \begin{eqnarray*}
+R_{12}:T_{1} & \fd & \hat{T}_{2}\\
+\left(x,y\right) & \mapsto & \left(\hat{x}=x+9,\,\hat{y}=-y\right)\end{eqnarray*}
+
+\end_inset 
+
+ y 
+\begin_inset Formula \begin{eqnarray*}
+R_{21}:T_{2} & \fd & \hat{T}_{1}\\
+\left(x,y\right) & \mapsto & \left(\hat{x}=x-9,\,\hat{y}=y\right)\end{eqnarray*}
+
+\end_inset 
+
+denotamos por 
+\begin_inset Formula $R$
+\end_inset 
+
+ a la aplicación simultánea de estas dos funciones.
+ 
+\end_deeper 
+\layout Subsubsection
+
+El conjunto 
+\begin_inset Formula $M$
+\end_inset 
+
+
+\layout Standard
+
+¿Cuáles son los puntos de la variedad?.
+ 
+\layout Itemize
+
+Un punto que en 
+\begin_inset Formula $S$
+\end_inset 
+
+ es equivalente a uno de 
+\begin_inset Formula $\hat{S}$
+\end_inset 
+
+ si está relacionado por la relación de 
+\begin_inset Quotes eld
+\end_inset 
+
+pegado
+\begin_inset Quotes erd
+\end_inset 
+
+ que acabamos de dar, 
+\begin_inset Formula $R$
+\end_inset 
+
+.
+ Si 
+\begin_inset Formula $p\in S$
+\end_inset 
+
+, 
+\begin_inset Formula $p\in T$
+\end_inset 
+
+, 
+\begin_inset Formula $q\in\hat{S}$
+\end_inset 
+
+ entonces
+\begin_inset Formula \[
+p\sim q\Fdi q=R\left[p\right]\]
+
+\end_inset 
+
+(
+\begin_inset Formula $p$
+\end_inset 
+
+ y 
+\begin_inset Formula $q$
+\end_inset 
+
+ son equivalentes si y sólo si 
+\begin_inset Formula $q$
+\end_inset 
+
+ es la imagen bajo 
+\begin_inset Formula $R$
+\end_inset 
+
+ de 
+\begin_inset Formula $p$
+\end_inset 
+
+).
+ Análogamente, en caso de que 
+\begin_inset Formula $q\in\hat{S},$
+\end_inset 
+
+ 
+\begin_inset Formula $q\in\hat{T}$
+\end_inset 
+
+, 
+\begin_inset Formula $p\in S$
+\end_inset 
+
+ 
+\begin_inset Formula \[
+q\sim p\Fdi q=R^{-1}\left[p\right]\]
+
+\end_inset 
+
+
+\layout Itemize
+
+De los puntos que no están en 
+\begin_inset Formula $T,\hat{T}$
+\end_inset 
+
+ , un punto de 
+\begin_inset Formula $S$
+\end_inset 
+
+ es equivalente a sí mismo, al igual que uno de 
+\begin_inset Formula $\hat{S}$
+\end_inset 
+
+ (clase de equivalencia con un sólo miembro).
+ Si 
+\begin_inset Formula $p,p'\in S$
+\end_inset 
+
+ y 
+\begin_inset Formula $p\not\in T$
+\end_inset 
+
+ 
+\begin_inset Formula \[
+p\sim p'\Fdi p=p'\]
+
+\end_inset 
+
+ Si 
+\begin_inset Formula $q,q'\in\hat{S}$
+\end_inset 
+
+ y 
+\begin_inset Formula $q\not\in\hat{T}$
+\end_inset 
+
+
+\begin_inset Formula \[
+q\sim q'\Fdi q=q'\]
+
+\end_inset 
+
+
+\layout Standard
+
+En resumen, las clases de equivalencia en las zonas de solapamiento están
+ constituidas por dos miembros: un punto y su transformado bajo 
+\begin_inset Formula $R$
+\end_inset 
+
+.
+\begin_inset Formula \begin{eqnarray*}
+p\in S,p\not\in T & \Fd & \left[p\right]=p\\
+p\in S,p\in T & \Fd & \left[p\right]=\left(p,\hat{p}=R\left[p\right]\right)\end{eqnarray*}
+
+\end_inset 
+
+ y análogamente para 
+\begin_inset Formula $\hat{S}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\hat{T}$
+\end_inset 
+
+.
+ Definimos 
+\begin_inset Formula $U$
+\end_inset 
+
+ como las clases de equivalencia de 
+\begin_inset Formula $S$
+\end_inset 
+
+ y 
+\begin_inset Formula $\hat{U}$
+\end_inset 
+
+ como las de 
+\begin_inset Formula $\hat{S}$
+\end_inset 
+
+, con lo que el conjunto 
+\begin_inset Quotes eld
+\end_inset 
+
+banda de Möbius
+\begin_inset Quotes erd
+\end_inset 
+
+ es 
+\begin_inset Formula $M=U\cup\hat{U}$
+\end_inset 
+
+.
+ Así dado 
+\begin_inset Formula $M$
+\end_inset 
+
+, es necesario introducir estructura topológica para él con todos los requisitos
+ y una estructura diferenciable (cartas compatibles).
+ 
+\layout Subsubsection
+
+La estructura topológica
+\layout Standard
+
+Las aplicaciones de carta pueden ser
+\begin_inset Formula \begin{eqnarray*}
+\varphi:U & \fd & S\in\cR{2}\\
+\left[p\right] & \mapsto & p\\
+\hat{\varphi}:\hat{U} & \fd & \hat{S}\in\cR{2}\\
+\left[q\right] & \mapsto & q\end{eqnarray*}
+
+\end_inset 
+
+ Disponemos ya de las cartas, 
+\begin_inset Formula $(U,\varphi)$
+\end_inset 
+
+ y 
+\begin_inset Formula $(\hat{U},\hat{\varphi})$
+\end_inset 
+
+.
+  
+\layout Standard
+
+Dado 
+\begin_inset Formula $V\subset M$
+\end_inset 
+
+ queremos saber si es un conjunto abierto.
+ Tres situaciones: que esté contenido en 
+\begin_inset Formula $U,\hat{U}$
+\end_inset 
+
+ o una parte en cada uno.
+\layout Enumerate
+
+Si 
+\begin_inset Formula $V\subset U$
+\end_inset 
+
+ decimos que 
+\begin_inset Formula $V$
+\end_inset 
+
+ es abierto si 
+\begin_inset Formula $\varphi\left[V\right]$
+\end_inset 
+
+ es abierto.
+ En particular 
+\begin_inset Formula $U$
+\end_inset 
+
+ es abierto por construcción.
+\layout Enumerate
+
+Si 
+\begin_inset Formula $V\subset\hat{U}$
+\end_inset 
+
+ decimos que 
+\begin_inset Formula $V$
+\end_inset 
+
+ es abierto si 
+\begin_inset Formula $\hat{\varphi}\left[V\right]$
+\end_inset 
+
+ es abierto.
+ En particular 
+\begin_inset Formula $\hat{U}$
+\end_inset 
+
+ es abierto por construcción.
+\layout Enumerate
+
+Si 
+\begin_inset Formula $V$
+\end_inset 
+
+ no está íntegramente contenido ni en 
+\begin_inset Formula $U$
+\end_inset 
+
+ ni en 
+\begin_inset Formula $\hat{U}$
+\end_inset 
+
+ decimos que es abierto si 
+\begin_inset Formula $\varphi\left[V\cap U\right]$
+\end_inset 
+
+ es abierto y 
+\begin_inset Formula $\varphi\left[V\cap\hat{U}\right]$
+\end_inset 
+
+ es abierto.
+\layout Standard
+
+Por esta construcción 
+\begin_inset Formula $U,\hat{U}$
+\end_inset 
+
+ son abiertos y 
+\begin_inset Formula $\varphi$
+\end_inset 
+
+ y 
+\begin_inset Formula $\hat{\varphi}$
+\end_inset 
+
+ transforman conjuntos abiertos en abiertos, así como sus inversas, por
+ lo que son continuas (las aplicaciones de carta son homeomorfismos).
+\begin_inset Formula $\{(U,\varphi),(\hat{U},\hat{\varphi})\}$
+\end_inset 
+
+ conforma estructura de variedad topológica compuesta por dos cartas.
+ Habría que ver si es Haussdorf y separable, pero no vamos a hacerlo
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Para intentarlo como ejercicio es bueno saber primero que se encontrarán
+ dificultades para probar el carácter Haussdorf.
+ 
+\end_inset 
+
+.
+\layout Subsubsection
+
+La estructura diferenciable
+\layout Standard
+
+Lo que sí vamos a comprobar es si las cartas son 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ compatibles, estudiando las aplicaciones de carta 
+\begin_inset Formula $\hat{\varphi}\circ\varphi^{-1}$
+\end_inset 
+
+ en 
+\begin_inset Formula $\varphi\left[U\cap\hat{U}\right]=T$
+\end_inset 
+
+ y 
+\begin_inset Formula $\varphi\circ\hat{\varphi}^{-1}$
+\end_inset 
+
+ en 
+\begin_inset Formula $\hat{\varphi}\left[U\cap\hat{U}\right]=\hat{T}$
+\end_inset 
+
+.
+ Pero la aplicación que nos lleva justamente de la zona de solapamiento
+ de 
+\begin_inset Formula $S$
+\end_inset 
+
+ a la de 
+\begin_inset Formula $\hat{S}$
+\end_inset 
+
+ es 
+\begin_inset Formula $R$
+\end_inset 
+
+, luego 
+\begin_inset Formula \begin{eqnarray*}
+R & = & \hat{\varphi}\circ\varphi^{-1}\\
+R^{-1} & = & \varphi\circ\hat{\varphi}^{-1}\end{eqnarray*}
+
+\end_inset 
+
+ Como estos cambios son lineales, son 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+.
+ Por tanto tenemos un atlas 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ sobre una variedad topológica, por lo que queda definida de manera única
+ una estructura de variedad diferenciable sobre la banda de Möbius.
+\layout Subsection
+
+Variedades con frontera
+\layout Standard
+
+Lo que hemos visto hasta ahora es lo que se conoce como variedades diferenciable
+s 
+\emph on 
+sin frontera.
+ 
+\emph default 
+Una variedad con frontera es por ejemplo la semiesfera,
+\begin_inset Formula \[
+M=\left\{ \left(x,y,z\right)\in\cR{3}:x^{2}+y^{2}+z^{2}=1;z\geq0\right\} \]
+
+\end_inset 
+
+ Esto no es una variedad diferenciable según los criterios que tenemos hasta
+ ahora.
+ ¿Qué hacer?
+\layout Standard
+
+Tendremos dos tipos de cartas, 
+\begin_inset Formula $a$
+\end_inset 
+
+ y 
+\begin_inset Formula $b$
+\end_inset 
+
+ (figura 
+\begin_inset LatexCommand \ref{fig variedad con frontera}
+
+\end_inset 
+
+):
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-var-con-frontera.eps
+	display monochrome
+	width 10cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig variedad con frontera}
+
+\end_inset 
+
+Superficie en 
+\begin_inset Formula $\cR{3}$
+\end_inset 
+
+ , los puntos del interior van a 
+\begin_inset Formula $\cR{n}$
+\end_inset 
+
+ mientras que los de la frontera van a 
+\begin_inset Formula $H^{n}$
+\end_inset 
+
+
+\end_inset 
+
+ 
+\layout Itemize
+
+
+\begin_inset Formula $a:$
+\end_inset 
+
+ aquellas cuya imagen es subconjunto abierto de 
+\begin_inset Formula $\cR{m}$
+\end_inset 
+
+ (puntos interiores de la variedad).
+\layout Itemize
+
+
+\begin_inset Formula $b:$
+\end_inset 
+
+ aquellas cuya imagen es subconjunto abierto de 
+\begin_inset Formula $H^{m}=\left\{ \left(x^{1}\ldots x^{m}\right)\in\cR{m}:x^{m}\geq0\right\} $
+\end_inset 
+
+.
+ La topología en 
+\begin_inset Formula $H^{m}$
+\end_inset 
+
+ será la inducida de 
+\begin_inset Formula $\cR{m}$
+\end_inset 
+
+, por el método de las intersecciones ya visto.
+ Los puntos de la frontera van a parar a un conjunto de dimensión 
+\begin_inset Formula $m-1$
+\end_inset 
+
+, pero los de su entorno, necesarios para definir la aplicación de carta,
+ van a 
+\begin_inset Formula $H^{m}$
+\end_inset 
+
+, 
+\series bold 
+no
+\series default 
+ a 
+\begin_inset Formula $\cR{m}$
+\end_inset 
+
+, porque allí la imagen no sería un conjunto abierto: si 
+\begin_inset Formula $P$
+\end_inset 
+
+ está en la frontera 
+\begin_inset Formula $\partial H^{m}$
+\end_inset 
+
+, 
+\begin_inset Formula $\varphi_{b}\left[Q\right]\in\partial H^{m}=\left\{ x^{1}\ldots x^{m}:x^{m}=0\right\} $
+\end_inset 
+
+.
+ Los abiertos de 
+\begin_inset Formula $H^{m}$
+\end_inset 
+
+ no son los de 
+\begin_inset Formula $\cR{m}$
+\end_inset 
+
+.
+ Son abiertos en la medida en que puedo encontrar un abierto en 
+\begin_inset Formula $\cR{m}$
+\end_inset 
+
+ tal que su intersección con 
+\begin_inset Formula $H^{m}$
+\end_inset 
+
+ es un abierto.
+\layout Standard
+
+Aunque parezca que el subconjunto de 
+\begin_inset Formula $H^{m}$
+\end_inset 
+
+ 
+\begin_inset Quotes eld
+\end_inset 
+
+imagen de un entorno de la frontera de 
+\begin_inset Formula $M$
+\end_inset 
+
+
+\begin_inset Quotes erd
+\end_inset 
+
+ es cerrado, porque incluye la imagen de la frontera, no lo es por ser la
+ topología inducida.
+ Es necesario construir un atlas de cartas compatibles para llegar de espacio
+ topológico Haussdorf y separable a variedad diferenciable con frontera.
+\layout Section
+
+Generalización del cálculo de 
+\begin_inset Formula $\cR{m}$
+\end_inset 
+
+
+\layout Standard
+
+Para poder hacer cálculo vectorial como en 
+\begin_inset Formula $\cR{m}$
+\end_inset 
+
+ debemos servirnos de la estructura diferenciable.
+ En el contexto de 
+\begin_inset Formula $\cR{m}$
+\end_inset 
+
+ sabíamos qué era una aplicación diferenciable; en breve comprobaremos que
+ es posible generalizarlo y saber qué se entiende por aplicación diferenciable
+ entre dos variedades diferenciables.
+ Análogamente nos preocupará encontrar definiciones de vector tangente a
+ la variedad en un punto y de campo de vectores que sean independientes
+ de que la variedad esté dotada de una métrica o no, es decir, que descansen
+ exclusivamente sobre su estructura diferenciable.
+\layout Subsection
+
+Aplicaciones diferenciables
+\layout Standard
+
+Imaginemos una variedad diferencial 
+\begin_inset Formula $M$
+\end_inset 
+
+ de dimensión 
+\begin_inset Formula $m$
+\end_inset 
+
+ dotada de un atlas 
+\begin_inset Formula $\left\{ \left(U_{a},\varphi_{a}\right)\right\} _{a}$
+\end_inset 
+
+, y una variedad diferenciable 
+\begin_inset Formula $N$
+\end_inset 
+
+, de dimensión 
+\begin_inset Formula $n$
+\end_inset 
+
+, con su atlas 
+\begin_inset Formula $\left\{ \left(V_{b},\psi_{b}\right)\right\} _{b}$
+\end_inset 
+
+.
+ Sea una aplicación 
+\begin_inset Formula $F:M\fd N$
+\end_inset 
+
+.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-app-dif-cambio-dominio.eps
+	display monochrome
+	width 13cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig ilustracion concepto app diferenciable entre var}
+
+\end_inset 
+
+Cambio de dominio necesario para generalizar el concepto de aplicación diferenci
+able.
+\end_inset 
+
+¿Cómo saber si es diferenciable?.
+ Podemos decir que 
+\begin_inset Formula $F$
+\end_inset 
+
+ es diferenciable si lo es una aplicación construida a partir de 
+\begin_inset Formula $F$
+\end_inset 
+
+ que vaya de 
+\begin_inset Formula $\cR{m}$
+\end_inset 
+
+ a 
+\begin_inset Formula $\cR{n}$
+\end_inset 
+
+, que llamaremos 
+\begin_inset Formula $\hat{F}$
+\end_inset 
+
+.
+ Para eso (figura 
+\begin_inset LatexCommand \ref{fig ilustracion concepto app diferenciable entre var}
+
+\end_inset 
+
+) subimos de 
+\begin_inset Formula $\cR{m}$
+\end_inset 
+
+ a 
+\begin_inset Formula $M$
+\end_inset 
+
+ por 
+\begin_inset Formula $\varphi^{-1}$
+\end_inset 
+
+, pasamos por 
+\begin_inset Formula $F$
+\end_inset 
+
+ a 
+\begin_inset Formula $N$
+\end_inset 
+
+ y de ahí bajamos a 
+\begin_inset Formula $\Bbb R^{n}$
+\end_inset 
+
+ por 
+\begin_inset Formula $\psi$
+\end_inset 
+
+:
+\begin_inset Formula \begin{eqnarray*}
+\hat{F}\equiv\psi\circ F\circ\varphi^{-1}:\cR{m} & \fd & \cR{n}\\
+\left(x^{1}\ldots x^{m}\right) & \mapsto & \left(y^{1}\left[x^{1}\ldots x^{m}\right]\ldots y^{n}\left[x^{1}\ldots x^{m}\right]\right)\end{eqnarray*}
+
+\end_inset 
+
+ ahora podríamos decir 
+\begin_inset Quotes eld
+\end_inset 
+
+estudio la diferenciabilidad de esto y ya está
+\begin_inset Quotes erd
+\end_inset 
+
+.
+ Pero no.
+ Hay que tener cuidado con los dominios de definición: puede que 
+\begin_inset Formula $F$
+\end_inset 
+
+ no lleve todos los puntos de 
+\begin_inset Formula $U_{a}$
+\end_inset 
+
+ a 
+\begin_inset Formula $V_{b}$
+\end_inset 
+
+ sino que mande algunos a otra parte.
+ El dominio para que 
+\begin_inset Formula $F$
+\end_inset 
+
+ sea función es 
+\begin_inset Formula $F^{-1}\left[V_{b}\right]$
+\end_inset 
+
+, que en intersección con el entorno de coordenadas 
+\begin_inset Formula $U_{a}$
+\end_inset 
+
+ denotamos 
+\begin_inset Formula \[
+W=U\cap F^{-1}\left[V\right]\]
+
+\end_inset 
+
+ El dominio de 
+\begin_inset Formula $\hat{F}$
+\end_inset 
+
+ es 
+\begin_inset Formula $\varphi\left[W\right]$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+En conclusión, diremos que 
+\begin_inset Formula $F$
+\end_inset 
+
+ es 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ si su expresión en coordenadas para cualquier par de atlas es una aplicación
+ diferenciable (el dominio debe ser correcto para que 
+\begin_inset Formula $\hat{F}$
+\end_inset 
+
+ sea considerada una aplicación).
+\layout Description
+
+aplicación\SpecialChar ~
+diferenciable\SpecialChar ~
+
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+\SpecialChar ~
+entre\SpecialChar ~
+variedades Sea 
+\begin_inset Formula $F:M\fd N$
+\end_inset 
+
+ continua.
+ Si 
+\begin_inset Formula $F$
+\end_inset 
+
+ es continua, 
+\begin_inset Formula $F^{-1}$
+\end_inset 
+
+ transforma abiertos en abiertos.
+ ¿Cómo saber si 
+\begin_inset Formula $F$
+\end_inset 
+
+ es aplicación y diferenciable?.
+ Reducimos el problema al de ir de subespacios de 
+\begin_inset Formula $R^{m}$
+\end_inset 
+
+ a 
+\begin_inset Formula $R^{n}$
+\end_inset 
+
+.
+ La expresión en coordenadas de 
+\begin_inset Formula $F$
+\end_inset 
+
+ para las cartas 
+\begin_inset Formula $\left(U,\varphi\right)$
+\end_inset 
+
+ de 
+\begin_inset Formula $M$
+\end_inset 
+
+ y 
+\begin_inset Formula $\left(V,\psi\right)$
+\end_inset 
+
+ de 
+\begin_inset Formula $N$
+\end_inset 
+
+ es
+\begin_inset Formula \begin{eqnarray*}
+\hat{F}:\varphi\left[W\right]\subset\cR{m} & \fld & \psi\left[V\right]\subset\mathbb{R}^{n}\\
+\left(x^{1}\ldots x^{m}\right) & \mapsto & \left(y^{1}\left[x^{1}\ldots x^{m}\right]\ldots y^{n}\left[x^{1}\ldots x^{m}\right]\right)\end{eqnarray*}
+
+\end_inset 
+
+ Se dice que 
+\begin_inset Formula $F$
+\end_inset 
+
+ es de clase 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ si para cualesquiera dos cartas de las estructuras diferenciables de 
+\begin_inset Formula $M$
+\end_inset 
+
+ y 
+\begin_inset Formula $N$
+\end_inset 
+
+ su expresión en las coordenadas dadas por ellas (la de todas sus componentes,
+ 
+\begin_inset Formula $y^{1}\ldots y^{n}$
+\end_inset 
+
+) es una función 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+.
+\layout Standard
+
+No se puede comprobar para todas las cartas admisibles, pero afortunadamente
+ existe un resultado que afirma que basta con tomar dos atlas, no necesariamente
+ máximos, y probar que la aplicación de una carta es 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ (porque la estructura diferenciable garantiza la compatibilidad entre cartas).
+\layout Standard
+
+Sean dos cartas en 
+\begin_inset Formula $M$
+\end_inset 
+
+, 
+\begin_inset Formula $\left(U_{1},\varphi_{1}\right)$
+\end_inset 
+
+ y 
+\begin_inset Formula $\left(U_{2},\varphi_{2}\right)$
+\end_inset 
+
+, con los sistemas de coordenadas respectivos 
+\begin_inset Formula $x^{1}\ldots x^{m}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\hat{x}^{1}\ldots\hat{x}^{m}$
+\end_inset 
+
+, y una carta 
+\begin_inset Formula $\left(V,\psi\right)$
+\end_inset 
+
+ para 
+\begin_inset Formula $N$
+\end_inset 
+
+.
+ Construimos dos expresiones en coordenadas de 
+\begin_inset Formula $F$
+\end_inset 
+
+ que usan cada una una carta de 
+\begin_inset Formula $M$
+\end_inset 
+
+:
+\begin_inset Formula \begin{eqnarray*}
+\hat{F}_{1}\equiv\psi\circ F\circ\varphi_{1}^{-1}:M & \fd & N\\
+\hat{F}_{2}\equiv\psi\circ F\circ\varphi_{2}^{-1}:M & \fd & N\end{eqnarray*}
+
+\end_inset 
+
+ entonces
+\begin_inset Formula \begin{eqnarray*}
+\hat{F}_{1} & = & \hat{F}_{2}\circ\varphi_{2}\circ\varphi_{1}^{-1}\\
+ & = & \psi\circ F\circ\varphi_{2}^{-1}\circ\varphi_{2}\circ\varphi_{1}^{-1}\end{eqnarray*}
+
+\end_inset 
+
+ con el dominio dado por 
+\begin_inset Formula $\varphi_{1}\left[W\right]$
+\end_inset 
+
+, 
+\begin_inset Formula $W=U_{1}\cap U_{2}\cap F^{-1}\left[V\right]$
+\end_inset 
+
+.
+\layout Standard
+
+Para saber que 
+\begin_inset Formula $F$
+\end_inset 
+
+ es diferenciable han de verificarse tres condiciones: que ambas 
+\begin_inset Formula $\hat{F}_{1},\hat{F}_{2}$
+\end_inset 
+
+ sean 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ y que el cambio de coordenadas de una a otra también lo sea, lo que queda
+ garantizado por el hecho de que en una variedad diferenciable, según la
+ definición dada, todas las cartas (y en particular 
+\begin_inset Formula $1$
+\end_inset 
+
+ y 2) son 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ compatibles.
+\layout Description
+
+
+\size small 
+Ejemplo Sea una una aplicación 
+\begin_inset Formula $F:\Bbb S^{3}\fd\Bbb S^{2}$
+\end_inset 
+
+ tal que para 
+\begin_inset Formula $\Bbb S^{3}$
+\end_inset 
+
+ disponemos de un atlas con 4 cartas y para 
+\begin_inset Formula $\Bbb S^{2}$
+\end_inset 
+
+ de uno con 3.
+ El procedimiento para probar la diferenciabilidad de 
+\begin_inset Formula $F$
+\end_inset 
+
+ en un punto es comprobar que la expresión en coordenadas es 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ en dicho punto.
+ Para ello basta con estudiar un par de las cartas compatibles que incluyen
+ ese punto.
+\layout Standard
+
+Esta definición es importante porque nos permite introducir otras estructuras.
+ Entre ellas nos permite definir un cierto tipo de equivalencia entre variedades
+ diferenciables.
+\layout Subsection
+
+Equivalencia de variedades diferenciales
+\layout Standard
+
+¿Cuándo podemos decir que las propiedades diferenciables de dos variedades
+ son equivalentes
+\begin_inset LatexCommand \index{equivalencia de variedades}
+
+\end_inset 
+
+?.
+ Estamos buscando un concepto análogo a la equivalencia topológica de dos
+ variedades que viene dada por una aplicación.
+\layout Description
+
+difeomorfismo
+\begin_inset LatexCommand \index{difeomorfismo}
+
+\end_inset 
+
+ Sean 
+\begin_inset Formula $M$
+\end_inset 
+
+ y 
+\begin_inset Formula $N$
+\end_inset 
+
+ dos variedades diferenciables 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ y 
+\begin_inset Formula $F:M\fd N$
+\end_inset 
+
+ una aplicación biyectiva.
+ Se dice que 
+\begin_inset Formula $F$
+\end_inset 
+
+ es un difeomorfismo entre 
+\begin_inset Formula $M$
+\end_inset 
+
+ y 
+\begin_inset Formula $N$
+\end_inset 
+
+ si 
+\begin_inset Formula $F$
+\end_inset 
+
+ y 
+\begin_inset Formula $F^{-1}$
+\end_inset 
+
+ son 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ .
+\layout Standard
+
+Dos variedades son difeomorfas si existe un difeomorfismo entre ellas.
+ Todas sus propiedades diferenciables son las mismas, y también la dimensión.
+ Son, esencialmente, la misma variedad.
+\layout Subsection
+
+Subvariedades diferenciables
+\layout Description
+
+subvariedad\SpecialChar ~
+diferenciable
+\begin_inset LatexCommand \index{subvariedad diferenciable}
+
+\end_inset 
+
+ de una variedad diferenciable.
+ Sean 
+\begin_inset Formula $M$
+\end_inset 
+
+ y 
+\begin_inset Formula $N$
+\end_inset 
+
+ variedades diferenciables 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ de dimensiones respectivas 
+\begin_inset Formula $m,n$
+\end_inset 
+
+, con 
+\begin_inset Formula $m\geq n$
+\end_inset 
+
+.
+ Se dice que 
+\begin_inset Formula $N$
+\end_inset 
+
+ es una subvariedad de 
+\begin_inset Formula $M$
+\end_inset 
+
+ si existe una aplicación 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ 
+\begin_inset Formula $j:N\fd M$
+\end_inset 
+
+ tal que el rango de la matriz jacobiana de la expresión en coordenadas
+ de 
+\begin_inset Formula $j$
+\end_inset 
+
+ para cualesquiera par de cartas de 
+\begin_inset Formula $N$
+\end_inset 
+
+ y 
+\begin_inset Formula $M$
+\end_inset 
+
+ para cualquier punto 
+\begin_inset Formula $P\in N$
+\end_inset 
+
+ es máximo.
+  
+\layout Standard
+
+En la figura 
+\begin_inset LatexCommand \ref{fig subvar dif N perteneciente a M}
+
+\end_inset 
+
+ se representa la acción de 
+\begin_inset Formula $\hat{j}$
+\end_inset 
+
+ sobre las coordenadas de 
+\begin_inset Formula $P\in U_{a}$
+\end_inset 
+
+, 
+\begin_inset Formula \begin{eqnarray*}
+\hat{j}\equiv\psi_{b}\circ j\circ\varphi_{a}:\Bbb R^{n} & \fd & \Bbb R^{m}\\
+\left(x^{1}\ldots x^{n}\right) & \mapsto & \left(y^{1}\left[x^{1}\ldots x^{n}\right]\ldots y^{m}\left[x^{1}\ldots x^{n}\right]\right)\end{eqnarray*}
+
+\end_inset 
+
+cuya matriz jacobiana es 
+\begin_inset Formula \[
+\mathsf{J}\left[\hat{j}\right]=\left(\begin{array}{ccc}
+\dpa{y^{1}}{x^{1}} & \ldots & \dpa{y^{1}}{x^{n}}\\
+\vdots & \ddots & \vdots\\
+\dpa{y^{m}}{x^{1}} & \cdots & \dpa{y^{m}}{x^{n}}\end{array}\right)\]
+
+\end_inset 
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-subvariedad-N-de-M.eps
+	display monochrome
+	width 10cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig subvar dif N perteneciente a M}
+
+\end_inset 
+
+
+\begin_inset Formula $N$
+\end_inset 
+
+ es una subvariedad de 
+\begin_inset Formula $M$
+\end_inset 
+
+.
+\end_inset 
+
+
+\layout Standard
+
+Tomar un 
+\begin_inset Formula $N\not\subset M$
+\end_inset 
+
+ e identificarlo con un subconjunto de 
+\begin_inset Formula $M$
+\end_inset 
+
+ constituye un proceso llamado de 
+\emph on 
+inmersión
+\begin_inset LatexCommand \index{inmersión}
+
+\end_inset 
+
+ 
+\emph default 
+(
+\emph on 
+embedding
+\emph default 
+
+\begin_inset LatexCommand \index{embedding}
+
+\end_inset 
+
+).
+ Un ejemplo de este proceso es sumergir el conjunto 
+\begin_inset Formula $N\equiv\Bbb S^{2}$
+\end_inset 
+
+ en 
+\begin_inset Formula $M\equiv\cR{3}$
+\end_inset 
+
+.
+\layout Standard
+
+Podríamos, pero no lo vamos a hacer, generalizar el resultado de 
+\begin_inset Quotes eld
+\end_inset 
+
+defina su propia subvariedad en la variedad que usted quiera mediante ecuaciones
+\begin_inset Quotes erd
+\end_inset 
+
+, que ya presentamos (
+\begin_inset LatexCommand \vpageref{ssec var def por ecuaciones}
+
+\end_inset 
+
+) para definir variedades inmersas en 
+\begin_inset Formula $\cR{n}$
+\end_inset 
+
+.
+\layout Description
+
+
+\size small 
+Ejemplos Las curvas y superficies que conocemos hasta ahora son variedades
+ diferenciables dentro de 
+\begin_inset Formula $M\equiv\cR{3}$
+\end_inset 
+
+.
+ Del mismo modo los subgrupos de Lie son subvariedades de los grupos de
+ Lie.
+\layout Subsection
+
+Curvas sobre la variedad
+\layout Standard
+
+La siguiente definición resulta útil para definir vectores tangentes o flujos
+ de campos vectoriales sobre variedades.
+\layout Description
+
+curva\SpecialChar ~
+parametrizada\SpecialChar ~
+en\SpecialChar ~
+una\SpecialChar ~
+variedad\SpecialChar ~
+
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ Una curva parametrizada 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+ en una variedad diferenciable 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ 
+\begin_inset Formula $M$
+\end_inset 
+
+ es una función 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ de un intervalo 
+\begin_inset Formula $\left[a,b\right]$
+\end_inset 
+
+ de 
+\begin_inset Formula $\cR{}$
+\end_inset 
+
+ en 
+\begin_inset Formula $M$
+\end_inset 
+
+ tal que se puede extender a un intervalo abierto que contenga 
+\begin_inset Formula $\left[a,b\right]$
+\end_inset 
+
+ manteniendo el carácter 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+.
+ Véase la figura 
+\begin_inset LatexCommand \ref{fig curva parametrizada sobre una variedad}
+
+\end_inset 
+
+.
+\begin_inset Formula \begin{eqnarray}
+\gamma:\left[a,b\right]\subset\Bbb R & \fd & M\nonumber \\
+t & \mapsto & P\label{ec def curva en una variedad}\end{eqnarray}
+
+\end_inset 
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-curva-sobre-una-variedad.eps
+	display monochrome
+	width 8cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig curva parametrizada sobre una variedad}
+
+\end_inset 
+
+Curva parametrizada sobre una variedad.
+
+\size default 
+ 
+\end_inset 
+
+
+\layout Standard
+
+¿Por qué esa última condición?.
+ Queremos que la curva sea 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ y no podemos garantizarlo para un intervalo cerrado, que tenga 
+\emph on 
+extremos
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Podemos entender la curva como una subvariedad con frontera.
+\end_inset 
+
+
+\emph default 
+ 
+\begin_inset Formula $a,b$
+\end_inset 
+
+.
+ En un intervalo cerrado no se puede establecer que 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+ es 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ alrededor de 
+\begin_inset Formula $a$
+\end_inset 
+
+ o 
+\begin_inset Formula $b$
+\end_inset 
+
+ porque no se dispone de entornos alrededor para definir las derivadas 
+\emph on 
+por ambos lados
+\emph default 
+.
+\layout Standard
+
+La aplicación 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+ nos proporciona el dibujo de la curva (
+\begin_inset Formula $\textrm{Im}\,\left[\gamma\right]$
+\end_inset 
+
+) y la forma de recorrerlo.
+ Si cambiamos el dominio de definición tendremos otra curva parametrizada:
+ una curva parametrizada es la aplicación, los puntos y cómo se recorren.
+ Podemos preguntarnos si el conjunto de puntos que obtenemos mediante 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+ admite otras parametrizaciones y si éstas son equivalentes o no, y definir
+ una clase de equivalencia con las parametrizaciones admisibles, para considerar
+ iguales una serie de curvas que tienen la misma imagen, aunque la parametrizaci
+ón sea diferente.
+\layout Standard
+
+Esta definición depende únicamente de la estructura diferenciable; no depende
+ de ningún concepto métrico como 
+\emph on 
+ángulo
+\emph default 
+ o 
+\emph on 
+distancia
+\emph default 
+.
+\layout Section
+
+Vectores tangentes
+\layout Standard
+
+Nuestro objetivo en esta sección es generalizar el concepto de vector tangente
+ ya conocido en 
+\begin_inset Formula $\cR{m}$
+\end_inset 
+
+ y superficies a variedades.
+ Gracias exclusivamente a la estructura diferenciable que toda variedad
+ proporciona podremos definir vectores tangentes a la variedad en cada punto.
+ El concepto de vector tangente será fundamento para definir campos vectoriales
+ y tensoriales sobre variedades, por lo que es importante entenderlo bien.
+\layout Subsection
+
+Definición 
+\layout Standard
+
+Para empezar con algo sencillo, supongamos que la variedad en que queremos
+ definir los vectores tangentes es 
+\begin_inset Formula $\Bbb R^{3}$
+\end_inset 
+
+.
+ 
+\layout Itemize
+
+Tradicionalmente, en una determinada base, 
+\begin_inset Formula $\mathsf{v}=\left(v^{1},v^{2},v^{3}\right)$
+\end_inset 
+
+ indica cierta dirección en el espacio.
+\layout Itemize
+
+Pero esto no podemos llevarlo a la variedad, porque en ella no disponemos
+ ni de módulos ni de ángulos, al no tener métrica.
+ Otra interpretación del concepto de vector consiste en entender 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ como un operador que toma una función definida en un entorno del punto
+ 
+\begin_inset Formula $P$
+\end_inset 
+
+ y produce un número real: la 
+\emph on 
+derivada direccional de 
+\begin_inset Formula $f$
+\end_inset 
+
+ en el punto 
+\begin_inset Formula $P$
+\end_inset 
+
+
+\emph default 
+.
+\begin_inset Formula \[
+\mathsf{v}\left[f\right]=\left(v^{1}\dpa{f}{x^{1}}+v^{2}\dpa{f}{x^{2}}+v^{3}\dpa{f}{x^{3}}\right)_{P}\]
+
+\end_inset 
+
+ Esta interpretación sólo depende de la estructura diferenciable en 
+\begin_inset Formula $\cR{3}$
+\end_inset 
+
+, que es todo lo que tenemos y es por tanto un buen punto de partida para
+ la generalización a otras variedades diferenciables.
+ 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ es un operador que actúa sobre funciones 
+\begin_inset Formula $f$
+\end_inset 
+
+ pero es importante resaltar que se ejecuta sobre un punto, es decir, 
+\emph on 
+
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ aplicado sobre 
+\begin_inset Formula $f$
+\end_inset 
+
+ en 
+\begin_inset Formula $P$
+\end_inset 
+
+.
+\layout Standard
+
+Ambas interpretaciones son equivalentes.
+ Debe tenerse en cuenta que la segunda es válida para toda función 
+\begin_inset Formula $f$
+\end_inset 
+
+ en el dominio.
+ Pero ¿cuál es ese dominio de 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ como operador?.
+  Se trata del conjunto de funciones 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ del tipo 
+\begin_inset Formula \begin{eqnarray*}
+f:M & \fd & \cR{}\\
+P & \mapsto & y=f\left[P\right]\end{eqnarray*}
+
+\end_inset 
+
+Este conjunto se denomina 
+\begin_inset Formula $\mathcal{F}^{\infty}\left[M\right]$
+\end_inset 
+
+, o 
+\begin_inset Formula $\mathcal{F}_{P}^{\infty}\left[M\right]$
+\end_inset 
+
+ para funciones definidas
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+A partir de ahora salvo indicación en contrario todas las funciones que
+ aparezcan como argumento de estos vectores se supondrán pertenecientes
+ a 
+\begin_inset Formula $\mathcal{F}_{P}^{\infty}\left[M\right]$
+\end_inset 
+
+.
+\end_inset 
+
+ en un entorno de 
+\begin_inset Formula $P\in M$
+\end_inset 
+
+ en lugar de en todo 
+\begin_inset Formula $M$
+\end_inset 
+
+.
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-funciones-para-definir-los-vectores.eps
+	display monochrome
+	width 8cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig funciones para la def de v tg}
+
+\end_inset 
+
+La expresión de coordenadas de 
+\begin_inset Formula $f\in\mathcal{F}_{P}^{\infty}\left[M\right]$
+\end_inset 
+
+ en la carta 
+\begin_inset Formula $\left(U,\varphi\right)$
+\end_inset 
+
+ es 
+\begin_inset Formula $\hat{f}$
+\end_inset 
+
+.
+\end_inset 
+
+ 
+\layout Standard
+
+La expresión en coordenadas de 
+\begin_inset Formula $f$
+\end_inset 
+
+, para un punto 
+\begin_inset Formula $P$
+\end_inset 
+
+ en una carta cualquiera 
+\begin_inset Formula $\left(U,\varphi\right)$
+\end_inset 
+
+ es (ver figura 
+\begin_inset LatexCommand \ref{fig funciones para la def de v tg}
+
+\end_inset 
+
+)
+\begin_inset Formula \begin{eqnarray*}
+\hat{f}=f\circ\varphi^{-1}:\cR{m} & \fd & \cR{}\\
+\left(x^{1}\ldots x^{m}\right) & \mapsto & y=\hat{f}\left[x^{1}\ldots x^{m}\right]\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Description
+
+vector\SpecialChar ~
+tangente\SpecialChar ~
+a\SpecialChar ~
+
+\begin_inset Formula $M$
+\end_inset 
+
+\SpecialChar ~
+en\SpecialChar ~
+
+\begin_inset Formula $P$
+\end_inset 
+
+ Un vector tangente a la variedad diferenciable 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ 
+\begin_inset Formula $M$
+\end_inset 
+
+ en el punto 
+\begin_inset Formula $P$
+\end_inset 
+
+ es un operador que a cada 
+\begin_inset Formula $f\in\mathcal{F}_{P}^{\infty}\left[M\right]$
+\end_inset 
+
+ le hace corresponder un número real 
+\begin_inset Formula $\mathsf{v}\left[f\right]$
+\end_inset 
+
+ y tal que:
+\begin_deeper 
+\layout Enumerate
+
+es lineal: 
+\begin_inset Formula $\mathsf{v}\left[af+bg\right]=a\mathsf{v}\left[f\right]+b\mathsf{v}\left[g\right]$
+\end_inset 
+
+ 
+\begin_inset Formula $\forall$
+\end_inset 
+
+ 
+\begin_inset Formula $f,g\in\mathcal{F}_{P}^{\infty}\left[M\right]$
+\end_inset 
+
+ y 
+\begin_inset Formula $\forall a,b\in\cR{}$
+\end_inset 
+
+
+\layout Enumerate
+
+cumple la regla de Leibniz: 
+\begin_inset Formula $\mathsf{v}\left[fg\right]=\mathsf{v}\left[f\right]g\left[P\right]+f\left[P\right]\mathsf{v}\left[g\right]$
+\end_inset 
+
+.
+\layout Standard
+
+Cualquier operador que satisface estas dos propiedades se denomina una 
+\emph on 
+derivación
+\begin_inset LatexCommand \index{derivación}
+
+\end_inset 
+
+ 
+\emph default 
+(el ejemplo más conocido es probablemente la derivada de una función real
+ de variable real)
+\emph on 
+.
+\end_deeper 
+\layout Standard
+
+En cartesianas, por ejemplo, entendemos 
+\begin_inset Formula $\left(v^{1},v^{2},v^{3}\right)$
+\end_inset 
+
+ como 
+\begin_inset Formula $v^{1}\left(1,0,0\right)+v^{2}\left(0,1,0\right)+v^{3}\left(0,0,1\right)$
+\end_inset 
+
+; En lo sucesivo lo entenderemos como 
+\begin_inset Formula \[
+\mathsf{v}\left[\Box\right]=v^{1}\dpa{\hat{\Box}}{x^{1}}+v^{2}\dpa{\hat{\Box}}{x^{2}}+v^{3}\dpa{\hat{\Box}}{x^{3}}\]
+
+\end_inset 
+
+Donde en el cuadro se puede poner cualquier función (recuérdese que 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ es un operador).
+ El gorro indica que el argumento del vector no será exactamente una función
+ (entre 
+\begin_inset Formula $M$
+\end_inset 
+
+ y 
+\begin_inset Formula $\Bbb R$
+\end_inset 
+
+) sino su expresión en coordenadas a través de una carta (entre 
+\begin_inset Formula $\Bbb R^{m}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\Bbb R$
+\end_inset 
+
+).
+\layout Standard
+
+Comprobemos que 
+\begin_inset Formula \[
+\mathsf{v}\left[f\right]=v^{i}\left.\dpa{\hat{f}}{x^{i}}\right|_{\varphi\left[P\right]}\]
+
+\end_inset 
+
+cumple las propiedades exigidas por la definición operacional
+\layout Enumerate
+
+Linealidad
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{v}\left[af+bg\right] & = & v^{i}\left.\dpxi{}\left[\widehat{af+bg}\right]\right|_{\varphi\left[P\right]}\\
+ & = & v^{i}\left.a\dpxi{\hat{f}}\right|_{\varphi\left[P\right]}+v^{i}\left.b\dpxi{\hat{g}}\right|_{\varphi\left[P\right]}\\
+ & = & a\mathsf{v}\left[f\right]+b\mathsf{v}\left[g\right]\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Enumerate
+
+Leibniz
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{v}\left[fg\right] & = & v^{i}\left.\dpxi{}\left[\widehat{fg}\right]\right|_{\varphi\left[P\right]}\\
+ & = & v^{i}\left.\dpxi{\hat{f}}\right|_{\varphi\left[P\right]}\hat{g}\left[\varphi\left[P\right]\right]+\hat{f}\left[\varphi\left[P\right]\right]v^{i}\left.\dpxi{\hat{g}}\right|_{\varphi\left[P\right]}\\
+ & = & \mathsf{v}\left[f\right]g\left[P\right]+f\left[P\right]\mathsf{v}\left[g\right]\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Subsection
+
+Espacio de los vectores tangentes
+\layout Standard
+
+Vamos a ver que el conjunto de los vectores tangentes a la variedad en un
+ determinado punto puede ser dotado de una estructura de espacio lineal,
+ confirmando el uso hipotético de la palabra 
+\emph on 
+vector
+\emph default 
+ que hemos hecho hasta ahora para referirnos a sus elementos.
+\layout Subsubsection
+
+Combinaciones lineales de vectores tangentes
+\layout Standard
+
+Sean 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathsf{w}$
+\end_inset 
+
+ vectores tangentes a 
+\begin_inset Formula $M$
+\end_inset 
+
+ en 
+\begin_inset Formula $P$
+\end_inset 
+
+ con 
+\begin_inset Formula $a,b\in\cR{}$
+\end_inset 
+
+.
+ Se cumple
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Nótese como, al igual que en la mayoría de los cursos de álgebra y según
+ costumbre, denotamos por el mismo signo 
+\begin_inset Formula $\left(+\right)$
+\end_inset 
+
+ a dos operaciones esencialmente distintas, a saber, la suma de vectores
+ 
+\begin_inset Formula $a\mathsf{v}\textrm{ y }b\mathsf{w}$
+\end_inset 
+
+ y la suma de escalares del cuerpo 
+\begin_inset Formula $\left(\Bbb R\right)$
+\end_inset 
+
+, 
+\begin_inset Formula $a\mathsf{v}\left[f\right]$
+\end_inset 
+
+ y 
+\begin_inset Formula $b\mathsf{w}\left[f\right]$
+\end_inset 
+
+.
+ 
+\end_inset 
+
+ 
+\begin_inset Formula \[
+\left(a\mathsf{v}+b\mathsf{w}\right)\left[f\right]=a\mathsf{v}\left[f\right]+b\mathsf{w}\left[f\right]\]
+
+\end_inset 
+
+ 
+\layout Subsubsection
+
+Base del espacio tangente
+\begin_inset LatexCommand \label{tx base espacio tangente}
+
+\end_inset 
+
+
+\layout Standard
+
+Dada una carta 
+\begin_inset Formula \begin{eqnarray*}
+\varphi:U\subset M & \fd & \Bbb R^{m}\\
+P & \mapsto & \left(x_{1}\ldots x_{m}\right)\end{eqnarray*}
+
+\end_inset 
+
+definimos 
+\begin_inset Formula \[
+\mathsf{e}_{i}\equiv\left.\dpa{}{x_{i}}\right|_{\varphi\left[P\right]}\]
+
+\end_inset 
+
+ con 
+\begin_inset Formula $i=1\ldots m$
+\end_inset 
+
+ para funciones 
+\begin_inset Formula $f\in\mathcal{F}_{P}^{\infty}\left[M\right]$
+\end_inset 
+
+.
+ Vamos a demostrar que todo vector tangente se puede expresar como combinación
+ lineal de vectores 
+\begin_inset Formula $\mathsf{e}_{i}$
+\end_inset 
+
+ linealmente independientes, es decir, que 
+\begin_inset Formula $\{\mathsf{e}_{i}\}_{i=1\ldots m}$
+\end_inset 
+
+ es una base del espacio tangente a 
+\begin_inset Formula $M$
+\end_inset 
+
+ en 
+\begin_inset Formula $P$
+\end_inset 
+
+.
+ Nótese que la dimensión del espacio tangente es la misma que la de la variedad,
+ ya que existen 
+\begin_inset Formula $m$
+\end_inset 
+
+ coordenadas a lo largo de las que derivar, y por tanto 
+\begin_inset Formula $m$
+\end_inset 
+
+ elementos en la base.
+ 
+\layout Standard
+
+El vector expresado como combinación lineal de los operadores de la base,
+ con coeficientes 
+\begin_inset Formula $v^{i}\in\cR{}$
+\end_inset 
+
+ es
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{v} & = & \sum_{i=1}^{m}v^{i}\mathsf{e}_{i}\\
+ & = & \sum_{i=1}^{m}v^{i}\left.\dpa{}{x^{i}}\right|_{\varphi\left[P\right]}\end{eqnarray*}
+
+\end_inset 
+
+Cuando actúa sobre una función y usando el convenio de índices repetidos
+ (de Einstein) se escribe
+\begin_inset Formula \[
+\mathsf{v}\left[f\right]=v^{i}\left.\dpa{\hat{f}}{x^{i}}\right|_{\varphi\left[P\right]}\]
+
+\end_inset 
+
+ La expresión anterior establece la relación entre la definición clásica
+ en geometría diferencial (definición en coordenadas) y la definición intrínseca
+ de vector tangente 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+.
+\layout Subsubsection
+
+Actuación de los vectores tangentes sobre funciones constantes
+\layout Standard
+
+Sean 
+\begin_inset Formula $c,f,g\in\mathcal{F}_{P}^{\infty}\left[M\right]$
+\end_inset 
+
+.
+ Vamos a mostrar utilizando la linealidad de 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ que si 
+\begin_inset Formula $c$
+\end_inset 
+
+ es función constante entonces 
+\begin_inset Formula $\mathsf{v}\left[c\right]=0$
+\end_inset 
+
+:
+\layout Enumerate
+
+
+\begin_inset Formula $\mathsf{v}\left[0\right]=0$
+\end_inset 
+
+.
+ Prueba:
+\begin_inset Formula \[
+\mathsf{v}\left[af+bg\right]=a\mathsf{v}\left[f\right]+b\mathsf{v}\left[g\right]\]
+
+\end_inset 
+
+ya que 
+\begin_inset Formula $f=0$
+\end_inset 
+
+ y 
+\begin_inset Formula $g=0$
+\end_inset 
+
+ 
+\begin_inset Formula \[
+\mathsf{v}\left[0\right]=\left(a+b\right)\mathsf{v}\left[0\right]\]
+
+\end_inset 
+
+ como debe cumplirse 
+\begin_inset Formula $\forall a,b\in\cR{}$
+\end_inset 
+
+ es necesario que 
+\begin_inset Formula $\mathsf{v}\left[0\right]=0$
+\end_inset 
+
+.
+ 
+\layout Enumerate
+
+
+\begin_inset Formula $\mathsf{v}\left[1\right]=0$
+\end_inset 
+
+.
+ Prueba:
+\begin_inset Formula \[
+\mathsf{v}\left[fg\right]=\mathsf{v}\left[f\right]g+f\mathsf{v}\left[g\right]\]
+
+\end_inset 
+
+ con 
+\begin_inset Formula $f=1,g=1$
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{v}\left[1\right] & = & \mathsf{v}\left[1\right]+\mathsf{v}\left[1\right]\\
+ & = & 2\mathsf{v}\left[1\right]\end{eqnarray*}
+
+\end_inset 
+
+ de donde 
+\begin_inset Formula $\mathsf{v}\left[1\right]=0$
+\end_inset 
+
+.
+\layout Enumerate
+
+
+\begin_inset Formula $\mathsf{v}\left[c\right]=0$
+\end_inset 
+
+.
+ Prueba:
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{v}\left[c\right] & = & \mathsf{v}\left[c\times1\right]\\
+ & = & c\mathsf{v}\left[1\right]\end{eqnarray*}
+
+\end_inset 
+
+ necesariamente 
+\begin_inset Formula $\mathsf{v}\left[c\right]=0$
+\end_inset 
+
+.
+\layout Standard
+
+Definimos las funciones que se muestran en la figura 
+\begin_inset LatexCommand \ref{fig proyecciones}
+
+\end_inset 
+
+.
+ A partir de
+\begin_inset Formula \begin{eqnarray}
+u^{i}:\cR{m} & \fd & \cR{}\nonumber \\
+\left(x^{1}\ldots x^{m}\right) & \mapsto & x^{i}\label{ec u super i selecciona la componente i}\end{eqnarray}
+
+\end_inset 
+
+ se construye 
+\begin_inset Formula $\varphi^{i}$
+\end_inset 
+
+ por composición con la aplicación de carta 
+\begin_inset Formula \begin{eqnarray}
+\varphi^{i}=u^{i}\circ\varphi:M & \fd & \cR{}\nonumber \\
+P & \mapsto & x^{i}\label{ec de P a la componente i de sus coord}\end{eqnarray}
+
+\end_inset 
+
+ que es la función que selecciona la coordenada 
+\begin_inset Formula $i$
+\end_inset 
+
+-ésima en 
+\begin_inset Formula $\cR{m}$
+\end_inset 
+
+ a partir del punto 
+\begin_inset Formula $P$
+\end_inset 
+
+ en la variedad.
+ Por definición, 
+\begin_inset Formula $\varphi^{i}\in\mathcal{F}_{P}^{\infty}\left[M\right]$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+Sea 
+\begin_inset Formula $P'$
+\end_inset 
+
+ un punto en el entorno de 
+\begin_inset Formula $P$
+\end_inset 
+
+ y 
+\begin_inset Formula $\varphi$
+\end_inset 
+
+ la su aplicación de carta.
+ Según el teorema del valor medio, existe 
+\begin_inset Formula $\xi\in\left(0,1\right)$
+\end_inset 
+
+ tal que
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-proyecciones-vector-tangente.eps
+	display monochrome
+	width 8cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig proyecciones}
+
+\end_inset 
+
+Definición de las proyecciones 
+\begin_inset Formula $u^{i}$
+\end_inset 
+
+: 
+\begin_inset Formula $\varphi^{i}=\left(u^{i}\circ\varphi\right)\left[P\right]$
+\end_inset 
+
+.
+ 
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray*}
+f\left[P'\right] & = & \hat{f}\left[\varphi\left[P'\right]\right]\\
+ & = & \hat{f}\left[\varphi\left[P\right]\right]+\sum_{i=1}^{m}\left(\varphi^{i}\left[P'\right]-\varphi^{i}\left[P\right]\right)\left.\dpa{\hat{f}}{x^{i}}\right|_{\varphi\left[P\right]}+\xi\left(\varphi\left[P'\right]-\varphi\left[P\right]\right)\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Standard
+
+Si 
+\begin_inset Formula $\varphi\left[P'\right]=(x^{1'}\ldots x^{m'})$
+\end_inset 
+
+ y 
+\begin_inset Formula $\varphi\left[P\right]=\left(x^{1}\ldots x^{m}\right)$
+\end_inset 
+
+ relajando la notación obtenemos la siguiente expresión, que refleja mejor
+ cómo hemos aplicado el teorema de valor medio:
+\begin_inset Formula \[
+\hat{f}\left[x^{1'}\ldots x^{m'}\right]=\hat{f}\left[x^{1}\ldots x^{m}\right]+\sum_{i=1}^{m}\left(x^{i^{'}}-x^{i}\right)\left.\dpa{\hat{f}}{x^{i}}\right|_{\mathbf{x}'+s\left(\mathbf{x}'-\mathbf{x}\right)}\]
+
+\end_inset 
+
+Vamos ahora a ver la actuación de 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ sobre 
+\begin_inset Formula $f$
+\end_inset 
+
+ así desarrollada en 
+\begin_inset Formula $P'$
+\end_inset 
+
+, utilizando sus propiedades de linealidad y Leibniz:
+\begin_inset Formula \[
+\mathsf{v}\left[f\right]=\mathsf{v}\left[\hat{f}\left[\varphi\left[P\right]\right]\right]+\sum_{i=1}^{m}\mathsf{v}\left[\varphi^{i}\left[P'\right]-\varphi^{i}\left[P\right]\right]\left.\dpa{\hat{f}}{x^{i}}\right|_{\varphi\left[P\right]}+\sum_{i=1}^{m}\left.\left(\varphi^{i}\left[P'\right]-\varphi^{i}\left[P\right]\right)\right|_{P}\mathsf{v}\left[\dpa{\hat{f}}{x^{i}}\right]\]
+
+\end_inset 
+
+ El último término se anula (en 
+\begin_inset Formula $P'=P$
+\end_inset 
+
+).
+ El primer término también se anula, por ser el argumento del operador una
+ función constante.
+ 
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{v}\left[f\right] & = & \sum_{i=1}^{m}\mathsf{v}\left[\varphi^{i}\left[P'\right]-\varphi^{i}\left[P\right]\right]\left.\dpa{\hat{f}}{x^{i}}\right|_{\varphi\left[P\right]}\\
+ & = & \sum_{i=1}^{m}\left(\mathsf{v}\left[\varphi^{i}\left[P'\right]\right]-\mathsf{v}\left[\varphi^{i}\left[P\right]\right]\right)\left.\dpa{\hat{f}}{x^{i}}\right|_{\varphi\left[P\right]}\\
+ & = & \sum_{i=1}^{m}\mathsf{v}\left[\varphi^{i}\left[P'\right]\right]\left.\dpa{\hat{f}}{x^{i}}\right|_{\varphi\left[P\right]}\\
+ & = & \sum_{i=1}^{m}v^{i}\mathsf{e}_{i}\left[f\right]\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Standard
+
+Cualquier vector tangente se puede escribir como conjunto de números reales
+ 
+\begin_inset Formula $v^{i}$
+\end_inset 
+
+ multiplicados por su 
+\begin_inset Formula $\dpa{}{x^{i}}$
+\end_inset 
+
+ correspondiente; como habíamos dicho antes, una combinación lineal de los
+ 
+\begin_inset Formula $\mathsf{e}_{i}$
+\end_inset 
+
+ de la variedad en 
+\begin_inset Formula $P$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+Para todo vector 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ perteneciente al espacio tangente a 
+\begin_inset Formula $M$
+\end_inset 
+
+ en el punto 
+\begin_inset Formula $P$
+\end_inset 
+
+ (
+\begin_inset Formula $T_{P}\left[M\right]$
+\end_inset 
+
+) , 
+\begin_inset Formula \[
+\mathsf{v}=v^{i}\left.\dpa{}{x^{i}}\right|_{\varphi\left[P\right]}\]
+
+\end_inset 
+
+ por tanto
+\begin_inset Formula \begin{equation}
+\left\{ \mathsf{e}_{i}\equiv\left.\dpa{}{x^{i}}\right|_{\varphi\left[P\right]}\right\} _{i=1\ldots m}\label{ec base natural esp tg}\end{equation}
+
+\end_inset 
+
+ es la base natural
+\begin_inset LatexCommand \index{base natural del espacio tangente}
+
+\end_inset 
+
+
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Se dice natural porque las derivadas son respecto a las coordenadas de la
+ carta.
+ Para cada punto contamos con una base natural por cada carta que lo incluye.
+\end_inset 
+
+ de los vectores tangentes a la variedad 
+\begin_inset Formula $M$
+\end_inset 
+
+ en 
+\begin_inset Formula $P$
+\end_inset 
+
+ asociada al sistema de coordenadas 
+\begin_inset Formula $\left(x^{1}\ldots x^{m}\right)$
+\end_inset 
+
+ dado por la carta 
+\begin_inset Formula $\left(U,\varphi\right)$
+\end_inset 
+
+.
+ 
+\layout Subsubsection
+
+Cambio de coordenadas
+\layout Standard
+
+Si un punto está cubierto por dos cartas, 
+\begin_inset Formula $\left(U_{a},\varphi_{a}\right)\textrm{ y }\left(U_{b},\varphi_{b}\right)$
+\end_inset 
+
+ ¿cuál es la relación entre las dos bases naturales del espacio tangente
+ (figura 
+\begin_inset LatexCommand \ref{fig cambio coord v tg}
+
+\end_inset 
+
+)?.
+ En virtud de la existencia de dos cartas tenemos dos expresiones para un
+ vector tangente a 
+\begin_inset Formula $M$
+\end_inset 
+
+ en 
+\begin_inset Formula $P$
+\end_inset 
+
+:
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-cambio-coord-vectores.eps
+	display monochrome
+	width 12cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig cambio coord v tg}
+
+\end_inset 
+
+Cambio de coordenadas del vector tangente.
+ 
+\begin_inset Formula $\hat{f}=f\circ\varphi_{a}^{-1},\hat{\hat{f}}=f\circ\varphi_{b}^{-1},\hat{f}=\hat{\hat{f}}\circ\varphi_{b}\circ\varphi_{a}^{-1}$
+\end_inset 
+
+
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{v} & = & v^{i}\left.\dpa{}{x^{i}}\right|_{\varphi_{a}\left[P\right]}\\
+ & = & v^{i'}\left.\dpa{}{x^{i'}}\right|_{\varphi_{b}\left[P\right]}\end{eqnarray*}
+
+\end_inset 
+
+Queremos ver la relación entre los dos conjuntos de coeficientes de la base,
+ 
+\begin_inset Formula $v^{i}$
+\end_inset 
+
+ y 
+\begin_inset Formula $v^{i'}$
+\end_inset 
+
+.
+ Para ello aplicamos 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ sobre 
+\begin_inset Formula $f$
+\end_inset 
+
+ en los dos sistemas de coordenadas:
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{v}\left[f\right] & = & v^{i}\left.\dpa{\hat{f}}{x^{i}}\right|_{\varphi_{a}\left[P\right]}\\
+ & = & v^{i'}\left.\dpa{\hat{\hat{f}}}{x^{i'}}\right|_{\varphi_{b}\left[P\right]}\end{eqnarray*}
+
+\end_inset 
+
+ y relacionamos 
+\begin_inset Formula $\hat{\hat{f}}$
+\end_inset 
+
+ con 
+\begin_inset Formula $\hat{f}$
+\end_inset 
+
+:
+\begin_inset Formula \begin{eqnarray*}
+\hat{f} & = & f\circ\varphi_{a}^{-1}\\
+\hat{\hat{f}} & = & f\circ\varphi_{b}^{-1}\\
+\hat{f} & = & \hat{\hat{f}}\circ\varphi_{b}\circ\varphi_{a}^{-1}\end{eqnarray*}
+
+\end_inset 
+
+ pero 
+\begin_inset Formula $\varphi_{b}\circ\varphi_{a}^{-1}$
+\end_inset 
+
+ es el cambio de coordenadas
+\begin_inset Formula \begin{eqnarray*}
+\varphi_{b}\circ\varphi_{a}^{-1}:\cR{m} & \fd & \cR{m}\\
+\left(x^{1}\ldots x^{m}\right) & \mapsto & \left(x^{1'}\left[x^{1}\ldots x^{m}\right]\ldots x^{m'}\left[x^{1}\ldots x^{m}\right]\right)\end{eqnarray*}
+
+\end_inset 
+
+ por tanto
+\begin_inset Formula \[
+\hat{f}\left[x^{1}\ldots x^{m}\right]=\hat{\hat{f}}\left[x^{1'}\left[x^{1}\ldots x^{m}\right]\ldots x^{m'}\left[x^{1}\ldots x^{m}\right]\right]\]
+
+\end_inset 
+
+ así que 
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{v}\left[f\right] & = & v^{i}\left.\dpa{\hat{f}}{x^{i}}\right|_{\varphi_{a}\left[P\right]}\\
+ & = & v^{i}\left.\dpa{\hat{\hat{f}}\left[x^{1'}\left[x^{1}\ldots x^{m}\right]\ldots x^{m'}\left[x^{1}\ldots x^{m}\right]\right]}{x^{i}}\right|_{\varphi_{a}\left[P\right]}\end{eqnarray*}
+
+\end_inset 
+
+ y por la regla de la cadena
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{v}\left[f\right] & = & v^{i}\left.\dpa{\hat{\hat{f}}}{x^{i'}}\right|_{\varphi_{b}\left[P\right]}\left.\dpa{x^{i'}}{x^{i}}\right|_{\varphi_{a}\left[P\right]}\\
+ & = & v^{i}\left.\dpa{x^{i'}}{x^{i}}\right|_{\varphi_{a}\left[P\right]}\left.\dpa{\hat{\hat{f}}}{x^{i'}}\right|_{\varphi_{b}\left[P\right]}\\
+ & = & v^{i'}\left.\dpa{\hat{\hat{f}}}{x^{i'}}\right|_{\varphi_{b}\left[P\right]}\end{eqnarray*}
+
+\end_inset 
+
+ de donde el cambio de coordenadas para 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ es:
+\begin_inset Formula \begin{equation}
+v^{i'}=v^{i}\left.\dpa{x^{i'}}{x^{i}}\right|_{\varphi_{a}\left[P\right]}\label{ec cambio contravariante}\end{equation}
+
+\end_inset 
+
+o bien, poniendo 
+\begin_inset Formula $\hat{\hat{f}}$
+\end_inset 
+
+ en función de 
+\begin_inset Formula $f$
+\end_inset 
+
+
+\begin_inset Formula \[
+v^{i}=v^{i'}\left.\dpa{x^{i}}{x^{i'}}\right|_{\varphi_{b}\left[P\right]}\]
+
+\end_inset 
+
+Ya que 
+\begin_inset Formula $\hat{\hat{f}}=\hat{f}\circ\varphi_{a}\circ\varphi_{b}^{-1}$
+\end_inset 
+
+.
+\layout Standard
+
+Se define un vector a la manera clásica como conjunto de coordenadas según
+ la base y su modo de transformarse.
+ Es una definición buena porque es muy práctica.
+ Ahora daremos una definición distinta.
+\layout Subsection
+
+Vectores como clases de equivalencia de curvas
+\layout Standard
+
+En este apartado damos una definición de vector a partir del concepto de
+ clase de equivalencia de curvas.
+\layout Standard
+
+Dos curvas son equivalentes en un punto si las derivadas de cualquier función
+ a lo largo de ellas coinciden en ese punto.
+ Se puede definir también el vector tangente en un punto como la clase de
+ equivalencia de curvas que pasan por ese punto (figura 
+\begin_inset LatexCommand \ref{fig def de vtang como clase de eq de curvas}
+
+\end_inset 
+
+).
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-vector-clase-eq-curvas.eps
+	display monochrome
+	width 10cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig def de vtang como clase de eq de curvas}
+
+\end_inset 
+
+Definición de vector tangente como clase de equivalencia de curvas.
+ 
+\begin_inset Formula $f_{\gamma}$
+\end_inset 
+
+ es una función de 
+\begin_inset Formula $M$
+\end_inset 
+
+ restringida a 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+.
+\end_inset 
+
+
+\layout Standard
+
+El punto 
+\begin_inset Formula $P$
+\end_inset 
+
+ se escribe como 
+\begin_inset Formula $P=\gamma\left[0\right]$
+\end_inset 
+
+, la aplicación de la curva evaluada en 
+\begin_inset Formula $t=0$
+\end_inset 
+
+.
+ Una función sobre la variedad restringida a puntos de la curva se expresa
+ así:
+\begin_inset Formula \begin{eqnarray*}
+f_{\gamma}\equiv f\circ\gamma:\left[a,b\right]\in\cR{} & \fd & \cR{}\\
+t & \mapsto & f_{\gamma}\left[t\right]\end{eqnarray*}
+
+\end_inset 
+
+ la derivada de la función en 
+\begin_inset Formula $P$
+\end_inset 
+
+ a lo largo de la curva parametrizada es
+\begin_inset Formula \[
+\left.\dt{f_{\gamma}}\right|_{t=0}\]
+
+\end_inset 
+
+
+\layout Description
+
+equivalencia\SpecialChar ~
+de\SpecialChar ~
+curvas se dice que dos curvas son equivalentes y se nota 
+\begin_inset Formula $\gamma_{1}\sim\gamma_{2}$
+\end_inset 
+
+ si y sólo si 
+\begin_inset Formula $\forall f\in\mathcal{F}_{P}^{\infty}\left[M\right]$
+\end_inset 
+
+ y 
+\begin_inset Formula $\gamma_{1}\left[0\right]=\gamma_{2}\left[0\right]=P$
+\end_inset 
+
+ se cumple
+\begin_inset Formula \[
+\left.\dt{f_{\gamma_{1}}}\right|_{t=0}=\left.\da{f_{\gamma_{2}}}{s}\right|_{s=0}\]
+
+\end_inset 
+
+En 
+\begin_inset Formula $\cR{m}$
+\end_inset 
+
+ esto es como decir que ambas curvas son tangentes (comparten el mismo vector
+ tangente).
+ 
+\layout Standard
+
+El vector tangente es el conjunto de curvas de la clase de equivalencia
+ 
+\begin_inset Formula $\left[\gamma\right]$
+\end_inset 
+
+ en el punto dado.
+ Esta definición es equivalente a la definición en coordenadas (clásica)
+ de vector tangente,
+\begin_inset Formula $\mathsf{v}\Fdi\left[\gamma\right]$
+\end_inset 
+
+.
+ Para asignar mediante la clase de equivalencia a cada función un número
+ real y así reproducir el comportamiento de 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+, simplemente basta con tomar
+\begin_inset Formula \[
+\mathsf{v}\left[f\right]=\left.\dt{f_{\gamma}}\right|_{t=0}\]
+
+\end_inset 
+
+ la derivada de la función a lo largo de 
+\emph on 
+cualquier
+\emph default 
+ curva 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+ de la clase de equivalencia 
+\begin_inset Formula $\left[\gamma\right]$
+\end_inset 
+
+.
+ Por eso hemos identificado el vector con todas las curvas que a estos efectos
+ nos dan el mismo número, y no con una en particular.
+ Hay que comprobar que con esta nueva definición también se cumplen las
+ propiedades de linealidad y de la regla de Leibniz.
+ 
+\layout Enumerate
+
+Linealidad:
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{v}\left[af+bg\right] & = & \left.\left(\dt{}\left[af+bg\right]_{\gamma}\right)\right|_{t=0}\\
+ & = & a\left.\dt{f_{\gamma}}\right|_{t=0}+b\left.\dt{g_{\gamma}}\right|_{t=0}\\
+ & = & a\mathsf{v}\left[f\right]+b\mathsf{v}\left[g\right]\end{eqnarray*}
+
+\end_inset 
+
+ 
+\layout Enumerate
+
+Leibniz:
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{v}\left[fg\right] & = & \left.\dt{\left[\left(fg\right)_{\gamma}\right]}\right|_{t=0}\\
+ & = & \left.\dt{f_{\gamma}}\right|_{t=0}g_{\gamma}\left[t=0\right]+f_{\gamma}\left[t=0\right]\left.\dt{g_{\gamma}}\right|_{t=0}\\
+ & = & \mathsf{v}\left[f\right]g\left[P\right]+f\left[P\right]\mathsf{v}\left[g\right]\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Standard
+
+Esta nueva definición es más interesante desde el punto de vista geométrico,
+ aunque conduce a cálculos más complicados.
+\layout Standard
+
+Hasta aquí hemos considerado tres definiciones del vector tangente:
+\layout Itemize
+
+Operacional intrínseca.
+\layout Itemize
+
+En coordenadas.
+\layout Itemize
+
+Como clase de equivalencia de curvas (geométrica--intuitiva).
+\layout Section
+
+Diferencial de una función
+\layout Standard
+
+Podemos intentar generalizar la idea de diferencial de una función entre
+ dos variedades diferenciables.
+ Una interpretación geométrica de este objeto es que del mismo modo que
+ 
+\begin_inset Formula $F$
+\end_inset 
+
+ (figura 
+\begin_inset LatexCommand \ref{fig app F entre variedades a efectos de DF}
+
+\end_inset 
+
+) transforma un punto de 
+\begin_inset Formula $M$
+\end_inset 
+
+ en un punto de 
+\begin_inset Formula $N$
+\end_inset 
+
+, 
+\begin_inset Formula $\mathcal{D}F$
+\end_inset 
+
+ transforma vectores tangentes de 
+\begin_inset Formula $M$
+\end_inset 
+
+ en vectores tangentes de 
+\begin_inset Formula $N$
+\end_inset 
+
+.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-F-app-de-M-a-N.eps
+	display monochrome
+	width 11cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig app F entre variedades a efectos de DF}
+
+\end_inset 
+
+
+\begin_inset Formula $F$
+\end_inset 
+
+: aplicación entre variedades.
+\end_inset 
+
+
+\layout Standard
+\added_space_bottom 0.3cm 
+Podemos utilizar la definición de vector tangente como clase de equivalencia
+ de curvas.
+ Al actuar mediante 
+\begin_inset Formula $F$
+\end_inset 
+
+ sobre las curvas obtendremos otras curvas en 
+\begin_inset Formula $N$
+\end_inset 
+
+.
+ Geométricamente esperamos que esta 
+\begin_inset Formula $\mathcal{D}F$
+\end_inset 
+
+ nos lleve clases de equivalencia de curvas a clases de equivalencia de
+ curvas (vectores a vectores).
+ Querremos definir 
+\begin_inset Formula \begin{eqnarray*}
+\mathcal{D}F|_{P}:T_{P}\left[M\right] & \fd & T_{F\left[P\right]}\left[N\right]\\
+\mathsf{v} & \mapsto & \mathsf{w}\end{eqnarray*}
+
+\end_inset 
+
+ Vamos a llamar diferencial a aquello que transforma aproximaciones lineales
+ a 
+\begin_inset Formula $M$
+\end_inset 
+
+ en aproximaciones lineales a 
+\begin_inset Formula $N$
+\end_inset 
+
+ (espacios tangentes a espacios tangentes).
+ A la hora de definirla en lugar de utilizar la definición geométrica vamos
+ a hacer uso de la definición operacional
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Recordemos que un vector tangente es un operador lineal que dada una función
+ y un punto escupe un valor real, y que verifica la propiedad de Leibniz.
+\end_inset 
+
+.
+ 
+\layout Standard
+
+Tenemos el problema de encontrar cuál es el resultado de aplicar 
+\begin_inset Formula $\mathsf{w}$
+\end_inset 
+
+ a las funciones 
+\begin_inset Formula $\Cinf$
+\end_inset 
+
+ definidas en 
+\begin_inset Formula $F\left[P\right]\in N$
+\end_inset 
+
+ a partir de la manera de actuar de 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+ sobre las funciones definidas en 
+\begin_inset Formula $P\in M$
+\end_inset 
+
+.
+ Lo podemos hacer del siguiente modo
+\begin_inset Formula \[
+\mathsf{w}\left[f\right]\equiv\mathsf{v}\left[f\circ F\right]\]
+
+\end_inset 
+
+ ya que 
+\begin_inset Formula $f\circ F\in\mathcal{F}_{P}^{\infty}\left[M\right]$
+\end_inset 
+
+ pero 
+\begin_inset Formula $f\in\mathcal{F}_{F\left[P\right]}^{\infty}\left[N\right]$
+\end_inset 
+
+.
+ Es una buena escapatoria (porque yo sólo sé calcular con 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+) y la definición parece lógica (porque sólo usamos ingredientes intrínsecos)
+ pero ¿cómo se relaciona esto con la diferencial de la función?.
+ Probemos pensando que 
+\begin_inset Formula $M$
+\end_inset 
+
+ es un subconjunto abierto de 
+\begin_inset Formula $\cR{m}$
+\end_inset 
+
+ y 
+\begin_inset Formula $N$
+\end_inset 
+
+ de 
+\begin_inset Formula $\cR{n}$
+\end_inset 
+
+.
+ Sería el jacobiano.
+ Veamos si esto es coherente.
+ Para ello vamos a hallar la expresión en coordenadas utilizando sistemas
+ de coordenadas en 
+\begin_inset Formula $M$
+\end_inset 
+
+ y en 
+\begin_inset Formula $N$
+\end_inset 
+
+ asociados a una determinada carta (figura 
+\begin_inset LatexCommand \ref{fig usamos coord para entender DF}
+
+\end_inset 
+
+).
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-expr-coord-app-dif.eps
+	display monochrome
+	width 14cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig usamos coord para entender DF}
+
+\end_inset 
+
+Usamos la expresión en coordenadas para definir la diferencial.
+
+\size default 
+ 
+\end_inset 
+
+Sean las expresiones en coordenadas de 
+\begin_inset Formula $\mathsf{v}\in T_{P}\left[M\right]$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathsf{w}\in T_{F\left[P\right]}\left[N\right]$
+\end_inset 
+
+:
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{w} & = & w^{i'}\left.\dpa{}{x^{i'}}\right|_{\varphi_{b}\left[F\left[P\right]\right]}\\
+\mathsf{v} & = & v^{i}\left.\dpa{}{x^{i}}\right|_{\varphi_{a}\left[P\right]}\end{eqnarray*}
+
+\end_inset 
+
+ Antes de seguir, una pequeña observación sobre la notación: vamos a evaluar
+ las derivadas en 
+\begin_inset Formula $\varphi_{b}\left[F\left[P\right]\right]$
+\end_inset 
+
+ (en las coordenadas del punto 
+\begin_inset Formula $F\left[P\right]$
+\end_inset 
+
+), lo cual puede que a veces escribamos abreviando y abusando de la notación
+ como 
+\begin_inset Formula $F\left[P\right]$
+\end_inset 
+
+.
+ Mismo asunto con 
+\begin_inset Formula $\varphi_{a}\left[P\right]$
+\end_inset 
+
+ y 
+\begin_inset Formula $P$
+\end_inset 
+
+.
+ La pregunta es cómo calcular las 
+\begin_inset Formula $w^{i'}$
+\end_inset 
+
+ a partir de las 
+\begin_inset Formula $v^{i}$
+\end_inset 
+
+.
+ Se tiene
+\begin_inset Formula \begin{equation}
+\mathsf{w}\left[f\right]=w^{i'}\left.\dpa{\hat{\hat{f}}}{x^{i'}}\right|_{F\left[P\right]}\label{ec expr w[f]}\end{equation}
+
+\end_inset 
+
+ 
+\layout Standard
+
+Queremos pasar del 
+\begin_inset Formula $\cR{m}$
+\end_inset 
+
+ original para expresar 
+\begin_inset Formula $f\circ F$
+\end_inset 
+
+ en coordenadas.
+ La expresión de 
+\begin_inset Formula $F$
+\end_inset 
+
+ en coordenadas resulta ser, acudiendo a la figura 
+\begin_inset LatexCommand \ref{fig usamos coord para entender DF}
+
+\end_inset 
+
+: 
+\begin_inset Formula \begin{eqnarray*}
+\hat{F}\equiv\varphi_{b}\circ F\circ\varphi_{a}^{-1}:\cR{m} & \fd & \cR{n}\\
+\left(x^{1}\ldots x^{m}\right) & \mapsto & \left(y^{1}\left[x^{1}\ldots x^{m}\right]\ldots y^{n}\left[x^{1}\ldots x^{m}\right]\right)\end{eqnarray*}
+
+\end_inset 
+
+ usando la regla de la cadena en la ecuación 
+\begin_inset LatexCommand \ref{ec expr w[f]}
+
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{w}\left[f\right] & = & v^{i}\left.\left(\dpa{}{x^{i}}\hat{\hat{f}}\left[y^{1}\left[x^{1}\ldots x^{m}\right]\ldots y^{n}\left[x^{1}\ldots x^{m}\right]\right]\right)\right|_{P}\\
+ & = & v^{i}\left.\dpa{\hat{\hat{f}}}{x^{i'}}\right|_{F\left[P\right]}\left.\dpxi{x^{i'}}\right|_{P}\end{eqnarray*}
+
+\end_inset 
+
+ reordenando resulta que
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{w}\left[f\right] & = & w^{i'}\left.\dpa{\hat{\hat{f}}}{x^{i'}}\right|_{F\left[P\right]}\\
+ & = & v^{i}\left.\dpxi{x^{i'}}\right|_{P}\left.\dpa{\hat{\hat{f}}}{x^{i'}}\right|_{F\left[P\right]}\end{eqnarray*}
+
+\end_inset 
+
+ como la relación es válida para cualquier 
+\begin_inset Formula $f$
+\end_inset 
+
+ y por lo tanto para cualquier expresión en coordenadas 
+\begin_inset Formula $\hat{\hat{f}}$
+\end_inset 
+
+ podemos igualar por componentes, con lo que
+\begin_inset Formula \[
+w^{i'}=\left.\dpa{x^{i'}}{x^{i}}\right|_{P}v^{i}\]
+
+\end_inset 
+
+
+\layout Standard
+
+Si 
+\begin_inset Formula $F$
+\end_inset 
+
+ se establece entre las variedades particulares 
+\begin_inset Formula $M\equiv\cR{m}$
+\end_inset 
+
+ y 
+\begin_inset Formula $N\equiv\cR{n}$
+\end_inset 
+
+ la expresión en coordenadas de la diferencial de 
+\begin_inset Formula $F$
+\end_inset 
+
+, 
+\begin_inset Formula $\mathcal{D}F$
+\end_inset 
+
+ no es más que su matriz jacobiana, ya que 
+\begin_inset Formula $F$
+\end_inset 
+
+ ya es, con este dominio y codominio, su propia expresión en coordenadas.
+ En el caso general 
+\begin_inset Formula $\mathcal{D}F$
+\end_inset 
+
+ es la matriz jacobiana de la expresión en coordenadas de 
+\begin_inset Formula $F$
+\end_inset 
+
+, 
+\begin_inset Formula $\hat{F}\equiv\varphi_{b}\circ F\circ\varphi_{a}^{-1}$
+\end_inset 
+
+.
+ 
+\begin_inset Formula \[
+\left(\begin{array}{c}
+w^{1}\\
+\vdots\\
+w^{n}\end{array}\right)=\left.\left(\begin{array}{ccc}
+\dpa{x^{1'}}{x^{1}} & \ldots & \dpa{x^{1'}}{x^{m}}\\
+\vdots & \ddots & \vdots\\
+\dpa{x^{n'}}{x^{1}} & \ldots & \dpa{x^{n'}}{x^{m}}\end{array}\right)\right|_{P}\left(\begin{array}{c}
+v^{1}\\
+\vdots\\
+v^{m}\end{array}\right)\]
+
+\end_inset 
+
+ Ahora está claro que la transformación de las componentes de un vector
+ cuando se produce un cambio de coordenadas se puede ver como un caso particular
+ de una aplicación entre variedades, pero con 
+\begin_inset Formula $F:M\fd M$
+\end_inset 
+
+ y 
+\begin_inset Formula $P\equiv F\left[P\right]$
+\end_inset 
+
+ (
+\begin_inset Formula $F\equiv id$
+\end_inset 
+
+) usando dos cartas distintas: 
+\begin_inset Formula $\varphi_{b}\circ I\circ\varphi_{a}^{-1}$
+\end_inset 
+
+.
+ 
+\layout Section
+
+Vectores cotangentes y espacio cotangente
+\layout Standard
+
+A los vectores tangentes de los que hemos venido hablando hasta ahora los
+ llamaremos 
+\emph on 
+contravariantes
+\emph default 
+
+\begin_inset LatexCommand \index{vectores contravariantes}
+
+\end_inset 
+
+.
+ En este apartado introduciremos los vectores 
+\emph on 
+covariantes 
+\emph default 
+(o 
+\emph on 
+covectores
+\emph default 
+) y el 
+\emph on 
+espacio cotangente
+\emph default 
+.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-def-covector.eps
+	display monochrome
+	width 9cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig app para la def de v covar}
+
+\end_inset 
+
+Llamamos 
+\begin_inset Formula $f$
+\end_inset 
+
+ a la aplicación 
+\begin_inset Formula $F$
+\end_inset 
+
+ cuando se establece entre la variedad y 
+\begin_inset Formula $\cR{}$
+\end_inset 
+
+.
+ 
+\begin_inset Formula $\hat{f}=id\circ f\circ\varphi_{a}^{-1}$
+\end_inset 
+
+.
+\end_inset 
+
+Un tipo interesante de aplicaciones 
+\begin_inset Formula $F$
+\end_inset 
+
+ es el de las que tienen por variedad de llegada 
+\begin_inset Formula $\cR{}$
+\end_inset 
+
+ (figura 
+\begin_inset LatexCommand \ref{fig app para la def de v covar}
+
+\end_inset 
+
+), y permiten definir los vectores covariantes.
+ 
+\layout Standard
+
+Una base del espacio tangente a 
+\begin_inset Formula $\cR{}$
+\end_inset 
+
+ es simplemente 
+\begin_inset Formula $\dt{}$
+\end_inset 
+
+, la derivada en dirección de 
+\emph on 
+la única
+\emph default 
+ coordenada.
+ Un vector tangente a 
+\begin_inset Formula $\cR{}$
+\end_inset 
+
+ será
+\begin_inset Formula \[
+\mathsf{w}=w\left.\dt{}\right|_{t_{0}}\]
+
+\end_inset 
+
+ con 
+\begin_inset Formula $\mathsf{w}\left[f\right]\in T_{t_{0}}\left[\cR{}\right]$
+\end_inset 
+
+ (el espacio tangente de 
+\begin_inset Formula $\cR{}$
+\end_inset 
+
+ ).
+ Por otra parte 
+\begin_inset Formula $\mathsf{v}\left[f\right]\in T_{P}\left[M\right]$
+\end_inset 
+
+ con la expresión
+\begin_inset Formula \[
+\mathsf{v}=v^{i}\left.\dpxi{}\right|_{\varphi_{a}\left[P\right]}\]
+
+\end_inset 
+
+ en este caso la (única) componente de 
+\begin_inset Formula $\mathsf{w}$
+\end_inset 
+
+ según la base, 
+\begin_inset Formula $w$
+\end_inset 
+
+, es el jacobiano (
+\begin_inset Formula $m\times1$
+\end_inset 
+
+) de 
+\begin_inset Formula $\hat{f}$
+\end_inset 
+
+ multiplicado por las componentes de 
+\begin_inset Formula $v$
+\end_inset 
+
+: 
+\begin_inset Formula \[
+w=\left.\dpxi{\hat{f}}\right|_{P}v^{i}\]
+
+\end_inset 
+
+ 
+\begin_inset Formula $w$
+\end_inset 
+
+ es la diferencial de la aplicación 
+\begin_inset Formula $f$
+\end_inset 
+
+ que lleva vectores tangentes de 
+\begin_inset Formula $M$
+\end_inset 
+
+ a vectores tangentes de 
+\begin_inset Formula $\cR{}$
+\end_inset 
+
+ (escrita en coordenadas, 
+\begin_inset Formula $\hat{f}$
+\end_inset 
+
+).
+ ¡Pero además 
+\begin_inset Formula $w$
+\end_inset 
+
+ coincide con 
+\begin_inset Formula $\mathsf{v}\left[f\right]$
+\end_inset 
+
+!.
+ 
+\begin_inset Formula $w$
+\end_inset 
+
+, coordenada de 
+\family sans 
+w
+\begin_inset Formula $\left[f\right]$
+\end_inset 
+
+ 
+\family default 
+según la base 
+\begin_inset Formula $\dt{}$
+\end_inset 
+
+ en 
+\begin_inset Formula $t_{0}$
+\end_inset 
+
+ se puede obtener pues como 
+\begin_inset Formula $\mathsf{v}\left[f\right]$
+\end_inset 
+
+.
+\layout Standard
+
+Podemos pensar en la diferencial 
+\begin_inset Formula $df$
+\end_inset 
+
+ como en una aplicación que a cada vector tangente le hace corresponder
+ un número:
+\begin_inset Formula \begin{eqnarray*}
+df:T_{P}\left[M\right] & \fd & \cR{}\\
+\mathsf{v} & \mapsto & w=\mathsf{v}\left[f\right]=\left.\dpxi{\hat{f}}\right|_{P}v^{i}\end{eqnarray*}
+
+\end_inset 
+
+ a cada espacio lineal (plano tangente) le podemos asociar un 
+\emph on 
+espacio dual
+\emph default 
+
+\begin_inset LatexCommand \index{dual del espacio tangente}
+
+\end_inset 
+
+: el espacio de aplicaciones tal que a cada vector le hacen corresponder
+ un número.
+ 
+\begin_inset Formula $df$
+\end_inset 
+
+ es pues un elemento de ese espacio dual
+\begin_inset Formula \begin{eqnarray*}
+V & \fd & V^{*}\\
+T_{P}\left[M\right] & \fd & T_{P}^{*}\left[M\right]\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Formula $T_{P}^{*}\left[M\right]$
+\end_inset 
+
+ se denomina 
+\emph on 
+espacio
+\emph default 
+ 
+\emph on 
+cotangente
+\begin_inset LatexCommand \index{espacio cotangente}
+
+\end_inset 
+
+
+\emph default 
+, y es el de las aplicaciones que llevan vectores tangentes a números.
+ Un ejemplo de aplicación de este tipo es el producto escalar por un vector
+ fijo.
+ 
+\layout Standard
+
+A estas alturas disponemos de una base del espacio tangente 
+\begin_inset Formula $T_{P}\left[M\right]$
+\end_inset 
+
+ (ecuación 
+\begin_inset LatexCommand \ref{ec base natural esp tg}
+
+\end_inset 
+
+) pero no de una base del espacio cotangente 
+\begin_inset Formula $T_{P}^{*}\left[M\right]$
+\end_inset 
+
+.
+ Esta base que buscamos tiene que estar compuesta de elementos linealmente
+ independientes y generadores del espacio cotangente (de las diferenciales).
+ Veremos que en cierto sentido, esta base está formada por las diferenciales
+ de las funciones coordenadas.
+\begin_inset Formula \[
+\left\{ \mathsf{e}^{\mathsf{j}}\equiv dx^{j}\right\} _{j=1\ldots m}\]
+
+\end_inset 
+
+ Un elemento del espacio cotangente, 
+\begin_inset Formula $\mathsf{b}\in T_{P}^{*}\left[M\right]$
+\end_inset 
+
+, se escribe así en la base propuesta: 
+\begin_inset Formula $\mathsf{b}=b_{j}\left.dx^{j}\right|_{P}$
+\end_inset 
+
+.
+\layout Standard
+
+Hemos dicho que 
+\begin_inset Formula $dx^{j}$
+\end_inset 
+
+ son 
+\emph on 
+en cierto sentido
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Además, atención a la siguiente observación: 
+\emph on 
+no todos los elementos del espacio cotangente son diferenciales de funciones.
+\end_inset 
+
+ 
+\emph default 
+los componentes de la base porque en realidad esta notación es un abuso:
+ los 
+\begin_inset Formula $dx^{j}$
+\end_inset 
+
+ se construyen tomando 
+\begin_inset Formula $\varphi^{j}$
+\end_inset 
+
+ (la función que selecciona la coordenada 
+\begin_inset Formula $j$
+\end_inset 
+
+ de 
+\begin_inset Formula $P$
+\end_inset 
+
+) donde antes hemos tomado 
+\begin_inset Formula $f$
+\end_inset 
+
+.
+ Para una función 
+\begin_inset Formula $g$
+\end_inset 
+
+ entonces podemos escribir su expresión en la base:
+\begin_inset Formula \[
+dg=\left.\dpxi{g}\right|_{\varphi\left[P\right]}dx^{i}\]
+
+\end_inset 
+
+Construyamos ahora esa base de diferenciales.
+ Para ello echamos mano de 
+\begin_inset Formula $\varphi^{j}=u^{j}\circ\varphi_{a}\in\mathcal{F}_{P}^{\infty}\left[M\right]$
+\end_inset 
+
+ (con 
+\begin_inset Formula $u^{j}$
+\end_inset 
+
+ definida por 
+\begin_inset LatexCommand \ref{ec u super i selecciona la componente i}
+
+\end_inset 
+
+ y 
+\begin_inset Formula $\varphi^{j}$
+\end_inset 
+
+ por 
+\begin_inset LatexCommand \ref{ec de P a la componente i de sus coord}
+
+\end_inset 
+
+) .
+ El abuso de notación consiste en llamar 
+\begin_inset Formula $x^{j}$
+\end_inset 
+
+ a la función 
+\begin_inset Formula $\varphi^{j}$
+\end_inset 
+
+..
+ La base es 
+\begin_inset Formula $\{ d\varphi^{j}\}_{j=1\ldots m}$
+\end_inset 
+
+ y 
+\begin_inset Formula $dx^{j}$
+\end_inset 
+
+ su expresión en coordenadas.
+\layout Standard
+
+Veamos cómo actúan las 
+\begin_inset Formula $d\varphi^{j}$
+\end_inset 
+
+ sobre un determinado vector 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+: ¿qué número le hacen corresponder?
+\begin_inset Formula \begin{eqnarray*}
+d\varphi^{j}\left[\mathsf{v}\right] & = & \mathsf{v}\left[\varphi^{j}\right]\\
+ & = & \left.\dpxi{\varphi^{j}}\right|_{P}\\
+ & = & v^{i}\left.\dpxi{x^{j}}\right|_{P}\\
+ & = & v^{i}\delta_{i}^{j}\\
+ & = & v^{j}\end{eqnarray*}
+
+\end_inset 
+
+Abusando de la notación
+\begin_inset Formula \[
+dx^{j}\left[v^{i}\dpxi{}\right]=v^{j}\]
+
+\end_inset 
+
+ si actuamos sobre 
+\begin_inset Formula $\left.\dpxi{}\right|_{P}$
+\end_inset 
+
+, es decir sobre la base tangente
+\begin_inset Formula \begin{eqnarray}
+d\varphi^{j}\left[\dpxi{}\right] & = & \left.\dpxi{\hat{\varphi}^{j}}\right|_{P}\left.\dpxi{x^{j}}\right|_{P}\nonumber \\
+ & = & \delta_{j}^{i}\nonumber \\
+ & = & dx^{j}\left[\dpxi{}\right]\label{ec las bases duales y delta i j}\end{eqnarray}
+
+\end_inset 
+
+ la actuación de los elementos de la base del dual sobre la del espacio
+ tangente nos da 
+\begin_inset Formula $1$
+\end_inset 
+
+ si 
+\begin_inset Formula $i=j$
+\end_inset 
+
+ y 
+\begin_inset Formula $0$
+\end_inset 
+
+ en otro caso.
+ Esto no es más que la definición de una base dual.
+ 
+\layout Standard
+
+En definitiva, sobre un punto 
+\begin_inset Formula $P$
+\end_inset 
+
+ de la variedad 
+\begin_inset Formula $M$
+\end_inset 
+
+ podemos definir un espacio tangente, formado por vectores contravariantes
+ y con una base natural.
+ Al mismo tiempo podemos definir un espacio cotangente como combinación
+ lineal de aplicaciones 
+\begin_inset Formula $T_{P}\left[M\right]\fd\Bbb R$
+\end_inset 
+
+ (diferenciales) y con una base dual natural 
+\begin_inset Formula $\{ d\varphi^{j}\}$
+\end_inset 
+
+.
+\layout Subsection
+
+Cambio de coordenadas de vectores covariantes
+\layout Standard
+
+Veamos cómo se transforman las componentes de un vector covariante al utilizar
+ el sistema de coordenadas correspondiente a otra carta.
+ En ese caso tendremos otra base dual, las componentes respecto de la cual
+ denotaremos con primas
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{b} & = & b_{j}\left.dx^{j}\right|_{P}\\
+ & = & b_{j'}\left.dx^{j'}\right|_{P}\end{eqnarray*}
+
+\end_inset 
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename figps/fig-cambio-coord-esp-cotg.eps
+	display monochrome
+	width 14cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig cambio coord en esp cotg}
+
+\end_inset 
+
+Cambio de coordenadas en el espacio cotangente.
+\end_inset 
+
+Para expresar 
+\begin_inset Formula $b_{j'}$
+\end_inset 
+
+ en términos de 
+\begin_inset Formula $b_{j}$
+\end_inset 
+
+ lo que debemos es expresar 
+\begin_inset Formula $dx^{j}$
+\end_inset 
+
+ en términos de 
+\begin_inset Formula $dx^{j'}$
+\end_inset 
+
+.
+ Lo que queremos es la aplicación que va de 
+\begin_inset Formula $x^{j'}$
+\end_inset 
+
+ a 
+\begin_inset Formula $x^{j}$
+\end_inset 
+
+.
+ 
+\begin_inset Formula $x^{j}=x^{j}\left[x^{1'}\ldots x^{m'}\right]$
+\end_inset 
+
+ (ver figura 
+\begin_inset LatexCommand \ref{fig cambio coord en esp cotg}
+
+\end_inset 
+
+).
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{b} & = & b_{j}\left.dx^{j}\left[x^{1'}\ldots x^{m'}\right]\right|_{P}\\
+ & = & b_{j}\left.\left(\dpa{x^{j}}{x^{j'}}dx^{j'}\right)\right|_{P}\end{eqnarray*}
+
+\end_inset 
+
+de donde
+\begin_inset Formula \begin{equation}
+b_{j'}=\left.\dpa{x^{j}}{x^{j'}}\right|_{P}b_{j}\label{ec tr covariantes}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+Los vectores contravariantes se definen como los que obedecen la regla de
+ transformación 
+\begin_inset LatexCommand \ref{ec cambio contravariante}
+
+\end_inset 
+
+ y los covariantes como los que se comportan según 
+\begin_inset LatexCommand \ref{ec tr covariantes}
+
+\end_inset 
+
+.
+ La regla mnemotécnica para recordar ambas transformaciones (la contravariante
+ y la covariante) es que se pueda aplicar el convenio de Einstein.
+\layout Standard
+
+La razón del nombre es que los contravariantes se transforman 
+\emph on 
+al contrario
+\emph default 
+ (con la matriz inversa) de los elementos de la base.
+ 
+\begin_inset Formula \begin{eqnarray*}
+\dpa{}{x^{i'}} & = & \dpa{x^{i}}{x^{i'}}\dpxi{}\\
+\dpxi{} & = & \dpxi{x^{i'}}\dpa{}{x^{i'}}\end{eqnarray*}
+
+\end_inset 
+
+ las dos matrices que actúan como coeficientes de las respectivas bases
+ son inversas, 
+\begin_inset Formula $MM^{-1}=I$
+\end_inset 
+
+, o en componentes,
+\begin_inset Formula \[
+\dpa{x^{i}}{x^{i'}}\dpxj{x^{i'}}=\dpxj{x^{i}}=\delta_{j}^{i}\]
+
+\end_inset 
+
+ si denotamos 
+\begin_inset Formula $\dpa{x^{i}}{x^{i'}}$
+\end_inset 
+
+ por 
+\begin_inset Formula $M$
+\end_inset 
+
+ los elementos de la base 
+\begin_inset Formula $\dpxi{}$
+\end_inset 
+
+ (covariantes) se transforman así
+\begin_inset Formula \[
+\dpa{}{x^{i'}}=M\dpxi{}\]
+
+\end_inset 
+
+ y las coordenadas así 
+\begin_inset Formula \[
+b_{j'}=M_{j'}^{j}b_{j}\]
+
+\end_inset 
+
+sin embargo las coordenadas de los contravariantes van así:
+\begin_inset Formula \[
+v^{i'}=\left(M^{-1}\right)_{i}^{i'}v^{i}\]
+
+\end_inset 
+
+ Donde se ha supuesto todas las matrices evaluadas en el punto 
+\begin_inset Formula $P$
+\end_inset 
+
+.
+ Las coordenadas de un vector deben ser contravariantes para que el objeto
+ en sí sea invariante.
+ 
+\layout Section
+
+Fibrados
+\layout Standard
+
+
+\begin_inset Formula \[
+\dim T_{P}\left[M\right]=\dim T_{P}^{*}\left[M\right]=\dim M\]
+
+\end_inset 
+
+
+\layout Standard
+
+Ahora podemos pensar en fibrados: añadir a cada punto su espacio tangente
+ (su fibra, su plano tangente).
+ Cada elemento del nuevo espacio viene dado por un punto de la variedad
+ y un vector 
+\begin_inset Formula $\mathsf{v}$
+\end_inset 
+
+.
+ El fibrado viene dado por todos los posibles pares de esta forma 
+\begin_inset Formula $\left(P,\mathsf{v}\right)$
+\end_inset 
+
+.
+ Este espacio recién construido, formado por todos los planos tangentes
+ a la variedad en todos los puntos, es un espacio que resulta tener estructura
+ de variedad diferenciable y dimensión la suma de la de 
+\begin_inset Formula $M$
+\end_inset 
+
+ y la del espacio tangente (
+\begin_inset Formula $2\dim M$
+\end_inset 
+
+).
+ Tiene un grado de estructura mayor que el espacio producto cartesiano,
+ pero eso es tema para desarrollar en otro momento.
+\layout Section
+
+Por hacer
+\layout Enumerate
+
+
+\size small 
+Mejorar la discusión de 
+\begin_inset Formula $\Bbb R^{m}$
+\end_inset 
+
+ y sus abiertos como variedades diferenciables.
+ Ver 
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+cite{Postnikov}
+\end_inset 
+
+.
+\layout Enumerate
+
+
+\size small 
+Reorganizar la sección 
+\begin_inset LatexCommand \ref{sec variedades importantes}
+
+\end_inset 
+
+ diferenciando claramente las categorías de variedades de los ejemplos particula
+res.
+\layout Enumerate
+
+
+\size small 
+Aclarar la justificación del teorema de la función implícita, 
+\begin_inset LatexCommand \ref{tx just th fn implicita}
+
+\end_inset 
+
+.
+\layout Enumerate
+
+
+\size small 
+
+\begin_inset Formula $\mathcal{D}F$
+\end_inset 
+
+ a 
+\begin_inset Formula $dF$
+\end_inset 
+
+ por homogeneidad.
+\layout Enumerate
+
+
+\size small 
+Explicación de por qué no todos los elementos de un campo de formas son
+ diferenciales de funciones.
+\layout Enumerate
+
+
+\size small 
+En el apartado 
+\begin_inset LatexCommand \ref{tx base espacio tangente}
+
+\end_inset 
+
+ se utiliza por primera vez el convenio de Einstein; explicar someramente
+ su funcionamiento.
+\layout Enumerate
+
+
+\size small 
+Discusiones sobre el uso en castellano de maximal por máximo o con el número
+ máximo de elementos según criterio.
+ Tras una transformación de un objeto invariante respecto a ella el objeto
+ ¿queda 
+\begin_inset Quotes eld
+\end_inset 
+
+invariable
+\begin_inset Quotes erd
+\end_inset 
+
+ o 
+\begin_inset Quotes eld
+\end_inset 
+
+invariado
+\begin_inset Quotes erd
+\end_inset 
+
+?.
+\layout Enumerate
+
+
+\size small 
+Mejorar el tratamiento del fibrado, discutiéndolo con más detalle.
+ Mencionar las aplicaciones físicas del concepto.
+\the_end

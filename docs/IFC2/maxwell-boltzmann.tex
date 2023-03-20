@@ -1,0 +1,1097 @@
+\documentclass[spanish,a4paper,12pt]{book}
+\usepackage{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{eurosym}
+\input{lyxpackages.sty}
+\input{IFC2-packages.sty}
+\input{IFC2-macros.sty}
+\begin{document}
+
+\chapter{Introducción a la física estadística: distribución de \noun{Maxwell}-\noun{Boltzmann}}
+
+
+\section{Introducción}
+
+A lo largo del curso hemos estudiado sistemas constituidos por pocas
+partículas en interacción. Se trata de los ejemplos más sencillos
+de átomos y moléculas. En general, este tipo de sistemas pueden contener,
+a lo sumo, cientos de partículas. En adelante trataremos de forma
+simplificada sistemas que poseen un número de partículas del orden
+de \( N_{A} \) (número de \noun{Avogadro}). Ejemplos característicos
+de este tipo de sistemas son un gas molecular contenido en una vasija,
+los electrones (cuasi)libres de un metal o el plasma que forma parte
+de una enana blanca. 
+
+Este capítulo supondrá una introducción a los métodos que la Física
+Estadística utiliza para estudiar estos sistemas. Además introduciremos
+como ejemplo más sencillo de las nuevas idéas la distribución de \noun{Maxwell}--\noun{Boltzmann}
+(MB). Ésta describe las ocupaciones de los estados accesibles por
+las partículas de un sistema clásico. El siguiente capítulo se dedicará
+al estudio estadístico de sistemas cuánticos formados por partículas
+idénticas.
+
+
+\subsection{Física estadística}
+
+La Termodinámica aborda el estudio de los sistemas macroscópicos sin
+tener en cuenta cúales son sus constituyentes básicos ni sus interacciones.
+Para ello introduce las llamadas \emph{variables de estado} que caractericen
+de modo unívoco el estado macroscópico del sistema. Las variables
+de estado no son independientes, sino que están relacionadas las unas
+con las otras por ligaduras entre las que podemos distinguir:
+
+\begin{itemize}
+\item \emph{leyes universales} independientes del sistema utilizado. Son
+los principios fundamentales de la termodinámica y son insuficientes
+para especificar la evolución del sistema.
+\item \emph{ecuaciones de estado} propias de cada sistema. La Termodinámica
+no fundamenta el origen de estas ecuaciones.
+\end{itemize}
+Por su parte, la física estadística intenta obtener una caracterización
+del sistema partiendo de la naturaleza de sus constituyentes y de
+las interacciones ente los mismos. Utiliza métodos estadísticos para
+obtener los valores medios de las magnitudes, y a veces, sus fluctuaciones
+en el tiempo. Normalmente estos valores medios son, o están relacionados
+con el valor típico de cada magnitud en el equilibrio. De esta forma
+podemos predecir a partir de primeros principios las propiedades más
+importantes de un sistema termodinámico y, en particular, las ecuaciones
+de estado. 
+
+
+\subsubsection{Macroestados y microestados}
+
+Vamos a considerar un sistema aislado que ocupa un volumen bien definido
+\( V \). De acuerdo con la termodinámica \( N,V \) y \( E \) son
+variables adecuadas para caracterizar el equilibrio\footnote{%
+Normalmente se emplearía la temperatura \( T \) y no la energía del
+sistema. Sin embargo para llegar a una definición estadística de la
+temperatura es preferible partir de la energía
+}. Inicialmente el sistema no se encontrará en una situación de equilibrio
+por lo que hay que añadir una serie de variables macroscópicas adicionales,
+\( \alpha  \) para describir completamente el sistema. Llamaremos
+\emph{macroestado} del sistema al conjunto \[
+\left\{ E,V,N,\alpha \left( t\right) \right\} .\]
+ Si quisiéramos hacer una descripción en mecánica clásica del sistema,
+deberíamos dar sus coordenadas y momentos: especificar el \emph{microestado}.\[
+\left\{ \mathbf{q}_{i}\left( t\right) ,\mathbf{p}_{i}\left( t\right) \right\} _{i=1\ldots N},\]
+ o de forma compacta\begin{eqnarray*}
+\mathbf{Q}\left( t\right)  & \equiv  & \left( \mathbf{q}_{1}\left( t\right) ,\mathbf{q}_{2}\left( t\right) ,\ldots ,\mathbf{q}_{N}\left( t\right) \right) ,\\
+\mathbf{P}\left( t\right)  & \equiv  & \left( \mathbf{p}_{1}\left( t\right) ,\mathbf{p}_{2}\left( t\right) ,\ldots ,\mathbf{p}_{N}\left( t\right) \right) .
+\end{eqnarray*}
+ Cada par \( \mathbf{Q},\mathbf{P} \) define un punto en un espacio
+de dimensión \( 6N \), el \emph{espacio de fases del sistema,} de
+forma que \emph{}un microestado en mecánica clásica define un punto
+en dicho espacio. La evolución temporal del sistema se asimila a una
+trayectoria en el espacio de fases. 
+
+Es posible deducir propiedades muy generales sobre el comportamiento
+de las trayectorias en el espacio de las fases pero, es imposible
+medir experimentalmente o calcular la trayectoria específica de un
+sistema macroscópico. Para obtenerla utilizaríamos las las ecuaciones
+de \noun{Hamilton} asociadas al hamiltoniano del sistema que supondremos
+de la forma \[
+H\left( \mathbf{Q},\mathbf{P}\right) =\sum _{i=1}^{N}\frac{\mathbf{p}_{i}^{2}}{2m}+\sum _{i>j=1}^{N}V\left( \left| \mathbf{q}_{i}-\mathbf{q}_{j}\right| \right) .\]
+ Las ecuaciones de evolución son entonces\begin{eqnarray*}
+\dot{\mathbf{Q}} & = & \dpa{H\left( \mathbf{Q},\mathbf{P}\right) }{\mathbf{P}},\\
+\dot{\mathbf{P}} & = & -\dpa{H\left( \mathbf{Q},\mathbf{P}\right) }{\mathbf{Q}},
+\end{eqnarray*}
+ con \( 6N\approx 10^{24} \) condiciones iniciales\begin{eqnarray*}
+\mathbf{Q}^{\left( 0\right) } & = & \mathbf{Q}\left( \mathbf{t}=0\right) ,\\
+\mathbf{P}^{\left( 0\right) } & = & \mathbf{P}\left( \mathbf{t}=0\right) .
+\end{eqnarray*}
+ 
+
+El almacenamiento de las condiciones iniciales requiere un disco de
+aproximadamente \( 10^{16}Gb \) y el cálculo de la trayectoria en
+un ordenador que proporcionase \( 1Gflop \) requeriría del orden
+de \( 10^{16}s. \) por cada incremento elemental del tiempo\footnote{%
+Actualmente se puede estudiar la evolución temporal de sistemas clásicos
+constituidos por varios millones de partículas.
+}. 
+
+Es evidente que el estudio teórico de estos sistemas necesita una
+aproximación radicalmente diferente. Como primer paso en sea dirección
+nos interesa trazar la relación existente entre macro y microestados.
+Lo primero que podemos afirmar es que dicha relación no es biunívoca,
+ya que existen muchísimos microestados correspondientes a un sólo
+macroestado. Consideremos, por ejemplo, la ecuación\[
+H\left( \mathbf{Q},\mathbf{P}\right) =E,\]
+que determina el lugar geométrico de todos los puntos del espacio
+de fases que son compatibles con una energía \( E \). Esta ligadura
+reduce el espacio accesible a una (hiper)superficie en el espacio
+de fases que posee \( 6N-1 \) dimensiones. La imposición de que el
+volumen sea una constante \( V, \) reduce aún más la región accesible
+dentro del espacio de las fases pero el <\,{}<volumen>\,{}>
+de la misma sige siendo enorme, es decir, nunca dejaremos de tener
+un conjunto enorme de puntos del espacio de fase asociados a cada
+macroestado.
+
+\medskip{}
+\noindent \textbf{\small Ejemplo.} {\small Consideremos una partícula
+bajo el hamiltoniano armónico\[
+H\left( p,q\right) =\frac{p^{2}}{2m}+\frac{1}{2}kq^{2}.\]
+ La ecuación \[
+H\left( p,q\right) =E=\frac{p^{2}}{2m}+\frac{1}{2}kq^{2},\]
+ nos conduce a una elipse sobre el espacio de fases como lugar geométrico
+de los (micro) estados accesibles. \[
+\left( \frac{p}{\sqrt{2mE}}\right) ^{2}+\left( \frac{q}{\sqrt{\frac{2E}{k}}}\right) ^{2}=1\]
+ Podemos ver que a un sólo macroestado (caracterizado por la energía)
+le corresponde una infinidad de microestados.}{\small \par}
+
+
+\section{Hipótesis ergódica}
+
+Esta idéa debida a \noun{Boltzmann} es la que permite transformar
+un problema dinámico en un problema estadístico. Sea una magnitud
+física \( A \) cuyo valor en un instante \( t \) se relaciona con
+el micrestado del sistema como \( A\left( t\right) =A\left( \mathbf{Q}\left( t\right) ,\mathbf{P}\left( t\right) \right)  \).
+
+\begin{enumerate}
+\item Si estudiamos la evolución temporal del sistema durante un lapso de
+tiempo suficientemente largo observamos que, independientemente de
+la situación inicial, el equilibrio se alcanza rapidamente. Por ello,
+la magnitud \( A(t) \) toma durante casi todo el intervalo de estudio
+un valor igual al del equilibrio. Esto es, el promedio temporal de
+la magnitud durante un intervalo temporal suficientemente largo es
+indistinguible de \( A_{eq}. \) Así \[
+A_{eq}=\lim _{\tau \fd \infty }\overline{A(t)}=\lim _{\tau \fd \infty }\frac{1}{\tau }\int _{0}^{\tau }A\left( \mathbf{P}\left( t\right) ,\mathbf{Q}\left( t\right) \right) dt\]
+
+\item Esta ecuación relaciona el valor de la magnitud en el equilibrio con
+la trayectoria del sistema en el espacio de las fases \( \mathbf{P}\left( t\right)  \),
+\( \mathbf{Q}\left( t\right)  \). Dado que no podemos calcularla
+explícitamente se hace necesario introducir una hipótesis simplificatoria.
+La \emph{hipótesis} \emph{ergódica} supone que a lo largo de su evolución
+temporal la trayectoria del sistema en el espacio de fases pasa un
+mismo número de veces por todos y cada uno de los puntos\footnote{%
+Esto es una versión simplificada. Una versión moderna es una afirmación
+no sobre todos los puntos, sino sobre una partición suficientemente
+fina.
+} de dicho espacio compatibles con las condiciones macroscópicas dadas
+(enegía, volumen\ldots{}). En otras palabras, todos los puntos de
+la región del espacio de las fases definida por el estado macroscópico
+son igualmente probables. 
+\item Evitamos así el cálculo de integrales temporales que a su vez requieren
+conocer la trayectoria del sistema en el espacio de las fases. Si
+llamamos \( R\left( E,V,N\right)  \) a la región de acceso permitido
+por las ligaduras macroscópicas y \( \Omega \left( E,V,N\right)  \)
+a su volumen tenemos \[
+A_{eq}=\frac{1}{\Omega }\int _{R}A\left( \mathbf{Q},\mathbf{P}\right) \, d\mathbf{Q}\, d\mathbf{P}\]
+ con lo que se pasa de un promedio temporal a un promedio espacial
+sobre un subconjunto del espacio de las fases. El problema ahora es
+esencialmente geométrico.
+\end{enumerate}
+
+\section{Equilibrio en física estadística}
+
+\begin{figure}
+{\centering \includegraphics[width=5cm]{fig/oscilador-arm.eps} \par}
+\caption{Trayectoria del oscilador armonico unidimensional en el espacio de fases.}
+\end{figure}
+
+La hipótesis ergódica permite, entre otras cosas, comprender desde
+un punto de vista microscópico como se alcanza el equilibrio rapidamente
+cuando el número de grados de libertad (\( N \)) es muy grande. Sea
+\( R \) la región del espacio de las fases compatible con las condiciones
+macroscópicas impuestas al sistema (\( E,V,N \)) y que se subdivide
+en regiones \( R_{\alpha _{i}} \) según las condiciones adicionales
+que se añaden para distinguir situaciones diferentes a la de equilibrio.
+Cada una de estas regiones define un macroestado \( E,V,N,\alpha _{i} \).
+Supongamos que una de las regiones \( R_{\alpha _{i}} \) ,\( R_{\alpha _{M}} \)
+por ejemplo, es extraordinariamente grande en comparación con las
+demás. Esto implica (hipótesis ergódica) que el sistema, sea cual
+sea su estado inicial, pasará la mayor parte del tiempo en la región
+\( R_{\alpha _{M}} \). Dicho de otra manera los valores promedio
+de las diferentes magnitudes serán los correspondientes a los puntos
+(microestados) de esta región. Podemos decir que la región \( R_{\alpha _{M}} \)
+define realmente el equilibrio. 
+
+Por supuesto tenemos todo el derecho a preguntarnos porqué el espacio
+de fases de un sistema debe estar dividido de esta forma tan peculiar.
+Veamos un ejemplo sencillo que ilustra que las cosas suceden así,
+siempre que el número de partículas sea suficientemente grande.
+
+\medskip{}
+\noindent \textbf{\small Ejemplo} {\small Consideremos un sistema
+formado por \( N \) osciladores unidimensionales cuya energía total
+es igual a \( E \). }{\small \par}
+
+\medskip{}
+\noindent {\small El hamiltoniano del sistema viene dado por la expresión}{\small \par}
+
+{\small \[
+H(\mathbf{P},\mathbf{Q})=\sum ^{N}_{i=1}\left( \frac{p_{i}^{2}}{2m}+\frac{1}{2}m\omega ^{2}q_{i}^{2}\right) ,\]
+y haciendo el cambio de variables \( x=\frac{p}{\sqrt{2m}},\, \, y=\sqrt{\frac{m}{2}}\omega q \)
+nos queda}{\small \par}
+
+{\small \[
+H(\mathbf{P},\mathbf{Q})=\sum ^{N}_{i=1}\left( x_{i}^{2}+y_{i}^{2}\right) .\]
+De esta forma el volumen en el espacio de las fases será}{\small \par}
+
+{\small \[
+\Omega (E,V,N)=\int _{H(\mathbf{Q},\mathbf{P})=E}dp^{N}dq^{N}=\left( \frac{2}{\omega }\right) ^{N}\int _{\sum (x_{i}^{2}+y_{i}^{2})=E}dx^{N}dy^{N}.\]
+Ahora bien la última integral caracteríza la superficie de una esfera
+de radio \( \sqrt{E} \) en un espacio de \( 2N \) dimensiones y
+por lo tanto}{\small \par}
+
+{\small \[
+\Omega (E,V,N)=\left( \frac{2}{\omega }\right) ^{N}\frac{\pi ^{N}}{\Gamma (N)}E^{N-1}\simeq \left( \frac{2\pi }{\omega }\right) ^{N}\frac{E^{N}}{N!},\]
+donde hemos usado que \( N\simeq N-1 \). El equilibrio de un sistema
+de partículas libres se caracteriza porque cada una de ellas porta
+una energía \( \varepsilon =\frac{E}{N} \) de modo que \( N_{1} \)
+partículas cualesquiera tendrán una energía igual a \( \frac{N_{1}}{N}E \).
+Consideremos ahora una situación en la que las primeras \( N_{1}\leq N \)
+partículas poseen una energía \( E_{1}=\lambda E,\, \lambda \in [0,1] \)
+y las restantes \( N_{2}=N-N_{1} \) portan una energía \( E_{2}=(1-\lambda )E \).
+En general se tratará de un estado fuera del equilibrio. Si admitimos
+que la fracción \( \lambda  \) está fija entonces el número \( N_{1} \)
+de partículas juega el papel de etiqueta \( \alpha  \). Cuando \( N_{1}=\lambda N \)
+estaremos en la situación de equilibrio ya que en este caso se cumplirá
+que \( E_{1}=\lambda E=\frac{N_{1}}{N}E \). El volumen en el espacio
+de las fases asociado al macroestado en el que \( N_{1} \) partículas
+portan una energía \( \lambda E \) puede obtenerse repitiendo los
+cálculos anteriores }{\small \par}
+
+{\small \[
+\Omega (E_{1},N_{1},E_{2},N_{2},V)\simeq \left( \frac{2\pi }{\omega }\right) ^{N}\frac{E_{1}^{N_{1}}}{N_{1}!}\frac{E_{2}^{N_{2}}}{N_{2}!}=\Omega (E,V,N)\frac{N!}{N_{1}!N_{2}!}\lambda ^{N_{1}}(1-\lambda )^{(N-N_{1})}\]
+Como todos los microestados del espacio de fases son igualmente probables,
+la probabilidad de dicho macroestado será}{\small \par}
+
+{\small \[
+P(E_{1},N_{1},E_{2},N_{2},V)=\frac{\Omega (E_{1},N_{1},E_{2},N_{2},V)}{\Omega (E,V,N)}=\frac{N!}{N_{1}!N_{2}!}\lambda ^{N_{1}}(1-\lambda )^{(N-N_{1})}=B(N,\lambda )(N_{1})\]
+donde \( B \) es una distribución binomial. Como \( N \) es un número
+muy grande la distribución binomial se confunde con una distribución
+normal de media \( \overline{N_{1}}=\lambda N \) y desviación típica
+\( \sigma =\sqrt{\lambda (1-\lambda )N} \). Como \( N \) es un número
+enorme, de hecho es del orden de \( N_{A} \), su raiz \( \sqrt{N} \)
+es despreciable frente a él. Es decir, el intervalo alrededor de la
+media donde la distribución de probabilidad toma valores apreciables
+es extraordinariamente pequeño. Por lo tanto sólo aquellos macroestados
+donde \( N_{1}\simeq \lambda N \) tienen una probabilidad apreciable
+de ocurrir.}{\small \par}
+
+\begin{description}
+\item 
+\begin{figure}
+{\centering \includegraphics[width=3.5cm]{fig/distr-binomial.eps} \par}
+\caption{Una binomial se confunde con una gaussiana centrada en \protect\( \lambda N\protect \) }
+\end{figure}
+ {\small }
+\begin{table}
+{\centering \begin{tabular}{cccc}
+\hline 
+{\small N}&
+{\small \( \overline{N_{1}} \)}&
+{\small \( \sigma  \)}&
+{\small \( \frac{\sigma }{\overline{N_{1}}} \)}\\
+\hline
+{\small \( 100 \)}&
+{\small \( 50 \)}&
+{\small \( 5 \)}&
+{\small \( \frac{1}{10} \)}\\
+{\small \( 1000 \)}&
+{\small \( 500 \)}&
+{\small \( 5\sqrt{10} \)}&
+{\small \( \frac{1}{10\sqrt{10}} \)}\\
+{\small \( 10^{24} \)}&
+{\small \( \frac{10^{24}}{2} \)}&
+{\small \( 5× 10^{11} \)}&
+{\small \( 10^{-12} \)}\\
+\hline
+\end{tabular}\par}
+
+
+\caption{{\small Algunos ejemplos con \protect\( \lambda =\frac{1}{2}\protect \)}}
+\end{table}
+
+\end{description}
+
+\section{Definición estadística de entropía}
+
+La entropía \( S \) es introducida en \( 1850 \) por \noun{Clausius}.
+Se trata de una variable de estado cuya variación entre dos macroestados
+muy próximos viene dada por 
+
+\[
+dS=\frac{\delta Q_{rev}}{T},\]
+donde \( \delta Q_{rev} \) es el calor interacambiado con el entorno
+durante un proceso reversible que pasa de un estado a otro. El segundo
+principio de la Termodinámica afirma que 
+
+\begin{itemize}
+\item \( dS=0 \) para un sistema aislado y en equilibrio y además \( S=S_{max} \) 
+\item \( dS>0 \) en procesos irreversibles. 
+\end{itemize}
+Según lo explicado cuando el sistema evoluciona hacia el equilibrio
+va atravesando pequeñas regiones de no equilibrio y tiende hacia la
+zona de mayor volumen del espacio de fases, la que agrupa un numero
+gigantesco de microestados. Entonces es razonable establecer un principio
+que vincule volumen del espacio de fases y entropía por medio de una
+función \( f \) creciente. Así\[
+S=f\left( \Omega \right) .\]
+ 
+
+Por otro lado sabemos que la entropía es una variable extensiva de
+forma que si el sistema consta de dos partes con entropías \( S_{1} \)
+y \( S_{2} \) respectivamente, se cumplirá que \( S=S_{1}+S_{2} \).
+Ahora bien el número de microestados compatibles con el macroestado
+del sistema total es \( \Omega =\Omega _{1}\Omega _{2} \) ya que
+por cada microestado en el subsistema \( 1 \) tenemos \( \Omega _{2} \)
+en el subsistema \( 2 \). De modo que  \[
+\begin{array}{ccccccc}
+S & = & S_{1}+S_{2} & = & f(\Omega ) & = & f(\Omega _{1}\Omega _{2})\\
+S & = & S_{1}+S_{2} & = & f(\Omega _{1})+f(\Omega _{2}) &  & 
+\end{array}\]
+con lo que concluimos que \( f\left( \Omega _{1}\Omega _{2}\right) =f\left( \Omega _{1}\right) +f\left( \Omega _{2}\right)  \).
+Este resultado condujo a \noun{Boltzmann} a postular que:\[
+S=k\log \Omega \]
+ donde \( \Omega  \) es el volumen del espacio de las fases accesible
+o, dicho de otro modo, el número de microestados accesibles en un
+macroestado determinado. Como la entropía termodinámica tiene dimensiones
+de \( [ET^{-1}] \) es necesario introducir una constante \( k \)
+que posea dichas unidades. Recibe el nombre de \emph{constante de}
+\noun{Boltzmann} y vale \( k=8.631× 10^{-5}eVK^{-1} \). Más
+adelante obtendremos esta valor estudiando desde un punto de vista
+estadístico el gas ideal y comparando las predicciones obtenidas con
+los datos experimentales. 
+
+Por último es conveniente comentar que mientras el segundo principio
+de la Termodinámica establece que \( S \) nunca decrece en el marco
+de la Física Estadística este es un hecho posible, pero altamente
+improbable: sólo ocurrirá durante intervalos de tiempo extraordinariamente
+pequeños de forma que es muy difícil observar el fenómeno y, en promedio,
+la entropía resulta ser una función creciente.
+
+\begin{figure}
+{\centering \includegraphics[width=7cm]{fig/entropia-no-decrece.eps} \par}
+\caption{{\small a) Trayectoria en el espacio de fases y b) la función \protect\( \frac{S}{k}\left( t\right) \protect \) }}
+\end{figure}
+
+
+\section{Paso a la Mecánica Cuántica}
+
+En esta sección intentaremos adaptar de una forma sencilla (y alejada
+del procedimiento general) los conceptos anteriores a la Mecánica
+Cuántica. Supondremos que el hamiltoniano del sistema, aislado y formado
+por un número de partículas \( N\gg 1 \) que ocupan un volumen \( V \)
+constante, es del tipo\[
+H=\sum _{i=1}^{N}h\left( i\right) =\sum _{i=1}^{N}t\left( i\right) +v\left( i\right) \]
+ donde el potencial a un cuerpo \( v \) puede caracterizar un campo
+externo (independiente del tiempo) que actua sobre las partículas
+del sistema, o bien representar una interacción promedio sobre la
+partícula generada por las restantes. Este potencial promedio puede
+obtenerse utilizando el método variacional, normalmente en su versión
+\noun{Hartree}-\noun{Fock.} Este \noun{}método funciona mejor
+cuanto mayor sea el número de partículas. Introducimos las autofunciones
+y autoenergías del operador correspondiente \( \mathsf{h} \)\[
+\mathsf{h}\phi _{a}^{k_{a}}=\varepsilon _{a}\phi _{a}^{k_{a}}\]
+donde ahora \( a=1,2\ldots  \) enumera las energías y \( k_{a}=1,2\ldots g_{a}=\mathrm{deg}\left( \varepsilon _{a}\right)  \)
+las degeneraciones. Las autoenergías son, en general, funciones del
+volumen y del número de partículas\[
+\varepsilon _{a}=\varepsilon _{a}\left( V,N\right) \]
+ La ocupación del nivel \( \varepsilon _{a} \) la cuantificamos por
+el número entero \( n_{a} \) y llamaremos \emph{distribución} \( \left\{ n_{a}\right\}  \)
+a la colección de ocupaciones de los distintos niveles. Evidentemente\[
+N=\sum _{a}n_{a}\]
+ Por otra parte, en el tema anterior obtuvimos que las autoenergías
+de un hamiltoniano a un cuerpo son \[
+E=\sum _{a}n_{a}\varepsilon _{a}\]
+ Para conectar con los conceptos precedentes consideremos una magnitud
+física cuyo valor para una sola partícula, \( f(\varepsilon _{a}) \),
+es función del nivel en el que se encuentra la partícula. Por ejemplo,
+si dicha magnitud es una componente del momento angular tendremos
+
+\[
+L_{\alpha }(\varepsilon _{a})=\bra{\phi _{a}}\mathsf{L}_{\alpha }\ket{\phi _{a}}\]
+ Supongamos que \( f \) es extensiva de manera que para su valor
+total (para las \( N \) partículas) es 
+
+\[
+F\left( \left\{ n_{a}\right\} \right) =\sum _{a}n_{a}f\left( \varepsilon _{a}\right) \]
+Parece razonable que en este formalismo el papel de macroestado venga
+representado por la distribución \( \left\{ n_{a}\right\}  \) de
+partículas en los distintos niveles de energía accesibles. El volumen
+de la región del espacio de las fases asociada a unas ciertas condiciones
+macroscópicas se substituye por la función \( \Omega \left( \left\{ n_{a}\right\} \right)  \)
+que nos da el número de formas distinguibles en que podemos distribuir
+las \( N \) partículas en los niveles del sistema de forma que las
+ocupaciones den lugar a la distribución \( \{n_{a}\} \). Cada una
+de dichas formas juega aquí el papel de microestado. Al equilibrio
+le corresponde, de todas las distribuciones posibles, aquella \( \left\{ n_{a}^{eq}\right\}  \)
+que maximíza \( \Omega  \). 
+
+El valor de \( F \) en el equilibrio se calculará, de acuerdo con
+la hipótesis ergódica, como un promedio sobre todos los microestados
+posibles. En términos de distribuciones\[
+F_{eq}=\frac{\sum _{\left\{ n_{a}\right\} }\Omega \left( \left\{ n_{a}\right\} \right) F\left( \left\{ n_{a}\right\} \right) }{\sum _{\left\{ n_{a}\right\} }\Omega \left( \left\{ n_{a}\right\} \right) }\]
+ Hacemos la aproximación \begin{eqnarray*}
+F & \simeq  & \frac{\Omega \left( \left\{ n_{a}^{eq}\right\} \right) F\left( \left\{ n_{a}^{eq}\right\} \right) }{\Omega \left( \left\{ n_{a}^{eq}\right\} \right) }\\
+ & = & \sum _{a}n_{a}^{eq}f\left( \varepsilon _{a}\right) 
+\end{eqnarray*}
+ Por lo tanto el valor en la situación de equilibrio, de cualquier
+magnitud extensiva es función de las ocupaciones \( n_{a}^{eq} \).
+Podemos introducir también el valor medio por partícula de una magnitud
+como \[
+\overline{f}=\frac{F_{eq}}{N}=\frac{1}{N}\sum _{a}n_{a}^{eq}f\left( \varepsilon _{a}\right) \]
+El objetivo prioritario es obtener las ocupaciones en el equilibrio
+para lo cual procederemos como sigue:
+
+\begin{enumerate}
+\item deduciremos la expresión funcional de \( \Omega \left( \left\{ n_{a}\right\} \right)  \),
+que depende profundamente de la naturaleza de los constituyentes del
+sistema, es decir, de que sean distinguibles o no, y en este caso,
+de si son bosones o fermiones 
+\item maximizaremos dicha función.
+\end{enumerate}
+\textbf{\small Ejercicio} {\small (para distinguir microestado y distribución).
+Sea un sistema formado por 3 partículas que pueden ocupar 2 niveles
+de energía \( \varepsilon _{1} \) con \( g_{1}=2 \) y \( \varepsilon _{2} \)
+con \( g_{2}=2 \). Enumere todos los microestados que corresponden
+a \( n_{1}=1 \) y \( n_{2}=2 \) según que }{\small \par}
+
+\begin{enumerate}
+\item {\small Las partículas sean distinguibles }{\small \par}
+\item {\small las partículas sean indistinguibles}{\small \par}
+\end{enumerate}
+{\small Al resolver este tipo de problemas se suele considerar cada
+nivel de energía como una caja dividida en un número de subcajas igual
+a la degeneración.}
+\begin{figure}
+\nofig
+\caption{{\small Cajitas, cajitas\ldots{}}}
+\end{figure}
+{\small Entonces el número de microestados viene dado por las diferentes
+formas en que podemos distribuir las partículas (3) en las celdillas
+(4), cumpliendo las restricciones dadas (\( n_{1}=1 \) y \( n_{2}=2 \)).
+Se puede }{\small \par}
+
+\begin{enumerate}
+\item {\small etiquetar las partículas mediante letras ó números si son
+distinguibles. En nuestro problema obtenemos \( \Omega (1,2)=24 \)}.
+\item {\small representarlas por puntos (u otro simbolo) si son indistinguibles.}{\small \par}
+
+\begin{enumerate}
+\item {\small Los bosones pueden apilarse en el mismo estado de forma que
+\( \Omega \left( 1,2\right) =6 \).}{\small \par}
+\item {\small Los fermiones no (repulsión efectiva\ldots{}) con lo cual
+\( \Omega (1,2)=2 \).}{\small \par}
+\end{enumerate}
+\end{enumerate}
+
+\section{Distribución de \noun{Maxwell}-\noun{Boltzmann}}
+
+Se llama así a la ley que obedecen las ocupaciones en el equilibrio
+\( \left\{ n_{a}^{eq}\right\}  \) de un sistema formado por un número
+enorme \( N \) de partículas \emph{distinguibles} que están sometidas
+a las condiciones macroscópicas establecidas en la sección anterior,
+es decir, \( \sum _{a}n_{a}=N=cte \) y \( \sum _{a}n_{a}\varepsilon _{a}=E=cte \).
+Tradicionalmente se adjetiva la estadística de MB como \emph{clásica}.
+Sería más apropiado considerarla como una estadística cuántica válida
+en aquellos casos en los que el principio de simetrización asociado
+a la indistinguibilidad de las partículas idénticas tiene escasa importancia.
+Al final del capítulo \ref{cap estadisticas cuanticas} estudiaremos
+en que límites ocurre esto.  
+
+El primer paso es obtener \( \Omega \left( \left\{ n_{a}\right\} \right)  \).
+Supongamos que las ocupaciones de los niveles \( \varepsilon _{1} \),
+\( \varepsilon _{2},\cdots  \) con degeneraciones \( g_{1},\, g_{2},\cdots  \)
+respectivamente son \( n_{1} \),\( n_{2},\cdots  \) . La ocupación
+del primer nivel con \( n_{1} \) partículas cualesquiera puede obtenerse
+de \[
+\binom{N}{n_{1}}g_{1}^{n_{1}}\]
+ formas distintas ya que las partículas son distinguibles y apilables
+en un mismo estado. Para el segundo encontramos\[
+\binom{N-n_{1}}{n_{2}}g_{2}^{n_{2}}\]
+ posibilidades distinguibles de ocuparlo con \( n_{2} \) partículas.
+Y así sucesivamente de modo que el número total de formas distinguibles
+en las que podemos otener la distribución dada es \begin{eqnarray*}
+\Omega \left( \left\{ n_{a}\right\} \right)  & = & \frac{N!}{n_{1}!\left( N-n_{1}\right) !}\frac{\left( N-n_{1}\right) !}{n_{2}\left( N-n_{1}-n_{2}\right) !}\cdots g_{1}^{n_{1}}g_{2}^{n_{2}}\cdots \\
+ & = & N!\prod _{a}\frac{g_{a}^{n_{a}}}{n_{a}!}
+\end{eqnarray*}
+ Para determinar cúales son las ocupaciones en el equilibrio es preciso
+maximizar esta función teniendo en cuenta que las \( n_{a} \) no
+son independientes, sino que satisfacen las restricciones sobre la
+energía total y número de partículas. Trabajaremos con el logaritmo
+de la función \( \Omega  \) por comodidad. Así, \begin{eqnarray*}
+\log \Omega  & = & \log N!+\sum _{a}\log g_{a}^{n_{a}}-\sum _{a}\log n_{a}!\\
+ & = & \log N!+\sum _{a}n_{a}\log g_{a}-\sum _{a}\log n_{a}!
+\end{eqnarray*}
+ Admitiremos que \( N\gg 1 \) implica que las ocupaciones individuales
+también son \( n_{a}\gg 1 \) lo que permite 
+
+\begin{enumerate}
+\item eliminar los factoriales mediante la aproximación de \noun{Stirling}:\[
+\log n_{a}!\simeq n_{a}\log n_{a}-n_{a.}\]
+
+\item tratar las ocupaciones como cantidades continuas.
+\end{enumerate}
+Con objeto de aplicar los multiplicadores de \noun{Lagrange}, introducimos
+la nueva función\[
+\Phi \left( \left\{ n_{a}\right\} ,\alpha ,\beta \right) =\log \Omega +\alpha \left( N-\sum _{a}n_{a}\right) +\beta \left( E-\sum _{a}n_{a}\varepsilon _{a}\right) ,\]
+ donde, ahora sí, las ocupaciones \( n_{a} \) se tratan como independientes
+lo mismo que las dos variables adicionales \( \alpha  \) y \( \beta  \).
+El punto crítico queda definido por las ecuaciones\begin{eqnarray*}
+\dpa{\Phi }{\alpha } & = & 0,\\
+\dpa{\Phi }{\beta } & = & 0,
+\end{eqnarray*}
+ que implican respectivamente que \( N-\sum _{a}n_{a}=0 \) y que
+\( E-\sum _{a}n_{a}\varepsilon _{a}=0 \), y \[
+\dpa{\Phi }{n_{b}}=0,\]
+ de dondel deducimos que \( \log g_{b}-\log n_{b}-\alpha -\beta \varepsilon _{b}=0 \). 
+
+Admitiremos que este (único) punto es el máximo de la función de forma
+que la ocupación del nivel \( \varepsilon _{b} \) en el equilibrio
+es\[
+n_{b}^{eq}=g_{b}e^{-\alpha -\beta \varepsilon _{b}}\]
+ donde los valores de \( \alpha  \) y \( \beta  \) quedan determinados
+por los valores de \( E \) y \( N \). En efecto,si definimos la
+\emph{función de partición del sistema, \( Z\left( \beta \right)  \)}:
+\[
+Z\left( \beta \right) =\sum _{a}g_{a}e^{-\beta \varepsilon _{a}}\]
+ tenemos que \[
+N=\sum _{a}n_{a}^{eq}=e^{-\alpha }\sum _{a}g_{a}e^{-\beta \varepsilon _{a}}=e^{-\alpha }Z(\beta )\]
+ lo que establece una relación entre los dos parámetros\[
+e^{-\alpha }=\frac{N}{Z\left( \beta \right) },\]
+y nos permite escribir las ocupaciones en el equilibrio como
+
+\[
+n_{b}^{eq}=\frac{N}{Z\left( \beta \right) }g_{b}e^{-\beta \varepsilon _{b}},\]
+expresión que se conoce con el nombre de distribución \noun{Maxwell}-\noun{Boltzmann.}
+
+De la segunda restricción asociada a la energía se deduce que \( \beta  \)
+es dependientes de la energía total del sistema\footnote{%
+En realidad no depende sólo de \( E \), sino también de \( N \)
+y \( V \) porque la fdp \( Z \) depende de los niveles de energía
+que a su vez dependen de \( V \) y quizá de \( N \).
+}\begin{eqnarray*}
+E & = & \sum _{a}n_{a}^{eq}\varepsilon _{a}\\
+ & = & \sum e^{-\alpha }g_{a}e^{-\beta \varepsilon _{a}}\varepsilon _{a}\\
+ & = & \frac{N}{Z\left( \beta \right) }\sum _{a}\varepsilon _{a}\left( g_{a}e^{-\beta \varepsilon _{a}}\right) \\
+ & = & -\frac{N}{Z\left( \beta \right) }\da{\left( \sum g_{a}e^{-\beta \varepsilon _{a}}\right) }{\beta }\\
+ & = & -N\frac{\da{Z(\beta )}{\beta }}{Z(\beta )}\\
+ & = & -N\da{}{\beta }\left( \log Z(\beta )\right) ,
+\end{eqnarray*}
+e invirtiendo la relación encontraríamos \( \beta  \) como función
+de la energía interna del sistema \( E \). Este resultado nos indica
+que el parámetro \( \beta  \) debe estar muy relacionado con la temperatura
+del sistema. Veremos más adelante que \( \beta  \) está relacionado
+con la temperatura como \( \beta =\frac{1}{kT} \). Esta expresión
+nos permite dibujar la distribución de MB para distintas temperaturas
+\begin{figure}
+\nofig
+\caption{{\small Aspecto de la distribución de} \noun{\small Maxwell}{\small -}\noun{\small Boltzmann:
+\protect\( \frac{n}{g}\left( \varepsilon \right) \protect \)}}
+\end{figure}
+Cuando la temperatura es baja (\( \beta  \) alta) la pendiente de
+la exponencial es pronunciada con lo cual solamente los niveles de
+menor energía tienen ocupaciones apreciables. Por el contrario, los
+niveles de energía más altos están sensiblemente ocupados cuando la
+temperatura es suficientemente alta (\( \beta  \) pequeña) (el decaimiento
+de la exponencial es suave). 
+
+Si \( F \) es una magnitud extensiva cualquiera\begin{eqnarray*}
+F & = & \sum _{a}n_{a}^{eq}f\left( \varepsilon _{a}\right) \\
+ & = & \frac{N}{Z(\beta )}\sum _{a}g_{a}e^{-\beta \varepsilon _{a}}f\left( \varepsilon _{a}\right) 
+\end{eqnarray*}
+ y el valor medio por partícula es \[
+\overline{f}=\frac{F}{N}=\frac{1}{Z(\beta )}\sum _{a}g_{a}e^{-\beta \varepsilon _{a}}f\left( \varepsilon _{a}\right) \]
+
+
+
+\section{El parámetro \protect\( \beta \protect \) y el equilibrio térmico}
+
+Con esta sección iniciamos un camino que nos permitirá demostrar que
+\( \frac{1}{\beta }=kT \) y, además, familiarizarnos con el formalismo
+que hemos introducido. Hemos visto que \( \beta  \) es una función
+de la energía interna del sistema y dado que sabemos (por la termodinámica)
+que esta variable está intimamente relacionada con la temperatura
+debemos concluir lo mismo para \( \beta  \). Para profundizar más
+en esta idea demostraremos primero que este parámetro satisface también
+una {}``ley 0{}''. Consideremos dos sistemas aislados y caracterizados
+por las variables \( N,E,V \) y \( N',E',V' \) respectivamente y
+tales que sus niveles vienen caracterizados por energías y degeneraciones
+\( \varepsilon _{a},g_{a} \) y \( \varepsilon _{a}',g_{a}' \). 
+
+La fdp del primer sistema es\[
+Z(\beta )=\sum _{a}g_{a}e^{-\beta \varepsilon _{a}}\]
+y de ella puedo obtener el valor de \( \beta  \) como función de
+la energía\[
+\beta =\beta (E),\]
+ expresión válida en el equilibrio. Procediendo de la misma forma
+para el segundo sistema tenemos\[
+Z'(\beta )=\sum _{a}g_{a}'e^{-\beta \varepsilon _{a}'}\]
+ y\[
+\beta '=\beta '(E')\]
+ A priori ambos valores son distintos, tanto porque las fdp son diferentes
+como porque las energías internas de los dos sistemas también lo son.
+Ahora permitimos interaccionar a los dos sistemas intercambiando energía,
+pero no materia. En cualquier caso el nuevo supersistema se encuentra
+aislado del entorno de modo que las nuevas cantidades conservadas
+son 
+\begin{figure}
+{\centering \includegraphics[width=3.5cm]{fig/sistema-ejemplo.eps} \par}
+\caption{Sistema para establecer la relación entre \protect\( \beta \protect \)
+y \protect\( T\protect \).}
+\end{figure}
+
+ \begin{eqnarray*}
+N & = & \sum _{a}n_{a}\\
+N' & = & \sum _{a}n_{a}'
+\end{eqnarray*}
+ y la energía total\[
+E_{tot}=E+E'=\sum _{a}n_{a}\varepsilon _{a}+\sum _{a}n_{a}'\varepsilon _{a}'\]
+ Obviamente para obtener la nueva distribución en el equilibrio debemos
+identificar la función \( \Omega \left( \left\{ n_{a}\right\} ,\left\{ n_{a}'\right\} \right)  \).
+Por consideraciones combinatorias esta función, que da el número de
+formas distinguibles de construir una distribución, es el producto:
+\[
+\Omega \left( \left\{ n_{a}\right\} ,\left\{ n_{a}'\right\} \right) =N!N'!\left( \prod _{a}\frac{\left( g_{a}\right) ^{n_{a}}}{n_{a}!}\right) \left( \prod _{a}\frac{\left( g_{a}'\right) ^{n_{a}'}}{n_{a}'!}\right) \]
+ A continuación hay que determinar el máximo de esta función por el
+método de los multiplicadores de Lagrange. Definiendo la función\[
+\Phi \left( \left\{ n_{a}\right\} \left\{ n_{a}'\right\} ,\alpha ,\alpha ',\beta \right) =\log \Omega +\alpha \left( N-\sum _{a}n_{a}\right) +\alpha '\left( N'-\sum _{\iota }n_{a}'\right) +\beta \left( E_{tot}-\sum _{a}n_{a}\varepsilon _{a}-\sum _{a}n_{a}'\varepsilon '_{i}\right) \]
+ y procediendo como antes tenemos \begin{eqnarray*}
+n_{a}^{eq} & = & g_{a}e^{-\alpha }e^{-\beta \varepsilon _{a}}\\
+\left( n_{a}'\right) ^{eq} & = & g_{a}'e^{-\alpha '}e^{-\beta \varepsilon _{a}'}
+\end{eqnarray*}
+ Estas expresiones nos proporcionan las nuevas distribuciones en el
+equilibrio que ahora si dependen de un único parámetro \( \beta  \).
+La razón la encontramos en el hecho de que la cantidad conservada
+es la energía total y no las de las dos partes. Podemos enunciar una
+ley idéntica a la ley cero de la termodinámica.
+
+\begin{description}
+\item [Enunciado~de~la~ley~0]Dos sistemas diferentes que interaccionan
+entre sí intercambiando energía y en equilibrio estadístico deben
+tener el mismo valor del parámetro \( \beta  \).
+\end{description}
+Todo esto ahonda más en nuestra convicción de que existe una relación
+intima entre temperatura y \( \beta , \) o sea, \( \beta =\beta \left( T\right)  \).
+Para obtener la relación exacta estudiamos el sistema macroscópico
+más sencillo posible.
+
+
+\section{El gas ideal clásico}
+
+Sea un sistema aislado de su entorno, formado por \( N \) partículas
+\emph{puntuales y distinguibles} contenidas en un recipiente de volumen
+\( V \) y que no interaccionan entre sí. Para facilitar los cálculos
+supondremos que el recipiente es un cubo de lado \( L \), aúnque
+las expresiones que obtendremos tienen validez cualquiera que sea
+la forma del recipiente. El hamiltoniano de este sistema es una suma
+de términos a un cuerpo\[
+\mathsf{H}=\sum _{i=1}^{N}\mathsf{h}\left( i\right) \]
+ con \( h\left( \mathbf{r}\right) =-\frac{\hbar ^{2}}{2m}\nabla ^{2}+V\left( \mathbf{r}\right)  \),
+y \( V\left( \mathbf{r}\right)  \) cero para \( r_{\alpha }\in \left( 0,L\right)  \)
+y \( \infty  \) en otro caso. Al tratarse de partículas puntuales
+solo existe energía cinética de translación. En FCI al estudiar este
+pozo 3D obtuvimos el siguiente espectro\[
+E_{n_{x},n_{y},n_{z}}=\frac{\hbar ^{2}\pi ^{2}}{2mL^{2}}\left( n_{x}^{2}+n_{y}^{2}+n_{z}^{2}\right) ,\, \, n_{\alpha }\in \left\{ 1,2\ldots \right\} \]
+ Definimos las componentes del momento lineal de la partícula en unidades
+de \( \hbar  \) como \[
+k_{\alpha }=\frac{\pi }{L}n_{\alpha }=\frac{n_{\alpha }}{\left( L/\pi \right) }\]
+ y su módulo \( k=\sqrt{\sum _{\alpha }k_{\alpha }^{2}} \). En función
+de estas cantidades las energías son\begin{eqnarray*}
+E_{k_{x},k_{y},k_{z}} & = & \frac{\hbar ^{2}\left( k_{x}^{2}+k_{y}^{2}+k_{z}^{2}\right) }{2m}\\
+ & = & \frac{\hbar ^{2}k^{2}}{2m}
+\end{eqnarray*}
+Podemos considerar los estados de una partícula como puntos en el
+espacio \( \Re ^{3} \) de momentos. Ahora bien, sólo los puntos con
+\( k_{\alpha }\in \left\{ \frac{\pi }{L},\frac{2\pi }{L},\frac{3\pi }{L}\ldots \right\}  \)
+son estados permitidos ya que el momento se encuentra cuántizado.
+Nos interesa determinar el número de estados que hay en un cierto
+región del espacio de momentos con volumen \( \Omega  \). Observamos
+que cada estado (punto) permitido lleva asociado una pequeña celdilla
+de volumen \( \left( \frac{\pi }{L}\right) ^{3} \). En el interior
+de dicha celdilla no puede haber otro estado. Entonces, para estimar
+el número de puntos contenidos en una región del espacio de momentos
+podemos dividir su volumen \( \Omega  \) por el de la celdilla básica.
+La aproximación es mejor a medida que \( L \) (\( V \)) crece ya
+que el volumen de la celdilla de reduce y su unión recubrirá de forma
+más perfecta la región \( \Omega  \). . Veamos un ejemplo en \( 2D \).
+
+\begin{figure}
+{\centering \includegraphics[width=9cm]{fig/3D-2D.eps} \par}
+\caption{a) Situación general 3D. b) Caso del ejemplo (2D).}
+\end{figure}
+
+\noindent \textbf{\small Ejemplo} {\small A cada punto le corresponde
+una celdilla de área \( \left( \frac{\pi }{L^{2}}\right)  \). Si
+consideramos la región \( \left\{ x,y/k_{x}^{2}+k_{y}^{2}\leq 6\frac{\pi }{L}\right\}  \),
+el número de estados podemos obtenerlo por la cuenta de la vieja y
+es 22. Utilizando la aproximación descrita más arriba tenemos\[
+n=\frac{\Omega }{(\pi /L)^{2}}=\frac{\frac{1}{4}\pi \left( \frac{6\pi }{L}\right) ^{2}}{\left( \pi /L\right) ^{2}}=9\pi \simeq 28\]
+ El error cometido es relativamente importante pero a medida que \( L \)
+crece la celdillas básicas se hacen más pequeñas y por tanto la partición
+que definen lo suficientemente fina coma para que recubre correltamente
+la región. }{\small \par}
+
+De la relación entre energía y momento podemos despejar el módulo
+de éste
+
+\[
+k\left( \varepsilon \right) =\sqrt{\frac{2m\varepsilon }{\hbar ^{2}}}\]
+ Es evidente que los estados con energía \( \varepsilon  \) se sitúan
+sobre el primer octante de una esfera en el espacio de momentos cuyo
+radio viene dado por la expresión anterior. Y los estados con energías
+en el intervalo \( (\varepsilon \, \varepsilon +\delta \varepsilon ) \)
+ocupan un octante de cáscara esférica cuyo espesor es \begin{eqnarray*}
+dk & = & d\left( \sqrt{\frac{2m\varepsilon }{\hbar ^{2}}}\right) \\
+ & = & \sqrt{\frac{m}{2\hbar ^{2}\varepsilon }}d\varepsilon 
+\end{eqnarray*}
+Ahora estamos en disposición de calcular el número de estados cuya
+energía está en el intervalo anterior. Éste será\[
+g\left( \varepsilon \right) d\varepsilon =\frac{d\Omega }{\left( \pi /L\right) ^{3}}\]
+donde
+
+\[
+d\Omega =\frac{1}{8}4\pi k^{2}\left( \varepsilon \right) dk=\left( \frac{\pi ^{2}m^{3}}{2\hbar ^{6}}\right) ^{\frac{1}{2}}\varepsilon ^{\frac{1}{2}}d\varepsilon \]
+ y, así\[
+g\left( \varepsilon \right) d\varepsilon =V\left( \frac{m^{3}}{2\pi ^{4}\hbar ^{6}}\right) ^{\frac{1}{2}}\varepsilon ^{\frac{1}{2}}d\varepsilon \]
+ El conocimiento de la degeneración \( g\left( \varepsilon \right) d\varepsilon  \)
+nos permite calcular la fdp del sistema. Para ello efectuamos la aproximación\[
+Z(\beta )=\sum _{a}g_{a}e^{-\beta \varepsilon _{a}}\, \, \to \, \, \int _{0}^{\infty }d\varepsilon g\left( \varepsilon \right) e^{-\beta \varepsilon }\]
+ de donde \begin{eqnarray*}
+Z(\beta ) & = & V\left( \frac{m^{3}}{2\pi ^{4}\hbar ^{6}}\right) \int _{0}^{\infty }\varepsilon e^{-\beta \varepsilon }d\varepsilon \\
+ & = & V\left( \frac{m}{2\pi \hbar ^{2}\beta }\right) ^{\frac{3}{2}}
+\end{eqnarray*}
+ Finalmente, la relación entre \( \beta  \) y la energía del gas
+ideal se obtiene utilizando la fórmula\[
+E=-N\da{}{\beta }\left( \log Z(\beta )\right) \]
+ y \begin{eqnarray*}
+\log Z(\beta ) & = & \log \left( V\left( \frac{m}{2\pi \hbar ^{2}\beta }\right) ^{\frac{3}{2}}\right) \\
+ & = & \log \left( V\left( \frac{m}{2\pi \hbar ^{2}}\right) ^{\frac{3}{2}}\right) -\frac{3}{2}\log \beta 
+\end{eqnarray*}
+ de forma que 
+
+\[
+E=\frac{3N}{2\beta }\]
+Así estamos en disposición de realizar la conexión con la Termología.
+El calor específico a volumen constante es 
+
+\[
+C_{V}=\left( \dpa{E}{T}\right) _{V}\]
+y su valor es bien conocido experimentalmente para un gas ideal monoátomico
+
+\[
+C_{V}^{exp}=\frac{3}{2}n_{m}R\]
+ donde \( R=5.19× 10^{19}\, eVK^{-1}mol^{-1} \)se conoce \emph{como
+constante de los gases perfectos} y \( n_{m} \) es el número de moles
+de substancia. Por tanto en un sistema a volumen constante la energía
+será \[
+E^{exp}=\frac{3}{2}n_{m}RT\]
+ Comparando con la expresión hallada por razonamientos estadísticos
+tenemos para \( n_{m}=1\, mol,\, N=N_{A} \) \[
+E^{exp}=\frac{3}{2}mol\, RT=\frac{3N_{A}}{2\beta },\]
+con lo cual 
+
+\[
+\beta =\frac{1}{\frac{mol\, R}{N_{A}}T}=\frac{1}{kT},\]
+donde \( k=\frac{mol\, R}{N_{A}}=1.38\, 10^{-16}ergK^{-1}=8.63\, 10^{-5}eVK^{-1} \)recibe
+el nombre de constante de \noun{Boltzmann. }
+
+Para terminar esta sección daremos la forma continua de la distribución
+de \noun{Maxwell-Boltzmann} para un gas ideal
+
+\[
+n_{a}=\frac{N}{Z}g_{a}e^{-\beta \varepsilon _{a}}\: \fd \: dn\left( \varepsilon \right) =\frac{N}{Z}g\left( \varepsilon \right) e^{-\beta \varepsilon }d\varepsilon \]
+O sea
+
+\begin{eqnarray*}
+dn\left( \varepsilon \right)  & = & \frac{N}{V}\left( \frac{2\pi ^{2}\hbar ^{2}\beta }{m}\right) ^{\frac{3}{2}}V\left( \frac{m^{3}}{2\pi ^{4}\hbar ^{6}}\right) ^{\frac{1}{2}}\varepsilon ^{\frac{1}{2}}e^{-\beta \varepsilon }d\varepsilon \\
+ & = & 2\pi N\left( \frac{\beta }{\pi }\right) ^{\frac{3}{2}}\varepsilon ^{\frac{1}{2}}e^{-\beta \varepsilon }d\varepsilon \\
+ & = & 2\pi N\left( \frac{1}{\pi kT}\right) ^{\frac{3}{2}}\varepsilon ^{\frac{1}{2}}e^{-\frac{\varepsilon }{kT}}d\varepsilon 
+\end{eqnarray*}
+ Si las cantidades representan el número de partículas que en el equilibrio
+ocupan el nivel \( \varepsilon _{a} \), \( dn\left( \varepsilon \right)  \)
+representa el número de partículas que en el equilibrio poseen energías
+comprendidas en el intervalo \( (\varepsilon ,\, \varepsilon +d\varepsilon  \)). 
+
+
+\section{Entropía y primer principio}
+
+Podríamos pensar que la relación \( \beta =\frac{1}{kT} \) es específica
+del gas ideal y que en otros sistemas más complejos la relación sea
+diferente. Para convencernos de lo contrario intentaremos reproducir
+algunas relaciones termodinámicas muy generales utilizando esta expresión
+y la definición estadística de entropía. 
+
+Un pequeño cambio en la energía del sistema es (\textbf{\( 1^{er} \)}
+ppo de la Termodinámica)\begin{eqnarray*}
+dE & = & \delta Q-dW\\
+ & = & \delta Q-pdV
+\end{eqnarray*}
+ En nuestro formalismo, donde \( E=\sum \varepsilon _{a}n_{a} \),
+un cambio infinitesimal de la energía puede escribirse como\begin{eqnarray*}
+dE & = & d\left( \sum _{a}n_{a}\varepsilon _{a}\right) \\
+ & = & \sum _{a}\varepsilon _{a}dn_{a}+\sum _{a}n_{a}d\varepsilon _{a}
+\end{eqnarray*}
+ expresión completamente general ya que no depende de ninguna distribución
+en particular o, de de si el sistema está en equilibrio. Insistamos
+una vez más que las \( \varepsilon _{a} \) son funciones de \( \left( V,N\right)  \).
+El primer término de \( dE \), donde las energías individuales se
+conservan corresponde a un proceso a volumen constante , y el segundo
+está asociado a un cambio en el volumen\footnote{%
+Nuestros sistemas conservan \( N \) mientras no digamos lo contrario.
+}.Tenemos separado \( dE \), al igual que en termología, en dos términos:
+a volumen constante y a volumen variable. Por lo tanto, hacemos la
+identificación\begin{eqnarray*}
+\delta Q & = & \sum _{a}\varepsilon _{a}dn_{a}\\
+dW & = & pdV\\
+ & = & -\sum _{a}n_{a}d\varepsilon _{a}
+\end{eqnarray*}
+ Es interesante observar que un trabajo realizado por el sistema se
+hace a costa de modificar la energía interna modificando los niveles
+de energía, mientras que la transferencia de calor se produce por
+reorganización de las ocupaciones. 
+
+Una vez expresado el ppo en nuestro lenguage, pasamos a estudiar la
+entropía de un sistema de partículas distinguibles en equilibrio estadístico.
+En general
+
+\[
+S=k\log \Omega ,\]
+y por tanto
+
+\[
+S=k\log \left( N!\prod _{a}\frac{g_{a}^{n_{a}}}{n_{a}!}\right) \]
+Utilizando \noun{Stirling\begin{eqnarray*}
+S & \simeq  & k\sum _{a}\left( n_{a}\log g_{a}-\sum _{a}n_{a}\log n_{a}\right) +kN+k\log N!,\\
+S & = & -k\sum _{a}n_{a}\log \left( \frac{n_{a}}{g_{a}}\right) +cte.
+\end{eqnarray*}
+} En le equilibrio las ocupaciones vienen dadas por la distribución
+de \noun{Boltzmann}, de manera que \begin{eqnarray*}
+S & = & -k\sum _{a}n_{a}^{eq}\left( \log \frac{N}{Z}-\frac{\varepsilon _{a}}{kT}\right) ,\\
+ & = & \frac{1}{T}\sum n_{a}^{eq}\varepsilon _{a}-kN\log \frac{N}{Z},\\
+ & = & \frac{E}{T}-kN\log \frac{N}{Z},
+\end{eqnarray*}
+expresiones en las que hemos despreciado los términos constantes y
+hemos utilizado la relación \( \beta =\frac{1}{kT} \). Durante un
+proceso infinitesimal y reversible en el que en todo instante el sistema
+está en equilbrio podemos trabajar con la expresión precedente. Así,
+el cambio de la entropía será
+
+\begin{eqnarray*}
+S & = & \frac{E}{T}+kN\log \frac{Z}{N}\\
+dS & = & \frac{dE}{T}-\frac{E}{T^{2}}dE+kN\frac{dZ}{Z}\\
+dZ & = & d\left( \sum _{a}g_{a}e^{-\frac{\varepsilon _{a}}{kT}}\right) \\
+ & = & \frac{1}{kT^{2}}\sum _{a}g_{a}\varepsilon _{a}e^{-\frac{\varepsilon _{a}}{kT}}dT-\frac{1}{kT}\sum _{a}g_{a}e^{-\frac{\varepsilon _{a}}{kT}}d\varepsilon _{a}\\
+kN\frac{dZ}{Z} & = & \frac{1}{T^{2}}\sum _{a}\left( \frac{N}{Z}g_{a}e^{-\frac{\varepsilon _{a}}{kT}}\right) \varepsilon _{a}\, dT-\frac{1}{T}\sum _{a}\left( \frac{N}{Z}g_{a}e^{-\frac{\varepsilon _{a}}{kT}}\right) d\varepsilon _{a}\\
+ & = & \frac{1}{T^{2}}\left( \sum _{a}n_{a}^{eq}\varepsilon _{a}\right) dT-\frac{1}{T}\sum _{a}n_{a}^{eq}d\varepsilon _{a}\\
+ & = & \frac{E}{T^{2}}dT+\frac{dW}{T}
+\end{eqnarray*}
+ Reuniendo los distintos términos\begin{eqnarray*}
+dS & = & \frac{dE}{T}-\frac{E}{T^{2}}dT+\frac{E}{T^{2}}dT+\frac{dW}{dT}\\
+dE & = & TdS-dW
+\end{eqnarray*}
+ Por lo tanto en un proceso reversible en el que no se realiza trabajo
+tenemos,\[
+dE=dQ_{rev}=TdS\]
+ Obsérvese que para obtener la definición termodinámica de la entropía
+desde la definición estadística de \noun{Boltzmann} es esencial
+admitir que \( \beta =\frac{1}{kT} \). Sólo si esta relación es universalmente
+válida podemos deducir una expresión a partir de la otra.
+
+
+\section{Problemas}
+
+
+\subsection{Enunciados}
+
+\begin{enumerate}
+\item {[}A{]} Sea un sistema formado por 3 part\'{\i}culas que pueden ocupar
+dos niveles de energ\'{\i}a \( \epsilon _{1} \) y \( \epsilon _{2} \)
+cada uno con una degeneraci\'{o}n \( g=2 \). Enumere todos los microestados
+correspondientes a la distribuci\'{o}n \( n_{1}=1,\, \, \, n_{2}=2 \)
+seg\'{u}n que a) las part\'{\i}culas sean distinguibles o b) indistinguibles.
+\item {[}A{]} Un sistema consta de N=4000 part\'{\i}culas que pueden ocupar
+uno de los tres niveles de energ\'{\i}a siguientes: \[
+\varepsilon _{1}=0,\, \, \, \varepsilon _{2}=\varepsilon ,\, \, \, \varepsilon _{3}=2\varepsilon \]
+Todos ellos poseen la misma degeneraci\'{o}n. 
+
+\begin{enumerate}
+\item Compare la probabilidad de la partici\'{o}n con \begin{eqnarray*}
+n_{1} & = & 2000\\
+n_{2} & = & 1700\\
+n_{3} & = & 300
+\end{eqnarray*}
+ con la correspondiente a \( n_{1}^{'}=n_{1}+1,\: n_{2}^{'}=n_{2}-2,\: n_{3}^{'}=n_{3}+1 \). 
+\item Deduzca las ocupaciones en el equilibrio.
+\end{enumerate}
+\item {[}A{]} Un sistema est\'{a} formado por un n\'{u}mero enorme de
+part\'{\i}culas distinguibles que pueden encontrarse en los siguientes
+niveles de energ\'{\i}a: \[
+\varepsilon _{a}=(i-1)e,\, \, \, i=1,2,\cdots \]
+
+
+\begin{enumerate}
+\item demuestre que la funci\'{o}n de partici\'{o}n del sistema es \( (g_{a}=1) \)\[
+\displaystyle Z=\frac{1}{1-exp(-\beta e)}\]
+
+\item obtenga la energ\'{\i}a media por part\'{\i}cula
+\item estudie los l\'{\i}mites de alta y baja temperatura.
+\item suponga que \( e=0.1eV \) y calcule \( \displaystyle \frac{n_{a}^{eq}}{N} \)
+para \( T=0 \) y \( T=10K \).
+\end{enumerate}
+\item {[}A{]} El momento magn\'{e}tico de un \'{a}tomo que posee momento
+angular \( \vec{J} \) viene dado por
+
+\begin{enumerate}
+\item \[
+\vec{M}=-g_{L}\frac{\mu _{B}}{\hbar }\vec{J}.\]
+
+\item y su energ\'{\i}a de interacci\'{o}n con un campo magn\'{e}tico
+externo homog\'{e}neo y estacionario es
+\item \[
+E=-\vec{M}\cdot \vec{J}=g_{L}\frac{\mu _{B}}{\hbar }\vec{J}\cdot \vec{B}=g_{L}\mu _{B}Bm,\, \, \, m=-j,-(j-1),\cdots ,j\]
+
+\item a) Obtenga la funci\'{o}n de partici\'{o}n de un sistema constituido
+por un n\'{u}mero N de estos \'{a}tomos en interacci\'{o}n con
+un campo magn\'{e}tico externo. b) Deduzca las ocupaciones en el
+equilibrio.
+\end{enumerate}
+\item {[}A{]} Calcule la entrop\'{\i}a de un gas ideal mono\'{a}tomico
+en equilibrio.
+\item {[}A{]} Un recipiente de volumen \( 2V \) est\'{a} dividido en dos
+partes iguales mediante una pared de quita y pon. Inicialmente N \'{a}tomos
+se encuentran en la primera mitad en una situaci\'{o}n de equilibrio
+a la temperatura \( T \). Se quita la pared y, en un breve lapso
+de tiempo, el gas inunda todo el recipiente y alcanza nuevamente el
+equilibrio.
+
+\begin{enumerate}
+\item Calcule el cambio de entrop\'{\i}a. 
+\item Exprese el resultado anterior en t\'{e}rminos de probabilidades.
+\end{enumerate}
+\item {[}A{]} Deduzca la distribuci\'{o}n de velocidades de \noun{Maxwell}
+a partir de la distribuci\'{o}n de MB.
+\item {[}A{]} Deduzca las expresiones de la velocidad m\'{a}s probable,
+media y cuadr\'{a}tica media de las part\'{\i}culas que forman un
+gas ideal cl\'{a}sico.
+\item {[}A{]} Obtenga el n\'{u}mero de part\'{\i}culas de una gas ideal
+cuya velocidad tiene componentes comprendidas entre \( v_{x} \) y
+\( v_{x}+dv_{x} \), \( v_{y} \) y \( v_{y}+dv_{y} \) \( v_{z} \)
+y \( v_{z}+dv_{z} \).
+\item {[}A{]} Deduzca la expresi\'{o}n de la distribuci\'{o}n marginal
+asociada a la componente \( v_{x} \).
+\item {[}A{]} Demuestre que la ecuaci\'{o}n de estado de un gas ideal viene
+dada por \( PV=kNT \).
+\end{enumerate}
+
+\subsection{Algunas soluciones}
+
+
+\subsubsection{Problema 3}
+
+Esencialmente, esto es un oscilador armónico (niveles de energía equiespaciados).
+
+\begin{enumerate}
+\item Demuestre que si las degeneraciones de los niveles son todas \( =1 \)
+la función de partición del sistema es \[
+Z\left( \beta \right) =\frac{1}{1-e^{-\beta e}}\]
+ Tenemos
+
+
+\begin{eqnarray*}
+Z & = & \sum _{a}e^{-\beta \varepsilon _{a}}\\
+ & = & \sum e^{-\beta \left( i-1\right) e}\\
+ & = & \sum \left( e^{-\beta e}\right) ^{i-1}\\
+ & = & 1-e^{-\beta e}+\left( e^{-\beta e}\right) ^{2}+\ldots \\
+ & = & \frac{1}{1-e^{-\beta e}}
+\end{eqnarray*}
+
+
+\item Obtenga la energía media por partícula\begin{eqnarray*}
+\overline{\varepsilon } & = & \frac{E}{N}=\frac{1}{N}\left( -\frac{N}{Z}\da{}{\beta }Z\right) \\
+ & = & -\frac{\da{Z}{\beta }}{Z}\\
+ & = & \frac{e}{e^{\beta e}-1}
+\end{eqnarray*}
+
+\item Estudie el límite en que \( \frac{e}{kT}\fd 0,\infty  \). 
+
+\begin{enumerate}
+\item \( T\fd 0 \). En el límite de temperaturas muy bajas la energía media
+por partícula es muy baja, lo que quiere decir que sólo el primer
+nivel de energía tiene una ocupación significativa.
+\item \( T\fd \infty  \). La energía media por partícula tiende a \( \infty  \),
+lo que quiere decir que todos los niveles del sistema tienen una cierta
+ocupación.
+\end{enumerate}
+\item Calcule la relación de las ocupaciones en el equilibrio \begin{eqnarray*}
+\frac{n_{a}^{eq}}{N} & = & \frac{g_{a}}{Z}e^{-\beta \varepsilon _{a}}\\
+ & = & \left( 1-e^{-\beta e}\right) e^{-\beta \left( i-1\right) e}\\
+ & = & \left( 1-e^{-\frac{e}{kT}}\right) e^{-\frac{i-1}{kT}e}
+\end{eqnarray*}
+
+\end{enumerate}
+
+\subsubsection{Problema 4}
+
+\begin{enumerate}
+\item La función de partición tiene siempre la expresión\begin{eqnarray*}
+Z & = & \sum _{m=-j}^{j}e^{-\beta \varepsilon \left( m\right) }\\
+ & = & \sum _{m=-j}^{j}e^{-\beta g_{L}\mu _{B}m}\\
+ & = & \sum _{m=-j}^{j}e^{-xm}\\
+ & = & \ldots \\
+ & = & 
+\end{eqnarray*}
+ con lo que \[
+Z=\frac{\sinh \left( \left( j+\frac{1}{2}\right) g_{L}\mu _{B}\frac{B}{kT}\right) }{\sinh \left( \frac{1}{2}g_{L}\mu _{B}\frac{B}{kT}\right) }\]
+
+\item Las ocupaciones del estado con proyección \( m \) en el equilibrio,
+según la distribución de \noun{Maxwell}, son\[
+n_{m}^{eq}=\frac{N}{Z}ge^{-\beta \varepsilon }\]
+ Como \( \frac{\mu _{B}B}{k} \) tiene dimensiones de temperatura
+podemos usarlo como unidad de temperatura. El denominador es del orden,
+para un campo razonable\[
+T_{0}=\frac{10^{-4}eV}{10^{-4}eVK^{-1}}\simeq 1K\]
+ con \( g_{L}=1 \) y suponiendo que el nivel fundamental con \( j=\frac{1}{2} \)
+se desdobla en dos al aplicar el campo magnético en dos subniveles,
+con \( m=± \frac{1}{2} \) separados por \( 10^{-4}eV \).
+\end{enumerate}
+
+\subsubsection{Problema 5 }
+
+Entropía de un gas ideal monoatómico\[
+E=\frac{3}{2}kNT\]
+ de donde\[
+\frac{E}{T}=\frac{3}{2}kN\]
+ \[
+Z=V\left( \frac{m}{2\pi \hbar ^{2}\beta }\right) ^{\frac{3}{2}}=V\left( \frac{mkT}{2\pi \hbar ^{2}}\right) ^{\frac{3}{2}}\]
+ la entropía será\begin{eqnarray*}
+S_{eq} & = & \frac{3}{2}kN+kN\log \left( \frac{V}{N}\left( \frac{mkT}{2\pi \hbar ^{2}}\right) ^{\frac{3}{2}}\right) \\
+ & = & \frac{3}{2}kN+kN\log \left( \frac{mk}{2\pi \hbar ^{2}}\right) ^{\frac{3}{2}}+kN\log \left( \frac{V}{N}T^{\frac{3}{2}}\right) \\
+ & = & S_{0}+kN\log \left( \frac{V}{N}T^{\frac{3}{2}}\right) 
+\end{eqnarray*}
+ Imaginemos una caja dividida en dos partes iguales por una pared
+que se puede quitar. Si, teniendo todas las moléculas en un lado de
+la caja retiramos la pared, la temperatura y la energía interna se
+mantendrán invariadas (recordemos que se trata de un gas ideal). El
+incremento de entropía, sin embargo es muy grande. Si \begin{eqnarray*}
+S_{1} & = & kN\log \left( \frac{V}{N}T^{\frac{3}{2}}\right) \\
+S_{2} & = & kN\log \left( \frac{2V}{N}T^{\frac{3}{2}}\right) 
+\end{eqnarray*}
+ se tiene \( \Delta S=kN\log 2 \) y \( \frac{P_{2}}{P_{1}}=2^{N} \)
+. La probabilidad del segundo macroestado es mucho mayor.
+
+
+\subsubsection{Problema 11}
+
+Hemos visto que 
+
+\begin{eqnarray*}
+kN\frac{dZ}{Z} & = & kNd\left( \log Z\right) \\
+ & = & \frac{E}{T^{2}}dT+\frac{dW}{T}\\
+ & = & \frac{E}{T^{2}}dT+\frac{P}{T}dV
+\end{eqnarray*}
+ y, por tanto, a temperatura constante\[
+kNTd\left( \log Z\right) _{T}=PdV\]
+ con lo que \[
+P=kNT\dpa{}{V}\left( \log Z\right) _{T}\]
+ y, sin hacer las monstruosas integrales de la Teoría Cinética\begin{eqnarray*}
+Z & = & V\left( \frac{mkT}{2\pi \hbar ^{2}}\right) ^{\frac{3}{2}}\\
+\log Z & = & \log V+f\left( T\right) \\
+P & = & kNT\dpa{}{V}\left( \log V+f\left( T\right) \right) _{T}\\
+ & = & \frac{kNT}{V}
+\end{eqnarray*}
+ y \( PV=kNT \). 
+\end{document}

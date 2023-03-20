@@ -1,0 +1,123 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass book
+\begin_preamble
+\input{FdL-packages.sty}
+\input{FdL-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding auto
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Chapter
+
+Cálculo de la convolución de dos perfiles de Lorentz
+\begin_inset LatexCommand \label{cha:convol-2lorentz}
+
+\end_inset 
+
+
+\layout Standard
+
+La convolución de los perfiles homogéneos
+\begin_inset Formula \begin{eqnarray*}
+g_{k}\left(\omega,\omega_{0}'\right) & = & \frac{\Gamma}{\pi}\frac{1}{\left(\omega-\omega_{0}'\right)^{2}+\Gamma^{2}}\\
+g_{i}\left(\omega_{0}',\omega_{0}\right) & = & \frac{\gamma}{\pi}\frac{1}{\left(\omega_{0}'-\omega_{0}\right)^{2}+\gamma^{2}}\end{eqnarray*}
+
+\end_inset 
+
+viene dada por
+\layout Standard
+
+
+\begin_inset Formula \[
+g_{c}\left(\omega,\omega_{0}\right)=\frac{\Gamma\gamma}{\pi^{2}}\int_{-\infty}^{\infty}\frac{1}{\left(\omega_{0}'-\omega_{0}\right)^{2}+\gamma^{2}}\frac{1}{\left(\omega-\omega_{0}'\right)^{2}+\Gamma^{2}}\,\mathrm{d\omega_{0}'}\]
+
+\end_inset 
+
+para calcular la integral vamos a llamar 
+\begin_inset Formula \begin{eqnarray*}
+x & = & \omega-\omega_{0}=\omega-\omega_{0}'+\omega_{0}'-\omega_{0}\\
+y & = & \omega_{0}'-\omega_{0}\end{eqnarray*}
+
+\end_inset 
+
+de donde 
+\begin_inset Formula $\omega_{0}-\omega_{0}'=x-y$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathrm{d}\omega_{0}'=\mathrm{d}y$
+\end_inset 
+
+.
+ Con la nueva notación descomponemos la integral en una suma de fracciones
+ simples,
+\begin_inset Formula \begin{eqnarray*}
+\int_{-\infty}^{\infty}\frac{\mathrm{d}y}{\left(y^{2}+\gamma^{2}\right)\left[\left(x-y\right)^{2}+\Gamma^{2}\right]} & = & \int_{-\infty}^{\infty}\left(\frac{Ay+B}{y^{2}+\gamma^{2}}+\frac{Cy+D}{\left(x-y\right)^{2}+\Gamma^{2}}\right)\,\mathrm{d}y\\
+ & = & \int_{-\infty}^{\infty}\frac{Ay}{y^{2}+\gamma^{2}}\,\mathrm{d}y+\int_{-\infty}^{\infty}\frac{B}{y^{2}+\gamma^{2}}\mathrm{d}y\\
+ &  & +\int_{-\infty}^{\infty}\frac{Cy}{\left(x-y\right)^{2}+\Gamma^{2}}\mathrm{d}y+\int_{-\infty}^{\infty}\frac{D}{\left(x-y\right)^{2}+\Gamma^{2}}\mathrm{d}y\end{eqnarray*}
+
+\end_inset 
+
+ operando (abreviamos con 
+\begin_inset Formula $\zeta=\left[x^{2}+\left(\gamma^{2}+\Gamma^{2}\right)\right]\left[x^{2}+\left(\gamma-\Gamma\right)^{2}\right]$
+\end_inset 
+
+) se obtienen los siguientes valores para sus coeficientes (
+\begin_inset Formula $A=-C$
+\end_inset 
+
+):
+\begin_inset Formula \begin{eqnarray*}
+B & = & \left(-\gamma^{2}+x^{2}+\Gamma^{2}\right)/\zeta\\
+C & = & -2x/\zeta\\
+D & = & \left(4x^{2}+\gamma^{2}-x^{2}-\Gamma^{2}\right)/\zeta\end{eqnarray*}
+
+\end_inset 
+
+La primera de las cuatro integrales planteadas es cero por ser impar la
+ función subintegral.
+ En cuanto a las otras tres, se tiene que
+\begin_inset Formula \begin{eqnarray*}
+\int_{-\infty}^{\infty}\frac{1}{y^{2}+\gamma^{2}}\,\mathrm{d}y & = & \frac{\pi}{\gamma}\\
+\int_{-\infty}^{\infty}\frac{y}{\left(y-x\right)^{2}+\Gamma^{2}}\,\mathrm{d}y & = & \int_{-\infty}^{\infty}\frac{\left(y-x\right)\,\mathrm{d}\left(y-x\right)}{\left(y-x\right)^{2}+\Gamma^{2}}+\frac{x}{\Gamma}\int_{-\infty}^{\infty}\frac{\mathrm{d}\left[\left(y-x\right)/\Gamma\right]}{1+\left[\left(y-x\right)/\Gamma\right]^{2}}=\frac{\pi}{\Gamma}x\\
+\int_{-\infty}^{\infty}\frac{1}{\left(y-x\right)^{2}+\Gamma^{2}}\,\mathrm{d}y & = & \frac{\pi}{\Gamma}\end{eqnarray*}
+
+\end_inset 
+
+ y con estos resultados el perfil queda
+\begin_inset Formula \begin{eqnarray*}
+\frac{\Gamma\gamma}{\pi^{2}}\left(\frac{\pi}{\gamma}B+\frac{\pi}{\Gamma}Cx+\frac{\pi}{\Gamma}D\right) & = & \frac{\Gamma\gamma}{\pi\zeta}\left[\Gamma\left(x^{2}-\left(\gamma^{2}-\Gamma^{2}\right)\right)+\gamma\left(x^{2}+\gamma^{2}-\Gamma^{2}\right)\right]\\
+ & = & (\ldots)\\
+ & = & \frac{\gamma+\Gamma}{\pi}\frac{1}{x^{2}+\left(\gamma+\Gamma\right)^{2}}\end{eqnarray*}
+
+\end_inset 
+
+o lo que es lo mismo,
+\begin_inset Formula \[
+g_{c}\left(\omega,\omega_{0}\right)=\frac{\gamma+\Gamma}{\pi}\frac{1}{\left(\omega-\omega_{0}\right)^{2}+\left(\gamma+\Gamma\right)^{2}}.\]
+
+\end_inset 
+
+
+\the_end

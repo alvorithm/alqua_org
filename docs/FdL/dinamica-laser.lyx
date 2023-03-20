@@ -1,0 +1,2066 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass scrbook
+\begin_preamble
+\input{FdL-packages.sty}
+\input{FdL-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding auto
+\fontscheme default
+\graphics default
+\paperfontsize 11
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Chapter
+
+Dinámica del láser
+\layout Section
+
+Ecuación de balance para la radiación
+\layout Standard
+
+Supongamos que la densidad de fotones es 
+\begin_inset Formula $n_{f}\left(x,t\right)$
+\end_inset 
+
+ y la intensidad en ese punto e instante 
+\begin_inset Formula $I\left(x,t\right)$
+\end_inset 
+
+.
+ Si denotamos por 
+\begin_inset Formula $t_{r}$
+\end_inset 
+
+ el tiempo de retorno, el tiempo después de un viaje de ida y vuelta entre
+ los espejos del resonador para el que los fotones ocupan el mismo punto
+ y se mueven en la misma dirección:
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/caract-reson-medio-act-src.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:caract-reson-medio-act}
+
+\end_inset 
+
+Características del resonador y su medio activo relevantes para el estudio
+ de la dinámica temporal del láser.
+\end_inset 
+
+
+\begin_inset Formula \[
+I\left(x,t+t_{r}\right)=I\left(x,t\right)T_{i}^{2}G^{2}R_{1}R_{2}\]
+
+\end_inset 
+
+como 
+\begin_inset Formula $t_{r}=2l/c$
+\end_inset 
+
+, la longitud óptica del amplificador es 
+\begin_inset Formula $l=d+\left(\mu-1\right)L$
+\end_inset 
+
+, su coeficiente de transmisión interna vale 
+\begin_inset Formula $T_{i}=\exp\left(-\alpha_{i}L\right)$
+\end_inset 
+
+ y su reflectividad cuadrática media es 
+\begin_inset Formula $R=\sqrt{R_{1}R_{2}}$
+\end_inset 
+
+ (ver figura 
+\begin_inset LatexCommand \ref{fig:caract-reson-medio-act}
+
+\end_inset 
+
+), se tiene que el incremento de la intensidad en el tiempo 
+\begin_inset Formula $t_{r}$
+\end_inset 
+
+ es
+\begin_inset Formula \[
+\Delta I=I\left(x,t+t_{r}\right)-I\left(x,t\right)=\left(R^{2}T_{i}^{2}G^{2}-1\right)\, I\left(x,t\right)\]
+
+\end_inset 
+
+y si el fenómeno dinámico que deseamos estudiar es lo suficientemente lento
+ como para que los cambios apreciables de la intensidad se produzcan en
+ tiempos mucho más largos que 
+\begin_inset Formula $t_{r}$
+\end_inset 
+
+ (
+\begin_inset Formula $t_{c}\gg t_{r}$
+\end_inset 
+
+) entonces
+\begin_inset Formula \[
+\dpt{I}\simeq\frac{\Delta I}{t_{r}}=\frac{1}{t_{r}}\left(R^{2}T_{i}^{2}G^{2}-1\right)\, I\left(x,t\right)\]
+
+\end_inset 
+
+
+\layout Standard
+
+La intensidad está obedeciendo una ecuación de balance.
+ Si el bombeo produce una inversión de población bastante uniforme, y el
+ láser opera no muy lejos del umbral (como es usual), esta uniformidad se
+ refleja en 
+\begin_inset Formula $n_{iu}$
+\end_inset 
+
+, de manera que la ganancia es 
+\begin_inset Formula $\alpha\simeq\sigma_{21}n_{iu}$
+\end_inset 
+
+ y 
+\begin_inset Formula $G=\exp\alpha L$
+\end_inset 
+
+, es decir
+\begin_inset Formula \[
+\left(RT_{i}G\right)^{2}=\exp2\left[\alpha L-\left(\alpha_{i}L-\ln R\right)\right]=\exp2\left(\alpha L-\gamma\right)\simeq1+2\left(\alpha L-\gamma\right)\]
+
+\end_inset 
+
+donde la última igualdad es bajo la hipótesis 
+\begin_inset Formula $\alpha L-\gamma\simeq0$
+\end_inset 
+
+.
+ Recuérdese que 
+\begin_inset Formula $\gamma=\alpha_{i}L-\ln R=l/\left(ct_{c}\right)$
+\end_inset 
+
+, el 
+\emph on 
+coeficiente de pérdida
+\begin_inset LatexCommand \index{coeficiente!de pérdida}
+
+\end_inset 
+
+
+\emph default 
+ se puede considerar casi nulo cerca del umbral.
+ Por ello
+\begin_inset Formula \[
+\dpt{I}\simeq\frac{2\left(\alpha L-\gamma\right)}{t_{r}}\, I\left(x,t\right)\]
+
+\end_inset 
+
+Aquí 
+\begin_inset Formula $2\gamma/t_{r}=1/t_{c}$
+\end_inset 
+
+ y si ahora promediamos sobre todo el volumen del resonador, calculando
+\begin_inset Formula \[
+I\left(t\right)=\frac{1}{V}\int_{V}I\left(x,t\right)\,\mathrm{d}V\]
+
+\end_inset 
+
+ podemos reescribir la ecuación como
+\begin_inset Formula \[
+\dt{I}=\left(\frac{2\alpha L}{t_{r}}-\frac{1}{t_{c}}\right)\, I=\left(\frac{L}{l}c\sigma_{21}n_{i}-\frac{1}{t_{c}}\right)\, I\]
+
+\end_inset 
+
+
+\begin_inset ERT
+status Open
+
+\layout Standard
+
+\backslash 
+com{En esta ecuación me preguntaba si era $n_i$ o $n_{iu}$ -ATC. $n_{iu}$ solo en procesos que ocurren en tiempos largos comparados con $
+\backslash 
+tau$.}
+\end_inset 
+
+esta ecuación relaciona la intensidad con la inversión de población.
+ Una de las condiciones es 
+\begin_inset Formula $\alpha L-\gamma\simeq0$
+\end_inset 
+
+, que se cumple fácilmente cerca del umbral.
+ La otra, que 
+\begin_inset Formula $t_{c}\gg t_{r}$
+\end_inset 
+
+ implica que 
+\begin_inset Formula $2\gamma\ll1$
+\end_inset 
+
+, es decir, que las pérdidas son pequeñas.
+ Físicamente, si el fenómeno se desarrolla lo suficientemente lento en comparaci
+ón con el tiempo de retorno todo ocurre como si la radiación no se estuviera
+ moviendo.
+ La intensidad dentro de la cavidad la estamos tomando como algo inmóvil.
+ Bajo estas condiciones, como vemos, la intensidad obedece a una ecuación
+ de balance, una ecuación ordinaria como la de la inversión 
+\begin_inset Formula $n_{i}$
+\end_inset 
+
+, y acoplada a ésta.
+ Si utilizamos la densidad de flujo de fotones 
+\begin_inset Formula $\phi=I/h\nu_{0}$
+\end_inset 
+
+ en vez de la intensidad 
+\begin_inset Formula $I$
+\end_inset 
+
+ las dos ecuaciones básicas de la evolución temporal del amplificador resonante
+ serán, por ejemplo (tres niveles):
+\begin_inset Formula \begin{eqnarray}
+\dt{n_{i}} & = & -\left(1+\frac{g_{1}}{g_{2}}\right)\sigma_{21}n_{i}\phi-\frac{n_{i}}{\tau}+P\nonumber \\
+\dt{\phi} & = & \frac{L}{l}c\sigma_{21}n_{i}\phi-\frac{\phi}{t_{c}}+\frac{n_{i}c}{\tau}f\label{eq:balance-inversion-densidad-flujo-cuantos}\end{eqnarray}
+
+\end_inset 
+
+en los casos usuales como el que nosotros consideraremos en el que el medio
+ amplificador no llena todo el volumen del resonador la radiación ha de
+ ser estudiada a través de la intensidad 
+\begin_inset Formula $I$
+\end_inset 
+
+ o la densidad de flujo 
+\begin_inset Formula $\phi$
+\end_inset 
+
+ ya que mientras la densidad de fotones cambia con el índice de refracción
+ del medio estas otras magnitudes son invariantes en las fronteras de cambio
+ de índice cuando están en ángulo de Brewster o tienen un tratamiento antirrefle
+ctante.
+ Se puede esquivar este inconveniente definiendo la 
+\emph on 
+densidad de cuantos efectiva
+\emph default 
+ o 
+\emph on 
+promedio
+\emph default 
+
+\begin_inset LatexCommand \index{densidad!de cuantos efectiva}
+
+\end_inset 
+
+, 
+\begin_inset Formula $q\equiv\phi/c$
+\end_inset 
+
+, como si no existieran las discontinuidades en el interior del resonador,
+ ya qe la posición de los fotones ahora no tiene ningún papel.
+\layout Standard
+
+Como de la radiación espontánea una pequeña fracción es la semilla que acaba
+ generando el campo amplificado, hemos incluido esa pequeña contribución
+ del ruido cuántico (con 
+\begin_inset Formula $f=\eta\frac{\Delta\Omega}{4\pi}\frac{\delta\nu}{\Delta\nu}$
+\end_inset 
+
+, 
+\begin_inset Formula $\eta$
+\end_inset 
+
+ es la eficiencia cuántica, ver estudio del ruido cuántico) en la segunda
+ ecuación.
+ En efecto, sin esta semilla, inicialmente 
+\begin_inset Formula $\phi=0$
+\end_inset 
+
+ y no se inicia el fenómeno de amplificación.
+ Esto es especialmente obvio cuando se realiza la integración numérica de
+ las ecuaciones.
+\layout Section
+
+Escalamiento de las ecuaciones de balance
+\layout Standard
+
+Las ecuaciones de balance 
+\begin_inset LatexCommand \ref{eq:balance-inversion-densidad-flujo-cuantos}
+
+\end_inset 
+
+ pueden escribirse en la forma
+\begin_inset Formula \begin{eqnarray*}
+\dt{n_{i}} & = & -kn_{i}q-\frac{n_{i}}{\tau}+P\\
+\dt{q} & = & k'n_{i}q-\frac{q}{t_{c}}+f\frac{n_{i}}{\tau}\end{eqnarray*}
+
+\end_inset 
+
+donde 
+\begin_inset Formula $k$
+\end_inset 
+
+ se define de distinto modo en función del número de niveles del esquema
+ láser:
+\begin_inset Formula \begin{equation}
+k^{\left[3\right]}\equiv\left(1+\frac{g_{2}}{g_{1}}\right)\sigma_{21}c,\qquad k^{\left[4\right]}\equiv\sigma_{21}c\label{eq:valores-k-3-4-niv}\end{equation}
+
+\end_inset 
+
+ Por su parte, 
+\begin_inset Formula $k'=Lc\sigma_{21}/l$
+\end_inset 
+
+.
+ Como 
+\begin_inset Formula $t_{c}$
+\end_inset 
+
+ suele ser el tiempo más corto, podemos escalar 
+\begin_inset Formula $t$
+\end_inset 
+
+ con 
+\begin_inset Formula $t_{c}$
+\end_inset 
+
+ (dado por 
+\begin_inset LatexCommand \ref{eq:tiempo-permanencia}
+
+\end_inset 
+
+), definiendo 
+\begin_inset Formula $T=t/t_{c}$
+\end_inset 
+
+.
+ Así las cosas, 
+\begin_inset Formula \begin{eqnarray*}
+\da{n_{i}}{T} & = & -kt_{c}n_{i}q-\frac{t_{c}}{\tau}n_{i}+Pt_{c}\\
+\da{q}{T} & = & k't_{c}n_{i}q-q+f\,\frac{t_{c}}{\tau}n_{i}\end{eqnarray*}
+
+\end_inset 
+
+ en el umbral en estado estacionario 
+\begin_inset Formula $q=0,\mathrm{d}n_{i}/\mathrm{d}t=0$
+\end_inset 
+
+ y 
+\begin_inset Formula $\mathrm{d}q/\mathrm{d}t=0$
+\end_inset 
+
+ y como 
+\begin_inset Formula $f\ll1$
+\end_inset 
+
+ tenemos
+\begin_inset Formula \begin{eqnarray*}
+-\frac{t_{c}}{\tau}n_{iu}+P_{u}t_{c} & = & 0\;\rightarrow\;\frac{1}{\tau}n_{iu}=P_{u}\\
+k't_{c}n_{iu}-1 & = & 0\;\rightarrow\; n_{iu}=\frac{1}{k't_{c}}\end{eqnarray*}
+
+\end_inset 
+
+Podemos ahora escalar la población al umbral, 
+\begin_inset Formula $N_{i}=n_{i}/n_{iu}$
+\end_inset 
+
+, la densidad efectiva de fotones como 
+\begin_inset Formula $kt_{c}q=Q$
+\end_inset 
+
+ y llamar 
+\begin_inset Formula $m=P/P_{u}$
+\end_inset 
+
+.
+ Con esto las ecuaciones quedan
+\begin_inset Formula \begin{eqnarray*}
+\da{N_{i}}{T} & = & -QN_{i}-\frac{t_{c}}{\tau}N_{i}+\frac{t_{c}}{\tau}m\\
+\da{Q}{T} & = & QN_{i}-Q+f\frac{k}{k'}\frac{t_{c}}{\tau}N_{i}\end{eqnarray*}
+
+\end_inset 
+
+Vemos pues que los únicos parámetros relevantes en estas ecuaciones son
+ 
+\begin_inset Formula $t_{c}/\tau$
+\end_inset 
+
+ y 
+\begin_inset Formula $m$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+Con estas ecuaciones en el umbral 
+\begin_inset Formula $N_{iu}=1,m_{u}=1,Q_{u}=0$
+\end_inset 
+
+.
+ Esta es una solución estacionaria conocida como 
+\emph on 
+solución no láser
+\begin_inset LatexCommand \index{solución!no láser}
+
+\end_inset 
+
+
+\emph default 
+ y cuya estabilidad vamos a estudiar a continuación despreciando la pequeña
+ contribución de la emisión espontánea al campo, pues 
+\begin_inset Formula $f\ll1$
+\end_inset 
+
+
+\emph on 
+ y 
+\begin_inset Formula $k\simeq k'$
+\end_inset 
+
+.
+ 
+\layout Section
+
+Estabilidad de la solución estacionaria
+\layout Standard
+
+Ahora nos interesa la solución estacionaria (derivadas nulas en el sistema
+ de ecuaciones), pero con emisión láser (
+\begin_inset Formula $Q\neq0$
+\end_inset 
+
+):
+\begin_inset Formula \begin{eqnarray*}
+-Q_{0}N_{i0}-\frac{t_{c}}{\tau}N_{i0}+\frac{t_{c}}{\tau}m & = & 0\\
+QN_{i0}-Q_{0} & = & 0\end{eqnarray*}
+
+\end_inset 
+
+por lo tanto 
+\begin_inset Formula $N_{i0}=1=N_{iu}$
+\end_inset 
+
+, y 
+\begin_inset Formula $Q_{0}=\left(m-1\right)t_{c}/\tau$
+\end_inset 
+
+.
+ Para estudiar la estabilidad de estas ecuaciones no lineales debemos escoger
+ como punto fijo la solución estacionaria e introducir una pequeña perturbación
+ respecto a ella
+\begin_inset Formula \begin{eqnarray*}
+N_{i} & = & N_{i0}+n_{1}=1+n_{1}\\
+Q & = & Q_{0}+q_{1}\end{eqnarray*}
+
+\end_inset 
+
+sustituyendo la solución perturbada en las ecuaciones 
+\begin_inset Formula \begin{eqnarray*}
+\da{n_{1}}{T} & = & -\left(Q_{0}+q_{1}\right)\left(1+n_{1}\right)-\frac{t_{c}}{\tau}\left(1+n_{1}\right)+\frac{t_{c}}{\tau}m\\
+\da{q_{1}}{T} & = & \left(Q_{0}+q_{1}\right)\left(1+n_{1}\right)-Q_{0}-q_{1}\end{eqnarray*}
+
+\end_inset 
+
+si 
+\begin_inset Formula $n_{1}$
+\end_inset 
+
+ y 
+\begin_inset Formula $q_{1}$
+\end_inset 
+
+ son verdaderamente una pequeña perturbación podemos linealizar el sistema
+ despreciando 
+\begin_inset Formula $n_{1}q_{1}$
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray*}
+\da{n_{1}}{T} & = & -q_{1}-\frac{t_{c}}{\tau}n_{1}-Q_{0}n_{1}\\
+\da{q_{1}}{T} & = & q_{1}+Q_{0}n_{1}-q_{1}=Q_{0}n_{1}\end{eqnarray*}
+
+\end_inset 
+
+y sustituyendo 
+\begin_inset Formula $Q_{0}$
+\end_inset 
+
+,
+\begin_inset Formula \begin{eqnarray*}
+\da{n_{1}}{T} & = & -q_{1}+\frac{t_{c}}{\tau}mn_{1}\\
+\da{q_{1}}{T} & = & \frac{t_{c}}{\tau}\left(m-1\right)n_{1}.\end{eqnarray*}
+
+\end_inset 
+
+Estas ecuaciones se pueden escribir, utilizando la matriz de Lyapounov del
+ sistema lineal, como
+\begin_inset Formula \[
+\da{}{T}\left(\begin{array}{c}
+n_{1}\\
+q_{1}\end{array}\right)=\left(\begin{array}{c}
+\begin{array}{cc}
+-t_{c}m/\tau & -1\\
+t_{c}\left(m-1\right)/\tau & 0\end{array}\end{array}\right)\left(\begin{array}{c}
+n_{1}\\
+q_{1}\end{array}\right)=\mathcal{L}\left(\begin{array}{c}
+n_{1}\\
+q_{1}\end{array}\right)\]
+
+\end_inset 
+
+las perturbaciones soluciones de este sistema son de la forma
+\layout Standard
+
+
+\begin_inset Formula \[
+\left(\begin{array}{c}
+n_{1}\left(t\right)\\
+q_{1}\left(t\right)\end{array}\right)=\left(\begin{array}{c}
+n_{1}\left(0\right)\\
+q_{1}\left(0\right)\end{array}\right)\exp-\lambda T\]
+
+\end_inset 
+
+ donde los exponentes de Lyapounov 
+\begin_inset Formula $\lambda$
+\end_inset 
+
+ vienen dados por la solución de la ecuación
+\begin_inset Formula \[
+\left|\mathcal{L}-\lambda\mathcal{I}\right|=0\quad\longrightarrow\left|\begin{array}{c}
+\begin{array}{cc}
+-t_{c}m/\tau-\lambda & -1\\
+t_{c}\left(m-1\right)/\tau & -\lambda\end{array}\end{array}\right|\]
+
+\end_inset 
+
+o lo que es lo mismo,
+\begin_inset Formula \[
+\lambda^{2}+\frac{t_{c}}{\tau}m\lambda+\frac{t_{c}}{\tau}\left(m-1\right)=0\]
+
+\end_inset 
+
+cuyas soluciones son 
+\begin_inset Formula \[
+\lambda_{\pm}=\gamma_{a}\pm i\omega=-\frac{1}{2}\frac{t_{c}}{\tau}m\pm i\sqrt{\frac{t_{c}}{\tau}\left(m-1\right)-\left(\frac{t_{c}}{2\tau}m\right)^{2}}\]
+
+\end_inset 
+
+
+\layout Standard
+
+Observamos que la parte real de los exponentes de Lyapounov es negativa,
+ lo que indica que la solución estacionaria es estable.
+ No obstante, eso no impide que se puedan desarrollar en régimen transitorio
+ oscilaciones amortiguadas exponencialmente con la constante de tiempo
+\begin_inset Formula \[
+\gamma_{a}=\frac{1}{2}\frac{m}{\tau}\]
+
+\end_inset 
+
+y la frecuencia
+\begin_inset Formula \[
+\omega=\frac{1}{t_{c}}\sqrt{\frac{t_{c}}{\tau}\left(m-1\right)-\left(\frac{t_{c}}{2\tau}m\right)^{2}}\]
+
+\end_inset 
+
+para que esto ocurra, 
+\begin_inset Formula $\omega$
+\end_inset 
+
+ debe ser real: el argumento de la raíz debe ser positivo.
+ Dicho de otro modo:
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/inestabilidad-oscilante.eps
+	scale 80
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:inestabilidad-oscilante}
+
+\end_inset 
+
+Plano de estabilidad para la oscilación láser en función del bombeo y los
+ tiempos involucrados.
+ Por encima de la curva se cumple la condición para la existencia de inestabilid
+ad oscilante.
+\end_inset 
+
+
+\begin_inset Formula \[
+\frac{\tau}{t_{c}}>\frac{m^{2}}{4\left(m-1\right)}\]
+
+\end_inset 
+
+La zona de inestabilidad oscilante en el plano 
+\begin_inset Formula $\left(\tau/t_{c},m\right)$
+\end_inset 
+
+ es la que está por encima de la curva representada en la figura 
+\begin_inset LatexCommand \ref{fig:inestabilidad-oscilante}
+
+\end_inset 
+
+.
+ El mínimo de dicha curva
+\begin_inset ERT
+status Open
+
+\layout Standard
+
+\backslash 
+com{Falta marcar una horizontal para el $
+\backslash 
+tau/t_c$ de la fórmula anterior, que corte en dos puntos a la curva, y señalar esto en la abscisa como, respectivamente $m_+,m_-$. Luego incorporar comentario a esos puntos en el pie.}
+\end_inset 
+
+
+\begin_inset Formula \[
+\da{}{m}\left(\frac{\tau}{t_{c}}\right)=\frac{8\, m\left(m-1\right)-4m^{2}}{16\left(m-1\right)^{2}}=0\qquad\left(m_{\mathrm{min}},\left(\tau/t_{c}\right)_{\mathrm{min}}\right)=\left(2,1\right)\]
+
+\end_inset 
+
+por lo tanto, el mayor valor de 
+\begin_inset Formula $t_{c}$
+\end_inset 
+
+ compatible con las oscilaciones de relajación es justamente 
+\begin_inset Formula $t_{c}=\tau$
+\end_inset 
+
+.
+ Si se hace 
+\begin_inset Formula $t_{c}$
+\end_inset 
+
+ mayor que este valor, se suprimen las oscilaciones de relajación.
+ Otra forma de suprimirlas consiste en aproximar el bombeo al valor umbral
+ (
+\begin_inset Formula $m=P/P_{u}$
+\end_inset 
+
+).
+ 
+\layout Standard
+
+Cuando el tiempo de relajación de la inversión de población es muy pequeño
+ es difícil tener oscilaciones de relajación.
+ En el láser de Nd-YAG y en el de rubí, 
+\begin_inset Formula $\tau$
+\end_inset 
+
+ toma valores muy altos (0.2 ms y 1 ms, respectivamente), así que es más
+ fácil tener las oscilaciones de relajación que en uno de colorantes, donde
+ 
+\begin_inset Formula $\tau\simeq t_{c}$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+Como la pulsación de las oscilaciones es
+\begin_inset Formula \begin{eqnarray*}
+\omega & = & \frac{1}{2\tau}\sqrt{4\frac{\tau}{t_{c}}\left(Pk't_{c}-1\right)-\left(Pk't_{c}\tau\right)^{2}}\\
+ & = & \frac{1}{2\tau}\sqrt{4\frac{\tau}{t_{c}}\left(\frac{P}{P_{u}}\right)^{2}}\\
+ & = & \frac{1}{2\tau}\sqrt{4\frac{\tau}{t_{c}}\left(m-1\right)-m^{2}}\end{eqnarray*}
+
+\end_inset 
+
+las curvas de equifrecuencia obedecerán a la ecuación
+\begin_inset Formula \[
+\frac{\tau}{t_{c}}=\frac{\left(2\tau\omega\right)^{2}+m^{2}}{4\left(m-1\right)}\]
+
+\end_inset 
+
+ de ella podemos obtener la potencia de bombeo que daría lugar a una determinada
+ frecuencia de oscilación.
+ En efecto, podemos transformarla en
+\begin_inset Formula \[
+m^{2}-4\frac{\tau}{t_{c}}m-4\frac{\tau}{t_{c}}+\left(2\tau\omega\right)^{2}=0\]
+
+\end_inset 
+
+cuyas soluciones son
+\begin_inset Formula \[
+m_{\pm}=2\left(\frac{\tau}{t_{c}}\pm\sqrt{\left(\frac{\tau}{t_{c}}\right)^{2}-\frac{\tau}{t_{c}}-\left(\omega\tau\right)^{2}}\right)\]
+
+\end_inset 
+
+ si hacemos 
+\begin_inset Formula $\omega=0$
+\end_inset 
+
+ obtenemos para el 
+\begin_inset Formula $\tau/t_{c}$
+\end_inset 
+
+ escogido los puntos de corte con la frontera de estabilidad, es decir,
+ el intervalo en el que habría oscilaciones de relajación al cambiar el
+ bombeo.
+ Estos valores serían
+\begin_inset Formula \[
+\left(m_{\pm}\right)_{\mathrm{est}}=2\frac{\tau}{t_{c}}\left(1\pm\sqrt{1-\frac{t_{c}}{\tau}}\right)\simeq2\frac{\tau}{t_{c}}\left[1\pm\left(1-\frac{t_{c}}{2\tau}\right)\right]\qquad\left(t_{c}\ll\tau\right)\]
+
+\end_inset 
+
+ 
+\layout Standard
+
+Por otra parte, las oscilaciones son amortiguadas, con un coeficiente de
+ amortiguamiento
+\begin_inset Formula \[
+\gamma_{a}=\frac{pk't_{c}}{2}=\frac{m}{2\tau}\]
+
+\end_inset 
+
+el amortiguamiento es crítico justo en la frontera de oscilación; por lo
+ tanto, para un valor de 
+\begin_inset Formula $\tau/t_{c}$
+\end_inset 
+
+ dado los dos posibles amortiguamientos críticos serán
+\begin_inset Formula \[
+\left(\gamma_{a}\right)_{\mathrm{crit}}=\frac{1}{t_{c}}\left(1\pm\sqrt{1-\frac{t_{c}}{\tau}}\right).\]
+
+\end_inset 
+
+
+\layout Description
+
+Ejemplo inestabilidad oscilante y oscilaciones de relajación.
+ En la figura 
+\begin_inset LatexCommand \ref{fig:sol-num-osc-relaj}
+
+\end_inset 
+
+ se muestra la solución numérica para la inversión de población (
+\begin_inset Formula $Z_{n,1}$
+\end_inset 
+
+) y las oscilaciones de luz (
+\begin_inset Formula $Z_{n,2}$
+\end_inset 
+
+) del sistema de ecuaciones dinámicas con los siguientes parámetros: 
+\begin_inset Formula $\mu=t_{c}/\tau=10^{-4}$
+\end_inset 
+
+, 
+\begin_inset Formula $m=1.5$
+\end_inset 
+
+ (bombeo normalizado al umbral), 
+\begin_inset Formula $F=10^{-6}$
+\end_inset 
+
+ (fracción de emisión espontánea que se incorpora al campo del láser).
+ 
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/sol-num-osc-relaj-src.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:sol-num-osc-relaj}
+
+\end_inset 
+
+Arriba, la inversión de población se estabiliza en cuanto llega al umbral.
+ 
+\begin_inset Formula $Z_{1000,1}=0.142$
+\end_inset 
+
+.
+ Abajo, las oscilaciones de luz.
+ 
+\begin_inset Formula $Z_{1000,2}=1.6\times10^{-11}$
+\end_inset 
+
+.
+ 
+\begin_inset Formula $n$
+\end_inset 
+
+ representa el número de iteración en el esquema numérico, con lo cual las
+ abscisas son el tiempo medido en número de pasos.
+\end_inset 
+
+
+\newline 
+Con 
+\begin_inset Formula \[
+y=\sqrt{-\left(\frac{m\mu}{2}\right)^{2}+\left(m-1\right)}\mu\]
+
+\end_inset 
+
+ 
+\begin_inset Formula $y=7.1\times10^{-3}$
+\end_inset 
+
+.
+ El período es 
+\begin_inset Formula $T=2\pi/y=888.6$
+\end_inset 
+
+.
+ 
+\begin_inset Formula $\gamma=\mu m/2$
+\end_inset 
+
+, 
+\begin_inset Formula $\tau=\gamma^{-1}=1.33\times10^{4}$
+\end_inset 
+
+.
+ Con 
+\begin_inset Formula $x_{0}=-10^{-3}$
+\end_inset 
+
+ y 
+\begin_inset Formula $x_{1}=0$
+\end_inset 
+
+ la matriz diferencial
+\begin_inset Formula \[
+D\left(t,x\right)=\left(\begin{array}{c}
+-x_{0}\left(x_{1}+\mu\right)+\mu m\\
+x_{1}\left(x_{0}-1\right)+F\mu x_{0}\end{array}\right)\]
+
+\end_inset 
+
+permite obtener las gráficas citadas mediante un integrador Runge-Kutta
+ de paso fijo (
+\begin_inset Formula $n=0\ldots10^{5}$
+\end_inset 
+
+).
+\newline 
+En las gráficas se aprecian las oscilaciones de relajación de la intensidad
+ y cómo la inversión de población (
+\begin_inset Formula $Z_{n,1}$
+\end_inset 
+
+) realiza pequeñas excursiones alrededor el umbral (
+\begin_inset Formula $Z_{n,1}=1$
+\end_inset 
+
+).
+ 
+\layout Section
+
+La condición umbral en las oscilaciones de relajación
+\layout Standard
+
+La interpretación completa de los resultados precedentes requiere tener
+ encuenta que la potencia umbral 
+\begin_inset Formula $P_{u}$
+\end_inset 
+
+ no es independiente de 
+\begin_inset Formula $t_{c}$
+\end_inset 
+
+ pues
+\begin_inset Formula \[
+P_{u}=\frac{1}{k't_{c}\tau}=\frac{l}{c\sigma_{21}\tau t_{c}L}\]
+
+\end_inset 
+
+ esto significa que el láser se sitúa en un punto concreto de la curva isofrecue
+ncia
+\begin_inset Formula \[
+\frac{\tau}{t_{c}}=\frac{\left(2\tau\omega\right)^{2}+\left(P/P_{u}\right)^{2}}{4\left(P/P_{u}-1\right)}\]
+
+\end_inset 
+
+este punto corresponde a un bombeo que se obtiene al despejar 
+\begin_inset Formula $P$
+\end_inset 
+
+ en la ecuación de la isofrecuencia, quedando
+\begin_inset Formula \[
+P=2P_{u}\frac{c}{t_{c}}\left(1\pm\sqrt{1-\frac{t_{c}}{\tau}-\left(\omega t_{c}\right)^{2}}\right)\]
+
+\end_inset 
+
+y sustituyendo 
+\begin_inset Formula $P_{u}$
+\end_inset 
+
+
+\begin_inset Formula \[
+P=\frac{2l}{L}\frac{1}{t_{c}c\sigma_{21}}\left(\frac{1}{t_{c}}\pm\sqrt{\frac{1}{t_{c}^{2}}-\frac{1}{\tau t_{c}}-\omega^{2}}\right)\]
+
+\end_inset 
+
+
+\layout Standard
+
+A la vista de la fórmula anterior, se puede obtener la misma frecuencia
+ de oscilación con dos valores distintos del bombeo.
+ Por otra parte, también el amortiguamiento 
+\begin_inset Formula $\gamma_{a}$
+\end_inset 
+
+ depende del bombeo, pues
+\begin_inset Formula \[
+\gamma_{a}=\frac{Pk't_{c}}{2}=\frac{1}{2}\frac{L}{l}c\sigma_{21}t_{c}P\]
+
+\end_inset 
+
+donde sustituyendo 
+\begin_inset Formula $P$
+\end_inset 
+
+ se obtiene 
+\begin_inset Formula \[
+\gamma_{a}=\frac{1}{t_{c}}\pm\sqrt{\frac{1}{t_{c}^{2}}-\frac{1}{\tau t_{c}}-\omega^{2}}\]
+
+\end_inset 
+
+ en esta ecuación podemos obtener el tiempo de vida del fotón en la cavidad,
+ en función de 
+\begin_inset Formula $\gamma_{a}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\omega$
+\end_inset 
+
+:
+\begin_inset Formula \[
+t_{c}=\frac{2\gamma_{a}-\tau^{-1}}{\omega^{2}+\gamma_{a}^{2}}\]
+
+\end_inset 
+
+
+\layout Standard
+
+Por lo tanto, midiendo la oscilación de relajacion podemos obtener 
+\begin_inset Formula $t_{c}$
+\end_inset 
+
+.
+ Ésta es una forma bastante precisa de estimar las pérdidas 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+ del láser, que son en general de difícil evaluación.
+ Así, como
+\begin_inset Formula \[
+t_{c}=\frac{l}{c\left(\alpha_{i}L-\ln R\right)}\]
+
+\end_inset 
+
+ tenemos
+\begin_inset Formula \[
+\alpha_{i}=\frac{1}{L}\left(\frac{l}{ct_{c}}+\ln R\right)\]
+
+\end_inset 
+
+por lo que el conocimiento de 
+\begin_inset Formula $t_{c}$
+\end_inset 
+
+ obtenido de la oscilación de relajación nos permite evaluar el coeficiente
+ de pérdidas 
+\begin_inset Formula $\alpha_{i}$
+\end_inset 
+
+.
+\layout Section
+
+El láser de amplificador resonante en régimen de pulso gigante
+\layout Standard
+
+Para que el amplificador óptico resonante funcione como tal, es preciso
+ que el bombeo sea suficiente para alcanzar la inversión de población umbral
+ y se cumpla 
+\begin_inset Formula $RT_{i}G=1$
+\end_inset 
+
+.
+ Con ese fin usualmente se provoca una disminución de las pérdidas para
+ que aumente 
+\begin_inset Formula $T_{i}$
+\end_inset 
+
+ y se escoge una reflectividad 
+\begin_inset Formula $R$
+\end_inset 
+
+ suficiente para llegar a la condición umbral con la ganancia disponible
+ en un paso.
+ Pero puede ocurrir que dispongamos de una potente capacidad de bombeo capaz
+ de llevar rápidamente el resonador al umbral y superarlo ampliamente antes
+ de que tenga tiempo de crecer el campo que se amplifica.
+ Si esto llega a ocurrir, la gran inversión alcanzada produce un incremento
+ cada vez más rápido de lcampo que al principio crece exponencialmente,
+ obteniéndose la rápida desexcitación de la inversión de población acumulada
+ y generándose un potente pulso llamado de 
+\emph on 
+conmutación de ganancia
+\emph default 
+
+\begin_inset LatexCommand \index{conmutación!de ganancia}
+
+\end_inset 
+
+
+\begin_inset LatexCommand \index{ganancia!conmutación}
+
+\end_inset 
+
+.
+ Otra forma de acumular la inversión de población producida por el bombeo
+ consiste en eliminar la realimentación que produce la reflexión en los
+ espejos del resonador.
+ Esto se puede conseguir fácilmente desalineando ostensiblemente uno de
+ los espejos, o bien introduciendo un sistema de transmisión variable entre
+ el medio amplificador y el espejo.
+ Cuando el sistema sea opaco, la transmisión interna será muy baja, 
+\begin_inset Formula $T_{i}=T_{0}$
+\end_inset 
+
+ y 
+\begin_inset Formula $RT_{i}G\ll1$
+\end_inset 
+
+.
+\layout Standard
+
+Como no hay emisión láser la población se acumula al ritmo del bombeo (figura
+ 
+\begin_inset LatexCommand \ref{fig:acum-inversion}
+
+\end_inset 
+
+); mientras éste se efectúe en tiempos cortos comparados con 
+\begin_inset Formula $\tau$
+\end_inset 
+
+ como ya hemos estudiado
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/acum-inversion-src.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:acum-inversion}
+
+\end_inset 
+
+Mientras no hay emisión láser la inversión de población crece al ritmo del
+ bombeo.
+\end_inset 
+
+
+\begin_inset Formula \[
+n_{i}=\int_{0}^{t}P\left(t'\right)\exp\left(\frac{t-t'}{\tau}\right)\,\mathrm{d}t'\simeq\int_{0}^{t}P\left(t'\right)\,\mathrm{d}t'\]
+
+\end_inset 
+
+
+\layout Standard
+
+Cuando se haya alcanzado la inversión de población 
+\begin_inset Formula $n_{i0}$
+\end_inset 
+
+ más alta posible, se conmuta rápidamente la transmisión interna de la opacidad
+ a la transparencia, o bien se realinea el espejo desalineado (por ejemplo,
+ haciéndolo girar con una elevada velocidad angular).
+ Al hacer esto el láser pasa rápidamente a estar muy por encima del umbral,
+ 
+\begin_inset Formula $RT_{i}G\gg1$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+En esta situación el campo crece rápidamente en forma exponencial a costa
+ de la inversión de población acumulada.
+ El proceso puede ser tan rápido que inmediatamente genere un pulso enorme
+ alimentado por el exceso acumulado de inversión de población.
+ Este mecanismo se conoce como 
+\emph on 
+conmutación de pérdidas
+\emph default 
+
+\begin_inset LatexCommand \index{pérdidas!conmutación}
+
+\end_inset 
+
+
+\begin_inset LatexCommand \index{conmutación!de pérdidas}
+
+\end_inset 
+
+ o del factore de calidad 
+\begin_inset Formula $Q$
+\end_inset 
+
+ del resonador (
+\emph on 
+Q-switching
+\emph default 
+
+\begin_inset LatexCommand \index{Q-switching}
+
+\end_inset 
+
+) En el tiempo en que se generan estos pulsos gigantes se pueden dejar de
+ lado las aportaciones y las desexcitaciones producidas por el bombeo y
+ los procesos incoherentes.
+ Las ecuaciones del proceso serán entonces
+\begin_inset Foot
+collapsed false
+
+\layout Standard
+
+Para resolver numéricamente las ecuaciones hay que incorporar la contribución
+ espontánea, ya que de lo contrario el proceso jamás arranca (
+\begin_inset Formula $q=0\Rightarrow\dot{q}=0$
+\end_inset 
+
+).
+ Esta contribución, sin embargo, no se ha tenido en cuenta en el resto del
+ cálculo, pues no juega ningún papel desde el punto de vista teórico.
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray*}
+\dt{n_{i}} & = & -kn_{i}q\\
+\dt{q} & = & k'n_{i}q-\frac{q}{t_{c}}\end{eqnarray*}
+
+\end_inset 
+
+en estas ecuaciones 
+\begin_inset Formula $t_{c}$
+\end_inset 
+
+ es el tiempo de vida del fotón en el resonador vacío, y 
+\begin_inset Formula $k',k$
+\end_inset 
+
+ son las dadas en la ec.
+ 
+\begin_inset LatexCommand \ref{eq:valores-k-3-4-niv}
+
+\end_inset 
+
+ (
+\begin_inset Formula $k=k^{[3]}$
+\end_inset 
+
+ ó 
+\begin_inset Formula $k^{[4]}$
+\end_inset 
+
+ en función del esquema).
+ 
+\begin_inset ERT
+status Open
+
+\layout Standard
+
+\backslash 
+com{citar $t_c(
+\backslash 
+alpha),t_c(
+\backslash 
+gamma)$.}
+\end_inset 
+
+
+\layout Standard
+
+El pulso de radiación generado tras el proceso de conmutación posee inevitableme
+nte un máximo, dado por 
+\begin_inset Formula $\mathrm{d}q/\mathrm{d}t=0$
+\end_inset 
+
+, que fija
+\begin_inset Formula \[
+k'n_{i}-\frac{1}{t_{c}}=0\]
+
+\end_inset 
+
+ Por lo tanto la inversión de población 
+\begin_inset Formula $n_{i}$
+\end_inset 
+
+ en el pico de radiación es
+\begin_inset Formula \[
+n_{ip}=\frac{1}{k't_{c}}=\frac{1}{L\sigma_{21}}\left(\alpha_{i}-\ln R\right)=n_{iu}\]
+
+\end_inset 
+
+es decir, el máximo de radiación se produce justo en el momento en el que
+ la inversión de población cae al valor umbral (figura 
+\begin_inset LatexCommand \ref{fig:pulso-gigante}
+
+\end_inset 
+
+).
+ Durante la subida del pulso, por lo tanto, la inversión comienza a caer
+ cada vez más rápidamente hasta la inversión umbral.
+ La escala de tiempos en que ocurre el fenómeno es 
+\begin_inset Formula $t_{c}$
+\end_inset 
+
+, por lo que resulta ventajoso escribir las ecuaciones en forma adimensional
+ (
+\begin_inset Formula $T=t/t_{c}$
+\end_inset 
+
+)
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/pulso-gigante-src.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:pulso-gigante}
+
+\end_inset 
+
+El pulso gigante se produce cuando la inversión de población cae por debajo
+ del valor umbral.
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray}
+\da{q}{T} & = & \left(\frac{n_{i}}{n_{ip}}-1\right)q\nonumber \\
+\da{n_{i}}{T} & = & -\left(1+g_{2}/g_{1}\right)\frac{l}{L}\frac{n_{i}}{n_{ip}}q\label{eq:de-evol-T-pulso-gigante}\end{eqnarray}
+
+\end_inset 
+
+si eliminamos la variable temporal entre estas dos ecuaciones podemos obtener
+ una integral primera
+\begin_inset Formula \[
+\mathrm{d}q=\frac{\left(\frac{n_{ip}}{n_{i}}-1\right)}{\left(1+g_{2}/g_{1}\right)\frac{l}{L}}\,\mathrm{d}n_{i}\]
+
+\end_inset 
+
+ esta ecuación se integra fácilmente
+\begin_inset Formula \begin{eqnarray*}
+\int_{q_{0}}^{q}\mathrm{d}q & = & q-q_{0}=\frac{1}{\left(1+g_{2}/g_{1}\right)\frac{l}{L}}\left[\int_{n_{i0}}^{n_{i}}\frac{\mathrm{d}n_{i}}{n_{i}}-\int_{n_{i0}}^{n_{i}}\mathrm{d}n_{i}\right]\\
+ & = & \frac{1}{\left(1+g_{2}/g_{1}\right)\frac{l}{L}}\left[n_{ip}\ln\left(\frac{n_{i}}{n_{i0}}\right)-n_{i}+n_{i0}\right]\end{eqnarray*}
+
+\end_inset 
+
+ esta integral primera nos da la función 
+\begin_inset Formula $q=q\left(n_{i}\right)$
+\end_inset 
+
+ si la integración la llevamos hasta la inversión residual, al final del
+ proceso (
+\begin_inset Formula $q=q_{f},n_{i}=n_{if}$
+\end_inset 
+
+)
+\begin_inset Formula \[
+q_{f}-q_{i}=\frac{1}{\left(1+g_{2}/g_{1}\right)\frac{l}{L}}\left[n_{ip}\ln\left(\frac{n_{if}}{n_{i0}}\right)-n_{if}+n_{i0}\right]\]
+
+\end_inset 
+
+en esta expresión 
+\begin_inset Formula $q_{f}$
+\end_inset 
+
+ y 
+\begin_inset Formula $q_{i}$
+\end_inset 
+
+ son evidentemente muy pequeños, por lo que es lícito aproximar 
+\begin_inset Formula $q_{f}-q_{i}\simeq0$
+\end_inset 
+
+, de lo que resulta
+\begin_inset Formula \begin{equation}
+\frac{n_{if}}{n_{i0}}=\exp\left[\frac{n_{if}}{n_{iu}}\left(\frac{n_{if}}{n_{i0}}\right)-1\right],\qquad n_{iu}=n_{ip}\label{eq:expr-implicita-n_if}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+El factor de aprovechamiento de la energía de bombeo es
+\begin_inset Formula \[
+\phi=\frac{n_{i0}-n_{if}}{n_{i0}}\]
+
+\end_inset 
+
+ y la expresión implícita 
+\begin_inset LatexCommand \ref{eq:expr-implicita-n_if}
+
+\end_inset 
+
+ se puede expresar en función de este factor
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/factor-aprovech-src.eps
+	scale 90
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:factor-aprovech}
+
+\end_inset 
+
+Fracción de la inversión de población por encima del umbral en función del
+ factor 
+\begin_inset Formula $\phi$
+\end_inset 
+
+.
+\end_inset 
+
+
+\begin_inset Formula \begin{equation}
+\phi=1-\exp\left(-\frac{n_{i0}}{n_{iu}}\phi\right)\label{eq:implicita-factor-aprovechamiento}\end{equation}
+
+\end_inset 
+
+ en vez del factor de energía remanente no utilizada, 
+\begin_inset Formula $n_{if}/n_{i0}$
+\end_inset 
+
+.
+ Esta función se calcula numéricamente con facilidad y permite conocer (una
+ vez establecido el umbral y la inversión inicial en que se efectúa la conmutaci
+ón, 
+\begin_inset Formula $n_{i0}$
+\end_inset 
+
+) la energía extraída en el pulso producido, ya que esta energía en el volumen
+ total 
+\begin_inset Formula $V$
+\end_inset 
+
+ del medio es 
+\begin_inset Formula \[
+E=\left(n_{20}-n_{2f}\right)Vh\nu\]
+
+\end_inset 
+
+ y como durante el proceso la población conjunta de los dos niveles no tiene
+ tiempo de cambiar,
+\begin_inset Formula \begin{eqnarray*}
+n_{i0} & = & n_{10}+n_{20}=n_{1f}+n_{2f}\\
+n_{if} & = & n_{10}+n_{20}-n_{2f}\end{eqnarray*}
+
+\end_inset 
+
+entonces
+\begin_inset Formula \begin{eqnarray*}
+n_{i0}-n_{if} & = & n_{20}-\frac{g_{2}}{g_{1}}n_{10}-\left(n_{2f}-\frac{g_{2}}{g_{1}}n_{1f}\right)\\
+ & = & n_{20}-n_{2f}-\frac{g_{2}}{g_{1}}\left(n_{10}-n_{1f}\right)\\
+ & = & n_{20}-n_{2f}-\frac{g_{2}}{g_{1}}\left(n_{10}-n_{10}-n_{20}+n_{2f}\right)\\
+ & = & \left(1+\frac{g_{2}}{g_{1}}\right)\left(n_{20}-n_{2f}\right)\end{eqnarray*}
+
+\end_inset 
+
+y la energía del pulso queda
+\begin_inset Formula \begin{eqnarray*}
+E & = & \frac{1}{1+g_{2}/g_{1}}\left(n_{i0}-n_{if}\right)Vh\nu\\
+ & = & \frac{Vh\nu}{1+g_{2}/g_{1}}\phi n_{i0}\end{eqnarray*}
+
+\end_inset 
+
+ no toda esta energía sale del resonador, ya que una parte 
+\begin_inset Formula $E_{a}$
+\end_inset 
+
+ proporcional a la absorción interna 
+\begin_inset Formula $\alpha_{i}L$
+\end_inset 
+
+ es absorbida y el resto (
+\begin_inset Formula $E_{s}$
+\end_inset 
+
+) sale en proporción a la pérdida a través de los espejos:
+\begin_inset Formula \[
+E_{a}=k_{0}\alpha_{i}LE,\qquad E_{s}=-k_{0}\left(\ln R\right)E\]
+
+\end_inset 
+
+Como 
+\begin_inset Formula $E=E_{a}+E_{s}=k_{0}\left(\alpha_{i}l-\ln R\right)E$
+\end_inset 
+
+ con 
+\begin_inset Formula \[
+k_{0}=\frac{1}{\alpha_{i}L-\ln R}\]
+
+\end_inset 
+
+la energía que sale del láser en el pulso gigante será 
+\begin_inset Formula $E$
+\end_inset 
+
+ por la fracción 
+\begin_inset Formula $-\ln R/\left(\alpha_{i}L-\ln R\right)$
+\end_inset 
+
+:
+\begin_inset Formula \[
+E_{s}=-\frac{\ln R}{\alpha_{i}L\ln R}\frac{Vh\nu}{1+g_{2}/g_{1}}n_{i0}\phi\]
+
+\end_inset 
+
+Como en el pico la inversión es la umbral, ya no aporta potencia y la potencia
+ de pico será la potencia que pierden los fotones que hay dentro de la cavidad
+ en el pico.
+ Si 
+\begin_inset Formula $q_{p}$
+\end_inset 
+
+ es el número de fotones en el pico,
+\begin_inset Formula \[
+q_{i}=0,\qquad q_{p}=\frac{L}{\left(1+g_{2}/g_{1}\right)l}\left[n_{iu}\ln\left(\frac{n_{iu}}{n_{i0}}\right)-n_{iu}+n_{i0}\right]\]
+
+\end_inset 
+
+ y estos se pierden con la probabilidad de absorción 
+\begin_inset Formula $1/t_{c}$
+\end_inset 
+
+ la potencia del pico será 
+\begin_inset Formula $h\nu Vq_{p}/t_{c}$
+\end_inset 
+
+.
+ Como los fotones absorbidos en la cavidad lo son como antes por absorción
+ interna o a través e los espejos, la potencia del pico a la salida será
+ 
+\begin_inset Formula \[
+P_{p}=-\frac{\ln R}{\alpha_{i}L-\ln R}\frac{h\nu q_{p}V}{t_{c}}=-\left(\ln R\right)\,\frac{ch\nu V}{l}q_{p}\]
+
+\end_inset 
+
+así pues, para tener la salida energética no es necesario conocer la evolución
+ temporal, y queda
+\begin_inset Formula \[
+P_{p}=-\frac{cL\left(\ln R\right)h\nu V}{\left(1+g_{2}/g_{1}\right)l^{2}}\left(\frac{n_{i0}}{n_{iu}}-1-\ln\frac{n_{i0}}{n_{iu}}\right)n_{iu}\]
+
+\end_inset 
+
+por lo tanto
+\begin_inset Formula \[
+\frac{P_{p}}{E_{s}}=\frac{L}{l}\frac{\frac{n_{i0}}{n_{iu}}-\left(1+\ln\frac{n_{i0}}{n_{iu}}\right)}{t_{c}\phi\frac{n_{i0}}{n_{iu}}}\]
+
+\end_inset 
+
+así, si se miden 
+\begin_inset Formula $t_{c},P_{p}$
+\end_inset 
+
+ y 
+\begin_inset Formula $E_{s}$
+\end_inset 
+
+ se pueden tener los valores de 
+\begin_inset Formula $n_{i0}/n_{iu}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\phi$
+\end_inset 
+
+ con la ecuación anterior y la 
+\begin_inset LatexCommand \ref{eq:implicita-factor-aprovechamiento}
+
+\end_inset 
+
+.
+\layout Standard
+
+El valor de 
+\begin_inset Formula $t_{c}$
+\end_inset 
+
+ no es fácil de predecir, pues se requiere conocer la absorción interna
+ 
+\begin_inset Formula $\alpha_{i}$
+\end_inset 
+
+, cosa nada fácil.
+ Sin embargo, un análisis de la evolución temporal puede permitir obtener
+ un método experimental simple para la determinación de 
+\begin_inset Formula $t_{c}$
+\end_inset 
+
+.
+\layout Section
+
+Evolución temporal del pulso gigante 
+\layout Standard
+
+La evolución temporal se rige por las ecuaciones 
+\begin_inset LatexCommand \ref{eq:de-evol-T-pulso-gigante}
+
+\end_inset 
+
+ con 
+\begin_inset Formula $n_{ip}=n_{iu}$
+\end_inset 
+
+.
+ La integración de estas ecuaciones se ha de efectuar por métodos numéricos,
+ pero en los instantes iniciales la inversión de población es apenas afectada
+ por la radiación, ya que se está lejos de la saturación.
+ Si tomamos 
+\begin_inset Formula $n_{i}=n_{i0}$
+\end_inset 
+
+ pues
+\begin_inset Formula \[
+q=q_{i}\exp\left[\left(\frac{n_{i0}}{n_{iu}}-1\right)T\right]\]
+
+\end_inset 
+
+por tanto, en los instantes iniciales el comportamiento es exponencial.
+ Ahora bien, para que esta aproximación sea razonable, es preciso que la
+ conmutación se produzca en un tiempo 
+\begin_inset Formula $t_{t}$
+\end_inset 
+
+ (
+\emph on 
+tiempo de conmutación
+\emph default 
+
+\begin_inset LatexCommand \index{conmutación!tiempo de}
+
+\end_inset 
+
+
+\begin_inset LatexCommand \index{tiempo!de conmutación}
+
+\end_inset 
+
+ o 
+\emph on 
+de transición
+\emph default 
+) corto en comparación con la constante de tiempo de la exponencial, 
+\begin_inset Formula \[
+t_{t}=\frac{t_{c}}{n_{i0}/n_{iu}-1}.\]
+
+\end_inset 
+
+
+\layout Standard
+
+En los instantes finales, agaotada en su mayor parte la inversión de población,
+ podemos tomar 
+\begin_inset Formula $n_{i}/n_{iu}\ll1$
+\end_inset 
+
+ y entonces, si 
+\begin_inset Formula $q_{f}$
+\end_inset 
+
+ es el valor del número de fotones para el cual 
+\begin_inset Formula $n_{i}=0$
+\end_inset 
+
+ (
+\begin_inset Formula $t=t_{f}$
+\end_inset 
+
+),
+\begin_inset Formula \[
+q=q_{f}\exp\left(-\frac{t-t_{f}}{t_{c}}\right)\]
+
+\end_inset 
+
+Así pues, midiendo el decaimiento del pulso se obtiene 
+\begin_inset Formula $t_{c}$
+\end_inset 
+
+ experimentalmente, con lo que tendríamos de nuevo un sistema para determinar
+ 
+\begin_inset Formula $\alpha_{i}$
+\end_inset 
+
+.
+\layout Section
+
+Bloqueo de modos (
+\emph on 
+mode locking
+\emph default 
+)
+\layout Standard
+
+En un láser con ensanchamiento inhomogéneo ya hemos comentado que la ganancia
+ puede ser suficiente como para que la mayoría de los modos cuya anchura
+ esté dentro de la del perfil de la línea puedan superar el umbral (figura
+ 
+\begin_inset LatexCommand \ref{fig:inversion-fn-frec-medio-hom}
+
+\end_inset 
+
+).
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{En la figura deberían representarse muchos más modos, (6,8?) pues en la realidad hay 300 o 400...}
+\end_inset 
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/quemado-espectral-src.eps
+	scale 90
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:inversion-fn-frec-medio-hom}
+
+\end_inset 
+
+La inversión 
+\begin_inset Formula $n_{i}\left(\nu\right)$
+\end_inset 
+
+ depende de cada modo.
+\end_inset 
+
+
+\layout Standard
+
+Esto ocurre porque cada modo dispone de la inversión de población que el
+ material tiene en las proximidades de su frecuencia 
+\begin_inset Formula $\nu_{k}$
+\end_inset 
+
+.
+ En los láseres de ensanchamiento homogéneo pero con resonador en el que
+ se forma una onda estacionaria el quemado axial de la inversión permite
+ oscilar por encima del umbral a los modos contiguos al más favorable.
+ Aunque sean de distintas frecuencias estos modos pueden resultar acoplados
+ en fase, dando lugar al fenómeno conocido como 
+\emph on 
+batido
+\begin_inset LatexCommand \index{batido}
+
+\end_inset 
+
+
+\emph default 
+ o 
+\emph on 
+bloqueo de modos
+\begin_inset LatexCommand \index{bloqueo de modos}
+
+\end_inset 
+
+ 
+\emph default 
+(
+\emph on 
+mode locking
+\emph default 
+)
+\emph on 
+.
+\begin_inset LatexCommand \index{mode locking}
+
+\end_inset 
+
+
+\emph default 
+ Para conseguir esta situación se pueden utilizar diferentes técnicas, aunque
+ a veces este régimen dinámico aparece espontáneamente.
+ Prescindiendo de los métodos que llevan a la correlación en fase, vamos
+ a plantear teóricamente esta situación de acoplo para que nos ayude a comprende
+r las características básicas de esta dinámica.
+ Así pues supondremos que están por encima del umbral y con la misma amplitud
+ los 
+\begin_inset Formula $N+1$
+\end_inset 
+
+ modos axiales.
+ A estos además los supondremos completamente correlacionados con en la
+ fase del campo.
+ De esta manera los campos de los respectivos modos se pueden escribir así:
+\begin_inset Formula \[
+E^{\left(0\right)}=E_{0}\exp i\left(q+0\right)\frac{\pi c}{l}t,\qquad E^{\left(1\right)}=\exp i\left(q+1\right)\frac{\pi c}{l}t,\quad\ldots\quad E^{\left(N\right)}=E_{0}\exp i\left(q+N\right)\frac{\pi c}{l}t\]
+
+\end_inset 
+
+ La amplitud total es la suma
+\begin_inset Formula \[
+E=\sum_{n=0}^{N}E_{0}\exp i\left(q+n\right)\frac{\pi c}{l}t=E_{0}\exp\left(iq\frac{\pi c}{l}t\right)\sum_{n=0}^{N}\exp\left(in\frac{\pi c}{l}t\right)\]
+
+\end_inset 
+
+en esta expresión tenemos la suma de los términos de una progresión geométrica
+ de razón 
+\begin_inset Formula $\exp i\frac{\pi c}{l}t$
+\end_inset 
+
+, por lo cual
+\begin_inset Formula \[
+E=E_{0}\exp\left(iq\frac{\pi c}{l}t\right)\frac{\exp\left[i\left(N+1\right)\frac{\pi c}{l}t\right]-1}{\exp i\frac{\pi c}{l}t-1}\]
+
+\end_inset 
+
+Como la intensidad es proporcional al cuadrado de la amplitud del campo
+ o de su módulo se tiene
+\begin_inset Formula \begin{eqnarray*}
+I & \propto & E_{0}^{2}\frac{\left(\exp i\left(N+1\right)\frac{\pi c}{l}t-1\right)\left[\exp\left(-i\left(N+1\right)\frac{\pi c}{l}t\right)-1\right]}{\left(\exp i\frac{\pi c}{l}t-1\right)\left(\exp\left(-i\frac{\pi c}{l}t\right)-1\right)}\\
+ & = & E_{0}^{2}\frac{1-\cos\left(N+1\right)\frac{\pi c}{l}t}{1-\cos\frac{\pi c}{l}t}\\
+ & = & E_{0}^{2}\frac{\sin^{2}\left(N+1\right)\frac{\pi c}{2l}t}{\sin^{2}\left(\frac{\pi c}{2l}t\right)}\end{eqnarray*}
+
+\end_inset 
+
+Esta evolución temporal de la intensidad tiene un estructura pulsada en
+ la cual los máximos del numerador se producen cuando
+\begin_inset Formula \[
+I\left(t\right)=I_{\mathrm{max}}\Leftrightarrow\left(N+1\right)\frac{\pi c}{2l}t=\left(n+\frac{1}{2}\right)\pi\qquad n=0,1,2\ldots\]
+
+\end_inset 
+
+Estos son pequeños máximos pues están afectados de un coeficiente finito,
+ 
+\begin_inset Formula $E_{0}^{2}/\sin^{2}\left(\pi ct/l\right)$
+\end_inset 
+
+.
+ Ahora bien, el seno al cuadrado del denominador se anula cuando 
+\begin_inset Formula \[
+\frac{\pi ct}{2l}=m\pi,\qquad m=0,1,2\ldots\]
+
+\end_inset 
+
+es decir, en los instantes
+\begin_inset Formula \[
+t_{m}=m\frac{2l}{c}\]
+
+\end_inset 
+
+pero los ceros del numerador se producen cuando
+\begin_inset Formula \[
+\left(N+1\right)\frac{\pi c}{2l}t=n\pi,\qquad n=0,1,2\ldots,\]
+
+\end_inset 
+
+es decir, en los instantes 
+\begin_inset Formula \[
+t_{n}=\frac{n}{N+1}\frac{2l}{c}\]
+
+\end_inset 
+
+por lo tanto cada vez que 
+\begin_inset Formula $n/\left(N+1\right)$
+\end_inset 
+
+ coincide con un valor entero 
+\begin_inset Formula $m$
+\end_inset 
+
+ se anulan 
+\emph on 
+simultáneamente
+\emph default 
+ el numerador y el denominador.
+ Entonces todos los ceros del denominador coinciden con 
+\emph on 
+algún
+\emph default 
+ cero del numerador.
+ En ese caso, desarrollando en serie el cociente del límite
+\begin_inset Float figure
+wide false
+collapsed true
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/pulsos-en-el-t-src.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:evol-t-I-modelocking}
+
+\end_inset 
+
+Evolución temporal de la intensidad en bloqueo de modos.
+ Los máximos secundarios no se suelen ver, ya que el contraste crece cuadráticam
+ente en el número de modos.
+ La anchura de los máximos principales se estima a través del primer corte
+ con el eje del máximo inicial.
+\end_inset 
+
+
+\begin_inset Formula \[
+I\propto E_{0}^{2}\lim_{t\rightarrow2ml/c}\frac{\sin^{2}\left(N+1\right)\frac{\pi c}{2l}t}{\sin^{2}\frac{\pi c}{2l}t}=E_{0}^{2}\left(N+1\right)^{2}\]
+
+\end_inset 
+
+así pues en cada cero del denominador o en cada instante 
+\begin_inset Formula $t_{m}=2ml/c$
+\end_inset 
+
+ se produce un gran máximo de intensidad.
+ Estos máximos están separados por un intervalo de tiempo 
+\begin_inset Formula $2l/c$
+\end_inset 
+
+ (figura 
+\begin_inset LatexCommand \ref{fig:evol-t-I-modelocking}
+
+\end_inset 
+
+), que es el tiempo de ida y vuelta de la radiación entre los espejos del
+ resonador, 
+\begin_inset Formula $t_{r}$
+\end_inset 
+
+.
+ La interpretación física de este resultado es que un pulso de radiación
+ está yendo y viniendo dentro del resonador, reflejándose una y otra vez
+ en ambos espejos.
+ La anchura temporal de estos pulsos dominantes se puede estimar por la
+ situación del primer cero contiguo al máximo que ocurre en el instante
+ 
+\begin_inset Formula $t=0$
+\end_inset 
+
+ (ver figura 
+\begin_inset LatexCommand \ref{fig:evol-t-I-modelocking}
+
+\end_inset 
+
+).
+ La semianchura 
+\begin_inset Formula $\Delta t$
+\end_inset 
+
+ del máximo deberá obtenerse de
+\begin_inset Formula \begin{eqnarray*}
+\left(N+1\right)\frac{\pi c}{2l}\left(2\Delta t\right) & = & \pi\\
+\Delta t & \simeq & \frac{1}{N+1}\frac{l}{c}\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Description
+
+Ejemplo 
+\begin_inset Formula $l/c$
+\end_inset 
+
+ tiene un valor del orden de 
+\begin_inset Formula $\mathrm{ps}$
+\end_inset 
+
+ en un láser.
+ Con 
+\begin_inset Formula $N=100$
+\end_inset 
+
+ modos el tiempo es de 
+\begin_inset Formula $30\,\mathrm{ps}$
+\end_inset 
+
+; con 
+\begin_inset Formula $N=1000$
+\end_inset 
+
+ se pueden obtener pulsos tan cortos como de 
+\begin_inset Formula $3\,\mathrm{ns}$
+\end_inset 
+
+.
+ Las técnicas actuales han permitido alcanzar tiempos de attosegundos, que
+ permiten 
+\begin_inset Quotes eld
+\end_inset 
+
+ver
+\begin_inset Quotes erd
+\end_inset 
+
+ las transiciones entre niveles energéticos de los electrones en un átomo.
+\layout Standard
+
+Al mismo tiempo la semianchura en frecuencias angulares que ocupa el conjunto
+ de los modos que intervienen en la formación de los pulsos es (figura )
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/modos-de-los-pulsos-src.eps
+	scale 90
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:modos-de-los-pulsos}
+
+\end_inset 
+
+Anchura de los modos que intervienen en la formación de los pulsos.
+\end_inset 
+
+
+\begin_inset Formula \[
+\Delta\omega\simeq2\pi\Delta\nu=2\pi\frac{N+1}{2}\frac{c}{2l}\]
+
+\end_inset 
+
+ por lo cual
+\begin_inset Formula \[
+\Delta t\Delta\omega\simeq\frac{\pi}{2}\simeq1\]
+
+\end_inset 
+
+que es la relación que cabe esperar entre anchuras características de un
+ par de funciones relacionadas por la transformada de Fourier.
+\layout Standard
+
+Observamos también que el contraste entre los máximos dominantes y los secundari
+os es proporcional a 
+\begin_inset Formula $\left(N+1\right)^{2}$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+Así pues cuantos más modos axiales intervengan en la formación de esta dinámica
+ menor será la anchura de los pulsos dominantes y mayor será su contraste
+ con los secundarios.
+ Por ello la anchura 
+\begin_inset Formula $\Delta\omega$
+\end_inset 
+
+ de la amplificación o del perfil inhomogéneo de la luminiscencia debe ser
+ muy grande en comparación con 
+\begin_inset Formula $2\pi c/2l$
+\end_inset 
+
+ si se desea obtener pulsos muy estrechos, ya que de esta forma serían muchos
+ los modos amplifcados.
+\layout Standard
+
+
+\begin_inset ERT
+status Open
+
+\layout Standard
+
+\backslash 
+com{Aquí falta insertar gráficos, comentarios sobre cómo se obtiene el mode-locking, e incluso una transparencia de un láser en este régimen.}
+\end_inset 
+
+
+\the_end

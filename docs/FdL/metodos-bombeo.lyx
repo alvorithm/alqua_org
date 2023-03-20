@@ -1,0 +1,3093 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass scrbook
+\begin_preamble
+\input{FdL-packages.sty}
+\input{FdL-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding auto
+\fontscheme default
+\graphics default
+\paperfontsize 11
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Chapter
+
+Métodos de bombeo
+\layout Standard
+
+Como se ha descrito anteriormente, para que se produzca amplificación de
+ radiación es preciso que exista inversión de población entre dos niveles.
+\layout Standard
+
+Los sistemas empleados para producir inversión de población se suelen llamar
+ 
+\emph on 
+métodos de bombeo
+\emph default 
+
+\begin_inset LatexCommand \index{métodos de bombeo}
+
+\end_inset 
+
+; todo método o sistema de bombeo tiene por objeto conseguir que haya más
+ emisores en un nivel excitado que en otro de menor energía.
+ Usualmente cada tipo de láser utiliza un método diferente, pero aun así
+ existen algunos sistemas de bombeo de utilización frecuente en diferentes
+ láseres.
+ 
+\layout Section
+
+Bombeo óptico
+\layout Standard
+
+En este apartado vamos a tratar el bombeo óptico, en el cual una radiación
+ producida por una lámpara u otro foco luminoso es utilizada para alterar
+ las poblaciones de los niveles excitados en transiciones resonantes con
+ el estado fundamental.
+ Aunque en la práctica son muchos los niveles que suelen intervenir en el
+ proceso, generalmente los esquemas se pueden reducir a dos filosofías básicas,
+ en las que intervienen o bien tres o bien cuatro niveles esencialmente.
+\layout Subsection
+
+Esquema a tres niveles
+\layout Standard
+
+Vamos a considerar en primer lugar el caso de tres niveles, de poblaciones
+ 
+\begin_inset Formula $n_{1},n_{2},n_{3}$
+\end_inset 
+
+ y energía creciente con el número de índice.
+ La población total que participa en la dinámica es 
+\begin_inset Formula $n=n_{1}+n_{2}+n_{3}$
+\end_inset 
+
+.
+ La radiación de bombeo está formada por fotones de frecuencia 
+\begin_inset Formula $\nu_{b}=\left(E_{3}-E_{1}\right)/h$
+\end_inset 
+
+ que producirán transiciones estimuladas entre el fundamental (1) y el de
+ mayor energía (3), con probabilidades 
+\begin_inset Formula $W_{13}n_{1}$
+\end_inset 
+
+ (absorción) y 
+\begin_inset Formula $W_{31}n_{3}$
+\end_inset 
+
+ (emisión).
+ Lo hemos representado en la figura 
+\begin_inset LatexCommand \ref{fig:esquema-a-tres-niveles}
+
+\end_inset 
+
+.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/laser-3niv-src.eps
+	scale 80
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:esquema-a-tres-niveles}
+
+\end_inset 
+
+Esquema a tres niveles.
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+hay que cambiar P3 por W13 y W31 (doble flecha), introducir tau31 a la menos
+ 1 para la desexcitacion espontanea de 3 a 1, e indicar las energías E1
+ E2 E3 y las poblaciones n1, n2 y n3.
+\end_inset 
+
+
+\end_inset 
+
+ 
+\layout Standard
+
+El estado número (2) debe ser metaestable (largo tiempo de vida 
+\begin_inset Formula $\tau_{21}$
+\end_inset 
+
+) y debe existir una elevada probabilidad de transición radiativa o no del
+ nivel 
+\begin_inset Formula $3$
+\end_inset 
+
+ al 
+\begin_inset Formula $2$
+\end_inset 
+
+ (
+\begin_inset Formula $d_{32}n_{3}$
+\end_inset 
+
+).
+ Incluyendo las transiciones estimuladas inducidas por el bombeo, pero no
+ las de naturaleza láser las ecuaciones de balance del sistema de niveles
+ son:
+\begin_inset Formula \begin{eqnarray*}
+\dt{n_{1}} & = & -W_{13}n_{1}+W_{31}n_{3}+\tau_{21}^{-1}n_{2}+\tau_{31}^{-1}n_{3}\\
+\dt{n_{2}} & = & d_{32}n_{3}-\tau_{21}^{-1}n_{2}\\
+\dt{n_{3}} & = & W_{13}n_{1}-W_{31}n_{3}-\tau_{31}^{-1}n_{3}-d_{32}n_{3}\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Standard
+
+Como el vaciado del nivel 
+\begin_inset Formula $3$
+\end_inset 
+
+, por 
+\begin_inset Formula $d_{32}$
+\end_inset 
+
+, es muy rápido, podemos suponer que la población que allí se acumula es
+ despreciable.
+ Incluso a bombeos muy elevados se pueden desechar varios términos de las
+ ecuaciones anteriores (
+\begin_inset Formula $n_{3}\ll n_{1},n_{2}$
+\end_inset 
+
+):
+\begin_inset Formula \[
+\tau_{31}^{-1}n_{3}\ll d_{32}n_{3},W_{13}n_{1},\qquad W_{31}n_{3}\ll d_{32}n_{3},\qquad W_{31}n_{3}\ll W_{13}n_{1}\]
+
+\end_inset 
+
+así que 
+\begin_inset Formula $n=n_{1}+n_{2}+n_{3}\simeq n_{1}+n_{2}$
+\end_inset 
+
+.
+ Por otra parte, nos interesa el estado estacionario, en el que todas las
+ derivadas se anulan y el sistema diferencial queda reducido al siguiente
+ sistema algebraico en las poblaciones de los niveles:
+\begin_inset Formula \begin{eqnarray*}
+-W_{13}n_{1}+\tau_{21}^{-1}n_{2} & = & 0\\
+d_{32}n_{3}-\tau_{21}^{-1}n_{2} & = & 0\\
+W_{13}n_{1}-d_{32}n_{3} & = & 0\end{eqnarray*}
+
+\end_inset 
+
+Además, de las tres ecuaciones una es combinación lineal de las otras dos
+ (por ejemplo: 
+\begin_inset Formula $(3)=-(2)-(1)$
+\end_inset 
+
+), por lo que se suele emplear la ecuación de la población total, 
+\begin_inset Formula $n=n_{1}+n_{2}$
+\end_inset 
+
+ junto con dos de las ecuaciones.
+ De la segunda y la tercera,
+\begin_inset Formula \[
+W_{12}n_{1}\simeq d_{32}n_{3}=\tau_{21}^{-1}n_{2}\]
+
+\end_inset 
+
+ Y si despejamos con 
+\begin_inset Formula $n\simeq n_{1}+n_{2}$
+\end_inset 
+
+ obtenemos
+\begin_inset Formula \begin{eqnarray*}
+n_{1} & = & \frac{\tau_{21}^{-1}}{W_{13}+\tau_{21}^{-1}}n\\
+n_{2} & = & \frac{W_{13}}{W_{13}+\tau_{21}^{-1}}n.\end{eqnarray*}
+
+\end_inset 
+
+ la inversión de poblaciones entre 
+\begin_inset Formula $2$
+\end_inset 
+
+ y 
+\begin_inset Formula $1$
+\end_inset 
+
+ se producirá siempre que
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Estamos suponiendo niveles no degenerados.
+ En otro caso, la definición de la variable inversión de población está
+ dada por la fórmula 
+\begin_inset LatexCommand \ref{eq:num-inversion}
+
+\end_inset 
+
+.
+\end_inset 
+
+ 
+\begin_inset Formula \[
+n_{i}=n_{2}-n_{1}=\frac{W_{13}-\tau_{21}^{-1}}{W_{13}+\tau_{21}^{-1}}n>0\]
+
+\end_inset 
+
+ Para que 
+\begin_inset Formula $n_{i}$
+\end_inset 
+
+ sea positivo el bombeo a través de 
+\begin_inset Formula $W_{13}$
+\end_inset 
+
+ debe ser lo suficientemente grande para que 
+\begin_inset Formula $W_{13}\gtrsim\tau_{21}^{-1}$
+\end_inset 
+
+ La condición nos permite hallar el bombeo necesario para que el láser alcance
+ el umbral de oscilación:
+\begin_inset Formula \begin{eqnarray*}
+n_{iu} & = & -\frac{1}{\sigma_{21}L}\ln RT_{i}\\
+ & = & \frac{W_{13u}-\tau_{21}^{-1}}{W_{13u}+\tau_{21}^{-1}}n.\end{eqnarray*}
+
+\end_inset 
+
+Así, en los casos más favorables en que el umbral sea bajo
+\begin_inset Formula \[
+W_{13u}\gtrsim\tau_{21}^{-1}\;\rightarrow\; n_{iu}\ll n\]
+
+\end_inset 
+
+por tanto
+\begin_inset Formula \[
+n_{i}=n_{2}-n_{1}=n_{2}-\left(n-n_{2}\right)=2n_{2}-n\simeq0\;\rightarrow\; n_{2}\simeq\frac{n}{2},n_{1}\simeq\frac{n}{2}\]
+
+\end_inset 
+
+Vemos pues que incluso en el caso más favorable para tener inversión de
+ población hay que excitar al menos la mitad de los centros al estado superior
+ 
+\begin_inset Formula $2$
+\end_inset 
+
+.
+ En la práctica esto significa un bombeo muy intenso.
+ 
+\layout Subsection
+
+Esquema a cuatro niveles
+\layout Standard
+
+El otro esquema de bombeo es el de cuatro niveles, en el cual la población
+ total participante en la dinámica, esquematizada en la figura 
+\begin_inset LatexCommand \ref{fig:esquema-a-4-niveles}
+
+\end_inset 
+
+ es
+\begin_inset Formula \[
+n=n_{0}+n_{1}+n_{2}+n_{3}\]
+
+\end_inset 
+
+si bien en equilibrio térmico 
+\begin_inset Formula $n\simeq n_{0}$
+\end_inset 
+
+.
+ En este caso el bombeo se introduce entre los niveles 
+\begin_inset Formula $0$
+\end_inset 
+
+ y 
+\begin_inset Formula $3$
+\end_inset 
+
+, mediante radiación de la frecuencia
+\begin_inset Formula \[
+\nu_{b}=\left(E_{3}-E_{0}\right)/h\]
+
+\end_inset 
+
+Usualmente también en este caso el nivel 
+\begin_inset Formula $3$
+\end_inset 
+
+ puede ser una o varias bandas con un cuasicontínuo de niveles
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Si se tratase de un nivel único, sería difícil con un bombeo de cierta anchura
+ espectral (como una lámpara) llevar sistemas a dicho nivel.
+\end_inset 
+
+.
+ En este esquema, si 
+\begin_inset Formula $d_{32}$
+\end_inset 
+
+ y 
+\begin_inset Formula $d_{10}$
+\end_inset 
+
+ son probabilidades muy altas, es decir
+\begin_inset Formula \[
+d_{32},d_{10}\gg A_{21}=\tau_{21}^{-1}\]
+
+\end_inset 
+
+La población conducida a la banda 
+\begin_inset Formula $3$
+\end_inset 
+
+ por el bombeo será llevada rápidamente a 
+\begin_inset Formula $2$
+\end_inset 
+
+, donde tenderá a acumularse.
+ 
+\layout Standard
+
+Al mismo tiempo, la población del nivel 
+\begin_inset Formula $2$
+\end_inset 
+
+ desexcitada al nivel 
+\begin_inset Formula $1$
+\end_inset 
+
+ será llevada rápidamente al estado fundamental 
+\begin_inset Formula $0$
+\end_inset 
+
+, estando el nivel 
+\begin_inset Formula $1$
+\end_inset 
+
+ siempre prácticamente vacío.
+ Por lo tanto, aún el más pequeño bombeo 
+\begin_inset Formula $W_{03}$
+\end_inset 
+
+ generará inversión de población entre los niveles 
+\begin_inset Formula $2$
+\end_inset 
+
+ y 
+\begin_inset Formula $1$
+\end_inset 
+
+.
+ Las ecuaciones de balance para las cuatro poblaciones serán, en ausencia
+ de emisión láser,
+\begin_inset Float figure
+wide false
+collapsed true
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/laser-4niv-src.eps
+	scale 80
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:esquema-a-4-niveles}
+
+\end_inset 
+
+Esquema a cuatro niveles.
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray*}
+\dt{n_{0}} & = & W_{30}n_{3}-W_{03}n_{0}+\tau_{30}^{-1}n_{3}+d_{10}n_{1}\\
+\dt{n_{1}} & = & \tau_{21}^{-1}n_{2}-d_{10}n_{1}\\
+\dt{n_{2}} & = & -\tau_{21}^{-1}n_{2}+d_{32}n_{3}\\
+\dt{n_{3}} & = & -W_{30}n_{3}+W_{03}n_{0}-d_{32}n_{3}-\tau_{30}^{-1}n_{3}.\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Standard
+
+Si asumimos que tal como hemos razonado los niveles 
+\begin_inset Formula $3$
+\end_inset 
+
+ y 
+\begin_inset Formula $1$
+\end_inset 
+
+ se mantienen prácticamente despoblados,
+\begin_inset Formula \[
+n\simeq n_{0}+n_{2}\]
+
+\end_inset 
+
+podremos prescindir de los términos 
+\begin_inset Formula $W_{30}n_{3}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\tau_{30}^{-1}n_{3}$
+\end_inset 
+
+ en la primera y cuarta ecuaciones.
+ Además, dado que entre estas cuatro ecuaciones una de ellas es combinación
+ lineal de las otras tres, quedándonos en estado estacionario (derivadas
+ temporales nulas) con las tres últimas, tenemos el siguiente sistema algebraico
+\begin_inset Formula \begin{eqnarray*}
+\tau_{21}^{-1}n_{2}-d_{10}n_{1} & = & 0\\
+-\tau_{21}^{-1}n_{2}+d_{32}n_{3} & = & 0\\
+W_{03}n_{0}-d_{32}n_{3} & = & 0\end{eqnarray*}
+
+\end_inset 
+
+y como 
+\begin_inset Formula \[
+n_{i}=n_{2}-n_{1}\simeq n_{2}\]
+
+\end_inset 
+
+entre las dos últimas ecuaciones podemos eliminar el término 
+\begin_inset Formula $d_{32}n_{3}$
+\end_inset 
+
+, quedando
+\begin_inset Formula \[
+W_{03}n_{0}=\tau_{21}^{-1}n_{2}\]
+
+\end_inset 
+
+es decir,
+\begin_inset Formula \[
+n_{i}\simeq n_{2}=\frac{W_{03}}{\tau_{21}^{-1}}n_{0}\simeq\frac{W_{03}}{\tau_{21}^{-1}}\left(n-n_{2}\right)\]
+
+\end_inset 
+
+o
+\begin_inset Formula \[
+n_{i}=\frac{W_{03}}{W_{03}+\tau_{21}^{-1}}n\]
+
+\end_inset 
+
+el umbral se alcanzará para un bombeo 
+\begin_inset Formula $W_{03u}$
+\end_inset 
+
+ tal que
+\begin_inset Formula \[
+\frac{W_{03u}}{W_{03u}+\tau_{21}^{-1}}n=-\frac{1}{\sigma_{21}L}\ln RT_{i}\]
+
+\end_inset 
+
+Ahora el traslado de una pequeña fración de la población total 
+\begin_inset Formula $n$
+\end_inset 
+
+ al nivel 
+\begin_inset Formula $2$
+\end_inset 
+
+ será suficiente para alcanzar el umbral.
+\layout Standard
+
+Los láseres más eficientes suelen ser los de cuatro niveles, pero existen
+ en gran cantidad dispositivos a tres niveles.
+\layout Standard
+
+La descripción precedente tiene el esquematismo de la teoría: en la realidad
+ el nivel invertido (2 o 3, según el esquema) puede o suele ser una banda,
+ con lo cual la que se observa es la radiación del nivel cuya transición
+ es más probable.
+ Un ejemplo clásico es el láser HeNe, con el que en función de las transiciones
+ que se inhiban o faciliten, se puede conseguir un cierto número de frecuencias
+ láser.
+\layout Subsection
+
+Probabilidad de absorción del bombeo
+\layout Standard
+
+En el bombeo óptico la probabilidad de absorción del nivel fundamental al
+ excitado de bombeo 
+\begin_inset Formula $W_{fe}$
+\end_inset 
+
+ se puede relacionar con la intensidad luminosa del bombeo, 
+\begin_inset Formula $I_{b}\left(\nu\right)$
+\end_inset 
+
+:
+\begin_inset Formula \[
+W_{fe}=\int\frac{1}{h\nu}\sigma_{fe}\left(\nu\right)I_{b}\left(\nu\right)\,\mathrm{d}\nu\]
+
+\end_inset 
+
+Para calcularla hay que integrar el espectro de la radiación sobre el espectro
+ de absorción de la transición de bombeo.
+ Existen dos situaciones frecuentes en la práctica en las que el cálculo
+ se resuelve fácilmente.
+\layout Subsubsection
+
+Espectro ancho: lámpara de destellos
+\layout Standard
+
+Cuando se utiliza una lámpara de flash
+\begin_inset LatexCommand \index{lámpara!de destello}
+
+\end_inset 
+
+ (como las de 
+\begin_inset Formula $\mathrm{Xe}$
+\end_inset 
+
+ o 
+\begin_inset Formula $\mathrm{Kr}$
+\end_inset 
+
+) el espectro es continuo y mucho más ancho que el espectro de absorción
+ (figura 
+\begin_inset LatexCommand \ref{fig:bombeo-destello-calculo-Wfe}
+
+\end_inset 
+
+).
+ Entonces se toma la intensidad de bombeo sobre la frecuencia 
+\begin_inset Formula $\nu_{fe}$
+\end_inset 
+
+, y luego se supone una forma rectangular para 
+\begin_inset Formula $\sigma_{fe}\left(\nu\right)$
+\end_inset 
+
+:
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Comentarios a las figuras: 1)quitar marcas con valores numéricos, las figuras son cualitativas, 2) Por la misma razón del carácter cualitativo, si se aumenta el tamaño relativo de la fuente, nos podemos permitir reducir el tamaño total.}
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray*}
+W_{fe} & \simeq & \frac{1}{h\nu_{fe}}I_{b}\left(\nu_{fe}\right)\int\sigma_{fe}\left(\nu\right)\,\mathcal{\mathrm{d}\nu}\\
+ & = & \frac{1}{h\nu_{fe}}I_{b}\left(\nu_{fe}\right)\sigma_{fe}\left(\nu_{fe}\right)\Delta\nu_{fe}\end{eqnarray*}
+
+\end_inset 
+
+de aquí se obtiene la intensidad por unidad de intervalo de frecuencia necesaria
+ para producir la probabilidad estimulada 
+\begin_inset Formula $W_{fe,u}$
+\end_inset 
+
+:
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/bombeo-destello-calculo-Wfe.eps
+	scale 80
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:bombeo-destello-calculo-Wfe}
+
+\end_inset 
+
+Cuando el bombeo se realiza mediante una lámpara, su perfil se puede aproximar
+ por el valor de la intensidad en la frecuencia central de absorción 
+\begin_inset Formula $\nu_{fe}$
+\end_inset 
+
+.
+\end_inset 
+
+
+\begin_inset Formula \[
+I_{b,u}\left(\nu_{fe}\right)=\frac{h\nu_{fe}}{\sigma_{fe}\left(\nu_{fe}\right)\Delta\nu_{fe}}W_{fe,u}.\]
+
+\end_inset 
+
+
+\layout Standard
+
+En la práctica se utilizan para el bombeo 
+\emph on 
+lámparas lineales
+\emph default 
+.
+ La lámpara puede funcionar o bien
+\layout Itemize
+
+como lámpara flash (de destellos), descargando un condensador.
+ La resistencia permite un cierto retraso entre recargas del condensador
+ 
+\begin_inset Formula $\tau=\left(RC\right)^{-1}$
+\end_inset 
+
+, regulando así el ritmo de los destellos.
+ 
+\layout Itemize
+
+o en onda contínua: si se hace pasar una corriente elevada, la lámpara se
+ mantiene en emisión contínua.
+ Eso origina una disipación térmica brutal, por lo que hay que sumergirla
+ en un circuito de refrigeración por agua que retire la energía disipada.
+\layout Standard
+
+Para introducir la radiación en el láser de modo que se aproveche la máxima
+ cantidad de radiación existen diferentes estrategias.
+ Una de ellas consiste en disponer la lámpara y la varilla del láser en
+ paralelo, cada una en un foco de un reflector elíptico.
+ Por las propiedades de la elipse, todo rayo procedente de uno de sus foco,
+ al ser reflejado, atraviesa el otro foco.
+\layout Subsection
+
+Espectro estrecho: bombeo láser
+\layout Standard
+
+Otro caso sencillo en el que el bombeo se puede aproximar sin hacer la integral
+ se da cuando el bombeo lo produce otro láser (figura 
+\begin_inset LatexCommand \ref{fig:bombeo-laser-calculo-Wfe}
+
+\end_inset 
+
+).
+ La aproximación es, teniendo en cuenta que la anchura espectral del láser
+ ahora es mucho menor que la de la transición,
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/bombeo-laser-calculo-Wfe.eps
+	scale 80
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:bombeo-laser-calculo-Wfe}
+
+\end_inset 
+
+En el caso del bombeo láser, la intensidad de bombeo 
+\begin_inset Formula $I_{b}\left(\nu\right)$
+\end_inset 
+
+ tiene una anchura espectral menor que la de la transición, 
+\begin_inset Formula $\sigma_{fe}\left(\nu\right)$
+\end_inset 
+
+.
+ Por ello se aproxima 
+\begin_inset Formula $\sigma_{fe}$
+\end_inset 
+
+ por su valor en la frecuencia central de bombeo, 
+\begin_inset Formula $\nu_{b}$
+\end_inset 
+
+.
+\end_inset 
+
+
+\begin_inset Formula \[
+W_{fe}=\frac{1}{h\nu_{b}}\sigma_{fe}\left(\nu_{b}\right)\int I_{b}\left(\nu\right)\,\mathrm{d}\nu\]
+
+\end_inset 
+
+ llamando 
+\begin_inset Formula $I_{b}$
+\end_inset 
+
+ al valor de la integral, la intensidad umbral a la que hay que fijar el
+ láser es
+\begin_inset Formula \[
+I_{b,u}=\frac{h\nu_{b}}{\sigma_{fe}\left(\nu_{b}\right)}W_{fe,u}\]
+
+\end_inset 
+
+ la disposición geométrica pasa por convertir el haz cilíndrico proveniente
+ del láser en una línea horizontal a través de una lente cilíndrica.
+ El bombeo se proyecta así sobre la línea de amplificación como un bombeo
+ uniforme.
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Se necesita una figura para explicar esto.}
+\end_inset 
+
+
+\layout Section
+
+Bombeo con lámparas en régimen de destello
+\layout Subsection
+
+Fundamento de las lámparas de descarga
+\layout Standard
+
+Una lámpara de descarga contiene un plasma con un alto grado de ionización
+ producido por el paso a través de un gas de una corriente eléctrica.
+ El gas debe ser inerte bajo las condiciones de descarga a las que se somete.
+ Eso excluye, por ejemplo, el 
+\begin_inset Formula $\mathrm{N}_{2}$
+\end_inset 
+
+.
+ Se suelen utilizar los gases nobles 
+\begin_inset Formula $\mathrm{Xe}$
+\end_inset 
+
+ (con emisión en el visible y el UV) y 
+\begin_inset Formula $\mathrm{Kr}$
+\end_inset 
+
+ (con emisión en el rojo y el IR).
+ Las presiones suelen ser de un orden tal (
+\begin_inset Formula $\sim.5\,\mathrm{atm}$
+\end_inset 
+
+) que el ensanchamiento colisional elimina el espectro de líneas, dando
+ lugar a un espectro contínuo y amplio que no es muy selectivo en la excitación.
+\layout Standard
+
+El plasma suele inducirse en el gas contenido en un tubo de cuarzo mediante
+ una corriente eléctrica continua, pulsada, o de radiofrecuencia.
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Pulsada o de radiofrecuencia... no son términos comparables, explicar...}
+\end_inset 
+
+ El crecimiento de la densidad de corriente 
+\begin_inset Formula $j$
+\end_inset 
+
+ durante el proceso de ionización del plasma es producido por ionizaciones
+ secundarias que tienen lugar en avalanchas sucesivas, con un poder generador
+ tal que el crecimiento es prácticamente exponencial en el tiempo.
+ La energía que entra en el plasma a través de la corriente que lo recorre
+ se emplea por tanto por un lado en ionizar el gas y por otro en calentarlo
+ sustancialmente, y en energía de excitación atómica por impacto.
+ La energía sale del plasma por dos mecanismos independientes:
+\layout Itemize
+
+la energía de excitación de los átomos y moléculas se radia en buena parte,
+ y la fracción que no es absorbida en el cuarzo constituye la salida de
+ la lámpara.
+\layout Itemize
+
+el resto de la energía se disipa en el cuarzo, de donde debe ser extraída.
+ 
+\layout Standard
+
+El proceso de crecimiento de la ionización se detiene cuando la energía
+ introducida por la corriente iguala a la disipada radiativamente y en el
+ cuarzo.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/circuito-descarga-src.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:circuito-descarga}
+
+\end_inset 
+
+Circuito auxiliar para la inducción del régimen de descarga en una lámpara.
+\end_inset 
+
+
+\layout Standard
+
+En las lámparas de destello, que son las que nos interesan en este apartado,
+ la corriente suele producirse mediante la descarga de un condensador a
+ través del gas de la lámpara.
+ El circuito de descarga, esquematizado en la figura 
+\begin_inset LatexCommand \ref{fig:circuito-descarga}
+
+\end_inset 
+
+, es en apariencia muy simple, pues contiene el condensador, de capacidad
+ 
+\begin_inset Formula $C$
+\end_inset 
+
+, un inductor de inductancia 
+\begin_inset Formula $L$
+\end_inset 
+
+ y la lámpara en serie.
+ 
+\layout Standard
+
+Esta simplicidad es sólo aparente, pues el plasma posee una resistencia
+ variable en el transcurso de la descarga (figura 
+\begin_inset LatexCommand \ref{fig:R-de-t-lampara-destello}
+
+\end_inset 
+
+).
+ Ahora bien, la gran variación de resistencia se produce en los primeros
+ cientos de nanosegundos del proceso de ionización: pasa de valer típicamente
+ algunos cientos de 
+\begin_inset Formula $\mathrm{M\Omega}$
+\end_inset 
+
+ a valer 
+\begin_inset Formula $\Omega$
+\end_inset 
+
+ o décimas de 
+\begin_inset Formula $\Omega$
+\end_inset 
+
+.
+ Esta etapa de rápido decrecimiento es inducida generalmente por un arrancador
+ que ceba con un potencial la descarga.
+ Puesto que el arrancador no tiene otro efecto en el circuito, lo hemos
+ representado como un interruptor 
+\begin_inset Formula $\mathrm{I}$
+\end_inset 
+
+ cuyo cierre da lugar a la caída de la resistencia.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/resist-lampara-destellos-src.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:R-de-t-lampara-destello}
+
+\end_inset 
+
+Resistencia del plasma en una lámpara de destello en función del tiempo.
+ El incremento de la resistencia tras la región estacionaria se debe al
+ corte de la corriente; si la lámpara fuera de onda contínua seguiría en
+ el régimen anterior.
+\end_inset 
+
+
+\layout Standard
+
+Pasada la etapa de rápido crecimiento de la corriente, se entra en un régimen
+ en el que la resistencia depende moderadamente de la corriente, de tal
+ suerte que, en una primera aproximación, se puede tomar como constante,
+ con un valor medio fijo.
+ Vamos a resolver el problema de forma exacta con esta aproximación y luego
+ afrontar la dificultad que supone considerar la dependencia de la resistencia
+ de la lámpara en la intensidad que la atraviesa.
+\layout Subsection
+
+Estudio en aproximación de 
+\begin_inset Formula $R=\mathrm{cte}$
+\end_inset 
+
+
+\layout Subsubsection
+
+Regímenes de funcionamiento
+\layout Standard
+
+La ecuación para los transitorios del circuito de destellos, en la aproximación
+ de resistencia constante, es 
+\begin_inset Formula \[
+L\dt{i}+iR+\frac{1}{C}\int_{0}^{t}i\,\mathrm{d}t'=V_{0}\]
+
+\end_inset 
+
+ Esta ecuación se puede escribir en forma adimensional con el habitual cambio
+ de variables
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{No veo razón para no introducir desde aquí, si es que se desea, $z_0=(L/C)^{1/2}$.}
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray}
+I & = & \frac{i}{V_{0}}\sqrt{\frac{L}{C}}\label{eq:I-de-i-lineal}\\
+\tau & = & t/\sqrt{LC}\label{eq:tau-de-t-lineal}\end{eqnarray}
+
+\end_inset 
+
+Se puede comprobar que se cumple la condición de normalización siguiente
+\begin_inset Formula \[
+\int_{0}^{\infty}I\,\mathrm{d}\tau=1\]
+
+\end_inset 
+
+
+\layout Standard
+
+Con este escalamiento de las variables, y con la definición de un parámetro
+ de amortiguamiento 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+ que va a regular el régimen de operación y que encapsula las características
+ eléctricas del circuito,
+\begin_inset Formula \begin{equation}
+\alpha\equiv\frac{R}{2}\sqrt{\frac{C}{L}}\label{eq:cte-amort-lineal}\end{equation}
+
+\end_inset 
+
+la ecuación se escribe así:
+\begin_inset Formula \[
+\da{I}{\tau}+2\alpha I+\int_{0}^{\tau}I\,\mathrm{d}\tau'=1.\]
+
+\end_inset 
+
+Con la condición inicial 
+\begin_inset Formula $I\left(0\right)=0$
+\end_inset 
+
+ su solución (es una ecuación de segundo orden con término independiente
+ constante) es
+\begin_inset Formula \[
+I=K\,\exp\left(-\alpha\tau\right)\left[\exp\left(\sqrt{\alpha^{2}-1}\tau\right)-\exp\left(-\sqrt{\alpha^{2}-1}\tau\right)\right],\]
+
+\end_inset 
+
+ Los argumentos de las exponenciales son las raíces del polinomio característico
+ de la ecuación.
+ Tenemos que considerar varios casos, según sea el valor de 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+ (figura 
+\begin_inset LatexCommand \ref{fig:circuito-amortiguado}
+
+\end_inset 
+
+):
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Reimplementar con PyX; puesto que sinh no está en MathTree.Parser habrá que pasar la función en el diccionario context.}
+\end_inset 
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/circuito-amortiguado.eps
+	scale 80
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:circuito-amortiguado}
+
+\end_inset 
+
+Evolución de la intensidad escalada en función del tiempo característico
+ para las tres situaciones: sobreamortiguamiento (
+\begin_inset Formula $\alpha>1$
+\end_inset 
+
+), subamortiguamiento (
+\begin_inset Formula $\alpha<1$
+\end_inset 
+
+) y amortiguamiento crítico (
+\begin_inset Formula $\alpha=1$
+\end_inset 
+
+).
+\end_inset 
+
+
+\layout Itemize
+
+Régimen sobreamortiguado, 
+\begin_inset Formula $\alpha>1$
+\end_inset 
+
+: 
+\begin_inset Formula \[
+I=I_{0}\exp\left(-\alpha\tau\right)\sinh\sqrt{\alpha^{2}-1}\tau\]
+
+\end_inset 
+
+ La anchura del pulso de corriente disminuye al aumentar 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+.
+\layout Itemize
+
+Si 
+\begin_inset Formula $\alpha<1$
+\end_inset 
+
+ el circuito está subamortiguado y la solución es
+\begin_inset Formula \[
+I=I_{0}\exp\left(-\alpha\tau\right)\sin\sqrt{\alpha^{2}-1}\tau\]
+
+\end_inset 
+
+Es una solución oscilante amortiguada.
+ El seno da el período, la exponencial la envolvente de amortiguamiento.
+\layout Itemize
+
+Si 
+\begin_inset Formula $\alpha=1$
+\end_inset 
+
+ el amortiguamiento se dice 
+\emph on 
+crítico.
+\emph default 
+
+\begin_inset Formula \[
+I=I_{0}\tau\exp\left(-\tau\right)\]
+
+\end_inset 
+
+(en virtud de la condición de normalización, 
+\begin_inset Formula $I_{0}=1$
+\end_inset 
+
+).
+\layout Standard
+
+No nos interesa que el pulso sea oscilante por dos razones:
+\layout Itemize
+
+La energía se distribuye sobre todas las oscilaciones, de manera que en
+ cada una sólo se aprovecha en el plasma una pequeña fracción.
+ 
+\layout Itemize
+
+Los iones son masivos y producen impactos muy distintos que los electrones;
+ cada electrodo se diseña de modo que resista uno de ambos tipos de impactos
+ de forma óptima: las lámparas se diseñan con una polaridad.
+ Si la corriente se va invirtiendo, se deterioran los electrodos, pues reciben
+ cada medio período impactos del tipo que no están preparados para soportar.
+\layout Standard
+
+Así, nos quedan los otros dos regímenes; de ellos el que produce menos pérdidas
+ a partir de una misma energía almacenada en el condensador (y por lo tanto
+ mayor eficiencia, mayor brillo) es el crítico, pues es el caso en el que
+ las pérdidas resistivas de la lámpara son menores (
+\begin_inset Formula $R$
+\end_inset 
+
+ toma el menor valor compatible con un pulso amortiguado).
+ 
+\layout Subsubsection
+
+Régimen crítico
+\layout Standard
+
+Habida cuenta de que es el que nos interesa, situémonos en el régimen crítico,
+ con 
+\begin_inset Formula $\alpha=1$
+\end_inset 
+
+.
+ Ello implica ajustar los parámetros hasta que
+\begin_inset Float figure
+wide false
+collapsed true
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/amort-critico.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:amort-critico}
+
+\end_inset 
+
+Evolución del pulso en régimen crítico.
+ Se han señalado los puntos de máximo 
+\begin_inset Formula $(\tau_{p},I_{p})$
+\end_inset 
+
+ e inflexión 
+\begin_inset Formula $\left(\tau_{i},I_{i}\right)$
+\end_inset 
+
+.
+ Convencionalmente se toma como duración del pulso 
+\begin_inset Formula $\tau_{d}=3$
+\end_inset 
+
+.
+\end_inset 
+
+
+\begin_inset Formula \[
+\frac{1}{\sqrt{LC}}=\frac{R}{2L}\]
+
+\end_inset 
+
+ los parámetros que podemos ajustar para entrar en este régimen son 
+\begin_inset Formula $L,C$
+\end_inset 
+
+, ya que 
+\begin_inset Formula $R$
+\end_inset 
+
+ es característico de la lámpara.
+\layout Standard
+
+Estudiando la primera y la segunda derivada de la intensidad (figura 
+\begin_inset LatexCommand \ref{fig:amort-critico}
+
+\end_inset 
+
+) se obtienen los siguientes valores, respectivamente, para la el pico de
+ intensidad y el punto de inflexión:
+\begin_inset Formula \begin{eqnarray*}
+\left(\tau_{p},I_{p}\right) & = & \left(1,e^{-1}\simeq0.37\right)\\
+\left(\tau_{i},I_{i}\right) & = & \left(2,2e^{-2}\simeq0.27\right)\end{eqnarray*}
+
+\end_inset 
+
+para estimar la duración total del pulso de corriente podemos tomar el criterio
+ 
+\begin_inset Formula $\tau_{d}=3$
+\end_inset 
+
+ (
+\begin_inset Formula $I_{d}\simeq0.14$
+\end_inset 
+
+, 
+\begin_inset Formula $I_{d}/I_{p}=0.40$
+\end_inset 
+
+)
+\layout Standard
+
+La evolución de la intensidad, en variables no escaladas, viene dada por
+\begin_inset Formula \[
+i=\frac{V_{0}}{L}\, t\,\exp\left(-Rt/2L\right)\]
+
+\end_inset 
+
+en el pico, teniendo en cuenta el valor de 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+ en la definición 
+\begin_inset LatexCommand \ref{eq:cte-amort-lineal}
+
+\end_inset 
+
+:
+\begin_inset Formula \[
+t_{p}=\sqrt{LC},\qquad i_{p}=\frac{V_{0}}{e}\sqrt{\frac{C}{L}}=\frac{2}{e}\frac{V_{0}}{R}\simeq0.74\frac{V_{0}}{R}\]
+
+\end_inset 
+
+ Asímismo, la duración del pulso es 
+\begin_inset Formula $T=3\sqrt{LC}$
+\end_inset 
+
+.
+\layout Standard
+
+Se puede destacar que en esta aproximación no es preciso conocer la resistencia
+ de la lámpara para diseñar el circuito de excitación.
+ La corriente se puede normalizar al pico para dar una forma universal:
+\begin_inset Formula \[
+\frac{i}{i_{p}}=\frac{V_{0}}{L}\frac{t\,\exp\left(-Rt/2L\right)}{2V_{0}/eR}=\frac{t}{t_{p}}\exp\left(1-\frac{t}{t_{p}}\right).\]
+
+\end_inset 
+
+ Desafortunadamente, en la práctica, la resistencia del plasma no se puede
+ considerar independiente de la intensidad.
+\layout Subsection
+
+La lámpara como elemento no lineal
+\layout Standard
+
+Goncz
+\begin_inset LatexCommand \index{Goncz}
+
+\end_inset 
+
+ encuentra esta fórmula empírica para la resistividad del plasma, con la
+ densidad de corriente que se hace circular 
+\begin_inset Formula $j$
+\end_inset 
+
+ en 
+\begin_inset Formula $\mathrm{A}/\mathrm{cm}^{2}$
+\end_inset 
+
+ y la presión de llenado 
+\begin_inset Formula $P$
+\end_inset 
+
+ en 
+\begin_inset Formula $\mathrm{torr}$
+\end_inset 
+
+:
+\begin_inset Formula \[
+\rho=\left(\frac{c_{1}}{\sqrt{\left|j\right|}}\right)\left(\frac{P}{450}\right)^{0.2}\Omega\times\mathrm{cm}\]
+
+\end_inset 
+
+ el coeficiente 
+\begin_inset Formula $c_{1}$
+\end_inset 
+
+ vale 
+\begin_inset Formula $1.13$
+\end_inset 
+
+ para la lámpara de 
+\begin_inset Formula $\mathrm{Xe}$
+\end_inset 
+
+; para la de 
+\begin_inset Formula $\mathrm{Kr}$
+\end_inset 
+
+ el coeficiente 
+\begin_inset Formula $c_{1}$
+\end_inset 
+
+ es 
+\begin_inset Formula $1$
+\end_inset 
+
+.
+ Esta fórmula es válida para un amplio rango de lámparas utilizables: aquellas
+ de forma cilíndrica con diámetro interno 
+\begin_inset Formula $d$
+\end_inset 
+
+ entre 
+\begin_inset Formula $1.3\,\mathrm{mm}$
+\end_inset 
+
+ y 
+\begin_inset Formula $28\,\mathrm{mm}$
+\end_inset 
+
+ y distancia entre electrodos 
+\begin_inset Formula $l$
+\end_inset 
+
+ entre 
+\begin_inset Formula $6.3\,\mathrm{mm}$
+\end_inset 
+
+ y 
+\begin_inset Formula $300\,\mathrm{mm}$
+\end_inset 
+
+, con duraciones de pulso desde 
+\begin_inset Formula $30\,\mu\mathrm{s}$
+\end_inset 
+
+ a 
+\begin_inset Formula $10\,\mathrm{ms}$
+\end_inset 
+
+ para lámparas pequeñas y desde 
+\begin_inset Formula $100\,\mu\mathrm{s}$
+\end_inset 
+
+ a 
+\begin_inset Formula $100\,\mathrm{ms}$
+\end_inset 
+
+ en lámparas grandes.
+ 
+\layout Standard
+
+Mientras estemos con lámparas estándar del mercado, esta fórmula será normalment
+e válida, y la resistencia de la lámpara será 
+\begin_inset Formula \[
+R=\frac{4}{\pi}\frac{\rho}{d^{2}}=\frac{c_{2}}{d\left|i\right|^{1/2}}\left(\frac{P}{450}\right)^{0.2}.\]
+
+\end_inset 
+
+ Como vemos, la resistencia depende de la intensidad 
+\begin_inset Formula $i=j\,\pi d^{2}/4$
+\end_inset 
+
+ que circula por el circuito.
+ La constante 
+\begin_inset Formula $c_{2}$
+\end_inset 
+
+ depende del gas en la lámpara, y vale 
+\begin_inset Formula $1.28$
+\end_inset 
+
+ para la de 
+\begin_inset Formula $\mathrm{Xe}$
+\end_inset 
+
+ y 
+\begin_inset Formula $1$
+\end_inset 
+
+ para la de 
+\begin_inset Formula $\mathrm{Kr}$
+\end_inset 
+
+.
+ El valor absoluto aplicado a 
+\begin_inset Formula $j$
+\end_inset 
+
+ o 
+\begin_inset Formula $i$
+\end_inset 
+
+ permite mantener la validez de la fórmula con 
+\begin_inset Formula $i$
+\end_inset 
+
+ oscilante, pues 
+\begin_inset Formula $\rho,R$
+\end_inset 
+
+ se mantienen, como debe ser, positivas, independientemente del sentido
+ de la corriente.
+\layout Standard
+
+Para unas determinadas características geométricas (
+\begin_inset Formula $l,d$
+\end_inset 
+
+), gas 
+\begin_inset Formula $\left(c_{2}\right)$
+\end_inset 
+
+ y presión 
+\begin_inset Formula $P$
+\end_inset 
+
+ de trabajo podemos escribir
+\begin_inset Formula \[
+R=\frac{K_{0}}{\left|i\right|^{1/2}}\]
+
+\end_inset 
+
+ donde 
+\begin_inset Formula $K_{0}$
+\end_inset 
+
+ una constante, que suele ser aportada por los fabricantes de los tubos
+ o se puede estimar como
+\begin_inset Formula \[
+K_{0}=c_{2}\,\frac{l}{d}\left(\frac{P}{450}\right)^{0.2}\]
+
+\end_inset 
+
+si la presión no se conoce, se debe saber que en la mayoría de los casos
+ es muy próxima a 450 (que es la razón por la que este número aparece en
+ la fórmula).
+\layout Standard
+
+Entonces la caída de potencial de la lámpara será
+\begin_inset Formula \[
+V_{l}=\pm K_{0}\left|i\right|^{1/2}\]
+
+\end_inset 
+
+donde el signo se ha de escoger de manera que coincida con el de la corriente.
+ Así englobamos los regímenes de intensidad alternante, aunque en general
+ no nos interesan y podemos considerar solamente el signo positivo.
+ La ecuación de evolución es, despreciando el término 
+\begin_inset Formula $R_{S}i$
+\end_inset 
+
+ debido al conexionado del circuito:
+\begin_inset Formula \[
+L\dt{i}\pm K_{0}\left|i\right|^{1/2}+\frac{1}{C}\int_{0}^{t}i\,\mathrm{d}t=V_{0}\]
+
+\end_inset 
+
+Aunque esta ecuación es no lineal y debe ser atacada numéricamente, la resolució
+n simplificada del apartado anterior nos sirve de modelo.
+ Así, escalamos la ecuación de acuerdo con 
+\begin_inset LatexCommand \ref{eq:I-de-i-lineal}
+
+\end_inset 
+
+ y 
+\begin_inset LatexCommand \ref{eq:tau-de-t-lineal}
+
+\end_inset 
+
+.
+ Utilizamos la abreviatura 
+\begin_inset Formula $z_{0}=\sqrt{L/C}$
+\end_inset 
+
+ y definimos la constante de amortiguamiento 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+ del siguiente modo: 
+\begin_inset Formula \[
+\alpha\equiv\frac{K_{0}}{\sqrt{V_{0}z_{0}}}\]
+
+\end_inset 
+
+La expresión escalada de la ecuación es
+\begin_inset Formula \[
+\dt{I}\pm\alpha\left|I\right|^{1/2}+\int_{0}^{\tau}I\,\mathrm{d}\tau'=1\]
+
+\end_inset 
+
+ Las soluciones así obtenidas presentan un amortiguamiento algo mayor que
+ las comentadas anteriormente para el modelo de resistencia constante.
+ El régimen crítico se obtiene ahora cuando 
+\begin_inset Formula $\alpha=0.8$
+\end_inset 
+
+.
+ Por lo demás, la introducción de la dependencia no lineal en la resistencia
+ de la lámpara se traduce en una pequeña diferencia en el pico de corriente
+ calculado, que se aproxima más al valor experimental.
+\layout Standard
+
+La energía almacenada en el condensador es un parámetro relevante
+\begin_inset Formula \[
+E=\frac{1}{2}CV^{2}\]
+
+\end_inset 
+
+ en función del cual podemos escribir el amortiguamiento
+\begin_inset Formula \[
+\alpha=\frac{K_{0}}{\left(\left(2E/C\right)^{1/2}z_{0}\right)^{1/2}}=\frac{K_{0}}{\left(\left(2E/C\right)^{1/2}t_{p}/C\right)^{1/2}},\qquad\alpha^{4}=\frac{K_{0}^{4}c^{3}}{2Et_{p}^{2}}\]
+
+\end_inset 
+
+ Por razones de eficiencia que explicaremos un poco más adelante, la duración
+ total del pulso de la lámpara se debe elegir de tal manera que el pulso
+ de bombeo sea de menor duración que tiempo de vida de la inversión de población
+: 
+\begin_inset Formula $T\lesssim\tau$
+\end_inset 
+
+.
+ Este criterio fija una condición para escoger los parámetros del circuito.
+ Puesto que 
+\begin_inset Formula $t_{p}$
+\end_inset 
+
+ se establece a partir de la duración del pulso y 
+\begin_inset Formula $K_{0}$
+\end_inset 
+
+ es un dato de la lámpara, podemos ajustar 
+\begin_inset Formula $C$
+\end_inset 
+
+ para obtener el amortiguamiento crítico necesario para el tiempo de subida
+ deseado:
+\begin_inset Formula \[
+C^{3}=\frac{2Et_{p}^{2}\alpha}{K_{0}^{4}}\]
+
+\end_inset 
+
+y la inductancia deberá ser 
+\begin_inset Formula \[
+L=t_{p}^{2}/C\]
+
+\end_inset 
+
+El potencial de carga que corresponde a esta energía 
+\begin_inset Formula $E$
+\end_inset 
+
+ es, por su parte,
+\begin_inset Formula \[
+V_{0}=\left(\frac{2E}{C}\right)^{1/2}\]
+
+\end_inset 
+
+ Estas tres ecuaciones permiten calcular el circuito necesario para el funcionam
+iento en régimen crítico de una determinada lámpara.
+ 
+\layout Standard
+
+El tiempo de subida 
+\begin_inset Formula $t_{p}=\sqrt{LC}$
+\end_inset 
+
+ y la intensidad de pico 
+\begin_inset Formula $i_{p}$
+\end_inset 
+
+ que corresponden al circuito de resistencia constante, se ven ligeramente
+ aumentados en el tratamiento no lineal: 
+\begin_inset Formula \begin{eqnarray*}
+t_{r} & = & 1.25t_{p}\\
+i_{r} & = & 0.5\frac{V_{0}}{z_{0}}=0.5V_{0}\sqrt{\frac{C}{L}}=1.35i_{p}\end{eqnarray*}
+
+\end_inset 
+
+Aunque el pulso de corriente es más alto su duración se obtiene de nuevo
+ razonablemente tomando tres veces el tiempo del pico, 
+\begin_inset Formula $T=3t_{p}=3\sqrt{LC}$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+El hecho de que el funcionamiento crítico se obtenga para valores determinados
+ de 
+\begin_inset Formula $C,L$
+\end_inset 
+
+ 
+\series bold 
+y
+\series default 
+ 
+\begin_inset Formula $V_{0}$
+\end_inset 
+
+ debe ser tenido en cuenta, pues significa que un cambio en el potencial
+ de carga 
+\begin_inset Formula $V_{0}$
+\end_inset 
+
+ del condensador puede sacar al circuito del amortiguamiento crítico.
+ Esta es una situación no prevista en el tratamiento simplificado de resistencia
+ constante.
+\layout Standard
+
+Aunque la duración del pulso de radiación es algo mayor que la del pulso
+ de corriente, para tener un óptimo aprovechamiento del pulso de bombeo
+ conviene ajustar la duración 
+\begin_inset Formula $T$
+\end_inset 
+
+ del pulso de corriente en la lámpara al tiempo de vida 
+\begin_inset Formula $\tau$
+\end_inset 
+
+ de la inversión de población:
+\begin_inset Formula \[
+3t_{p}=T\lesssim\tau=A^{-1}\]
+
+\end_inset 
+
+El uso de un tiempo más corto puede dar lugar a un exceso de potencia de
+ bombeo, lo que puede provocar la saturación de la transición en el medio
+ amplificador: el exceso de potencia de bombeo se pierde.
+ Si por el contrario el tiempo es más largo, el bombeo ha de competir con
+ la desexcitación espontánea, y el rendimiento también baja.
+\layout Standard
+
+Con las nociones precedentes, estamos en condiciones de diseñar un circuito
+ de excitación para una lámpara de destello a partir de los datos de la
+ lámpara y las características del medio láser (tiempo de vida de la inversión
+ de población, energía necesaria para superar el umbral).
+ 
+\layout Section
+
+Bombeo en uniones
+\layout Standard
+
+Cuando se polariza de modo directo un diodo semiconductor los electrones
+ pasan a través de la barrera en los niveles de la banda de conducción.
+ Dado que en la parte 
+\begin_inset Formula $P$
+\end_inset 
+
+ de la unión la banda de valencia tiene niveles desocupados, los electrones
+ que ocupan la banda de conducción en esta parte constituyen una población
+ invertida respecto de los niveles desocupados de la banda de valencia (huecos).
+ Lo mismo ocurre con los huecos que pasan de la parte 
+\begin_inset Formula $P$
+\end_inset 
+
+ a la 
+\begin_inset Formula $N$
+\end_inset 
+
+.
+\begin_inset Float figure
+wide false
+collapsed true
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/union-pn-src.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:union-pn}
+
+\end_inset 
+
+Representación esquemática de una unión PN polarizada directamente.
+\end_inset 
+
+
+\layout Standard
+
+En la zona de la unión tenemos inversión de población entre los niveles
+ de las dos bandas, y es lo que se aprovecha para la emisión láser (figura
+ ).
+ El tiempo total que los electrones permanecen en el lado 
+\begin_inset Formula $P$
+\end_inset 
+
+ produciendo inversión de población (tiempo de recombinación) lo designamos
+ por 
+\begin_inset Formula $\tau$
+\end_inset 
+
+.
+ La recombinación es en parte radiativa y en parte no radiativa.
+ 
+\begin_inset Formula $I/e$
+\end_inset 
+
+ es el número de portadores que llegan a la unión por unidad de tiempo,
+ la densidad de portadores en el volumen 
+\begin_inset Formula $V$
+\end_inset 
+
+ de difusión en la unión (distancia de difusión por sección de la unión)
+ será la inversión de población, es decir:
+\begin_inset Formula \[
+n_{i}\simeq\frac{I\tau}{eV}.\]
+
+\end_inset 
+
+ Si 
+\begin_inset Formula $\sigma$
+\end_inset 
+
+ es la sección eficaz óptica en la banda de emisión del semiconductor y
+ se pretende alcanzar la emisión umbral
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Citar la fórmula.}
+\end_inset 
+
+
+\begin_inset Formula \[
+n_{iu}=-\frac{1}{\sigma L}\ln RT_{i}\]
+
+\end_inset 
+
+la corriente umbral que será necesario aplicar para ello valdrá, de acuerdo
+ con nuestros cálculos,
+\begin_inset Formula \[
+I_{u}=-\frac{eV}{L}\frac{1}{\sigma\tau}\ln RT_{i}\]
+
+\end_inset 
+
+La sección eficaz de la transición óptica de emisión se puede estimar si
+ se conoce la anchura de la emisión espontánea 
+\begin_inset Formula $\Delta\nu$
+\end_inset 
+
+ (la emisión espontánea sale por los lados exteriores y puede estudiarse):
+\begin_inset Formula \[
+\sigma\left(\nu_{0},\nu_{0}\right)=\mu\frac{\lambda^{2}}{8\pi}\, g\left(\nu_{0},\nu_{0}\right)\simeq\frac{1}{8\pi}\frac{\lambda^{2}}{\Delta\nu}\frac{\mu}{\tau_{r}}\]
+
+\end_inset 
+
+donde 
+\begin_inset Formula $\tau_{r}$
+\end_inset 
+
+ es el tiempo de recombinación 
+\emph on 
+radiativo
+\emph default 
+.
+ Así, podemos reexpresar la intensidad umbral del siguiente modo
+\begin_inset Formula \[
+I_{u}=-8\pi e\frac{V}{L}\frac{\Delta\nu}{\mu\lambda^{2}}\frac{\tau_{r}}{\tau}\ln RT_{i}\]
+
+\end_inset 
+
+donde 
+\begin_inset Formula $S=V/L$
+\end_inset 
+
+ es la sección recta del canal láser.
+ Como se ve, el umbral es tanto menor cuanto menor sea la sección 
+\begin_inset Formula $S$
+\end_inset 
+
+ del láser y el cociente 
+\begin_inset Formula $\tau_{r}/\tau$
+\end_inset 
+
+.
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Aquí iba un razonamiento sobre el efecto de las impurezas sobre el tiempo radiativo. También un gráfico de un dispositivo real, con algunas cotas: "un láser de estos cabe holgadamente en la cabeza de un alfiler".}
+\end_inset 
+
+
+\layout Standard
+
+Los espejos del resonador se suelen construir en el propio monocristal que
+ contiene el canal láser, por exfoliación.
+ Entonces, como el índice de refracción es del orden de 
+\begin_inset Formula $\mu=3.6$
+\end_inset 
+
+ se consiguen reflectividades, según la fórmula de Fresnel,
+\begin_inset Formula \[
+R=\left(\frac{\mu-1}{\mu+1}\right)^{2}\simeq0.32,\]
+
+\end_inset 
+
+en virtud de la gran ganancia del láser, esta cifra es suficiente y no se
+ requiere la introducción de espejos.
+ Basta con el corte o exfoliación.
+ Si se toman los valores 
+\begin_inset Formula $T_{i}\simeq1$
+\end_inset 
+
+, con las cifras del GaAs (hay que tener en cuenta que en función del compuesto
+ semiconductor, se pueden conseguir muy variadas longitudes de onda de salida),
+ 
+\begin_inset Formula $\Delta\nu=1.4\times10^{13}\,\mathrm{Hz},\lambda=0.8\,\mu\mathrm{m},\tau=5\times10^{-10}\,\mathrm{s},\tau_{r}=10^{-8}\,\mathrm{s}$
+\end_inset 
+
+ y 
+\begin_inset Formula $S=5\,\mu\mathrm{m}\times50\,\mu\mathrm{m}$
+\end_inset 
+
+ (ver figura ) se tiene que la intensidad de corriente umbral es del orden
+ de 
+\begin_inset Formula $I_{u}\simeq150\,\mathrm{mA}$
+\end_inset 
+
+.
+ La longitud del canal láser puede ser del orden de 
+\begin_inset Formula $250\,\mu\mathrm{m}$
+\end_inset 
+
+, y como el potencial de transición es del orden de 
+\begin_inset Formula $1\,\mathrm{V}$
+\end_inset 
+
+ la potencia de bombeo umbral sería 
+\begin_inset Formula $P_{u}=VI_{u}\simeq150\,\mathrm{mW}$
+\end_inset 
+
+.
+ Con esto se pueden obtener 
+\begin_inset Formula $50\,\mathrm{mW}$
+\end_inset 
+
+ de luz: la eficiencia puede llegar a ser enorme (
+\begin_inset Formula $0.1-0.3$
+\end_inset 
+
+).
+ Como punto de comparación, un láser 
+\begin_inset Formula $\mathrm{HeNe}$
+\end_inset 
+
+ produce 
+\begin_inset Formula $5\,\mathrm{mW}$
+\end_inset 
+
+, con una eficiencia de 
+\begin_inset Formula $10^{-4}$
+\end_inset 
+
+.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/geom-semicond-src.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:geom-semicond}
+
+\end_inset 
+
+Geometría para un laser de semiconductor.
+\end_inset 
+
+
+\layout Standard
+
+Los láseres de semiconductores existen en una enorme variedad de formatos,
+ y son ubicuos en la tecnología de hoy en día (lectura y grabación de discos
+ ópticos, por ejemplo).
+ En virtud de su gran eficiencia y pequeño tamaño, van sustituyendo a los
+ otros láseres en las aplicaciones (por ejemplo, los escáneres de código
+ de barras del supermercado).
+ No obstante, justamente su pequeño tamaño deriva en la aparición de un
+ haz de sección elíptica que diverge (30º en la dirección horizontal y 10º
+ en la vertical) por los efectos difractivos.
+ Afortunadamente, con la óptica anamórfica cilíndrica adecuada (ej.
+ punteros láser) se puede corregir el haz a sección circular con buena colimació
+n.
+ 
+\layout Standard
+
+No se ha podido hasta ahora construir un láser de semiconductor fiable que
+ funcione en el verde, porque el material con el gap adecuado (el seleniuro
+ de zinc) es muy difícil de tratar.
+ De hecho, se tiene que recurrir a temperaturas criogénicas (y modo pulsado)
+ para reducir las pérdidas no radiativas y aumentar 
+\begin_inset Formula $\tau$
+\end_inset 
+
+ de recombinación, manteniendo el umbral controlado.
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Recordar comentar canal no radiativo vibraciones de red - fonones.}
+\end_inset 
+
+
+\layout Standard
+
+En la tecnología láser, se utiliza con frecuencia el láser de semiconductor
+ para bombear otros materiales sólidos, que suelen emitir en el IR próximo
+ y se duplican o triplican con un un cristal no lineal.
+ Son los láseres DPSS (Diode Pumped Solid State Lasers
+\begin_inset LatexCommand \index{DPSS}
+
+\end_inset 
+
+).
+\layout Standard
+
+Los láseres de semiconductor se pueden apilar en varias capas formando estructur
+as bidimensionales, lo que permite construir matrices con potencias del
+ orden de 
+\begin_inset Formula $\mathrm{W}$
+\end_inset 
+
+.
+ El límite está fijado por los métodos de refrigeración.
+ Una posibilidad alternativa es usar sustratos de diamante (conductividad
+ térmica del orden de 30 veces superior a la del cobre), y eso permite disipar
+ cantidades ingentes de calor.
+ Precisamente el diamante (que puede hacerse crecer con cierta calidad,
+ todavía no suficiente, en laboratorio) tiene un gap muy ancho, lo que permite
+ pensar en láseres que funcionen directamente en UV lejano, con una buena
+ disipación térmica.
+ Esos láseres permitirían procesos fotolitográficos más precisos para la
+ construcción de circuitos impresos, que podrían ser, por lo tanto, más
+ pequeños.
+\layout Section
+
+Bombeo en descargas
+\layout Standard
+
+Una descarga en un gas es un fenómeno de transporte de partículas en un
+ campo eléctrico.
+ Para estudiar con propiedad los fenómenos de transporte se utiliza la ecuación
+ de Boltzmann
+\begin_inset LatexCommand \index{Boltzmann!ecuación de}
+
+\end_inset 
+
+.
+ En ella el principal interés está en los términos de colisión, que dan
+ cuenta de la entrada y salida de partículas en la trayectoria que en el
+ espacio de fases realiza el colectivo estadístico.
+ Hay de hecho en las descargas de gases dos tipos de procesos de colisión
+ que juegan un papel importante en el bombeo de poblaciones y en el mantenimient
+o de la descarga.
+ 
+\layout Itemize
+
+La ionización que es necesaria para la producción y el mantenimiento de
+ la descarga.
+\layout Itemize
+
+La excitación colisional de los niveles que participan en la emisión láser.
+\layout Standard
+
+La optimización ambas clases de procesos en una descarga suele ser conflictiva,
+ pues en general los electrones necesitan una elevada energía para ionizar
+ y mantener la descarga y sin embargo la excitación de los átomos o moléculas
+ es en general mucho más eficiente a bajas energías.
+\layout Standard
+
+La energía media de los electrones es la que adquieren del campo eléctrico
+ 
+\begin_inset Formula $E$
+\end_inset 
+
+ durante el tiempo de vuelo libre entre las colisiones con los átomos del
+ gas.
+ Por ello esta energía media y otras magnitudes relacionadas con ella son
+ funciones del cociente 
+\begin_inset Formula $E/N$
+\end_inset 
+
+ entre el campo eléctrico y la densidad 
+\begin_inset Formula $N$
+\end_inset 
+
+ de átomos o moléculas en el gas.
+ Como a temperatura constante 
+\begin_inset Formula $N$
+\end_inset 
+
+ es proporcional a la presión 
+\begin_inset Formula $p$
+\end_inset 
+
+, también se puede expresar la dependencia en función de 
+\begin_inset Formula $E/p$
+\end_inset 
+
+.
+\layout Subsection
+
+Procesos colisionales
+\layout Standard
+
+Supongamos que tenemos un colectivo de partículas 
+\begin_inset Formula $i$
+\end_inset 
+
+ cuyas energías cinéticas 
+\begin_inset Formula $E_{c}$
+\end_inset 
+
+ están distribuídas.
+ Llamamos 
+\begin_inset Formula $f_{i}\left(E_{c}\right)$
+\end_inset 
+
+ a la distribución sobre las energías cinéticas de las 
+\begin_inset Formula $N_{i}$
+\end_inset 
+
+ partículas del colectivo por unidad de volumen, 
+\begin_inset Formula \[
+N_{i}=\int_{0}^{\infty}f_{i}\left(E_{c}\right)\,\mathrm{d}E_{c}.\]
+
+\end_inset 
+
+
+\layout Standard
+
+Supongamos ahora que 
+\begin_inset Formula $E_{c}$
+\end_inset 
+
+ es la energía cinética relativa de las partículas del colectivo 
+\begin_inset Formula $i$
+\end_inset 
+
+ respecto a los de otro colectivo, 
+\begin_inset Formula $j$
+\end_inset 
+
+ con 
+\begin_inset Formula $N_{j}$
+\end_inset 
+
+ partículas por unidad de volumen.
+ 
+\layout Standard
+
+Consideremos las partículas del colectivo 
+\begin_inset Formula $i$
+\end_inset 
+
+ cuyas energía están comprendidas entre 
+\begin_inset Formula $E_{c}$
+\end_inset 
+
+ y 
+\begin_inset Formula $E_{c}+\mathrm{d}E_{c}$
+\end_inset 
+
+, o sea 
+\begin_inset Formula $\mathrm{d}N_{i}=f_{i}\left(E_{c}\right)$
+\end_inset 
+
+.
+ La densidad corriente de estas partículas es 
+\begin_inset Formula $v_{i}\left(E_{c}\right)\,\mathrm{d}N_{i}$
+\end_inset 
+
+, siendo 
+\begin_inset Formula $v_{i}$
+\end_inset 
+
+ su velocidad.
+ Cuando esta corriente se desplaza una distancia 
+\begin_inset Formula $\mathrm{d}r$
+\end_inset 
+
+ a través de la unidad de área encuentra a las partículas del colectivo
+ 
+\begin_inset Formula $j$
+\end_inset 
+
+ contenidas en el volumen 
+\begin_inset Formula $\mathrm{d}r\times1$
+\end_inset 
+
+.
+ Si la sección eficaz de colisión para partículas de ambos colectivos es
+ 
+\begin_inset Formula $\sigma_{ij}\left(E_{c}\right)$
+\end_inset 
+
+ el número de partículas que colisionan en el recorrido 
+\begin_inset Formula $\mathrm{d}r$
+\end_inset 
+
+ será el producto de la corriente por el área total que representan todas
+ las secciones eficaces de las partículas contenidas en el volumen 
+\begin_inset Formula $\mathrm{d}r\times1$
+\end_inset 
+
+, es decir:
+\begin_inset Formula \[
+\left[v_{i}\left(E_{c}\right)\,\mathrm{d}N_{i}\right]\times\left[N_{j}\,\mathrm{d}r\times1\times\sigma_{ij}\left(E_{c}\right)\right]\]
+
+\end_inset 
+
+éste es entonces el número de partículas del colectivo 
+\begin_inset Formula $i$
+\end_inset 
+
+ que son sacadas de su trayectoria en el espacio de fases en el recorrido
+ 
+\begin_inset Formula $\mathrm{d}r$
+\end_inset 
+
+ por unidad de tiempo, o sea, es el cambio en la intensidad del colectivo
+ 
+\begin_inset Formula $i$
+\end_inset 
+
+:
+\begin_inset Formula \[
+\mathrm{d}\left(v_{i}\,\mathrm{d}N_{i}\right)=\left[\mathrm{d}N_{i}\left(E_{c},r+\mathrm{d}r\right)-\mathrm{d}N_{i}\left(E_{c},r\right)\right]\, v_{i}=N_{j}\sigma_{ij}v_{i}\,\mathrm{d}N_{i}\,\mathrm{d}r\]
+
+\end_inset 
+
+ como el recorrido se realiza a la velocidad 
+\begin_inset Formula $v_{i}$
+\end_inset 
+
+ en un tiempo 
+\begin_inset Formula $\mathrm{d}t$
+\end_inset 
+
+:
+\begin_inset Formula \[
+\mathrm{d}\left(\dt{N_{i}}\right)=N_{j}\sigma_{ij}\left(E_{c}\right)\, v_{i}\left(E_{c}\right)\, f_{i}\left(E_{c}\right)\mathrm{d}E_{c}\]
+
+\end_inset 
+
+entonces el número de colisiones por unidad de volumen y de tiempo en todas
+ las energías cinéticas será
+\begin_inset Formula \[
+\dt{N_{i}}=N_{j}\int\sigma_{ij}\left(E_{c}\right)v_{i}\left(E_{c}\right)f_{i}\left(E_{c}\right)\,\mathrm{d}E_{c}\]
+
+\end_inset 
+
+ si no se conoce la dependencia 
+\begin_inset Formula $\sigma\left(E_{c}\right)$
+\end_inset 
+
+se suele tomar un promedio sobre las velocidades de 
+\begin_inset Formula $\sigma_{ij}$
+\end_inset 
+
+ y se utiliza la velocidad media 
+\begin_inset Formula $\bar{v}_{i}$
+\end_inset 
+
+ para escribir la anterior ecuación de modo aproximado,
+\begin_inset Formula \[
+\dt{N_{i}}\simeq N_{j}\bar{\sigma}_{ij}\bar{v}_{i}\int f_{i}\left(E_{c}\right)\,\mathrm{d}E_{c}=N_{j}N_{i}\bar{\sigma}_{ij}\bar{v}_{i}\]
+
+\end_inset 
+
+esta ecuación es útil en los dos tipos de procesos que hemos apuntado anteriorme
+nte.
+ En el caso de los procesos de ionización de las moléculas por impactos
+ electrónicos, tendremos que el número de electrones producidos por unidad
+ de volumen y tiempo será
+\begin_inset Formula \[
+\left(\dt{n_{e}}\right)_{i}=Nn_{e}\overline{\sigma}_{ei}\bar{v}_{i}\]
+
+\end_inset 
+
+donde 
+\begin_inset Formula $n_{e}$
+\end_inset 
+
+ es la concentración o densidad electrónica, 
+\begin_inset Formula $\bar{v}_{e}$
+\end_inset 
+
+ la velocidad electrónica media y 
+\begin_inset Formula $\bar{\sigma}_{ei}$
+\end_inset 
+
+ la sección eficaz de ionización por impacto de electrones.
+ El producto 
+\begin_inset Formula $\bar{\alpha}_{i}\equiv N\bar{\sigma}_{ei}$
+\end_inset 
+
+ se conoce como 
+\emph on 
+coeficiente de ionización
+\emph default 
+ o 
+\emph on 
+coeficiente de Townsend
+\emph default 
+
+\begin_inset LatexCommand \index{coeficiente!de ionización (Townsend)}
+
+\end_inset 
+
+
+\begin_inset LatexCommand \index{Townsend, coeficiente}
+
+\end_inset 
+
+.
+ Empleándolo la ecuación se conoce como 
+\emph on 
+ecuación de Townsend
+\emph default 
+:
+\begin_inset Formula \[
+\left(\dt{n_{e}}\right)_{i}=\bar{\alpha}_{i}v_{e}n_{e}.\]
+
+\end_inset 
+
+
+\layout Standard
+
+Para los gases más conocidos el coeficiente de ionización 
+\begin_inset Formula $\bar{\alpha}_{i}$
+\end_inset 
+
+ ha sido calculado o medido experimentalmente como función de 
+\begin_inset Formula $E/p$
+\end_inset 
+
+.
+ De hecho, en numerosos casos se puede emplear la expresión
+\begin_inset Formula \[
+\frac{\bar{\alpha}_{i}}{p}=k_{\alpha}\left(\frac{E}{p}\right)^{n_{\alpha}}\]
+
+\end_inset 
+
+en particular en el nitrógeno esta expresión es válida para valores de 
+\begin_inset Formula $E/p$
+\end_inset 
+
+ 
+\begin_inset Formula \[
+\frac{E}{p}<100\,\frac{\mathrm{V}}{\mathrm{cm}\times\mathrm{mm\, Hg}}\]
+
+\end_inset 
+
+con 
+\begin_inset Formula $k_{\alpha}\simeq2.5\times10^{-13}$
+\end_inset 
+
+ en las mismas unidades de la fórmula y 
+\begin_inset Formula $n_{\alpha}\simeq6.5$
+\end_inset 
+
+.
+\layout Standard
+
+De manera análoga en los procesos de excitación por impacto de electrones
+ el número de átomos o moléculas excitados por unidad de tiempo sería
+\begin_inset Formula \[
+\dt{N^{*}}=N_{j}n_{e}\overline{\sigma}_{e}\overline{v}_{e}\]
+
+\end_inset 
+
+y la excitación colisional de una especie 
+\begin_inset Formula $j$
+\end_inset 
+
+ por otra 
+\begin_inset Formula $i$
+\end_inset 
+
+ sería obtenida a un ritmo
+\begin_inset Formula \[
+\dt{N_{j}^{*}}=N_{j}N_{i}\overline{\sigma}_{eij}\overline{v}_{i}\]
+
+\end_inset 
+
+las velocidades electrónicas han sido calculadas y medidas en diferentes
+ gases y frecuentemente obedecen a fórmulas empíricas del tipo
+\begin_inset Formula \[
+\bar{v}_{e}=v_{0}+k_{v}\left(\frac{E}{p}\right)^{n_{v}}\]
+
+\end_inset 
+
+que en el caso del nitrógeno se cumple con los valores 
+\begin_inset Formula $k_{v}\simeq6.67,n_{v}\simeq1,v_{0}=4\times10^{7}\,\mathrm{cm\, s}^{-1}$
+\end_inset 
+
+ usando 
+\begin_inset Formula $E$
+\end_inset 
+
+ en 
+\begin_inset Formula $\mathrm{V}/\mathrm{cm}$
+\end_inset 
+
+ y 
+\begin_inset Formula $p$
+\end_inset 
+
+ en 
+\begin_inset Formula $\mathrm{mm\, Hg}$
+\end_inset 
+
+ para el mismo rango de 
+\begin_inset Formula $E/p$
+\end_inset 
+
+ en que se empleaba la otra ecuación.
+\layout Standard
+
+Por otra parte, en el plasma los electornes además de reproducirse por ionizacio
+nes pueden ser extraídos de la trayectoria por dos tipos de captura.
+ Por un lado los electrones pueden ser recombinados por los iones positivos
+ que en la descarga tienen la misma densidad que los electrones (ya que
+ habitualmente el plasma es neutro).
+ Entonces el ritmo de recombinación sería
+\begin_inset Formula \[
+\left(\dt{n_{e}}\right)_{r}=-\overline{\sigma}_{er}n_{e}^{2}\overline{v}_{e}\]
+
+\end_inset 
+
+pero también pueden ser capturados por átomos neutros, con un ritmo
+\begin_inset Formula \[
+\left(\dt{n_{e}}\right)_{n}=-Nn_{e}\overline{\sigma}_{en}\overline{v}_{e}\]
+
+\end_inset 
+
+por lo tanto en el plasma de la descarga la producción total de electrones
+ es
+\begin_inset Formula \[
+\dt{n_{e}}=Nn_{e}\overline{\sigma}_{ei}\overline{v}_{e}-\overline{\sigma}_{er}n_{e}^{2}\overline{v}_{e}-Nn_{e}\overline{\sigma}_{en}\overline{v}_{e}\]
+
+\end_inset 
+
+ si el plasma está en equilibrio esa producción es nula, lo que permite
+ obtener la densidad electrónica que adquiere el plasma en el campo 
+\begin_inset Formula $E$
+\end_inset 
+
+ y a la presión 
+\begin_inset Formula $p$
+\end_inset 
+
+ del gas, pues todos los coeficientes que en ella intervienen son funciones
+ de 
+\begin_inset Formula $E/p$
+\end_inset 
+
+ calculados teóricamente o determinados experimentalmente.
+ 
+\layout Standard
+
+La ecuación precedente se suele escribir en la forma
+\begin_inset Formula \[
+\dt{n_{e}}=\alpha n_{e}-\beta n_{e}-\gamma n_{e}^{2}\]
+
+\end_inset 
+
+donde 
+\begin_inset Formula $\alpha,\beta$
+\end_inset 
+
+ y 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+ son respectivamente las probabilidades de ionización, captura y recombinación.
+\layout Subsection
+
+Difusión y deriva de los iones en un campo
+\layout Standard
+
+En la descarga la energía entra por la acción del campo eléctrico aplicado
+ que actúa sobre los iones presentes.
+ 
+\layout Standard
+
+Por su menor masa, los electrones son los que más alteradas tienen sus trayector
+ias debido a la presencia del campo eléctrico.
+ Si el campo tiene valores moderados, la nube electrónica se desplaza con
+ una velocidad en la que el rozamiento a que equivalen las colisiones inelástica
+s equilibra a la fuerza del campo.
+ Esta fuerza de rozamiento es proporcional a la velocidad y por lo tanto
+ la velocidad de deriva de la nube electrónica es
+\begin_inset Formula \[
+\vec{v}_{d}=k\vec{E}\]
+
+\end_inset 
+
+esta velocidad de deriva, junto con la velocidad de agitación térmica, constituy
+en la corriente en cada punto:
+\begin_inset Formula \begin{equation}
+\vec{J}=-D\nabla n_{e}+n_{e}\vec{v}_{d}=-D\nabla n_{e}+n_{e}k\vec{E}\label{eq:dens-corriente-bomb-descarga}\end{equation}
+
+\end_inset 
+
+donde 
+\begin_inset Formula $D$
+\end_inset 
+
+ es el coeficiente de difusión y la constante de rozamiento 
+\begin_inset Formula $k$
+\end_inset 
+
+ (conocida como 
+\emph on 
+movilidad
+\emph default 
+) puede relacionarse con 
+\begin_inset Formula $D$
+\end_inset 
+
+.
+ Para ello basta suponer al sistema en equilibrio térmico bajo la acción
+ del campo 
+\begin_inset Formula $\vec{E}$
+\end_inset 
+
+ pero con corriente nula.
+ Es un problema análogo al de la atmósfera sobre la superficie terrestre.
+ Se puede resolver con la distribución de Maxwell-Boltzmann como la mencionada
+ ecuación barométrica, y se obtiene:
+\begin_inset Formula \[
+\nabla n_{e}=\frac{n_{e}e}{k_{B}T}\,\vec{E}\]
+
+\end_inset 
+
+con este resultado en la ecuación 
+\begin_inset LatexCommand \ref{eq:dens-corriente-bomb-descarga}
+
+\end_inset 
+
+
+\begin_inset Formula \[
+0=-D\frac{n_{e}e}{k_{B}T}\vec{E}+n_{e}k\vec{E}\]
+
+\end_inset 
+
+se obtiene la 
+\emph on 
+ecuación de Einstein
+\emph default 
+
+\begin_inset LatexCommand \index{Einstein!ecuación de}
+
+\end_inset 
+
+
+\begin_inset LatexCommand \index{ecuación!de Einstein}
+
+\end_inset 
+
+
+\begin_inset Formula \[
+k=\frac{eD}{k_{B}T},\]
+
+\end_inset 
+
+válida para 
+\begin_inset Formula $E/p\leq2\,\mathrm{V}/\mathrm{cm}\,\mathrm{torr}$
+\end_inset 
+
+.
+ La velocidad de deriva en un gas ideal (
+\begin_inset Formula $pV=Nk_{B}T$
+\end_inset 
+
+) es
+\begin_inset Formula \[
+v_{d}=\frac{eD}{k_{B}T}E=eDNE/p\]
+
+\end_inset 
+
+(recordemos que 
+\begin_inset Formula $N$
+\end_inset 
+
+ es el número de moléculas por unidad de volumen).
+ Cuando los campos son más elevados la relación deja de ser válida; se pueden
+ obtener con diferentes criterios otras relaciones teóricas que, en general,
+ observan la forma
+\begin_inset Formula \[
+v_{d}=k_{d}\left(\frac{E}{p}\right)^{n_{d}}\]
+
+\end_inset 
+
+En el caso del nitrógeno se pueden usar hasta 
+\begin_inset Formula $100\,\mathrm{V}/\mathrm{m}$
+\end_inset 
+
+ los valores 
+\begin_inset Formula $k_{d}=7.94\times10^{6}$
+\end_inset 
+
+ y 
+\begin_inset Formula $n_{d}=0.83$
+\end_inset 
+
+.
+ 
+\layout Standard
+
+La forma de la ecuación para la velocidad de arrastre en campos más intensos
+ se puede obtener mediante un razonamiento basado en considerar el plasma
+ de electrones y átomos o moléculas del gas como un gas de esferas duras
+ (ver apéndice 
+\begin_inset LatexCommand \ref{cha:gas-esferas-duras}
+
+\end_inset 
+
+).
+ En efecto, con la notación del apéndice, podemos considerar las esferas
+ 
+\begin_inset Formula $1$
+\end_inset 
+
+ como los electrones, 
+\begin_inset Formula $\overline{v_{1}}=\overline{v}$
+\end_inset 
+
+ y a los átomos o moléculas como las esferas 
+\begin_inset Formula $2$
+\end_inset 
+
+, es decir, 
+\begin_inset Formula $\overline{v_{2}}=\overline{V},N_{2}=N$
+\end_inset 
+
+.
+ En estos plasmas débilmente ionizados y en una primera aproximación podemos
+ no tener en cuenta las colisiones con los iones positivos.
+ Tampoco, en consecuencia, consideraremos su movimiento.
+\layout Standard
+
+Bajo la acción del campo eléctrico aplicado al plasma, el gas de electrones
+ sufre un empuje o arrastre.
+ Esto se traduce en un movimiento de conjunto del gas con una velocidad
+ de deriva 
+\begin_inset Formula $v_{d}$
+\end_inset 
+
+ respecto a los átomos o moléculas.
+ Una primera estimación de la velocidad de deriva se puede obtener con el
+ siguiente razonamiento: bajo la acción del campo 
+\begin_inset Formula $E$
+\end_inset 
+
+ el electrón experimenta una aceleración 
+\begin_inset Formula $eE/m$
+\end_inset 
+
+ que en el tiempo de vuelo 
+\begin_inset Formula $\tau$
+\end_inset 
+
+ entre colisiones con las moléculas produce una velocidad
+\begin_inset Formula \[
+v_{d}\simeq\left(\frac{eE}{m}\right)\tau\]
+
+\end_inset 
+
+Una expresión más refinada se puede obtener usando las leyes de conservación
+ del momento y la energía en los choques y promediando sobre el conjunto.
+ También hay que tener en cuenta la naturaleza de la interacción, por lo
+ que en general se obtienen expresiones del tipo
+\begin_inset Formula \[
+v_{d}=\xi\left(1+\frac{m}{M}\right)\left(\frac{eE}{m}\right)\tau=\xi\left(\frac{1}{m}+\frac{1}{M}\right)eE\tau,\qquad\xi\simeq1\]
+
+\end_inset 
+
+donde 
+\begin_inset Formula $M$
+\end_inset 
+
+ sería la masa de las moléculas y 
+\begin_inset Formula $\tau$
+\end_inset 
+
+ el tiempo 
+\begin_inset Formula $\tau_{12}$
+\end_inset 
+
+ calculado en el apéndice (ec.
+ 
+\begin_inset LatexCommand \ref{eq:tiempo-vuelolibre-12}
+
+\end_inset 
+
+).
+ No obstante, al calcular la velocidad 
+\begin_inset Formula $\overline{v_{r}}$
+\end_inset 
+
+ debemos considerar al menos dos casos extremos por las diferentes aproximacione
+s que requieren.
+\layout Subsubsection
+
+Campos bajos
+\layout Standard
+
+Si el campo eléctrico 
+\begin_inset Formula $E$
+\end_inset 
+
+ aplicado es lo suficientemente pequeño para que no se haya alterado apreciablem
+ente el equilibrio térmico
+\begin_inset Formula \[
+\frac{1}{2}m\overline{v}^{2}=\frac{1}{2}M\overline{V}^{2}=\frac{3}{2}k_{B}T\]
+
+\end_inset 
+
+ entonces (
+\begin_inset Formula $\sigma_{0}=\overline{\sigma_{e}}$
+\end_inset 
+
+) 
+\begin_inset Formula \begin{eqnarray*}
+\overline{v_{r}}^{2} & = & 3k_{B}T\left(\frac{1}{m}+\frac{1}{M}\right)\\
+\tau^{-1} & = & \overline{\sigma_{e}}N\left[3k_{B}T\left(\frac{1}{m}+\frac{1}{M}\right)\right]^{1/2}\\
+\overline{v_{d}} & = & \frac{\xi}{\sqrt{3}}\left(\frac{1}{m}+\frac{1}{M}\right)^{1/2}\frac{e}{\left(k_{B}T\right)^{1/2}\overline{\sigma_{e}}}\frac{E}{N}\end{eqnarray*}
+
+\end_inset 
+
+para campos suficientemente bajos se puede calcular
+\begin_inset Formula \[
+\xi=\frac{3}{16}\sqrt{6\pi}=0.814\,.\]
+
+\end_inset 
+
+ 
+\layout Subsubsection
+
+Campos altos
+\layout Standard
+
+Si los campos son muy elevados, se puede despreciar la energía térmica frente
+ a la adquirida en el tiempo de vuelo libre de los iones.
+ No obstante no sería correcto tomar directamente que la velocidad 
+\begin_inset Formula $\overline{v}$
+\end_inset 
+
+ de los electrones es 
+\begin_inset Formula $\overline{v}=v_{d}$
+\end_inset 
+
+.
+ La razón de esto es que las colisiones no sólo absorben energía del electrón
+ sino que una parte de la energía que lleva la conserva pero en dirección
+ aleatoria.
+ Así, la energía de los electrones sigue repartida en una parte de deriva
+ con la velocidad 
+\begin_inset Formula $v_{d}$
+\end_inset 
+
+ y una parte aleatoria.
+ Utilizando las leyes de conservación del momento y la energía y promediando
+ sobre las clisiones se tiene
+\begin_inset Formula \[
+m\overline{v}^{2}=\left(m+M\right)v_{d}^{2}\:\rightarrow\:\overline{v}^{2}=\left(1+\frac{M}{m}\right)v_{d}^{2}\stackrel{{m\ll M}}{\simeq}\frac{M}{m}v_{d}^{2}\]
+
+\end_inset 
+
+por lo tanto, 
+\begin_inset Formula \[
+\overline{v_{r}}=\left[\left(1+\frac{M}{m}\right)v_{d}^{2}+\overline{V}^{2}\right]^{1/2}\simeq\left(1+\frac{M}{m}\right)^{1/2}v_{d}\]
+
+\end_inset 
+
+quedando
+\begin_inset Formula \[
+v_{d}=\xi^{1/2}\left(\frac{1}{m}+\frac{1}{M}\right)^{1/4}\left(\frac{e}{M^{1/2}\overline{\sigma_{e}}}\right)^{1/2}\left(\frac{E}{N}\right)^{1/2}\]
+
+\end_inset 
+
+aquí 
+\begin_inset Formula \[
+\xi=\frac{2\pi}{\sqrt[3]{3}\left[\Gamma\left(\frac{3}{4}\right)\right]^{2}}=0.805\,.\]
+
+\end_inset 
+
+
+\layout Subsection
+
+Campos intermedios
+\layout Standard
+
+Suponiendo aditivas las energías térmicas y de campo tendríamos
+\begin_inset Formula \begin{equation}
+\overline{v_{r}^{2}}=\overline{v}^{2}+\overline{V}^{2}=3k_{B}T\left(\frac{1}{m}+\frac{1}{M}\right)+v_{d}^{2}\left(1+\frac{M}{m}\right)\label{eq:vel-rel}\end{equation}
+
+\end_inset 
+
+con lo cual ahora hay que resolver la ecuación bicuadrada
+\begin_inset Formula \[
+\left(v_{d}^{2}\right)^{2}+\frac{3k_{B}T}{M}\left(v_{d}^{2}\right)-\frac{\xi^{2}}{M}\left(\frac{1}{m}+\frac{1}{M}\right)\left(\frac{eE}{N\overline{\sigma_{e}}}\right)^{2}=0.\]
+
+\end_inset 
+
+ La solución de esta ecuación permite encontrar la velocidad de deriva con
+ la que obtener 
+\begin_inset Formula $\overline{v}_{r}$
+\end_inset 
+
+ mediante la ecuación 
+\begin_inset LatexCommand \ref{eq:vel-rel}
+
+\end_inset 
+
+.
+ La velocidad media 
+\begin_inset Formula $\overline{v}_{r}$
+\end_inset 
+
+ es la que se encesita en el cálculo de los ritmos de ionización y excitación
+ en la descarga junto a las secciones eficaces.
+ 
+\layout Standard
+
+La solución de la ecuación es
+\begin_inset Formula \[
+v_{d}^{2}=-\frac{3}{2}\frac{k_{B}T}{M}+\sqrt{\left(\frac{3k_{B}T}{2M}\right)^{2}+\frac{\xi^{2}}{M^{2}}\left(1+\frac{M}{m}\right)\left(\frac{eE}{N\overline{\sigma}_{e}}\right)^{2}}\]
+
+\end_inset 
+
+y representa una fórmula razonable de interpolación para todos los campos
+ con 
+\begin_inset Formula $\xi=0.81$
+\end_inset 
+
+:
+\begin_inset Formula \[
+v_{r}^{2}=\frac{3}{2}\frac{k_{B}T}{m}\left(1+\frac{M}{m}\right)\left[1+\sqrt{1+\xi^{2}\left(1+\frac{M}{m}\right)\left(\frac{\frac{eE}{N\overline{\sigma}_{e}}}{\frac{3}{2}k_{B}T}\right)^{2}}\right].\]
+
+\end_inset 
+
+
+\layout Section
+
+Bombeo electrónico
+\layout Standard
+
+El bombeo electrónico se produce estableciendo una descarga eléctrica a
+ través de un gas.
+ El gas se ioniza en presencia del campo eléctrico establecido entre los
+ electrodos.
+ Éste acelera los iones del gas y los impactos de aquellos con las moléculas
+ neutras producen iones secundarios que se vienen a unir a los preexistentes,
+ contribuyendo de esta forma a aumentar el grado de ionización del gas.
+ Al mismo tiempo los iones de signos opuestos tienden a recombinarse y convertir
+se en moléculas neutras.
+ 
+\layout Standard
+
+Al principio la población de iones existentes es muy baja, y su origen es
+ diverso y más o menos casual (rayos cósmicos, ionizaciones por radiación
+ ultravioleta y espontáneas, de origen colisional, etc.).
+ Por lo tanto en la fase inicial predominan los procesos de ionización sobre
+ los de recombinación.
+ Durante el desarrollo de la descarga, sin embargo, se puede llegar a un
+ equilibrio entre unos y otros, quedando entonces una población estable
+ de iones en la descarga.
+ Si el gas posee un cierto grado de afinidad electronegativa también se
+ pueden dar procesos de captura de electrones por moléculas neutras, creándose
+ iones negativos pesados como los positivos.
+ Ni unos ni otros pueden adquirir gran velocidad y, por tanto, apenas contribuye
+n a la ionización del gas, que se produce fundamentalmente por impacto de
+ los electrones.
+\layout Standard
+
+De la misma forma, son los impactos de los electrones los que producen la
+ mayoría del conjunto de moléculas excitadas.
+\layout Standard
+
+Si la densidad electrónica en la descarga es 
+\begin_inset Formula $n_{e}$
+\end_inset 
+
+, la densidad de moléculas es 
+\begin_inset Formula $N$
+\end_inset 
+
+, la sección eficaz de excitación por impacto electrónico es 
+\begin_inset Formula $\bar{\sigma_{e}}$
+\end_inset 
+
+ y la velocidad media de los electrones es 
+\begin_inset Formula $\overline{v}$
+\end_inset 
+
+, el número de excitaciones producidas por impacto de electrones en la unidad
+ de tiempo es
+\begin_inset Formula \[
+P=\left(\dt{n_{e}}\right)_{c}=\overline{\sigma_{e}}n_{e}N\overline{v}.\]
+
+\end_inset 
+
+ Si las enegías cinéticas de los electrones bajo la acción del campo eléctrico
+ son mucho mayores que las de equilibrio térmico se tiene que, aproximadamente,
+ 
+\begin_inset Formula \[
+\overline{v}\simeq\sqrt{\frac{M}{m}}v_{d}\]
+
+\end_inset 
+
+donde 
+\begin_inset Formula $M$
+\end_inset 
+
+ es la masa de las moléculas y 
+\begin_inset Formula $v_{d}$
+\end_inset 
+
+ la velocidad de deriva del gas electrónico bajo la acción del campo eléctrico.
+ 
+\layout Standard
+
+La densidad de corriente en la descarga es 
+\begin_inset Formula $e\, n_{e}\overline{v_{d}}$
+\end_inset 
+
+ y si, como es frecuente en un láser ésta se encuentra confinada en un tubo
+ de sección 
+\begin_inset Formula $S$
+\end_inset 
+
+ la corriente a su través será 
+\begin_inset Formula $i_{e}=e\, n_{e}\overline{v_{d}}S$
+\end_inset 
+
+.
+ Con ello
+\begin_inset Formula \[
+P=\overline{\sigma_{e}}N\sqrt{\frac{M}{m}}\frac{i_{e}}{Se}\]
+
+\end_inset 
+
+entonces el bombeo a los niveles entre los que se pretende obtener inversión
+ de población será
+\begin_inset Formula \[
+P=P_{2}-\frac{g_{2}}{g_{1}}P_{1}=N\sqrt{\frac{M}{m}}\frac{i_{e}}{Se}\left(\overline{\sigma_{e2}}-\frac{g_{2}}{g_{1}}\overline{\sigma_{e1}}\right)\]
+
+\end_inset 
+
+por lo tanto, si una vez conocidas las secciones eficaces se comprueba que
+\begin_inset Formula \[
+\frac{\overline{\sigma_{e2}}}{g_{2}}>\frac{\overline{\sigma_{e1}}}{g_{1}}\]
+
+\end_inset 
+
+entonces se sabe que el bombeo podrá producir inversión de población y una
+ ganancia en pequeña señal que será:
+\begin_inset Formula \[
+\alpha_{0}=\sigma_{21}\tau P=\sigma_{21}\tau N\sqrt{\frac{M}{m}}\frac{i_{e}}{Se}\left(\overline{\sigma_{e2}}-\frac{g_{2}}{g_{1}}\overline{\sigma_{e1}}\right)\]
+
+\end_inset 
+
+expresión que permite obtener la densidad de corriente umbral en la descarga,
+ 
+\begin_inset Formula $j_{eu}=i_{eu}/S$
+\end_inset 
+
+:
+\begin_inset Formula \[
+j_{eu}=\frac{e\ln RT_{i}}{\sigma_{21}\tau N\sqrt{\frac{M}{m}}\frac{i_{e}}{Se}\left(\overline{\sigma_{e2}}-\frac{g_{2}}{g_{1}}\overline{\sigma_{e1}}\right)}.\]
+
+\end_inset 
+
+
+\layout Standard
+
+Si el bombeo electrónico no se efectúa directamente a los niveles láser
+ el problema puede ser más complicado.
+\layout Standard
+
+En el caso de un láser de avalancha la intensidad de radiación amplificada
+ era 
+\begin_inset Formula \[
+I=\frac{h\nu_{0}Pl}{2}\]
+
+\end_inset 
+
+por lo tanto, y usando la expresión obtenida para el bombeo (
+\begin_inset Formula $g_{2}\simeq g_{1}$
+\end_inset 
+
+)
+\begin_inset Formula \[
+I=\frac{h\nu_{0}}{2e}\frac{l}{S}\sqrt{\frac{M}{m}}N\left(\bar{\sigma_{e2}}-\bar{\sigma}_{e1}\right)i_{e}\]
+
+\end_inset 
+
+
+\layout Description
+
+Ejemplo En el caso del láser de nitrógeno
+\begin_inset LatexCommand \index{láser!de nitrógeno}
+
+\end_inset 
+
+ (
+\begin_inset Formula $\lambda=337\,\mathrm{nm}$
+\end_inset 
+
+) se tiene 
+\begin_inset Formula $h\nu_{0}/e=3.68\,\mathrm{eV}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\sqrt{M/m}=226$
+\end_inset 
+
+.
+ Las secciones eficaces para la excitación desde el estado fundamental a
+ los niveles láser por impacto de electronse (de energía media 
+\begin_inset Formula $\simeq36\,\mathrm{eV}$
+\end_inset 
+
+ son 
+\begin_inset Formula $\sigma_{e2}=6.2\times10^{-18}\,\mathrm{cm}^{2},\sigma_{e1}=1.8\times10^{-18}\,\mathrm{cm}^{2}$
+\end_inset 
+
+.
+ Por tanto, suponiendo 
+\begin_inset Formula $p=50\,\mathrm{mb}$
+\end_inset 
+
+ y 
+\begin_inset Formula $T=300\,\mathrm{K}$
+\end_inset 
+
+ y usando 
+\begin_inset Formula $N=p/\left(k_{B}T\right)\simeq1.2\times10^{24}\,\mathrm{m}^{-3}$
+\end_inset 
+
+ sólo queda precisar el factor geométrico 
+\begin_inset Formula $l/S$
+\end_inset 
+
+.
+ 
+\newline 
+En bombeo transverso (figura 
+\begin_inset LatexCommand \ref{fig:geom-bomb-electronico}
+
+\end_inset 
+
+), si 
+\begin_inset Formula $l$
+\end_inset 
+
+ es la longitud de los electrodos (y por tanto también la de amplificación),
+ y 
+\begin_inset Formula $h$
+\end_inset 
+
+ es del orden de su anchura (y por tanto la del plasma), 
+\begin_inset Formula $S=lh\rightarrow l/S=h^{-1}$
+\end_inset 
+
+.
+ Tomando una distancia entre electrondos de 
+\begin_inset Formula $8\,\mathrm{cm}$
+\end_inset 
+
+ y un valor 
+\begin_inset Formula $i_{e}\simeq10^{3}\,\mathrm{A}$
+\end_inset 
+
+ se tiene una intensidad de salida bastante razonable:
+\begin_inset Formula \[
+I\simeq2.7\,\mathrm{MWcm^{-2}}.\]
+
+\end_inset 
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/geom-bomb-electronico-src.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:geom-bomb-electronico}
+
+\end_inset 
+
+Goemetría transversa para el bombeo electrónico.
+\end_inset 
+
+ 
+\the_end

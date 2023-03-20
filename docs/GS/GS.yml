@@ -1,0 +1,106 @@
+---
+alquafeatures:
+    - manifiesto
+    - pub
+    - librosabiertos
+appendixes:
+    -   
+        basename: variedades-contacto
+        name: Variedades de contacto
+    -   
+        basename: darboux
+        name: Darboux
+authors:
+    - name: 'José Luis Tábara Carbajo'
+      email: 'jltabara@wanadoo.es'
+      url: 'http://alqua.org/people/jltabara'
+base_url: 'http://alqua.org/libredoc/'
+bodyunits:
+    -
+        basename: simplectica-lineal
+        name: Geometría simpléctica lineal
+    -
+        basename: variedades-simplecticas
+        name: Variedades simplécticas
+    -
+        basename: espacio-fases
+        name: Espacio de fases
+    -
+        basename: poisson-invariantes
+        name: Paréntesis de Poisson. Invariantes
+    -
+        basename: simetrias
+        name: Simetrías
+    -
+        basename: variedades-poisson
+        name: Variedades de Poisson
+    -
+        basename: mecanica-lagrangiana
+        name: Mecánica lagrangiana
+
+classification:
+    area: geometría diferencial
+    doctype: libro
+    series: matemágicas
+    udc: '535.13'
+
+coverimage: 'fig/polaridad.eps'
+dedication: [A todos los amantes de la geometría diferencial]
+description: 'Una introducción a la geometría simpléctica orientada a la aplicación a la mecánica clásica. Contiene figuras y ejercicios resueltos.'
+editors:
+    -
+        email: alvaro@alqua.org
+        name: Álvaro Tejero Cantero
+        url: 'http://alqua.org/people/alvaro'
+features:
+    - toc
+    - ind
+    - lic
+    - bib
+keywords:
+    - 'variedad simpléctica'
+    - Lie
+    - 'variedad canónica'
+    - hamilton
+    - Liouville
+    - Poisson
+    - simetrías
+    - Noether
+    - Darboux
+    - contacto
+language: es
+license:
+    backcover: 'Aprender en comunidad -  http://alqua.org'
+    frontcover: 'Un libro libre de Alqua'
+    invariant:
+        - Manifiesto de alqua
+    name: CC-by_nc_sa
+    version: '1.0'
+    restrictions:
+     - by
+     - nc
+     - sa
+note: []
+publisher:
+    email: alqua@alqua.org
+    name: alqua
+    url: 'http://alqua.org'
+releases:
+    - number: '1.0.0'
+      description: ['Primera versión pública']
+      date: '2003-11-23'
+requisites:
+    - 'Teoría de variedades'
+    - 'Ecuaciones diferenciales ordinarias'
+shorttitle: GS
+sourceformat:
+    ext: tex
+    macros:
+        - GS-macros.sty
+    name: LaTeX
+    packages:
+        - GS-packages.sty
+    ver: '2e'
+subtitle: ''
+title: Geometría simpléctica
+todo: []

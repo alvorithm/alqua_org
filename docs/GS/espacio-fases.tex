@@ -1,0 +1,725 @@
+\documentclass[spanish,a4paper,12pt,draft]{report}
+\usepackage{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{eurosym}
+\input{GS-packages.sty}
+\input{GS-macros.sty}
+\begin{document}
+\chapter{Espacio de fases}\label{chapter:espaciodefases}
+
+
+\section{Construcción}
+El siguiente ejemplo de variedad simpléctica es el que motivó el estudio general de estas entidades.  Tiene interés en si mismo, pues es el marco donde se describe la mecánica clásica no relativista con un número finito de grados de libertad.
+
+Asociada a toda variedad $\V$ existe otra variedad de dimensión doble que la de partida.  En esta variedad de dimensión par existe una estructura simpléctica natural.
+
+La nueva variedad que construiremos, es conocida por los matemáticos como {\sf fibrado cotangente} \index{fibrado!cotangente} de la variedad.  Los físicos lo llaman {\sf espacio de fases} \index{espacio!de fases} asociado al espacio de configuración $\V$.  
+
+Las comprobaciones rutinarias (generalmente comprobación de la diferenciabilidad de ciertos objetos) se dejan a cargo del lector.
+
+Sea $T_x^*(\V)$ el espacio tangente a $\V$ en el punto $x$.  Sea el conjunto 
+$$
+T^*(\V) = \Gamma (\V) = \cup_{x \in \V} T_x^*(\V)
+$$
+
+$T^*(\V)$ es la notación matemática y $\Gamma(\V)$ es la notación que se utiliza en física.  Nosotros emplearemos la notación $\Gamma(\V)$.
+
+Existe una aplicación canónica
+$$
+\pi : \Gamma (\V) \rightarrow \V
+$$
+dada por $\pi (\omega_x)=x$. La función $\pi$ asigna a cada $1$-forma ``el punto donde está aplicado''.  Claramente $\pi$ es epiyectiva. 
+
+Para definir un elemento de $\Gamma (\V)$ hay que dar:
+
+\begin{itemize}
+
+\item El punto donde está aplicado el covector, que consiste en enumerar $n$ coordenadas, siendo $n$ la dimensión de la variedad.
+
+\item  Las componentes del covector en una base del espacio cotangente.  Esto implica otras $n$ coordenadas.
+
+\end{itemize}
+
+Como para definir un punto de $\Gamma (\V)$ necesitamos $2n$ parámetros, todo parece indicar que en $\Gamma (\V)$ habrá una estructura de variedad de dimensión~$2n$.
+
+Antes de nada debemos introducir una topología en este conjunto. 
+Sean $\{x_1,\dots,x_n\}$ coordenadas locales en un abierto $U$.  $q(U)= \text{U}$ es un abierto de $\R^n$.
+Vamos a establecer una biyección de $\pi^{-1}(U)$ con un abierto de $\R^{2n}$.
+
+Sea $\omega_x \in \pi^{-q}(U)$.  Entonces $x \in U$.  Por lo tanto $\omega_x$ puede expresarse como
+$$
+\omega_x = \xi_i(x) dx_i
+$$
+
+Asociando al covector $\omega_x \in \pi^{-1}(U)$ las $2n$ coordenadas 
+$$
+\{x_1(x),\dots,x_n(x),\xi_1(x),\dots,\xi_n(x)\}
+$$
+ tenemos una biyección de $\pi^{-1}(U)$ con $\text{U} \times \R^n$.
+
+Queremos que esta biyección sea un homeomorfismo.  Por lo tanto introducimos en $\Gamma (\V)$ la topología menos fina que hace que todas las biyecciones anteriores (una biyección para cada sistema de coordenadas local) sean conti\-nuas.
+
+Dotado de esta topología y tomando como cartas locales las biyecciones antes descritas, $\Gamma (\V)$ es una variedad diferenciable.  Las coordenadas en el abierto $\pi^{-1}(U)$ se notan $(q,p)$ cometiendo un abuso de notación.
+
+$\Gamma (\V)$ es unión numerable de compactos si $\V$ lo es, pues tomando un atlas con un conjunto numerable de cartas, podemos ```subir'' este atlas al espacio de fases.  Así $\Gamma (\V)$ es paracompacta si $\V$ lo es.  Esto nos asegura la existencia de particiones de la unidad en el espacio de fases.
+
+Dotado de esta estructura diferenciable, la aplicación se describe en coordenadas locales como
+$$
+\pi(x_1, \dots,x_n,\xi_1,\dots,\xi_n)=(x_1,\dots,x_n)
+$$
+lo que prueba que es diferenciable en coordenadas y por lo tanto es diferenciable globalmente.  Además $\pi$ es rango constante $n$.
+
+Se tiene por construcción que $\pi^{-1}(x)=T_x^*(\V)$.  Este conjunto se llama {\sf fibra} \index{fibra} sobre el punto $x$ y debido a la regularidad de $\pi$ es una subvariedad del espacio de fases.
+
+Del mismo modo que hemos construido $T^*(\V)$ podríamos construir el llamado {\sf fibrado tangente},\index{fibrado!tangente} sin más que sustituir $T^*_x(\V)$ por $T_x(\V)$ y $dx_i$ por $\frac{\partial}{\partial x_i}$.
+También se pueden construir fibrados tensoriales, tomando como fibra del punto $x$  un espacio de tensores en ese punto.
+
+\section{Forma de Liouville}
+
+En el espacio de fases existe una $1$-forma canónica llamada forma de Liou\-ville.  Su diferencial exterior dotará al espacio de fases de una estructura simpléc\-tica. \enlargethispage{1 cm}
+
+Sea $\omega_x$ un elemento de $\Gamma(\V)$ y sea $Y_{\omega_x}$ un vector tangente en ese punto.  Definimos $\theta$ mediante la fórmula
+$$
+\theta(Y_{\omega_x}) = \omega_x(\pi_*(Y_{\omega_x}))
+$$
+
+
+Vamos a construir la forma de Liouville de otro modo.
+
+Dado un punto $p= (x , \omega_x)$ la aplicación tangente a la proyección canónica establece un epimorfismo $d\pi_p :T_p(\Gamma(\V)) \rightarrow T_{\pi(p)} (\V)$.  Como $\omega_x$ es una forma lineal sobre $\V$ la aplicación cotangente a $\pi$ le hace corresponder una forma lineal sobre la variedad $\Gamma(\V)$.  Resulta que esta forma es precisamente la forma de Liouville en ese punto.  En fórmulas
+
+$$
+\theta_p= d\pi_p^*(\omega_x) \text{ siendo } p = (x,\omega_x)
+$$
+
+Para comprobar la diferenciabilidad podemos hacer uso de coordenadas locales, pues el ser diferenciable es una  cuestión local.
+
+Simples comprobaciones nos dan que
+$$
+\theta= \xi_1dx_1 + \dots + \xi_ndx_n
+$$
+lo que implica que en efecto la forma es diferenciable.  La $1$-forma que acabamos de construir se denomina {\sf forma de Liouville}. \index{forma!de Liouville}
+
+Consideramos ahora la $2$ forma $\wa = d\theta$.  Esta forma es cerrada por ser exacta y además es no degenerada puesto que en coordenadas locales se expresa como
+$$
+\wa= d\xi_i \wedge dx_i
+$$
+
+En algunos libros la forma simpléctica se define con el signo cambiado  Esto solo es cuestión de convenio.
+
+En el espacio de fases el teorema de Darboux es inmediato.  Tomando coor\-denadas $q$ en la variedad $\V$, podemos ``subir'' las coordenadas al espacio de fases y nos da unas coordenadas $(q,p)$.  Sin embargo pueden existir coordenadas canónicas que no se obtengan de este modo.
+
+\section{Transformaciones canónicas puntuales}\label{sec:subidas}
+
+Sea $\V$ una variedad arbitraria, y $\varphi : \V \rightarrow \V$ un difeomorfismo de la variedad.  Esta aplicación la podemos ``subir'' al espacio de fases:
+
+$$
+\begin{array}{cccc}
+ \varphi^* : & \Gamma(\V) & \rightarrow & \Gamma(\V)\\
+   &  \omega_x & \rightarrow & (\varphi_x)^*(\omega_x) 
+\end{array}
+$$
+donde $(\varphi_x)^*$ denota la aplicación cotangente a $\varphi$ en el punto $x$.
+
+\begin{defi}
+
+$\varphi^*$ se llama {\sf aplicación cotangente}\footnote{Se puede definir la aplicación cotangente de un difeomorfismo $\varphi: \V \rightarrow \V'$, dando lugar a una aplicación $\varphi^*: \Gamma (\V') \rightarrow \Gamma(\V)$.  Obsérvese que estamos en presencia de un {\sf functor contravariante} \index{functor contravariante}} \index{aplicación cotangente} del difeomorfismo $\varphi$.  
+
+\end{defi}
+
+La notación empleada para la aplicación cotangente y para la imagen inversa con el morfismo $\varphi$ son iguales.  El contexto nos aclarará cual es en cada caso.
+
+
+
+
+\begin{itemize}
+
+\item  Esta función hace conmutativo el diagrama
+$$
+\xymatrix{
+{\Gamma(\V)} \ar[d]_\pi \ar[r]^{\varphi^*} & \Gamma(\V)\ar[d]^\pi \\
+\V \ar[r]^{\varphi}&     \V
+}
+$$
+
+\item $\varphi^*$ es biunívoca pues la aplicación cotangente es biunívoca en todo punto, dado que $\varphi$ es un difeomorfismo.
+
+\item Se cumple que $\Id^* = \Id_{\Gamma(\V)}$ y que $(\varphi \phi)^*= \phi^* \varphi^*$.
+
+\item $\varphi^*$ es de clase $\C^\infty$ como se comprueba fácilmente usando coordenadas locales.  Por tanto $\varphi^*$ es un difeomorfismo cuyo inverso es justamente $(\varphi^{-1})^*$.
+
+\item Si $\varphi^* = \Id$ entonces $\varphi=\Id$ utilizando el diagrama conmutativo anterior.
+
+\item $\varphi^*$ conserva la forma simpléctica y es por lo tanto una transformación canónica (vease problema \ref{pro:tci}).
+
+\end{itemize}
+
+\begin{defi}
+
+Un difeomorfismo de la forma $\varphi^*$ para cierto $\varphi \in \Dif(\Gamma(\V))$ se denomina {\sf transformación canónica puntual}.  \index{transformación canónica!puntual}
+
+\end{defi}
+
+
+
+
+
+La aplicación  de $\Dif(\V)$ en $\Dif (\Gamma(\V))$ que manda a $\varphi$ hasta $\varphi^*$ es un antimorfismo de grupos inyectivo.  De esta manera $\varphi \rightarrow (\varphi^{-1})^*$ es un morfismo de grupos inyectivo.  Su imagen está contenida en el grupo simpléctico del espacio de fases.
+
+Si $X$ es un campo en $\V$ que genera un grupo uniparamétrico $\tau_t$, podemos subir este grupo uniparamétrico al espacio de fases donde obtenemos el grupo $\tau_{-t}^*$.  Este grupo generará un campo en el espacio de fases que denotamos $X^*$.  $X^*$ es el {\sf campo cotangente} \index{campo!cotangente} asociado a $X$.  Naturalmente $X^*$ es una transformación canónica infinitesimal.
+
+Veamos que aunque $X$ no genere un grupo global, podemos asociarle a $X$ el campo cotangente. Primero calculamos $X^*$ en coordenadas locales. 
+
+ Si $X = a_i \frac{\partial}{\partial x_i}$, entonces 
+$$
+X^*=  a_i \frac{\partial}{\partial x_i} +b_i\frac{\partial}{\partial \xi_i}
+$$
+donde las $b_i$  se pueden conocer sin más que tener en cuenta que $X^*$ es un campo localmente hamiltoniano.
+
+Aplicando que $(X^*)^L(\wa)=0$ obtenemos 
+$$
+b_i= -  \xi_h \frac{\partial a_h}{\partial x_i}
+$$
+
+De esta forma podemos subir un campo cualquiera en un dominio coordenado.  Se ve que en la intersección de dominios coordenados los campos así construidos coinciden y entonces es lícito afirmar que a cada campo le podemos asociar un campo cotangente aunque no genere un grupo global.
+
+Por ser el paréntesis de Lie una operación de tipo local, podemos comprobar que la asociación $X \rightarrow X^*$ es un morfismo de álgebras de Lie inyectivo.  Ello quiere decir que $[X,Y]^* = [X^*,Y^*]$.  En particular esto demuestra que los campos localmente hamiltonianos cierran un álgebra de Lie de dimensión infinita si la variedad simpléctica es un espacio de fases.
+
+
+
+\section{Estructuras complejas}
+
+
+Además de los espacios de fase, existen en matemáticas otro ejemplo remarcable de variedades simplécticas.  Para estudiar esta teoría en profundidad deberíamos conocer el concepto de variedad compleja.  Sin embargo nos quedaremos en un escalón ligeramente inferior y estudiaremos las estructuras casi-complejas, que utilizan solamente  la teoria de variedades diferenciables reales.
+
+
+
+\begin{defi}
+
+Sea $\V$ una variedad.  Una {\sf estructura compleja} \index{estructura compleja} en $\V$ es un campo de endomorfismos $J$ que cumple $(J_x)^2= -\Id$ para todo $x \in \V$.
+
+
+Llamamos {\sf variedad casi-compleja} \index{variedad!casi-compleja}
+ al par $(\V, J)$.
+
+\end{defi}
+
+
+
+Toda variedad casi-compleja es de dimensión par y el espacio tangente en todo punto tiene una estructura compleja.
+
+El ejemplo más claro de variedad casi-compleja es el de {\sf variedad compleja} \index{variedad!compleja} que no es otra cosa que un espacio localmente isomorfo a $\C^n$ y donde las funciones de transición son {\sf funciones holomorfas}. \index{función!holomorfa}
+
+Sin embargo nosotros nos restringiremos al caso de variedades reales (de ahí el prefijo ``casi'' que utilizamos).
+
+\begin{defi}
+
+Sea $(\V,\wa)$ una variedad simpléctica.  Una estructura compleja $J$ es {\sf compatible} \index{compatible} con la estructura simpléctica si
+la  aplicación
+$$
+g(X,Y) = \wa(X, J(Y))
+$$
+es una métrica riemanniana en la variedad.
+
+\end{defi}
+
+Generalizando el resultado dado para las estructuras complejas sobre espacios lineales tenemos
+
+\begin{propo}
+
+Toda variedad simpléctica tiene una  estructura casi-com\-pleja compatible.
+
+\end{propo}
+
+\dem
+
+La demostración puede hallarse en  \cite{analec}. \fin
+
+Sabemos que la parte imaginaria de una estructura hermítica es una forma simpléctica.  Para no introducir nuevas nociones sobre estructuras hermíticas diferenciables utilizaremos la siguiente definición, que el lector puede comprobar que en el caso lineal coincide con definición estandar (ver sección \ref{sec:compleja}).
+
+\begin{defi}
+
+Una {\sf métrica hermítica} \index{métrica!hermítica} sobre una variedad casi compleja $(\V,J)$ es una métrica riemanniana $g$ que además cumple
+$$
+g(X,Y) = g (J(X), J(Y))
+$$
+para cualquier par de campos de la variedad.
+
+\end{defi}
+
+
+\begin{propo}
+
+Toda variedad casi-compleja admite una métrica hermí\-tica.
+
+\end{propo}
+
+\dem
+
+Sea $T_2$ una métrica riemanniana arbitraria, que existe por ser ser la variedad paracompacta.  Sea entonces
+$$
+g(X,Y)= T_2 (X,Y)+ T_2(J(X),J(Y))
+$$
+Entonces $g$ es una métrica hermítica.  \fin
+
+\begin{defi}
+
+Sea $\V$ una variedad con una métrica hermítica $g$.  Denominamos {\sf forma fundamental} \index{forma!fundamental} a la $2$-forma $\phi$ definida como
+$$
+\phi(X,Y) = g(X, J(Y))
+$$
+
+\end{defi}
+
+Basandonos en la definición de $g$ se prueba que $\phi$ es antisimétrica y además es no degenerada pues $g$ es no degenerada y $J$ es un automorfismo en todo punto.
+
+Tenemos entonces una $2$-forma sin radical.  Puede ocurrir sin embargo que no sea cerrada.  En el caso de que si sea cerrada tendremos una variedad simpléctica.  Estas variedades tienen un nombre especial.  Se llaman {\sf variedades casi-Kähler}. \index{variedad!casi-Kahler}
+Si las variedades son complejas se denominan simplemente variedades de Kähler.
+
+Los ejemplos más famosos de variedades Kähler son el espacio proyectivo complejo y sus subvariedades complejas.  Pero esto no lo probaremos en estas notas (ver \cite{arnmat}).
+
+
+
+
+\section{Estructuras homogéneas}
+
+
+El ejemplo típico de estas variedades son los espacios de fases.  Además de la estructura simpléctica, los espacios de fase tienen la propiedad de que la forma simpléctica admite una primitiva global.  Esta es la conocida forma de Liouville.
+
+Si nos restringimos al complementario de la sección nula, la forma de Liouville es regular (o sea, no  nula) en todos los  puntos.  
+
+La importancia de las variedades homogéneas se debe también a que a cada variedad de contacto se le puede asociar, de modo functorial, una variedad homogénea, reduciendo muchos problemas de las variedades de contacto a las variedades simplécticas.  Por eso estas estructuras son muy importantes en el estudio de las ecuaciones en derivadas parciales de primer orden.
+
+Por último, lo que nosotros llamaremos variedad homogénea se denomina en otros libros {\sf variedad  simpléctica exacta}.\index{variedad!simpléctica exacta}
+
+\begin{defi}
+
+Una {\sf forma simpléctica homogénea} \index{forma!simpléctica homogénea} o {\sf forma de Liouville} \index{forma!de Liouville} es una $1$-forma $ \theta$ que cumple:
+
+\begin{itemize}
+
+\item  Es no nula en todo punto.  $(\theta)_x\neq 0 \text{ para todo } x$.
+
+\item $d\theta$ es una forma simpléctica.
+
+\end{itemize}
+Al par $(\V, \theta)$ lo denominamos {\sf variedad simpléctica homogénea}. \index{variedad!simpléctica homogénea}
+
+\end{defi}
+
+
+
+
+Toda estructura homogénea induce una estructura simpléctica, pero el reciproco solo es cierto localmente, tal como afirma el {\sf lema de Poincaré}. \index{lema de Poincaré}
+
+De ahora en adelante denotaremos $\wa$ a $d\theta$.  Debemos darnos cuenta de que varias estructuras homogéneas pueden dar lugar a la misma estructura simpléctica.
+Como en el caso simpléctico solo son susceptibles de poseer una estructura homogénea las variedades de dimensión par.
+
+
+\begin{defi}
+
+Sea $(\V, \theta)$ una variedad homogénea.  Un sistema de coordenadas $\{x_i,\xi_i\}$ en un abierto $U$ es un sistema de {\sf coordenadas canónicas homogéneas} \index{coordenadas!canónicas homogéneas} si en esas coordenadas se cumple
+$$
+\theta= \xi_1 dx_1+ \cdots + \xi_n dx_n
+$$
+
+\end{defi}
+
+Todo sistema de coordenadas canónicas homogéneas es también un sistema de coordenadas canónicas para la variedad simpléctica.  Sin embargo, en general, el recíproco no es cierto.
+
+\begin{teo}[de Darboux]
+
+Todo punto de una variedad homogénea posee un entorno donde se pueden definir coordenas canónicas homogeneas.
+
+\end{teo}
+
+
+\dem
+
+Nos remitimos a \cite{munecu}. \fin
+
+
+Tampoco aquí existe un teorema global de Darboux.
+
+
+
+\begin{defi}
+
+Llamaremos {\sf campo de homogeneidad} \index{campo!de homogeneidad} o {\sf campo de Liouville} \index{campo!de Liouville} de $(\V, \theta)$ al campo $D$ que cumple 
+$$
+i_D\wa = \theta
+$$
+
+\end{defi}
+
+Como $\theta$ no es nunca nula el campo de homogeneidad tampoco es nunca nulo. Recordando que $p^{-1}$ $(dx_i) = \frac{\partial }{\partial \xi_i}$,  en coordenadas canónicas 
+$$
+D=  \xi_1 \frac{\partial}{\partial \xi_1}+ \cdots +\xi_n \frac{\partial}{\partial \xi_n} 
+$$
+
+
+\begin{propo}
+
+Con las notaciones anteriores se cumple:
+
+\begin{itemize}
+
+\item $i_D\theta = 0$
+
+\item $D^L\theta = \theta$
+
+\item $D^L \wa = \wa$
+
+\item $i_D\wa = \theta$
+
+\item $D(x_i) = 0$
+
+\item $D(\xi_i)= \xi_i$
+
+\end{itemize}
+
+\end{propo}
+
+\begin{defi}
+
+Sean $(\V, \theta)$ y $(\V',\theta')$ dos estructuras homogéneas.  Una {\sf transformación canónica homogénea} \index{transformación!homogénea} es un difeomorfismo
+$$
+\varphi: \V \rightarrow \V'
+$$
+que cumple $\varphi^*(\theta') = \theta$.
+
+\end{defi}
+
+En el caso en que las dos variedades coincidan  hablaremos de {\sf automorfismo simpléctico homogéneo}. \index{automorfismo!simpléctico homogéneo}  Los automorfismos simplécticos homogéneos forman un grupo respecto a la multiplicación.  Es un subgrupo del grupo simpléctico asociado, debido a que la imagen inversa conmuta con la diferencial exterior.
+
+En el caso en que el automorfismo sea entre abiertos de las variedades, nos referiremos a él como transformación canónica homogénea local.
+
+\begin{defi}
+
+Un campo $X$ que cumpla $X^L \theta=0$ es una {\sf transformación  homogénea infinitesimal}. 
+\index{transformación!homogénea infinitesimal}
+
+\end{defi}
+
+
+Aplicando la fórmula $[X,Y]^L= [X^L,Y^L]$ se comprueba que forman una subálgebra de Lie.  Como la derivada y la diferencial exterior conmutan, toda transformación homogénea infinitesimal es un campo localmente hamiltoniano.
+
+\begin{defi}
+
+Sea $D$ el campo de homogeneidad de la variedad homo\-génea.  Un campo tensorial $T$ se dice que es homogéneo de grado $m$ ($m \in \R$) si cumple
+$$
+D^L(T)= m T
+$$
+
+\end{defi}
+
+
+\noindent{\bf Ejemplos.}
+
+\begin{itemize}
+
+\item $x_i$ es homogénea de grado $0$. $\xi_i$ es homogénea de grado $1$.
+
+\item $D$ es un campo homogenéo de grado $0$ pues $D^L(D)=0$.
+
+\item $\wa$ y $\theta$ son homogéneos de grado $1$.
+
+\item La diferencial exterior conserva el grado.  Si $\alpha$ es de grado $m$, entonces $d\alpha$ tambíen tiene grado $m$.
+
+\item Las transformaciones homogéneas conservan el grado.
+
+\end{itemize}
+
+
+\begin{propo}
+
+Se cumple
+$$
+D^L (X_f) = X_{Df-f}
+$$
+$$
+D\{f,g\} = \{D(f), g\} + \{f, D(g)\} - \{f,g\}
+$$
+
+\end{propo}
+
+
+\dem
+
+Al lector.  \fin
+
+\begin{cor}
+
+Si $f$ es homogénea de grado $m$, entonces $X_f$ es homogéneo de grado $m-1$.
+
+Si $f$ es homogénea de grado $r$ y $g$ es homogénea de grado $s$, entonces $\{f,g\}$ es homogénea de grado $r+s-1$.
+
+\end{cor}
+
+
+
+
+
+
+\section*{Problemas}
+
+\addcontentsline{toc}{section}{Problemas}
+
+\begin{pro} Demostrar:
+
+
+\begin{itemize}
+
+\item Todo punto del espacio de fases posee un entorno donde se pueden introducir coordenadas canónicas.  Para obtener este resultado no es necesario aplicar el teorema de Darboux.
+
+\item Si el espacio de configuración $\V$ admite un sistema de coordenadas global, entonces el espacio de fases $\Gamma(\V)$ también. ¿Será cierto el recíproco?
+
+\item  El espacio de fases es siempre una variedad orientable.  Toda transformación canónica conserva el volumen de este espacio.  Este resultado se conoce  como {\sf teorema de Liouville}. \index{teorema!de Liouville}
+
+\end{itemize}
+
+\end{pro}
+
+\begin{pro}
+
+El teorema de Darboux nos dice que toda variedad simpléctica es localmente isomorfa a un fibrado cotangente.  Considerando variedades compactas, demostrar que existen variedades simplécticas que no son globalmente isomorfas a fibrados cotangentes.
+
+\end{pro}
+
+\begin{pro}
+
+Demostrar que el espacio de fases no es  nunca  una variedad compacta.
+
+\end{pro}
+
+\begin{pro}
+
+Sea $\V$ una variedad simpléctica compacta:
+
+\begin{itemize}
+
+\item La forma simpléctica no puede ser exacta.  Si esto ocurriera, la forma de volumen también sería exacta y entrañaría una contradicción aplicando el teorema de Stokes.
+
+\item  Si denotamos por $[\alpha]$ la clase de cohomología de una forma $\alpha$, demostrar que $[\wa]\in H^2(\V)$ no puede ser nulo.
+
+\item Como $[(\wa)^n]= [\wa]^n$, la clase de cohomología del elemento de volumen no puede ser nula.
+
+\end{itemize}
+
+
+
+\end{pro}
+
+\begin{pro}
+
+Comprobar que en la construcción del atlas sobre el espacio de fases, las funciones de transición son en efecto diferenciables.  Comprobar también que la construcción es independiente del atlas que tomemos.
+
+\end{pro}
+
+
+\begin{pro}
+
+Una sección del espacio de fases es una función
+$$
+s : \V \rightarrow \Gamma(\V)
+$$
+que cumple $ \pi \cdot s= \Id$.  De este modo $s(x)$ es una forma diferencial sobre el punto $x$.  Una sección asocia a cada punto $x$ una $1$-forma en ese punto.  Demostrar, utilizando coordenadas locales, que existe una correspondencia biunívoca entre $1$-formas en la variedad y secciones diferenciables del espacio de fases.
+
+Hacer lo mismo con el fibrado tangente.
+
+\end{pro}
+
+
+\begin{pro}\label{pro:tci}
+
+Sea $\varphi : \V \rightarrow \V$ un difeomorfismo.
+
+\begin{itemize}
+
+\item Probar que $\varphi^*: \Gamma(\V) \rightarrow \Gamma(\V)$ conserva la forma de Liouville.
+
+\item  Probar que conserva la forma simpléctica y que por lo tanto es una transformación canónica en el espacio de fases.
+
+\end{itemize}
+
+\end{pro}
+
+\begin{pro}
+
+Demostrar que los campos $X^*$ y $X$ están relacionados por el morfismo $\pi$.
+
+Supongamos que $X^*$ genera un grupo global.  ¿Podemos afirmar que $X$ genera también un grupo global?
+
+
+\end{pro}
+
+
+\begin{pro}
+
+Sea $\V$ una variedad arbitraria y $X$ un campo vectorial.  Asociado a este campo tenemos la función
+$$
+\xi_X : \Gamma(\V) \rightarrow \R
+$$
+definida por $\xi_X(\omega_x) = <X_x, \omega_x> = <X_{\pi(\omega_x)}, \omega_x>$.
+
+\begin{itemize}
+
+\item  Probar que $\xi_X$ es diferenciable.  Calcular su expresión en coordenadas.
+
+\item Denotamos por $\bar X$ el campo cuyo hamiltoniano es $\xi_X$.  Ver la relación entre este campo y el campo cotangente $X^*$.
+
+\item  Realizar esta construcción con el campo $\frac{\partial}{\partial x_i}$.
+
+\end{itemize}
+
+\end{pro}
+
+\begin{pro}
+
+Sea $\alpha$ una $1$-forma sobre la variedad $\V$.  Entenderemos dicha forma como una sección $ \alpha : \V \rightarrow T^*(\V)$ del espacio de fases.  Si $\theta$ es la forma de Liouville tenemos que $\alpha^*(\theta )=\alpha$ donde  el asterisco denota la imagen inversa.  Además la forma de Liouville es la única forma sobre el espacio de fases que cumple dicha propiedad para toda $1$-forma $\alpha$ definida en el espacio de configuración $\V$.
+
+\end{pro}
+
+\begin{pro}
+
+Sea $\V$ una variedad riemanniana (o semiriemanniana).  La pola\-ridad asociada a esta métrica permite establecer un difeomorfismo entre los fibrados cotangente y tangente de la variedad.  De este modo el fibrado tangente de una variedad riemanniana tiene una estructura simpléctica.  Debemos notar que la estructura de variedad simpléctica en el fibrado cotangente es ``natural'', pero la estructura simpléctica en el fibrado tangente depende de la métrica riemanniana que hayamos adoptado.  
+
+\end{pro}
+
+\begin{pro}
+
+Sea $\V$ un espacio vectorial simpléctico $E$.
+
+\begin{itemize}
+
+\item $\Gamma(\V) = E \times E^*$.
+
+\item La estructura simpléctica como espacio de fases, coincide con la estructura simpléctica natural definida en $E \times E^*$.
+
+\end{itemize}
+
+\end{pro}
+
+\begin{pro}
+
+Sea $\varphi$ una transformación canónica y $f$ un hamiltoniano.  Encontrar la relación entre los campos $X_f$ y $X_{f\circ\varphi}$.
+
+\end{pro}
+
+\begin{pro}
+
+Sean $\V$ y $\V'$ variedades.  $\V \times \V'$ la variedad producto.  Demostrar que se tiene un isomorfismo canónico
+$$
+T^*(\V \times \V') = T^*(\V) \times T^*(\V')
+$$
+
+Se dice que un problema físico es {\sf separable} \index{problema separable} si el espacio de configuración es el producto de dos variedades, $\V \times \V'$, y el hamiltoniano $h$ se puede expresar (de modo no único) como $h = h +h'$ donde $h$ es una función sobre $\V$ y $h'$ es una función sobre $\V'$.
+
+Ver las razones por las que el estudio de los problemas separables es más simple que el caso general y deducir que nombre de separable le va como anillo al dedo.
+
+Demostrar que toda función sobre $\V$ conmuta con toda función sobre $\V'$ (una vez subidas al espacio de fases).
+
+\end{pro}
+
+
+
+\begin{pro}
+
+Es siguiente argumento prueba que una variedad homogénea no puede ser compacta.
+
+
+Sabemos que una variedad homogénea es orientable pues en particular  es sim\-pléc\-tica.  Tenemos que $(d\theta)^n= d(\theta \wedge(d\theta)^{n-1})$.  La forma de volumen es exacta y aplicando el teorema de Stokes concluimos.
+
+\end{pro}
+
+\begin{pro}
+
+Sea $\varphi$ un automorfismo simpléctico homogéneo.  
+
+\begin{itemize}
+
+\item Entonces
+$$
+\varphi'(D)=D
+$$
+donde $D$ es el campo de Lioville.
+
+\item  Si $f$ es homogénea, entonces $f \circ \varphi$ también lo es.  Generalizar el resultado a tensores.
+
+\item  El campo $X_f$ es una transformación canónica homogénea si y solo si $df$ es homogénea de grado 1.
+
+\item Si $\omega$ es una $k$-forma homogénea, entonces $d\omega$ y $i_D\omega$ también son formas homogéneas.
+
+
+\end{itemize}
+
+\end{pro}
+
+
+\begin{pro}
+
+Sean $\theta$ y $\theta'$ dos formas homogéneas que definan la misma estructura simpléctica.  Probar que en general los grupos simplécticos homogéneos dependen de $\theta$ y de $\theta'$.
+
+\end{pro}
+
+\section*{Subvariedades lagrangianas}
+
+
+\begin{sf}
+Sea $\V$ una variedad simpléctica de dimensión $2n$.  Una subvariedad $L \subset \V$ es {\sf lagragiana} \index{subvariedad!lagrangiana} si el espacio tangente en todo punto a la subvariedad es isótropo y además $\dim (L)=n = \dim (\V)/2$.
+
+\begin{itemize}
+
+\item La sección nula del fibrado cotangente tiene como imagen una subvariedad  del espacio de fases.  La forma de Lioville en esa subvariedad es nula.  La subvariedad es lagrangiana.
+
+\item Si entendemos las $1$-formas como secciones del fibrado cotangente $\Gamma(\V)$, la imagen de cualquier $1$-forma es una subvariedad de dimensión $n$ del espacio de fases.  Dicha subvariedad es difeomorfa al espacio de configuración $\V$ mediante la proyección canónica.
+
+\item  Dada una $1$-forma $\alpha$ sobre una variedad, denotamos por $s_\alpha : \V \rightarrow \Gamma(\V)$ la correspondiente sección.  Con esta notación se cumple
+$$
+(s_\alpha)^* \theta = \alpha
+$$
+
+\item La imagen de una sección dada por una $1$-forma es lagrangiana si y solo si la forma es cerrada.
+
+\item  Toda función $f$ da lugar a una subvariedad lagrangiana asociada a su diferencial $df$.  Dicha función se llama {\sf función generadora} \index{función!generadora} de la subvariedad.
+
+\item  Sea $\V' \subset \V$ una subvariedad de dimensión $r$.  El espacio tangente en $x\in \V'$ a la subvariedad es un subespacio de $T_x(\V)$.  Denotamos por $T_x^0(\V')$ el incidente de ese subespacio.  El incidente es un subespacio del espacio dual.  Llamamos {\sf fibrado incidente} \index{fibrado!incidente} a $\V'$ al conjunto
+\begin{equation*}
+\begin{split}
+N^*(\V')& =  \cup_{x \in V'} T^0_x(\V') \\
+    &= \{(x,\omega_x) \in \Gamma(V) \text{ tales que } x \in \V', \omega_x \in T^0_x(\V')\}
+\end{split}
+\end{equation*}
+
+
+\item El fibrado incidente de una subvariedad es una subvariedad del espacio de fases.  Si tomamos coordenadas $\{\xi_1, \cdots, \xi_n\}$ en el la variedad de tal forma que $\V'$  sea el conjunto definido por las ecuaciones
+$$
+x_{r+1}=0, \cdots, x_n=0
+$$
+entonces el fibrado incidente tiene por ecuaciones
+$$
+x_{r+1}=0, \cdots, x_n=0,\xi_1=0, \cdots, \xi_r=0
+$$
+
+
+
+
+\item El fibrado incidente de una subvariedad es una subvariedad lagrangiana.
+
+\item  Sea $V \ominus V'$ la variedad producto dotada de la forma simpléctica $\wa-\wa'$.  Este producto de variedades simplécticas es una variedad simpléctica.
+
+\item  Dado un difeomorfismo $\varphi: \V \rightarrow \V'$ denotamos por $\Gamma_\varphi$ si gráfica, que es el subconjunto de $\V \times \V'$
+$$
+\Gamma_\varphi = \{ (x,\varphi(x)), x \in \V\}
+$$
+La gráfica de un difeomorfismo es una subvariedad de $\V \ominus \V'$ difeomorfa a $\V$.
+
+\item $\Gamma_\varphi$ es lagrangiana si y solo si $\varphi$ es un difeomorfismo simpléctico.  Toda subvariedad lagrangiana de $\V \ominus \V'$ se llama {\sf relación canónica}.  \index{relación!canónica}
+
+
+\end{itemize}
+
+\end{sf}
+
+\end{document}

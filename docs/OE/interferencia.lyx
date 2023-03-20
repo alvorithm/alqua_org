@@ -1,0 +1,2461 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass book
+\begin_preamble
+\input{OE-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding latin1
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize a4paper
+\paperpackage a4
+\use_geometry 1
+\use_amsmath 1
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 2
+\papersides 2
+\paperpagestyle default
+
+\layout Chapter
+
+Interferencia
+\layout Section
+
+Planteamiento
+\layout Subsection
+
+Definición
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/interferencia-dos-fuentes-pantalla.eps
+	display monochrome
+	width 4cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Emisión procedente de dos fuentes.
+\end_inset 
+
+Se dice que en un punto del espacio hay interferencia cuando la intensidad
+ observada en él en presencia de dos ondas difiere de la suma de las intensidade
+s asociadas a cada onda individual
+\begin_inset Formula \[
+I\neq I_{1}+I_{2}\]
+
+\end_inset 
+
+ Siendo las ecM lineales en los campos eléctricos, una carga situada en
+ la pantalla de observación se vería afectada por el campo
+\begin_inset Formula \[
+\mathbf{E}=\mathbf{E}_{1}+\mathbf{E}_{2}\]
+
+\end_inset 
+
+ pero nuestros detectores son cuadráticos, 
+\begin_inset Formula $I\propto\mathbf{E}^{2}$
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray*}
+I & = & \mathbf{E}_{1}^{2}+\mathbf{E}_{2}^{2}+2\mathbf{E}_{1}\cdot\mathbf{E}_{2}\\
+ & = & I_{1}+I_{2}+ti\end{eqnarray*}
+
+\end_inset 
+
+ donde 
+\begin_inset Formula $ti$
+\end_inset 
+
+ es el 
+\emph on 
+término interferencial.
+ 
+\emph default 
+Ésta igualdad es válida para cada instante.
+ Pasando a promedios temporales (que es lo que podemos medir), podemos escribir
+ que la existencia de interferencia es equivalente a
+\begin_inset Formula \[
+\left\langle \mathbf{E}_{1}\cdot\mathbf{E}_{2}\right\rangle \neq0\]
+
+\end_inset 
+
+¿Por qué con unas condiciones tan sencillas la interferencia se observa
+ tan raramente
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+en la vida ordinaria se puede ver el fenómeno en los colores que presentan
+ las pompas de jabón o una fina capa de aceite motor estirada sobre el pavimento
+ por la lluvia.
+\end_inset 
+
+?.
+ Habrá que ver cuáles son las condiciones para que haya inteferencia, lo
+ que nos llevará naturalmente a la construcción de interferómetros.
+\layout Subsection
+
+Descripción escalar
+\layout Standard
+
+Para observar interferencia en condiciones óptimas (término interferencial
+ más grande) escogeremos ambos vectores paralelos, es decir, ondas con el
+ mismo estado de polarización especificado por el vector unitario 
+\begin_inset Formula $\mathbf{u}$
+\end_inset 
+
+.
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{E}_{1} & = & E_{1}\mathbf{u}\\
+\mathbf{E}_{2} & = & E_{2}\mathbf{u}\\
+\mathbf{E} & = & E\mathbf{u}\end{eqnarray*}
+
+\end_inset 
+
+ Podemos escribir la igualdad vectorial 
+\begin_inset Formula $\mathbf{E}=\mathbf{E}_{1}+\mathbf{E}_{2}$
+\end_inset 
+
+ como 
+\begin_inset Formula $E=E_{1}+E_{2}$
+\end_inset 
+
+.
+ Es decir, vamos a asumir tácitamente en lo que sigue que todas las ondas
+ tienen el mismo estado de polarización.
+ Esto nos conduce a la descripción escalar, más sencilla.
+\layout Section
+
+Coherencia
+\layout Standard
+
+Si tomamos ondas escalares armónicas
+\begin_inset Formula \begin{eqnarray*}
+E_{1} & = & A_{1}\left(\mathbf{r}\right)\cos\left(\omega_{1}t-g_{1}\left(\mathbf{r}\right)\right)\\
+E_{2} & = & A_{2}\left(\mathbf{r}\right)\cos\left(\omega_{2}t-g_{2}\left(\mathbf{r}\right)\right)\end{eqnarray*}
+
+\end_inset 
+
+y hacemos el promedio temporal 
+\begin_inset Formula \[
+I\propto\left\langle E^{2}\right\rangle =\frac{A_{1}^{2}}{2}+\frac{A_{2}^{2}}{2}+A_{1}A_{2}\left\langle \cos\left(\left(\omega_{1}-\omega_{2}\right)t+g_{2}-g_{1}\right)\right\rangle \]
+
+\end_inset 
+
+ dicho de otra forma
+\begin_inset Formula \[
+I=I_{1}+I_{2}+2\sqrt{I_{1}I_{2}}\left\langle \cos\left(\left(\omega_{1}-\omega_{2}\right)t+g_{2}-g_{1}\right)\right\rangle \]
+
+\end_inset 
+
+ El término interferencial depende más lentamente del tiempo cuanto más
+ próximas entre sí estén las frecuencias.
+ El problema es que las resoluciones temporales en laboratorio son muy toscas:
+ para que el 
+\begin_inset Formula $ti$
+\end_inset 
+
+ varíe tan lentamente como para que pueda verse en laboratorio, ambas frecuencia
+s deben ser 
+\emph on 
+muy 
+\emph default 
+parecidas (como una parte en 
+\begin_inset Formula $10^{11}$
+\end_inset 
+
+).
+ En resumen,: si 
+\begin_inset Formula $\omega_{1}\not\simeq\omega_{2}$
+\end_inset 
+
+ el promedio temporal del término interferencial será nulo a efectos de
+ observación.
+ A partir de ahora nos quedaremos con el caso óptimo: interferencias no
+ dependientes del tiempo, es decir, 
+\begin_inset Formula $\omega_{1}=\omega_{2}$
+\end_inset 
+
+.
+ Esto garantiza la estabilidad en el tiempo del fenómeno de interferencia.
+\layout Standard
+
+El fenómeno de interferencia es muy sensible; tanto que nos obliga a revisar
+ el proceso de emisión de luz monocromática.
+ La luz monocromática se puede obtener por transiciones atómicas de un gas
+ muy enrarecido y enfriado.
+ En concreto, podemos pensar que tenemos dos fuentes, por ejemplo, dos átomos
+ idénticos excitados por una colisión electrónica.
+ Estos átomos sólo emitirán luz hasta que decaigan al estado fundamental.
+ Como hemos visto cuando estudiamos el modelo clásico de la radiación, este
+ tiempo depende del término de rozamiento 
+\begin_inset Formula $\gamma$
+\end_inset 
+
+.
+ El átomo decae exponencialmente al estado fundamental en tiempos del 
+\begin_inset Formula $ns$
+\end_inset 
+
+.
+\layout Standard
+
+De modo que tenemos dos ondas, cada una de las cuales dura del orden de
+ un 
+\begin_inset Formula $ns$
+\end_inset 
+
+.
+ Eso es demasiado breve para poder observarlo.
+ Para tener una emisión continuada necesitamos reexcitar periódicamente
+ al átomo.
+ El problema que surge es que en esas colisiones es imposible predecir en
+ qué estado interno quedará el átomo.
+ Con ocasión de cada colisión el campo eléctrico emitido cambiará de fase
+ y amplitud (aunque no de frecuencia).
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/emision-atomica-continuamente-estimulada.eps
+	display monochrome
+	width 5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Proceso de emisión atómica continuamente estimulada.
+ Se producen saltos de fase y amplitud cada 
+\begin_inset Formula $\delta t=10^{-10}s$
+\end_inset 
+
+ 
+\end_inset 
+
+Para mantener la emisión se debe excitar el átomo cada cierto tiempo, menor
+ que el tiempo de desexcitación.
+ Es fundamentalmente el cambio de fase cada vez que se estimula el átomo
+ mediante un choque (por ejemplo, cada 
+\begin_inset Formula $10^{-10}s$
+\end_inset 
+
+) el que impide que la onda emitida sea monocromática.
+ Este salto de fase depende de muchos parámetros de la excitación y, en
+ general, es incontrolable.
+ Para muchas aplicaciones esta no monocromaticidad no es relevante, pero
+ la interferencia depende crucialmente de la fase, de modo que este grado
+ de monocromaticidad no es suficiente.
+\layout Standard
+
+La cantidad de frecuencias que contiene una onda depende del tiempo entre
+ saltos de fase (una especie de principio de incertidumbre energía-tiempo)
+\begin_inset Formula \[
+\Delta\omega\propto\frac{1}{\delta t}\]
+
+\end_inset 
+
+ Al tiempo 
+\begin_inset Formula $\delta t$
+\end_inset 
+
+ se le llama 
+\emph on 
+tiempo
+\emph default 
+ 
+\emph on 
+de
+\emph default 
+ 
+\emph on 
+coherencia
+\emph default 
+.
+ Como 
+\begin_inset Formula $\delta t$
+\end_inset 
+
+ es aleatorio, se define de modo estadístico.
+ Como cuantificador de la monocromaticidad usamos la cantidad 
+\begin_inset Formula $\frac{\Delta\omega}{\omega}$
+\end_inset 
+
+.
+ En el caso que nos ocupa
+\begin_inset Formula \[
+\frac{\Delta\omega}{\omega}\propto\frac{1}{\omega\delta t}\simeq10^{-5}\]
+
+\end_inset 
+
+ lo que indica una alta monocromaticidad.
+ Cotas de mayor monocromaticidad se alcanzan con el uso de la radiación
+ estimulada (laser).
+ Igual que hay ondas más monocromáticas, las hay mucho menos: por ejemplo,
+ los átomos en un gas experimentan colisiones entre ellos, y el tiempo de
+ coherencia disminuye con la presión y la temperatura, que favorecen las
+ colisiones.
+\layout Standard
+
+Cuando tenemos dos átomos radiando según este esquema la diferencia de fases
+ entre ambos, 
+\begin_inset Formula $g_{2}-g_{1}$
+\end_inset 
+
+ es una variable aleatoria que cambia a saltos en tiempos siempre menores
+ a 
+\begin_inset Formula $\delta t\simeq10^{-10}s$
+\end_inset 
+
+.
+ El promedio temporal del término de interferencia es nulo y por lo tanto,
+ a pesar de ser la onda bastante monocromática, no hay interferencia.
+ Concluimos que las ondas de dos fuentes independientes son 
+\emph on 
+incoherentes
+\emph default 
+.
+\layout Standard
+
+No veremos interferencia a menos que los cambios de fase se produzcan en
+ el mismo instante para las dos ondas, es decir, a
+\emph on 
+ 
+\emph default 
+menos
+\emph on 
+ 
+\emph default 
+que
+\emph on 
+ 
+\emph default 
+sean
+\emph on 
+ las mismas
+\emph default 
+.
+ Si superponemos una onda consigo misma sí hay coherencia.
+ 
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/division-onda-de-una-fuente.eps
+	display monochrome
+	width 3.5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+División de la onda procendente de una fuente.
+ Una de las partes llega al punto de reunión en un tiempo 
+\begin_inset Formula $\Delta t$
+\end_inset 
+
+ y otra en 
+\begin_inset Formula $\Delta t+\tau$
+\end_inset 
+
+.
+ 
+\end_inset 
+
+
+\begin_inset Formula \[
+E\left(t-\Delta t\right)+E\left(t-\Delta t-\tau\right)=E_{1}+E_{2}\]
+
+\end_inset 
+
+ La diferencia de fases ya no será aleatoria y el promedio temporal del
+ término de interferencia podrá ser distinto de cero.
+ Con una salvedad: las dos ondas producidas por una misma fuente una onda
+ pueden llevar un retraso relativo 
+\emph on 
+pero no demasiado
+\emph default 
+ 
+\emph on 
+grande
+\emph default 
+.
+ Si retrasamos una onda respecto a la otra un tiempo superior a 
+\begin_inset Formula $\delta t$
+\end_inset 
+
+ volveremos a tener dos ondas con diferencia de fase aleatoria.
+ Habrá interferencia si 
+\begin_inset Formula $\tau\ll\delta t$
+\end_inset 
+
+ (ondas coherentes) y no la habrá si 
+\begin_inset Formula $\tau>\delta t$
+\end_inset 
+
+ (ondas incoherentes).
+ 
+\layout Standard
+
+Resumiendo
+\layout Itemize
+
+Para observar la interferencia en las mejores condiciones hemos supuesto
+ que ambas ondas tienen el mismo estado de polarización, lo que nos permite
+ hacer una descripción escalar que es más sencilla.
+\begin_inset Formula \[
+\mathbf{E}_{i}=E_{i}\mathbf{u}\]
+
+\end_inset 
+
+
+\layout Itemize
+
+Hemos preferido estudiar interferencias independientes del tiempo.
+ Por lo tanto la frecuencia de las ondas que interfieren debe ser 
+\emph on 
+estrictamente igual.
+\begin_inset Formula \[
+\omega_{1}=\omega_{2}\]
+
+\end_inset 
+
+
+\layout Itemize
+
+Estos requisitos, junto con el hecho de que las ondas de emisores distintos
+ son incoherentes nos han llevado a requerir que las ondas sean producidas
+ por la misma fuente.
+\layout Itemize
+
+Esto no sirve de nada si ambas ondas tienen una diferencia de camino tan
+ grande que el retardo relativo supera el tiempo de coherencia.
+ 
+\begin_inset Formula \[
+\tau\ll\delta t\]
+
+\end_inset 
+
+
+\layout Standard
+
+A partir de aquí sólo queda catalogar los interferómetros.
+ Estudiaremos aquí sólo los ejemplos más famosos.
+\layout Section
+
+División del frente de onda (
+\noun on 
+Young
+\noun default 
+)
+\layout Subsection
+
+Montaje
+\layout Standard
+
+El nombre de interferencia por división del frente de onda queda claro al
+ examinar la figura 
+\begin_inset LatexCommand \ref{fig ppo de la division del fr d onda}
+
+\end_inset 
+
+.
+ 
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/ppo-division-frente-onda.eps
+	display monochrome
+	width 3.5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig ppo de la division del fr d onda}
+
+\end_inset 
+
+La idea consiste en atrapar dos trozos del frente de ondas y luego reunirlos.
+ 
+\end_inset 
+
+La fuente puntual monocromática emite ondas esféricas que van a parar sobre
+ una pantalla opaca en la que se han practicado dos orificios, 
+\begin_inset Formula $o_{1}$
+\end_inset 
+
+ y 
+\begin_inset Formula $o_{2}$
+\end_inset 
+
+.
+ Sus distancias respectivas a un punto 
+\begin_inset Formula $P$
+\end_inset 
+
+ sobre la pantalla de observación son 
+\begin_inset Formula $r_{1}$
+\end_inset 
+
+ y 
+\begin_inset Formula $r_{2}$
+\end_inset 
+
+.
+ La pantalla de los orificios y la de observación son planos paralelos entre
+ sí y perpendiculares al eje 
+\begin_inset Formula $z$
+\end_inset 
+
+ (cuyo origen 
+\begin_inset Formula $z=0$
+\end_inset 
+
+ está en la pantalla de observación) separados por una distancia 
+\begin_inset Formula $D$
+\end_inset 
+
+.
+\begin_inset Formula \begin{eqnarray*}
+o_{1} & = & \left(\frac{d}{2},0,-D\right)\\
+o_{2} & = & \left(-\frac{d}{2},0,-D\right)\\
+P & = & \left(x,y,0\right)\end{eqnarray*}
+
+\end_inset 
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/diagrama-interferencia-etiquetado.eps
+	display monochrome
+	width 7cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Coordenadas de los puntos de emisión y el punto de observación.
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+los ejes estan MAL.
+ El eje horizontal es el z, el vertical es el
+\layout Standard
+
+x y el que sale del plano del papel el y.
+\layout Standard
+
+-ATC.
+\end_inset 
+
+
+\end_inset 
+
+Vamos a dar por cierto algo que justificaremos cuando estudiemos la difracción:
+ si los orificios son lo suficientemente pequeños, la luz que emana de ellos
+ lo hace en forma de ondas esféricas.
+\layout Subsection
+
+Onda armónica escalar esférica
+\layout Standard
+
+Estas ondas son soluciones de la siguiente ecO con simetría esférica
+\begin_inset Formula \[
+\nabla^{2}u=\frac{n^{2}}{c^{2}}u\]
+
+\end_inset 
+
+ tienen la forma 
+\begin_inset Formula \[
+u\left(r,t\right)=\frac{A}{r}e^{i\left(kr-\omega t\right)}\]
+
+\end_inset 
+
+ con 
+\begin_inset Formula $A$
+\end_inset 
+
+ constante, 
+\begin_inset Formula $k=n\frac{\omega}{c}=n\frac{2\pi}{\lambda}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\lambda$
+\end_inset 
+
+ es la longitud de onda en el vacío.
+ Si la coordenada del punto de emisión es 
+\begin_inset Formula $\mathbf{r}_{o}$
+\end_inset 
+
+ se define 
+\begin_inset Formula $r$
+\end_inset 
+
+ como 
+\begin_inset Formula $r=\left\Vert \mathbf{r}-\mathbf{r}_{o}\right\Vert $
+\end_inset 
+
+.
+ Los frentes de onda son esféricos y 
+\begin_inset Formula $v_{f}=\frac{\omega}{k}=\frac{c}{n}$
+\end_inset 
+
+.
+\layout Subsection
+
+Formación de un patrón de interferencias
+\layout Standard
+
+Las ondas provenientes de los orificios son co\SpecialChar \-
+he\SpecialChar \-
+ren\SpecialChar \-
+tes entre sí por proceder
+ ambas de la misma fuente.
+ Las podemos expresar como ondas esféricas centradas en los orificios si
+ éstos son suficientemente pequeños
+\begin_inset Formula \begin{eqnarray*}
+E_{1} & = & \frac{A}{r_{1}}e^{i\left(kr_{1}-\omega t\right)}\\
+E_{2} & = & \frac{A}{r_{2}}e^{i\left(kr_{2}-\omega t\right)}\end{eqnarray*}
+
+\end_inset 
+
+ con 
+\begin_inset Formula \begin{eqnarray*}
+r_{1} & = & \sqrt{\left(x-\frac{d}{2}\right)^{2}+y^{2}+D^{2}}\\
+r_{2} & = & \sqrt{\left(x+\frac{d}{2}\right)^{2}+y^{2}+D^{2}}\end{eqnarray*}
+
+\end_inset 
+
+ Sobre la pantalla el campo total será la suma de los procedentes de cada
+ orificio, y la intensidad su cuadrado
+\begin_inset Formula \[
+I=\left|E_{1}+E_{2}\right|^{2}\]
+
+\end_inset 
+
+ de donde 
+\begin_inset Formula \begin{eqnarray*}
+I & \propto & \frac{\left|A\right|^{2}}{r_{1}^{2}}+\frac{\left|A\right|^{2}}{r_{2}^{2}}+2\frac{\left|A\right|^{2}}{r_{1}r_{2}}\cos\left(k\left(r_{2}-r_{1}\right)\right)\\
+I & = & I_{1}+I_{2}+2\sqrt{I_{1}I_{2}}\cos\left(k\left(r_{2}-r_{1}\right)\right)\end{eqnarray*}
+
+\end_inset 
+
+ con 
+\begin_inset Formula $I_{i}\propto\frac{\left|A\right|^{2}}{r_{i}^{2}}$
+\end_inset 
+
+.
+ Hay una distribución espacial de intensidad sobre la pantalla de observación,
+ pues la intensidad sólo depende de su distancia a cada una de las fuentes
+ puntuales.
+ A esta distribución espacial de la energía la llamaremos 
+\emph on 
+figura
+\emph default 
+ 
+\emph on 
+interferencial
+\emph default 
+.
+\layout Subsection
+
+Estudio de la figura interferencial
+\layout Standard
+
+La diferencia de fases 
+\begin_inset Formula $k\left(r_{2}-r_{1}\right)$
+\end_inset 
+
+ es, esencialmente, una diferencia de camino óptico:
+\begin_inset Formula \[
+\frac{2\pi}{\lambda}n\left(r_{2}-r_{1}\right)=\frac{2\pi}{\lambda}\left(\mathcal{L}\left(O\fd o_{2}\fd P\right)-\mathcal{L}\left(O\fd o_{1}\fd P\right)\right)\]
+
+\end_inset 
+
+ donde 
+\begin_inset Formula $\mathcal{L}$
+\end_inset 
+
+ es el funcional 
+\emph on 
+camino
+\emph default 
+ 
+\emph on 
+óptico
+\emph default 
+.
+ La diferencia de fases se puede escribir en función del tiempo que tarda
+ en llegar a la pantalla lo que ha sido emitido simultáneamente.
+ En efecto, utilizando el hecho de que 
+\begin_inset Formula $v_{f}=\frac{c}{n}$
+\end_inset 
+
+
+\begin_inset Formula \[
+k\left(r_{2}-r_{1}\right)=\frac{\omega}{c}n\left(r_{2}-r_{1}\right)=\omega\left(\tau_{2}-\tau_{1}\right)\]
+
+\end_inset 
+
+ Para estudiar el aspecto de la figura interferencial es conveniente hacer
+ dos hipótesis y dos aproximaciones:
+\layout Enumerate
+
+(hipótesis) Las aberturas tienen que estar próximas entre sí, y el punto
+ 
+\begin_inset Formula $P$
+\end_inset 
+
+ debe estar p\i \'{r}
+oximo al eje óptico si queremos que el retardo entre las dos
+ ondas no sea tan grande que se destruya la interferencia.
+ Estas hipótesis se traducen en
+\begin_inset Formula \begin{eqnarray*}
+d & \ll & D\\
+x,y & \ll & D\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Enumerate
+
+(aproximaciones) Recordemos que 
+\begin_inset Formula $r_{1},r_{2}$
+\end_inset 
+
+ aparece en dos sitios con un papel muy diferente: en las intensidades 
+\begin_inset Formula $I_{1},I_{2}$
+\end_inset 
+
+ la dependencia es muy suave, mientras que en la fase la dependencia es
+ acusada, por ser 
+\begin_inset Formula $k$
+\end_inset 
+
+ muy grande para la luz visible.
+\begin_deeper 
+\layout Enumerate
+
+Tomaremos como aproximación para 
+\emph on 
+fuera de la función trigonométrica
+\begin_inset Formula \[
+r_{1}\simeq r_{2}\simeq D\]
+
+\end_inset 
+
+ 
+\emph default 
+lo que implica que 
+\emph on 
+
+\begin_inset Formula $I_{1}\simeq I_{2}\simeq I_{0}$
+\end_inset 
+
+.
+ 
+\layout Enumerate
+
+Usaremos un orden de aproximación mayor para el argumento del coseno
+\begin_inset Formula \begin{eqnarray*}
+r_{1} & = & D\sqrt{1+\frac{y^{2}+\left(x-\frac{d}{2}\right)^{2}}{D^{2}}}\\
+ & \simeq & D+\frac{y^{2}+x^{2}+\frac{d^{2}}{4}-xd}{2D}\end{eqnarray*}
+
+\end_inset 
+
+ análogamente para
+\begin_inset Formula \[
+r_{2}\simeq D+\frac{y^{2}+x^{2}+\frac{d^{2}}{4}+xd}{2D}\]
+
+\end_inset 
+
+ con lo que 
+\begin_inset Formula \[
+r_{2}-r_{1}=\frac{xd}{D}\]
+
+\end_inset 
+
+ 
+\end_deeper 
+\layout Standard
+
+Si el interferómetro se encuentra en el vacío 
+\begin_inset Formula $n=1$
+\end_inset 
+
+ y finalmente la expresión para la interferencia resulta
+\begin_inset Formula \[
+I=2I_{0}\left(1+\cos\left(\frac{2\pi}{\lambda}\frac{xd}{D}\right)\right)\]
+
+\end_inset 
+
+ para caracterizar la figura es interesante localizar los máximos y mínimos
+ de intensidad.
+\layout Itemize
+
+Máximos: 
+\begin_inset Formula \[
+\frac{2\pi}{\lambda}\frac{xd}{D}=2\pi M\]
+
+\end_inset 
+
+ con 
+\begin_inset Formula $M\in\mathcal{Z}$
+\end_inset 
+
+.
+ Al valor de 
+\begin_inset Formula $M$
+\end_inset 
+
+ se le llama 
+\emph on 
+orden del máximo 
+\emph default 
+correspondiente.
+ La coordenada del máximo de orden 
+\begin_inset Formula $M$
+\end_inset 
+
+ es 
+\begin_inset Formula \[
+x_{M}=M\frac{\lambda D}{d}\]
+
+\end_inset 
+
+ y se cumple 
+\begin_inset Formula $I_{max}=4I_{0}$
+\end_inset 
+
+.
+\layout Itemize
+
+Mínimos: 
+\begin_inset Formula \[
+\frac{2\pi}{\lambda}\frac{xd}{D}=\left(2m+1\right)\pi\]
+
+\end_inset 
+
+ con 
+\begin_inset Formula $m\in\mathcal{Z}$
+\end_inset 
+
+ e 
+\begin_inset Formula $I_{min}=0$
+\end_inset 
+
+.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/zona-central-pantalla.eps
+	display monochrome
+	width 4.5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+En la zona central de la pantalla de observación los máximos son líneas
+ verticales paralelas con separación de 
+\begin_inset Formula $\frac{\lambda D}{d}$
+\end_inset 
+
+.
+\end_inset 
+
+
+\layout Subsubsection
+
+Observaciones
+\layout Itemize
+
+Recordemos que esto sólo vale para 
+\begin_inset Formula $d$
+\end_inset 
+
+ pequeñas y zonas próximas al eje 
+\begin_inset Formula $z$
+\end_inset 
+
+ (véase la figura 
+\begin_inset LatexCommand \ref{fig inteferencia paraxial y no paraxial}
+
+\end_inset 
+
+).
+ 
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/vision-general-pantalla.eps
+	display monochrome
+	width 5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig inteferencia paraxial y no paraxial}
+
+\end_inset 
+
+Las rectas devienen hipérbolas si consideramos una zona mayor de la pantalla
+ de observación.
+\end_inset 
+
+
+\layout Itemize
+
+La posición de los máximos depende de la longitud de onda, por lo que sabiendo
+ las dimensiones del dispositivo se pueden medir longitudes de onda de modo
+ preciso.
+ Recíprocamente, la interferencia puede servir para medir la separación
+ entre dos fuentes puntuales si se conoce la longitud de onda con que emiten.
+\layout Description
+
+Visibilidad se define la visibilidad de una figura de interferencia como
+ 
+\begin_inset Formula \[
+V=\frac{I_{max}-I_{min}}{I_{max}+I_{min}}\]
+
+\end_inset 
+
+ se calcula midiendo la intensidad en un máximo y en su mínimo adyacente.
+ 
+\begin_deeper 
+\layout Itemize
+
+
+\begin_inset Formula $V=1$
+\end_inset 
+
+ ocurre siempre que 
+\begin_inset Formula $I_{1}=I_{2}$
+\end_inset 
+
+ (
+\begin_inset Formula $I_{min}=0$
+\end_inset 
+
+).
+ 
+\layout Itemize
+
+
+\begin_inset Formula $V=0$
+\end_inset 
+
+ corresponde a la mínima visibilidad, y ocurre cuando 
+\begin_inset Formula $I_{max}=I_{min}$
+\end_inset 
+
+ (no hay interferencia).
+ 
+\end_deeper 
+\layout Standard
+
+En el ejemplo que hemos tratado hemos obtenido 
+\begin_inset Formula $V=1$
+\end_inset 
+
+ porque hemos utilizado dos ondas estrictamente armónicas.
+ Vamos a ver que si consideramos ondas no monocromáticas la visibilidad
+ desciende.
+\layout Subsection
+
+Luz no monocromática
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/distrib-intensidad-dos-ondas-mono.eps
+	display monochrome
+	width 5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Distribución de intensidad para luz monocromática de , 
+\begin_inset Formula $I_{\omega_{1}}\left(x\right)$
+\end_inset 
+
+ e 
+\begin_inset Formula $I_{\omega_{2}}\left(x\right)$
+\end_inset 
+
+, con 
+\begin_inset Formula $I_{\omega_{1}}\left(x\right)\neq I_{\omega_{2}}\left(x\right)$
+\end_inset 
+
+.
+\end_inset 
+
+Las ondas de dos fuentes de frecuencias lo suficientemente distintas no
+ interfieren entre sí, porque el término interferencial depende del tiempo
+ y desaparece en el promedio temporal.
+ Lo que se obtiene es, pues, 
+\begin_inset Formula \[
+I=\int d\omega I_{\omega}\]
+
+\end_inset 
+
+ La figura interferencial depende muy marcadamente de la longitud de onda
+ (de la frecuencia).
+ Es verdad que el máximo de orden cero 
+\begin_inset Formula $M=0$
+\end_inset 
+
+ no se desplaza cuando cambiamos de frecuencia, pero todos los demás sí
+ lo hacen, por lo que la visibilidad con luz no monocromática debe ser definida
+ localmente: la visibilidad en la zona central de la pantalla es próxima
+ a 
+\begin_inset Formula $1$
+\end_inset 
+
+, mientras que a partir de cierta distancia (cierto retardo) la visibilidad
+ es casi nula.
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/suma-distrib-intensidad.eps
+	display monochrome
+	width 5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Suma de las distribuciones de intensidad 
+\begin_inset Formula $I_{\omega_{1}}$
+\end_inset 
+
+ y 
+\begin_inset Formula $I_{\omega_{2}}$
+\end_inset 
+
+ .
+\end_inset 
+
+El resultado obtenido tiene sentido, porque el tiempo de coherencia es inversame
+nte proporcional a las frecuencias contenidas en la luz
+\begin_inset Formula \[
+\delta t\propto\frac{1}{\Delta\omega}\]
+
+\end_inset 
+
+ pero como 
+\begin_inset Formula $x$
+\end_inset 
+
+ es, en último término, diferencia de tiempos, los puntos alejados del origen
+ tienen retardos 
+\begin_inset Formula $\tau>\delta t$
+\end_inset 
+
+ que no permiten la interferencia.
+ Si la luz contiene muchas frecuencias, el decaimiento 
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+del termino interferencial, supongo --ATC.
+\end_inset 
+
+será más rápido a partir del punto central.
+ 
+\layout Section
+
+División de amplitud (
+\noun on 
+Mi\SpecialChar \-
+chel\SpecialChar \-
+son
+\noun default 
+)
+\layout Subsection
+
+Principio de funcionamiento
+\layout Standard
+
+Si hacemos incidir una onda sobre una discontinuidad de índice sabemos que
+ se va a dividir en dos: una reflejada y otra transmitida.
+ Esas ondas son coherentes entre sí, y pueden interferir.
+ Para obtener la interferencia no hace falta más que recombinarlas.
+ Éste es el principio de todos los interferómetros por división de amplitud.
+ Una pieza clave de estos dispositivos es el 
+\emph on 
+divisor de haz.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/divisor-medio-haz.eps
+	display monochrome
+	width 4cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+divisor de haz al 50%
+\end_inset 
+
+
+\emph default 
+Un divisor de haz de vidrio tiene una reflectividad baja comparada con la
+ transmitividad, por lo que la visibilidad es pobre.
+ Para contrarrestar este efecto se le pega una lámina muy delgada 
+\begin_inset Formula $\left(\simeq2\, nm\right)$
+\end_inset 
+
+ de un medio absorbente.
+ Si logramos nuestro objetivo tendremos 
+\begin_inset Formula \[
+\left|\mathcal{R}\right|\simeq\left|\mathcal{T}\right|\]
+
+\end_inset 
+
+ (un divisor de haz al 50%).
+ 
+\layout Standard
+
+En estos dispositivos se prescinde de considerar la reflexión en el vidrio,
+ pues es comparativamente muy débil.
+ En realidad, la función más importante del vidrio es servir de soporte
+ a la lámina metálica.
+\layout Standard
+
+Este tipo de interferencia es responsable de los colores en las pompas de
+ jabón o de las láminas de aceite estiradas por la lluvia.
+ En ambos casos, interfieren las dos ondas reflejadas, una en cada cara
+ de la pompa o lámina.
+ Como la luz de la vida diaria es blanca
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+las lámparas de sodio de la iluminación urbana nocturna son de alta presión,
+ por lo que también tienen un espectro continuo y ancho.
+\end_inset 
+
+, el tiempo de coherencia es extraordinariamente corto, y los espesores
+ de pompas o láminas de aceite tienen que ser verdaderamente 
+\emph on 
+muy
+\emph default 
+ pequeños.
+\layout Subsection
+
+El interferómetro
+\noun on 
+ 
+\noun default 
+de
+\noun on 
+ Mi\SpecialChar \-
+chel\SpecialChar \-
+son
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/interferometro-michelson.eps
+	display monochrome
+	width 10cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Dispositivo interferencial de 
+\noun on 
+Michelson.
+\end_inset 
+
+Las ondas interfieren en dos lugares, pero generalmente no se observa la
+ interferencia que se produce en las inmediaciones de la fuente (por cuestión
+ de comodidad).
+\layout Standard
+
+En el dispositivo se utiliza una 
+\emph on 
+lámina
+\emph default 
+ 
+\emph on 
+compensadora
+\emph default 
+ para que la luz que va por el brazo vertical (que pasa tres veces por el
+ vidrio) no tenga un exceso de camino óptico respecto a la que pasa por
+ el brazo horizontal (que sólo pasa una vez por el vidrio).
+ La citada lámina es en todo equivalente a la que sirve de apoyo a la capa
+ de metal.
+ Esto hace que podamos eliminar definitivamente el vidrio del modelo de
+ funcionamiento.
+\layout Subsection
+
+Sustitución de todo el interferómetro por dos imágenes
+\layout Standard
+
+Si miramos desde la pantalla de observación, veremos dos imágenes de la
+ fuente.
+ Todo el montaje se hace equivalente a dos fuentes idénticas --coherentes--
+ separadas (que es lo que necesitamos para observar interferencia).
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/imagenes-formadas-michelson.eps
+	display monochrome
+	width 10cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Imágenes formadas por el 
+\noun on 
+Michelson
+\noun default 
+.
+ El origen es el centro del divisor de haz.
+\end_inset 
+
+Estas imágenes están sobre la misma línea, una a una distancia aparente
+ del centro del divisor de haz 
+\begin_inset Formula $2d_{1}+l$
+\end_inset 
+
+ y otra a distancia 
+\begin_inset Formula $2d_{2}+l$
+\end_inset 
+
+.
+ La distancia que separa a estas fuentes coherentes es 
+\begin_inset Formula $2\left(d_{1}-d_{2}\right)=2d$
+\end_inset 
+
+.
+\layout Standard
+
+Al ser fuentes puntuales podemos suponer que emiten ondas esféricas, y sólo
+ queda resolver el problema del interferómetro de 
+\noun on 
+Young
+\noun default 
+ con una geometría ligeramente diferente.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/interf-puntos-alineados-perpendicularmente.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Problema de la interferencia de dos fuentes puntuales 
+\begin_inset Formula $o_{1}''$
+\end_inset 
+
+ y 
+\begin_inset Formula $o_{2}''$
+\end_inset 
+
+ alineadas sobre una recta perpendicular a la pantalla.
+ 
+\begin_inset Formula $r_{1}$
+\end_inset 
+
+ y 
+\begin_inset Formula $r_{2}$
+\end_inset 
+
+ son las distancias respectivas al punto de observación 
+\begin_inset Formula $P$
+\end_inset 
+
+.
+\end_inset 
+
+
+\begin_inset Formula \[
+I=I_{1}+I_{2}+2\sqrt{I_{1}I_{2}}\cos\left(k\left(r_{2}-r_{1}\right)+\delta\right)\]
+
+\end_inset 
+
+ Hemos añadido una fase extra 
+\begin_inset Formula $\delta$
+\end_inset 
+
+ para dar cuenta de las reflexiones que se produzcan en el divisor de haz,
+ que es un medio absorbente.
+ Si el divisor de haz es al 
+\begin_inset Formula $50\%$
+\end_inset 
+
+ se cumple 
+\begin_inset Formula $I_{1}\simeq I_{2}$
+\end_inset 
+
+.
+ 
+\layout Subsubsection
+
+Figura de interferencia
+\layout Standard
+
+Como el sistema tiene simetría de revolución alrededor de la recta que une
+ las dos imágenes, según el principio de 
+\noun on 
+Curie
+\noun default 
+ (
+\begin_inset Quotes eld
+\end_inset 
+
+los efectos tienen las simetrías de las causas
+\begin_inset Quotes erd
+\end_inset 
+
+), pensamos que la figura de interferencia será una serie de anillos concéntrico
+s, alternativamente claros y oscuros.
+ Nosotros no vamos a precisar más su aspecto, aunque no es especialmente
+ difícil hacerlo.
+\layout Subsubsection
+
+Fuentes extensas
+\layout Standard
+
+Nos interesa saber cómo es la figura cuando la fuente está constituída por
+ una infinidad de puntos incoherentes entre sí.
+ El interés de este caso radica en la intensidad extra que las fuentes extensas
+ proporcionan y que hace el fenómeno verdaderamente observable.
+\layout Standard
+
+El interferómetro opera como hemos descrito, creando dos imágenes de la
+ fuente original coherentes entre sí.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/interf-fuente-extensa.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Imágenes extensas debidas al uso del dispositivo con una fuente extensa.
+\end_inset 
+
+Todos los puntos de la fuente dan lugar a dos imágenes.
+ Cada pareja de estas dará lugar a su sistema de anillos, sin que haya interfere
+ncias cruzadas (de la imagen de un punto con la de otro).
+ El problema es que los infinitos sistemas de anillos no coinciden entre
+ sí: el camino óptico 
+\begin_inset Formula $r_{2}-r_{1}$
+\end_inset 
+
+ para una pareja y 
+\begin_inset Formula $\hat{r}_{2}-\hat{r}_{1}$
+\end_inset 
+
+ para otra son distintos.
+ Eso destruye la interferencia, puesto que habrá una mezcla espacial de
+ las figuras interferenciales.
+ La pérdida de visibilidad será tanto más notable cuanto más extensa sea
+ la fuente.
+\layout Standard
+
+Hay un caso, empero, en el que no se produce pérdida de visibilidad.
+ En efecto, si llevamos la pantalla a una distancia infinita (en la práctica,
+ colocando la pantalla en el plano focal imagen de una lente convergente
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Cuando se hace el montaje experimental, mirar directamente a las imágenes--fuent
+e extensas equivale a introducir una lente convergente, pues el ojo relajado
+ (sin acomodación) hace perfectamente esta función.
+\end_inset 
+
+), las diferencias de fase son las mismas para todas las parejas de puntos
+ imagen.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/interferometro-mejorado-lente-delgada.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Dispositivo inteferencial mejorado utilizando una lente delgada.
+\end_inset 
+
+Veamos por qué.
+ Si consideramos el plano 
+\begin_inset Formula $\Sigma$
+\end_inset 
+
+, perpendicular al haz paralelo proveniente de las imágenes extensas, podemos
+ convencernos de que 
+\begin_inset Formula $\Sigma\fd P$
+\end_inset 
+
+ es el mismo camino óptico para todas las ondas.
+ Teniendo en cuenta las cantidades 
+\begin_inset Formula $\Delta$
+\end_inset 
+
+ y 
+\begin_inset Formula $\theta$
+\end_inset 
+
+ la diferencia de camino óptico es 
+\begin_inset Formula $n\Delta$
+\end_inset 
+
+ para ambas parejas de imágenes--fuente.
+ 
+\begin_inset Formula $\Delta=2d\cos\theta$
+\end_inset 
+
+, por lo que la diferencia de fase vale 
+\begin_inset Formula \[
+\frac{2\pi}{\lambda}n\Delta=\frac{2\pi}{\lambda}2nd\cos\theta\]
+
+\end_inset 
+
+ si el divisor de haz es al 50% las intensidades tendrán la distribución
+\begin_inset Formula \[
+I\left(\theta\right)=2I_{0}\left(1+\cos\left(\frac{2\pi}{\lambda}2nd\cos\theta+\delta\right)\right)\]
+
+\end_inset 
+
+ Los puntos de observación en la pantalla están parametrizados por el ángulo
+ 
+\begin_inset Formula $\theta$
+\end_inset 
+
+ (tenemos anillos centrados en el foco de la lente).
+ La condición de máximo es 
+\begin_inset Formula \[
+\left(\frac{2\pi}{\lambda}2nd\cos\theta+\delta\right)=2\pi M\]
+
+\end_inset 
+
+ donde 
+\begin_inset Formula $M\in\mathcal{Z}$
+\end_inset 
+
+ es el 
+\emph on 
+orden del máximo.
+ 
+\emph default 
+La utilidad de estos fenómenos es la determinación de longitudes (de onda,
+ o distancias entre las imágenes, que son, en definitiva, distancias entre
+ los espejos).
+ Son así de precisos en razón de la fuerte dependencia de la figura interferenci
+al en función de dichas longitudes.
+ Lo mismo se puede decir respecto al índice de refracción.
+\layout Subsection
+
+
+\noun on 
+Michelson
+\noun default 
+ con luz blanca
+\layout Standard
+
+Como el tiempo de coherencia es muy pequeño en virtud de la gran gama de
+ frecuencias presente en la luz blanca, se necesita que ambos brazos tengan
+ una diferencia de longitud del orden de la micra (imágenes superpuestas:
+ 
+\emph on 
+contacto
+\emph default 
+ 
+\emph on 
+óptico
+\emph default 
+).
+ Lo que se ve es una figura de anillos coloreada, con pocos órdenes, puesto
+ que los máximos para los diferentes colores no son coincidentes más que
+ en el punto central.
+\layout Section
+
+Reflexiones múltiples (
+\noun on 
+Fa\SpecialChar \-
+bry
+\noun default 
+--
+\noun on 
+Pe\SpecialChar \-
+rot)
+\layout Standard
+
+Siempre que superpongamos dos ondas la distribución de intensidad tendrá
+ la forma
+\begin_inset Formula \[
+I=I_{1}+I_{2}+2\sqrt{I_{1}I_{2}}\cos\varphi\]
+
+\end_inset 
+
+ ¿Y si superponemos una multitud de ondas en lugar de sólo dos?.
+ No es difícil: podemos valernos de fenómenos de reflexión--refracción.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/interf-lamina-delgada.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Inteferencias en una lámina delgada de índice 
+\begin_inset Formula $n$
+\end_inset 
+
+.
+\end_inset 
+
+Estamos haciendo una división de amplitud iterativa.
+ Para obtener interferencia no hay más que reunir las ondas coherentes creadas.
+ Si la fuente es puntual, basta utilizar una lente convergente para reunir
+ las ondas en un punto del plano focal imagen.
+ Si la fuente es extensa, las ondas planas interfieren automáticamente.
+\layout Standard
+
+El vidrio no es una buena elección como material (el coeficiente de reflexión
+ es muy pequeño, por lo que sólo la primera onda transmitida es suficientemente
+ intensa, y la visibilidad es mala cuando se suman ondas de amplitudes muy
+ dispares).
+ Podemos o bien incidir de forma rasante, o bien introducir medios absorbentes,
+ que es la idea que subyace al interferómetro de 
+\noun on 
+Fabry
+\noun default 
+-
+\noun on 
+Perot
+\noun default 
+.
+ 
+\layout Standard
+
+Disponemos dos espejos enfrentados entre sí, de material metálico y muy
+ delgados para que haya suficiente transmisión.
+ Habitualmente estas láminas van montadas sobre láminas de vidrio.
+ Como las reflexiones en el vidrio son pequeñas, en lo que sigue sólo considerar
+emos las láminas metálicas, esquematizando el dispositivo como se ve en
+ la figura 
+\begin_inset LatexCommand \ref{fig esquematizacion de un FP}
+
+\end_inset 
+
+.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/fabry-perot-esquematizado.eps
+	display monochrome
+	width 5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig esquematizacion de un FP}
+
+\end_inset 
+
+Dispositivo real (izquierda) y dispositivo esquemático para el cálculo (derecha).
+\end_inset 
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/rayos-en-un-fp.eps
+	display monochrome
+	width 10cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Diagrama de los rayos
+\end_inset 
+
+Si los coeficientes de reflexión son 
+\begin_inset Formula $r_{1}$
+\end_inset 
+
+ y 
+\begin_inset Formula $r_{2}$
+\end_inset 
+
+ y los de transmisión 
+\begin_inset Formula $t_{1}$
+\end_inset 
+
+ y 
+\begin_inset Formula $t_{2}$
+\end_inset 
+
+, la primera onda incidente sobre la pantalla es
+\begin_inset Formula \[
+t_{1}t_{2}A\]
+
+\end_inset 
+
+ la segunda onda es
+\begin_inset Formula \[
+t_{1}t_{2}r_{1}r_{2}Ae^{i\phi}\]
+
+\end_inset 
+
+ La diferencia de fase es
+\begin_inset Formula \[
+\phi=\frac{2\pi}{\lambda}\left(2n\Delta_{1}-n'\Delta_{2}\right)\]
+
+\end_inset 
+
+ (
+\begin_inset Formula $2n\Delta_{1}$
+\end_inset 
+
+ es el camino óptico dentro del interferómetro).
+ En términos de constantes del problema
+\begin_inset Formula \begin{eqnarray*}
+\Delta_{1} & = & \frac{d}{\cos\theta}\\
+\Delta_{2} & = & \Delta_{3}\sin\theta'\\
+\Delta_{3} & = & 2\Delta_{1}\sin\theta\end{eqnarray*}
+
+\end_inset 
+
+ o
+\begin_inset Formula \[
+\Delta_{2}=2\frac{d}{\cos\theta}\sin\theta\sin\theta'\]
+
+\end_inset 
+
+ Como en cualquiera de las superficies paralelas a los espejos, dentro y
+ fuera se deben verificar las condiciones de contorno (la proyección del
+ vector de ondas se conserva)
+\begin_inset Formula \[
+\frac{\omega}{c}n\sin\theta=\ldots=\frac{\omega}{c}n'\sin\theta'\]
+
+\end_inset 
+
+ es decir, la ley de 
+\noun on 
+Snell
+\noun default 
+: 
+\begin_inset Formula $n'\sin\theta'=n\sin\theta$
+\end_inset 
+
+.
+ Finalmente
+\begin_inset Formula \[
+\Delta_{2}=2\frac{d}{\cos\theta}\frac{n}{n'}\sin^{2}\theta\]
+
+\end_inset 
+
+ y la diferencia de fase, al sustituir 
+\begin_inset Formula $\Delta_{1}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\Delta_{2}$
+\end_inset 
+
+ vale
+\begin_inset Formula \[
+\phi=\ldots=\frac{2\pi}{\lambda}2nd\cos\theta\]
+
+\end_inset 
+
+ expresada en términos del índice de refracción del interferómetro, el ángulo
+ de incidencia y la distancia entre los espejos.
+ Obsérvese que es la misma expresión que la del interferómetro de 
+\noun on 
+Michelson
+\noun default 
+.
+\layout Standard
+
+Para las ondas sucesivas no hay más que aprovechar estos resultados.
+ Por ejemplo, para la tercera,
+\layout Standard
+
+
+\begin_inset Formula \[
+t_{1}t_{2}\left(r_{1}r_{2}\right)^{2}Ae^{i2\phi}\]
+
+\end_inset 
+
+ De modo que la amplitud total debe ser una suma 
+\begin_inset Formula \begin{eqnarray*}
+A' & = & \sum_{m=0}^{\infty}t_{1}t_{2}\left(r_{1}r_{2}\right)^{m}e^{im\phi}A\\
+ & = & \frac{t_{1}t_{2}}{1-r_{1}r_{2}e^{i\phi}}A\end{eqnarray*}
+
+\end_inset 
+
+ (es una serie geométrica).
+ Pero estamos interesados en la intensidad emergente 
+\begin_inset Formula $I'\propto\left|A'\right|^{2}$
+\end_inset 
+
+.
+ Para hacerlo escribimos el número complejo 
+\begin_inset Formula \[
+r_{1}r_{2}=\left|r_{1}r_{2}\right|e^{i2\delta}\]
+
+\end_inset 
+
+ Como 
+\begin_inset Formula $I'=\mathcal{T}I$
+\end_inset 
+
+ 
+\begin_inset Formula \[
+\mathcal{T}=\frac{\left|A'\right|^{2}}{\left|A\right|^{2}}=\frac{I'}{I}=\frac{\mathcal{T}_{max}}{1+F\sin^{2}\varphi}\]
+
+\end_inset 
+
+ donde 
+\begin_inset Formula \begin{eqnarray*}
+\mathcal{T}_{max} & = & \frac{\left|t_{1}t_{2}\right|^{2}}{\left(1-\left|r_{1}r_{2}\right|\right)^{2}}\\
+F & = & \left(\frac{2\sqrt{\left|r_{1}r_{2}\right|}}{1-\left|r_{1}r_{2}\right|}\right)^{2}\end{eqnarray*}
+
+\end_inset 
+
+ son parámetros que sólo dependen del interferómetro, y 
+\begin_inset Formula \begin{eqnarray*}
+\varphi & = & \frac{\phi}{2}+\delta=\\
+ &  & \frac{2\pi}{\lambda}nd\cos\theta+\delta\end{eqnarray*}
+
+\end_inset 
+
+ es la fase.
+\layout Subsection
+
+Conclusiones
+\layout Standard
+
+Tanto 
+\begin_inset Formula $\mathcal{T}_{max}$
+\end_inset 
+
+ como 
+\begin_inset Formula $F$
+\end_inset 
+
+ son constantes.
+ La variable de la transmitancia 
+\begin_inset Formula $\mathcal{T}$
+\end_inset 
+
+ es 
+\begin_inset Formula $\varphi$
+\end_inset 
+
+, y el aspecto de esa función 
+\begin_inset Formula $\mathcal{T}\left(\varphi\right)$
+\end_inset 
+
+ es el que se muestra en la figura 
+\begin_inset LatexCommand \ref{fig trasmitancia interferometro FP}
+
+\end_inset 
+
+.
+ 
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/transmitancia-fp.eps
+	display monochrome
+	width 4cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig trasmitancia interferometro FP}
+
+\end_inset 
+
+Función 
+\begin_inset Formula $\mathcal{T}\left(\varphi\right)$
+\end_inset 
+
+
+\end_inset 
+
+ Los máximos corresponden a 
+\begin_inset Formula $\sin\varphi=0$
+\end_inset 
+
+, lo que conduce a 
+\begin_inset Formula \[
+\frac{2\pi}{\lambda}nd\cos\theta+\delta=M\pi\]
+
+\end_inset 
+
+ 
+\begin_inset Formula $I'_{max}=\mathcal{T}_{max}I$
+\end_inset 
+
+.
+ El orden del máximo viene dado por 
+\begin_inset Formula $M\in\mathcal{Z}$
+\end_inset 
+
+.
+ Los mínimos se producirán cuando 
+\begin_inset Formula $\sin\varphi=\pm1$
+\end_inset 
+
+ o
+\begin_inset Formula \[
+\frac{2\pi}{\lambda}nd\cos\theta+\delta=\left(2m+1\right)\frac{\pi}{2}\]
+
+\end_inset 
+
+ la intensidad en los mínimos vale 
+\begin_inset Formula $I'_{min}=T_{min}I$
+\end_inset 
+
+ donde 
+\begin_inset Formula $I_{min}=\frac{T_{max}}{1+F}$
+\end_inset 
+
+.
+ La visibilidad es 
+\begin_inset Formula \[
+V=\frac{I'_{max}-I'_{min}}{I'_{max}+I'_{min}}=\frac{F}{2+F}=\frac{2\left|r_{1}r_{2}\right|}{1+\left|r_{1}r_{2}\right|^{2}}\]
+
+\end_inset 
+
+ la visibilidad no es uno de partida, lo que quiere decir que los mínimos
+ no lo son con intensidad cero.
+ 
+\layout Itemize
+
+Si lo que incide sobre el interferómetro es una onda plana de amplitud 
+\begin_inset Formula $A$
+\end_inset 
+
+, a la salida tendremos una única onda plana de amplitud 
+\begin_inset Formula $A'$
+\end_inset 
+
+.
+ En el plano focal imagen esa onda plana converge a un punto.
+\layout Itemize
+
+Si lo que incide es un rayo, a la salida obtendremos un haz de rayos paralelos,
+ que forman un punto sobre el plano focal imagen.
+ El punto tendrá mayor o menor intensidad dependiendo de la diferencia de
+ fase 
+\begin_inset Formula $\varphi$
+\end_inset 
+
+.
+\layout Itemize
+
+Si lo que incide sobre el interferómetro es luz proveniente de una fuente
+ puntual monocromática (emisor de una infinidad de rayos en distintas direccione
+s), muchos rayos de la fuente producirán puntos distintos sobre el plano
+ focal imagen, lo que dará lugar a una determinada distribución de intensidad.
+ Geométricamente, la intensidad sólo depende del ángulo 
+\begin_inset Formula $\theta$
+\end_inset 
+
+.
+ Es decir, que todo tiene simetría bajo rotaciones en torno a la normal
+ a los espejos.
+ Podemos esperar pues que se visualice un sistema de anillos centrado en
+ el foco imagen del sistema, 
+\begin_inset Formula $F'$
+\end_inset 
+
+.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/intensidad-fp-emisor-puntual.eps
+	display monochrome
+	width 4cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Intensidad en la pantalla debida a un emisor puntual.
+\end_inset 
+
+
+\layout Itemize
+
+Si la fuente es extensa, obtendremos la misma figura de interferencia por
+ cada punto emisor de la fuente extensa, por lo que la única diferencia
+ respecto al caso anterior es que se reforzará la intensidad.
+ La visiblilidad, como en el 
+\noun on 
+Michelson
+\noun default 
+, se mantiene.
+\layout Subsection
+
+Tratamiento cuantitativo de la distribución de intensidad
+\layout Standard
+
+Si estamos interesados en interferencia estamos interesados en maximizar
+ la visibilidad.
+ Según la expresión hallada, 
+\begin_inset Formula $V\fd1$
+\end_inset 
+
+ cuando 
+\begin_inset Formula $F\gg1$
+\end_inset 
+
+.
+ 
+\begin_inset Formula $F$
+\end_inset 
+
+ depende de los coeficientes de reflexión de las láminas metálicas.
+ La condición que hemos exigido es equivalente a 
+\begin_inset Formula \[
+\left|r_{1}r_{2}\right|\fd1\]
+
+\end_inset 
+
+ Este interferómetro se diferencia de los otros en que la onda producida
+ es suma de un número infinito de ondas.
+ Los interferómetros de 
+\noun on 
+Young
+\noun default 
+ y 
+\noun on 
+Michelson
+\noun default 
+ daban lugar a una distribución de intensidad de la forma
+\begin_inset Formula \[
+I=I_{1}+I_{2}+2\sqrt{I_{1}I_{2}}\cos\varphi\]
+
+\end_inset 
+
+ La interferencia depende mediante un coseno de la diferencia de fases.
+ Esto es así siempre que se hacen interferir 
+\emph on 
+dos 
+\emph default 
+ondas.
+ Sin embargo, aquí la dependencia de la intensidad de la diferencia de fase
+ es completamente diferente
+\begin_inset Formula \[
+I'=\frac{T_{max}}{1+F\sin^{2}\varphi}I\]
+
+\end_inset 
+
+ El interés de este interferómetro consiste en explotar su singularidad,
+ que se expresa en la figura 
+\begin_inset Formula $\mathcal{T}\left(\varphi\right)$
+\end_inset 
+
+.
+ Una forma de caracterizar esta distribución de intensidades es cuantificar
+ la anchura de los picos.
+ Esto se puede hacer, por ejemplo, identificando cuál es la anchura 
+\begin_inset Formula $\delta\varphi$
+\end_inset 
+
+ a mitad de altura, es decir, a 
+\begin_inset Formula $\frac{\mathcal{T}_{max}}{2}$
+\end_inset 
+
+.
+ Observemos que
+\begin_inset Formula \begin{eqnarray*}
+\mathcal{T}\left(m\pi+\frac{\delta\varphi}{2}\right) & = & \frac{\mathcal{T}_{max}}{2}\\
+\frac{1}{1+F\sin^{2}\left(\frac{\delta\varphi}{2}\right)} & = & \frac{1}{2}\\
+\sin\left(\frac{\delta\varphi}{2}\right) & = & \frac{1}{\sqrt{F}}\end{eqnarray*}
+
+\end_inset 
+
+ por lo que 
+\begin_inset Formula \[
+\delta\varphi=2\arcsin\left(\frac{1}{\sqrt{F}}\right)\]
+
+\end_inset 
+
+ Como estamos interesados en 
+\begin_inset Formula $F\gg1$
+\end_inset 
+
+, podemos hacer un desarrollo en serie de potencias
+\begin_inset Formula \[
+\delta\varphi\simeq\frac{2}{\sqrt{F}}\]
+
+\end_inset 
+
+ Cuanto mejor sea la visibilidad (
+\begin_inset Formula $F$
+\end_inset 
+
+ más alto) tanto más estrechos serán los picos.
+ 
+\layout Description
+
+Ejemplo Estudiar un interferómetro de FP construído con dos láminas metálicas
+ de plata.
+\begin_deeper 
+\layout Standard
+
+
+\size small 
+Para la plata, 
+\begin_inset Formula $\left|r_{1}r_{2}\right|\simeq0.94$
+\end_inset 
+
+.
+ Con esto, 
+\begin_inset Formula $F\simeq10^{3}$
+\end_inset 
+
+.
+ La visibilidad es buena, 
+\begin_inset Formula $V=0.998$
+\end_inset 
+
+.
+ La anchura a mitad de altura es 
+\begin_inset Formula $\delta\varphi\simeq0.06$
+\end_inset 
+
+.
+ Como la plata es un medio absorbente, la transmitancia en el máximo no
+ será la unidad; una parte será absorbida: 
+\begin_inset Formula $T_{max}=0.44$
+\end_inset 
+
+ (en el máximo tenemos la mitad de la intensidad incidente).
+ Hay que subrayar que 
+\begin_inset Formula $\delta\varphi$
+\end_inset 
+
+ es muy pequeño, ya que es, relativo a la separación entre picos, 
+\begin_inset Formula $\frac{0.06}{3.14}\simeq2\%$
+\end_inset 
+
+.
+ Esta figura interferencial y la producida por dos ondas son muy distintas.
+\end_deeper 
+\layout Subsection
+
+Aplicaciones
+\layout Standard
+
+El interés de este interferómetro está en que la obtención de picos estrechos
+ significa mucha sensibilidad.
+ Variaciones de fase muy pequeñas producen variaciones de intensidad notables.
+ Estas variaciones de fase pueden venir de un cambio de la distancia entre
+ los espejos o en el índice de refracción en el interior del interferómetro
+ o en la longitud de onda de la fuente
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+con luz policromática veríamos interferencia coloreada: anillos de colores
+ no superpuestos.
+\end_inset 
+
+.
+ Todo ello se puede medir con precisión usando un FP.
+ 
+\layout Standard
+
+La capacidad del instrumento de discriminar longitudes de onda distintas
+ se denomina 
+\emph on 
+poder resolutivo.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/resolucion-de-imagenes.eps
+	display monochrome
+	width 5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Ilustración gráfica de lo que entendemos por 
+\emph on 
+resolver
+\emph default 
+ picos de interferencia distintos.
+\end_inset 
+
+
+\emph default 
+El interferómetro puede resolver o discriminar dos longitudes de onda, o
+ ser insuficiente para la tarea.
+ El poder resolutivo dependerá de la separación entre máximos 
+\begin_inset Formula $\Delta\varphi$
+\end_inset 
+
+ y de la anchura a media altura de estos, 
+\begin_inset Formula $\delta\varphi$
+\end_inset 
+
+.
+ Se suele utilizar un criterio para distinguir las dos situaciones: las
+ longitudes de onda se resuelven si 
+\begin_inset Formula $\Delta\varphi\geq\delta\varphi$
+\end_inset 
+
+ y no se resuelven si 
+\begin_inset Formula $\Delta\varphi<\delta\varphi$
+\end_inset 
+
+.
+\layout Standard
+
+Si consideramos dos longitudes de onda extraordinariamente próximas, 
+\begin_inset Formula $\Delta\lambda=\lambda'-\lambda$
+\end_inset 
+
+ y 
+\begin_inset Formula $\Delta\lambda\ll\lambda,\lambda'$
+\end_inset 
+
+ 
+\begin_inset Formula \[
+\Delta\varphi=2\pi nd\cos\theta\frac{\Delta\lambda}{\lambda^{2}}\geq\frac{2}{\sqrt{F}}\]
+
+\end_inset 
+
+ Esta expresión nos dará eventualmente la mínima diferencia de longitud
+ de onda que podemos resolver.
+ Manipulamos la expresión bajo la hipótesis de que estamos trabajando en
+ el entorno de un máximo, situación para la que se cumple 
+\begin_inset Formula $\frac{2\pi}{\lambda}nd\cos\theta+\delta=M\pi$
+\end_inset 
+
+.
+ Normalmente, 
+\begin_inset Formula $M\gg1$
+\end_inset 
+
+, lo que permite despejar
+\begin_inset Formula \[
+2\pi dn\cos\theta=M\pi\lambda\]
+
+\end_inset 
+
+ y expresar la condición como
+\begin_inset Formula \[
+\frac{\lambda}{\Delta\lambda}\leq\frac{\pi}{2}M\sqrt{F}\]
+
+\end_inset 
+
+ donde el segundo miembro es una característica del aparato y la forma en
+ que lo utilizamos: su poder resolutivo.
+\layout Standard
+
+El que el poder resolutivo fuera proporcional a 
+\begin_inset Formula $F$
+\end_inset 
+
+ era de esperar.
+ En cuanto a 
+\begin_inset Formula $M$
+\end_inset 
+
+, el orden interferencial, no depende del aparato, sino de las condiciones
+ en las que lo hacemos operar.
+\layout Description
+
+Ejemplo Calcular el poder resolutivo de un FP que cumple que 
+\begin_inset Formula $nd\simeq1\, cm$
+\end_inset 
+
+, 
+\begin_inset Formula $\lambda\simeq500\, nm$
+\end_inset 
+
+ y que la incidencia es normal, 
+\begin_inset Formula $\theta=0$
+\end_inset 
+
+.
+ Para simplificar aún más, 
+\begin_inset Formula $\delta=0$
+\end_inset 
+
+.
+ 
+\begin_deeper 
+\layout Standard
+
+
+\size small 
+El orden interferencial resulta, de la condición de máximo, 
+\begin_inset Formula $M=\frac{2}{\lambda}nd\simeq4\times10^{4}$
+\end_inset 
+
+.
+ Los espejos son tales que 
+\begin_inset Formula $F=10^{3}$
+\end_inset 
+
+.
+ Con todo esto el poder resolutivo vale 
+\begin_inset Formula $\frac{\lambda}{\Delta\lambda}\leq2\times10^{6}$
+\end_inset 
+
+.
+ Para una separación entre espejos de 
+\begin_inset Formula $1\, cm$
+\end_inset 
+
+ ya estamos con órdenes de interferencia de 
+\begin_inset Formula $40.000$
+\end_inset 
+
+, lo que justifica la hipótesis de 
+\begin_inset Formula $M\gg1$
+\end_inset 
+
+.
+ Además, nos interesa un 
+\begin_inset Formula $M$
+\end_inset 
+
+ alto para incrementar el poder resolutivo.
+ El poder resolutivo hallado quiere decir que el interferómetro es capaz
+ de resolver dos longitudes de onda de una parte en un millón.
+ Este interferómetro discrimina dos longitudes de onda que se diferencien
+ en 
+\begin_inset Formula $\Delta\lambda\geq2\times10^{-3}\mathrm{A}$
+\end_inset 
+
+.
+\the_end

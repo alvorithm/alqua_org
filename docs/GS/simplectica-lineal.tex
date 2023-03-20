@@ -1,0 +1,1669 @@
+\documentclass[spanish,a4paper,12pt,draft]{report}
+\usepackage{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{eurosym}
+\input{GS-packages.sty}
+\input{GS-macros.sty}
+\begin{document}
+\chapter{Geometría simpléctica lineal} 
+
+Supondremos siempre que el cuerpo $k$ sobre el que trabajamos es de
+característica distinta de $2$.  Todos los $k$-espacios vectoriales
+que aparezcan se supondrán de dimensión finita, aunque una parte de la
+teoría es válida para espacios arbitrarios.
+
+
+\section{Geometrías}\label{sec:definicion}
+
+
+\begin{defi}
+  
+  Una {\sf $k$-geometría simpléctica} \index{geometría!simpléctica} es
+  un par $(E, \Wa)$ formado por un $k$-espacio vectorial $E$ y una
+  $2$-forma $\Wa$ sobre $E$.  $\Wa$ también se
+  llama\index{producto!escalar}\index{métrica} {\sf producto escalar}
+  o {\sf métrica}.
+
+\end{defi}
+
+La forma $\Wa$ es una aplicación bilineal de $E \times E$ en $k$. Como
+$\Wa$ es antisimétrico tenemos que $\Wa(e,f)= -\Wa(f,e)$.  En
+particular, como la característica no es $2$, se deduce que
+$\Wa(e,e)=0$.
+
+Dada una base $\{e_i\}$ podemos asociar a cada geometría una matriz
+cuadrada cuyo orden coincide con la dimensión de la geometría.  Sus
+elementos se definen como
+$$
+\omega_{ij}= \Wa(e_i,e_j)
+$$
+Si denotamos por $\{\alpha_i\}$ a la base dual de $\{e_i\}$
+entonces se puede expresar
+$$
+\Wa= w_{ij}\,\alpha_i \wedge \alpha_j \text{ (convenio de
+  sumación)}
+$$
+
+\bigskip
+
+\noindent{\bf Observación.}
+
+\smallskip
+
+En general, en todos los libros, se denomina geometría simpléctica a
+lo que nosotros llamaremos geometría simpléctica no singular.
+Nosotros también haremos esto cuando introduzcamos el concepto de
+geometría no singular (ver sección \ref{sec:polaridad}).
+
+\bigskip
+
+\noindent{\bf Ejemplos.}
+
+\begin{itemize}
+  
+\item Consideramos en $k^2$ la base canónica y denotamos por
+  $\omega_x$ y $\omega_y$ la base dual.  Entonces $\Wa= \omega_x
+  \wedge \omega_y$ dota a $k^2$ de una estructura simpléctica.
+  
+\item Sea $k^{2n}$ dotado de la base canónica y $\{\omega_i\}$ la base
+  dual.  Si tomamos \linebreak $\Wa = \sum_{i=1}^n \omega_i \wedge \omega_{n+i}$
+  tenemos una estructura simpléctica.
+  
+\item Sea $E$ un espacio vectorial arbitrario.  Sobre el espacio $E
+  \oplus E^*$ tenemos la $2$-forma canónica definida como
+  $$
+  \Wa(e \oplus \omega, e' \oplus \omega') = \omega'(e)-\omega(e')
+  $$
+  
+\item Sea $E$ un espacio vectorial real dotado de una métrica
+  euclídea. El producto escalar de dos vectores lo denotaremos
+  $g(x,y)$.  En el espacio vectorial $E \times E$ existe una
+  estructura simpléctica asociada a este producto escalar, que se
+  define como
+  $$
+  \Wa(e_1 \oplus e_2, e_1' \oplus e_2') = g(e_2',e_1)-g(e_1',e_2)
+  $$
+  
+\item Sea $E$ un espacio vectorial complejo dotado de una métrica {\sf
+    hermítica} \index{métrica!hermítica} no degenerada.
+  Consideraremos también la estructura natural de espacio vectorial
+  real. Si denotamos por $\escalar{e}{f}$ al producto hermítico de dos
+  vectores, tenemos que la aplicación es lineal en la primera
+  componente, antilineal en la segunda y además se cumple que
+  $\escalar{e}{f}= \overline{\escalar{f}{e}}$ y $\escalar{e}{e} > 0$
+  si $e \neq 0$.
+  
+  La parte imaginaria de la métrica hermítica, $\Img
+  (\escalar{e}{f})$, es una métrica simpléctica sobre el $\R$-espacio
+  vectorial $E$.
+
+\end{itemize}
+
+\begin{defi}
+  
+  Sean $(E, \Wa), (E', \Wa')$ dos $k$-geometrías simplécticas.  Un
+  {\sf morfismo simpléctico}, \index{morfismo!simpléctico} o {\sf
+    morfismo métrico}, \index{morfismo!métrico} de $E$ en $E'$ es una
+  aplicación lineal $\varphi : E \rightarrow E'$ que verifica
+  $$
+  \Wa (e,f) = \Wa'(\varphi(e), \varphi(f)) \text{ para todo } e,f
+  \in E
+  $$
+
+\end{defi}
+
+La composición de dos morfismos simplécticos es otro morfismo
+simpléctico.  Asimismo, si $\varphi$ es un isomorfismo simpléctico,
+$\varphi^{-1}$ es también simpléctico. Los isomorfismo simplécticos se
+denominan también \index{simplectomorfismo} {\sf simplectomorfismos},
+o \index{transformación canónica} {\sf transformaciones canónicas}.
+
+\bigskip
+
+Tenemos las siguientes propiedades que se derivan directamente de las
+definiciones dadas.
+
+\begin{itemize}
+
+  
+\item $\varphi :E \rightarrow E'$ es un morfismo métrico si y solo si
+  $\varphi^* (\Wa') = \Wa$, donde $\varphi^*$ denota la \index{imagen
+    inversa}{\sf imagen inversa}\footnote{Si $\varphi : E \rightarrow
+    E'$ es una aplicación lineal, la imagen inversa es una aplicación
+    lineal $\varphi^* : \bigwedge (E') \rightarrow \bigwedge
+    (E)$ que sobre una $p$-forma $\alpha$ actua como
+    $$
+    \varphi^*(\alpha)(e_1, \cdots, e_p) = \alpha(\varphi(e_1),
+    \cdots , \varphi(e_p))
+    $$}.
+
+
+  
+\item Dos geometrías son {\sf isométricas}
+  \index{geometrías!isométricas} si existe alguna isometría entre
+  ellas.  Esto nos da una relación de equivalencia en el conjunto de
+  geometrías sobre el cuerpo $k$.  Para nosotros dos geometrías
+  isométricas serán consideradas la misma geometría.
+  
+\item Si $E ,E'$ son isométricas, existen bases en $E$ y $E'$ tales
+  que $\Wa$ y $\Wa'$ tienen la misma matriz asociada.  Si $\varphi$ es
+  la isometría y tomamos una base $\{e_i\}$ en el primer espacio,
+  tenemos que $\{\varphi(e_i)\}$ es una base del segundo espacio y las
+  matrices respecto de dichas bases son iguales. El recíproco también
+  es cierto.
+  
+\item El problema que pretendemos estudiar en este capítulo es la
+  clasificación de las geometrías de acuerdo a la relación de
+  equivalencia dada por la isometría.  Ello exige dar condiciones
+  necesarias y suficientes para que dos geometrías sean isométricas y
+  también encontrar los representantes más sencillos de cada clase de
+  equivalencia (expresando la métrica en una base).
+  
+\item Dos geometrías isométricas son necesariamente de la misma
+  dimensión.  Por lo tanto la dimensión es un invariante en el
+  problema de clasificación de geometrías.
+  
+\item Si $(E, \Wa)$ es una geometría, el conjunto de isometrías, junto
+  con la composición de aplicaciones, es un grupo, que es de modo
+  natural un subgrupo del grupo lineal.  De acuerdo a la idea de
+  Klein, el estudio de la geometría $E$ es el estudio de los
+  invariantes por el grupo antes citado, que de ahora en adelante
+  llamaremos {\sf grupo simpléctico} \index{grupo!simpléctico}y
+  denotaremos $\Sp(E)$.
+  
+\item Si dos geometrías son isométricas mediante una isometría
+  $\varphi : E \rightarrow E'$, los grupos $\Sp(E)$ y $\Sp(E')$ son
+  isomorfos.  En efecto, asociando a cada isometría $T$ de $E$ la
+  isometría $ \varphi \cdot T \cdot \varphi^{-1}$, construimos un
+  morfismo de grupos que se comprueba fácilmente que establece un
+  isomorfismo entre los grupos simplécticos de ambas geometrías.
+
+\end{itemize}
+
+\begin{defi}
+  
+  Dos vectores $e,f\in E$ son {\sf ortogonales}
+  \index{vectores!ortogonales} si $\Wa(e,f) =0$.
+
+\end{defi}
+
+La relación de ser ortogonales posee las propiedades reflexiva y
+simétrica, más no es una relación de equivalencia pues no posee la
+propiedad transitiva. Todo vector es ortogonal a si mismo por ser
+$\Wa$ antisimétrica (y car$(k) \neq 2$).  Por eso se dice que los
+vectores son {\sf isótropos} \index{vector!isótropo} en geometría
+simpléctica.
+
+\begin{defi}
+  
+  Sea $V \subset E$ un subespacio.  Llamamos {\sf ortogonal}
+  \index{subespacio!ortogonal} de $V$ y denotamos $V^\perp$ al
+  subespacio
+  $$
+  V^\perp = \{ e \in E \text{ tales que } \Wa (e, f)=0 \text{ para
+    todo } f \in V\}
+  $$
+
+\end{defi}
+
+
+\begin{defi}
+  
+  Sean $(E, \Wa)$ y $(E', \Wa')$ dos geometrías.  La {\sf suma
+    ortogonal} \index{suma ortogonal} es el espacio vectorial $E
+  \oplus E'$ dotado de la métrica
+  $$
+  \Omega_{E \oplus E'} (e+e', f+f')= \Omega_2(e,f)+ \Wa'(e', f')
+  $$
+  La suma ortogonal se denota $ E \perp E'$.
+
+\end{defi}
+
+
+\begin{itemize}
+  
+\item Si $\pi_1$ y $\pi_2$ denotan las proyecciones de $E \oplus E'$
+  en cada factor, $\pi_1$ y $\pi_2$ son morfismos métricos.  Tenemos
+  la fórmula
+  $$
+  \Omega_{E \oplus E'} = \pi_1^*(\Wa)+ \pi_2^*(\Wa')
+  $$
+  La métrica $\Omega_{E \oplus E'}$ se denota $ \Wa + \Wa'$, o
+  también $ \Wa \perp \Wa'$, cometiendo un abuso de notación
+  fácilmente entendible.
+  
+\item Todo vector de $E$, tras inyectarlo en $E \perp E'$ es ortogonal
+  a todo vector de $E'$.
+  
+\item Decimos que dos subespacios $V$ y $V'$ son ortogonales si todo
+  vector de $V$ es ortogonal a todo vector de $V'$. Denotamos este
+  hecho por $V\perp V'$.  El subespacio $V^\perp$ es el mayor de los
+  subespacios ortogonales a $F$.
+
+
+\end{itemize}
+
+\section{Polaridad}\label{sec:polaridad}
+
+
+\begin{defi}
+  
+  La {\sf polaridad} es la aplicación lineal \mbox{$\mathsf{p} : E
+    \rightarrow E^*$} definida por
+  $$
+  \mathsf{p}(e)= i_e\Wa
+  $$
+
+\end{defi}
+
+Si existe riesgo de confusión la denotaremos $\mathsf{p}_{\Wa}$ o
+$\mathsf{p}_E$.  En algunos libros se define la polaridad con el signo
+cambiado.  Este cambio de signo no tiene consecuencias en nuestro
+estudio.
+
+\begin{defi}
+  
+  El {\sf radical} de la geometría $(E, \Wa)$ es el núcleo de la
+  polaridad asociada.  Se denota $\rad(E)$ o $\rad(\Wa)$.
+
+\end{defi}
+
+\begin{itemize}
+  
+\item El radical está constituido por los vectores ortogonales a todo
+  vector.  Se tiene por tanto que $\rad(E) = E^\perp$.
+  
+\item Una métrica es {\sf no singular} \index{métrica!no singular} si
+  su radical es nulo.  En este caso la polaridad es un isomorfismo,
+  puesto que estamos suponiendo que el espacio vectorial es de
+  dimensión finita.
+  
+\item Dada una métrica no singular, si $\Wa(e,f)=0$ para todo elemento
+  $e \in E$, necesariamente $f=0$.  Si la métrica es degenerada si
+  existen vectores $f$ no nulos que cumplen $\Wa(e,f)=0$.
+  
+\item Si $\rad(E)=E$, la métrica $\Wa$ es nula y $(E, \Wa)$ se dice
+  que es un {\sf geometría isótropa}. \index{geometría!isótropa}
+  
+\item El {\sf rango} de $(E, \Wa)$ es la dimensión de la imagen de la
+  polaridad.  Aplicando una fórmula bien conocida tenemos que
+  $$
+  \rang(E) = \dim (E)- \dim (\rad(E))
+  $$
+
+\end{itemize}
+
+\noindent{\bf Nota.}
+
+\smallskip
+
+A partir de ahora llamaremos geometría simpléctica a las geometrías no
+singulares.
+
+
+\section{Restricción de métricas}
+
+Sea $V \subset E$ un subespacio, $\Wa$ una métrica en $E$ e $i : V
+\rightarrow E$ la inyección canónica.  Sobre $V$ consideramos la
+métrica $i^*\Wa= (\Wa)_{|V}$.  El par $(V, (\Wa)_{|V})$ es una
+geometría, denominada {\sf restricción} \index{restricción} de $\Wa$ a
+$V$.  Para no complicar la notación, denotaremos por $\Wa$ a la
+métrica restringida a un subespacio.
+
+La inyección canónica es un morfismo métrico.  La restricción de $\Wa$
+a $V$ es la única estructura que hace que la inyección canónica sea un
+morfismo métrico.
+
+Llamamos {\sf rango de un subespacio} \index{rango!de un subespacio}
+$V$ al rango de la geometría $(V,\Wa)$.
+
+
+
+\begin{propo}
+  
+  Se verifica la fórmula
+  $$
+  \rad (V)= V \cap V^\perp
+  $$
+
+\end{propo}
+
+\dem
+
+Si $e \in \rad(V) \Rightarrow e \in V $ y además $\Wa (e,f) =0$ para
+todo $f \in V$.  Entonces $e \in V^\perp$.
+
+\smallskip
+
+Si $e \in V \cap V^\perp$ entonces $\Wa (e,f)=0$ para todo $f \in E$,
+entonces $e \in \rad (V)$. \fin
+
+La geometría inducida en $V$ es no singular si y solo si $V\cap
+V^\perp=0$.
+
+
+\section{Proyección de métricas}
+
+Sea $\pi : E \rightarrow E'$ una aplicación lineal epiyectiva.  $E$
+está dotado de una métrica $\Wa$.  Decimos que la geometría $E$ es
+{\sf proyectable}\footnote{Una geometría $(E,\Wa)$ es proyectable
+  mediante $\pi$ en una geometría $(E',\Wa')$ si y solo si
+  $\pi^*\Wa'=\Wa$} \index{geometría!proyectable} (o {\sf reducible})
+\index{geometría!reducible} por el epimorfismo $\pi$, si existe sobre
+$E'$ una métrica $\Wa'$, que hace que $\pi$ sea un morfismo métrico.
+
+Tenemos que $E'= E/\Ker(\pi)$.  La única definición posible para
+$\Wa'$ es la que cumple
+$$
+\Wa'(\pi(e),\pi(f)) = \Wa(e,f)
+$$
+
+Esto será correcto siempre y cuando la definición no dependa de los
+representantes elegidos.  Ello se soluciona en el siguiente teorema.
+
+
+\begin{teo}
+  
+  La geometría $(E, \Wa)$ es proyectable por un epimorfismo $\pi$ si y
+  solo si $\Ker(\pi) \subset \rad(E)$.
+
+\end{teo}
+
+\dem
+
+$\Rightarrow )$ Otro representante de $\pi(e)$ es de la forma $e+u$,
+con $u \in \Ker (\pi)$
+$$
+\Wa(e+u, f+u') =\Wa(e,f)+\Wa(u,f)+\Wa(e,u')+\Wa(u,u')
+$$
+pero los tres últimos sumandos son nulos puesto que $\Ker(\pi)
+\subset \rad(E)$ y concluimos que la definición es independiente de
+los representantes.
+
+\smallskip
+
+$\Leftarrow ) $ $e \in \Ker (\pi) \Rightarrow \Wa(e,f) = \Wa'(\pi(e),
+\pi(f))= \Wa'(0, \pi(f))=0$.  Por lo tanto $e \in \rad(E)$. \fin
+
+Tenemos que dada una métrica arbitraria, $\Wa$ se proyecta en una
+métrica irreducible mediante la proyección canónica $\pi :E
+\rightarrow E/\rad(E)$.  La métrica no singular sobre la que se
+proyecta es única salvo isometrías.  Esto nos permite dar una
+interpretación geométrica del rango.  El rango de una geometría es la
+dimensión del espacio donde se proyecta de modo irreducible.
+
+\bigskip
+
+
+\noindent{\bf Ejemplo.}
+
+\smallskip
+
+Consideremos un subespacio $V \subset E$ con la métrica inducida.  El
+radical de la métrica inducida es $V \cap V^\perp$.  Si el espacio
+cociente $V/(V \cap V^\perp)$ es no nulo, podemos proyectar la métrica
+de $V$ sobre él y la métrica es no degenerada.
+
+
+\section{Clasificación de geometrías}
+
+Vamos a pasar ya al teorema de clasificación y a la construcción de
+las formas normales.
+
+\begin{lema}
+  
+  Si $\varphi : E \rightarrow E'$ es una isometría, $\varphi(\rad(E))=
+  \rad(E')$.  El rango de una métrica es invariante por isometrías.
+
+\end{lema}
+
+\begin{lema}
+  
+  Si $\varphi : E \rightarrow E'$ es una isometría, el morfismo
+  inducido
+  $$
+  \varphi' : E/ \rad(E) \rightarrow E'/ \rad (E')
+  $$
+  es una isometría.
+
+\end{lema}
+
+\begin{propo}
+  
+  Sean $(E, \Wa), (E',\Wa')$ dos geometrías de la misma dimensión.
+  $E$ y $E'$ son isométricas si y solo si lo son $E/\rad(E)$ y
+  $E'/\rad(E')$.
+
+\end{propo}
+
+\dem
+
+Sea $W$ un suplementario de $\rad(E)$.  La proyección
+canónica  $\pi : E \rightarrow E/\rad(E)$ induce una
+isometría de $W$ con $E/\rad(E)$.  Es claro que la suma directa
+$\rad(E) \oplus W$ es también ortogonal.  Hacemos lo mismo con la
+geometría $E'$.
+
+Sea $\varphi_2$ es una isometría de $W$ con $W'$ y $\varphi_1$ un
+isomorfismo (y por tanto isometría) de $\rad(E)$ en $\rad(E')$.
+Entonces $\varphi = \varphi_1 \oplus \varphi_2$ es una isometría,
+donde $\varphi$ está definido como
+$$
+\varphi(e\oplus f) = \varphi_1 (e) \oplus \varphi_2(f) \text{ con }
+e \in \rad(E), f \in W
+$$
+lo que demuestra que las geometrías $E$ y $E'$ son isométricas si
+lo son sus partes irreducibles.  \fin
+
+Esta proposición reduce la clasificación de una geometría arbitraria a
+la clasificación de una geometría no singular.  Vamos a clasificar
+estas últimas.
+
+\begin{defi}
+  
+  Llamamos {\sf plano hiperbólico} \index{plano hiperbólico} a una
+  geometría bidimensional no singular. Decimos que un geometría o un
+  espacio es {\sf hiperbólico} \index{espacio!hiperbólico} si es
+  isométrico a una suma ortogonal de planos hiperbólicos.
+
+\end{defi}
+
+\begin{teo}
+  
+  Si $E$ es no singular, entonces es hiperbólica.
+
+\end{teo}
+
+\dem
+
+Veamos primero que toda geometría no singular debe contener a un plano
+hiperbólico.
+
+Dado un vector no nulo $e \in E$, existe otro vector $f$ tal que
+\mbox{$\Wa(e,f) \neq 0$}.  Entonces $\pi =<e,f>$ es un plano
+hiperbólico (compruébese).
+
+Si $\pi$ es un plano hiperbólico tenemos que $E = \pi \perp \pi^\perp$
+y la geometría en $\pi^\perp$ es también no singular.  Mediante un
+argumento inductivo y teniendo en cuenta que estamos en el caso de
+dimensión finita, concluimos que $E$ es un suma ortogonal de planos
+hiperbólicos. \fin
+
+\begin{defi}
+  
+  Dos vectores $ e, f$ forman una {\sf pareja hiperbólica}
+  \index{pareja hiperbólica} si
+  $$
+  \Wa(e,f)=1
+  $$
+
+\end{defi}
+
+Un plano es hiperbólico si y solo si posee parejas hiperbólicas
+(problema~\ref{pro:planohiperbolico}).  De este modo dos planos
+hiperbólicos siempre son isométricos, pues una isometría se construye
+mandando una pareja hiperbólica a otra pareja hiper\-bólica.  Del
+mismo modo, dos espacios hiperbólicos son isométricos si y solo si
+tienen la misma dimensión.
+
+\begin{teo}[de clasificación]
+  
+  Dos geometrías simplécticas, $E, E'$ son iso\-métricas si y solo si
+  $\dim(E)=\dim(E')$ y $\rang(E) = \rang(E')$.
+
+\end{teo}
+
+\dem
+
+Se tiene la descomposición $E= \rad(E) \perp E/\rad(E)$.
+
+Las partes isótropas son isométricas si tienen la misma dimensión. Las
+partes no singulares, como son hiperbólicas, son también isométricas
+si tienen la misma dimensión. \fin
+
+\section{Formas normales}
+
+Dada una geometría arbitraria $E$ tenemos la siguiente descomposición
+$$
+E= \rad(E) \perp \pi_1 \dots \perp \pi_n
+$$
+Tomando una base cualquiera del radical y tomando un cada plano
+hiperbólico una base formada por una pareja hiperbólica obtenemos una
+base
+$$
+\{e_1, \dots, e_p, e_{1a},e_{1b}, \dots , e_{na},e_{nb}\}
+$$
+del espacio total.  La matriz de $\Wa$ en esta base es de la forma
+
+
+$$
+\left(
+\begin{array}{c|ccc}
+0_p & 0 & \dots & 0\\ \hline
+0 &  \pi  & 0 & 0  \\
+\vdots& 0 & \ddots & 0 \\
+0 & 0 & 0 &\pi 
+\end{array}
+\right)
+$$
+\vspace{0.3 cm}
+
+\noindent donde $0_p$ es la matriz nula de dimensión $p$ y $\pi$ es la matriz 
+$\left(\begin{smallmatrix}
+    0 & 1 \\
+    -1 & 0
+\end{smallmatrix}\right)$.
+
+Reordenando la base anterior podemos afirmar que dada una geometría
+simpléctica, existe una base $\{e_1, \dots, e_m\}$ tal que $\Wa$ se
+expresa en función de la base dual en la forma
+$$
+\Wa = \sum_{i=1}^n \omega_i \wedge \omega_{n+i}
+$$
+con $n= (\dim(E)- \rang(E))/2$.
+
+En esta base la matriz de $\Wa$ es
+
+$$
+\left(
+\begin{array}{c|c|c}
+0_p & 0 & 0 \\ \hline
+0 & 0 & \Id_n \\ \hline
+0 & - \Id_n & 0
+\end{array}
+\right)
+$$
+
+\vspace{0.3 cm}
+
+\noindent donde $\Id_n$ designa la matriz unidad de dimensión $n$. Esta es la llamada {\sf forma normal} \index{forma!normal} de~$\Wa$.
+
+
+En toda geometría simpléctica no singular existe una base $\{e_1,
+\dots, e_{2n}\}$ tal que\linebreak $\Wa = \omega_i \wedge \omega_{n+i}$
+(convenio de sumación). La base mencionada se llama {\sf base
+  canónica} \index{base canónica} asociada a $\Wa$ y no es única.
+
+
+Otras veces emplearemos la notación $\{q_1,\dots,q_n,p_1, \dots,
+p_n\}$ para referirnos a la base simpléctica.  Esta notación proviene
+de la mecánica clásica.  En esta base se cumplen las identidades
+
+$$
+\Wa(p_i,p_j)=0=\Wa(q_i,q_j) \quad \quad \Wa(p_i,q_j)= \delta_{ij}
+$$
+
+\section{Subespacios}
+
+En toda esta sección la métrica sobre $E$ es no singular, aunque dicha
+métrica restringida a algunos subespacios que consideraremos si posee
+radical.
+
+\begin{lema}
+  
+  Si $V \subset E$ es un subespacio, entonces
+  $V^\perp=\mathsf{p}^{-1}(V^0)$.  En particular\linebreak \mbox{$\dim(V^\perp) = \dim
+  (V^0)$.}
+
+\end{lema}
+
+\dem
+
+Sea $e \in V^\perp$ y $f \in V$. Entonces $i_e\Wa(f)= \Wa(e,f)=0$ y la
+forma lineal $i_e \Wa$ se anula sobre $V$.  De esta forma $i_e\Wa \in
+V^0$.
+
+\smallskip
+
+Recíprocamente, si $\alpha \in V^0$ necesariamente $\alpha=i_e\Wa$ por
+ser la métrica no degenerada.  Tomamos $f \in V$.  Como $\alpha $ es
+incidente con $V$ se tiene
+$$
+0=\alpha(f)= i_e\Wa(f)= \Wa(e,f)
+$$
+y el elemento $e \in V^\perp$. \fin
+
+
+
+\begin{cor}
+  
+  Si la métrica es no degenerada $(V^\perp)^\perp=V$.
+
+\end{cor}
+
+\dem
+
+Si $e \in V$ y $f \in V^\perp$, tenemos que $ \Wa(e,f)=0$.  De este
+modo $e$ está incluido en el ortogonal a $V^\perp$.  Como $V$ y
+$(V^{\perp})^\perp$ tienen la misma dimensión necesariamente
+coinciden. \fin
+
+\begin{defi}
+  
+  Dado un subespacio $V$ de $E$:
+
+\begin{itemize}
+  
+\item Es {\sf no singular} \index{subespacio!no singular} o {\sf
+    simpléctico} \index{subespacio!simpléctico} si la métrica
+  restingida a $V$ es no singular.
+  
+\item Es {\sf isótropo} \index{subespacio!isótropo} si la métrica
+  restringida al subespacio es nula.
+  
+\item Es {\sf coisótropo} \index{subespacio! coisótropo} si $V^\perp$
+  es isótropo.
+  
+\item Es {\sf lagrangiano} \index{subespacio!lagrangiano} si es a la
+  vez isótropo y coisótropo.
+
+\end{itemize}
+
+\end{defi}
+
+Debemos tener en cuenta que hay subespacios que no son de ninguno de
+los cuatro tipos enunciados.
+
+Recordando que $\mathrm{rad}(V)=V \cap V^\perp$ podemos dar otras
+definiciones, tal vez más operativas, de los conceptos anteriores.
+
+\begin{defi}
+  
+  Dado un subespacio $V$ de $E$ tenemos:
+
+
+\begin{itemize}
+  
+\item $V$ es {\sf isótropo} si $V \subset V^\perp$.
+  
+\item $V$ es {\sf coisótropo} si $V^\perp \subset V$.
+  
+\item $V$ es {\sf simpléctico} si $V \cap V^\perp =0$.
+  
+\item $V$ es {\sf lagrangiano} si $V= V^\perp$.
+
+\end{itemize}
+
+\end{defi}
+
+
+\noindent{\bf Ejemplos.}
+
+\begin{itemize}
+  
+\item Un subespacio $V$ es simpléctico si y solo si $V^\perp$ es
+  también simpléctico, puesto que $(V^\perp)^\perp= V$.
+  
+\item Sea $V$ arbitrario.  El subespacio $V \cap V^\perp$ siempre es
+  isótropo.  Su ortogonal, que coincide con $V+ V^\perp$, es siempre
+  coisótropo.  Todo subespacio de dimensión uno es isótropo. Todo
+  hiperplano es coisótropo.
+  
+\item Si $V$ es isótropo necesariamente $\mathrm{dim}(V) \leq n$
+  siendo $2n$ la dimensión del espacio total.  Esto es consecuencia de
+  que $V \subset V^\perp$ y de que además $\mathrm{dim}(V)+
+  \mathrm{dim}(V^\perp)=2n$.
+  
+\item Del mismo modo, si $V$ es coisótropo su dimensión es mayor o
+  igual que~$n$.
+  
+\item Si $L$ es lagrangiano, es a la vez isótropo y coisótropo.  Por
+  los ejemplos anteriores su dimensión es necesariamente $n$.
+  
+\item Los subespacios lagrangianos son isótropos y no pueden existir
+  subespacios isótropos que los contengan.  Los subespacios
+  lagrangianos son subespacios isótropos maximales.
+  
+\item Sea $V$ un subespacio isótropo.  Si la inclusión $V \subset
+  V^\perp$ es estricta, existe un elemento no nulo $e \in \V^\perp -
+  V$.  Entonces $V\oplus \langle e\rangle$ es un subespacio isótropo
+  de dimensión estrictamente mayor.  Todo subespacio isótropo está
+  contenido en un subespacio isótropo maximal, que es necesariamente
+  lagrangiano.
+  
+\item Consideremos el espacio $E \times E^*$ con la métrica canónica.
+  Tanto $E$ como $E^*$ son subespacios lagrangianos.
+
+
+\end{itemize}
+
+
+Dada una base canónica $\{q_i,p_i\}$ es fácil comprobar que $\langle
+q_1, \dots,q_s\rangle$ con $s \leq n$ es un subespacio isótropo.  Si
+en el caso anterior $s=n$ el subespacio es lagrangiano.  Los
+subespacios de la forma $\langle q_1, \dots,q_s, p_1,\dots,p_s\rangle$
+son simplécticos. En realidad este es el caso general.  Si tomamos una
+base de un subespacio isótropo se puede completar para obtener una
+base simpléctica y lo mismo en los otros casos.
+
+\begin{propo}
+  
+  Sea $V \subset E$ un subespacio simpléctico.  Dada una base
+  simpléctica en $V$ se puede completar para obtener una base
+  simpléctica del espacio total.
+
+\end{propo}
+
+\dem
+
+Construimos $V^\perp$ y tomamos una base simpléctica de este
+subespacio.  La unión de las bases de $V$ y de $V^\perp$ da una base
+simpléctica en $E$.  \fin
+
+\begin{propo}
+  
+  Dada una base de un subespacio isótropo se puede completar para
+  obtener una base simpléctica.
+
+\end{propo}
+
+\dem
+
+Sea $V_1=\{q_1, \dots,q_s\}$ una base de un subespacio isótropo.
+Necesariamente $s$ es menor o igual que $n$. Introducimos el
+subespacio $V_2=\langle p_2,\dots, p_s\rangle$.  Como $V_2 \subset
+V_1$ tenemos la inclusión $V_2^\perp \subset V_1^\perp$.  Tomamos un
+vector $p_1$ que pertenezca a $V_2^\perp- V_1^\perp$, normalizado de
+tal manera que $\Wa(q_1,p_1)=1$.  Siguiendo con este proceso podemos
+incluir $V_1$ en un subespacio nodegenerado y se concluye por la
+proposición anterior. \fin
+
+\section{Subespacios lagrangianos}
+
+\begin{propo}
+  
+  Sea $E$ un espacio vectorial. Son equivalentes:
+
+\begin{itemize}
+  
+\item $V$ es un subespacio lagrangiano.
+  
+\item $V=V^\perp$.
+  
+\item $V$ es isótropo y $\dim (V) = \frac{1}{2}\dim(E)$.
+
+\end{itemize}
+
+\end{propo}
+
+\dem
+
+Algebra lineal elemental.  \fin
+
+Cualquiera de las condiciones anteriores sirve para definir un
+subespacio lagrangiano.
+
+\begin{propo}
+  
+  Sea $E$ una geometría simpléctica y $L$ un subespacio lagrangiano.
+  Existe un isomorfismo simpléctico de $E$ con $L \times L^*$.
+
+\end{propo}
+
+\dem
+
+Sea $L'$ un suplementario de $L$.  Entonces $E = L \oplus L'$.
+Definimos una aplicación de ese suplementario en $L^*$
+$$
+\varphi : L' \rightarrow L^* \text{ donde } \varphi(e')(e)=
+\Wa(e,e')
+$$
+
+La aplicación es un isomorfismo, puesto que si $\varphi(e')=0$ tenemos
+que $\Wa(e',e)=0$ para todo elemento de $L'$.  Pero como $L$ es
+isótropo tenemos que $\Wa(e',e)=0$ para todo elemento de $E$.  Como
+las dimensiones coinciden, la aplicación es un isomorfismo.
+
+Puede comprobar el lector que la aplicación $\phi =\Id \oplus \varphi$
+es un morfismo simpléctico y por lo tanto $E$ es isomorformo a $L
+\times L^*$.  \fin
+
+
+Si tenemos dos espacios simplécticos $E$ y $E'$, sobre su producto
+cartesiano definimos la métrica
+$$
+\Wa \ominus \Wa' = \pi^*(\Wa)- (\pi')^*(\Wa')
+$$
+Esto dota de estructura simpléctica al espacio vectorial $E \times
+E'$.
+
+Si $\varphi: E \rightarrow E'$ es una aplicación lineal (o en general
+cualquier función) su {\sf gráfico} \index{gráfico de una función} es
+el subconjunto de $E \times E'$
+$$
+\Gamma_\varphi = \{(e, \varphi(e)) \text{ donde } e \in E\}
+$$
+
+\begin{propo}\label{propo:graficolagrangiano}
+  
+  Un isomorfismo $\varphi : E \rightarrow E'$ es simpléctico si y solo
+  si su gráfico $\Gamma_\varphi$ es un subespacio lagrangiano de $E
+  \ominus E'$.
+
+\end{propo}
+
+\dem
+
+Si el gráfico es lagrangiano tenemos
+$$
+(\Wa \ominus \Wa') ((e, \varphi(e)), (f, \varphi( f))=0
+$$
+pero esta fórmula se traduce en
+$$
+\Wa(e, f) - \Wa'(\varphi(e), \varphi(f))=0
+$$
+que es sinónimo de que $\varphi$ sea métrico.  \fin
+
+Esto nos permite introducir la
+
+\begin{defi}
+  
+  Llamamos {\sf relación canónica lineal} \index{relación!canónica
+    lineal} a cualquier subespacio lagrangiano de $E \ominus E'$.
+
+\end{defi}
+
+
+
+\section{El grupo simpléctico como grupo de Lie}
+
+
+Dada una geometría $(E, \Wa)$, todo endomorfismo que conserva la forma
+simpléctica\linebreak ($\varphi$ conserva la forma simpléctica si
+$\varphi^*(\Wa)= \Wa$), conserva también el elemento de volumen
+canónico.  El endomorfismo tiene entonces determinante unidad y es
+necesariamente un isomorfismo. El conjunto de los isomorfismos que
+conservan la métrica forman el grupo simpléctico de $E$, que hemos
+denotado $\mathrm{Sp}(E)$.
+
+Sea $\{q_i,p_i\}$ una base canónica y $\varphi$ un simplectomorfismo.
+Las imágenes de los elementos de dicha base verifican las relaciones
+que nos sirven para definir una base canónica.  Un simplectomorfismo
+transforma bases canónicas en bases canónicas.  Recíprocamente si un
+morfismo transforma una base canónica en otra base canónica
+necesariamente es un isomorfismo y conserva la forma simpléctica.
+
+\begin{propo}
+  
+  Sean $\Wa$ y $\Wa'$ dos formas simplécticas sobre un mismo espacio
+  vectorial.  Existe un isomorfismo $\varphi$ que cumple
+  $\varphi^*(\Wa)= \Wa'$.
+
+\end{propo}
+
+\dem
+
+Construimos una base canónica para $\Wa$ y otra base canónica para
+$\Wa'$.  La aplicación lineal que transforma la primera base en la
+segunda es un isomorfismo y cumple el enunciado. \fin
+
+\begin{cor}
+  
+  Todo grupo simpléctico es isomorfo al grupo simpléctico del espacio
+  $\R^{2n}$ dotado de su estructura simpléctica estándar.
+
+\end{cor}
+
+Dado un espacio vectorial $E$, denotaremos por $\Omega(E)$ al conjunto
+de todas las formas simplécticas que se pueden definir sobre $E$.
+Este conjunto está contenido en el conjunto de formas de grado $2$
+sobre $E$ que es un espacio vectorial.  Dada una base de $E$, las
+formas de segundo grado se identifican con el conjunto de matrices
+antisimétricas.  Una matriz o una forma es no degenerada si y solo si
+su determinante (dada una base) es no nulo.  Esta condición nos dice
+que $\Omega (E)$ es un abierto de un espacio vectorial y tiene una
+estructura diferenciable canónica.
+
+\begin{propo}
+  
+  Se tiene la igualdad
+  $$
+  \Omega(E)= \mathrm{Gl}(E)/Sp(E)
+  $$
+
+\end{propo}
+
+\dem
+
+Definimos una acción del grupo lineal en el conjunto $\Omega(E)$
+mediante
+$$
+\begin{array}{ccc}
+\mathrm{Gl}(E) \times \Omega(E) & \lto & \Omega(E) \\
+(\varphi, \omega) & \lto & \varphi^*(\omega)
+\end{array}
+$$
+
+Esta acción es transitiva por el corolario anterior.  El grupo de
+isotropía de un elemento $\omega$ consiste en los isomorfismo que
+cumplen $\varphi^*(\omega)= \omega$ que es precisamente el grupo
+simpléctico asociado a $\omega$.  Como los grupos simplécticos
+asociados a dos formas distintas son isomorfos podemos denotar dicho
+grupo por $\mathrm{Sp}(E)$.  \fin
+
+
+Vamos a dar una interpretación matricial del grupo $Sp(E)$.
+Recordemos que por $J$ denotamos la matriz
+$$
+J=
+\begin{pmatrix}
+  0 & \Id_n \\
+  -\Id_n & 0
+\end{pmatrix}
+$$
+
+Dada una endomorfismo $\varphi: E \rightarrow E$ designamos su matriz
+respecto a una base por la matriz $A$.  Si $\varphi$ es una isometría
+se cumple
+$$
+\Wa(e,e') = \Wa(\varphi(e), \varphi(e'))
+$$
+que traducido a ecuaciones matriciales nos la fórmula
+$$
+AJA^t =J
+$$
+
+El grupo simpléctico se puede definir matricialmente como el conjunto
+de matrices cuadradas de orden $2n$ que cumple la ecuación anterior.
+
+Como todos los grupos simplécticos de los espacios de dimensión $2n$
+son isomorfos, se acostumbra a denotar el grupo simpléctico como $\Sp
+(2n)$, donde $2n$ es la dimensión del espacio.
+\begin{propo}
+  
+  $\Sp(E)$ es un grupo de Lie.
+
+\end{propo}
+
+\dem
+
+El grupo simpléctico es un subgrupo del grupo lineal.  En la
+interpretación matricial del grupo simpléctico se observa que el
+conjunto $\Sp(E)$ se obtiene igualando a constantes funciones
+diferenciables.  Por lo tanto $\Sp(E)$ es un cerrado y además es
+subgrupo.  Aplicando el teorema del subgrupo cerrado de Cartan
+concluimos que el grupo simpléctico es un grupo de Lie.  \fin
+
+
+En el problema \ref{pro:algebradelie} se calcula el álgebra de Lie de
+este grupo y en el \ref{pro:propiedades_grupo} se dan algunas
+propiedades grupales.
+
+\section{Estructura compleja}\label{sec:compleja}
+
+Si $E$ es un espacio vectorial complejo, el endomorfismo que consiste
+en multiplicar por la unidad imaginaria cumple que su cuadrado es
+igual al opuesto de la identidad.  La generalización de este hecho nos
+da la
+
+\begin{defi}
+  
+  Sea $E$ un espacio vectorial sobre el cuerpo $\R$.  Una {\sf
+    estructura compleja} \index{estructura compleja} en $E$ es un
+  endomorfismo $J: E \rightarrow E$ que cumple $J^2= -\Id$.
+
+\end{defi}
+
+Aplicando el determinante a la expresión $J^2= -\Id$ obtenemos que
+$$
+\det(J)^2= (-1)^{\dim(E)}
+$$
+lo que prueba que todo espacio con una estructura compleja tiene
+dimensión par.
+
+El ejemplo más elemental de estructura compleja lo proporciona el
+conjunto $\C^n$ entendido como espacio vectorial sobre los reales.  En
+$\C^n$ definimos $J(e) = ie$. Identificando $\R^{2n}$ con $\C^n$ la
+matriz de $J$ es
+$$
+J_0=
+\begin{pmatrix}
+  0 & -\Id_n \\
+  \Id_n & 0
+\end{pmatrix}
+$$
+
+Todo espacio con una estructura compleja se puede dotar de una
+estructura de espacio vectorial complejo.  Para ello definimos el
+siguiente producto por elementos de $\C$
+$$
+(a+ib)\cdot e = a \cdot e + b \cdot J(e)
+$$
+Esto vuelve a demostrar que si un espacio posee una estructura
+compleja, necesariamente es de dimensión par como espacio vectorial
+real.
+
+\begin{propo}
+  
+  Sea $E$ un espacio vectorial real de dimensión $2n$ y $J$ una
+  estructura compleja.  Existen $n$ vectores $\{e_i\}$ tales que
+  $\{e_i, J(e_i)\}$ forman una base de $E$.
+
+\end{propo}
+
+\dem
+
+Con ayuda del endomorfismo $J$ se puede dotar a $E$ de una estructura
+de espacio vectorial sobre $\C$ de dimensión $n$.  Sea $\{e_i\}$ una
+base del espacio vectorial complejo.  Entonces los vectores $\{e_i,
+J(e_i)\}$ forman una base del espacio vectorial real. \fin
+
+Mediante $\mathrm{End}_\C(E)$ y $\mathrm{Gl}_\C(E)$ denotamos el
+conjunto de endomorfismo e isomorfismos de $E$ con su estructura
+compleja.  Todo endomorfismo complejo es a la vez un endomorfismo
+real.  Para que un endomorfismo real sea complejo, basta que ``saque''
+fuera la unidad imaginaria.
+ 
+\begin{propo}
+ 
+  Un endomorfismo $\varphi$ real es complejo si y solo si $\varphi$
+  conmuta con $J$.
+ 
+\end{propo}
+ 
+\dem
+ 
+Si $\varphi$ es una aplicación lineal compleja, verifica $\varphi(ie)=
+i \varphi(e)$. Esta condición equivale a $\varphi J= J\varphi$.
+ 
+\smallskip
+ 
+Si $\varphi$ y $J$ conmutan, entonces $\varphi(ie)= i\varphi(e)$ para
+todo vector $e \in E$.  Dado $z= a+bi$ entonces
+$$
+\varphi(ze)= \varphi(ae+ibe)= a \varphi(e)+ ib \varphi(e)=
+z\varphi(e)
+$$
+y $\varphi$ es aplicación lineal compleja. \fin
+ 
+ 
+ 
+ 
+\begin{cor}
+ 
+  Se tiene la fórmula
+  $$
+  \mathrm{Gl}_\C(E)= \{\varphi \in \mathrm{Gl}(E) \text{ tales que
+  } [J, \varphi]=0\}
+  $$
+
+\end{cor}
+ 
+Matricialmente podemos suponer que $J$ viene dada por la matriz $J_0$.
+Escribiendo en bloques de tamaño $n \times n$ la matriz de $\varphi$
+$$
+\begin{pmatrix}
+  A & B \\
+  C & D
+\end{pmatrix}
+\begin{pmatrix}
+  0 & \Id \\
+  -\Id & 0
+ \end{pmatrix}=
+ \begin{pmatrix}
+   0 & \Id \\
+   -\Id & 0
+ \end{pmatrix}
+  \begin{pmatrix}
+    A & B \\
+    C & D
+ \end{pmatrix}
+ $$
+ lo que implica que la matriz de $\varphi$ es de la forma
+ $$
+ \begin{pmatrix} A & B \\
+   -B & A
+ \end{pmatrix}
+ $$
+ 
+ A pesar de que sobre un mismo espacio vectorial pueden existir muchas
+ estructuras complejas, todas son equivalentes en el siguiente
+ sentido.
+ 
+ \begin{cor}
+ 
+   Sean $J_0$ y $J_1$ dos estructuras complejas sobre un mismo espacio
+   vectorial real.  Existe un isomorfismo real que transforma $J_0$ en
+   $J_1$.
+ 
+\end{cor}
+ 
+\dem
+ 
+El endomorfismo $J_0$ transforma a $E$ en un espacio vectorial
+complejo de dimensión $n$, siendo $2n$ la dimensión del espacio real.
+Lo mismo sucede con~$J_1$.  Como dos espacios vectoriales complejos de
+la misma dimensión son isomorfos, existe un isomorfismo\linebreak $ \varphi:E
+\rightarrow E $ entre ambas estructuras complejas.  Este isomorfismo
+es una aplicación lineal compleja (y por lo tanto real) y verifica la
+igualdad $\varphi(ie)= i \varphi(e)$.  Teniendo en cuenta que una
+multiplicación por $i$ deriva de $J_0$ y otra de $J_1$, se cumple
+$\varphi(J_0(e))= J_1\varphi(e)$, lo que implica $\varphi J_0 =
+J_1\varphi$. El endomorfismo $\varphi$ transforma una estructura
+compleja en la otra. \fin
+
+Esta proposición se puede trasladar a un lenguaje matricial.  Si $A$
+es la matriz de $\varphi$, se cumple $A^{-1}J_0 A= J_1$.
+
+  
+\begin{cor}
+  
+  Todo espacio vectorial real $E$ dotado de una estructura compleja es
+  isomorfo a $\R^{2n}$ dotado de su estructura compleja estandard.
+  
+\end{cor}
+
+Denotemos por $J(E)$ el conjunto de todas las estructuras complejas
+de~$E$.  Este conjunto adquiere una estructura topológica por ser un
+subconjunto de $\mathrm{End}(E)$.
+
+\begin{propo}
+  
+  El conjunto de estructuras complejas $J(E)$ se identifica con
+  \linebreak $\mathrm{GL}(E)/\mathrm{Gl}_\C(E)$.
+\end{propo}
+
+\dem
+
+Podemos considerar que el espacio vectorial es $\R^{2n}$ y trabajar en
+la base estandard.  Definimos una acción de $\mathrm{Gl}(E)$ en el
+espacio $J(\R^{2n})$
+$$
+\begin{array}{ccc}
+\mathrm{Gl}(\R^{2n}) \times J(\R^{2n}) & \lto & J(\R^{2n}) \\
+(\varphi, J) & \lto & \varphi^{-1} J \varphi
+\end{array}
+$$
+Los resultados anteriores nos dice que la acción es transitiva.
+Consideramos una estructura compleja, por ejemplo la estandard, y
+calculamos su grupo de isotropía.  Los elementos del grupo de
+isotropía son exactamente aquellos isomorfismos que conmutan con $J$ y
+por lo tanto son elementos del grupo $\mathrm{Gl}_\C(\R^{2n})$. \fin
+
+Como el grupo lineal real tiene dos componentes conexas (las dos
+orientaciones), el espacio cociente también tiene dos componentes
+conexas.
+ 
+ 
+\section{Estructuras complejas compatibles}
+
+En un espacio vectorial pueden existir muchas estructuras complejas.
+A nosotros nos interesan las que estén de algún modo relacionadas con
+la estructura simpléctica.
+
+\begin{defi}
+  
+  Sea $(E,\Wa)$ un espacio simpléctico.  Una estructura compleja $J$
+  es {\sf compatible} \index{compatible} con la estructura
+  simpléctica, si $J$ es un isomorfismo simpléctico.
+
+\end{defi}
+
+
+Un espacio vectorial simpléctico puede admitir muchas estructuras
+complejas compatibles. La unicidad no puede ser demostrada, pero si su
+existencia.
+
+\begin{propo}\label{propo:compleja}
+  
+  Todo espacio simpléctico no singular sobre los reales admite una
+  estructura compleja compatible.
+
+\end{propo}
+
+\dem
+
+Sea $\{q_1, \cdots, q_n, p_1, \cdots ,p_n\}$ una base canónica.
+Definimos $J : E \rightarrow E$ mediante su actuación sobre la base
+$$
+J(q_i)= p_i, \quad J(p_i)= - q_i
+$$
+$J$ es un isomorfismo y cumple $J^2= -\Id$ pues esta ecuación es
+válida para todos los elementos de la base.
+
+La base $\{J(p_i), J(q_i)\}$ es también base canónica y $J$ es un
+isomorfismo simpléctico. \fin
+
+El problema de esta construcción es que claramente depende de la base
+tomada. Sin embargo se pueden construir estructuras complejas
+siguiendo otros métodos.
+
+Sea $E$ un espacio vectorial simpléctico y $g$ una métrica euclídea
+arbitraria.  Con ayuda de $g$ vamos a construir una estructura
+compleja $J$.
+
+Como $g$ es euclídea, existe un único operador lineal $A$ que cumple
+la identidad
+$$
+g(A(e),f)= \Wa(e,f)
+$$
+para todo par de vectores. Calculemos el adjunto de $A$.
+$$
+g(A^*(e),f) = g(e, A(f))= g(A(f),e)= \Wa(f,e)= g (-A(e),f)
+$$
+
+Tenemos que $A^*=-A$. Si $A$ cumple $A^2= -\Id$ hemos terminado.  En
+caso contrario le aplicamos a $A$ la descomposición polar que pasamos
+a describir.
+
+
+
+Podemos escribir, de modo único, $A= RJ$ donde $R$ es un operador
+autoadjunto definido positivo y $J$ es ortogonal.  Calculamos el
+adjunto de la descomposición polar
+$$
+-A=A^*=J^*R^*= J^{-1}R
+$$
+por ser $R$ autoadjunto y $J$ ortogonal. Deducimos que $R= -JA$ y
+por otra parte ya sabíamos que $R= $
+
+
+\section{Estructura compleja y producto escalar}
+
+Un espacio simpléctico y con estructura compleja, posee una forma
+bilineal simétrica asociada.
+
+\begin{propo}
+  
+  La aplicación
+  $$
+\begin{array}{rccc}
+g:& E \times E & \lto & \R \\
+ & (e,f) & \lto & \Wa(e,J(f))
+\end{array}
+$$
+es una forma bilineal simétrica.
+
+\end{propo}
+
+La forma simétrica $g$ depende tanto de la estructura simpléctica como
+de la estructura compleja.  Cualquier cambio en alguna de ellas,
+implica un cambio en $g$.
+
+\bigskip
+
+\noindent{\bf Propiedades.}
+
+\begin{itemize}
+  
+\item La aplicación $g$ es no degenerada, debido a que $J$ es un
+  isomorfismo.  Con ayuda de $g$ podemos definir una aplicación de $E$
+  en su dual, que llamaremos polaridad asociada a $g$.  Se define como
+  $p_g(e)= i_eg$.
+  
+\item El endomorfismo $J$ es una isometría respecto al producto
+  escalar $g$.
+  
+\item En general esta forma tiene signatura, pero todo espacio
+  simpléctico tiene una estructura compleja compatible que hace que
+  $g$ sea un producto euclídeo.  En realidad la estructura que hemos
+  construido en la proposición \ref{propo:compleja} da lugar a una
+  estructura euclídea.
+
+\end{itemize}
+
+
+Como hemos visto, a partir de $\Wa$ y de $J$ podemos construir $g$.
+En general conociendo un par de datos de la terna $(\Wa, \, J, \, g)$
+podemos reconstruir la estructura desconocida.
+
+\begin{propo}
+  
+  Se cumplen las siguientes igualdades:
+
+\begin{itemize}
+  
+\item $g(e,f)= \Wa(e, J(f))$.
+  
+\item $\Wa(e,f)= -g(e, J(f))$.
+  
+\item $J= -{p_{\Wa}}^{-1}p_g$.
+
+\end{itemize}
+
+\end{propo}
+
+\dem
+
+La primera es justamente la definición de $g$.  Para probar la segunda
+basta utilizar que $J$ es una isometría
+$$
+\Wa(e,f)= \Wa(J(e), J(f))= g(J(e), f)= g(J^2(e), J(f))= -g(e, J(f))
+$$
+
+El operador $-{p_{\Wa}}^{-1}p_g$ cumple
+$$
+\Wa (-{p_{\Wa}}^{-1}p_g(e), f)= -p_{\Wa}({p_{\Wa}}^{-1}p_g(e))
+(f)=- p_g(e)(f)= -g(e,f)
+$$
+que también lo verifica el operador $J$.  Como la métrica es no
+degenerada ambos operadores deben coincidir.  \fin
+
+Hemos visto en la sección \ref{sec:definicion} que todo espacio
+hermítico tiene asociado una métrica simpléctica.  Es la parte
+imaginaria del producto hermítico. En realidad este ejemplo engloba a
+todos los casos, pues toda estructura simpléctica es en realidad la
+parte imaginaria de una estructura hermítica (salvo un signo).
+
+Sea $J$ una estructura compleja de tal forma que $g$ sea un producto
+euclídeo. El producto escalar hermítico sobre un espacio simpléctico
+se define como
+$$
+\escalar{e}{f}= g(e,f)- i \Wa(e,f)
+$$
+Las condiciones que definen un producto hermítico se verifican
+fácilmente.  Además la metrica es definida positiva por ser $g$
+euclídeo.  Si el producto escalar $g$ tiene signatura, el producto
+hermítico tiene también la misma signatura.
+
+\section*{Problemas}
+\addcontentsline{toc}{section}{Problemas}
+
+\begin{pro}
+  
+  Sea $(E, \Omega_2)$ una geometría y $\{e_1, \dots, e_n\}$ una base.
+  La matriz de $\Omega_2$ en la base dada es la matriz cuadrada que
+  tiene por componentes
+  $$
+  \omega_{ij}= \Omega_2(e_i,e_j)
+  $$
+  Esta matriz es antisimétrica.
+
+\end{pro}
+
+\begin{pro}
+  
+  Una matriz antisimétrica en dimensión impar tiene necesariamente
+  determinante nulo.
+
+\end{pro}
+
+
+\begin{pro}
+  
+  Dada una geometría $(E, \Omega_2)$ construimos otra geometría sobre
+  el mismo espacio vectorial.  Dicha geometría la denotaremos por
+  $\Omega_2^t$ y diremos que es la traspuesta de $\Omega_2$.  Se
+  define por la fórmula
+  $$
+  \Omega_2^t(e,f)= \Omega_2(f,e)
+  $$
+  Relacionar las matrices de $\Omega_2$ y de $\Omega_2^t$
+  construidas sobre una misma base.
+
+\end{pro}
+
+\begin{pro}
+  
+  Sea $(E,J)$ una estructura compleja. Un subespacio real $V$ que
+  cumpla $J(V) \subset V$ es también un subespacio complejo.  Si $V$
+  es un subespacio complejo, entonces es un subespacio real y cumple
+  que $J(V) \subset V$.
+
+
+\end{pro}
+
+
+\begin{pro}
+  
+  Sea $\{e_i\}$ una base de $E$ y sea $\{\alpha_i\}$ la base dual,
+  definida por las relaciones $\alpha_i(e_j)= \delta_{ij}$.  La matriz
+  de la polaridad entre la base $\{e_i\}$ y su dual coindice con la
+  matriz de $\Omega_2$ en la base $\{e_i\}$.
+
+\end{pro}
+
+\begin{pro}
+  
+  Si el espacio es de dimensión finita, son equivalentes:
+
+\begin{itemize}
+  
+\item La polaridad es inyectiva.
+  
+\item La polaridad es un isomorfismo.
+  
+\item La matriz de $\Omega_2$ en una base es no singular.
+
+\end{itemize}
+
+\end{pro}
+
+
+
+\begin{pro}
+  
+  Sea $(E,\Wa)$ una geometría no singular de dimensión $2n$.
+
+\begin{itemize}
+  
+\item Si denotamos $(\Wa)^n = \Wa\,\, \wedge \stackrel{n)}{\cdots}
+  \wedge \,\,\Wa$, probar que $\Wa^n$ es un elemento de volumen.
+
+  
+\item Encontrar la expresión de $(\Wa)^n$ en función de la base
+  canónica.  Esto explica que normalmente se tome como elemento de
+  volumen de una variedad simpléctica
+  $$
+  \omega_n= \frac{(-1)^{[n/2]}}{n!} \cdot(\wa)^n
+  $$
+  
+\item Probar que toda isometría conserva el elemento de volumen.
+  Concluir que toda isometría tiene determinante unidad.  Esta es una
+  versión reducida del {\sf teorema de Lioville} \index{teorema!de
+    Liouville} de la mecánica clásica.
+
+\end{itemize}
+
+\end{pro}
+
+
+
+\begin{pro}
+  
+  Dada una geometría singular, sea $r$ el mayor número tal que
+  $(\Wa)^r \neq 0$.  Ver la relación de dicho número con el rango de
+  la geometría.
+
+\end{pro}
+
+
+\begin{pro}
+  
+  Si la geometría es no singular, demostrar las afirmaciones:
+
+\begin{itemize}
+  
+\item $(V^\perp)^\perp = V$.
+  
+\item $\dim (V) + \dim (V^\perp)= \dim (E)$.
+  
+\item $V^\perp \cap V'^\perp = (V+V')^\perp$.
+  
+\item $( V \cap V')^\perp = V^\perp + V'^\perp$.
+
+\end{itemize}
+
+\end{pro}
+
+\begin{pro}\label{pro:planohiperbolico}
+  
+  Un plano es hiperbólico si y solo si posee un pareja hiperbólica.
+  Todos los planos hiperbólicos son isométricos.
+
+\end{pro}
+
+\begin{pro}
+  
+  Demostrar que todo espacio vectorial sobre un cuerpo $k$ de
+  dimensión par admite una estructura simpléctica no singular.
+
+\end{pro}
+
+\begin{pro}
+  
+  Sean $\Wa$ y $\Wa'$ dos métricas no singulares sobre un mismo
+  espacio vectorial~$E$.  Demostrar que existe un automorfismo
+  $\varphi: E \rightarrow E$ que cumple $\varphi^*(\Wa) = \Wa'$. Así,
+  las estructuras simplécticas sobre un espacio vectorial son únicas
+  salvo isomorfismos.
+
+\end{pro}
+
+\begin{pro}
+  
+  Sea $\{q_1,\dots,q_n,p_1, \dots, p_n\}$ una base simpléctica.
+
+\begin{itemize}
+  
+\item Demostrar que $V=<q_1,\dots,q_k,p_1, \dots, p_k>$ es un
+  subespacio no singular.  Todo subespacio no singular se puede
+  obtener de este modo, eligiendo convenientemente la base
+  simpléctica.
+  
+\item $V=<p_1, \dots, p_k>$ y $V'=<q_1,\dots,q_k>$ son subespacios
+  isótropos.
+  
+\item $V=<p_1, \dots, p_n>$ y $V'=<q_1,\dots,q_n>$ son subespacios
+  lagrangianos.
+  
+\item Demostrar que toda geometría es isomorfa a la suma directa de
+  dos sub\-espacios lagrangianos.  Probar que toda geometría
+  simpléctica es isomorfa a $E \times E^*$ donde $E$ es un subespacio
+  lagrangiano.
+
+\end{itemize}
+
+\end{pro}
+
+\begin{pro}
+  
+  Matricialmente el producto de dos vectores, en una base canónica, se
+  calcula con la fórmula
+  $$
+  \Wa(e,f) = e^t \cdot J \cdot f
+  $$
+
+\end{pro}
+
+
+\begin{pro}\label{pro:algebradelie}
+  
+  Sea $(E, \Wa)$ una geometría no singular.  Un endomorfismo $\varphi:
+  E \rightarrow E$ es {\sf infinitesimalmente simpléctico}
+  \index{endormorfismo!infinitesimalmente simpléctico} si cumple
+  $$
+  \Wa (\varphi(e),e') = \Wa( e, \varphi(e'))
+  $$
+  Denotamos por $\mathfrak{sp}(E)$ al conjunto de todos los
+  endomorfismos infinitesimalmente simplécticos de la geometría.
+
+\begin{itemize}
+  
+\item $\mathfrak{sp}(E)$ es una subálgebra de Lie de $\End(E)$.
+  
+\item Matricialmente este subálgebra es
+  $$
+  \mathfrak{sp}(E)=\{u \in \End(E) \text{ tales que } u^tJ+Ju=0 \}
+  $$
+  
+\item Un endomorfismo $T \in \mathfrak{sp}(E)$ si y solo si $e^T \in
+  \Sp(E)$.
+  
+\item $\mathfrak{sp}(E)$ es el álgebra de Lie del grupo simpléctico.
+  
+\item Si escribimos la matriz en forma de bloques de tamaño $n$
+  $$
+  u=
+\begin{pmatrix}
+  A& B \\
+  C & D
+\end{pmatrix}
+$$
+demostrar que $D= - A^t$ y que $C$ y $D$ son simétricas.
+
+\item Encontrar la dimensión del álgebra de Lie $\mathfrak{sp}(2n)$.
+
+\end{itemize}
+
+\end{pro}
+
+\begin{pro}
+  
+  Sea $E$ un $k$-espacio vectorial dotado de una métrica simétrica y
+  no degenerada.  Denotamos por $\langle e ,e' \rangle$ a dicho
+  producto escalar.  La polaridad asociada a este producto escalar
+  establece un isomorfismo de $E$ con su dual~$E^*$.
+
+\begin{itemize}
+
+  
+\item Demostrar que sobre $E \times E$ existe un estructura de espacio
+  simpléctico dada por la fórmula
+  $$
+  \Wa((e_1,e_2),(f_1,f_2))= \escalar{f_2}{e_1}- \escalar{f_1}{e_2}
+  $$
+
+  
+\item Relacionar la estructura construida con la estructura canónica
+  que tiene el espacio $E \times E^*$.
+
+\end{itemize}
+
+\end{pro}
+
+
+
+\begin{pro}\label{pro:propiedades_grupo}
+  
+  El grupo simpléctico actua de modo {\sf transitivo}
+  \index{transitivo} sobre el conjunto $E-\{0\}$.
+
+\begin{itemize}
+  
+\item Demostrar que dados dos vectores $e, f$ no nulos, existe un
+  isomorfismo simpléc\-tico $\varphi$ que cumple
+  $$
+  \varphi(e) =f
+  $$
+  
+\item Dados dos subespacios isótropos de la misma dimensión, demostrar
+  que existe un isomorfismo simpléctico que transforma uno en el otro.
+  
+\item Demostrar lo mismo para otro tipo de subespacios.
+
+\end{itemize}
+
+\end{pro}
+
+
+\begin{pro} Son ciertas las afirmaciones:
+
+\begin{itemize}
+  
+\item $V $ es no singular si y solo si $V \cap V^\perp=0$. Entonces
+  $E= V \oplus V^\perp$.
+  
+\item $V$ es no singular si y solo si $V^\perp$ es no singular.
+  
+\item $V$ es isótropo si y solo si $V \subset V^\perp$.  Su dimensión
+  siempre es menor o igual que la mitad de la dimensión de la
+  geometría.
+  
+\item $V$ es lagrangiano si y solo si es isótropo y su dimensión es la
+  mitad de la dimensión de la geometría.
+
+
+\end{itemize}
+
+\end{pro}
+
+\begin{pro}
+  
+  Tomando como analogía la composición de isomorfismos simplécticos
+  definir la composición de relaciones canónicas lineales.
+
+\end{pro}
+
+\end{document}

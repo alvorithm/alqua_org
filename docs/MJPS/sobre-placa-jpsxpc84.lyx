@@ -1,0 +1,283 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass scrbook
+\begin_preamble
+\usepackage{framed} 
+\typearea{10}
+\usepackage{multicol}
+\end_preamble
+\language spanish
+\inputencoding auto
+\fontscheme times
+\graphics default
+\paperfontsize 11
+\spacing single 
+\papersize Default
+\paperpackage widemarginsa4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+
+\layout Chapter
+
+Sobre la placa JPS-XPC84
+\layout Section
+
+Autores 
+\layout Standard
+
+Los autores de la primera versión (Feb-2002) de la placa JPS-XPC84 son:
+\layout Itemize
+
+
+\series bold 
+Juan González Gómez
+\series default 
+.
+ 
+\emph on 
+juan@iearobotics.com
+\emph default 
+ 
+\begin_inset LatexCommand \cite{juang}
+
+\end_inset 
+
+
+\layout Itemize
+
+
+\series bold 
+Pablo A.
+ Haya
+\series default 
+.
+ 
+\emph on 
+Pablo.Haya@ii.uam.es
+\emph default 
+ 
+\begin_inset LatexCommand \cite{phaya}
+
+\end_inset 
+
+
+\layout Itemize
+
+
+\series bold 
+Sergio López-Buedo
+\series default 
+.
+ 
+\emph on 
+Sergio.Lopez-Buedo@ii.uam.es
+\emph default 
+.
+ 
+\layout Section
+
+Licencia
+\layout Standard
+
+Esta placa está pensada para la docencia, con el objetivo de que los alumnos
+ y todos aquellos interesados puedan llevar sus diseños a la realidad, de
+ una forma sencilla.
+ Por ello dispone de una licencia libre, 
+\series bold 
+que permite su libre copia, modificación, distribución y/o distribución
+ de la modificaciones siempre que vayan acompañadas de esta nota así como
+ de TODOS los siguientes documentos
+\series default 
+:
+\layout Itemize
+
+
+\series bold 
+Fichero de esquemáticos
+\series default 
+, en algún formato fuente, para que otros lo puedan modificar
+\layout Itemize
+
+
+\series bold 
+Fichero con el PCB
+\series default 
+, también en algún formato fuente
+\layout Itemize
+
+
+\series bold 
+Fichero de Fabricación
+\series default 
+ (Formato GERBER).
+\layout Standard
+
+Esto garantiza que la placa siga siendo libre y que todas sus mejoras y
+ modificaciones también lo sean.
+\layout Standard
+
+Toda la información sobre la placa se puede obtener en:
+\layout Standard
+\added_space_top medskip \added_space_bottom medskip 
+
+\begin_inset LatexCommand \htmlurl{http://www.iearobotics.com/personal/juan/doctorado/jps-xpc84/jps-xpc84.html}
+
+\end_inset 
+
+
+\layout Section
+
+Herramientas de desarrollo
+\layout Standard
+
+La herramientas empleadas para su diseño han sido:
+\layout Itemize
+
+Ordenador Portátil con S.O 
+\series bold 
+Debian/GNU Linux
+\layout Itemize
+
+
+\series bold 
+Programa de diseño electrónico EAGLE
+\series default 
+, distribuido por la empresa CADSoft 
+\begin_inset LatexCommand \cite{Cadsoft}
+
+\end_inset 
+
+.
+ Este programa es Multiplataforma y se puede descargar gratuitamente de
+ su web.
+ Se concede una licencia para su uso libre, totalmente funcional pero que
+ limita el tamaño de la máxima placa que se puede hacer.
+ Una placa como la JPS-XPC84 se puede diseñar sin problemas.
+\layout Itemize
+
+Para la 
+\series bold 
+realización de este manual
+\series default 
+ se ha empleado:
+\begin_deeper 
+\layout Itemize
+
+
+\series bold 
+Procesador de texto
+\series default 
+: Lyx, 1.1.6.fix4 
+\begin_inset LatexCommand \cite{lyx}
+
+\end_inset 
+
+
+\layout Itemize
+
+
+\series bold 
+Diagramas y figuras
+\series default 
+: Xfig 3.2 
+\begin_inset LatexCommand \cite{xfig}
+
+\end_inset 
+
+
+\end_deeper 
+\layout Section
+
+Aplicaciones
+\layout Standard
+
+La tarjeta puede ser empleada para infinidad de cosas, sin embargo resulta
+ especialmente util para:
+\layout Itemize
+
+
+\series bold 
+Aprendizaje
+\series default 
+: Es su mision fundamental.
+ Que los alumnos o gente que esta aprendiendo pueda disponer de una plataforma
+ sencilla, libre y facil de usar.
+ Al ser libre y disponer de todos los esquemas, los estudiantes pueden comprende
+r todos los detalles y construirse sus propias entrenadoras o reproducir
+ esta misma, bien en modo prototipo o bien mandando fabricar el mismo PCB.
+\layout Itemize
+
+
+\series bold 
+Conexion con microcontroladores
+\series default 
+: Por tratarse de un sistema autonomo es muy util para desarrollar perifericos
+ para diferentes microcontroladores: 6811, 6808, PIC...
+ 
+\layout Itemize
+
+
+\series bold 
+Robotica
+\series default 
+: Muy util en la construccion de robots autonomos o perifericos para ellos
+ 
+\layout Itemize
+
+
+\series bold 
+Investigación
+\series default 
+: Posiblidad de implementar pequeñas CPU's en la FPGA, que luego funcionaran
+ de manera autonoma
+\layout Itemize
+
+
+\series bold 
+Hardware abierto
+\series default 
+: La posibilidad de que esta placa se convierta en un sistema de desarrollo
+ libre empleado por desarrolladores de hardware libre, que diseñen cores
+ o hardware para esta FPGA con una licencia libre.
+ Esto hará, al igual que en el case del software libre, que todos nos beneficiem
+os de las aportaciones que otras personas hacen a la comunidad.
+\layout Section
+
+Sobre este manual
+\layout Standard
+
+Este documento 
+\series bold 
+NO ES UN TUTORIAL SOBRE FPGA's
+\series default 
+, ni se muestran ni enseñan las herramientas de desarrollo.
+ Es un manual que describe en detalle la placa JPS-XP84, para que los usuarios
+ la puedan utilizar y/o desarrollar nuevas mejoras o software.
+ 
+\layout Standard
+
+Se supone que el usuario tiene conocimientos sobre FPGA's y que ha simulado
+ algún diseño.
+ Con la placa JPS-XPC84 lo podrá probar y comprobar si funciona correctamente.
+\layout Standard
+
+No obstante, en el capítulo 
+\begin_inset LatexCommand \ref{ap_trabajando_jps}
+
+\end_inset 
+
+ se da un ejemplo muy sencillo y se explica a modo de referencia rápida
+ cómo hay que configurar la placa JPS-XP84 para probar su funcionamiento.
+\the_end

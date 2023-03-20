@@ -1,0 +1,1991 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass book
+\begin_preamble
+\input{FdL-packages.sty}
+\input{FdL-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding latin1
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize a4paper
+\paperpackage widemarginsa4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Chapter
+
+Pequeña señal y saturación
+\layout Section
+
+Balance de poblaciones
+\layout Standard
+
+Vamos a estudiar los procesos que afectan a las poblaciones de dos niveles
+ degenerados, intentando relacionar éstas con la evolución de la radiación
+ electromagnética.
+\layout Standard
+
+El comportamiento de las poblaciones se rige por las ecuaciones de balance
+ de flujos de población entre los niveles del colectivo.
+\layout Standard
+
+Supongamos que a los dos niveles resonantes se incorpora población a los
+ ritmos 
+\begin_inset Formula $P_{1}$
+\end_inset 
+
+ y 
+\begin_inset Formula $P_{2}$
+\end_inset 
+
+ por unidad de volumen y unidad de tiempo.
+ Dichos ritmos son el resultado de la aplicación al colectivo de un método
+ de bombeo.
+ Entendemos pues por 
+\emph on 
+método de bombeo de poblaciones
+\begin_inset LatexCommand \index{bombeo de poblaciones}
+
+\end_inset 
+
+
+\emph default 
+ un sistema capaz de alterar las poblaciones de equilibrio térmico de los
+ niveles del colectivo.
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Da la impresión de que puede haber cierta redundancia entre la explicación que sigue y la que se da en el capítulo de bombeo -ATC. Eso no es malo -JGP.}
+\end_inset 
+
+
+\layout Standard
+
+Aparte de 
+\begin_inset Formula $P_{1}$
+\end_inset 
+
+ y 
+\begin_inset Formula $P_{2}$
+\end_inset 
+
+ a los niveles 
+\begin_inset Formula $1$
+\end_inset 
+
+ y 
+\begin_inset Formula $2$
+\end_inset 
+
+ pueden llegar o salir elementos del colectivo por otros canales.
+ Hemos esquematizado la situación en la figura 
+\begin_inset LatexCommand \ref{fig:dinamica-general-poblaciones}
+
+\end_inset 
+
+.
+\layout Standard
+
+Así, el nivel superior (
+\begin_inset Formula $2$
+\end_inset 
+
+) puede desexcitarse incoherentemente hacia el inferior (
+\begin_inset Formula $1$
+\end_inset 
+
+) por emisión espontánea con probabilidad 
+\begin_inset Formula $\tau_{21}^{-1}$
+\end_inset 
+
+ y no radiativamente con probabilidad 
+\begin_inset Formula $d_{21}$
+\end_inset 
+
+ hacia el nivel 
+\begin_inset Formula $1$
+\end_inset 
+
+ y con 
+\begin_inset Formula $d_{2n}$
+\end_inset 
+
+ hacia otros niveles.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/dinamica-general-poblaciones-src.eps
+	display monochrome
+	scale 60
+	keepAspectRatio
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:dinamica-general-poblaciones}
+
+\end_inset 
+
+Mecanismos de variación de las poblaciones de los niveles 
+\begin_inset Formula $1$
+\end_inset 
+
+ y 
+\begin_inset Formula $2$
+\end_inset 
+
+.
+ 
+\begin_inset Formula $d_{12},d_{21}$
+\end_inset 
+
+ representan las probabilidades térmicas, no radiativas.
+\end_inset 
+
+
+\layout Standard
+
+En cuanto al nivel inferior 
+\begin_inset Formula $1,$
+\end_inset 
+
+ aparte de recibir la población procedente del 
+\begin_inset Formula $2$
+\end_inset 
+
+ por los caminos indicados, puede enviar térmicamente al 
+\begin_inset Formula $2$
+\end_inset 
+
+ con probabilidad 
+\begin_inset Formula $d_{12}$
+\end_inset 
+
+ y hacia otros niveles con probabilidad 
+\begin_inset Formula $d_{1n}$
+\end_inset 
+
+.
+\layout Standard
+
+Finalmente, la radiación resonante introduce probabilidades de transición
+ estimuladas que también afectan a las poblaciones, como se ha apuntado.
+\layout Standard
+
+Teniendo en cuenta todos estos flujos, las ecuaciones de balance de las
+ poblaciones de los niveles 
+\begin_inset Formula $1$
+\end_inset 
+
+ y 
+\begin_inset Formula $2$
+\end_inset 
+
+ serán (
+\begin_inset Formula $\nu_{0}=\nu_{21}$
+\end_inset 
+
+):
+\begin_inset Formula \begin{eqnarray*}
+\dt{n_{2}} & = & -\left(n_{2}-\frac{g_{2}}{g_{1}}n_{1}\right)\frac{\sigma_{21}}{h\nu_{0}}I-\left(\frac{1}{\tau_{21}}+d_{21}+d_{2n}\right)n_{2}+d_{12}n_{1}+P_{2}\\
+\dt{n_{1}} & = & \left(n_{2}-\frac{g_{2}}{g_{1}}n_{1}\right)\frac{\sigma_{21}}{h\nu_{0}}I+\left(\frac{1}{\tau_{21}}+d_{21}\right)n_{2}-\left(d_{12}+d_{1n}\right)n_{1}+P_{1}\end{eqnarray*}
+
+\end_inset 
+
+Vamos a cambiar a las variables inversión de poblaciones 
+\begin_inset Formula $n_{i}$
+\end_inset 
+
+, y población total de los niveles, 
+\begin_inset Formula $n_{l}$
+\end_inset 
+
+.
+\begin_inset Formula \[
+n_{i}=n_{2}-\frac{g_{2}}{g_{1}}n_{1}\qquad n_{l}=n_{1}+n_{2}\]
+
+\end_inset 
+
+ Para obtener la evolución de 
+\begin_inset Formula $n_{i}$
+\end_inset 
+
+ multiplicamos la segunda ecuación por 
+\begin_inset Formula $g_{2}/g_{1}$
+\end_inset 
+
+ y la restamos de la primera, mientras que para obtener la de 
+\begin_inset Formula $n_{l}$
+\end_inset 
+
+ simplemente sumamos las dos ecuaciones:
+\begin_inset Formula \begin{eqnarray*}
+\dt{n_{i}} & = & -\left(1+\frac{g_{2}}{g_{1}}\right)\frac{\sigma_{21}}{h\nu_{0}}n_{i}I-\left[\left(\frac{1}{\tau_{21}}+d_{21}\right)\left(1+\frac{g_{2}}{g_{1}}\right)+d_{2n}\right]n_{2}+\\
+ &  & +\left[\left(1+\frac{g_{2}}{g_{1}}\right)d_{12}+\frac{g_{2}}{g_{1}}d_{1n}\right]n_{1}+P_{2}-\frac{g_{2}}{g_{1}}P_{1}\\
+\dt{n_{l}} & = & P_{1}+P_{2}-d_{2n}n_{2}-d_{1n}n_{1}\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Standard
+
+Observamos que en la variación del número total no aparece ningún proceso
+ interno entre los dos niveles.
+ Para poner los segundos miembros en función también de las nuevas variables
+ sustituimos
+\begin_inset Formula \begin{eqnarray*}
+n_{2} & = & \frac{1}{1+g_{2}/g_{1}}\left(\frac{g_{2}}{g_{1}}n_{l}+n_{i}\right)\\
+n_{1} & = & \frac{1}{1+g_{2}/g_{1}}\left(n_{l}-n_{i}\right)\end{eqnarray*}
+
+\end_inset 
+
+con lo cual
+\layout Standard
+
+
+\begin_inset Formula \begin{eqnarray*}
+\dt{n_{i}} & = & -\left(1+\frac{g_{2}}{g_{1}}\right)\frac{\sigma_{21}}{h\nu_{0}}n_{i}I-\left(\frac{1}{\tau_{21}}+d_{21}+d_{2n}+\frac{d_{2n}+d_{1n}g_{2}/g_{1}}{1+g_{2}/g_{1}}\right)n_{i}+\\
+ &  & +\left(-\frac{g_{2}}{g_{1}}\,\frac{1}{\tau_{21}}+d_{12}-\frac{g_{2}}{g_{1}}d_{21}+\frac{g_{2}}{g_{1}}\,\frac{d_{1n}-d_{2n}}{1+g_{2}/g_{1}}\right)n_{l}+P_{2}-\frac{g_{2}}{g_{1}}P_{1}\\
+\dt{n_{l}} & = & \frac{d_{1n}-d_{2n}}{1+g_{2}/g_{1}}\, n_{i}-\frac{d_{2n}g_{2}/g_{1}-d_{1n}}{1+g_{2}/g_{1}}\, n_{l}+P_{2}+P_{1}\end{eqnarray*}
+
+\end_inset 
+
+
+\layout Standard
+
+Esto es un planteamiento muy general.
+ En la práctica los láseres funcionan con esquemas a tres o cuatro niveles,
+ como los que vamos a describir a continuación.
+\layout Section
+
+Esquema a tres niveles
+\layout Standard
+
+Si, como es usual en el láser de tres niveles (figura 
+\begin_inset LatexCommand \ref{fig:laser-3niv}
+
+\end_inset 
+
+), el nivel 
+\begin_inset Formula $1$
+\end_inset 
+
+ es el estado fundamental y el 
+\begin_inset Formula $2$
+\end_inset 
+
+ es el primer excitado, es obvio que 
+\begin_inset Formula $d_{1n}=0$
+\end_inset 
+
+, y que al ser sólo posible la transición del nivel 
+\begin_inset Formula $2$
+\end_inset 
+
+ al 
+\begin_inset Formula $1$
+\end_inset 
+
+, 
+\begin_inset Formula $d_{2n}=0$
+\end_inset 
+
+.
+ Entonces la variación de la población total se simplifica:
+\begin_inset ERT
+status Open
+
+\layout Standard
+
+\backslash 
+com{Habría que sincronizar figuras y convenios de numeración de niveles con las correspondientes al tema de bombeo óptico. Además, poner probabilidades o tasas, pero algo homogéneo en los gráficos.}
+\end_inset 
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/laser-3niv-src.eps
+	display monochrome
+	scale 60
+	keepAspectRatio
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:laser-3niv}
+
+\end_inset 
+
+Esquema de un láser a tres niveles.
+ La emisión láser se obtendrá entre los niveles 
+\begin_inset Formula $2$
+\end_inset 
+
+ y 
+\begin_inset Formula $1$
+\end_inset 
+
+.
+ Éste es el mecanismo del láser de rubí.
+ 
+\begin_inset Formula $P_{3}=W_{13}n_{1}$
+\end_inset 
+
+.
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Formula \[
+\dt{n_{l}}=P_{2}+P_{1}\]
+
+\end_inset 
+
+
+\layout Standard
+
+Si la constante de tiempo 
+\begin_inset Formula $d_{32}^{-1}$
+\end_inset 
+
+ es mucho más corta que los tiempos en los que cambia el bombeo 
+\begin_inset Formula $P_{3}$
+\end_inset 
+
+ (por ejemplo el tiempo de duración del pulso en un bombeo pulsado) se puede
+ asumir que la población 
+\begin_inset Formula $n_{3}$
+\end_inset 
+
+ sigue fielmente al bombeo.
+ El paso de 
+\begin_inset Formula $1$
+\end_inset 
+
+ a 
+\begin_inset Formula $2$
+\end_inset 
+
+ vía 
+\begin_inset Formula $3$
+\end_inset 
+
+ es rápido y en 
+\begin_inset Formula $3$
+\end_inset 
+
+ no se acumula población.
+ De otro modo:
+\layout Standard
+
+
+\begin_inset Formula \[
+\dt{n_{3}}=P_{3}-d_{32}n_{3}=P_{3}-P_{2}\simeq0\]
+
+\end_inset 
+
+Es decir, los bombeos son prácticamente iguales, 
+\begin_inset Formula $P_{2}\simeq P_{3}$
+\end_inset 
+
+.
+\layout Standard
+
+Si, además, 
+\begin_inset Formula $d_{32}\gg\tau_{21}^{-1}$
+\end_inset 
+
+ la población tiende a acumularse en 
+\begin_inset Formula $2$
+\end_inset 
+
+ (nivel 
+\emph on 
+metaestable
+\emph default 
+
+\begin_inset LatexCommand \index{nivel metaestable}
+
+\end_inset 
+
+) y al cabo de poco tiempo 
+\begin_inset Formula $n_{3}\ll n_{2},n_{1}$
+\end_inset 
+
+.
+ Por ejemplo, en el láser de rubí 
+\begin_inset Formula $\tau_{21}$
+\end_inset 
+
+ es de 
+\begin_inset Formula $1\,\mathrm{ms}$
+\end_inset 
+
+, lo que es tan largo que configura una transición casi prohibida.
+ Si 
+\begin_inset Formula $n_{d}$
+\end_inset 
+
+ es la densidad total de centros
+\begin_inset Foot
+collapsed false
+
+\layout Standard
+
+normalmente, los centros son impurezas sustitutivas en una red cristalina.
+ Por ejemplo, en el láser de rubí se utilizan iones 
+\begin_inset Formula $\mathrm{Cr^{3+}}$
+\end_inset 
+
+.
+ 
+\end_inset 
+
+, 
+\begin_inset Formula $n_{l}=n_{1}+n_{2}\simeq n_{d}$
+\end_inset 
+
+ y 
+\begin_inset Formula \[
+\dt{n_{l}}\simeq0\]
+
+\end_inset 
+
+es decir, 
+\begin_inset Formula $P_{1}=-P_{2}$
+\end_inset 
+
+: lo que llega a 
+\begin_inset Formula $2$
+\end_inset 
+
+ viene de 
+\begin_inset Formula $1$
+\end_inset 
+
+ por 
+\begin_inset Formula $3$
+\end_inset 
+
+.
+ Llega un momento en que se establece una ligera inversión de población,
+ 
+\begin_inset Formula $n_{2}\gtrsim n_{1}\simeq n_{d}/2$
+\end_inset 
+
+ con 
+\begin_inset Formula $P_{2}=W_{13}n_{d}/2$
+\end_inset 
+
+.
+ Observando todas las circunstancias precedentes se tiene
+\begin_inset Formula \[
+\dt{n_{i}}=-\left(1+\frac{g_{2}}{g_{1}}\right)\frac{\sigma_{21}}{h\nu_{0}}n_{i}I-\left(\frac{1}{\tau_{21}}+d_{21}+d_{12}\right)n_{i}+\left(-\frac{g_{2}}{g_{1}}\,\frac{1}{\tau_{21}}+d_{12}-\frac{g_{2}}{g_{1}}d_{21}\right)n_{d}+\left(1+\frac{g_{2}}{g_{1}}\right)P_{2}\]
+
+\end_inset 
+
+
+\layout Standard
+
+Podemos reescribir esta ecuación de evolución de la inversión de población
+ de una manera significativa usando por una parte la constante de tiempo
+\begin_inset Formula \[
+\frac{1}{\tau}=\frac{1}{\tau_{21}}+d_{21}+d_{12}\]
+
+\end_inset 
+
+que representa (regla de Mathiessen) la constante de tiempo de la inversión
+ de población, y por otra la constante
+\begin_inset Formula \[
+K=\left(\frac{g_{2}}{g_{1}}\,\frac{1}{\tau_{21}}-d_{12}+\frac{g_{2}}{g_{1}}d_{21}\right)n_{d}\]
+
+\end_inset 
+
+que es la responsable de que, en ausencia de radiación y bombeo, la inversión
+ de población acabe siendo negativa si 
+\begin_inset Formula $d_{21}$
+\end_inset 
+
+ y 
+\begin_inset Formula $d_{12}$
+\end_inset 
+
+ son las probabilidades térmicas (siempre 
+\begin_inset Formula $d_{21}>d_{12}$
+\end_inset 
+
+ en virtud de la estadística de Boltzmann).
+ Es decir, 
+\begin_inset Formula $K$
+\end_inset 
+
+ representa un desgaste de la inversión de población.
+ Por último podemos introducir un 
+\emph on 
+bombeo efectivo
+\begin_inset LatexCommand \index{bombeo efectivo}
+
+\end_inset 
+
+ 
+\emph default 
+
+\begin_inset Formula \[
+P=-K+\left(1+\frac{g_{2}}{g_{1}}\right)P_{2}=-K+\left(1+\frac{g_{2}}{g_{1}}\right)P_{3}\]
+
+\end_inset 
+
+y así, en estas magnitudes 
+\begin_inset Formula $P,\tau$
+\end_inset 
+
+ significativas,
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+\dt{n_{i}}=-\left(1+\frac{g_{2}}{g_{1}}\right)\frac{\sigma_{21}}{h\nu_{0}}n_{i}I-\frac{1}{\tau}n_{i}+P.\label{eq:dni-dt-en-fn-P-3niv}\end{equation}
+
+\end_inset 
+
+Por lo tanto para producir una inversión de población, podemos introducir
+ radiación que induzca transiciones 
+\begin_inset Formula $1\rightarrow3$
+\end_inset 
+
+, vía el bombeo 
+\begin_inset Formula $P_{3}=W_{13}n_{1}$
+\end_inset 
+
+.
+\layout Section
+
+Esquema a cuatro niveles
+\layout Standard
+
+Si tenemos un láser ideal de cuatro niveles (figura 
+\begin_inset LatexCommand \ref{fig:laser-4niv}
+
+\end_inset 
+
+) en el que 
+\begin_inset Formula $d_{32}$
+\end_inset 
+
+ y 
+\begin_inset Formula $d_{10}$
+\end_inset 
+
+ son probabilidades mucho mayores que el resto de las que intervienen en
+ el esquema, tendremos que 
+\begin_inset Formula $n_{1}\simeq0,$
+\end_inset 
+
+ es decir
+\layout Standard
+
+
+\begin_inset Formula \[
+\dt{n_{2}}=-\frac{\sigma_{21}}{h\nu_{0}}n_{2}I-\left(\frac{1}{\tau_{21}}+d_{21}+d_{2n}\right)n_{2}+P_{2}\]
+
+\end_inset 
+
+En este caso 
+\begin_inset Formula $n_{2}\ll n_{0}$
+\end_inset 
+
+, así que 
+\begin_inset Formula $n_{0}\simeq n_{d}$
+\end_inset 
+
+.
+ Así, ahora basta llevar un pequeño número de átomos al nivel 
+\begin_inset Formula $n_{2}$
+\end_inset 
+
+ para tener inversión de población.
+ Con 
+\begin_inset Formula $P=P_{2}=d_{32}n_{3}\simeq P_{3}$
+\end_inset 
+
+, se puede escribir (
+\begin_inset Formula $n_{i}\simeq n_{2}$
+\end_inset 
+
+)
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/laser-4niv-src.eps
+	display monochrome
+	scale 60
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:laser-4niv}
+
+\end_inset 
+
+El tiempo 
+\begin_inset Formula $\tau_{21}$
+\end_inset 
+
+ en un láser típico de 4 niveles Nd:YAG
+\begin_inset LatexCommand \index{láser!Nd:YAG}
+
+\end_inset 
+
+ es del orden de un tercio de milisegundo, un tiempo muy largo frente a
+ los 
+\begin_inset Formula $10^{-9}$
+\end_inset 
+
+ o 
+\begin_inset Formula $10^{-8}$
+\end_inset 
+
+ s de las transiciones atómicas habituales.
+ Las transiciones no radiativas 
+\begin_inset Formula $d$
+\end_inset 
+
+ se realizan en tiempos del orden de 
+\begin_inset Formula $10^{-11}$
+\end_inset 
+
+.
+ 
+\begin_inset Formula $P_{3}=W_{03}n_{0}$
+\end_inset 
+
+.
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+\dt{n_{i}}=-\frac{\sigma_{21}}{h\nu_{0}}n_{i}I-\frac{1}{\tau}n_{i}+P\label{eq:dni-dt-en-fn-P-4niv}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+El esquema de cuatro niveles es ventajoso porque no hace falta promocionar
+ al nivel 
+\begin_inset Formula $2$
+\end_inset 
+
+ una cantidad tan grande como 
+\begin_inset Formula $n_{d}/2$
+\end_inset 
+
+.
+ El láser de tres niveles fue sin embargo el primero en construirse.
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Propongo superíndice para indicar si 3 o 4 niveles. Así huelgan muchas aclaraciones en el texto -ATC. No creo que compense la complicación de la notación -JGP.}
+\end_inset 
+
+
+\layout Section
+
+Evolución comparada de la inversión
+\layout Standard
+
+Como estos son los esquemas de niveles que utilizan los láseres más usuales,
+ vamos a centrar en ellos la atención.
+ Formalmente, las ecuaciones que corresponden a ambos esquemas son análogas.
+ En el caso de tres niveles (ec 
+\begin_inset LatexCommand \ref{eq:dni-dt-en-fn-P-3niv}
+
+\end_inset 
+
+) cabe destacar que 
+\emph on 
+cada proceso estimulado de radiación
+\emph default 
+ reduce en un factor 
+\begin_inset Formula $\left(1+g_{2}/g_{1}\right)$
+\end_inset 
+
+ la inversión de población (
+\begin_inset Formula $=2$
+\end_inset 
+
+ si 
+\begin_inset Formula $g_{1}=g_{2}$
+\end_inset 
+
+).
+ En cambio, en el caso de cuatro niveles cada emisión estimulada (ec.
+ 
+\begin_inset LatexCommand \ref{eq:dni-dt-en-fn-P-4niv}
+
+\end_inset 
+
+) reduce en una unidad la inversión de población.
+ Por supuesto, entre estos dos casos ideales, caben numerosas situaciones
+ intermedias, pero está claro que el esquema de cuatro niveles necesita
+ una inversión de población menor para producir la misma energía.
+\layout Standard
+
+
+\size small 
+En la práctica el bombeo a 
+\begin_inset Formula $3$
+\end_inset 
+
+ va a una banda de niveles, o a una serie de bandas conectadas entre sí
+ por transiciones no radiativas.
+ Lo que sí es importante es que los niveles láser sean dos, y lo más estrechos
+ posibles.
+ Hay no obstante láseres, como el HeNe para los que 
+\begin_inset Formula $2$
+\end_inset 
+
+ está escindido en varios y dependiendo de las probabilidades de paso de
+ 
+\begin_inset Formula $3$
+\end_inset 
+
+ a 
+\begin_inset Formula $2$
+\end_inset 
+
+ se obtiene una u otra línea.
+ Para evitar la transición más probable y lograr que 
+\emph on 
+se vean
+\emph default 
+ otras, hay que inhibirla, por mecanismos que describiremos más adelante.
+ De hecho el láser HeNe puede producir transiciones en verde, amarillo,
+ rojo\SpecialChar \ldots{}
+ La más usual es la roja de 
+\begin_inset Formula $632\mathrm{nm}$
+\end_inset 
+
+.
+ En este láser el bombeo no se hace mediante radiación, sino por impacto
+ de electrones.
+ El bombeo eficaz es el que se hace a través del Helio, que funciona como
+ depósito de inversión de población y transfiere colisionalmente la energía
+ al Neón, que tiene niveles muy próximos.
+\layout Standard
+
+
+\size small 
+De hecho en el láser de rubí, el original de tres niveles, no hay tampoco
+ solamente tres, sino que el 
+\begin_inset Formula $2$
+\end_inset 
+
+ es doble y por eso de este láser se obtiene un doblete de radiación.
+\layout Section
+
+Regímenes de trabajo
+\layout Standard
+
+Vamos a explotar las ecuaciones 
+\begin_inset LatexCommand \ref{eq:dni-dt-en-fn-P-3niv}
+
+\end_inset 
+
+ y 
+\begin_inset LatexCommand \ref{eq:dni-dt-en-fn-P-4niv}
+
+\end_inset 
+
+.
+ Si el primer término es pequeño la inversión será prácticamente debida
+ al bombeo 
+\begin_inset Formula $P$
+\end_inset 
+
+ y a las pérdidas contenidas en 
+\begin_inset Formula $\tau$
+\end_inset 
+
+.
+ Entonces diremos que el amplificador está trabajando en 
+\emph on 
+pequeña señal
+\emph default 
+.
+ Por el contrario si el primer término es grande frente a los otros diremos
+ que trabaja en 
+\emph on 
+saturación
+\emph default 
+.
+ El criterio para establecer el cambio de régimen de pequeña saturación
+ es, en 
+\begin_inset LatexCommand \ref{eq:dni-dt-en-fn-P-3niv}
+
+\end_inset 
+
+,
+\begin_inset Formula \[
+\left(1+\frac{g_{2}}{g_{1}}\right)\frac{\sigma_{21}}{h\nu_{0}}I_{0}\simeq\frac{1}{\tau}\]
+
+\end_inset 
+
+Y análogamente en 
+\begin_inset LatexCommand \ref{eq:dni-dt-en-fn-P-4niv}
+
+\end_inset 
+
+.
+ Se ha definido como 
+\emph on 
+intensidad de saturación
+\emph default 
+
+\begin_inset LatexCommand \index{intensidad!de saturación}
+
+\end_inset 
+
+:
+\begin_inset Formula \begin{align}
+I_{0}^{\left[3\right]} & =\frac{h\nu_{0}}{\left(1+g_{2}/g_{1}\right)\sigma_{21}\tau} &  & \textnormal{(tres niveles)}\label{eq:I0-tres-niv}\\
+I_{0}^{\left[4\right]} & =\frac{h\nu_{0}}{\sigma_{21}\tau} &  & \textnormal{(cuatro niveles)}\label{eq:I0-cuatro-niv}\end{align}
+
+\end_inset 
+
+En ambos casos,
+\layout Standard
+
+
+\begin_inset Formula \[
+\dt{n_{i}}=-\left(1+\frac{I}{I_{0}}\right)\frac{n_{i}}{\tau}+P\]
+
+\end_inset 
+
+
+\layout Standard
+
+En saturación la inversión de población está siendo erosionada de modo important
+e por la presencia de las transiciones estimuladas.
+ Hasta ese punto el amplificador funciona en régimen lineal (pequeña señal
+\begin_inset LatexCommand \index{peque\~na se\~nal}
+
+\end_inset 
+
+).
+ Si lo que se quiere es un amplificador fiel, que reproduzca la entrada,
+ nos interesa este régimen de pequeña señal.
+ Si lo que buscamos es obtener energía, debemos situarnos en saturación
+\begin_inset LatexCommand \index{saturación}
+
+\end_inset 
+
+.
+\layout Standard
+
+Si la constante de tiempo del sistema, 
+\begin_inset Formula $\tau$
+\end_inset 
+
+, es muy corta en comparación con los tiempos típicos de evolución del bombeo,
+ el sistema se adapta velozmente a los cambios que introduce el bombeo y
+ la inversión sigue dichos cambios con fidelidad.
+ Entonces los dos términos del segundo miembro son casi iguales: hacemos
+ una aproximación adiabática de proceso cuasiestacionario tomando
+\layout Standard
+
+
+\begin_inset Formula \[
+\dt{n_{i}}\simeq0\]
+
+\end_inset 
+
+
+\layout Standard
+
+Como se verá más adelante, cuando el medio amplificador está en un resonador,
+ la inversión de población en los regímenes estables se bloquea en un valor
+ umbral y en él se mantiene durante el funcionamiento del láser.
+\layout Standard
+
+De la ecuación anterior podemos, entonces, despejar la inversión de población
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+n_{i}=\frac{P\tau}{1+I/I_{0}}\label{eq:ni-inv-pobl}\end{equation}
+
+\end_inset 
+
+llevando esta expresión a la de la amplificación por unidad de longitud,
+ 
+\begin_inset Formula $\alpha=\sigma_{21}n_{i}$
+\end_inset 
+
+ obtenemos que la ganancia en pequeña señal
+\begin_inset LatexCommand \index{ganancia!en pequeña señal}
+
+\end_inset 
+
+ 
+\begin_inset Formula $\left(I\ll I_{0}\right)$
+\end_inset 
+
+, denotada por 
+\begin_inset Formula $\alpha_{0}$
+\end_inset 
+
+, valdrá
+\layout Standard
+
+
+\begin_inset Formula \[
+\alpha_{0}\simeq P\tau\sigma_{21}\]
+
+\end_inset 
+
+y podremos poner
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+com{Cuestionable notación: subíndice cero para pequeña seña (alfa) y para saturación (I). Habría que buscar algo más intuitivo... Ver también la aclaración en nota al pie -ATC. Es la notación estándar -JGP.}
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+\alpha\equiv\frac{1}{I}\dx{I}=\frac{\alpha_{0}}{1+I/I_{0}}\label{eq:alfa-formula-rigrod}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+La expresión anterior, conocida como 
+\emph on 
+fórmula de Rigrod
+\begin_inset LatexCommand \index{Rigrod, fórmula de}
+
+\end_inset 
+
+
+\begin_inset LatexCommand \index{fórmula de Rigrod}
+
+\end_inset 
+
+ 
+\emph default 
+nos indica que el amplificador de radiación se caracteriza por dos parámetros
+ básicos: la amplificación en pequeña señal 
+\begin_inset Formula $\alpha_{0}$
+\end_inset 
+
+ y la intensidad de saturación 
+\begin_inset Formula $I_{0}$
+\end_inset 
+
+.
+ Esta ecuación puede ser integrada a lo largo un recorrido 
+\begin_inset Formula $x$
+\end_inset 
+
+ de la radiación en el medio.
+ Podemos así escribir
+\layout Standard
+
+
+\begin_inset Formula \[
+\left(1+\frac{I_{0}}{I}\right)\mathrm{d}I=\alpha_{0}I_{0}\mathrm{d}x\]
+
+\end_inset 
+
+e integrar entre la intensidad a la entrada
+\begin_inset Foot
+collapsed false
+
+\layout Standard
+
+No confundir la intensidad de entrada 
+\begin_inset Formula $I\left(0\right)$
+\end_inset 
+
+ (que fijamos para cada experimento) con la intensidad de saturación, 
+\begin_inset Formula $I_{0}$
+\end_inset 
+
+, que es un parámetro característico del medio amplificador para cada frecuencia
+ 
+\begin_inset Formula $\nu_{0}$
+\end_inset 
+
+.
+\end_inset 
+
+ 
+\begin_inset Formula $I\left(0\right)$
+\end_inset 
+
+ y en el punto 
+\begin_inset Formula $x$
+\end_inset 
+
+, 
+\begin_inset Formula $I\left(x\right)$
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Formula \[
+\int_{I(0)}^{I(x)}\left(1+\frac{I_{0}}{I}\right)\,\mathrm{d}I=\alpha_{0}I_{0}x\]
+
+\end_inset 
+
+es decir
+\layout Standard
+
+
+\begin_inset Formula \[
+\left.\left(I+I_{0}\ln I\right)\right|_{I(0)}^{I(x)}=\alpha_{0}I_{0}x\]
+
+\end_inset 
+
+
+\layout Standard
+
+La 
+\emph on 
+ganancia del amplificador
+\begin_inset LatexCommand \index{ganancia!del amplificador}
+
+\end_inset 
+
+
+\emph default 
+ se define como el cociente de intensidad saliente y entrante: 
+\begin_inset Formula $G\left(x\right)\equiv I\left(x\right)/I\left(0\right)$
+\end_inset 
+
+.
+\layout Standard
+
+La ecuación anterior se puede dividir por 
+\begin_inset Formula $I(0)$
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Formula \[
+\frac{I(x)}{I(0)}-1+\frac{I_{0}}{I(0)}\ln\frac{I(x)}{I(0)}=\frac{I_{0}}{I(0)}\alpha_{0}x\]
+
+\end_inset 
+
+donde 
+\begin_inset Formula $I_{0}/I\left(0\right)$
+\end_inset 
+
+ es la 
+\emph on 
+ganancia en saturación
+\emph default 
+
+\begin_inset LatexCommand \index{ganancia!en saturación}
+
+\end_inset 
+
+.
+ Para la ganancia en un paso de 
+\begin_inset Formula $0$
+\end_inset 
+
+ a 
+\begin_inset Formula $x$
+\end_inset 
+
+ a través del medio amplificador queda así:
+\layout Standard
+
+
+\begin_inset Formula \[
+G\left(x\right)-1+\frac{I_{0}}{I(0)}\ln G\left(x\right)=\frac{I_{0}}{I(0)}\alpha_{0}x\]
+
+\end_inset 
+
+de donde
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/ganancia-saturacion-src.eps
+	display monochrome
+	scale 50
+	keepAspectRatio
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:ganancia-saturacion}
+
+\end_inset 
+
+Efecto de la saturación en un amplificador.
+ La curva está determinada por 
+\begin_inset Formula $\alpha_{0}$
+\end_inset 
+
+ e 
+\begin_inset Formula $I_{0}$
+\end_inset 
+
+.
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Formula \[
+\frac{I(0)}{I_{0}}=\frac{\alpha_{0}x-\ln G\left(x\right)}{G\left(x\right)-1}\]
+
+\end_inset 
+
+
+\layout Standard
+
+Se trata de una ecuación implícita en 
+\begin_inset Formula $G$
+\end_inset 
+
+ e indica que cuanto mayor sea la intensidad 
+\begin_inset Formula $I(0)$
+\end_inset 
+
+ de la radiación de entrada, tanto menor es la amplificación 
+\begin_inset Formula $G$
+\end_inset 
+
+ (zona final de la curva en la figura 
+\begin_inset LatexCommand \ref{fig:ganancia-saturacion}
+
+\end_inset 
+
+).
+ Este es el efecto típico de la saturación y es consecuencia del efecto
+ de la intensidad sobre la inversión de la población.
+ Una intensidad 
+\begin_inset Formula $I\left(0\right)$
+\end_inset 
+
+ alta genera muchas emisiones estimuladas, reduciendo 
+\begin_inset Formula $n_{i}$
+\end_inset 
+
+ y, por tanto, 
+\begin_inset Formula $G$
+\end_inset 
+
+.
+\layout Standard
+
+En pequeña señal 
+\begin_inset Formula $I\ll I_{0}$
+\end_inset 
+
+, la ecuación de transporte (fórmula de Rigrod) no tiene el término de saturació
+n y se reduce a
+\layout Standard
+
+
+\begin_inset Formula \[
+\dx{I}=\alpha_{0}I.\]
+
+\end_inset 
+
+ La solución es la típica de amplificación exponencial
+\begin_inset Formula \[
+I\left(x\right)=I\left(0\right)e^{\alpha_{0}x}\]
+
+\end_inset 
+
+y lo que hemos llamado ganancia del amplificador sería 
+\begin_inset Formula $G\left(x\right)=\exp\alpha_{0}x$
+\end_inset 
+
+.
+ La mayoría de los métodos para medir la ganancia en pequeña señal se basan
+ en esta ecuación.
+\layout Section
+
+Nivel de ruido del amplificador
+\layout Standard
+
+Discutimos en este apartado otro aspecto importante en la amplificación
+ de radiación: el ruido debido a la emisión espontánea.
+ De la emisión espontánea, como hemos discutido, sólo una pequeña fracción
+ se va a incorporar a los modos amplificados, y son los correspondientes
+ fotones los que determinan el 
+\emph on 
+ruido cuántico
+\emph default 
+ del amplificador.
+ Vamos a estudiar cuál es su papel.
+\layout Standard
+
+En el tratamiento realizado hasta ahora sólo se ha tenido en cuenta en la
+ ecuación de transporte la influencia de los procesos estimulados.
+ Es una buena aproximación, ya que los procesos espontáneos sólo pueden
+ competir en un modo cuando el número de fotones por modo es del orden de
+ la unidad o menor.
+ Es evidente que en los modos de una señal incidente con baja divergencia
+ y pequeña anchura espectral la población de fotones será usualmente mucho
+ más alta.
+\layout Standard
+
+Ahora bien, cuando el amplificador opera en baja señal, puede ocurrir que
+ los fotones espontáneos incorporados a los modos de la radiación incidente
+ constituyan una fracción apreciable de la salida.
+ Sobre todo teniendo en cuenta que participan en el proceso de amplificación.
+ Como la fase de estos fotones espontáneos es incoherente con la señal incidente
+, esta radiación espontánea amplificada constituye el 
+\emph on 
+ruido cuántico
+\begin_inset LatexCommand \index{ruido cuántico}
+
+\end_inset 
+
+
+\emph default 
+ del amplificador de radiación.
+ Su importancia es clave: en la mayoría de los láseres no se introduce radiación
+, sino que basta con amplificar el ruido cuántico interno para obtener la
+ emisión láser.
+ Se usa pues el ruido como señal de entrada.
+ En algunos láseres incluso basta con un recorrido a través del amplificador
+ para que el ruido cuántico dé lugar a una potencia enorme.
+ En otros es necesario hacer varios recorridos, recurriendo para ello a
+ insertar el medio amplificador en un resonador.
+ En estos últimos el ruido cuántico empieza a ir de espejo a espejo, amplificánd
+ose, y termina por convertirse en la salida del láser.
+\layout Standard
+
+Vamos a evaluar la magnitud del ruido cuántico espontáneo producido por
+ el amplificador.
+ Para ello debemos añadir en la ecuación de transporte de los fotones 
+\begin_inset LatexCommand \ref{eq:evol-I-con-x}
+
+\end_inset 
+
+ la contribución de la emisión espontánea.
+ Pero de la emisión espontánea total debemos seleccionar la fracción que
+ se propaga dentro del ángulo sólido 
+\begin_inset Formula $\Omega$
+\end_inset 
+
+ que el detector abarca en la salida del amplificador.
+ Además, como la emisión espontánea amplificada tiene una anchura de línea
+ aproximadamente igual a la del amplificador (
+\begin_inset Formula $\delta\nu$
+\end_inset 
+
+) y ésta es menor que la natural (
+\begin_inset Formula $\Delta\nu$
+\end_inset 
+
+), también debemos seleccionar esta fracción del total.
+ La ecuación de transporte sobre la intensidad del ruido amplificado en
+ la detección de salida, 
+\begin_inset Formula $I_{R}$
+\end_inset 
+
+ es pues la siguiente:
+\layout Standard
+
+
+\begin_inset Formula \[
+\dx{I_{R}}=\left(n_{i}\sigma_{21}-\alpha_{i}\right)I_{R}+\frac{n_{2}}{\tau_{21}}h\nu_{0}\frac{\Delta\Omega}{4\pi}\frac{\delta\nu}{\Delta\nu}.\]
+
+\end_inset 
+
+
+\layout Standard
+
+Con la condición inicial 
+\begin_inset Formula $I_{R}\left(0\right)=0$
+\end_inset 
+
+ se integra la ecuación lineal anterior
+\begin_inset Formula \[
+I_{R}\left(x\right)=\frac{\Delta\Omega}{4\pi}\frac{\delta\nu}{\Delta\nu}\frac{h\nu_{0}}{\tau_{21}}\int_{0}^{x}e^{\left(n_{i}\sigma_{21}-\alpha_{i}\right)\lambda}n_{2}\,\mathrm{d}\lambda.\]
+
+\end_inset 
+
+Si consideramos 
+\begin_inset Formula $n_{i}\left(x\right)$
+\end_inset 
+
+ y 
+\begin_inset Formula $n_{2}\left(x\right)$
+\end_inset 
+
+ homogéneas a lo largo de todo el material (como veremos, en pequeña señal
+ hay buenas razones para hacerlo), y llamamos 
+\begin_inset Formula $l$
+\end_inset 
+
+ a la longitud óptica total del amplificador tenemos 
+\begin_inset Formula \begin{equation}
+I_{R}\left(l\right)=\frac{\Delta\Omega}{4\pi}\,\frac{\delta\nu}{\Delta\nu}\,\frac{h\nu_{0}}{\tau_{21}}\,\frac{\exp\left[\left(n_{i}\sigma_{21}-\alpha_{i}\right)l\right]-1}{n_{i}\sigma_{21}-\alpha_{i}}\, n_{2}.\label{eq:Iruido-en-l}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+Hemos calculado el conjunto de todas las radiaciones espontáneas que se
+ ha amplificado.
+ Pero ¿cuál es la semilla?.
+ Para calcularla o medirla, se toma una pequeña rodaja de anchura 
+\begin_inset Formula $l/N$
+\end_inset 
+
+ y se restringe el bombeo a dicha rodaja: lo que se recoja en el detector
+ será exclusivamente la radiación espontánea producida allí, sin amplificar,
+ ya que la longitud es pequeña.
+ Si multiplicamos por la longitud, tendremos la semilla total.
+ 
+\layout Standard
+
+Podemos desarrollar la exponencial en serie
+\begin_inset Formula \[
+e^{\left(n_{i}\sigma_{21}-\alpha_{i}\right)l/N}-1\simeq\left(n_{i}\sigma_{21}-\alpha_{i}\right)\frac{l}{N}.\]
+
+\end_inset 
+
+ Entonces 
+\begin_inset Formula \[
+I_{\mathrm{esp}}\left(\frac{l}{N}\right)=\frac{\Delta\Omega}{4\pi}\,\frac{\delta\nu}{\Delta\nu}\,\frac{h\nu_{0}}{\tau_{21}}\,\frac{l}{N}\, n_{2}\]
+
+\end_inset 
+
+y como 
+\begin_inset Formula $I_{\mathrm{esp}}\left(l\right)=NI_{\mathrm{esp}}\left(l/N\right)$
+\end_inset 
+
+ podemos en definitiva escribir la ganancia del ruido como
+\begin_inset Formula \begin{equation}
+\frac{I_{R}\left(l\right)}{I_{\mathrm{esp}}\left(l\right)}=\frac{e^{\left(\alpha_{0}-\alpha_{i}\right)l}-1}{\left(\alpha_{0}-\alpha_{i}\right)l}\label{eq:ganancia-ruido}\end{equation}
+
+\end_inset 
+
+donde hemos puesto 
+\begin_inset Formula $n_{i}\sigma_{21}=\alpha_{0}$
+\end_inset 
+
+ porque generalmente el ruido se amplifica en un solo paso en pequeña señal.
+ 
+\layout Standard
+
+Si el medio láser está bien diseñado, de modo que 
+\begin_inset Formula $\alpha_{i}\ll\alpha_{0}$
+\end_inset 
+
+ la expresión anterior es función exclusivamente de 
+\begin_inset Formula $\alpha_{0}$
+\end_inset 
+
+.
+ Con esta ecuación disponemos de un criterio para saber si un amplificador
+ está saturado.
+ En efecto, eso ocurre cuando la intensidad de la radiación es lo suficientement
+e grande como para erosionar la inversión de población.
+ La saturación se producirá en general si la intensidad espontánea emitida
+ es del mismo orden que la estimulada.
+\layout Standard
+
+La intensidad espontánea total emitida por la varilla, teniendo en cuenta
+ todos los ángulos y todas las frecuencias, no solamente la banda de amplificaci
+ón, es
+\begin_inset Formula \[
+I_{\mathrm{esp},T}=\frac{h\nu_{0}}{\tau_{21}}\, ln_{2}\qquad(\textrm{con }\frac{\Delta\Omega}{4\pi}\frac{\delta\nu}{\Delta\nu}=1)\]
+
+\end_inset 
+
+ cuando esto sea del mismo orden que lo producido por la emisión láser,
+ 
+\begin_inset Formula $I_{\mathrm{esp},T}=I_{R}\left(l\right)$
+\end_inset 
+
+, estaremos en saturación.
+ Ello implica
+\begin_inset Formula \[
+\frac{\exp\alpha_{0}l-1}{\alpha_{0}l}\frac{\delta\nu}{\Delta\nu}\frac{\Delta\Omega}{4\pi}\simeq1.\]
+
+\end_inset 
+
+
+\layout Standard
+
+Si el medio amplificador, como ocurre con frecuencia, tiene la geometría
+ de un cilindro de radio 
+\begin_inset Formula $a$
+\end_inset 
+
+ y longitud 
+\begin_inset Formula $l$
+\end_inset 
+
+ el ángulo sólido en que se amplifica la emisión espontánea puede ser estimado
+ así (figura 
+\begin_inset LatexCommand \ref{fig:estima-angulosolido}
+
+\end_inset 
+
+):
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/angulo-solido-cavidad.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:estima-angulosolido}
+
+\end_inset 
+
+Estimación del ángulo sólido de amplificación espontánea para una varilla
+ de radio 
+\begin_inset Formula $a$
+\end_inset 
+
+ y longitud 
+\begin_inset Formula $l$
+\end_inset 
+
+.
+\end_inset 
+
+
+\begin_inset Formula \[
+\frac{\Delta\Omega}{4\pi}\simeq\left(\frac{a}{l}\right)^{2}\]
+
+\end_inset 
+
+Un poco más complicado es estimar 
+\begin_inset Formula $\delta\nu/\Delta\nu$
+\end_inset 
+
+, pero se sabe que en los láseres más usuales su producto con 
+\begin_inset Formula $\Delta\Omega/4\pi$
+\end_inset 
+
+ vale 
+\begin_inset Formula $10^{-3}$
+\end_inset 
+
+ ó 
+\begin_inset Formula $10^{-4}$
+\end_inset 
+
+.
+ En estas condiciones el criterio de saturación es
+\begin_inset Formula \[
+\alpha_{0}l=9\ldots11\]
+
+\end_inset 
+
+ una amplificación muy alta, pero posible en algunos casos.
+ Estos casos son los llamados 
+\emph on 
+láseres de avalancha
+\begin_inset LatexCommand \index{láser!de avalancha}
+
+\end_inset 
+
+
+\emph default 
+, que estudiaremos seguidamente.
+\layout Standard
+
+Para saber si en un sólo recorrido se va a producir saturación, estas cifras
+ suponen una sobreestimación, ya que hemos supuesto pequeña señal y en dicho
+ régimen la amplificación es mucho más grande que cuando está saturando.
+\layout Section
+
+Caracterización de un amplificación de radiación
+\layout Standard
+
+Ya se ha visto que los dos parámetros que caracterizan a un amplificador
+ de la radiación electromagnética son la amplificación en pequeña señal
+ 
+\shape italic 
+
+\begin_inset Formula $\alpha$
+\end_inset 
+
+
+\shape default 
+
+\begin_inset Formula $_{0}$
+\end_inset 
+
+ y la intensidad de saturación 
+\begin_inset Formula $I_{0}$
+\end_inset 
+
+.
+ La descripción de un amplificador requiere pues la medida de estos dos
+ parámetros.
+\layout Standard
+
+
+\begin_inset LatexCommand \index{amplificación!en pequeña señal!medida}
+
+\end_inset 
+
+Existen muchos métodos para medir la amplificación en pequeña señal generalmente
+ adaptados a cada caso concreto.
+ Se suele utilizar el propio ruido cuántico del amplificador, que acabamos
+ de estudiar, en la determinación de 
+\begin_inset Formula $\alpha_{0}$
+\end_inset 
+
+ e 
+\begin_inset Formula $I_{0}$
+\end_inset 
+
+.
+\layout Subsection
+
+Método de Silfvast y Deech
+\layout Standard
+
+Aquí vamos a describir un método debido a Silfvast y Deech que es fácilmente
+ aplicable en la mayoría de los casos.
+ En este método se mide la radiación espontánea amplificada tras un recorrido
+ de amplificación 
+\begin_inset Formula $l$
+\end_inset 
+
+ y luego tras 
+\begin_inset Formula $l/2$
+\end_inset 
+
+.
+ Si desprecian las perdidas de transmisión interna 
+\begin_inset Formula $\alpha_{i}$
+\end_inset 
+
+ en la ec.
+ 
+\begin_inset LatexCommand \ref{eq:Iruido-en-l}
+
+\end_inset 
+
+ y se tiene en cuenta que la amplificación de la emisión espontánea se efectúa
+ usualmente en pequeña señal, y por lo tanto 
+\begin_inset Formula $\alpha_{0}=n_{i}\sigma_{21}$
+\end_inset 
+
+ (la inversión de población no es alterada por la presencia de la radiación),
+ entonces, si con el mismo bombeo se mide 
+\begin_inset Formula $I_{R}$
+\end_inset 
+
+ para una longitud 
+\begin_inset Formula $l/2$
+\end_inset 
+
+, tenemos
+\layout Standard
+
+
+\begin_inset Formula \[
+\frac{I_{R}(l)}{I_{R}(l/2)}=\frac{\exp\alpha_{0}l-1}{\exp\left(\alpha_{0}l/2\right)-1}\]
+
+\end_inset 
+
+De donde obtenemos una ecuación de segundo grado en 
+\begin_inset Formula $\exp\left(\alpha_{0}l/2\right)$
+\end_inset 
+
+:
+\layout Standard
+
+
+\begin_inset Formula \[
+\exp\alpha_{0}l-\frac{I_{R}(l)}{I_{R}(l/2)}\exp\left(\alpha_{0}l/2\right)+\frac{I_{R}(l)}{I_{R}(l/2)}-1\;=\;0\]
+
+\end_inset 
+
+Resolviéndola, y despejando 
+\begin_inset Formula $\alpha_{0}$
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Formula \[
+\exp\left(\alpha_{0}l/2\right)=\frac{I_{R}(l)}{I_{R}(l/2)}-1,\qquad\alpha_{0}\;=\;\frac{2}{l}\ln\left(\frac{I_{R}(l)}{I_{R}(l/2)}-1\right)\]
+
+\end_inset 
+
+de la medida de la emisión espontánea amplificada obtenemos la ganancia
+ en pequeña señal.
+ Cuando el bombeo es óptico el método se aplica con facilidad; basta con
+ medir primero la intensidad que emite el amplificador bombeado completo,
+ y después bombear solo la mitad volviendo a medir la emisión espontánea
+ amplificada (figura 
+\begin_inset LatexCommand \ref{fig:silvfast-deech-alfa0-optico}
+
+\end_inset 
+
+).
+ Cuando es por descarga, se deben preparar dos tubos diferentes, uno de
+ longitud doble que el otro, etc.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/silvfast-deech.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:silvfast-deech-alfa0-optico}
+
+\end_inset 
+
+Método de Silvfast y Deech para la medida de 
+\begin_inset Formula $\alpha_{0}$
+\end_inset 
+
+ (bombeo óptico).
+\end_inset 
+
+
+\layout Standard
+
+Por lo que se refiere a la intensidad de saturación 
+\begin_inset Formula $I_{0}$
+\end_inset 
+
+ la mayoría de los métodos experimentales de medida extraen esta información
+ del análisis del amplificador en un resonador, pues como veremos después
+ en estas condiciones es fácil saturar el amplificador.
+\layout Subsection
+
+Método 
+\begin_inset Quotes eld
+\end_inset 
+
+de la amplificación relativa
+\begin_inset Quotes erd
+\end_inset 
+
+
+\layout Standard
+
+En este apartado presentamos otro método de caracterización con una fácil
+ realización experimental.
+ En efecto, los parámetros del amplificador se podrán obtener de la medida
+ de la amplificación relativa 
+\begin_inset Formula $\Delta I/I\left(0\right)$
+\end_inset 
+
+ en función de la intensidad de entrada, 
+\begin_inset Formula $I\left(0\right)$
+\end_inset 
+
+.
+\layout Standard
+
+Recordamos que integrando la fórmula de Rigrod (
+\begin_inset LatexCommand \ref{eq:alfa-formula-rigrod}
+
+\end_inset 
+
+) en un recorrido 
+\begin_inset Formula $l$
+\end_inset 
+
+ en el que no se produce saturación se obtenía
+\layout Standard
+
+
+\begin_inset Formula \[
+I_{0}\ln\frac{I(l)}{I(0)}+I(l)-I(0)\;=\;\alpha_{0}I_{0}l\]
+
+\end_inset 
+
+
+\layout Standard
+
+O sea
+\layout Standard
+
+
+\begin_inset Formula \[
+\frac{I(l)}{I(0)}=\exp\alpha_{0}l\,\exp\frac{I(l)-I(0)}{I_{0}}\]
+
+\end_inset 
+
+La amplificación relativa en el recorrido 
+\begin_inset Formula $l$
+\end_inset 
+
+ es
+\layout Standard
+
+
+\begin_inset Formula \[
+\frac{\Delta I}{I(0)}=\frac{I(l)-I(0)}{I(0)}=\frac{I(l)}{I(0)}-1=\exp\alpha_{0}l\,\exp\frac{I(l)-I(0)}{I_{0}}-1\]
+
+\end_inset 
+
+
+\layout Standard
+
+El valor de 
+\begin_inset Formula $\Delta I/I\left(0\right)$
+\end_inset 
+
+ se puede obtener experimentalmente con facilidad (figura 
+\begin_inset LatexCommand \ref{fig:disp-ampli-relativa}
+
+\end_inset 
+
+) si se dispone de un láser u otro foco luminoso de la misma longitud de
+ onda.
+\begin_inset Float figure
+wide false
+collapsed true
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/met-ampli-rel-src.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:disp-ampli-relativa}
+
+\end_inset 
+
+Dispositivo para la caracterización del amplificador por el método de la
+ amplificación relativa.
+\end_inset 
+
+
+\layout Standard
+
+En baja señal 
+\begin_inset Formula $I(0),I(l)\ll I_{0}$
+\end_inset 
+
+
+\begin_inset Formula \begin{eqnarray*}
+\lim\limits _{I(0)\rightarrow0}\;\frac{I(l)}{I(0)}\; & = & \exp\alpha_{0}l=\da{I\left(l\right)}{I\left(0\right)},\qquad\lim\limits _{I(0)\rightarrow0}\;\frac{\Delta I}{I(0)}=\exp\alpha_{0}l-1\end{eqnarray*}
+
+\end_inset 
+
+Como
+\layout Standard
+
+
+\begin_inset Formula \[
+\da{}{I\left(0\right)}\frac{\Delta I}{I(0)}\;=\;\exp\alpha_{0}l\exp\left(-\frac{I(l)-I(0)}{I_{0}}\right)\left(-\frac{1}{I_{0}}\da{I\left(l\right)}{I\left(0\right)}+\frac{1}{I_{0}}\right)\]
+
+\end_inset 
+
+La pendiente en el origen en la gráfica 
+\begin_inset Formula $\frac{\Delta I}{I\left(0\right)}\left(I\left(0\right)\right)$
+\end_inset 
+
+ (figura 
+\begin_inset LatexCommand \ref{fig:ampli-rel-fn-entrada}
+
+\end_inset 
+
+) será la tangente cuando 
+\begin_inset Formula $I\left(0\right)\rightarrow0$
+\end_inset 
+
+
+\begin_inset Formula \[
+\lim\limits _{I(0)\rightarrow0}\da{}{I\left(0\right)}\frac{\Delta I}{I(0)}=\frac{1}{I_{0}}\exp\alpha_{0}l\left(\exp\alpha_{0}l-1\right)\]
+
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/ampli-rel-fn-I-entrada-src.eps
+
+\end_inset 
+
+
+\layout Caption
+
+
+\begin_inset LatexCommand \label{fig:ampli-rel-fn-entrada}
+
+\end_inset 
+
+Amplificación relativa en función de la intensidad a la entrada.
+\end_inset 
+
+Entonces, si la tangente en el origen corta al eje 
+\begin_inset Formula $I(0)$
+\end_inset 
+
+ en 
+\begin_inset Formula $I_{m}$
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Formula \[
+\frac{\exp\alpha_{0}l-1}{I_{m}}\;=\;\frac{1}{I_{0}}\exp\alpha_{0}l\left(\exp\alpha_{0}l-1\right)\]
+
+\end_inset 
+
+Por lo tanto
+\layout Standard
+
+
+\begin_inset Formula \[
+I_{0}\;=\; I_{m}\exp\alpha_{0}l\]
+
+\end_inset 
+
+
+\layout Standard
+
+En conclusión, con la medida de 
+\begin_inset Formula $\Delta I/I\left(0\right)$
+\end_inset 
+
+ en función de 
+\begin_inset Formula $I(0)$
+\end_inset 
+
+ obtenemos 
+\shape italic 
+
+\begin_inset Formula $\alpha_{0}l$
+\end_inset 
+
+
+\shape default 
+ a través de la ordenada en el origen y con este valor la tangente en el
+ origen a través de 
+\begin_inset Formula $I_{m}$
+\end_inset 
+
+ nos permite hallar 
+\begin_inset Formula $I_{0}$
+\end_inset 
+
+.
+ 
+\the_end

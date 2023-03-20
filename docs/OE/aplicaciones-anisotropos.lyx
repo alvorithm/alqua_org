@@ -1,0 +1,995 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass book
+\begin_preamble
+\input{OE-macros.sty}
+\end_preamble
+\language spanish
+\inputencoding latin1
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize a4paper
+\paperpackage a4
+\use_geometry 1
+\use_amsmath 1
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 2
+\papersides 2
+\paperpagestyle default
+
+\layout Chapter
+
+Aplicaciones de los medios anisótropos
+\layout Section
+
+Transparentes
+\layout Subsection
+
+Láminas retardadoras
+\layout Standard
+
+El propósito de estos dispositivos es cambiar la diferencia de fase entre
+ dos ondas.
+ Ya que en los medios anisótropos las dos ondas van a distinta velocidad,
+ se producen desfases de una onda respecto a la otra.
+ Una lámina retardadora puede ser una lámina planoparalela de un medio uniáxico.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/lamina-retardadora.eps
+	display monochrome
+	width 8cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig nolotengomuyclaro}
+
+\end_inset 
+
+Lámina planoparalela de anchura 
+\begin_inset Formula $d$
+\end_inset 
+
+.
+ El eje óptico es perpendicular al plano del papel.
+ La incidencia es normal, según el eje 
+\begin_inset Formula $z$
+\end_inset 
+
+.
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+poner distancia entre placas=d e indicar que el eje x es el
+\layout Standard
+
+vertical
+\layout Standard
+
+-ATC.
+\end_inset 
+
+
+\end_inset 
+
+Para ver lo que pasa sólo tenemos que caracterizar la propagación y relacionar
+ las amplitudes complejas de la onda incidente y de la emergente.
+ Con el sistema de referencia de la figura 
+\begin_inset LatexCommand \ref{fig nolotengomuyclaro}
+
+\end_inset 
+
+ se cumple
+\begin_inset Formula \[
+k_{x}=k_{y}=0\]
+
+\end_inset 
+
+Los dos posibles vectores de onda son
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{k}_{o} & = & n_{o}\frac{\omega}{c}\mathbf{u}_{z}\\
+\mathbf{k}_{e} & = & n_{e}\frac{\omega}{c}\mathbf{u}_{z}\end{eqnarray*}
+
+\end_inset 
+
+ (si es 
+\begin_inset Formula $\perp$
+\end_inset 
+
+ al e.o.).
+ Ambos vectores de onda están sobre el eje 
+\begin_inset Formula $z$
+\end_inset 
+
+.
+ El campo eléctrico de la ordinaria vibra en el plano del papel (eje 
+\begin_inset Formula $x$
+\end_inset 
+
+) y el de la extraordinaria ortogonal a éste (
+\begin_inset Formula $y$
+\end_inset 
+
+).
+\layout Standard
+
+Para no tener que acudir a las fórmulas de 
+\noun on 
+Fresnel
+\noun default 
+, nos apoyamos en que el medio es transparente y los coeficientes de transmisión
+ deben ser, por analogía al caso isótropo, próximos a 
+\begin_inset Formula $1$
+\end_inset 
+
+.
+ Con esta aproximación,
+\layout Itemize
+
+la onda ordinaria estará excitada sólo por la componente 
+\begin_inset Formula $x$
+\end_inset 
+
+ de la onda incidente
+\begin_inset Formula \[
+E_{x}\left(z+d\right)=A_{x}e^{i\left(k_{o}\left(z+d\right)-\omega t\right)}=e^{ik_{o}d}E_{x}\left(z\right)\]
+
+\end_inset 
+
+
+\layout Itemize
+
+la componente 
+\begin_inset Formula $y$
+\end_inset 
+
+ excita la onda extraordinaria 
+\begin_inset Formula \[
+E_{y}\left(z+d\right)=A_{y}e^{i\left(k_{e}\left(z+d\right)-\omega t\right)}=e^{ik_{e}d}E_{y}\left(z\right)\]
+
+\end_inset 
+
+
+\layout Standard
+
+Esa misma relación, en términos de amplitudes es
+\begin_inset Formula \begin{eqnarray*}
+A_{x}' & = & e^{ik_{o}d}A_{x}\\
+A_{y}' & = & e^{ik_{e}d}A_{y}\end{eqnarray*}
+
+\end_inset 
+
+ el cambio de fase es distinto para cada componente, en virtud de la anisotropía
+ (
+\begin_inset Formula $k_{e}\neq k_{o}$
+\end_inset 
+
+).
+ A efectos de polarización podemos escribir las relaciones anteriores como
+\begin_inset Formula \begin{eqnarray*}
+A_{x}' & = & A_{x}\\
+A_{y}' & = & e^{-i\delta}A_{y}\end{eqnarray*}
+
+\end_inset 
+
+ donde 
+\begin_inset Formula $\delta$
+\end_inset 
+
+ es la diferencia de fases entre las componentes de la onda emergente.
+\begin_inset Formula \[
+\delta=\left(k_{o}-k_{e}\right)d=\frac{\omega}{c}\left(n_{o}-n_{e}\right)d=\frac{2\pi}{\lambda}\left(n_{o}-n_{e}\right)d\]
+
+\end_inset 
+
+y 
+\begin_inset Formula $\lambda$
+\end_inset 
+
+ es la longitud de onda en el vacío.
+ Una escritura matricial es 
+\begin_inset Formula \[
+\binom{A_{x}'}{A_{y}'}=\left(\begin{array}{cc}
+1 & 0\\
+0 & e^{-i\delta}\end{array}\right)\binom{A_{x}}{A_{y}}\]
+
+\end_inset 
+
+ la matriz se llama 
+\emph on 
+matriz de 
+\noun on 
+Jones
+\noun default 
+ de la lámina retardadora.
+ 
+\emph default 
+En este caso está escrita en la base en la que 
+\begin_inset Formula $y$
+\end_inset 
+
+ es el eje óptico.
+ Si queremos expresarla para una base en la que el eje óptico forma un ángulo
+ 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+ con el eje 
+\begin_inset Formula $y$
+\end_inset 
+
+ sólo hay que aplicar una rotación a la matriz que tenemos
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Si al hacer los cálculos encuentras discrepancias de signos, seguramente
+ se deben a una elección distinta del referencial de ángulos.
+\end_inset 
+
+:
+\begin_inset Formula \begin{eqnarray*}
+\mathsf{M} & = & \mathsf{R}_{\alpha}^{-1}\left(\begin{array}{cc}
+1 & 0\\
+0 & e^{-i\delta}\end{array}\right)\mathsf{R}_{\alpha}\\
+ & = & \left(\begin{array}{cc}
+\cos^{2}\alpha+e^{-i\delta}\sin^{2}\alpha & \cos\alpha\sin\alpha\left(1-e^{-i\delta}\right)\\
+\cos\alpha\sin\alpha\left(1-e^{-i\delta}\right) & \sin^{2}\alpha+e^{-i\delta}\cos^{2}\alpha\end{array}\right)\end{eqnarray*}
+
+\end_inset 
+
+Los ejes en los que la matriz de 
+\noun on 
+Jones
+\noun default 
+ es más simple se llaman 
+\emph on 
+ejes de la lámina
+\emph default 
+.
+\layout Standard
+
+Comentarios:
+\layout Itemize
+
+La lámina cambia estados de polarización cambiando la fase relativa entre
+ las dos componentes del campo.
+ Es una forma cómoda y sencilla de hacerlo, porque la luz ni siquiera se
+ desvía.
+ 
+\layout Itemize
+
+El desfase introducido depende del grosor de la lámina.
+\layout Itemize
+
+El desfase introducido depende de la longitud de onda incidente.
+\layout Itemize
+
+Si el campo eléctrico vibra en la dirección del eje óptico, luz lineal se
+ convertiría en luz lineal.
+ Es decir, si la luz vibra según uno de los ejes de la lámina, 
+\emph on 
+la lámina no cambia su estado de polarización
+\emph default 
+, porque no hay dos componentes que desfasar.
+\layout Standard
+
+Las láminas de espesor variable se llaman 
+\emph on 
+compensadores
+\emph default 
+ y son muy útiles
+\size small 
+.
+ 
+\size default 
+Las láminas de espesor fijo son 
+\emph on 
+específicas de una longitud de onda.
+\layout Description
+
+Ejemplo Lámina cuarto de onda
+\begin_deeper 
+\layout Standard
+
+
+\size small 
+Dentro de las láminas de espesor fijo
+\begin_inset Foot
+collapsed true
+
+\layout Standard
+
+Para más información sobre los procedimientos de fabricación de estas láminas,
+ puede consultarse
+\layout Itemize
+
+
+\emph on 
+Geometrical and Physical Optics
+\emph default 
+ (
+\noun on 
+Longhurst
+\noun default 
+).
+ Dice que las láminas de mica se obtienen cortando el mineral.
+ La falta de precisión se soluciona 
+\begin_inset Quotes eld
+\end_inset 
+
+por el método de prueba y error
+\begin_inset Quotes erd
+\end_inset 
+
+.
+\layout Itemize
+
+
+\emph on 
+Handbook
+\emph default 
+ 
+\emph on 
+of
+\emph default 
+ 
+\emph on 
+Optics
+\emph default 
+ (Optics Society of America).
+ Dice que se cortan láminas, se pegan de forma que se compensen los desfases,
+ y se pulen hasta que se llega a 
+\begin_inset Formula $\frac{\lambda}{4}$
+\end_inset 
+
+ (o el desfase deseado).
+\end_inset 
+
+, vamos a estudiar la 
+\emph on 
+lámina cuarto de onda
+\emph default 
+ (o 
+\begin_inset Formula $\frac{\lambda}{4}$
+\end_inset 
+
+), que es aquella que introduce un desfase múltiplo impar de 
+\begin_inset Formula $\frac{\pi}{2}$
+\end_inset 
+
+.
+\begin_inset Formula \[
+\delta=\left(2m+1\right)\frac{\pi}{2}\]
+
+\end_inset 
+
+ con 
+\begin_inset Formula $m\in\mathcal{Z}$
+\end_inset 
+
+.
+ Para ello
+\begin_inset Formula \[
+d=\frac{2m+1}{n_{o}-n_{e}}\frac{\lambda}{4}\]
+
+\end_inset 
+
+ en sus ejes, 
+\begin_inset Formula \[
+\mathsf{M}=\left(\begin{array}{cc}
+1 & 0\\
+0 & \pm i\end{array}\right)\]
+
+\end_inset 
+
+ Una aplicación es convertir luz linealmente polarizada en elípticamente
+ polarizada, pero con la particularidad de que los ejes de la elipse de
+ luz emergente coinciden con los ejes de la lámina.
+\begin_inset Formula \begin{eqnarray*}
+\textrm{lineal} & \fdi & \textrm{el}\acute{\textrm{i}}\textrm{ptica}\\
+\binom{\cos\theta}{\sin\theta}\fd & \left[\frac{\lambda}{4}\right]\fd & \binom{\cos\theta}{\pm i\sin\theta}\end{eqnarray*}
+
+\end_inset 
+
+ De este modo, sabemos cómo está orientada la elipse.
+ Si 
+\begin_inset Formula $\theta$
+\end_inset 
+
+ de la luz lineal es 
+\begin_inset Formula $\frac{\pi}{4}$
+\end_inset 
+
+ tendríamos luz emergente circularmente polarizada.
+ 
+\end_deeper 
+\layout Subsection
+
+Prismas polarizadores
+\layout Standard
+
+Un polarizador es un dispositivo que, independientemente del estado de polarizac
+ión de entrada, a la salida proporciona luz de una polarización específica
+ (normalmente lineal).
+ Una forma de construir polarizadores es utilizar medios anisótropos transparent
+es.
+ 
+\layout Standard
+
+Si incidimos desde el aire sobre un medio anisótropo sabemos que en general
+ se producirán dos ondas.
+ Si el medio es uniáxico una será ordinaria y otra extraordinaria.
+ Cada una de ellas tiene un estado de polarización específico, y tienen
+ direcciones diferentes.
+ Lo que hay que hacer es cargarse una de ellas, y no es difícil porque viajan
+ con vectores de onda distintos.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/polarizador.eps
+	display monochrome
+	width 60col%
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+
+\begin_inset LatexCommand \label{fig polarizadores}
+
+\end_inset 
+
+Polarizadores.
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+no entiendo lo siguiente: los rayos se curvan segun se dirigen
+\layout Standard
+
+a la segunda interfase.
+ Esto se debe, sin duda, a que el medio
+\layout Standard
+
+es inhomogeneo.
+ ¿Por que no ocurre lo mismo con la onda
+\layout Standard
+
+que se refleja hacia el interior del material?.
+\layout Standard
+
+-ATC.
+\end_inset 
+
+
+\end_inset 
+
+Eso se puede hacer enfrentándola a un material absorbente o bien a una segunda
+ cara del medio anisótropo dispuesta con el ángulo justo para que se produzca
+ reflexión total de la onda que no nos interesa (figura 
+\begin_inset LatexCommand \ref{fig polarizadores}
+
+\end_inset 
+
+).
+ Hay muchas formas de llevar esto a la práctica, que se describen en la
+ bibliografía y algunas de ellas también en los problemas.
+\layout Section
+
+Absorbentes; dicroísmo; polaroides
+\layout Standard
+
+El objetivo es obtener luz polarizada.
+ Pensemos en un medio anisótropo uniáxico (dos constantes dieléctricas,
+ 
+\begin_inset Formula $\epsilon_{e}$
+\end_inset 
+
+ y 
+\begin_inset Formula $\epsilon_{o}$
+\end_inset 
+
+).
+ Podemos imaginar una situación en la cual una de estas constantes dieléctricas
+ fuera compleja para la frecuencia de interés.
+ Entonces el medio sería absorbente para una de las ondas y transparente
+ para la otra.
+ Por ejemplo
+\begin_inset Formula \begin{eqnarray*}
+n_{o} & \fd & n_{o}+i\kappa_{o}\\
+n_{e} & \fd & n_{e}\end{eqnarray*}
+
+\end_inset 
+
+ con 
+\begin_inset Formula $\kappa_{o}\left(\omega\right)\neq0$
+\end_inset 
+
+.
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/dicroismo2.eps
+	display monochrome
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Para la onda ordinaria se produce absorción con la propagación.
+ Si el espesor es suficiente el medio eliminará la onda ordinaria.
+ La onda extraordinaria pasa sin sufrir absorción.
+ 
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+el decrecimiento del campo es como minimo exponencial,
+\layout Standard
+
+¿no?
+\layout Standard
+
+-ATC.
+\end_inset 
+
+
+\end_inset 
+
+Este fenómeno de absorción selectiva recibe el nombre de 
+\emph on 
+dicroísmo 
+\emph default 
+y los medios que producen este efecto se llaman 
+\emph on 
+dicroicos
+\emph default 
+.
+ Hay cristales naturales dicroicos, pero los materiales más utilizados son
+ láminas de alcoholes de polivinilo estiradas y dopadas con yodo.
+ La ventaja es que se pueden construirse en tamaños arbitrarios
+\begin_inset Note
+collapsed true
+
+\layout Standard
+
+idea de las ventanas: dos laminas circulares rotatorias
+\layout Standard
+
+a guisa de ventanas.
+ -ATC.
+\end_inset 
+
+.
+\layout Standard
+
+A partir de ahora llamaremos 
+\emph on 
+eje del polarizador
+\emph default 
+ a la dirección de vibración del haz emergente.
+ Vamos a ver un par de ejemplos
+\layout Subsubsection
+
+Efecto del polarizador sobre luz linealmente polarizada
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/efecto-polarizador-sobre-lineal.eps
+	display monochrome
+	width 8cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+El campo incidente es 
+\begin_inset Formula $\mathbf{E}$
+\end_inset 
+
+ con intensidad 
+\begin_inset Formula $I$
+\end_inset 
+
+ y el emergente 
+\begin_inset Formula $\mathbf{E}'$
+\end_inset 
+
+ con intensidad 
+\begin_inset Formula $I'$
+\end_inset 
+
+.
+ El eje del polarizador está rotulado 
+\emph on 
+e.p.
+\end_inset 
+
+El polarizador anula la componente perpendicular a su eje (absorbiéndola
+ o refractándola en otra dirección).
+\begin_inset Formula \[
+E_{\perp}'=0\]
+
+\end_inset 
+
+ Si el polarizador es ideal
+\begin_inset Formula \[
+E_{\parallel}'=E_{\parallel}\]
+
+\end_inset 
+
+ La intensidad del haz incidente es
+\begin_inset Formula \[
+I\propto\left|\mathbf{E}\right|^{2}\]
+
+\end_inset 
+
+ y la del haz emergente 
+\begin_inset Formula \[
+I'\propto\left|\mathbf{E}'\right|^{2}=\left|E_{\parallel}'\right|^{2}=\left|E_{\parallel}\right|^{2}\]
+
+\end_inset 
+
+ como 
+\begin_inset Formula $\cos\theta=\frac{\left|E_{\parallel}\right|}{\left|\mathbf{E}\right|}$
+\end_inset 
+
+ se puede escribir
+\begin_inset Formula \begin{eqnarray*}
+I' & \propto & \left|\mathbf{E}\right|^{2}\cos^{2}\theta\\
+I' & = & I\cos^{2}\theta\end{eqnarray*}
+
+\end_inset 
+
+ la última expresión se conoce como 
+\emph on 
+Ley de 
+\noun on 
+Malus
+\noun default 
+.
+\layout Subsubsection
+
+Efecto del polarizador sobre luz circularmente polarizada
+\layout Standard
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/efecto-polarizador-sobre-circular.eps
+	display monochrome
+	width 5cm
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+Plano del polarizador, 
+\begin_inset Formula $xy$
+\end_inset 
+
+.
+ Circunferencia que describe el haz incidente.
+\end_inset 
+
+Para todos los ejes que escojamos la luz circular se va a escribir así:
+\begin_inset Formula \[
+\mathbf{E}\propto\binom{1}{\pm i}\propto\binom{E_{\parallel}}{E_{\perp}}\]
+
+\end_inset 
+
+ Suponiendo un polarizador ideal
+\begin_inset Formula \begin{eqnarray*}
+E_{\parallel}' & = & E_{\parallel}\\
+E_{\perp}' & = & 0\end{eqnarray*}
+
+\end_inset 
+
+Las intensidades cumplen, independientemente de cómo esté colocado el eje
+ del polarizador
+\begin_inset Formula \begin{eqnarray*}
+I' & \propto & \left|E_{\parallel}'\right|^{2}\\
+I' & \propto & \left|E_{\parallel}\right|^{2}+\left|E_{\perp}\right|^{2}\\
+I' & \propto & 2\left|E_{\parallel}\right|^{2}\end{eqnarray*}
+
+\end_inset 
+
+ y, finalmente
+\begin_inset Formula \[
+I'=\frac{I}{2}\]
+
+\end_inset 
+
+
+\layout Section
+
+Matrices de 
+\noun on 
+Jones
+\layout Standard
+
+Escribimos un polarizador cuyo eje coincide con el eje 
+\begin_inset Formula $x$
+\end_inset 
+
+ como
+\begin_inset Formula \[
+\mathsf{M}=\left(\begin{array}{cc}
+1 & 0\\
+0 & 0\end{array}\right)\]
+
+\end_inset 
+
+ se cumple 
+\begin_inset Formula $\mathbf{E}'=\mathsf{M}\mathbf{E}$
+\end_inset 
+
+.
+ Si el eje de polarización forma un ángulo 
+\begin_inset Formula $\alpha$
+\end_inset 
+
+ con el eje 
+\begin_inset Formula $x$
+\end_inset 
+
+ no hay más que aplicar una matriz de rotación
+\begin_inset Formula \[
+\mathsf{M}=\mathsf{R}_{\alpha}^{-1}\left(\begin{array}{cc}
+1 & 0\\
+0 & 0\end{array}\right)\mathsf{R}_{\alpha}=\left(\begin{array}{cc}
+\cos^{2}\alpha & \sin\alpha\cos\alpha\\
+\sin\alpha\cos\alpha & \sin^{2}\alpha\end{array}\right)\]
+
+\end_inset 
+
+ El uso de las matrices ahorra trabajo especialmente cuando tenemos un gran
+ número de elementos (se obtiene una matriz del sistema que vale para todo
+ estado de polarización inicidente).
+\layout Section
+
+Luz natural
+\layout Subsection
+
+Definiciones
+\layout Standard
+
+Si la onda es estrictamente armónica 
+\begin_inset Formula \[
+\mathbf{E}=\mathbf{E}_{0}e^{i\fase}\]
+
+\end_inset 
+
+el campo está describiendo una elipse.
+ A esto lo llamamos 
+\emph on 
+luz completamente polarizada 
+\emph default 
+(el campo describe una elipse ---o una circunferencia, o una recta--- perfectame
+nte definida).
+ En la naturaleza, éste es raramente el caso.
+ Más habitualmente, se presentan ondas como
+\begin_inset Formula \[
+\mathbf{E}=\mathbf{E}_{0}\left(t\right)e^{i\fase}\]
+
+\end_inset 
+
+ que son no monocromáticas y cuya polarización es variable.
+ De hecho, las fuentes de luz convencionales son de este tipo, sin polarización
+ privilegiada.
+ La 
+\emph on 
+luz
+\emph default 
+ 
+\emph on 
+natural
+\emph default 
+ va pasando con cierta rapidez de un estado de polarización a otro.
+ 
+\layout Standard
+
+Los que hemos presentado son dos casos extremos.
+ Podemos tener un estado de polarización más frecuente que los otros, sin
+ que por ello sea el único.
+ A esto se le llama 
+\emph on 
+luz
+\emph default 
+ 
+\emph on 
+parcialmente
+\emph default 
+ 
+\emph on 
+polarizada
+\emph default 
+.
+ Es posible descomponerla en suma de luz natural (las desviaciones de la
+ polarización elíptica) y luz completamente polarizada, de tal modo que
+\begin_inset Formula \[
+I=I_{np}+I_{cp}\]
+
+\end_inset 
+
+ Para cuantificar cuán polarizada está una onda, se define el 
+\emph on 
+grado
+\emph default 
+ 
+\emph on 
+de
+\emph default 
+ 
+\emph on 
+polarización
+\emph default 
+ como
+\begin_inset Formula \[
+GP=\frac{I_{cp}}{I_{np}+I_{cp}}\]
+
+\end_inset 
+
+
+\begin_inset Float figure
+wide false
+collapsed false
+
+\layout Standard
+\align center 
+
+\begin_inset Graphics
+	filename fig/elipse-polarizacion.eps
+	display monochrome
+	width 3cm
+
+\end_inset 
+
+
+\begin_inset Graphics
+	filename fig/parcialmente-polarizada.eps
+	display monochrome
+	width 3cm
+	subcaption
+
+\end_inset 
+
+
+\begin_inset Graphics
+	filename fig/no-polarizada.eps
+	display monochrome
+	width 3cm
+	subcaption
+
+\end_inset 
+
+
+\layout Caption
+
+
+\size small 
+a) Luz completamente polarizada b) luz parcialmente polarizada c) luz natural
+\end_inset 
+
+
+\layout Subsection
+
+Efectos de una lámina y de un polarizador
+\layout Subsubsection
+
+Lámina retardadora
+\layout Standard
+
+Cuando la luz natural incide sobre una lámina retardadora ocurre lo siguiente:
+\layout Enumerate
+
+Como la hemos considerado completamente transparente, la intensidad se conserva.
+\begin_inset Formula \[
+I=I'\]
+
+\end_inset 
+
+
+\layout Enumerate
+
+Como el desfase en cualquier par de componentes es aleatorio, la introducción
+ de una fase extra no cambia la aleatoriedad de la diferencia de fase.
+ No hay efecto.
+\layout Subsubsection
+
+Polarizador
+\layout Standard
+
+Cuando la luz natural incide sobre un polarizador emerge luz linealmente
+ polarizada: 
+\begin_inset Formula \begin{eqnarray*}
+E_{\parallel}' & = & E_{\parallel}\\
+E_{\perp}' & = & 0\end{eqnarray*}
+
+\end_inset 
+
+ con
+\begin_inset Formula \begin{eqnarray*}
+I' & \propto & \left|E_{\parallel}'\right|^{2}=\left|E_{\parallel}\right|^{2}\\
+I & \propto & \left|E_{\parallel}\right|^{2}+\left|E_{\perp}\right|^{2}\\
+ & = & 2\left|E_{\parallel}\right|^{2}\end{eqnarray*}
+
+\end_inset 
+
+ La última igualdad se debe a que al ser la luz natural hay la misma cantidad
+ de luz en ambas polarizaciones, por ser el reparto entre ellas aleatorio:
+\begin_inset Formula $\left|E_{\parallel}\right|=\left|E_{\perp}\right|$
+\end_inset 
+
+.
+ En conclusión:
+\begin_inset Formula \[
+I'=\frac{I}{2}\]
+
+\end_inset 
+
+
+\the_end
